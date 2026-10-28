@@ -62,7 +62,8 @@ def excluded(path: Path) -> bool:
 image = (
     modal.Image.from_registry(BASE_IMAGE)
     .uv_sync(uv_project_dir=str(ROOT), uv_version=UV_VERSION,
-             frozen=False, extra_options="--locked --verbose")
+             frozen=False, extra_options="--locked --default-index=https://pypi.org/simple --verbose",
+             env={"UV_INDEX_URL": "https://pypi.org/simple", "UV_DEFAULT_INDEX": "https://pypi.org/simple"})
     .workdir("/workspace")
     .env({"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1",
           "PYTHONUNBUFFERED": "1", "MODAL_IS_REMOTE": "1"})

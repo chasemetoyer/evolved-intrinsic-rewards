@@ -1,0 +1,7 @@
+{
+  "error": "ImageBuildError: Image build for im-VnCm75YY9OuotFjAaroUJ5 failed.\nView the build logs:\n  modal image logs im-VnCm75YY9OuotFjAaroUJ5",
+  "guard_total_usd": "0.50",
+  "invoice_cost_usd": null,
+  "stage_2_started": false,
+  "utc": "2026-10-28T03:21:29.574234+00:00"
+}

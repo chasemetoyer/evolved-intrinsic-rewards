@@ -1,0 +1,28 @@
+{
+  "calls": {},
+  "cpu_limit": 1,
+  "cpu_usd_core_second": "0.0000131",
+  "created_utc": "2026-10-28T03:13:30.431984+00:00",
+  "guard_total_usd": "0.50",
+  "limit_usd": "15",
+  "limitations": "Estimates include a protective overhead allowance. Provider accounting is delayed; this is not a guaranteed invoice cap.",
+  "overhead_allowance_usd": "0.50",
+  "price_checked_utc_date": "2026-10-27",
+  "price_source": "https://modal.com/pricing",
+  "provider_invoice_cost_usd": null,
+  "provider_reported_complete_intervals_cost_usd": "0",
+  "ram_limit_gib": 2,
+  "ram_usd_gib_second": "0.00000222",
+  "schema": 2,
+  "setup_failures": [
+    {
+      "reason": "ImageBuildError: Image build for im-l05pUtZrKBR79SHh6TH0yS failed.\nView the build logs:\n  modal image logs im-l05pUtZrKBR79SHh6TH0yS",
+      "utc": "2026-10-28T03:13:39.723246+00:00"
+    },
+    {
+      "reason": "ImageBuildError: Image build for im-VnCm75YY9OuotFjAaroUJ5 failed.\nView the build logs:\n  modal image logs im-VnCm75YY9OuotFjAaroUJ5",
+      "utc": "2026-10-28T03:21:28.338465+00:00"
+    }
+  ],
+  "updated_utc": "2026-10-28T03:21:28.339393+00:00"
+}

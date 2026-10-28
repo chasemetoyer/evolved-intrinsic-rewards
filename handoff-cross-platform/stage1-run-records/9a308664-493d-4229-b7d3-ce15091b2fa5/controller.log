@@ -1,0 +1,2151 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Installed 72 packages in 494ms
+LOCK_VERIFIED commit=d85a7ea35c92a75ae6853fc8a48c4d2ba4868fb6 inputs=28
+✓ Initialized. View run at 
+https://modal.com/apps/chasemetoyer/main/ap-cWQwb64TUeYnQXiRNXSmjk
+Building image im-VnCm75YY9OuotFjAaroUJ5
+
+=> Step 0: FROM base
+
+=> Step 1: COPY --from=ghcr.io/astral-sh/uv:0.9.7 /uv /.uv/uv
+Getting image source signatures
+Copying blob sha256:0624929136ddf5fd04e451a3acd491b48ca10c80a088c8e5140a36e50bd3dc72
+Copying blob sha256:104644e8b943f16643c00116485f169734e0d1e4e6bb5f7fbb594945eec261e7
+Copying config sha256:488fd431354f6820b8c64070ead9a62ecac9dcab4a3dc6914a397f479061306c
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M608DHBPZBMMFQ47TKA9XA2B/registry-unpackIYcSRi
+
+=> Step 2: COPY /.pyproject.toml /.uv/pyproject.toml
+
+=> Step 3: COPY /.uv.lock /.uv/uv.lock
+
+=> Step 4: RUN /.uv/uv sync --project=/.uv --no-install-workspace --compile-bytecode --locked --verbose
+DEBUG uv 0.9.7
+DEBUG Disabling the uv cache due to `--no-cache`
+DEBUG Acquired shared lock for `/tmp/.tmpVTzgE7`
+DEBUG Found project root: `/.uv`
+DEBUG No workspace root found, using project root
+DEBUG Acquired lock for `/.uv`
+DEBUG No Python version file found in workspace: /.uv
+DEBUG Using Python request `==3.12.*` from `requires-python` metadata
+DEBUG Checking for Python environment at: `/.uv/.venv`
+DEBUG Searching for Python ==3.12.* in managed installations or search path
+DEBUG Searching for managed installations at `/root/.local/share/uv/python`
+DEBUG Found `cpython-3.12.12-linux-x86_64-gnu` at `/usr/local/bin/python3` (first executable in the search path)
+Using CPython 3.12.12 interpreter at: /usr/local/bin/python3
+Creating virtual environment at: /.uv/.venv
+DEBUG Using base executable for virtual environment: /usr/local/bin/python3
+DEBUG Released lock at `/tmp/uv-8f63f5b790a552d3.lock`
+DEBUG Acquired lock for `/.uv/.venv`
+DEBUG Using request timeout of 30s
+DEBUG Found static `pyproject.toml` for: evolved-intrinsic-rewards @ file:///.uv
+DEBUG No workspace root found, using project root
+DEBUG Resolving despite existing lockfile due to missing remote index: `gymnasium` `1.4.0` from `https://pypi.org/simple`
+DEBUG Solving with installed Python version: 3.12.12
+DEBUG Solving with target Python version: ==3.12.*
+DEBUG Solving split (markers: python_full_version == '3.12.*' and platform_machine == 'x86_64' and sys_platform == 'linux') (requires-python: RequiresPython { specifiers: VersionSpecifiers([VersionSpecifier { operator: EqualStar, version: "3.12" }]), range: RequiresPythonRange(LowerBound(Included("3.12")), UpperBound(Excluded("3.13"))) })
+DEBUG Adding direct dependency: evolved-intrinsic-rewards*
+DEBUG Searching for a compatible version of evolved-intrinsic-rewards @ file:///.uv (*)
+DEBUG Adding direct dependency: gymnasium>=1.4.0, <1.4.0+
+DEBUG Adding direct dependency: minigrid>=3.2.0, <3.2.0+
+DEBUG Adding direct dependency: modal>=1.6.3, <1.6.3+
+DEBUG Adding direct dependency: numpy>=2.5.4, <2.5.4+
+DEBUG Adding direct dependency: pytest>=9.2.0, <9.2.0+
+DEBUG Adding direct dependency: scipy>=1.17.1, <1.17.1+
+DEBUG Adding direct dependency: tomli-w>=1.2.0, <1.2.0+
+DEBUG Adding direct dependency: torch{sys_platform == 'linux'}>=2.14.1, <2.14.1+
+DEBUG Adding direct dependency: trackio>=0.43.0, <0.43.0+
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pytest/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/gymnasium/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/minigrid/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/modal/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/numpy/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/scipy/
+DEBUG No cache entry for: https://download.pytorch.org/whl/cpu/torch/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/tomli-w/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/trackio/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/minigrid/minigrid-3.2.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/tomli-w/tomli_w-1.2.0-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of gymnasium (>=1.4.0, <1.4.0+)
+DEBUG Selecting: gymnasium==1.4.0 [preference] (gymnasium-1.4.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/gymnasium/gymnasium-1.4.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/trackio/trackio-0.43.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pytest/pytest-9.2.0-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for gymnasium==1.4.0: cloudpickle>=1.2.0
+DEBUG Adding transitive dependency for gymnasium==1.4.0: farama-notifications>=0.0.1
+DEBUG Adding transitive dependency for gymnasium==1.4.0: numpy>=1.22.0
+DEBUG Adding transitive dependency for gymnasium==1.4.0: typing-extensions>=4.12.0
+DEBUG Searching for a compatible version of minigrid (>=3.2.0, <3.2.0+)
+DEBUG Selecting: minigrid==3.2.0 [preference] (minigrid-3.2.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/cloudpickle/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/typing-extensions/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/farama-notifications/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/scipy/scipy-1.17.1-cp312-cp312-macosx_10_14_x86_64.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/modal/modal-1.6.3-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/cloudpickle/cloudpickle-3.1.2-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/farama-notifications/farama_notifications-0.0.6-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/typing-extensions/typing_extensions-4.16.0-py3-none-any.whl.metadata
+WARN Skipping file for numpy: numpy-1.0.1.dev3460.win32-py2.4.exe
+WARN Skipping file for numpy: numpy-1.3.0.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.5.0.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py2.5-nosse.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py2.6-nosse.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py2.7-nosse.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py3.1-nosse.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py3.3.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py3.3.exe
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/numpy/numpy-2.5.4-cp312-cp312-macosx_10_13_x86_64.whl.metadata
+DEBUG Adding transitive dependency for minigrid==3.2.0: gymnasium>=0.28.1
+DEBUG Adding transitive dependency for minigrid==3.2.0: numpy>=1.18.0
+DEBUG Adding transitive dependency for minigrid==3.2.0: pygame-ce>=2.4.0
+DEBUG Searching for a compatible version of modal (>=1.6.3, <1.6.3+)
+DEBUG Selecting: modal==1.6.3 [preference] (modal-1.6.3-py3-none-any.whl)
+DEBUG Adding transitive dependency for modal==1.6.3: aiohttp*
+DEBUG Adding transitive dependency for modal==1.6.3: cbor2*
+DEBUG Adding transitive dependency for modal==1.6.3: certifi*
+DEBUG Adding transitive dependency for modal==1.6.3: click>=8.1, <9.dev0
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pygame-ce/
+DEBUG Adding transitive dependency for modal==1.6.3: grpclib{python_full_version < '3.14'}>=0.4.7, <0.4.10
+DEBUG Adding transitive dependency for modal==1.6.3: protobuf>=3.19, <4.24.0 | >=4.24.0+, <8.0
+DEBUG Adding transitive dependency for modal==1.6.3: rich>=12.0.0
+DEBUG Adding transitive dependency for modal==1.6.3: synchronicity>=0.12.7, <0.13.dev0
+DEBUG Adding transitive dependency for modal==1.6.3: toml*
+DEBUG Adding transitive dependency for modal==1.6.3: types-certifi*
+DEBUG Adding transitive dependency for modal==1.6.3: types-toml*
+DEBUG Adding transitive dependency for modal==1.6.3: typing-extensions>=4.6, <5.dev0
+DEBUG Adding transitive dependency for modal==1.6.3: watchfiles*
+DEBUG Searching for a compatible version of numpy (>=2.5.4, <2.5.4+)
+DEBUG Selecting: numpy==2.5.4 [preference] (numpy-2.5.4-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of pytest (>=9.2.0, <9.2.0+)
+DEBUG Selecting: pytest==9.2.0 [preference] (pytest-9.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for pytest==9.2.0: iniconfig>=2
+DEBUG Adding transitive dependency for pytest==9.2.0: packaging>=24
+DEBUG Adding transitive dependency for pytest==9.2.0: pluggy>=1.6, <2
+DEBUG Adding transitive dependency for pytest==9.2.0: pygments>=2.15
+DEBUG Searching for a compatible version of scipy (>=1.17.1, <1.17.1+)
+DEBUG Selecting: scipy==1.17.1 [preference] (scipy-1.17.1-cp312-cp312-macosx_10_14_x86_64.whl)
+DEBUG Adding transitive dependency for scipy==1.17.1: numpy>=1.26.4, <2.7
+DEBUG Searching for a compatible version of tomli-w (>=1.2.0, <1.2.0+)
+DEBUG Selecting: tomli-w==1.2.0 [preference] (tomli_w-1.2.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/aiohttp/
+DEBUG Searching for a compatible version of torch{sys_platform == 'linux'} (>=2.14.1, <2.14.1+)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/cbor2/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/certifi/
+DEBUG Looking at local version: torch==2.14.1+cpu
+DEBUG Selecting: torch==2.14.1+cpu [preference] (torch-2.14.1+cpu-cp312-cp312-linux_s390x.whl)
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: torch==2.14.1+cpu
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: torch{sys_platform == 'linux'}==2.14.1+cpu
+DEBUG Searching for a compatible version of torch (==2.14.1+cpu)
+DEBUG Looking at local version: torch==2.14.1+cpu
+DEBUG Selecting: torch==2.14.1+cpu [preference] (torch-2.14.1+cpu-cp312-cp312-linux_s390x.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/grpclib/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/click/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/protobuf/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/rich/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/synchronicity/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/toml/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/types-certifi/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/types-toml/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/watchfiles/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/iniconfig/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pluggy/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/packaging/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pygments/
+DEBUG No cache entry for: https://download-r2.pytorch.org/whl/cpu/torch-2.14.1%2Bcpu-cp312-cp312-linux_s390x.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/certifi/certifi-2026.10.23-py3-none-any.whl.metadata
+WARN Skipping file for toml: toml-0.10.0-py2.7.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pygame-ce/pygame_ce-2.5.8-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/types-certifi/types_certifi-2021.10.8.3-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/iniconfig/iniconfig-2.3.1-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/toml/toml-0.10.2-py2.py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pluggy/pluggy-1.7.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/grpclib/grpclib-0.4.9-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/types-toml/types_toml-0.10.8.20260518-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/click/click-8.5.0-py3-none-any.whl.metadata
+WARN Skipping file for pygments: Pygments-0.10-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.10-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.10-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.11-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.11-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.11-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.11.1-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.11.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.11.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.5-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.5-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.5-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.5.1-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.5.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.5.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.6-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.6-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.6-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.7-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.7-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.7-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.7.1-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.7.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.7.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.8-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.8-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.8-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.8.1-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.8.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.8.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-0.9-py2.3.egg
+WARN Skipping file for pygments: Pygments-0.9-py2.4.egg
+WARN Skipping file for pygments: Pygments-0.9-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.0-py2.3.egg
+WARN Skipping file for pygments: Pygments-1.0-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.0-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.0-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.1-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.1.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.1.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.1.1-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.2-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.2-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.2-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.2.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.2.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.2.1-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.2.2-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.2.2-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.2.2-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.3-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.3-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.3-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.3.1-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.3.1-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.3.1-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.4-py2.4.egg
+WARN Skipping file for pygments: Pygments-1.4-py2.5.egg
+WARN Skipping file for pygments: Pygments-1.4-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.4-py2.7.egg
+WARN Skipping file for pygments: Pygments-1.5-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.5-py2.7.egg
+WARN Skipping file for pygments: Pygments-1.6-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.6-py2.7.egg
+WARN Skipping file for pygments: Pygments-1.6rc1-py2.6.egg
+WARN Skipping file for pygments: Pygments-1.6rc1-py2.7.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/packaging/packaging-26.3-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pygments/pygments-2.21.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/synchronicity/synchronicity-0.12.7-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/rich/rich-15.0.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/cbor2/cbor2-6.1.5-cp312-cp312-macosx_11_0_arm64.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/watchfiles/watchfiles-1.3.0-cp310-abi3-macosx_10_12_x86_64.whl.metadata
+WARN Skipping file for protobuf: protobuf-2.0.0beta-py2.4.egg
+WARN Skipping file for protobuf: protobuf-2.0.3-py2.4.egg
+WARN Skipping file for protobuf: protobuf-2.3.0-py2.5.egg
+WARN Skipping file for protobuf: protobuf-2.4.1-py2.6.egg
+WARN Skipping file for protobuf: protobuf-2.5.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-2.6.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-2.6.1-py2.6.egg
+WARN Skipping file for protobuf: protobuf-2.6.1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0a2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0a3-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0b1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0b1.post2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0b3-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.0.0b4-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.1.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.1.0.post1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.10.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.10.0rc1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.11.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.11.0rc1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.11.0rc2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.11.1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.11.2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.11.3-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.2.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.2.0rc1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.2.0rc1.post1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.2.0rc2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.4.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.5.0.post1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.5.1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.5.2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.5.2.post1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.6.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.6.1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.7.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.7.0rc2-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.7.0rc3-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.7.1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.8.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.8.0rc1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.9.0-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.9.0rc1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.9.1-py2.7.egg
+WARN Skipping file for protobuf: protobuf-3.9.2-py2.7.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/protobuf/protobuf-7.36.2-cp310-abi3-macosx_10_9_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/aiohttp/aiohttp-3.14.5-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: filelock*
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: fsspec>=0.8.5
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: jinja2*
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: networkx>=2.5.1
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: setuptools>=77.0.3
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: sympy>=1.13.3
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: typing-extensions>=4.10.0
+DEBUG Searching for a compatible version of torch{sys_platform == 'linux'} (==2.14.1+cpu)
+DEBUG Looking at local version: torch==2.14.1+cpu
+DEBUG Selecting: torch==2.14.1+cpu [preference] (torch-2.14.1+cpu-cp312-cp312-linux_s390x.whl)
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: filelock*
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: fsspec>=0.8.5
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: jinja2*
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: networkx>=2.5.1
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: setuptools>=77.0.3
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: sympy>=1.13.3
+DEBUG Adding transitive dependency for torch==2.14.1+cpu: typing-extensions>=4.10.0
+DEBUG Searching for a compatible version of trackio (>=0.43.0, <0.43.0+)
+DEBUG Selecting: trackio==0.43.0 [preference] (trackio-0.43.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for trackio==0.43.0: brotli>=1.0.0, <2.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: gradio-client>=2.0.0, <3.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: httpx>=0.24.1, <1
+DEBUG Adding transitive dependency for trackio==0.43.0: huggingface-hub>=1.10.0, <3
+DEBUG Adding transitive dependency for trackio==0.43.0: numpy<3.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: orjson>=3.0, <4.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: pillow<13.0.0
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/fsspec/
+DEBUG Adding transitive dependency for trackio==0.43.0: python-multipart>=0.0.9, <1.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: starlette<2.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: uvicorn[standard]>=0.30.0, <1.0.0
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/filelock/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/jinja2/
+DEBUG Searching for a compatible version of cloudpickle (>=1.2.0)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/networkx/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/sympy/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/setuptools/
+DEBUG Selecting: cloudpickle==3.1.2 [preference] (cloudpickle-3.1.2-py3-none-any.whl)
+DEBUG Searching for a compatible version of farama-notifications (>=0.0.1)
+DEBUG Selecting: farama-notifications==0.0.6 [preference] (farama_notifications-0.0.6-py3-none-any.whl)
+DEBUG Searching for a compatible version of typing-extensions (>=4.12.0, <5.dev0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of pygame-ce (>=2.4.0)
+DEBUG Selecting: pygame-ce==2.5.8 [preference] (pygame_ce-2.5.8-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of aiohttp (*)
+DEBUG Selecting: aiohttp==3.14.5 [preference] (aiohttp-3.14.5-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Adding transitive dependency for aiohttp==3.14.5: aiohappyeyeballs>=2.5.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: aiosignal>=1.4.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: attrs>=17.3.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: frozenlist>=1.1.1
+DEBUG Adding transitive dependency for aiohttp==3.14.5: multidict>=4.5, <8.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: propcache>=0.2.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: typing-extensions{python_full_version < '3.13'}>=4.4
+DEBUG Adding transitive dependency for aiohttp==3.14.5: yarl>=1.25.1, <2.0
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/brotli/
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.13'} (>=4.4)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/gradio-client/
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions==4.16.0
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpx/
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions{python_full_version < '3.13'}==4.16.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.13'} (==4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/huggingface-hub/
+DEBUG Searching for a compatible version of cbor2 (*)
+DEBUG Selecting: cbor2==6.1.5 [preference] (cbor2-6.1.5-cp312-cp312-macosx_11_0_arm64.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/orjson/
+DEBUG Searching for a compatible version of certifi (*)
+DEBUG Selecting: certifi==2026.10.23 [preference] (certifi-2026.10.23-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pillow/
+DEBUG Searching for a compatible version of click (>=8.1, <9.dev0)
+DEBUG Selecting: click==8.5.0 [preference] (click-8.5.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/python-multipart/
+DEBUG Searching for a compatible version of grpclib{python_full_version < '3.14'} (>=0.4.7, <0.4.10)
+DEBUG Selecting: grpclib==0.4.9 [preference] (grpclib-0.4.9-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/starlette/
+DEBUG Adding transitive dependency for grpclib==0.4.9: grpclib==0.4.9
+DEBUG Adding transitive dependency for grpclib==0.4.9: grpclib{python_full_version < '3.14'}==0.4.9
+DEBUG Searching for a compatible version of grpclib (==0.4.9)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/uvicorn/
+DEBUG Selecting: grpclib==0.4.9 [preference] (grpclib-0.4.9-py3-none-any.whl)
+DEBUG Adding transitive dependency for grpclib==0.4.9: h2>=3.1.0, <5
+DEBUG Adding transitive dependency for grpclib==0.4.9: multidict*
+DEBUG Searching for a compatible version of grpclib{python_full_version < '3.14'} (==0.4.9)
+DEBUG Selecting: grpclib==0.4.9 [preference] (grpclib-0.4.9-py3-none-any.whl)
+DEBUG Adding transitive dependency for grpclib==0.4.9: h2>=3.1.0, <5
+DEBUG Adding transitive dependency for grpclib==0.4.9: multidict*
+DEBUG Searching for a compatible version of protobuf (>=3.19, <4.24.0 | >=4.24.0+, <8.0)
+DEBUG Selecting: protobuf==7.36.2 [preference] (protobuf-7.36.2-cp310-abi3-macosx_10_9_universal2.whl)
+DEBUG Searching for a compatible version of rich (>=12.0.0)
+DEBUG Selecting: rich==15.0.0 [preference] (rich-15.0.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for rich==15.0.0: markdown-it-py>=2.2.0
+DEBUG Adding transitive dependency for rich==15.0.0: pygments>=2.13.0, <3.0.0
+DEBUG Searching for a compatible version of synchronicity (>=0.12.7, <0.13.dev0)
+DEBUG Selecting: synchronicity==0.12.7 [preference] (synchronicity-0.12.7-py3-none-any.whl)
+DEBUG Adding transitive dependency for synchronicity==0.12.7: typing-extensions>=4.12.2
+DEBUG Searching for a compatible version of toml (*)
+DEBUG Selecting: toml==0.10.2 [preference] (toml-0.10.2-py2.py3-none-any.whl)
+DEBUG Searching for a compatible version of types-certifi (*)
+DEBUG Selecting: types-certifi==2021.10.8.3 [preference] (types_certifi-2021.10.8.3-py3-none-any.whl)
+DEBUG Searching for a compatible version of types-toml (*)
+DEBUG Selecting: types-toml==0.10.8.20260518 [preference] (types_toml-0.10.8.20260518-py3-none-any.whl)
+DEBUG Searching for a compatible version of watchfiles (*)
+DEBUG Selecting: watchfiles==1.3.0 [preference] (watchfiles-1.3.0-cp310-abi3-macosx_10_12_x86_64.whl)
+DEBUG Adding transitive dependency for watchfiles==1.3.0: anyio>=3.0.0
+DEBUG Searching for a compatible version of iniconfig (>=2)
+DEBUG Selecting: iniconfig==2.3.1 [preference] (iniconfig-2.3.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of packaging (>=24)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/aiohappyeyeballs/
+DEBUG Selecting: packaging==26.3 [preference] (packaging-26.3-py3-none-any.whl)
+DEBUG Searching for a compatible version of pluggy (>=1.6, <2)
+DEBUG Selecting: pluggy==1.7.0 [preference] (pluggy-1.7.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of pygments (>=2.15, <3.0.0)
+DEBUG Selecting: pygments==2.21.0 [preference] (pygments-2.21.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/attrs/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/aiosignal/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/frozenlist/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/multidict/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/propcache/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/yarl/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/h2/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/markdown-it-py/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/anyio/
+WARN Skipping file for networkx: networkx-0.34-py2.4.egg
+WARN Skipping file for networkx: networkx-0.34-py2.5.egg
+WARN Skipping file for networkx: networkx-0.34.win32.exe
+WARN Skipping file for networkx: networkx-0.35-py2.4.egg
+WARN Skipping file for networkx: networkx-0.35-py2.5.egg
+WARN Skipping file for networkx: networkx-0.35.1-py2.4.egg
+WARN Skipping file for networkx: networkx-0.35.1-py2.5.egg
+WARN Skipping file for networkx: networkx-0.35.1.win32.exe
+WARN Skipping file for networkx: networkx-0.35.win32.exe
+WARN Skipping file for networkx: networkx-0.36-py2.4.egg
+WARN Skipping file for networkx: networkx-0.36-py2.5.egg
+WARN Skipping file for networkx: networkx-0.36.win32.exe
+WARN Skipping file for networkx: networkx-0.37-py2.4.egg
+WARN Skipping file for networkx: networkx-0.37-py2.5.egg
+WARN Skipping file for networkx: networkx-0.37.win32.exe
+WARN Skipping file for networkx: networkx-0.99-py2.4.egg
+WARN Skipping file for networkx: networkx-0.99-py2.5.egg
+WARN Skipping file for networkx: networkx-0.99.win32.exe
+WARN Skipping file for networkx: networkx-1.0-py2.6.egg
+WARN Skipping file for networkx: networkx-1.0.1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.0rc1-py2.4.egg
+WARN Skipping file for networkx: networkx-1.0rc1-py2.5.egg
+WARN Skipping file for networkx: networkx-1.0rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.1-py2.5.egg
+WARN Skipping file for networkx: networkx-1.1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.10-py2.7.egg
+WARN Skipping file for networkx: networkx-1.10-py3.4.egg
+WARN Skipping file for networkx: networkx-1.11-py2.7.egg
+WARN Skipping file for networkx: networkx-1.11-py3.4.egg
+WARN Skipping file for networkx: networkx-1.11rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.11rc1-py3.4.egg
+WARN Skipping file for networkx: networkx-1.11rc2-py2.7.egg
+WARN Skipping file for networkx: networkx-1.11rc2-py3.4.egg
+WARN Skipping file for networkx: networkx-1.2-py2.6.egg
+WARN Skipping file for networkx: networkx-1.2rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.3-py2.6.egg
+WARN Skipping file for networkx: networkx-1.3-py2.7.egg
+WARN Skipping file for networkx: networkx-1.3-py3.1.egg
+WARN Skipping file for networkx: networkx-1.3-py3.2.egg
+WARN Skipping file for networkx: networkx-1.3rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.3rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.3rc1-py3.1.egg
+WARN Skipping file for networkx: networkx-1.4-py2.6.egg
+WARN Skipping file for networkx: networkx-1.4-py2.7.egg
+WARN Skipping file for networkx: networkx-1.4-py3.1.egg
+WARN Skipping file for networkx: networkx-1.4-py3.2.egg
+WARN Skipping file for networkx: networkx-1.4rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.4rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.4rc1-py3.1.egg
+WARN Skipping file for networkx: networkx-1.4rc1-py3.2.egg
+WARN Skipping file for networkx: networkx-1.5-py2.6.egg
+WARN Skipping file for networkx: networkx-1.5-py2.7.egg
+WARN Skipping file for networkx: networkx-1.5-py3.1.egg
+WARN Skipping file for networkx: networkx-1.5-py3.2.egg
+WARN Skipping file for networkx: networkx-1.5rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.5rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.5rc1-py3.1.egg
+WARN Skipping file for networkx: networkx-1.5rc1-py3.2.egg
+WARN Skipping file for networkx: networkx-1.6-py2.6.egg
+WARN Skipping file for networkx: networkx-1.6-py2.7.egg
+WARN Skipping file for networkx: networkx-1.6-py3.1.egg
+WARN Skipping file for networkx: networkx-1.6-py3.2.egg
+WARN Skipping file for networkx: networkx-1.6rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.6rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.6rc1-py3.1.egg
+WARN Skipping file for networkx: networkx-1.6rc1-py3.2.egg
+WARN Skipping file for networkx: networkx-1.7-py2.6.egg
+WARN Skipping file for networkx: networkx-1.7-py2.7.egg
+WARN Skipping file for networkx: networkx-1.7-py3.2.egg
+WARN Skipping file for networkx: networkx-1.7rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.7rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.7rc1-py3.2.egg
+WARN Skipping file for networkx: networkx-1.8-py2.6.egg
+WARN Skipping file for networkx: networkx-1.8-py2.7.egg
+WARN Skipping file for networkx: networkx-1.8-py3.2.egg
+WARN Skipping file for networkx: networkx-1.8-py3.3.egg
+WARN Skipping file for networkx: networkx-1.8.1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.8.1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.8.1-py3.2.egg
+WARN Skipping file for networkx: networkx-1.8.1-py3.3.egg
+WARN Skipping file for networkx: networkx-1.8rc1-py2.6.egg
+WARN Skipping file for networkx: networkx-1.8rc1-py2.7.egg
+WARN Skipping file for networkx: networkx-1.8rc1-py3.2.egg
+WARN Skipping file for networkx: networkx-1.8rc1-py3.3.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/fsspec/fsspec-2026.9.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/networkx/networkx-3.6.1-py3-none-any.whl.metadata
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.4-linux-i686.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.4-linux-x86_64.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.4-macosx-10.3-i386.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.4-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.5-linux-i686.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.5-linux-x86_64.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.5-macosx-10.3-i386.egg
+WARN Skipping file for jinja2: Jinja2-2.0rc1-py2.5-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.1-py2.4-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.1-py2.5-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.1-py2.6-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.1.1-py2.4-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.1.1-py2.5-win32.egg
+WARN Skipping file for jinja2: Jinja2-2.1.1-py2.6-win32.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/jinja2/jinja2-3.1.6-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/aiohappyeyeballs/aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/aiosignal/aiosignal-1.4.0-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of filelock (*)
+DEBUG Selecting: filelock==4.2.4 [preference] (filelock-4.2.4-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/filelock/filelock-4.2.4-py3-none-any.whl.metadata
+WARN Skipping file for sympy: sympy-0.7.0.win32.exe
+WARN Skipping file for sympy: sympy-0.7.1.win32.exe
+WARN Skipping file for sympy: sympy-0.7.2-py3.2.tar.gz
+WARN Skipping file for sympy: sympy-0.7.2-py3.3.tar.gz
+WARN Skipping file for sympy: sympy-0.7.2.win32.exe
+WARN Skipping file for sympy: sympy-0.7.3-py2.5.tar.gz
+WARN Skipping file for sympy: sympy-0.7.3-py2.6.tar.gz
+WARN Skipping file for sympy: sympy-0.7.3-py2.7.tar.gz
+WARN Skipping file for sympy: sympy-0.7.3-py3.2.tar.gz
+WARN Skipping file for sympy: sympy-0.7.3-py3.3.tar.gz
+WARN Skipping file for sympy: sympy-0.7.3.win32.exe
+WARN Skipping file for sympy: sympy-1.0.win32.exe
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/attrs/attrs-26.1.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/python-multipart/python_multipart-0.0.32-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/sympy/sympy-1.14.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpx/httpx-0.28.1-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/gradio-client/gradio_client-2.7.2-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/h2/h2-4.4.1-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/starlette/starlette-1.10.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/uvicorn/uvicorn-0.54.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/huggingface-hub/huggingface_hub-2.3.0-py3-none-any.whl.metadata
+WARN Skipping file for setuptools: setuptools-0.6b1-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b1-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6b2-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b2-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6b3-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b3-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6b4-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b4-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c1-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c1-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.6.egg
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.6.exe
+WARN Skipping file for setuptools: setuptools-0.6c11-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.6.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.7.egg
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.6.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.7.exe
+WARN Skipping file for setuptools: setuptools-0.6c2-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c2-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c3-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c3-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c3-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c4-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c4-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c4-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c4-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c4.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c4.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c4.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c5-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c5-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c5-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c5-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c5.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c5.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c5.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c6-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c6-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c6-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c6-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c6.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c6.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c6.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c7-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c7-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c7-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c7-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c7.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c7.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c7.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c8-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c8-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c8-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c8-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c8.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c8.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c8.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c9-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.6.egg
+WARN Skipping file for setuptools: setuptools-0.6c9.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c9.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c9.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-18.3.1-py3.4.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/setuptools/setuptools-84.2.1-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/markdown-it-py/markdown_it_py-4.2.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/anyio/anyio-4.15.1-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of fsspec (>=0.8.5)
+DEBUG Selecting: fsspec==2026.9.0 [preference] (fsspec-2026.9.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of jinja2 (*)
+DEBUG Selecting: jinja2==3.1.6 [preference] (jinja2-3.1.6-py3-none-any.whl)
+DEBUG Adding transitive dependency for jinja2==3.1.6: markupsafe>=2.0
+DEBUG Searching for a compatible version of networkx (>=2.5.1)
+DEBUG Selecting: networkx==3.6.1 [preference] (networkx-3.6.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of setuptools (>=77.0.3)
+DEBUG Selecting: setuptools==84.2.1 [preference] (setuptools-84.2.1-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/markupsafe/
+DEBUG Searching for a compatible version of sympy (>=1.13.3)
+DEBUG Selecting: sympy==1.14.0 [preference] (sympy-1.14.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for sympy==1.14.0: mpmath>=1.1.0, <1.4
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/mpmath/
+DEBUG Searching for a compatible version of brotli (>=1.0.0, <2.0.0)
+DEBUG Selecting: brotli==1.2.1 [preference] (brotli-1.2.1-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/brotli/brotli-1.2.1-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/frozenlist/frozenlist-1.8.0-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/propcache/propcache-0.5.4-cp312-cp312-macosx_10_13_universal2.whl.metadata
+WARN Skipping file for pillow: Pillow-1.7.5-py2.4-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.5-py2.5-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.5-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.5-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.6-py2.4-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.6-py2.5-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.6-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.6-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.7-py2.4-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.7-py2.5-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.7-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.7-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.8-py2.4-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.8-py2.5-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.8-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-1.7.8-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-1.7.8-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-1.7.8-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.0.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.0.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.0.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.1.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.1.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.1.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.1.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.2.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.2.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.2.2-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.2.2-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.2.2.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.2.2.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.3.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.3.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.3.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.3.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.4.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.4.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.4.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.4.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.2-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.2-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.2.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.2.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.3-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.5.3-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.5.3.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.5.3.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.6.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.6.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.6.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.6.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.6.2-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.6.2-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.6.2.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.6.2.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.7.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.7.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.7.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.7.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.8.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.8.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.8.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.8.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.8.2-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.8.2-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.8.2.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.8.2.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.9.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-2.9.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-2.9.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-2.9.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.0.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.0.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.0.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.0.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.1.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.1.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.1.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.1.1-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.1.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.1.1.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.2.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.2.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.2.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.2.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.3.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.3.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.3.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.3.1-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.3.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.3.1.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.4.0-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.2-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.2-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.0.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win-amd64-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win32-py3.2.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.4.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.4.1-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.1-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.1.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.4.1.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.4.2-py2.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py2.6-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-3.4.2-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-3.4.2.win-amd64-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win32-py2.6.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-3.4.2.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.0.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.0.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-4.0.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.0.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.1.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.1.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.1.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.1.1-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-4.1.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.1.1.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.2.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.2.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.2.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.2.1-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-4.2.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.2.1.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.3.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.3-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.3-win32.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-4.3.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-4.3.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win-amd64-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win32-py3.3.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-4.3.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.0.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.0.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-5.0.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.0.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.1.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.1.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-5.1.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.1.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.2.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.2.0-py3.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.2.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win-amd64-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.2.0.win32-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.3.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.3.0-py3.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.3.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win-amd64-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.3.0.win32-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.4.0-py2.7-macosx-10.13-x86_64.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.0-py3.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.0.dev0-py3.7-macosx-10.13-x86_64.egg
+WARN Skipping file for pillow: Pillow-5.4.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win-amd64-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.4.0.win32-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.4.1-py2.7-macosx-10.13-x86_64.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.4-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.4-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-5.4.1-py3.7-win32.egg
+WARN Skipping file for pillow: Pillow-5.4.1.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win-amd64-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win-amd64-py3.7.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win32-py3.4.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-5.4.1.win32-py3.7.exe
+WARN Skipping file for pillow: Pillow-6.0.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py3.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.0.0-py3.7-win32.egg
+WARN Skipping file for pillow: Pillow-6.0.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win-amd64-py3.7.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-6.0.0.win32-py3.7.exe
+WARN Skipping file for pillow: Pillow-6.1.0-py2.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py2.7-win32.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.5-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.5-win32.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.6-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.6-win32.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.7-macosx-10.14-x86_64.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.7-win-amd64.egg
+WARN Skipping file for pillow: Pillow-6.1.0-py3.7-win32.egg
+WARN Skipping file for pillow: Pillow-6.1.0.win-amd64-py2.7.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win-amd64-py3.5.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win-amd64-py3.6.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win-amd64-py3.7.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win32-py2.7.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win32-py3.5.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win32-py3.6.exe
+WARN Skipping file for pillow: Pillow-6.1.0.win32-py3.7.exe
+WARN Skipping file for pillow: Pillow-7.1.0-py3.8-macosx-10.9-x86_64.egg
+WARN Skipping file for pillow: Pillow-7.1.1-py3.8-macosx-10.9-x86_64.egg
+WARN Skipping file for pillow: Pillow-7.1.2-py3.8-macosx-10.9-x86_64.egg
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pillow/pillow-12.3.0-cp312-cp312-macosx_10_13_x86_64.whl.metadata
+DEBUG Searching for a compatible version of gradio-client (>=2.0.0, <3.0.0)
+DEBUG Selecting: gradio-client==2.7.2 [preference] (gradio_client-2.7.2-py3-none-any.whl)
+DEBUG Adding transitive dependency for gradio-client==2.7.2: fsspec*
+DEBUG Adding transitive dependency for gradio-client==2.7.2: httpx>=0.24.1
+DEBUG Adding transitive dependency for gradio-client==2.7.2: huggingface-hub>=1.16.0, <3.0
+DEBUG Adding transitive dependency for gradio-client==2.7.2: packaging*
+DEBUG Adding transitive dependency for gradio-client==2.7.2: typing-extensions>=4.0, <5.dev0
+DEBUG Searching for a compatible version of httpx (>=0.24.1, <1)
+DEBUG Selecting: httpx==0.28.1 [preference] (httpx-0.28.1-py3-none-any.whl)
+WARN Skipping file for mpmath: mpmath-0.10.win32.exe
+WARN Skipping file for mpmath: mpmath-0.11.win32.exe
+WARN Skipping file for mpmath: mpmath-0.12.win32.exe
+WARN Skipping file for mpmath: mpmath-0.13.win32.exe
+WARN Skipping file for mpmath: mpmath-0.14.win32.exe
+WARN Skipping file for mpmath: mpmath-0.15.win32.exe
+WARN Skipping file for mpmath: mpmath-0.16.win32-py2.6.msi
+WARN Skipping file for mpmath: mpmath-0.17.win32.exe
+DEBUG Adding transitive dependency for httpx==0.28.1: anyio*
+DEBUG Adding transitive dependency for httpx==0.28.1: certifi*
+DEBUG Adding transitive dependency for httpx==0.28.1: httpcore>=1.dev0, <2.dev0
+DEBUG Adding transitive dependency for httpx==0.28.1: idna*
+DEBUG Searching for a compatible version of huggingface-hub (>=1.16.0, <3)
+DEBUG Selecting: huggingface-hub==2.3.0 [preference] (huggingface_hub-2.3.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: click>=8.4.2, <9.0.0
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: filelock>=3.10.0
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: fsspec>=2023.5.0
+WARN Skipping file for mpmath: mpmath-0.2.win32.exe
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'}>=1.6.0, <2.0.0
+WARN Skipping file for mpmath: mpmath-0.3.win32.exe
+WARN Skipping file for mpmath: mpmath-0.4.src.zip
+WARN Skipping file for mpmath: mpmath-0.4.win32.exe
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: httpx2>=2.0.0, <3
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: packaging>=20.9
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: pyyaml>=5.1
+WARN Skipping file for mpmath: mpmath-0.5.win32.exe
+WARN Skipping file for mpmath: mpmath-0.6.win32.exe
+WARN Skipping file for mpmath: mpmath-0.7.win32.exe
+WARN Skipping file for mpmath: mpmath-0.8.win32.exe
+WARN Skipping file for mpmath: mpmath-0.9.win32.exe
+WARN Skipping file for mpmath: mpmath-all-0.17.tar.gz
+WARN Skipping file for mpmath: mpmath-all-0.18.tar.gz
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: tqdm>=4.42.1
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: typing-extensions>=4.1.0
+WARN Skipping file for mpmath: mpmath-all-0.19.tar.gz
+WARN Skipping file for mpmath: mpmath-docsrc-0.16.tar.gz
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpcore/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/hf-xet/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/idna/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pyyaml/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/tqdm/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpx2/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/mpmath/mpmath-1.3.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/yarl/yarl-1.25.1-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/idna/idna-3.20-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpx2/httpx2-2.16.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpcore/httpcore-1.0.9-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/markupsafe/markupsafe-3.0.4-cp312-cp312-macosx_10_13_x86_64.whl.metadata
+WARN Skipping file for tqdm: tqdm-2.0.0.win32.exe
+WARN Skipping file for tqdm: tqdm-2.2.3.win32.exe
+WARN Skipping file for tqdm: tqdm-2.2.4.win32.exe
+WARN Skipping file for tqdm: tqdm-3.1.3.win32.exe
+WARN Skipping file for tqdm: tqdm-3.1.4.win32.exe
+WARN Skipping file for tqdm: tqdm-3.4.0.win32.exe
+WARN Skipping file for tqdm: tqdm-3.7.0.win32.exe
+WARN Skipping file for tqdm: tqdm-3.7.1.win32.exe
+WARN Skipping file for tqdm: tqdm-3.8.0.win32.exe
+WARN Skipping file for tqdm: tqdm-4.11.1.win-amd64.exe
+WARN Skipping file for tqdm: tqdm-4.4.0.win-amd64.exe
+WARN Skipping file for tqdm: tqdm-4.4.0.win-amd64.msi
+WARN Skipping file for tqdm: tqdm-4.4.0.win32.exe
+WARN Skipping file for tqdm: tqdm-4.4.0.win32.msi
+WARN Skipping file for tqdm: tqdm-4.6.1.win32.exe
+WARN Skipping file for tqdm: tqdm-4.6.2.win32.exe
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/tqdm/tqdm-4.70.1-py3-none-any.whl.metadata
+WARN Skipping file for pyyaml: PyYAML-3.10.win32-py2.5.exe
+WARN Skipping file for pyyaml: PyYAML-3.10.win32-py2.6.exe
+WARN Skipping file for pyyaml: PyYAML-3.10.win32-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-3.10.win32-py3.0.exe
+WARN Skipping file for pyyaml: PyYAML-3.10.win32-py3.1.exe
+WARN Skipping file for pyyaml: PyYAML-3.10.win32-py3.2.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win-amd64-py2.6.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win-amd64-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win-amd64-py3.1.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win-amd64-py3.2.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win-amd64-py3.3.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win-amd64-py3.4.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win32-py2.6.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win32-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win32-py3.1.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win32-py3.2.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win32-py3.3.exe
+WARN Skipping file for pyyaml: PyYAML-3.11.win32-py3.4.exe
+WARN Skipping file for pyyaml: PyYAML-3.12.win-amd64-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-3.12.win-amd64-py3.4.exe
+WARN Skipping file for pyyaml: PyYAML-3.12.win-amd64-py3.5.exe
+WARN Skipping file for pyyaml: PyYAML-3.12.win32-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-3.12.win32-py3.4.exe
+WARN Skipping file for pyyaml: PyYAML-3.12.win32-py3.5.exe
+WARN Skipping file for pyyaml: PyYAML-4.2b4.win-amd64-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-4.2b4.win-amd64-py3.4.exe
+WARN Skipping file for pyyaml: PyYAML-4.2b4.win32-py2.7.exe
+WARN Skipping file for pyyaml: PyYAML-4.2b4.win32-py3.4.exe
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/pyyaml/pyyaml-6.0.3-cp312-cp312-macosx_10_13_x86_64.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/hf-xet/hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl.metadata
+DEBUG Searching for a compatible version of orjson (>=3.0, <4.0.0)
+DEBUG Selecting: orjson==3.13.0 [preference] (orjson-3.13.0-cp312-cp312-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/orjson/orjson-3.13.0-cp312-cp312-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/multidict/multidict-7.2.1-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG Searching for a compatible version of pillow (<13.0.0)
+DEBUG Selecting: pillow==12.3.0 [preference] (pillow-12.3.0-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of python-multipart (>=0.0.9, <1.0.0)
+DEBUG Selecting: python-multipart==0.0.32 [preference] (python_multipart-0.0.32-py3-none-any.whl)
+DEBUG Searching for a compatible version of starlette (<2.0.0)
+DEBUG Selecting: starlette==1.10.0 [preference] (starlette-1.10.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for starlette==1.10.0: anyio>=4.0.0, <5
+DEBUG Adding transitive dependency for starlette==1.10.0: typing-extensions{python_full_version < '3.13'}>=4.10.0
+DEBUG Searching for a compatible version of uvicorn[standard] (>=0.30.0, <1.0.0)
+DEBUG Selecting: uvicorn==0.54.0 [preference] (uvicorn-0.54.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for uvicorn==0.54.0: uvicorn==0.54.0
+DEBUG Adding transitive dependency for uvicorn==0.54.0: uvicorn[standard]==0.54.0
+DEBUG Searching for a compatible version of uvicorn (==0.54.0)
+DEBUG Selecting: uvicorn==0.54.0 [preference] (uvicorn-0.54.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for uvicorn==0.54.0: click>=7.0
+DEBUG Adding transitive dependency for uvicorn==0.54.0: h11>=0.8
+DEBUG Searching for a compatible version of uvicorn[standard] (==0.54.0)
+DEBUG Selecting: uvicorn==0.54.0 [preference] (uvicorn-0.54.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for uvicorn==0.54.0: httptools>=0.8.0
+DEBUG Adding transitive dependency for uvicorn==0.54.0: python-dotenv>=0.13
+DEBUG Adding transitive dependency for uvicorn==0.54.0: pyyaml>=5.1
+DEBUG Adding transitive dependency for uvicorn==0.54.0: uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'}>=0.15.1
+DEBUG Adding transitive dependency for uvicorn==0.54.0: watchfiles>=0.20
+DEBUG Adding transitive dependency for uvicorn==0.54.0: websockets>=13.0
+DEBUG Searching for a compatible version of aiohappyeyeballs (>=2.5.0)
+DEBUG Selecting: aiohappyeyeballs==2.7.1 [preference] (aiohappyeyeballs-2.7.1-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/h11/
+DEBUG Searching for a compatible version of aiosignal (>=1.4.0)
+DEBUG Selecting: aiosignal==1.4.0 [preference] (aiosignal-1.4.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for aiosignal==1.4.0: frozenlist>=1.1.0
+DEBUG Adding transitive dependency for aiosignal==1.4.0: typing-extensions{python_full_version < '3.13'}>=4.2
+DEBUG Searching for a compatible version of attrs (>=17.3.0)
+DEBUG Selecting: attrs==26.1.0 [preference] (attrs-26.1.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of frozenlist (>=1.1.1)
+DEBUG Selecting: frozenlist==1.8.0 [preference] (frozenlist-1.8.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of multidict (>=4.5, <8.0)
+DEBUG Selecting: multidict==7.2.1 [preference] (multidict-7.2.1-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httptools/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/python-dotenv/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/uvloop/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/websockets/
+DEBUG Searching for a compatible version of propcache (>=0.2.0)
+DEBUG Selecting: propcache==0.5.4 [preference] (propcache-0.5.4-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of yarl (>=1.25.1, <2.0)
+DEBUG Selecting: yarl==1.25.1 [preference] (yarl-1.25.1-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Adding transitive dependency for yarl==1.25.1: idna>=2.0
+DEBUG Adding transitive dependency for yarl==1.25.1: multidict>=4.0
+DEBUG Adding transitive dependency for yarl==1.25.1: propcache>=0.2.1
+DEBUG Searching for a compatible version of h2 (>=3.1.0, <5)
+DEBUG Selecting: h2==4.4.1 [preference] (h2-4.4.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for h2==4.4.1: hpack>=4.2, <5
+DEBUG Adding transitive dependency for h2==4.4.1: hyperframe>=6.1, <7
+DEBUG Searching for a compatible version of markdown-it-py (>=2.2.0)
+DEBUG Selecting: markdown-it-py==4.2.0 [preference] (markdown_it_py-4.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for markdown-it-py==4.2.0: mdurl>=0.1, <1.dev0
+DEBUG Searching for a compatible version of anyio (>=4.0.0, <5)
+DEBUG Selecting: anyio==4.15.1 [preference] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for anyio==4.15.1: idna>=2.8
+DEBUG Adding transitive dependency for anyio==4.15.1: typing-extensions{python_full_version < '3.15'}>=4.16.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.15'} (>=4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/hpack/
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions==4.16.0
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions{python_full_version < '3.15'}==4.16.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.15'} (==4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of markupsafe (>=2.0)
+DEBUG Selecting: markupsafe==3.0.4 [preference] (markupsafe-3.0.4-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of mpmath (>=1.1.0, <1.4)
+DEBUG Selecting: mpmath==1.3.0 [preference] (mpmath-1.3.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/mdurl/
+DEBUG Searching for a compatible version of httpcore (>=1.dev0, <2.dev0)
+DEBUG Selecting: httpcore==1.0.9 [preference] (httpcore-1.0.9-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/hyperframe/
+DEBUG Adding transitive dependency for httpcore==1.0.9: certifi*
+DEBUG Adding transitive dependency for httpcore==1.0.9: h11>=0.16
+DEBUG Searching for a compatible version of idna (>=2.8)
+DEBUG Selecting: idna==3.20 [preference] (idna-3.20-py3-none-any.whl)
+DEBUG Searching for a compatible version of hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'} (>=1.6.0, <2.0.0)
+DEBUG Selecting: hf-xet==1.7.0 [preference] (hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl)
+DEBUG Adding transitive dependency for hf-xet==1.7.0: hf-xet==1.7.0
+DEBUG Adding transitive dependency for hf-xet==1.7.0: hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'}==1.7.0
+DEBUG Searching for a compatible version of hf-xet (==1.7.0)
+DEBUG Selecting: hf-xet==1.7.0 [preference] (hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl)
+DEBUG Searching for a compatible version of hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'} (==1.7.0)
+DEBUG Selecting: hf-xet==1.7.0 [preference] (hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl)
+DEBUG Searching for a compatible version of httpx2 (>=2.0.0, <3)
+DEBUG Selecting: httpx2==2.16.0 [preference] (httpx2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpx2==2.16.0: anyio{sys_platform != 'emscripten'}>=4.10
+DEBUG Adding transitive dependency for httpx2==2.16.0: httpcore2{sys_platform != 'emscripten'}>=2.16.0, <2.16.0+
+DEBUG Adding transitive dependency for httpx2==2.16.0: idna>=3.18
+DEBUG Adding transitive dependency for httpx2==2.16.0: truststore{sys_platform != 'emscripten'}>=0.10
+DEBUG Adding transitive dependency for httpx2==2.16.0: typing-extensions{python_full_version < '3.13'}>=4.5.0
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpcore2/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/truststore/
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/h11/h11-0.16.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/python-dotenv/python_dotenv-1.2.4-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httptools/httptools-0.9.0-cp312-cp312-macosx_11_0_arm64.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/uvloop/uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/hpack/hpack-4.2.0-py3-none-any.whl.metadata
+DEBUG Searching for a compatible version of httpcore2{sys_platform != 'emscripten'} (>=2.16.0, <2.16.0+)
+DEBUG Selecting: httpcore2==2.16.0 [preference] (httpcore2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpcore2==2.16.0: httpcore2==2.16.0
+DEBUG Adding transitive dependency for httpcore2==2.16.0: httpcore2{sys_platform != 'emscripten'}==2.16.0
+DEBUG Searching for a compatible version of httpcore2 (==2.16.0)
+DEBUG Selecting: httpcore2==2.16.0 [preference] (httpcore2-2.16.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/truststore/truststore-0.10.5-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/mdurl/mdurl-0.1.2-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/hyperframe/hyperframe-6.1.0-py3-none-any.whl.metadata
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/httpcore2/httpcore2-2.16.0-py3-none-any.whl.metadata
+DEBUG Adding transitive dependency for httpcore2==2.16.0: h11>=0.16
+DEBUG Adding transitive dependency for httpcore2==2.16.0: truststore>=0.10
+DEBUG Searching for a compatible version of httpcore2{sys_platform != 'emscripten'} (==2.16.0)
+DEBUG Selecting: httpcore2==2.16.0 [preference] (httpcore2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpcore2==2.16.0: h11>=0.16
+DEBUG Adding transitive dependency for httpcore2==2.16.0: truststore>=0.10
+DEBUG Searching for a compatible version of anyio{sys_platform != 'emscripten'} (>=4.10)
+DEBUG Selecting: anyio==4.15.1 [preference] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for anyio==4.15.1: anyio==4.15.1
+DEBUG Adding transitive dependency for anyio==4.15.1: anyio{sys_platform != 'emscripten'}==4.15.1
+DEBUG Searching for a compatible version of anyio{sys_platform != 'emscripten'} (==4.15.1)
+DEBUG Selecting: anyio==4.15.1 [preference] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for anyio==4.15.1: idna>=2.8
+DEBUG Adding transitive dependency for anyio==4.15.1: typing-extensions{python_full_version < '3.15'}>=4.16.0
+DEBUG Searching for a compatible version of pyyaml (>=5.1)
+DEBUG Selecting: pyyaml==6.0.3 [preference] (pyyaml-6.0.3-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of tqdm (>=4.42.1)
+DEBUG Selecting: tqdm==4.70.1 [preference] (tqdm-4.70.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of h11 (>=0.16)
+DEBUG Selecting: h11==0.16.0 [preference] (h11-0.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of httptools (>=0.8.0)
+DEBUG Selecting: httptools==0.9.0 [preference] (httptools-0.9.0-cp312-cp312-macosx_11_0_arm64.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/websockets/websockets-17.3-cp312-cp312-macosx_10_13_universal2.whl.metadata
+DEBUG Searching for a compatible version of python-dotenv (>=0.13)
+DEBUG Selecting: python-dotenv==1.2.4 [preference] (python_dotenv-1.2.4-py3-none-any.whl)
+DEBUG Searching for a compatible version of uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'} (>=0.15.1)
+DEBUG Selecting: uvloop==0.23.0 [preference] (uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Adding transitive dependency for uvloop==0.23.0: uvloop==0.23.0
+DEBUG Adding transitive dependency for uvloop==0.23.0: uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'}==0.23.0
+DEBUG Searching for a compatible version of uvloop (==0.23.0)
+DEBUG Selecting: uvloop==0.23.0 [preference] (uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'} (==0.23.0)
+DEBUG Selecting: uvloop==0.23.0 [preference] (uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of websockets (>=13.0)
+DEBUG Selecting: websockets==17.3 [preference] (websockets-17.3-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of hpack (>=4.2, <5)
+DEBUG Selecting: hpack==4.2.0 [preference] (hpack-4.2.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of hyperframe (>=6.1, <7)
+DEBUG Selecting: hyperframe==6.1.0 [preference] (hyperframe-6.1.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of mdurl (>=0.1, <1.dev0)
+DEBUG Selecting: mdurl==0.1.2 [preference] (mdurl-0.1.2-py3-none-any.whl)
+DEBUG Searching for a compatible version of truststore{sys_platform != 'emscripten'} (>=0.10)
+DEBUG Selecting: truststore==0.10.5 [preference] (truststore-0.10.5-py3-none-any.whl)
+DEBUG Adding transitive dependency for truststore==0.10.5: truststore==0.10.5
+DEBUG Adding transitive dependency for truststore==0.10.5: truststore{sys_platform != 'emscripten'}==0.10.5
+DEBUG Searching for a compatible version of truststore (==0.10.5)
+DEBUG Selecting: truststore==0.10.5 [preference] (truststore-0.10.5-py3-none-any.whl)
+DEBUG Searching for a compatible version of truststore{sys_platform != 'emscripten'} (==0.10.5)
+DEBUG Selecting: truststore==0.10.5 [preference] (truststore-0.10.5-py3-none-any.whl)
+DEBUG Tried 73 versions: aiohappyeyeballs 1, aiohttp 1, aiosignal 1, anyio 1, attrs 1, brotli 1, cbor2 1, certifi 1, click 1, cloudpickle 1, evolved-intrinsic-rewards 1, farama-notifications 1, filelock 1, frozenlist 1, fsspec 1, gradio-client 1, grpclib 1, gymnasium 1, h11 1, h2 1, hf-xet 1, hpack 1, httpcore 1, httpcore2 1, httptools 1, httpx 1, httpx2 1, huggingface-hub 1, hyperframe 1, idna 1, iniconfig 1, jinja2 1, markdown-it-py 1, markupsafe 1, mdurl 1, minigrid 1, modal 1, mpmath 1, multidict 1, networkx 1, numpy 1, orjson 1, packaging 1, pillow 1, pluggy 1, propcache 1, protobuf 1, pygame-ce 1, pygments 1, pytest 1, python-dotenv 1, python-multipart 1, pyyaml 1, rich 1, scipy 1, setuptools 1, starlette 1, sympy 1, synchronicity 1, toml 1, tomli-w 1, torch 1, tqdm 1, trackio 1, truststore 1, types-certifi 1, types-toml 1, typing-extensions 1, uvicorn 1, uvloop 1, watchfiles 1, websockets 1, yarl 1
+DEBUG split `python_full_version == '3.12.*' and platform_machine == 'x86_64' and sys_platform == 'linux'` resolution took 0.717s
+DEBUG Solving split (markers: python_full_version == '3.12.*' and platform_machine == 'arm64' and sys_platform == 'darwin') (requires-python: RequiresPython { specifiers: VersionSpecifiers([VersionSpecifier { operator: EqualStar, version: "3.12" }]), range: RequiresPythonRange(LowerBound(Included("3.12")), UpperBound(Excluded("3.13"))) })
+DEBUG Adding direct dependency: evolved-intrinsic-rewards*
+DEBUG Searching for a compatible version of evolved-intrinsic-rewards @ file:///.uv (*)
+DEBUG Adding direct dependency: gymnasium>=1.4.0, <1.4.0+
+DEBUG Adding direct dependency: minigrid>=3.2.0, <3.2.0+
+DEBUG Adding direct dependency: modal>=1.6.3, <1.6.3+
+DEBUG Adding direct dependency: numpy>=2.5.4, <2.5.4+
+DEBUG Adding direct dependency: pytest>=9.2.0, <9.2.0+
+DEBUG Adding direct dependency: scipy>=1.17.1, <1.17.1+
+DEBUG Adding direct dependency: tomli-w>=1.2.0, <1.2.0+
+DEBUG Adding direct dependency: torch{sys_platform != 'linux'}>=2.14.1, <2.14.1+
+DEBUG Adding direct dependency: trackio>=0.43.0, <0.43.0+
+DEBUG Searching for a compatible version of gymnasium (>=1.4.0, <1.4.0+)
+DEBUG Selecting: gymnasium==1.4.0 [preference] (gymnasium-1.4.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for gymnasium==1.4.0: cloudpickle>=1.2.0
+DEBUG Adding transitive dependency for gymnasium==1.4.0: farama-notifications>=0.0.1
+DEBUG Adding transitive dependency for gymnasium==1.4.0: numpy>=1.22.0
+DEBUG Adding transitive dependency for gymnasium==1.4.0: typing-extensions>=4.12.0
+DEBUG Searching for a compatible version of minigrid (>=3.2.0, <3.2.0+)
+DEBUG Selecting: minigrid==3.2.0 [preference] (minigrid-3.2.0-py3-none-any.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/torch/
+DEBUG Adding transitive dependency for minigrid==3.2.0: gymnasium>=0.28.1
+DEBUG Adding transitive dependency for minigrid==3.2.0: numpy>=1.18.0
+DEBUG Adding transitive dependency for minigrid==3.2.0: pygame-ce>=2.4.0
+DEBUG Searching for a compatible version of modal (>=1.6.3, <1.6.3+)
+DEBUG Selecting: modal==1.6.3 [preference] (modal-1.6.3-py3-none-any.whl)
+DEBUG Adding transitive dependency for modal==1.6.3: aiohttp*
+DEBUG Adding transitive dependency for modal==1.6.3: cbor2*
+DEBUG Adding transitive dependency for modal==1.6.3: certifi*
+DEBUG Adding transitive dependency for modal==1.6.3: click>=8.1, <9.dev0
+DEBUG Adding transitive dependency for modal==1.6.3: grpclib{python_full_version < '3.14'}>=0.4.7, <0.4.10
+DEBUG Adding transitive dependency for modal==1.6.3: protobuf>=3.19, <4.24.0 | >=4.24.0+, <8.0
+DEBUG Adding transitive dependency for modal==1.6.3: rich>=12.0.0
+DEBUG Adding transitive dependency for modal==1.6.3: synchronicity>=0.12.7, <0.13.dev0
+DEBUG Adding transitive dependency for modal==1.6.3: toml*
+DEBUG Adding transitive dependency for modal==1.6.3: types-certifi*
+DEBUG Adding transitive dependency for modal==1.6.3: types-toml*
+DEBUG Adding transitive dependency for modal==1.6.3: typing-extensions>=4.6, <5.dev0
+DEBUG Adding transitive dependency for modal==1.6.3: watchfiles*
+DEBUG Searching for a compatible version of numpy (>=2.5.4, <2.5.4+)
+DEBUG Selecting: numpy==2.5.4 [preference] (numpy-2.5.4-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of pytest (>=9.2.0, <9.2.0+)
+DEBUG Selecting: pytest==9.2.0 [preference] (pytest-9.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for pytest==9.2.0: iniconfig>=2
+DEBUG Adding transitive dependency for pytest==9.2.0: packaging>=24
+DEBUG Adding transitive dependency for pytest==9.2.0: pluggy>=1.6, <2
+DEBUG Adding transitive dependency for pytest==9.2.0: pygments>=2.15
+DEBUG Searching for a compatible version of scipy (>=1.17.1, <1.17.1+)
+DEBUG Selecting: scipy==1.17.1 [preference] (scipy-1.17.1-cp312-cp312-macosx_10_14_x86_64.whl)
+DEBUG Adding transitive dependency for scipy==1.17.1: numpy>=1.26.4, <2.7
+DEBUG Searching for a compatible version of tomli-w (>=1.2.0, <1.2.0+)
+DEBUG Selecting: tomli-w==1.2.0 [preference] (tomli_w-1.2.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of torch{sys_platform != 'linux'} (>=2.14.1, <2.14.1+)
+DEBUG Selecting: torch==2.14.1 [preference] (torch-2.14.1-cp312-cp312-macosx_14_0_arm64.whl)
+DEBUG Adding transitive dependency for torch==2.14.1: torch==2.14.1
+DEBUG Adding transitive dependency for torch==2.14.1: torch{sys_platform != 'linux'}==2.14.1
+DEBUG Searching for a compatible version of torch (==2.14.1)
+DEBUG Selecting: torch==2.14.1 [preference] (torch-2.14.1-cp312-cp312-macosx_14_0_arm64.whl)
+DEBUG No cache entry for: http://pypi-mirror.modal.local:5555/simple/torch/torch-2.14.1-cp312-cp312-macosx_14_0_arm64.whl.metadata
+DEBUG Adding transitive dependency for torch==2.14.1: filelock*
+DEBUG Adding transitive dependency for torch==2.14.1: fsspec>=0.8.5
+DEBUG Adding transitive dependency for torch==2.14.1: jinja2*
+DEBUG Adding transitive dependency for torch==2.14.1: networkx>=2.5.1
+DEBUG Adding transitive dependency for torch==2.14.1: setuptools>=77.0.3
+DEBUG Adding transitive dependency for torch==2.14.1: sympy>=1.13.3
+DEBUG Adding transitive dependency for torch==2.14.1: typing-extensions>=4.10.0
+DEBUG Searching for a compatible version of torch{sys_platform != 'linux'} (==2.14.1)
+DEBUG Selecting: torch==2.14.1 [preference] (torch-2.14.1-cp312-cp312-macosx_14_0_arm64.whl)
+DEBUG Adding transitive dependency for torch==2.14.1: filelock*
+DEBUG Adding transitive dependency for torch==2.14.1: fsspec>=0.8.5
+DEBUG Adding transitive dependency for torch==2.14.1: jinja2*
+DEBUG Adding transitive dependency for torch==2.14.1: networkx>=2.5.1
+DEBUG Adding transitive dependency for torch==2.14.1: setuptools>=77.0.3
+DEBUG Adding transitive dependency for torch==2.14.1: sympy>=1.13.3
+DEBUG Adding transitive dependency for torch==2.14.1: typing-extensions>=4.10.0
+DEBUG Searching for a compatible version of trackio (>=0.43.0, <0.43.0+)
+DEBUG Selecting: trackio==0.43.0 [preference] (trackio-0.43.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for trackio==0.43.0: brotli>=1.0.0, <2.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: gradio-client>=2.0.0, <3.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: httpx>=0.24.1, <1
+DEBUG Adding transitive dependency for trackio==0.43.0: huggingface-hub>=1.10.0, <3
+DEBUG Adding transitive dependency for trackio==0.43.0: numpy<3.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: orjson>=3.0, <4.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: pillow<13.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: python-multipart>=0.0.9, <1.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: starlette<2.0.0
+DEBUG Adding transitive dependency for trackio==0.43.0: uvicorn[standard]>=0.30.0, <1.0.0
+DEBUG Searching for a compatible version of cloudpickle (>=1.2.0)
+DEBUG Selecting: cloudpickle==3.1.2 [preference] (cloudpickle-3.1.2-py3-none-any.whl)
+DEBUG Searching for a compatible version of farama-notifications (>=0.0.1)
+DEBUG Selecting: farama-notifications==0.0.6 [preference] (farama_notifications-0.0.6-py3-none-any.whl)
+DEBUG Searching for a compatible version of typing-extensions (>=4.12.0, <5.dev0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of pygame-ce (>=2.4.0)
+DEBUG Selecting: pygame-ce==2.5.8 [preference] (pygame_ce-2.5.8-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of aiohttp (*)
+DEBUG Selecting: aiohttp==3.14.5 [preference] (aiohttp-3.14.5-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Adding transitive dependency for aiohttp==3.14.5: aiohappyeyeballs>=2.5.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: aiosignal>=1.4.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: attrs>=17.3.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: frozenlist>=1.1.1
+DEBUG Adding transitive dependency for aiohttp==3.14.5: multidict>=4.5, <8.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: propcache>=0.2.0
+DEBUG Adding transitive dependency for aiohttp==3.14.5: typing-extensions{python_full_version < '3.13'}>=4.4
+DEBUG Adding transitive dependency for aiohttp==3.14.5: yarl>=1.25.1, <2.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.13'} (>=4.4)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions==4.16.0
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions{python_full_version < '3.13'}==4.16.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.13'} (==4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of cbor2 (*)
+DEBUG Selecting: cbor2==6.1.5 [preference] (cbor2-6.1.5-cp312-cp312-macosx_11_0_arm64.whl)
+DEBUG Searching for a compatible version of certifi (*)
+DEBUG Selecting: certifi==2026.10.23 [preference] (certifi-2026.10.23-py3-none-any.whl)
+DEBUG Searching for a compatible version of click (>=8.1, <9.dev0)
+DEBUG Selecting: click==8.5.0 [preference] (click-8.5.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of grpclib{python_full_version < '3.14'} (>=0.4.7, <0.4.10)
+DEBUG Selecting: grpclib==0.4.9 [preference] (grpclib-0.4.9-py3-none-any.whl)
+DEBUG Adding transitive dependency for grpclib==0.4.9: grpclib==0.4.9
+DEBUG Adding transitive dependency for grpclib==0.4.9: grpclib{python_full_version < '3.14'}==0.4.9
+DEBUG Searching for a compatible version of grpclib (==0.4.9)
+DEBUG Selecting: grpclib==0.4.9 [preference] (grpclib-0.4.9-py3-none-any.whl)
+DEBUG Adding transitive dependency for grpclib==0.4.9: h2>=3.1.0, <5
+DEBUG Adding transitive dependency for grpclib==0.4.9: multidict*
+DEBUG Searching for a compatible version of grpclib{python_full_version < '3.14'} (==0.4.9)
+DEBUG Selecting: grpclib==0.4.9 [preference] (grpclib-0.4.9-py3-none-any.whl)
+DEBUG Adding transitive dependency for grpclib==0.4.9: h2>=3.1.0, <5
+DEBUG Adding transitive dependency for grpclib==0.4.9: multidict*
+DEBUG Searching for a compatible version of protobuf (>=3.19, <4.24.0 | >=4.24.0+, <8.0)
+DEBUG Selecting: protobuf==7.36.2 [preference] (protobuf-7.36.2-cp310-abi3-macosx_10_9_universal2.whl)
+DEBUG Searching for a compatible version of rich (>=12.0.0)
+DEBUG Selecting: rich==15.0.0 [preference] (rich-15.0.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for rich==15.0.0: markdown-it-py>=2.2.0
+DEBUG Adding transitive dependency for rich==15.0.0: pygments>=2.13.0, <3.0.0
+DEBUG Searching for a compatible version of synchronicity (>=0.12.7, <0.13.dev0)
+DEBUG Selecting: synchronicity==0.12.7 [preference] (synchronicity-0.12.7-py3-none-any.whl)
+DEBUG Adding transitive dependency for synchronicity==0.12.7: typing-extensions>=4.12.2
+DEBUG Searching for a compatible version of toml (*)
+DEBUG Selecting: toml==0.10.2 [preference] (toml-0.10.2-py2.py3-none-any.whl)
+DEBUG Searching for a compatible version of types-certifi (*)
+DEBUG Selecting: types-certifi==2021.10.8.3 [preference] (types_certifi-2021.10.8.3-py3-none-any.whl)
+DEBUG Searching for a compatible version of types-toml (*)
+DEBUG Selecting: types-toml==0.10.8.20260518 [preference] (types_toml-0.10.8.20260518-py3-none-any.whl)
+DEBUG Searching for a compatible version of watchfiles (*)
+DEBUG Selecting: watchfiles==1.3.0 [preference] (watchfiles-1.3.0-cp310-abi3-macosx_10_12_x86_64.whl)
+DEBUG Adding transitive dependency for watchfiles==1.3.0: anyio>=3.0.0
+DEBUG Searching for a compatible version of iniconfig (>=2)
+DEBUG Selecting: iniconfig==2.3.1 [preference] (iniconfig-2.3.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of packaging (>=24)
+DEBUG Selecting: packaging==26.3 [preference] (packaging-26.3-py3-none-any.whl)
+DEBUG Searching for a compatible version of pluggy (>=1.6, <2)
+DEBUG Selecting: pluggy==1.7.0 [preference] (pluggy-1.7.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of pygments (>=2.15, <3.0.0)
+DEBUG Selecting: pygments==2.21.0 [preference] (pygments-2.21.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of filelock (*)
+DEBUG Selecting: filelock==4.2.4 [preference] (filelock-4.2.4-py3-none-any.whl)
+DEBUG Searching for a compatible version of fsspec (>=0.8.5)
+DEBUG Selecting: fsspec==2026.9.0 [preference] (fsspec-2026.9.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of jinja2 (*)
+DEBUG Selecting: jinja2==3.1.6 [preference] (jinja2-3.1.6-py3-none-any.whl)
+DEBUG Adding transitive dependency for jinja2==3.1.6: markupsafe>=2.0
+DEBUG Searching for a compatible version of networkx (>=2.5.1)
+DEBUG Selecting: networkx==3.6.1 [preference] (networkx-3.6.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of setuptools (>=77.0.3)
+DEBUG Selecting: setuptools==84.2.1 [preference] (setuptools-84.2.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of sympy (>=1.13.3)
+DEBUG Selecting: sympy==1.14.0 [preference] (sympy-1.14.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for sympy==1.14.0: mpmath>=1.1.0, <1.4
+DEBUG Searching for a compatible version of brotli (>=1.0.0, <2.0.0)
+DEBUG Selecting: brotli==1.2.1 [preference] (brotli-1.2.1-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of gradio-client (>=2.0.0, <3.0.0)
+DEBUG Selecting: gradio-client==2.7.2 [preference] (gradio_client-2.7.2-py3-none-any.whl)
+DEBUG Adding transitive dependency for gradio-client==2.7.2: fsspec*
+DEBUG Adding transitive dependency for gradio-client==2.7.2: httpx>=0.24.1
+DEBUG Adding transitive dependency for gradio-client==2.7.2: huggingface-hub>=1.16.0, <3.0
+DEBUG Adding transitive dependency for gradio-client==2.7.2: packaging*
+DEBUG Adding transitive dependency for gradio-client==2.7.2: typing-extensions>=4.0, <5.dev0
+DEBUG Searching for a compatible version of httpx (>=0.24.1, <1)
+DEBUG Selecting: httpx==0.28.1 [preference] (httpx-0.28.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpx==0.28.1: anyio*
+DEBUG Adding transitive dependency for httpx==0.28.1: certifi*
+DEBUG Adding transitive dependency for httpx==0.28.1: httpcore>=1.dev0, <2.dev0
+DEBUG Adding transitive dependency for httpx==0.28.1: idna*
+DEBUG Searching for a compatible version of huggingface-hub (>=1.16.0, <3)
+DEBUG Selecting: huggingface-hub==2.3.0 [preference] (huggingface_hub-2.3.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: click>=8.4.2, <9.0.0
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: filelock>=3.10.0
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: fsspec>=2023.5.0
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'}>=1.6.0, <2.0.0
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: httpx2>=2.0.0, <3
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: packaging>=20.9
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: pyyaml>=5.1
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: tqdm>=4.42.1
+DEBUG Adding transitive dependency for huggingface-hub==2.3.0: typing-extensions>=4.1.0
+DEBUG Searching for a compatible version of orjson (>=3.0, <4.0.0)
+DEBUG Selecting: orjson==3.13.0 [preference] (orjson-3.13.0-cp312-cp312-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl)
+DEBUG Searching for a compatible version of pillow (<13.0.0)
+DEBUG Selecting: pillow==12.3.0 [preference] (pillow-12.3.0-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of python-multipart (>=0.0.9, <1.0.0)
+DEBUG Selecting: python-multipart==0.0.32 [preference] (python_multipart-0.0.32-py3-none-any.whl)
+DEBUG Searching for a compatible version of starlette (<2.0.0)
+DEBUG Selecting: starlette==1.10.0 [preference] (starlette-1.10.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for starlette==1.10.0: anyio>=4.0.0, <5
+DEBUG Adding transitive dependency for starlette==1.10.0: typing-extensions{python_full_version < '3.13'}>=4.10.0
+DEBUG Searching for a compatible version of uvicorn[standard] (>=0.30.0, <1.0.0)
+DEBUG Selecting: uvicorn==0.54.0 [preference] (uvicorn-0.54.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for uvicorn==0.54.0: uvicorn==0.54.0
+DEBUG Adding transitive dependency for uvicorn==0.54.0: uvicorn[standard]==0.54.0
+DEBUG Searching for a compatible version of uvicorn (==0.54.0)
+DEBUG Selecting: uvicorn==0.54.0 [preference] (uvicorn-0.54.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for uvicorn==0.54.0: click>=7.0
+DEBUG Adding transitive dependency for uvicorn==0.54.0: h11>=0.8
+DEBUG Searching for a compatible version of uvicorn[standard] (==0.54.0)
+DEBUG Selecting: uvicorn==0.54.0 [preference] (uvicorn-0.54.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for uvicorn==0.54.0: httptools>=0.8.0
+DEBUG Adding transitive dependency for uvicorn==0.54.0: python-dotenv>=0.13
+DEBUG Adding transitive dependency for uvicorn==0.54.0: pyyaml>=5.1
+DEBUG Adding transitive dependency for uvicorn==0.54.0: uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'}>=0.15.1
+DEBUG Adding transitive dependency for uvicorn==0.54.0: watchfiles>=0.20
+DEBUG Adding transitive dependency for uvicorn==0.54.0: websockets>=13.0
+DEBUG Searching for a compatible version of aiohappyeyeballs (>=2.5.0)
+DEBUG Selecting: aiohappyeyeballs==2.7.1 [preference] (aiohappyeyeballs-2.7.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of aiosignal (>=1.4.0)
+DEBUG Selecting: aiosignal==1.4.0 [preference] (aiosignal-1.4.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for aiosignal==1.4.0: frozenlist>=1.1.0
+DEBUG Adding transitive dependency for aiosignal==1.4.0: typing-extensions{python_full_version < '3.13'}>=4.2
+DEBUG Searching for a compatible version of attrs (>=17.3.0)
+DEBUG Selecting: attrs==26.1.0 [preference] (attrs-26.1.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of frozenlist (>=1.1.1)
+DEBUG Selecting: frozenlist==1.8.0 [preference] (frozenlist-1.8.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of multidict (>=4.5, <8.0)
+DEBUG Selecting: multidict==7.2.1 [preference] (multidict-7.2.1-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of propcache (>=0.2.0)
+DEBUG Selecting: propcache==0.5.4 [preference] (propcache-0.5.4-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of yarl (>=1.25.1, <2.0)
+DEBUG Selecting: yarl==1.25.1 [preference] (yarl-1.25.1-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Adding transitive dependency for yarl==1.25.1: idna>=2.0
+DEBUG Adding transitive dependency for yarl==1.25.1: multidict>=4.0
+DEBUG Adding transitive dependency for yarl==1.25.1: propcache>=0.2.1
+DEBUG Searching for a compatible version of h2 (>=3.1.0, <5)
+DEBUG Selecting: h2==4.4.1 [preference] (h2-4.4.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for h2==4.4.1: hpack>=4.2, <5
+DEBUG Adding transitive dependency for h2==4.4.1: hyperframe>=6.1, <7
+DEBUG Searching for a compatible version of markdown-it-py (>=2.2.0)
+DEBUG Selecting: markdown-it-py==4.2.0 [preference] (markdown_it_py-4.2.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for markdown-it-py==4.2.0: mdurl>=0.1, <1.dev0
+DEBUG Searching for a compatible version of anyio (>=4.0.0, <5)
+DEBUG Selecting: anyio==4.15.1 [preference] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for anyio==4.15.1: idna>=2.8
+DEBUG Adding transitive dependency for anyio==4.15.1: typing-extensions{python_full_version < '3.15'}>=4.16.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.15'} (>=4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions==4.16.0
+DEBUG Adding transitive dependency for typing-extensions==4.16.0: typing-extensions{python_full_version < '3.15'}==4.16.0
+DEBUG Searching for a compatible version of typing-extensions{python_full_version < '3.15'} (==4.16.0)
+DEBUG Selecting: typing-extensions==4.16.0 [preference] (typing_extensions-4.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of markupsafe (>=2.0)
+DEBUG Selecting: markupsafe==3.0.4 [preference] (markupsafe-3.0.4-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of mpmath (>=1.1.0, <1.4)
+DEBUG Selecting: mpmath==1.3.0 [preference] (mpmath-1.3.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of httpcore (>=1.dev0, <2.dev0)
+DEBUG Selecting: httpcore==1.0.9 [preference] (httpcore-1.0.9-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpcore==1.0.9: certifi*
+DEBUG Adding transitive dependency for httpcore==1.0.9: h11>=0.16
+DEBUG Searching for a compatible version of idna (>=2.8)
+DEBUG Selecting: idna==3.20 [preference] (idna-3.20-py3-none-any.whl)
+DEBUG Searching for a compatible version of hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'} (>=1.6.0, <2.0.0)
+DEBUG Selecting: hf-xet==1.7.0 [preference] (hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl)
+DEBUG Adding transitive dependency for hf-xet==1.7.0: hf-xet==1.7.0
+DEBUG Adding transitive dependency for hf-xet==1.7.0: hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'}==1.7.0
+DEBUG Searching for a compatible version of hf-xet (==1.7.0)
+DEBUG Selecting: hf-xet==1.7.0 [preference] (hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl)
+DEBUG Searching for a compatible version of hf-xet{platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'} (==1.7.0)
+DEBUG Selecting: hf-xet==1.7.0 [preference] (hf_xet-1.7.0-cp38-abi3-macosx_10_12_x86_64.whl)
+DEBUG Searching for a compatible version of httpx2 (>=2.0.0, <3)
+DEBUG Selecting: httpx2==2.16.0 [preference] (httpx2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpx2==2.16.0: anyio{sys_platform != 'emscripten'}>=4.10
+DEBUG Adding transitive dependency for httpx2==2.16.0: httpcore2{sys_platform != 'emscripten'}>=2.16.0, <2.16.0+
+DEBUG Adding transitive dependency for httpx2==2.16.0: idna>=3.18
+DEBUG Adding transitive dependency for httpx2==2.16.0: truststore{sys_platform != 'emscripten'}>=0.10
+DEBUG Adding transitive dependency for httpx2==2.16.0: typing-extensions{python_full_version < '3.13'}>=4.5.0
+DEBUG Searching for a compatible version of httpcore2{sys_platform != 'emscripten'} (>=2.16.0, <2.16.0+)
+DEBUG Selecting: httpcore2==2.16.0 [preference] (httpcore2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpcore2==2.16.0: httpcore2==2.16.0
+DEBUG Adding transitive dependency for httpcore2==2.16.0: httpcore2{sys_platform != 'emscripten'}==2.16.0
+DEBUG Searching for a compatible version of httpcore2 (==2.16.0)
+DEBUG Selecting: httpcore2==2.16.0 [preference] (httpcore2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpcore2==2.16.0: h11>=0.16
+DEBUG Adding transitive dependency for httpcore2==2.16.0: truststore>=0.10
+DEBUG Searching for a compatible version of httpcore2{sys_platform != 'emscripten'} (==2.16.0)
+DEBUG Selecting: httpcore2==2.16.0 [preference] (httpcore2-2.16.0-py3-none-any.whl)
+DEBUG Adding transitive dependency for httpcore2==2.16.0: h11>=0.16
+DEBUG Adding transitive dependency for httpcore2==2.16.0: truststore>=0.10
+DEBUG Searching for a compatible version of anyio{sys_platform != 'emscripten'} (>=4.10)
+DEBUG Selecting: anyio==4.15.1 [preference] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for anyio==4.15.1: anyio==4.15.1
+DEBUG Adding transitive dependency for anyio==4.15.1: anyio{sys_platform != 'emscripten'}==4.15.1
+DEBUG Searching for a compatible version of anyio{sys_platform != 'emscripten'} (==4.15.1)
+DEBUG Selecting: anyio==4.15.1 [preference] (anyio-4.15.1-py3-none-any.whl)
+DEBUG Adding transitive dependency for anyio==4.15.1: idna>=2.8
+DEBUG Adding transitive dependency for anyio==4.15.1: typing-extensions{python_full_version < '3.15'}>=4.16.0
+DEBUG Searching for a compatible version of pyyaml (>=5.1)
+DEBUG Selecting: pyyaml==6.0.3 [preference] (pyyaml-6.0.3-cp312-cp312-macosx_10_13_x86_64.whl)
+DEBUG Searching for a compatible version of tqdm (>=4.42.1)
+DEBUG Selecting: tqdm==4.70.1 [preference] (tqdm-4.70.1-py3-none-any.whl)
+DEBUG Searching for a compatible version of h11 (>=0.16)
+DEBUG Selecting: h11==0.16.0 [preference] (h11-0.16.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of httptools (>=0.8.0)
+DEBUG Selecting: httptools==0.9.0 [preference] (httptools-0.9.0-cp312-cp312-macosx_11_0_arm64.whl)
+DEBUG Searching for a compatible version of python-dotenv (>=0.13)
+DEBUG Selecting: python-dotenv==1.2.4 [preference] (python_dotenv-1.2.4-py3-none-any.whl)
+DEBUG Searching for a compatible version of uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'} (>=0.15.1)
+DEBUG Selecting: uvloop==0.23.0 [preference] (uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Adding transitive dependency for uvloop==0.23.0: uvloop==0.23.0
+DEBUG Adding transitive dependency for uvloop==0.23.0: uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'}==0.23.0
+DEBUG Searching for a compatible version of uvloop (==0.23.0)
+DEBUG Selecting: uvloop==0.23.0 [preference] (uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of uvloop{platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'} (==0.23.0)
+DEBUG Selecting: uvloop==0.23.0 [preference] (uvloop-0.23.0-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of websockets (>=13.0)
+DEBUG Selecting: websockets==17.3 [preference] (websockets-17.3-cp312-cp312-macosx_10_13_universal2.whl)
+DEBUG Searching for a compatible version of hpack (>=4.2, <5)
+DEBUG Selecting: hpack==4.2.0 [preference] (hpack-4.2.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of hyperframe (>=6.1, <7)
+DEBUG Selecting: hyperframe==6.1.0 [preference] (hyperframe-6.1.0-py3-none-any.whl)
+DEBUG Searching for a compatible version of mdurl (>=0.1, <1.dev0)
+DEBUG Selecting: mdurl==0.1.2 [preference] (mdurl-0.1.2-py3-none-any.whl)
+DEBUG Searching for a compatible version of truststore{sys_platform != 'emscripten'} (>=0.10)
+DEBUG Selecting: truststore==0.10.5 [preference] (truststore-0.10.5-py3-none-any.whl)
+DEBUG Adding transitive dependency for truststore==0.10.5: truststore==0.10.5
+DEBUG Adding transitive dependency for truststore==0.10.5: truststore{sys_platform != 'emscripten'}==0.10.5
+DEBUG Searching for a compatible version of truststore (==0.10.5)
+DEBUG Selecting: truststore==0.10.5 [preference] (truststore-0.10.5-py3-none-any.whl)
+DEBUG Searching for a compatible version of truststore{sys_platform != 'emscripten'} (==0.10.5)
+DEBUG Selecting: truststore==0.10.5 [preference] (truststore-0.10.5-py3-none-any.whl)
+DEBUG Tried 73 versions: aiohappyeyeballs 1, aiohttp 1, aiosignal 1, anyio 1, attrs 1, brotli 1, cbor2 1, certifi 1, click 1, cloudpickle 1, evolved-intrinsic-rewards 1, farama-notifications 1, filelock 1, frozenlist 1, fsspec 1, gradio-client 1, grpclib 1, gymnasium 1, h11 1, h2 1, hf-xet 1, hpack 1, httpcore 1, httpcore2 1, httptools 1, httpx 1, httpx2 1, huggingface-hub 1, hyperframe 1, idna 1, iniconfig 1, jinja2 1, markdown-it-py 1, markupsafe 1, mdurl 1, minigrid 1, modal 1, mpmath 1, multidict 1, networkx 1, numpy 1, orjson 1, packaging 1, pillow 1, pluggy 1, propcache 1, protobuf 1, pygame-ce 1, pygments 1, pytest 1, python-dotenv 1, python-multipart 1, pyyaml 1, rich 1, scipy 1, setuptools 1, starlette 1, sympy 1, synchronicity 1, toml 1, tomli-w 1, torch 1, tqdm 1, trackio 1, truststore 1, types-certifi 1, types-toml 1, typing-extensions 1, uvicorn 1, uvloop 1, watchfiles 1, websockets 1, yarl 1
+DEBUG split `python_full_version == '3.12.*' and platform_machine == 'arm64' and sys_platform == 'darwin'` resolution took 0.021s
+INFO Solved your requirements for 2 environments
+DEBUG Distinct solution for split (markers: python_full_version == '3.12.*' and platform_machine == 'x86_64' and sys_platform == 'linux') with 73 package(s)
+DEBUG Distinct solution for split (markers: python_full_version == '3.12.*' and platform_machine == 'arm64' and sys_platform == 'darwin') with 73 package(s)
+Resolved 74 packages in 742ms
+The lockfile at `uv.lock` needs to be updated, but `--locked` was provided. To update the lockfile, run `uv lock`.
+DEBUG Released lock at `/.uv/.venv/.lock`
+DEBUG Released lock at `/tmp/.tmpVTzgE7/.lock`
+Terminating task due to error: failed to run builder command "/.uv/uv sync --project=/.uv --no-install-workspace --compile-bytecode --locked --verbose": container exit status: 1
+Stopping app - uncaught exception raised locally: ImageBuildError('Image build for im-VnCm75YY9OuotFjAaroUJ5 failed.\nView the build logs:\n  modal image logs im-VnCm75YY9OuotFjAaroUJ5').
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/stage1/modal_app.py", line 459, in <module>
+    main()
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/stage1/modal_app.py", line 429, in main
+    with modal.enable_output(), app.run():
+                                ^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/.venv/lib/python3.12/site-packages/modal/app.py", line 497, in run
+    async with _run_app(
+               ^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/.venv/lib/python3.12/site-packages/modal/runner.py", line 457, in _run_app
+    await _create_all_objects(running_app, local_app_state, load_context)
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/.venv/lib/python3.12/site-packages/modal/runner.py", line 205, in _create_all_objects
+    await asyncio.gather(*[tc.create_task(_load(tag, obj)) for tag, obj in indexed_objects.items()])
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/.venv/lib/python3.12/site-packages/modal/runner.py", line 196, in _load
+    await resolver.load(obj, load_context, existing_object_id=existing_object_id)
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/9a308664-493d-4229-b7d3-ce15091b2fa5/repo/.venv/lib/python3.12/site-packages/modal/_image.py", line 858, in _load
+    raise ImageBuildError(msg, image_id)
+modal.exception.ImageBuildError: Image build for im-VnCm75YY9OuotFjAaroUJ5 failed.
+View the build logs:
+  modal image logs im-VnCm75YY9OuotFjAaroUJ5
