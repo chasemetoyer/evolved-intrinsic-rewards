@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import os
 import re
@@ -53,8 +54,12 @@ def snapshot_sources():
     with tarfile.open(temporary, 'w:gz') as tar:
         for name in sorted(paths):
             p = ROOT / name
-            hashes[name] = hashlib.sha256(p.read_bytes()).hexdigest()
-            tar.add(p, arcname=name, recursive=False)
+            raw = p.read_bytes()
+            hashes[name] = hashlib.sha256(raw).hexdigest()
+            info = tarfile.TarInfo(name)
+            info.size = len(raw)
+            info.mode = p.stat().st_mode & 0o777
+            tar.addfile(info, io.BytesIO(raw))
     temporary.replace(archive)
     return dict(path=str(archive), sha256=hashlib.sha256(archive.read_bytes()).hexdigest(), files=hashes)
 

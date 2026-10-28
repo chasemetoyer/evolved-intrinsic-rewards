@@ -58,7 +58,7 @@ def validation_records(results, manifest):
                 suites = list(tree.iter("testsuite"))
                 totals = {key: sum(int(suite.attrib.get(key, 0)) for suite in suites)
                           for key in ("tests", "failures", "errors", "skipped")}
-                record.update(complete=True, **totals, passed=totals["tests"] > 0 and totals["failures"] == totals["errors"] == 0)
+                record.update(complete=True, **totals, passed=totals["tests"] > 0 and totals["failures"] == totals["errors"] == totals["skipped"] == 0)
             record["directory"] = str(out)
             for path in sorted((out / "unit-tests").glob("*.json")):
                 record["unit_data"][path.name] = read_optional(path)

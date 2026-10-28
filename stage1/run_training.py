@@ -91,7 +91,7 @@ def main():
         suites = tree.findall(".//testsuite")
         validation = {k: sum(int(s.get(k, 0)) for s in suites)
                       for k in ("tests", "failures", "errors", "skipped")}
-        if validation["failures"] or validation["errors"] or not validation["tests"]:
+        if validation["failures"] or validation["errors"] or validation["skipped"] or not validation["tests"]:
             raise SystemExit("Validation did not complete successfully")
         (out / "summary.json").write_text(json.dumps(dict(validation=validation), indent=2) + "\n")
         identity = {"validation_files_sha256": {
