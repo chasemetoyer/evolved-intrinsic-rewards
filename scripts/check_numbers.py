@@ -22,6 +22,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--numbers', type=Path, default=ART / 'stage1-numbers.json')
     parser.add_argument('--out', type=Path, default=ART / 'number-check.json')
+    parser.add_argument('--results', type=Path, default=ROOT / 'results')
+    parser.add_argument('--volume-attempts', type=Path, default=Path(
+        '/Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform/stage1-container-cpu/volume-attempts'))
     args = parser.parse_args()
     data = read(args.numbers)
     manifest = read(ROOT / 'stage1/manifest.json')
@@ -183,9 +186,101 @@ def main():
             fingerprints.append(dict(metrics_without_sps_sha256=canonical(rows),summary_sha256=canonical(read(directory/'summary.json')),checkpoint_tensors_sha256=tensor_hash.hexdigest()))
         if len(fingerprints)==2:
             check('determinism:'+str(record['seed']),record['bit_identical'],fingerprints[0]==fingerprints[1])
+
+    # Container CPU identity: enumerate attempt folders independently and
+    # re-derive vendor/family/model/flags from the raw saved /proc/cpuinfo.
+    import re
+    attempts = {}
+    for env in args.results.glob('*/attempts/*/environment.json'):
+        attempts[env.parent.name] = (env.parent.parent.parent.name, env)
+    if args.volume_attempts.exists():
+        for env in args.volume_attempts.glob('*/*/environment.json'):
+            attempts.setdefault(env.parent.name, (env.parent.parent.name, env))
+    attempts = {a: v for a, v in attempts.items() if v[0] in specs}
+    containers = {c['attempt']: c for c in data['containers']}
+    check('containers:attempt_set', sorted(containers), sorted(attempts))
+    for attempt, (key, env) in sorted(attempts.items()):
+        c = containers.get(attempt)
+        if c is None:
+            continue
+        env_bytes = env.read_bytes()
+        check('container:'+attempt+':sha256', c['environment_sha256'], hashlib.sha256(env_bytes).hexdigest())
+        block = (json.loads(env_bytes).get('cpuinfo') or '').split('\n\n')[0]
+        def field(name):
+            m = re.search(r'^' + re.escape(name) + r'\s*:\s*(.*?)\s*$', block, re.M)
+            return m.group(1) if m else None
+        vendor, fam, mod = field('vendor_id'), field('cpu family'), field('model')
+        fam = int(fam) if fam and fam.isdigit() else None
+        mod = int(mod) if mod and mod.isdigit() else None
+        flags = set((field('flags') or '').split())
+        tier = 'AVX512' if {'avx512vl','avx512bw','avx512dq','fma'} <= flags else ('AVX2' if {'avx2','fma'} <= flags else 'DEFAULT')
+        for name, observed, expected in (('run_key', c['run_key'], key), ('vendor', c['vendor_id'], vendor),
+                                         ('family', c['cpu_family'], fam), ('model', c['model'], mod),
+                                         ('avx512f', c['avx512f'], 'avx512f' in flags),
+                                         ('aten_tier', c['inferred_aten_cpu_capability'], tier)):
+            check('container:'+attempt+':'+name, observed, expected)
+        label = c['microarchitecture']
+        if vendor == 'AuthenticAMD' and fam == 25 and mod is not None and mod <= 0x0F:
+            consistent = label.startswith('AMD Zen 3')
+        elif vendor == 'AuthenticAMD' and fam == 25 and mod is not None and 0x10 <= mod <= 0x1F:
+            consistent = label.startswith('AMD Zen 4')
+        elif vendor == 'GenuineIntel' and fam == 6 and mod == 0x55:
+            consistent = 'model 55h' in label and (('Cascade Lake class' in label) == ('avx512_vnni' in flags and 'avx512_bf16' not in flags))
+        else:
+            consistent = label.startswith('unmapped')
+        check('container:'+attempt+':label_consistent', consistent, True)
+        marker = args.results / key / 'complete.json'
+        role = (('final' if read(marker)['attempt'] == attempt else 'superseded') if marker.exists()
+                else 'in progress or superseded')
+        check('container:'+attempt+':role', c['role'], role)
+
+    # Determinism explanation: recompute divergence location and replicate CPUs.
+    final_cpu = {c['run_key']: c for c in data['containers'] if c['role'] == 'final'}
+    for e in data['determinism_explanation']:
+        if not e.get('complete'):
+            continue
+        seed = str(e['seed'])
+        pair = sorted((s for s in manifest['runs'] if s['purpose']=='determinism' and s['seed']==e['seed']), key=lambda s: s['replicate'])
+        dirs = [Path(data['scores_by_run'][s['id']]['directory']) for s in pair]
+        rows = [[json.loads(x) for x in (d/'metrics.jsonl').read_text().splitlines() if x.strip()] for d in dirs]
+        n = min(len(r) for r in rows)
+        same = lambda i: {k: v for k, v in rows[0][i].items() if k != 'sps'} == {k: v for k, v in rows[1][i].items() if k != 'sps'}
+        diff = [i for i in range(n) if not same(i)]
+        check('explain:'+seed+':bit_identical', e['bit_identical'], next(r['bit_identical'] for r in data['determinism'] if r['seed']==e['seed']))
+        check('explain:'+seed+':logged_rows', e['logged_rows'], [len(r) for r in rows])
+        check('explain:'+seed+':differing_rows', e['differing_rows'], len(diff))
+        if diff:
+            i = diff[0]
+            check('explain:'+seed+':first_row', e['first_difference']['row'], i)
+            check('explain:'+seed+':first_step', e['first_difference']['global_step'], rows[0][i]['global_step'])
+            check('explain:'+seed+':first_fields', e['first_difference']['fields'],
+                  sorted(k for k in rows[0][i] if k != 'sps' and rows[0][i][k] != rows[1][i].get(k)))
+            for k, value in e['first_difference']['relative_differences'].items():
+                a, b = rows[0][i][k], rows[1][i][k]
+                check('explain:'+seed+':relative:'+k, value, abs(a-b)/max(abs(a), abs(b)))
+        else:
+            check('explain:'+seed+':first_difference_absent', e['first_difference'], None)
+        rollout = [i for i in range(n) if any(rows[0][i].get(k) != rows[1][i].get(k) for k in rows[0][i] if k.startswith('train/'))]
+        check('explain:'+seed+':first_rollout_row', (e['first_rollout_difference'] or {}).get('row'), rollout[0] if rollout else None)
+        for j, r in enumerate(rows):
+            for k in ('global_step', 'train/success', 'train/ret', 'train/len'):
+                check('explain:'+seed+':final:'+str(j)+':'+k, e['final_rows'][j][k], r[-1].get(k))
+        envs = [read(d/'environment.json') for d in dirs]
+        check('explain:'+seed+':packages_identical', e['packages_identical'], envs[0]['packages'] == envs[1]['packages'])
+        recorded = [read(d/'spec.json') for d in dirs]
+        check('explain:'+seed+':spec_fields_differing', e['spec_fields_differing'],
+              sorted(k for k in recorded[0] if recorded[0][k] != recorded[1].get(k)))
+        for replicate, s in zip(e['replicates'], pair):
+            for k in ('attempt', 'vendor_id', 'cpu_family', 'model', 'microarchitecture', 'avx512f', 'inferred_aten_cpu_capability'):
+                check('explain:'+seed+':r'+str(s['replicate'])+':'+k, replicate.get(k), final_cpu.get(s['id'], {}).get(k))
+    report = args.numbers.parent / 'stage1-report.md'
+    if report.exists():
+        text = report.read_text()
+        check('report:open_stage2_cpu_isa_decision', all(s in text for s in ('ATEN_CPU_CAPABILITY=avx2', 'MKL_CBWR=AVX2', 'unpaired')), True)
     check('stage2_never_started',manifest['no_evolution_or_random_search'],True)
     output=dict(status='pass' if not failures else 'fail',checks=len(checks),failures=failures,
-                completed_training_records=len(raw),scope='Independent raw-output arithmetic, complete-cell selection, source hashes, descriptive Mac rows, validation XML and numerical determinism; no new policies executed.')
+                completed_training_records=len(raw),containers_checked=len(attempts),
+                scope='Independent raw-output arithmetic, complete-cell selection, source hashes, descriptive Mac rows, validation XML, numerical determinism, container CPU identity from raw cpuinfo and determinism divergence location; no new policies executed.')
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(output,indent=2)+'\n')
     print(json.dumps(output))

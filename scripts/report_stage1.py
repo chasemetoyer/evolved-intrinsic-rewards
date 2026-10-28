@@ -7,6 +7,7 @@ An independent check_numbers script must verify the generated handoff.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -21,6 +22,9 @@ sys.path.insert(0, str(ROOT))
 from stage1.score import aggregate_calibration, load_completed_scores, score_seed
 
 ARTIFACTS = Path("/Users/chasemetoyer/.local/share/openresearch/files/evolved-intrinsic-rewards/stage1")
+# Metadata of attempts that exist only on the Modal volume (for example a
+# preempted attempt), copied with hashes by scripts/run_registry.py.
+VOLUME_ATTEMPTS = Path("/Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform/stage1-container-cpu/volume-attempts")
 
 
 def read_optional(path):
@@ -118,6 +122,123 @@ def determinism_records(manifest, scores):
     return records
 
 
+def microarchitecture(vendor, family, model, flags):
+    """Range-based CPUID labels; anything not checked against a reference stays unmapped."""
+    if vendor == "AuthenticAMD" and family == 0x19 and model is not None:
+        if 0x00 <= model <= 0x0F:
+            return "AMD Zen 3, EPYC 7003 Milan range (family 19h, models 00h-0Fh)"
+        if 0x10 <= model <= 0x1F:
+            return "AMD Zen 4, EPYC 9004 Genoa range (family 19h, models 10h-1Fh)"
+    if vendor == "GenuineIntel" and family == 6 and model == 0x55:
+        label = "Intel Xeon Scalable, family 6 model 55h (Skylake-SP/Cascade Lake/Cooper Lake; stepping hidden)"
+        if "avx512_vnni" in flags and "avx512_bf16" not in flags:
+            label += "; AVX512_VNNI without AVX512_BF16 indicates Cascade Lake class"
+        return label
+    return f"unmapped ({vendor} family {family} model {model})"
+
+
+def short_cpu(label):
+    if label.startswith("AMD Zen 3"):
+        return "AMD Zen 3 (Milan range)"
+    if label.startswith("AMD Zen 4"):
+        return "AMD Zen 4 (Genoa range)"
+    if "model 55h" in label:
+        return "Intel 6/55h, Cascade Lake class" if "Cascade Lake class" in label else "Intel 6/55h (Skylake-SP family)"
+    return label
+
+
+def cpu_fields(cpuinfo):
+    """CPU identity from a worker's saved /proc/cpuinfo; gVisor hides the model name."""
+    fields = {}
+    for line in (cpuinfo or "").split("\n\n")[0].splitlines():
+        if ":" in line:
+            key, value = line.split(":", 1)
+            fields[key.strip()] = value.strip()
+    flags = set(fields.get("flags", "").split())
+    family = int(fields["cpu family"]) if fields.get("cpu family", "").isdigit() else None
+    model = int(fields["model"]) if fields.get("model", "").isdigit() else None
+    # PyTorch's ATen dispatch selects AVX512 kernels only with avx512vl/bw/dq and FMA3.
+    if {"avx512vl", "avx512bw", "avx512dq", "fma"} <= flags:
+        capability = "AVX512"
+    elif {"avx2", "fma"} <= flags:
+        capability = "AVX2"
+    else:
+        capability = "DEFAULT"
+    label = microarchitecture(fields.get("vendor_id"), family, model, flags)
+    return {"vendor_id": fields.get("vendor_id"), "cpu_family": family, "model": model,
+            "avx512f": "avx512f" in flags, "inferred_aten_cpu_capability": capability,
+            "microarchitecture": label, "cpu_short": short_cpu(label)}
+
+
+def container_records(results, manifest, volume_attempts):
+    """One row per Modal container attempt: synced outputs plus volume-only copies."""
+    purposes = {spec["id"]: spec["purpose"] for spec in manifest["runs"]}
+    found = {}
+    for environment in sorted(results.glob("*/attempts/*/environment.json")):
+        found[environment.parent.name] = (environment.parents[2].name, environment.parent, "synced-results")
+    if volume_attempts.exists():
+        for environment in sorted(volume_attempts.glob("*/*/environment.json")):
+            found.setdefault(environment.parent.name, (environment.parent.parent.name, environment.parent, "modal-volume-copy"))
+    records = []
+    for attempt, (key, directory, source) in found.items():
+        if key not in purposes:
+            continue
+        raw = (directory / "environment.json").read_bytes()
+        meta = read_optional(directory / "attempt.json") or {}
+        usage = read_optional(directory / "usage.json") or {}
+        complete = read_optional(results / key / "complete.json")
+        role = ("final" if complete["attempt"] == attempt else "superseded") if complete else "in progress or superseded"
+        records.append({"run_key": key, "purpose": purposes[key], "attempt": attempt, "role": role, "source": source,
+                        "environment_path": str(directory / "environment.json"),
+                        "environment_sha256": hashlib.sha256(raw).hexdigest(),
+                        "started_utc": meta.get("started_utc"), "function_call_id": meta.get("modal_function_call_id"),
+                        "wall_seconds": usage.get("wall_seconds"), "attempt_error": usage.get("error"),
+                        **cpu_fields(json.loads(raw).get("cpuinfo"))})
+    return sorted(records, key=lambda r: (r["started_utc"] or "", r["attempt"]))
+
+
+def determinism_explanations(manifest, scores, containers, determinism):
+    """Where same-seed replicates first diverge, and which CPU type each ran on."""
+    final = {c["run_key"]: c for c in containers if c["role"] == "final"}
+    explanations = []
+    for record in determinism:
+        specs = sorted((s for s in manifest["runs"] if s["purpose"] == "determinism" and s["seed"] == record["seed"]
+                        and s["task"] == record["task"] and s["method"] == record["method"]),
+                       key=lambda s: s["replicate"])
+        if len(specs) != 2 or any(s["id"] not in scores for s in specs):
+            explanations.append({"seed": record["seed"], "complete": False})
+            continue
+        directories = [Path(scores[s["id"]]["directory"]) for s in specs]
+        rows = [[json.loads(line) for line in (d / "metrics.jsonl").read_text().splitlines() if line.strip()]
+                for d in directories]
+        strip = lambda row: {k: v for k, v in row.items() if k != "sps"}
+        differing = [i for i, (a, b) in enumerate(zip(*rows)) if strip(a) != strip(b)]
+        first = None
+        if differing:
+            a, b = rows[0][differing[0]], rows[1][differing[0]]
+            fields = sorted(k for k in strip(a) if a.get(k) != b.get(k))
+            first = {"row": differing[0], "global_step": a["global_step"], "fields": fields,
+                     "relative_differences": {k: abs(a[k] - b[k]) / max(abs(a[k]), abs(b[k])) for k in fields
+                                              if isinstance(a.get(k), (int, float)) and isinstance(b.get(k), (int, float))
+                                              and max(abs(a[k]), abs(b[k])) > 0}}
+        rollout = [i for i, (a, b) in enumerate(zip(*rows)) if any(a.get(k) != b.get(k) for k in a if k.startswith("train/"))]
+        environments = [json.loads((d / "environment.json").read_text()) for d in directories]
+        recorded = [json.loads((d / "spec.json").read_text()) for d in directories]
+        explanations.append({
+            "seed": record["seed"], "task": record["task"], "method": record["method"], "budget": record["budget"],
+            "complete": True, "bit_identical": record["bit_identical"], "logged_rows": [len(r) for r in rows],
+            "differing_rows": len(differing), "first_difference": first,
+            "first_rollout_difference": {"row": rollout[0], "global_step": rows[0][rollout[0]]["global_step"]} if rollout else None,
+            "final_rows": [{k: r[-1].get(k) for k in ("global_step", "train/success", "train/ret", "train/len")} for r in rows],
+            "packages_identical": environments[0]["packages"] == environments[1]["packages"],
+            "spec_fields_differing": sorted(k for k in recorded[0] if recorded[0][k] != recorded[1].get(k)),
+            "replicates": [{"replicate": s["replicate"], "run_key": s["id"],
+                            **{k: final.get(s["id"], {}).get(k) for k in ("attempt", "vendor_id", "cpu_family", "model",
+                               "microarchitecture", "cpu_short", "avx512f", "inferred_aten_cpu_capability")}}
+                           for s in specs]})
+    return explanations
+
+
 def cost_projection(calibration):
     selections = calibration["selection"]
     complete = all(row["status"] != "incomplete" for row in selections)
@@ -168,10 +289,79 @@ needs approval at the Stage 1 boundary before it becomes a Stage 2 commitment.
 - CMA-ES: population ten, twelve generations. OPEN: optimizer/library version, seed and initial mean/covariance/sigma; stopping behavior under numerical failure; number of finalists and independent re-evaluation seeds/budget; winner tie-break and whether to reserve candidate evaluations for re-evaluation.
 - Random-search control: the same number of candidate evaluations, task set, training budgets and seed counts. OPEN: prior over mixed zero/log growth, matched handling of boundary atoms, winner re-evaluation, and whether random-search winner joins final evaluation. No search starts in Stage 1.
 - Seeds: calibration 900–999, evolution 1000–1999, random search 3000–3999, final evaluation 2000–2999. OPEN: exact within-role allocation, common versus fresh candidate seed panels, independent finalist panel, and layout seed mapping. Never reuse seeds across roles.
+- Cross-CPU numerical reproducibility — OPEN decision for the Stage 2 lock: test whether forcing ATEN_CPU_CAPABILITY=avx2 and MKL_CBWR=AVX2 makes seed 910 bit-identical across Zen 3 and Zen 4 containers. If it does, use these settings in Stage 2. If it does not, record the CPU type for every run and treat same-seed results as unpaired. This test was not run in Stage 1. Note for the test design: PyTorch normally runs batched float32 CPU convolutions through oneDNN, whose kernel instruction set is controlled separately (ONEDNN_MAX_CPU_ISA) and is not set by these two variables.
 - Final evaluation: best evolved reward and approved baselines, twenty fresh seeds per kept task, nominal two-million-step training, fixed per-environment evaluation quota. OPEN: baseline roster (task-only, episodic novelty, random-search winner, fixed satiation); whether task aggregation or individual tasks are primary; independent versus paired seed comparisons; minimum worthwhile effect; multiplicity family. Proposed tests retain exact Fisher for solves and exact MWU without ties/permutation MWU with ties for area, Clopper–Pearson intervals, and Holm adjustment. A superiority hit should require the registered direction and adjusted p<.05; numerical level predictions need prewritten intervals. Non-significance does not establish equivalence.
 - Tamper test: introduce the done-action need reset only after search. OPEN: freeze policy versus retrain/fine-tune a learner under the selected reward; matched no-tamper condition; free versus paid presses and costs; tasks/methods; budget/seeds; performance noninferiority margin and test; whether press frequency is a separate endpoint. Keep presses and repeated paid events descriptive unless explicit hit rules are locked. Resistance requires a defined performance criterion; bounded return alone is insufficient.
 - Budget: approve measured cost projection, re-evaluation overhead, and a hard spending limit. Make the repository public before the Stage 2 lock, commit and push every lock file, and record timestamped amendments. No Stage 3 lock is implied by this draft.
 """
+
+
+def determinism_lines(data):
+    explanations = [e for e in data["determinism_explanation"] if e.get("complete")]
+    if not explanations:
+        return ["Determinism CPU attribution: pending.", ""]
+    lines = ["### Determinism outcome and container CPU types", "",
+             table(["Seed", "Replicate", "Attempt", "CPU type", "AVX-512", "Inferred ATen tier", "Pair bit identical"],
+                   [(e["seed"], r["replicate"], (r["attempt"] or "pending")[:8], r["cpu_short"] or "pending",
+                     number(r["avx512f"]), r["inferred_aten_cpu_capability"] or "pending", number(e["bit_identical"]))
+                    for e in explanations for r in e["replicates"]]), ""]
+    for e in explanations:
+        if e["bit_identical"] is not False:
+            continue
+        first, rollout, final = e["first_difference"], e["first_rollout_difference"], e["final_rows"]
+        relative = ", ".join(f"{k} {v:.1e}" for k, v in sorted(first["relative_differences"].items()))
+        text = (f"Seed {e['seed']}: both calls used the same source commit; installed package inventories identical: "
+                f"{number(e['packages_identical'])}; the specifications differ only in {', '.join(e['spec_fields_differing'])}. "
+                f"The logged metrics first differ at row {first['row']} (step {first['global_step']}), in "
+                f"{', '.join(first['fields'])} only (relative differences {relative}); every rollout statistic in that row is identical. ")
+        if rollout:
+            text += f"Episode statistics first differ at row {rollout['row']} (step {rollout['global_step']}). "
+        text += (f"{e['differing_rows']} of {min(e['logged_rows'])} logged rows differ. At the last row (step "
+                 f"{final[0]['global_step']}), training success is {final[0]['train/success']} versus "
+                 f"{final[1]['train/success']} and mean training return {final[0]['train/ret']:.4f} versus {final[1]['train/ret']:.4f}.")
+        lines += [text, ""]
+    mismatched = [e for e in explanations if e["bit_identical"] is False]
+    matched = [e for e in explanations if e["bit_identical"] is True]
+    cross = lambda e: len({(r["microarchitecture"], r["inferred_aten_cpu_capability"]) for r in e["replicates"]}) > 1
+    if mismatched and all(cross(e) for e in mismatched) and not any(cross(e) for e in matched):
+        lines += [f"Interpretation (consistent with the records, not a controlled test): every mismatched pair ran on two different CPU types and every matching pair ran on one CPU type. "
+                  "A difference that starts in the last bits of optimizer statistics while episodes are still identical is the signature of floating-point rounding, not of a seeding or logic difference. "
+                  "The matching pair also shows that the replicate label does not enter the computation. "
+                  "The pattern is consistent with PyTorch and its math libraries choosing CPU-specific vector kernels: different kernels sum float32 values in a different order, and PPO's sampled actions then amplify the last-bit differences into different trajectories. "
+                  f"The evidence is {len(explanations)} planned pairs, and no execution setting was changed in response. "
+                  "Modal assigns containers from a mixed CPU pool (next section), so separate calls with the same seed are not guaranteed to be bit identical. The open Stage 2 decision on CPU instruction-set pinning addresses this.", ""]
+    elif mismatched:
+        lines += ["Interpretation: the container CPU types do not account for every mismatch; the cause remains unexplained.", ""]
+    return lines
+
+
+def container_lines(data):
+    containers = data["containers"]
+    summary = {}
+    for c in containers:
+        row = summary.setdefault(c["cpu_short"], {"avx512f": c["avx512f"], "tier": c["inferred_aten_cpu_capability"],
+                                                  "final": 0, "superseded": 0, "other": 0})
+        row["final" if c["role"] == "final" else "superseded" if c["role"] == "superseded" else "other"] += 1
+    superseded = [c for c in containers if c["role"] == "superseded"]
+    lines = ["## Modal containers and CPU types", "",
+             "Every worker attempt saved /proc/cpuinfo. Modal's gVisor sandbox reports the model name as unknown, so the CPU type is identified from vendor, family, model and instruction-set flags, using range-based CPUID labels. The ATen tier is inferred from the flags with PyTorch's dispatch rule (AVX512 requires avx512vl, avx512bw, avx512dq and FMA3); the workers did not record PyTorch's own capability string. Attempts superseded by a provider preemption exist only on the Modal volume; their metadata was copied with hashes into the shared handoff folder.", "",
+             table(["CPU type", "AVX-512", "Inferred ATen tier", "Final attempts", "Superseded attempts", "Unfinished"],
+                   [(name, number(v["avx512f"]), v["tier"], v["final"], v["superseded"], v["other"])
+                    for name, v in sorted(summary.items())]), ""]
+    if superseded:
+        lines += ["Superseded attempts. Modal restarted the same input under the same call ID, and the controller charged the whole call, including the lost attempt:", "",
+                  table(["Run", "Superseded attempt", "CPU type", "Wall seconds before stop", "Recorded error"],
+                        [(c["run_key"], c["attempt"][:8], c["cpu_short"], number(c["wall_seconds"], 1),
+                          c["attempt_error"] or "none recorded") for c in superseded]), ""]
+    lines += ["The per-container list is in the appendix.", ""]
+    return lines
+
+
+def container_appendix(data):
+    return ["## Appendix: CPU type of every Modal container", "",
+            table(["Run", "Attempt", "Role", "CPU type", "Vendor / family / model", "AVX-512", "Inferred ATen tier", "Source"],
+                  [(c["run_key"], c["attempt"][:8], c["role"], c["cpu_short"], f"{c['vendor_id']} / {c['cpu_family']} / {c['model']}",
+                    number(c["avx512f"]), c["inferred_aten_cpu_capability"], c["source"]) for c in data["containers"]]), ""]
 
 
 def render(data):
@@ -252,6 +442,7 @@ def render(data):
         "Python 3.12.12 and NumPy 2.5.4 follow the archived Mac runtime log and conditional dependency markers. This choice was registered before new results; the earlier unconditional NumPy 2.4.6 statement was incomplete. The container base digest and each attempt's actual installed package inventory are retained in environment/provenance files. The full transitive package lock is uv.lock.", "",
         table(["Task / method", "Seed", "Budget", "Completed repeats", "Numerically bit identical"],
               [(row["task"] + " / " + row["method"], row["seed"], row["budget"], row["completed"], number(row["bit_identical"])) for row in data["determinism"]]), "",
+        *determinism_lines(data), *container_lines(data),
         "Spending record (guard estimates and provider-reported completed intervals are distinct from an invoice):", "", "```json", json.dumps(data["spending"], indent=2), "```", "",
         "## Descriptive Mac reference", "", "The two Modal groups are compared with the same original Mac reference using counts and curve areas only. No inferential tests or cross-platform conclusions are drawn, and no configuration is adjusted from this comparison.", "",
         table(["Seed", "Mac solve / area", "Archived Modal solve / area", "Corrected Modal solve / area"],
@@ -275,6 +466,7 @@ def render(data):
     lines += ["", "Excluded from these projections: " + project["excluded"], "", "## Stage 2 draft and decisions", "", draft_outline().replace("# Stage 2 pre-registration outline — DRAFT, NOT LOCKED", "DRAFT, NOT LOCKED"), "", "Stage boundary: no evolution or random search starts from this report. User approval and resolution of the listed open decisions are required.", ""]
     if data["invalid_completed_attempts"]:
         lines += ["Invalid completed-attempt records:", "", "```json", json.dumps(data["invalid_completed_attempts"], indent=2), "```", ""]
+    lines += container_appendix(data)
     return "\n".join(lines)
 
 
@@ -283,11 +475,14 @@ def main():
     parser.add_argument("--results", type=Path, default=ROOT / "results")
     parser.add_argument("--manifest", type=Path, default=ROOT / "stage1/manifest.json")
     parser.add_argument("--out", type=Path, default=ARTIFACTS)
+    parser.add_argument("--volume-attempts", type=Path, default=VOLUME_ATTEMPTS)
     args = parser.parse_args()
     manifest = read_optional(args.manifest)
     scores, failures = load_completed_scores(args.results, manifest)
     calibration = aggregate_calibration(manifest, scores)
     validations = validation_records(args.results, manifest)
+    containers = container_records(args.results, manifest, args.volume_attempts)
+    determinism = determinism_records(manifest, scores)
     ledger = read_optional(args.results / "budget-ledger.json")
     spend = {"completed_training_calls": len(scores), "guard_total_usd": None,
              "provider_invoice_cost_usd": None, "provider_reported_complete_intervals_cost_usd": None}
@@ -298,7 +493,9 @@ def main():
     environment = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]
     data = {"schema": 1, "manifest": str(args.manifest), "validation": validations,
         "environment": {"python": (ROOT / ".python-version").read_text().strip(), "dependencies": environment["dependencies"]},
-        "calibration": calibration, "determinism": determinism_records(manifest, scores),
+        "calibration": calibration, "determinism": determinism,
+        "determinism_explanation": determinism_explanations(manifest, scores, containers, determinism),
+        "containers": containers,
         "cross_platform": comparison_records(manifest, scores), "spending": spend,
         "cost_projection": cost_projection(calibration), "scores_by_run": scores,
         "invalid_completed_attempts": failures,
