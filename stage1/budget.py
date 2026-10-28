@@ -26,7 +26,10 @@ OVERHEAD_ALLOWANCE_USD = Decimal("0.50")
 TERMINATION_ALLOWANCE_SECONDS = 60
 CALL_DEADLINE_SECONDS = 7200
 MAX_CONCURRENT_CALLS = 4
-MAX_SETUP_FAILURES = 2
+# The user explicitly approved further infrastructure repairs within USD15
+# after the first two image-build failures. Scientific settings remain locked.
+MAX_SETUP_FAILURES = None
+SETUP_ATTEMPT_GUARD_USD = Decimal("0.25")
 
 
 class BudgetStop(RuntimeError):
@@ -84,6 +87,10 @@ class BudgetLedger:
 
     def guard_total(self) -> Decimal:
         estimates = sum((Decimal(c["guard_charge_usd"]) for c in self.data["calls"].values()), Decimal(0))
+        # Keep failed builds in the spending guard even when their invoice is
+        # not yet available. This is a conservative reservation, not billed cost.
+        setup_count = len(self.data.get("setup_failures", [])) + int(self.data.get("setup_build_inflight", False))
+        estimates += setup_count * SETUP_ATTEMPT_GUARD_USD
         reported = Decimal(self.data.get("provider_reported_complete_intervals_cost_usd", "0"))
         return max(estimates, reported) + Decimal(self.data["overhead_allowance_usd"])
 
@@ -96,7 +103,7 @@ class BudgetLedger:
         uncertain = [k for k, c in self.data["calls"].items() if c["status"] == "uncertain"]
         if uncertain:
             raise BudgetStop("Uncertain charges require provider-state reconciliation: " + ", ".join(uncertain))
-        if len(self.data.get("setup_failures", [])) >= MAX_SETUP_FAILURES:
+        if MAX_SETUP_FAILURES is not None and len(self.data.get("setup_failures", [])) >= MAX_SETUP_FAILURES:
             raise BudgetStop("Two setup failures reached; inspect provider billing before retrying")
         if self.guard_total() >= LIMIT_USD:
             raise BudgetStop("Stage 1 spending guard reached $15")
@@ -108,7 +115,23 @@ class BudgetLedger:
             raise BudgetStop("Provider calls are still pending: " + ", ".join(pending))
 
     def setup_failed(self, reason: str) -> None:
+        self.data["setup_build_inflight"] = False
         self.data.setdefault("setup_failures", []).append({"utc": utc_now(), "reason": reason})
+        self.save()
+
+    def start_setup(self) -> None:
+        self.assert_can_launch()
+        if self.data.get("setup_build_inflight"):
+            raise BudgetStop("Previous image-build state must be reconciled before another setup")
+        if self.guard_total() + SETUP_ATTEMPT_GUARD_USD > LIMIT_USD:
+            raise BudgetStop("Setup reservation would cross the Stage 1 USD15 guard")
+        self.data["setup_build_inflight"] = True
+        self.data["setup_attempt_guard_usd"] = str(SETUP_ATTEMPT_GUARD_USD)
+        self.data["setup_guard_basis"] = "Protective reservation per failed or in-flight build, not invoice cost"
+        self.save()
+
+    def finish_setup(self) -> None:
+        self.data["setup_build_inflight"] = False
         self.save()
 
     def reserve(self, key: str, spec_sha256: str, deadline_seconds: int = CALL_DEADLINE_SECONDS) -> dict:

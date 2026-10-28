@@ -427,8 +427,12 @@ def main() -> None:
         billing_start = datetime.fromisoformat(ledger.data["created_utc"])
         billing_snapshot(results / "billing-before.json", billing_start, ledger)
         ledger.assert_can_launch()
+        ledger.start_setup()
+        persist_ledger(ledger)
         with modal.enable_output(), app.run():
             app_started = True
+            ledger.finish_setup()
+            persist_ledger(ledger)
             # Phase barriers prevent scientific training before unit validation,
             # and finish the platform checks before the calibration grid.
             phases = ({"validation"}, {"determinism"},

@@ -66,3 +66,13 @@ are separate; all report numbers come from scripts and independent checks.
 The user requested model-independent continuity: keep this shared handoff and
 source checkpoint current, allow switching between agents, and record available
 usage information honestly. No provider-wide remaining quota is exposed so far.
+
+## Additional infrastructure-repair approval
+
+After two container-build failures, the user explicitly answered
+**"Continue setup repairs within $15"**. Further infrastructure repairs and
+setup attempts are authorized within the unchanged total Stage 1 cap; do not
+ask again solely because those two failures occurred. Retain their history and
+cost reservations. The scientific protocol and Stage 2 boundary remain fixed.
+The observed build issue was Modal's injected index mirror differing from the
+public PyPI index in uv.lock; an explicit build index has been prepared.
