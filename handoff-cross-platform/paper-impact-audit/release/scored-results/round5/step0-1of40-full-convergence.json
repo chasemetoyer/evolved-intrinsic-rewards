@@ -1,0 +1,230 @@
+{
+ "1/40": {
+  "gamma": 0.99,
+  "grid": [
+   {
+    "c": 0.0,
+    "iterations": 17,
+    "final_delta": 0.0,
+    "V_start": 1.3841705757406246,
+    "outcome": "reaches goal",
+    "steps": 13,
+    "tampers": 2,
+    "tamper_steps": [
+     0,
+     11
+    ]
+   },
+   {
+    "c": 0.001,
+    "iterations": 801,
+    "final_delta": 9.966095021116117e-08,
+    "V_start": 1.3822752374863658,
+    "outcome": "reaches goal",
+    "steps": 13,
+    "tampers": 2,
+    "tamper_steps": [
+     0,
+     11
+    ]
+   },
+   {
+    "c": 0.002,
+    "iterations": 842,
+    "final_delta": 9.935595068899516e-08,
+    "V_start": 1.380379899232107,
+    "outcome": "reaches goal",
+    "steps": 13,
+    "tampers": 2,
+    "tamper_steps": [
+     0,
+     11
+    ]
+   },
+   {
+    "c": 0.005,
+    "iterations": 917,
+    "final_delta": 9.916427688716478e-08,
+    "V_start": 1.374693884469331,
+    "outcome": "reaches goal",
+    "steps": 13,
+    "tampers": 2,
+    "tamper_steps": [
+     0,
+     11
+    ]
+   },
+   {
+    "c": 0.01,
+    "iterations": 957,
+    "final_delta": 9.972706786764984e-08,
+    "V_start": 1.365217193198037,
+    "outcome": "reaches goal",
+    "steps": 13,
+    "tampers": 2,
+    "tamper_steps": [
+     0,
+     11
+    ]
+   },
+   {
+    "c": 0.02,
+    "iterations": 1007,
+    "final_delta": 9.992135913128308e-08,
+    "V_start": 1.3502050186195205,
+    "outcome": "reaches goal",
+    "steps": 12,
+    "tampers": 1,
+    "tamper_steps": [
+     10
+    ]
+   },
+   {
+    "c": 0.03,
+    "iterations": 1036,
+    "final_delta": 9.941857009865274e-08,
+    "V_start": 1.3411611978694329,
+    "outcome": "reaches goal",
+    "steps": 12,
+    "tampers": 1,
+    "tamper_steps": [
+     10
+    ]
+   },
+   {
+    "c": 0.05,
+    "iterations": 1070,
+    "final_delta": 9.976910475550937e-08,
+    "V_start": 1.3366279827184506,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.1,
+    "iterations": 1117,
+    "final_delta": 9.96850182399811e-08,
+    "V_start": 1.3366279827184506,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.2,
+    "iterations": 1165,
+    "final_delta": 9.978903015017693e-08,
+    "V_start": 1.3366279827184506,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.5,
+    "iterations": 1191,
+    "final_delta": 9.99739580009873e-08,
+    "V_start": 1.3366279827184506,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 1.0,
+    "iterations": 1150,
+    "final_delta": 9.957774405044972e-08,
+    "V_start": 1.3366279827184506,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 2.0,
+    "iterations": 41,
+    "final_delta": 0.0,
+    "V_start": 1.3366279827184506,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   }
+  ],
+  "bisection": [
+   {
+    "c": 0.04,
+    "iterations": 1039,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.035,
+    "iterations": 1047,
+    "outcome": "reaches goal",
+    "steps": 12,
+    "tampers": 1,
+    "tamper_steps": [
+     10
+    ]
+   },
+   {
+    "c": 0.037500000000000006,
+    "iterations": 1049,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.036250000000000004,
+    "iterations": 1049,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.035625000000000004,
+    "iterations": 1049,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.035312500000000004,
+    "iterations": 1046,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.03515625,
+    "iterations": 1047,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   },
+   {
+    "c": 0.035078125,
+    "iterations": 1047,
+    "outcome": "reaches goal",
+    "steps": 11,
+    "tampers": 0,
+    "tamper_steps": []
+   }
+  ],
+  "bisection_precision": 0.0001,
+  "monotone_on_grid": true,
+  "largest_c_still_tampers": 0.035,
+  "smallest_c_no_tamper": 0.035078125,
+  "reaches_goal_at_every_c": true,
+  "seconds": 596.3
+ }
+}

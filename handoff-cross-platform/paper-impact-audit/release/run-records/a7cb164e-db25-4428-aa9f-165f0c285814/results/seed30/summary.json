@@ -1,0 +1,83 @@
+{
+  "seed": 30,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 583680,
+  "first_goal_step": 224,
+  "coverage_after_solved": 0.36511520737327186,
+  "final_train": {
+    "r_int_mean": 0.02567908126446936,
+    "r_int_std": 0.16235692302385965,
+    "train/ret": 0.9689640625,
+    "train/int_ret": 0.5590867627582823,
+    "train/len": 22.069999999999997,
+    "train/success": 1.0,
+    "train/coverage": 0.35028673835125446,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.3455555555555554,
+    "train/door_flips": 1.0044444444444443,
+    "train/len_median": 20.833333333333332
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.968798828125,
+      "int_ret": 0.0,
+      "len": 22.1875,
+      "success": 1.0,
+      "coverage": 0.3467741935483871,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.578125,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9711059570312499,
+      "int_ret": 0.0,
+      "len": 20.546875,
+      "success": 1.0,
+      "coverage": 0.3397177419354839,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.6377764892578124,
+      "int_ret": 0.0,
+      "len": 972.546875,
+      "success": 0.796875,
+      "coverage": 0.33871243169398907,
+      "got_key": 0.96875,
+      "opened_door": 0.859375,
+      "pickups": 77.359375,
+      "door_flips": 1.78125
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0154766845703125,
+      "int_ret": 0.0,
+      "len": 2520.421875,
+      "success": 0.015625,
+      "coverage": 0.15898224043715847,
+      "got_key": 0.765625,
+      "opened_door": 0.28125,
+      "pickups": 0.765625,
+      "door_flips": 0.28125
+    }
+  }
+}

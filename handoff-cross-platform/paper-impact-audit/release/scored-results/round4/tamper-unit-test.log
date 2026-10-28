@@ -1,0 +1,11 @@
+# tamper unit test run 2026-10-26T19:23:49Z, code = worktree on orx/r4-growth-1-40-coef-1-norm-on-reference + uncommitted round-4 changes (intrinsic.py sha256 f6f04cd1061ce3ce, ppo.py sha256 a9dbee05f5a13213)
+PASS T1 action space has 7 actions with tamper off and on
+PASS T2 'done' never terminates or changes agent/key/door (432 presses)
+PASS T3a tamper on: needs -> 0 and reward == D(h_before) on every press
+PASS T3b tamper on a terminal (truncation) step pays D(h_before) and needs reset to h0 (4 cases)
+PASS T4 tamper off: a press only applies growth
+PASS T5 explore-only mask: grasp and open needs stay exactly 0
+PASS T6 without presses, tamper on and off are identical
+PASS T7 tracker counts presses exactly (4 episodes)
+ALL TAMPER UNIT TESTS PASSED
+exit=0

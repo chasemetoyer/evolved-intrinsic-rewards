@@ -1,0 +1,101 @@
+{
+  "seed": 47,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.00625,
+      0.00625,
+      0.00625
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false
+  },
+  "first_solved_step": 230016,
+  "first_goal_step": 10080,
+  "coverage_after_solved": 0.34878754171301446,
+  "final_train": {
+    "r_int_mean": 0.022161970949835248,
+    "r_int_std": 0.08451610389682981,
+    "train/ret": 0.9551796874999999,
+    "train/int_ret": 0.7258023900572961,
+    "train/len": 31.87222222222222,
+    "train/success": 1.0,
+    "train/coverage": 0.34175627240143375,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.5544444444444443,
+    "train/door_flips": 1.3044444444444443,
+    "train/tampers": 2.585555555555555,
+    "train/len_median": 30.27777777777778
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 6364,
+    "tampers_per_episode": 2.4340037712130735,
+    "solved_episodes": 6364,
+    "solved_len_mean": 31.37272155876807
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.95471435546875,
+      "int_ret": 0.0,
+      "len": 32.203125,
+      "success": 1.0,
+      "coverage": 0.3487903225806452,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.78125,
+      "door_flips": 1.25,
+      "tampers": 2.515625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9428002929687499,
+      "int_ret": 0.0,
+      "len": 38.453125,
+      "success": 0.96875,
+      "coverage": 0.32560483870967744,
+      "got_key": 0.96875,
+      "opened_door": 0.96875,
+      "pickups": 0.96875,
+      "door_flips": 0.96875,
+      "tampers": 0.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.7318701171875,
+      "int_ret": 0.0,
+      "len": 727.125,
+      "success": 0.875,
+      "coverage": 0.2613558743169399,
+      "got_key": 0.953125,
+      "opened_door": 0.890625,
+      "pickups": 44.265625,
+      "door_flips": 2.296875,
+      "tampers": 73.625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0308599853515625,
+      "int_ret": 0.0,
+      "len": 2481.109375,
+      "success": 0.03125,
+      "coverage": 0.05814549180327869,
+      "got_key": 0.734375,
+      "opened_door": 0.34375,
+      "pickups": 0.734375,
+      "door_flips": 515.4375,
+      "tampers": 0.0
+    }
+  }
+}

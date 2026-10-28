@@ -1,0 +1,101 @@
+{
+  "seed": 46,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 8864,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.0019758098448316255,
+    "r_int_std": 0.07426425483491686,
+    "train/ret": 0.0,
+    "train/int_ret": -1.0293462443351746,
+    "train/len": 640.0,
+    "train/success": 0.0,
+    "train/coverage": 0.48960573476702507,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.0,
+    "train/pickups": 53.943333333333335,
+    "train/door_flips": 0.0,
+    "train/tampers": 0.01777777777777778,
+    "train/len_median": 640.0
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 316,
+    "tampers_per_episode": 0.015822784810126583,
+    "solved_episodes": 0,
+    "solved_len_mean": null
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.4435483870967742,
+      "got_key": 1.0,
+      "opened_door": 0.0,
+      "pickups": 56.5,
+      "door_flips": 0.0,
+      "tampers": 0.015625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.31048387096774194,
+      "got_key": 0.96875,
+      "opened_door": 0.0,
+      "pickups": 173.140625,
+      "door_flips": 0.0,
+      "tampers": 0.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.41606898907103823,
+      "got_key": 1.0,
+      "opened_door": 0.0,
+      "pickups": 140.890625,
+      "door_flips": 0.0,
+      "tampers": 0.375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.12329234972677595,
+      "got_key": 0.6875,
+      "opened_door": 0.0,
+      "pickups": 472.296875,
+      "door_flips": 0.0,
+      "tampers": 0.0
+    }
+  }
+}

@@ -1,0 +1,4985 @@
+{
+  "runs": {
+    "B8": {
+      "run": "fb860207-8246-4393-b352-0f74a9e88da2",
+      "n": 20,
+      "categories": {
+        "solve": 0,
+        "cycle-farm": 20,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.0,
+          0.16843347098308528
+        ],
+        "cycle-farm": [
+          0.8315665290169146,
+          1.0
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 0,
+      "tamperer_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "looper": 0,
+      "looper_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "done_rate_median": 0.041039726136454104,
+      "solve16": 0,
+      "medians": {
+        "first_solved": 2000000.0,
+        "solved_len": 640.0,
+        "train_auc": 0.004805484693877551,
+        "eval16": 0.0,
+        "eval8": 0.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0012903911564625852,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.031446540880503145,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 41,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0032546768707482996,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.11041009463722397,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 42,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.006568877551020409,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.0031446540880503146,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 43,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0028996598639455784,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.05063291139240506,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 44,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.008488257416368609,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.009584664536741214,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 45,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.003871173469387755,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.028481012658227847,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 46,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.006122448979591836,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.6273885350318471,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.003441751700680272,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.31230283911671924,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 48,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0034672619047619053,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.009554140127388535,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 49,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0037223639455782314,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.21835443037974683,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 50,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.005187074829931973,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.007687074829931972,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.4472843450479233,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 52,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.009049416158215863,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.0031645569620253164,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 53,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.00280187074829932,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.07255520504731862,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 54,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.006297470018935409,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 55,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.003312074829931973,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.0031746031746031746,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 56,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.005227465986394558,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.009554140127388535,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 57,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.009017857142857143,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.9198717948717948,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.007684948979591837,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.43037974683544306,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.00442389455782313,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.3047619047619048,
+          "final10_episodes": 315
+        }
+      ]
+    },
+    "B7": {
+      "run": "115c6566-d1b2-4ea2-9c6d-06b31317381c",
+      "n": 20,
+      "categories": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 20,
+      "tamperer_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "looper": 0,
+      "looper_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "done_rate_median": 2.5057024992150163,
+      "solve16": 5,
+      "medians": {
+        "first_solved": 315600.0,
+        "solved_len": 31.338578995405356,
+        "train_auc": 0.8863382227891157,
+        "eval16": 0.859375,
+        "eval8": 1.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 419104,
+          "solved_len": 33.88850355470782,
+          "train_auc": 0.8519812925170068,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 2.8314859715968135,
+          "final10_episodes": 5774
+        },
+        {
+          "seed": 41,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 282720,
+          "solved_len": 30.32908704883227,
+          "train_auc": 0.8955846088435374,
+          "curve": null,
+          "eval16": 0.9375,
+          "eval8": 1.0,
+          "done_per_episode": 2.380952380952381,
+          "final10_episodes": 6594
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 235936,
+          "solved_len": 31.688618925831204,
+          "train_auc": 0.9167729591836735,
+          "curve": null,
+          "eval16": 0.9375,
+          "eval8": 1.0,
+          "done_per_episode": 2.5683924576542028,
+          "final10_episodes": 6258
+        },
+        {
+          "seed": 43,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 471856,
+          "solved_len": 32.644167758846656,
+          "train_auc": 0.835189200680272,
+          "curve": null,
+          "eval16": 0.609375,
+          "eval8": 1.0,
+          "done_per_episode": 2.6024570024570024,
+          "final10_episodes": 6105
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 270944,
+          "solved_len": 30.15378810745548,
+          "train_auc": 0.9011075680272109,
+          "curve": null,
+          "eval16": 0.890625,
+          "eval8": 1.0,
+          "done_per_episode": 2.449290673105946,
+          "final10_episodes": 6626
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 305632,
+          "solved_len": 29.701530233249144,
+          "train_auc": 0.8900914115646258,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 2.4801663942950527,
+          "final10_episodes": 6731
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 365136,
+          "solved_len": 32.0915243312923,
+          "train_auc": 0.8673171768707482,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 2.6172063798936684,
+          "final10_episodes": 6207
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 230016,
+          "solved_len": 31.37272155876807,
+          "train_auc": 0.9204652324847464,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 2.4340037712130735,
+          "final10_episodes": 6364
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 340112,
+          "solved_len": 30.393128610519916,
+          "train_auc": 0.8764668367346938,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 2.6275463666768015,
+          "final10_episodes": 6578
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 296096,
+          "solved_len": 29.892723180795198,
+          "train_auc": 0.8990454931972789,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 2.503750375037504,
+          "final10_episodes": 6666
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 343376,
+          "solved_len": 32.30058177117001,
+          "train_auc": 0.8793205606985061,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 2.5874272786037493,
+          "final10_episodes": 6188
+        },
+        {
+          "seed": 51,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 411760,
+          "solved_len": 30.62501925743337,
+          "train_auc": 0.8530697278911564,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 2.3982750654551057,
+          "final10_episodes": 6493
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 356256,
+          "solved_len": 30.731200984161156,
+          "train_auc": 0.8683354591836734,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 2.361833000153775,
+          "final10_episodes": 6503
+        },
+        {
+          "seed": 53,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 325568,
+          "solved_len": 32.709445081027994,
+          "train_auc": 0.8852869897959185,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 2.4143067605172694,
+          "final10_episodes": 6109
+        },
+        {
+          "seed": 54,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 283136,
+          "solved_len": 30.604868340477648,
+          "train_auc": 0.8951615646258503,
+          "curve": null,
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 2.507654623392529,
+          "final10_episodes": 6532
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 259360,
+          "solved_len": 31.612183544303797,
+          "train_auc": 0.9115051020408164,
+          "curve": null,
+          "eval16": 0.90625,
+          "eval8": 1.0,
+          "done_per_episode": 2.6215189873417724,
+          "final10_episodes": 6320
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 364336,
+          "solved_len": 31.30443643204264,
+          "train_auc": 0.87183956185567,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 2.42828029471704,
+          "final10_episodes": 6379
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 277024,
+          "solved_len": 32.04260450160772,
+          "train_auc": 0.887389455782313,
+          "curve": null,
+          "eval16": 0.90625,
+          "eval8": 1.0,
+          "done_per_episode": 2.648288056582543,
+          "final10_episodes": 6221
+        },
+        {
+          "seed": 58,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 440032,
+          "solved_len": 31.303571428571427,
+          "train_auc": 0.8376679421768706,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 2.37359022556391,
+          "final10_episodes": 6384
+        },
+        {
+          "seed": 59,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 302640,
+          "solved_len": 31.576710380786853,
+          "train_auc": 0.8894957132337471,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 2.601200821614789,
+          "final10_episodes": 6329
+        }
+      ]
+    },
+    "B6": {
+      "run": "a6e11900-bf82-4dd1-8f07-48a8f55cffbc",
+      "n": 20,
+      "categories": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 0,
+      "tamperer_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "looper": 0,
+      "looper_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "done_rate_median": 0.47477774149538793,
+      "solve16": 5,
+      "medians": {
+        "first_solved": 413464.0,
+        "solved_len": 24.928282329772582,
+        "train_auc": 0.852311862244898,
+        "eval16": 0.828125,
+        "eval8": 1.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 575488,
+          "solved_len": 26.146993318485524,
+          "train_auc": 0.8188103566168735,
+          "curve": null,
+          "eval16": 0.78125,
+          "eval8": 1.0,
+          "done_per_episode": 0.4619415695008516,
+          "final10_episodes": 7633
+        },
+        {
+          "seed": 41,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 355072,
+          "solved_len": 24.12256267409471,
+          "train_auc": 0.8761385218242728,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 0.37103414870428675,
+          "final10_episodes": 8258
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 389088,
+          "solved_len": 23.514816556914393,
+          "train_auc": 0.8611522108843537,
+          "curve": null,
+          "eval16": 0.9375,
+          "eval8": 1.0,
+          "done_per_episode": 0.521519285042333,
+          "final10_episodes": 8504
+        },
+        {
+          "seed": 43,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 724400,
+          "solved_len": 25.961563433320347,
+          "train_auc": 0.7444621598639456,
+          "curve": null,
+          "eval16": 0.390625,
+          "eval8": 1.0,
+          "done_per_episode": 0.4016361511492014,
+          "final10_episodes": 7701
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 381872,
+          "solved_len": 23.369331463300608,
+          "train_auc": 0.8612414965986395,
+          "curve": null,
+          "eval16": 0.96875,
+          "eval8": 1.0,
+          "done_per_episode": 0.4413277232351566,
+          "final10_episodes": 8556
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 429200,
+          "solved_len": 25.460744328320164,
+          "train_auc": 0.8294005102040817,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 0.45692072393576344,
+          "final10_episodes": 7846
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 439264,
+          "solved_len": 24.358683729433274,
+          "train_auc": 0.8501275510204082,
+          "curve": null,
+          "eval16": 0.5,
+          "eval8": 1.0,
+          "done_per_episode": 0.4294942108470445,
+          "final10_episodes": 8205
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 309040,
+          "solved_len": 24.297957695113055,
+          "train_auc": 0.8845851961918788,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 0.512642839776319,
+          "final10_episodes": 8226
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 489408,
+          "solved_len": 24.57622739018088,
+          "train_auc": 0.8195812074829932,
+          "curve": null,
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 0.5166728189984003,
+          "final10_episodes": 8127
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 358624,
+          "solved_len": 23.138377878051603,
+          "train_auc": 0.8748497659373028,
+          "curve": null,
+          "eval16": 0.90625,
+          "eval8": 1.0,
+          "done_per_episode": 0.28034247367812104,
+          "final10_episodes": 8643
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 521376,
+          "solved_len": 25.65280451803363,
+          "train_auc": 0.8110055272108843,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 0.4876139134899243,
+          "final10_episodes": 7791
+        },
+        {
+          "seed": 51,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 479152,
+          "solved_len": 23.47775038158976,
+          "train_auc": 0.836309523809524,
+          "curve": null,
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.3865210754960667,
+          "final10_episodes": 8517
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 498256,
+          "solved_len": 25.767921609076843,
+          "train_auc": 0.8137457482993198,
+          "curve": null,
+          "eval16": 0.546875,
+          "eval8": 1.0,
+          "done_per_episode": 0.5526044352759154,
+          "final10_episodes": 7756
+        },
+        {
+          "seed": 53,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 358400,
+          "solved_len": 25.270854398382205,
+          "train_auc": 0.8623979591836733,
+          "curve": null,
+          "eval16": 0.84375,
+          "eval8": 1.0,
+          "done_per_episode": 0.43933265925176945,
+          "final10_episodes": 7912
+        },
+        {
+          "seed": 54,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 395760,
+          "solved_len": 24.75180034765334,
+          "train_auc": 0.8570408163265307,
+          "curve": null,
+          "eval16": 0.96875,
+          "eval8": 1.0,
+          "done_per_episode": 0.4952203600248293,
+          "final10_episodes": 8055
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 392112,
+          "solved_len": 25.89225941422594,
+          "train_auc": 0.8594192483694508,
+          "curve": null,
+          "eval16": 0.734375,
+          "eval8": 1.0,
+          "done_per_episode": 0.5825382302966933,
+          "final10_episodes": 7651
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 569600,
+          "solved_len": 27.471825178669597,
+          "train_auc": 0.8087273827056596,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 0.5206157229246839,
+          "final10_episodes": 7276
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 397728,
+          "solved_len": 25.104764311891824,
+          "train_auc": 0.8544961734693879,
+          "curve": null,
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 0.4372710044219836,
+          "final10_episodes": 7915
+        },
+        {
+          "seed": 58,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 598160,
+          "solved_len": 28.173925299506696,
+          "train_auc": 0.7782950680272109,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 0.5785764622973926,
+          "final10_episodes": 7095
+        },
+        {
+          "seed": 59,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 374864,
+          "solved_len": 23.99028310940499,
+          "train_auc": 0.8752228197980224,
+          "curve": null,
+          "eval16": 0.796875,
+          "eval8": 1.0,
+          "done_per_episode": 0.6084452975047985,
+          "final10_episodes": 8336
+        }
+      ]
+    },
+    "B5": {
+      "run": "4d3b84f0-9f83-4f15-a20b-34c32c14ed36",
+      "n": 20,
+      "categories": {
+        "solve": 11,
+        "cycle-farm": 9,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.31527813304054847,
+          0.7694221032240758
+        ],
+        "cycle-farm": [
+          0.2305778967759241,
+          0.6847218669594515
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 4,
+      "tamperer_ci": [
+        0.05733399705003277,
+        0.4366140029966683
+      ],
+      "looper": 1,
+      "looper_ci": [
+        0.0012650894979498038,
+        0.24873276277202777
+      ],
+      "done_rate_median": 0.0007887057633301912,
+      "solve16": 1,
+      "medians": {
+        "first_solved": 864664.0,
+        "solved_len": 24.83819282280036,
+        "train_auc": 0.6905675231595421,
+        "eval16": 0.4296875,
+        "eval8": 1.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 331984,
+          "solved_len": 21.257212818056,
+          "train_auc": 0.9008989059541341,
+          "curve": null,
+          "eval16": 0.734375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9393
+        },
+        {
+          "seed": 41,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0040943877551020405,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 8.069182389937106,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 494656,
+          "solved_len": 21.1538950042337,
+          "train_auc": 0.8361713435374148,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9448
+        },
+        {
+          "seed": 43,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0018835034013605443,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.9242902208201893,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 827808,
+          "solved_len": 24.415713758760607,
+          "train_auc": 0.7080221782590588,
+          "curve": null,
+          "eval16": 0.59375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0004917025199754148,
+          "final10_episodes": 8135
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 473232,
+          "solved_len": 20.57237249638654,
+          "train_auc": 0.821160063515202,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010323113451016826,
+          "final10_episodes": 9687
+        },
+        {
+          "seed": 46,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.00454719387755102,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 0.015822784810126583,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 182.8268551236749,
+          "train_auc": 0.2128121095376926,
+          "curve": null,
+          "eval16": 0.125,
+          "eval8": 0.546875,
+          "done_per_episode": 0.12427184466019417,
+          "final10_episodes": 515
+        },
+        {
+          "seed": 48,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 182.0,
+          "train_auc": 0.09863178518830214,
+          "curve": null,
+          "eval16": 0.03125,
+          "eval8": 0.0625,
+          "done_per_episode": 0.15432098765432098,
+          "final10_episodes": 324
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 320032,
+          "solved_len": 21.02219417271484,
+          "train_auc": 0.8785451680672268,
+          "curve": null,
+          "eval16": 0.71875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0006311139160618492,
+          "final10_episodes": 9507
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 660912,
+          "solved_len": 22.837024754234278,
+          "train_auc": 0.7730088224457756,
+          "curve": null,
+          "eval16": 0.8125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0009462976105985332,
+          "final10_episodes": 8454
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.00393920068027211,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 3.1360759493670884,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 756704,
+          "solved_len": 20.345918990433542,
+          "train_auc": 0.7348625867872922,
+          "curve": null,
+          "eval16": 0.390625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9826
+        },
+        {
+          "seed": 53,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 364.265306122449,
+          "train_auc": 0.08705994897959185,
+          "curve": null,
+          "eval16": 0.03125,
+          "eval8": 0.1875,
+          "done_per_episode": 0.11746987951807229,
+          "final10_episodes": 332
+        },
+        {
+          "seed": 54,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 279232,
+          "solved_len": 21.24835281615303,
+          "train_auc": 0.9076418679716785,
+          "curve": null,
+          "eval16": 0.9375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9410
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 901520,
+          "solved_len": 25.26067188684011,
+          "train_auc": 0.6908836162015827,
+          "curve": null,
+          "eval16": 0.46875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00025258903763576663,
+          "final10_episodes": 7918
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 822928,
+          "solved_len": 24.172675058047172,
+          "train_auc": 0.6955161213970125,
+          "curve": null,
+          "eval16": 0.78125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 8186
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 756080,
+          "solved_len": 20.573723228995057,
+          "train_auc": 0.6902514301175016,
+          "curve": null,
+          "eval16": 0.84375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0003088962108731466,
+          "final10_episodes": 9712
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.00589498299319728,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 2.686900958466454,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 366.5263157894737,
+          "train_auc": 0.036279761904761905,
+          "curve": null,
+          "eval16": 0.03125,
+          "eval8": 0.046875,
+          "done_per_episode": 1.0279503105590062,
+          "final10_episodes": 322
+        }
+      ]
+    },
+    "B4": {
+      "run": "f0a40d20-3702-4087-803c-8db52fefaf1e",
+      "n": 20,
+      "categories": {
+        "solve": 0,
+        "cycle-farm": 18,
+        "prolong": 2,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.0,
+          0.16843347098308528
+        ],
+        "cycle-farm": [
+          0.6830172859809177,
+          0.9876514728297052
+        ],
+        "prolong": [
+          0.012348527170294808,
+          0.31698271401908235
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 20,
+      "tamperer_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "looper": 20,
+      "looper_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "done_rate_median": 119.9168305070861,
+      "solve16": 0,
+      "medians": {
+        "first_solved": 2000000.0,
+        "solved_len": 413.8888888888889,
+        "train_auc": 0.019225127551020408,
+        "eval16": 0.0,
+        "eval8": 0.015625
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 453.5,
+          "train_auc": 0.015,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 119.8974358974359,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 41,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 414.77777777777777,
+          "train_auc": 0.025312499999999998,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 118.94920634920635,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 42,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 375.25,
+          "train_auc": 0.01469812925170068,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 120.55555555555556,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 43,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 421.125,
+          "train_auc": 0.01653061224489796,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.015625,
+          "done_per_episode": 121.10410094637224,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 44,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 479.90909090909093,
+          "train_auc": 0.01959608843537415,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 119.0448717948718,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 45,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 393.1666666666667,
+          "train_auc": 0.019258078231292518,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.03125,
+          "done_per_episode": 120.2879746835443,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 46,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 379.2,
+          "train_auc": 0.017895408163265306,
+          "curve": null,
+          "eval16": 0.03125,
+          "eval8": 0.03125,
+          "done_per_episode": 119.93589743589743,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 390.0769230769231,
+          "train_auc": 0.018983843537414967,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 118.28213166144201,
+          "final10_episodes": 319
+        },
+        {
+          "seed": 48,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 435.5,
+          "train_auc": 0.022918792517006802,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 118.80254777070064,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 49,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 442.4,
+          "train_auc": 0.018095238095238095,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.09375,
+          "done_per_episode": 119.89776357827476,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 50,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 406.3,
+          "train_auc": 0.019857568027210885,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 117.24367088607595,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 457.2,
+          "train_auc": 0.01915391156462585,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 119.27974276527331,
+          "final10_episodes": 311
+        },
+        {
+          "seed": 52,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 408.44444444444446,
+          "train_auc": 0.02175382653061224,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 120.5079365079365,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 53,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 542.3333333333334,
+          "train_auc": 0.01970238095238095,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 123.29523809523809,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 54,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 413.0,
+          "train_auc": 0.015469812925170068,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 121.23492063492064,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 55,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 480.1,
+          "train_auc": 0.02312925170068027,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 120.75399361022365,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 56,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 409.4,
+          "train_auc": 0.019192176870748298,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.03125,
+          "done_per_episode": 119.29392971246007,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 57,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 317.5,
+          "train_auc": 0.021071428571428567,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 119.65064102564102,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 441.14285714285717,
+          "train_auc": 0.017653061224489796,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 120.52884615384616,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 403.14285714285717,
+          "train_auc": 0.022000425170068026,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 120.73101265822785,
+          "final10_episodes": 316
+        }
+      ]
+    },
+    "B3": {
+      "run": "78c44406-6e63-466f-b309-8dfb82bfe663",
+      "n": 20,
+      "categories": {
+        "solve": 1,
+        "cycle-farm": 5,
+        "prolong": 14,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.0012650894979498038,
+          0.24873276277202777
+        ],
+        "cycle-farm": [
+          0.08657146910143461,
+          0.49104587170795744
+        ],
+        "prolong": [
+          0.45721081772371086,
+          0.8810684095942722
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 20,
+      "tamperer_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "looper": 20,
+      "looper_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "done_rate_median": 172.9190722774438,
+      "solve16": 0,
+      "medians": {
+        "first_solved": 2000000.0,
+        "solved_len": 520.225,
+        "train_auc": 0.00413265306122449,
+        "eval16": 0.0,
+        "eval8": 0.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 516.25,
+          "train_auc": 0.014768282312925173,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 163.58785942492014,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 41,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 404.3333333333333,
+          "train_auc": 0.004972363945578232,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 173.85358255451715,
+          "final10_episodes": 321
+        },
+        {
+          "seed": 42,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 485.0,
+          "train_auc": 0.0014285714285714288,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 173.30817610062894,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 43,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 514.5,
+          "train_auc": 0.004591836734693878,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 172.52996845425866,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 44,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0033673469387755102,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 174.8984126984127,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 45,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0008907312925170068,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 172.5203761755486,
+          "final10_episodes": 319
+        },
+        {
+          "seed": 46,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 528.5,
+          "train_auc": 0.0064285714285714285,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 166.86075949367088,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 543.2,
+          "train_auc": 0.03681760204081633,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 171.14423076923077,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1720240,
+          "solved_len": 198.47896879240162,
+          "train_auc": 0.4683673469387754,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 0.890625,
+          "done_per_episode": 52.778998778998776,
+          "final10_episodes": 819
+        },
+        {
+          "seed": 49,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 364.2857142857143,
+          "train_auc": 0.13976403061224493,
+          "curve": null,
+          "eval16": 0.140625,
+          "eval8": 0.203125,
+          "done_per_episode": 140.1068493150685,
+          "final10_episodes": 365
+        },
+        {
+          "seed": 50,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 454.5,
+          "train_auc": 0.009053996598639457,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 163.0958466453674,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 537.5,
+          "train_auc": 0.002551020408163265,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.0,
+          "done_per_episode": 172.40438871473353,
+          "final10_episodes": 319
+        },
+        {
+          "seed": 52,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 613.0,
+          "train_auc": 0.0012244897959183675,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 175.28616352201257,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 53,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0008907312925170068,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 180.33018867924528,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 54,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 489.0,
+          "train_auc": 0.0008163265306122448,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 176.878125,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 55,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 458.0,
+          "train_auc": 0.0036734693877551023,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 174.13968253968255,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 56,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.00031037414965986396,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 176.934375,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 57,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 524.2,
+          "train_auc": 0.012393707482993198,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.015625,
+          "done_per_episode": 164.87179487179486,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.0,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 176.471875,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 59,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 443.0,
+          "train_auc": 0.007653061224489796,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 179.0095541401274,
+          "final10_episodes": 314
+        }
+      ]
+    },
+    "B2": {
+      "run": "a8f5efc4-63e7-4a55-8020-08f7e7cff7bb",
+      "n": 20,
+      "categories": {
+        "solve": 0,
+        "cycle-farm": 20,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.0,
+          0.16843347098308528
+        ],
+        "cycle-farm": [
+          0.8315665290169146,
+          1.0
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 20,
+      "tamperer_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "looper": 20,
+      "looper_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "done_rate_median": 61.156530448717945,
+      "solve16": 0,
+      "medians": {
+        "first_solved": 2000000.0,
+        "solved_len": 441.75,
+        "train_auc": 0.02216624149659864,
+        "eval16": 0.0,
+        "eval8": 0.03125
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 417.77777777777777,
+          "train_auc": 0.02385416666666667,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 60.923809523809524,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 41,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 439.0,
+          "train_auc": 0.02368409863945578,
+          "curve": null,
+          "eval16": 0.03125,
+          "eval8": 0.015625,
+          "done_per_episode": 63.47284345047923,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 42,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 478.2857142857143,
+          "train_auc": 0.018473639455782315,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 61.1474358974359,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 43,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 479.375,
+          "train_auc": 0.018326955782312925,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 59.629746835443036,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 44,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 457.6666666666667,
+          "train_auc": 0.022453231292517008,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 64.16932907348243,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 45,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 496.0,
+          "train_auc": 0.02156887755102041,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 61.165625,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 46,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 430.9,
+          "train_auc": 0.022244897959183677,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.03125,
+          "done_per_episode": 59.593650793650795,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 387.61538461538464,
+          "train_auc": 0.025801445578231285,
+          "curve": null,
+          "eval16": 0.03125,
+          "eval8": 0.046875,
+          "done_per_episode": 60.99375,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 48,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 456.27272727272725,
+          "train_auc": 0.027882653061224488,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.078125,
+          "done_per_episode": 60.8063492063492,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 49,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 481.7857142857143,
+          "train_auc": 0.028405612244897953,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 62.629746835443036,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 50,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 465.0,
+          "train_auc": 0.025246598639455782,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.0625,
+          "done_per_episode": 59.81210191082803,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 444.9,
+          "train_auc": 0.022323554421768706,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 62.403125,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 52,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 468.1,
+          "train_auc": 0.022087585034013604,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 61.70063694267516,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 53,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 412.125,
+          "train_auc": 0.018348214285714287,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 61.67515923566879,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 54,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 412.375,
+          "train_auc": 0.021738945578231292,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 62.69009584664537,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 55,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 383.0,
+          "train_auc": 0.021502976190476187,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 61.55238095238095,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 56,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 444.5,
+          "train_auc": 0.019829931972789115,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 59.70063694267516,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 57,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 362.7142857142857,
+          "train_auc": 0.02566751700680272,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 58.35668789808917,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 390.2857142857143,
+          "train_auc": 0.02173469387755102,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 61.9203821656051,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 424.1666666666667,
+          "train_auc": 0.01816326530612245,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 60.170347003154575,
+          "final10_episodes": 317
+        }
+      ]
+    },
+    "B1": {
+      "run": "bb00e7e5-65d0-4411-a236-2dacc19f0e63",
+      "n": 20,
+      "categories": {
+        "solve": 1,
+        "cycle-farm": 6,
+        "prolong": 13,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.0012650894979498038,
+          0.24873276277202777
+        ],
+        "cycle-farm": [
+          0.11893159040572766,
+          0.5427891822762891
+        ],
+        "prolong": [
+          0.40781146546717184,
+          0.8460907952154588
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 20,
+      "tamperer_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "looper": 20,
+      "looper_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "done_rate_median": 38.585199610516064,
+      "solve16": 1,
+      "medians": {
+        "first_solved": 2000000.0,
+        "solved_len": 427.74175824175825,
+        "train_auc": 0.013417304421768708,
+        "eval16": 0.0,
+        "eval8": 0.0234375
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 406.14285714285717,
+          "train_auc": 0.011734693877551022,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 38.23101265822785,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 41,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 356.375,
+          "train_auc": 0.013005952380952382,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 38.34493670886076,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 42,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 322.5833333333333,
+          "train_auc": 0.01326530612244898,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 37.32919254658385,
+          "final10_episodes": 322
+        },
+        {
+          "seed": 43,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 437.7692307692308,
+          "train_auc": 0.039759778911564625,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.109375,
+          "done_per_episode": 36.62305295950156,
+          "final10_episodes": 321
+        },
+        {
+          "seed": 44,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 634.0,
+          "train_auc": 0.0030612244897959186,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 41.10094637223975,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 45,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 442.0,
+          "train_auc": 0.007823129251700681,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0625,
+          "done_per_episode": 39.82051282051282,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 46,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 327.0,
+          "train_auc": 0.01715986394557823,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.046875,
+          "done_per_episode": 35.462025316455694,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 264.5,
+          "train_auc": 0.025344387755102036,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 38.438709677419354,
+          "final10_episodes": 310
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1345408,
+          "solved_len": 82.44425459205468,
+          "train_auc": 0.5016369047619047,
+          "curve": null,
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 5.5657167162909404,
+          "final10_episodes": 2351
+        },
+        {
+          "seed": 49,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 492.0,
+          "train_auc": 0.0403125,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 38.46153846153846,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 50,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 449.25,
+          "train_auc": 0.030204081632653063,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 37.91139240506329,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 417.7142857142857,
+          "train_auc": 0.03147746598639456,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 38.80379746835443,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 52,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 446.625,
+          "train_auc": 0.00813562925170068,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 39.58730158730159,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 53,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 530.0,
+          "train_auc": 0.0021152210884353745,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 39.89655172413793,
+          "final10_episodes": 319
+        },
+        {
+          "seed": 54,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 631.0,
+          "train_auc": 0.004795918367346939,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 41.85849056603774,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 55,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 401.4,
+          "train_auc": 0.017421343537414966,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 39.01602564102564,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 56,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.004285714285714286,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 41.3343949044586,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 57,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 333.6666666666667,
+          "train_auc": 0.04595238095238096,
+          "curve": null,
+          "eval16": 0.015625,
+          "eval8": 0.03125,
+          "done_per_episode": 37.373831775700936,
+          "final10_episodes": 321
+        },
+        {
+          "seed": 58,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.008571428571428572,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 40.17628205128205,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 59,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 340.5,
+          "train_auc": 0.013569302721088436,
+          "curve": null,
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 38.70886075949367,
+          "final10_episodes": 316
+        }
+      ]
+    },
+    "A2c": {
+      "run": "2d94fc36-66b9-40db-b192-13b54b12bb6c",
+      "n": 20,
+      "categories": {
+        "solve": 17,
+        "cycle-farm": 2,
+        "prolong": 0,
+        "fail": 1
+      },
+      "categories_ci": {
+        "solve": [
+          0.621073173454686,
+          0.9679290628145363
+        ],
+        "cycle-farm": [
+          0.012348527170294808,
+          0.31698271401908235
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0012650894979498038,
+          0.24873276277202777
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 4,
+      "tamperer_ci": [
+        0.05733399705003277,
+        0.4366140029966683
+      ],
+      "looper": 3,
+      "looper_ci": [
+        0.0320709371854637,
+        0.37892682654531396
+      ],
+      "done_rate_median": 0.0029733442738109116,
+      "solve16": 8,
+      "medians": {
+        "first_solved": 746960.0,
+        "solved_len": 24.1651141050073,
+        "train_auc": 0.7483269557823129,
+        "eval16": 0.8359375,
+        "eval8": 1.0,
+        "curve DoorKey-8x8": 0.7875000000000001,
+        "curve DoorKey-16x16": 0.66125
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 810464,
+          "solved_len": 26.212721034573764,
+          "train_auc": 0.7005314625850341,
+          "curve": {
+            "DoorKey-8x8": 0.7175,
+            "DoorKey-16x16": 0.6275
+          },
+          "eval16": 0.90625,
+          "eval8": 1.0,
+          "done_per_episode": 0.007387862796833773,
+          "final10_episodes": 7580
+        },
+        {
+          "seed": 41,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 733984,
+          "solved_len": 27.130890765459004,
+          "train_auc": 0.724187925170068,
+          "curve": {
+            "DoorKey-8x8": 0.7725,
+            "DoorKey-16x16": 0.655
+          },
+          "eval16": 0.984375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0072177584093694675,
+          "final10_episodes": 7343
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 819536,
+          "solved_len": 29.43215250675473,
+          "train_auc": 0.6873852040816327,
+          "curve": {
+            "DoorKey-8x8": 0.6825,
+            "DoorKey-16x16": 0.6675
+          },
+          "eval16": 1.0,
+          "eval8": 1.0,
+          "done_per_episode": 0.0020995800839832034,
+          "final10_episodes": 6668
+        },
+        {
+          "seed": 43,
+          "category": "fail",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 191.78902229845627,
+          "train_auc": 0.2899638605442177,
+          "curve": {
+            "DoorKey-8x8": 0.275,
+            "DoorKey-16x16": 0.17
+          },
+          "eval16": 0.53125,
+          "eval8": 0.765625,
+          "done_per_episode": 11.983333333333333,
+          "final10_episodes": 720
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1566688,
+          "solved_len": 73.42307692307692,
+          "train_auc": 0.45337797619047615,
+          "curve": {
+            "DoorKey-8x8": 0.4425,
+            "DoorKey-16x16": 0.375
+          },
+          "eval16": 0.765625,
+          "eval8": 0.953125,
+          "done_per_episode": 1.424717999019127,
+          "final10_episodes": 2039
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 771712,
+          "solved_len": 22.25153442696128,
+          "train_auc": 0.7443856292517007,
+          "curve": {
+            "DoorKey-8x8": 0.78,
+            "DoorKey-16x16": 0.695
+          },
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0018968980138361973,
+          "final10_episodes": 8962
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 759936,
+          "solved_len": 27.085714285714285,
+          "train_auc": 0.7522682823129251,
+          "curve": {
+            "DoorKey-8x8": 0.795,
+            "DoorKey-16x16": 0.725
+          },
+          "eval16": 0.96875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0013856172925038105,
+          "final10_episodes": 7217
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 576048,
+          "solved_len": 21.097666561081194,
+          "train_auc": 0.7985395408163266,
+          "curve": {
+            "DoorKey-8x8": 0.8125,
+            "DoorKey-16x16": 0.305
+          },
+          "eval16": 0.046875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010558547143912998,
+          "final10_episodes": 9471
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 443152,
+          "solved_len": 20.416051660516604,
+          "train_auc": 0.8542580782312925,
+          "curve": {
+            "DoorKey-8x8": 0.8925,
+            "DoorKey-16x16": 0.82
+          },
+          "eval16": 0.921875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00030747155888080353,
+          "final10_episodes": 9757
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 471760,
+          "solved_len": 20.24726388325902,
+          "train_auc": 0.8601806972789116,
+          "curve": {
+            "DoorKey-8x8": 0.885,
+            "DoorKey-16x16": 0.7825
+          },
+          "eval16": 0.859375,
+          "eval8": 1.0,
+          "done_per_episode": 0.00020267531414673692,
+          "final10_episodes": 9868
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 993312,
+          "solved_len": 29.642417179956716,
+          "train_auc": 0.6377402210884354,
+          "curve": {
+            "DoorKey-8x8": 0.6975,
+            "DoorKey-16x16": 0.4975
+          },
+          "eval16": 0.5625,
+          "eval8": 1.0,
+          "done_per_episode": 0.030132450331125826,
+          "final10_episodes": 6040
+        },
+        {
+          "seed": 51,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 384720,
+          "solved_len": 22.600158263621974,
+          "train_auc": 0.8996894774959945,
+          "curve": {
+            "DoorKey-8x8": 0.9325,
+            "DoorKey-16x16": 0.8425
+          },
+          "eval16": 0.84375,
+          "eval8": 1.0,
+          "done_per_episode": 0.004408772326475243,
+          "final10_episodes": 8846
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 504272,
+          "solved_len": 22.475612522686024,
+          "train_auc": 0.8264051870748299,
+          "curve": {
+            "DoorKey-8x8": 0.8375,
+            "DoorKey-16x16": 0.525
+          },
+          "eval16": 0.4375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 8819
+        },
+        {
+          "seed": 53,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 454528,
+          "solved_len": 23.671464555595538,
+          "train_auc": 0.8804549319727891,
+          "curve": {
+            "DoorKey-8x8": 0.915,
+            "DoorKey-16x16": 0.8175
+          },
+          "eval16": 0.796875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0008392279103225033,
+          "final10_episodes": 8341
+        },
+        {
+          "seed": 54,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 369.9347826086956,
+          "train_auc": 0.11909863945578232,
+          "curve": {
+            "DoorKey-8x8": 0.1625,
+            "DoorKey-16x16": 0.065
+          },
+          "eval16": 0.0625,
+          "eval8": 0.25,
+          "done_per_episode": 24.44,
+          "final10_episodes": 350
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 811392,
+          "solved_len": 22.860834762721556,
+          "train_auc": 0.7312988945578232,
+          "curve": {
+            "DoorKey-8x8": 0.7575,
+            "DoorKey-16x16": 0.735
+          },
+          "eval16": 0.96875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0012578616352201257,
+          "final10_episodes": 8745
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 596448,
+          "solved_len": 24.658763654419065,
+          "train_auc": 0.8097959183673471,
+          "curve": {
+            "DoorKey-8x8": 0.8475,
+            "DoorKey-16x16": 0.625
+          },
+          "eval16": 0.421875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00384710846363862,
+          "final10_episodes": 8058
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 496864,
+          "solved_len": 20.1195853007596,
+          "train_auc": 0.8296343537414966,
+          "curve": {
+            "DoorKey-8x8": 0.8625,
+            "DoorKey-16x16": 0.7975
+          },
+          "eval16": 0.828125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0004103405826836274,
+          "final10_episodes": 9748
+        },
+        {
+          "seed": 58,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 699472,
+          "solved_len": 23.32990422135509,
+          "train_auc": 0.7561288265306123,
+          "curve": {
+            "DoorKey-8x8": 0.815,
+            "DoorKey-16x16": 0.7525
+          },
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0039002481976125754,
+          "final10_episodes": 8461
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 304.88461538461536,
+          "train_auc": 0.15762755102040815,
+          "curve": {
+            "DoorKey-8x8": 0.155,
+            "DoorKey-16x16": 0.095
+          },
+          "eval16": 0.25,
+          "eval8": 0.46875,
+          "done_per_episode": 27.633495145631066,
+          "final10_episodes": 412
+        }
+      ],
+      "mean curve DoorKey-8x8": 0.701875,
+      "mean curve DoorKey-16x16": 0.57875
+    },
+    "A2b": {
+      "run": "7a364fed-a875-4d3d-a366-21a162be994d",
+      "n": 20,
+      "categories": {
+        "solve": 0,
+        "cycle-farm": 20,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.0,
+          0.16843347098308528
+        ],
+        "cycle-farm": [
+          0.8315665290169146,
+          1.0
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 20,
+      "tamperer_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "looper": 20,
+      "looper_ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "done_rate_median": 15.023893475518863,
+      "solve16": 0,
+      "medians": {
+        "first_solved": 2000000.0,
+        "solved_len": 386.42669172932335,
+        "train_auc": 0.03482142857142857,
+        "eval16": 0.0,
+        "eval8": 0.0546875,
+        "curve DoorKey-8x8": 0.03,
+        "curve DoorKey-16x16": 0.00625
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 369.0769230769231,
+          "train_auc": 0.06024447278911564,
+          "curve": {
+            "DoorKey-8x8": 0.05,
+            "DoorKey-16x16": 0.0075
+          },
+          "eval16": 0.0,
+          "eval8": 0.109375,
+          "done_per_episode": 15.48297213622291,
+          "final10_episodes": 323
+        },
+        {
+          "seed": 41,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 468.0,
+          "train_auc": 0.021955782312925172,
+          "curve": {
+            "DoorKey-8x8": 0.015,
+            "DoorKey-16x16": 0.0075
+          },
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 18.142857142857142,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 42,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 394.94736842105266,
+          "train_auc": 0.03176445578231293,
+          "curve": {
+            "DoorKey-8x8": 0.025,
+            "DoorKey-16x16": 0.0125
+          },
+          "eval16": 0.015625,
+          "eval8": 0.015625,
+          "done_per_episode": 16.56386292834891,
+          "final10_episodes": 321
+        },
+        {
+          "seed": 43,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 388.2105263157895,
+          "train_auc": 0.05377763605442176,
+          "curve": {
+            "DoorKey-8x8": 0.0275,
+            "DoorKey-16x16": 0.0125
+          },
+          "eval16": 0.0,
+          "eval8": 0.09375,
+          "done_per_episode": 7.3584905660377355,
+          "final10_episodes": 318
+        },
+        {
+          "seed": 44,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 442.55,
+          "train_auc": 0.03830357142857143,
+          "curve": {
+            "DoorKey-8x8": 0.045,
+            "DoorKey-16x16": 0.01
+          },
+          "eval16": 0.015625,
+          "eval8": 0.140625,
+          "done_per_episode": 16.98422712933754,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 45,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 384.64285714285717,
+          "train_auc": 0.020633503401360543,
+          "curve": {
+            "DoorKey-8x8": 0.03,
+            "DoorKey-16x16": 0.005
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 12.047021943573668,
+          "final10_episodes": 319
+        },
+        {
+          "seed": 46,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 361.0,
+          "train_auc": 0.015773809523809523,
+          "curve": {
+            "DoorKey-8x8": 0.02,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.0,
+          "eval8": 0.046875,
+          "done_per_episode": 18.25878594249201,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 47,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 433.5,
+          "train_auc": 0.010480442176870748,
+          "curve": {
+            "DoorKey-8x8": 0.0075,
+            "DoorKey-16x16": 0.005
+          },
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 20.304761904761904,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 48,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 309.8333333333333,
+          "train_auc": 0.02078088838628235,
+          "curve": {
+            "DoorKey-8x8": 0.0225,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 14.015873015873016,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 49,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 352.2,
+          "train_auc": 0.04121897708329962,
+          "curve": {
+            "DoorKey-8x8": 0.05,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.015625,
+          "eval8": 0.0625,
+          "done_per_episode": 9.05079365079365,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 50,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 397.3333333333333,
+          "train_auc": 0.02435374149659864,
+          "curve": {
+            "DoorKey-8x8": 0.025,
+            "DoorKey-16x16": 0.005
+          },
+          "eval16": 0.0,
+          "eval8": 0.078125,
+          "done_per_episode": 13.463258785942491,
+          "final10_episodes": 313
+        },
+        {
+          "seed": 51,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 397.05263157894734,
+          "train_auc": 0.05325284435740991,
+          "curve": {
+            "DoorKey-8x8": 0.0725,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.0,
+          "eval8": 0.171875,
+          "done_per_episode": 12.345565749235474,
+          "final10_episodes": 327
+        },
+        {
+          "seed": 52,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 442.3333333333333,
+          "train_auc": 0.01998937074829932,
+          "curve": {
+            "DoorKey-8x8": 0.0275,
+            "DoorKey-16x16": 0.0075
+          },
+          "eval16": 0.0,
+          "eval8": 0.03125,
+          "done_per_episode": 10.906752411575562,
+          "final10_episodes": 311
+        },
+        {
+          "seed": 53,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 371.3333333333333,
+          "train_auc": 0.03787840136054422,
+          "curve": {
+            "DoorKey-8x8": 0.0375,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 12.35,
+          "final10_episodes": 320
+        },
+        {
+          "seed": 54,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 442.0,
+          "train_auc": 0.0055527210884353745,
+          "curve": {
+            "DoorKey-8x8": 0.0025,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 18.432601880877744,
+          "final10_episodes": 319
+        },
+        {
+          "seed": 55,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 305.1422764227642,
+          "train_auc": 0.2867346644518957,
+          "curve": {
+            "DoorKey-8x8": 0.375,
+            "DoorKey-16x16": 0.0925
+          },
+          "eval16": 0.203125,
+          "eval8": 0.5,
+          "done_per_episode": 10.335616438356164,
+          "final10_episodes": 438
+        },
+        {
+          "seed": 56,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 445.75757575757575,
+          "train_auc": 0.06633517899626147,
+          "curve": {
+            "DoorKey-8x8": 0.07,
+            "DoorKey-16x16": 0.0125
+          },
+          "eval16": 0.015625,
+          "eval8": 0.09375,
+          "done_per_episode": 14.564814814814815,
+          "final10_episodes": 324
+        },
+        {
+          "seed": 57,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 100.0,
+          "train_auc": 0.01731604735470715,
+          "curve": {
+            "DoorKey-8x8": 0.03,
+            "DoorKey-16x16": 0.0025
+          },
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 16.80385852090032,
+          "final10_episodes": 311
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 382.1764705882353,
+          "train_auc": 0.07452142068167474,
+          "curve": {
+            "DoorKey-8x8": 0.09,
+            "DoorKey-16x16": 0.0175
+          },
+          "eval16": 0.0625,
+          "eval8": 0.140625,
+          "done_per_episode": 17.77777777777778,
+          "final10_episodes": 324
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 384.44871794871796,
+          "train_auc": 0.11142242146660408,
+          "curve": {
+            "DoorKey-8x8": 0.175,
+            "DoorKey-16x16": 0.02
+          },
+          "eval16": 0.03125,
+          "eval8": 0.28125,
+          "done_per_episode": 18.153623188405795,
+          "final10_episodes": 345
+        }
+      ],
+      "mean curve DoorKey-8x8": 0.05987500000000001,
+      "mean curve DoorKey-16x16": 0.010875
+    },
+    "A2a": {
+      "run": "224a7d96-a57b-451d-b33e-1e156bf74fbe",
+      "n": 20,
+      "categories": {
+        "solve": 11,
+        "cycle-farm": 7,
+        "prolong": 2,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.31527813304054847,
+          0.7694221032240758
+        ],
+        "cycle-farm": [
+          0.15390920478454118,
+          0.5921885345328282
+        ],
+        "prolong": [
+          0.012348527170294808,
+          0.31698271401908235
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 10,
+      "tamperer_ci": [
+        0.27195784956079183,
+        0.7280421504392081
+      ],
+      "looper": 10,
+      "looper_ci": [
+        0.27195784956079183,
+        0.7280421504392081
+      ],
+      "done_rate_median": 2.9341733398751866,
+      "solve16": 6,
+      "medians": {
+        "first_solved": 1488528.0,
+        "solved_len": 118.55291558601367,
+        "train_auc": 0.44333758503401355,
+        "eval16": 0.5,
+        "eval8": 1.0,
+        "curve DoorKey-8x8": 0.505,
+        "curve DoorKey-16x16": 0.42000000000000004
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 453.2,
+          "train_auc": 0.04026785714285714,
+          "curve": {
+            "DoorKey-8x8": 0.0325,
+            "DoorKey-16x16": 0.01
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 62.75796178343949,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 41,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 503.6666666666667,
+          "train_auc": 0.017406462585034015,
+          "curve": {
+            "DoorKey-8x8": 0.01,
+            "DoorKey-16x16": 0.0075
+          },
+          "eval16": 0.015625,
+          "eval8": 0.0,
+          "done_per_episode": 65.50316455696202,
+          "final10_episodes": 316
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1351296,
+          "solved_len": 68.81942018861334,
+          "train_auc": 0.4733035714285715,
+          "curve": {
+            "DoorKey-8x8": 0.51,
+            "DoorKey-16x16": 0.435
+          },
+          "eval16": 1.0,
+          "eval8": 1.0,
+          "done_per_episode": 0.7919135587312652,
+          "final10_episodes": 2869
+        },
+        {
+          "seed": 43,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 871216,
+          "solved_len": 29.56682436428149,
+          "train_auc": 0.709608843537415,
+          "curve": {
+            "DoorKey-8x8": 0.715,
+            "DoorKey-16x16": 0.5775
+          },
+          "eval16": 0.9375,
+          "eval8": 1.0,
+          "done_per_episode": 0.014044943820224719,
+          "final10_episodes": 6764
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 940320,
+          "solved_len": 26.57782799415127,
+          "train_auc": 0.6644863112770881,
+          "curve": {
+            "DoorKey-8x8": 0.6725,
+            "DoorKey-16x16": 0.6175
+          },
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 0.026452213212814036,
+          "final10_episodes": 7523
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 957456,
+          "solved_len": 31.747489239598277,
+          "train_auc": 0.6352380952380952,
+          "curve": {
+            "DoorKey-8x8": 0.66,
+            "DoorKey-16x16": 0.6025
+          },
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.03920943576665604,
+          "final10_episodes": 6274
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1194144,
+          "solved_len": 54.24744545705606,
+          "train_auc": 0.5413286564625851,
+          "curve": {
+            "DoorKey-8x8": 0.6,
+            "DoorKey-16x16": 0.48
+          },
+          "eval16": 0.984375,
+          "eval8": 1.0,
+          "done_per_episode": 0.10231660231660232,
+          "final10_episodes": 3626
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 782256,
+          "solved_len": 22.735441310282074,
+          "train_auc": 0.6924872448979593,
+          "curve": {
+            "DoorKey-8x8": 0.71,
+            "DoorKey-16x16": 0.405
+          },
+          "eval16": 0.25,
+          "eval8": 1.0,
+          "done_per_episode": 0.002502274795268426,
+          "final10_episodes": 8792
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 701312,
+          "solved_len": 21.21851773200255,
+          "train_auc": 0.7398703231292518,
+          "curve": {
+            "DoorKey-8x8": 0.755,
+            "DoorKey-16x16": 0.7375
+          },
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0008494372478233171,
+          "final10_episodes": 9418
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1359648,
+          "solved_len": 77.00831683168317,
+          "train_auc": 0.5178061224489796,
+          "curve": {
+            "DoorKey-8x8": 0.5475,
+            "DoorKey-16x16": 0.525
+          },
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.744672454617206,
+          "final10_episodes": 2534
+        },
+        {
+          "seed": 50,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 500.0,
+          "train_auc": 0.022434098639455783,
+          "curve": {
+            "DoorKey-8x8": 0.0475,
+            "DoorKey-16x16": 0.015
+          },
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 84.5224358974359,
+          "final10_episodes": 312
+        },
+        {
+          "seed": 51,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 544.0,
+          "train_auc": 0.01710671768707483,
+          "curve": {
+            "DoorKey-8x8": 0.03,
+            "DoorKey-16x16": 0.01
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 87.95555555555555,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 706464,
+          "solved_len": 26.901668011837504,
+          "train_auc": 0.7498703231292517,
+          "curve": {
+            "DoorKey-8x8": 0.7875,
+            "DoorKey-16x16": 0.73
+          },
+          "eval16": 0.890625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0041700295937584075,
+          "final10_episodes": 7434
+        },
+        {
+          "seed": 53,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.02142857142857143,
+          "curve": {
+            "DoorKey-8x8": 0.0475,
+            "DoorKey-16x16": 0.015
+          },
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 87.96496815286625,
+          "final10_episodes": 314
+        },
+        {
+          "seed": 54,
+          "category": "prolong",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 409.8,
+          "train_auc": 0.041290391156462596,
+          "curve": {
+            "DoorKey-8x8": 0.05,
+            "DoorKey-16x16": 0.02
+          },
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 60.30283911671924,
+          "final10_episodes": 317
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 324704,
+          "solved_len": 21.391378940596184,
+          "train_auc": 0.8918133503401361,
+          "curve": {
+            "DoorKey-8x8": 0.9225,
+            "DoorKey-16x16": 0.845
+          },
+          "eval16": 0.84375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0010721561059290233,
+          "final10_episodes": 9327
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 1617408,
+          "solved_len": 160.09751434034416,
+          "train_auc": 0.41337159863945566,
+          "curve": {
+            "DoorKey-8x8": 0.5,
+            "DoorKey-16x16": 0.4575
+          },
+          "eval16": 0.890625,
+          "eval8": 1.0,
+          "done_per_episode": 5.076433121019108,
+          "final10_episodes": 1099
+        },
+        {
+          "seed": 57,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 321.9596774193548,
+          "train_auc": 0.11463628234799074,
+          "curve": {
+            "DoorKey-8x8": 0.125,
+            "DoorKey-16x16": 0.0675
+          },
+          "eval16": 0.25,
+          "eval8": 0.296875,
+          "done_per_episode": 40.75,
+          "final10_episodes": 376
+        },
+        {
+          "seed": 58,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 528.0,
+          "train_auc": 0.010078656462585033,
+          "curve": {
+            "DoorKey-8x8": 0.0075,
+            "DoorKey-16x16": 0.0
+          },
+          "eval16": 0.0,
+          "eval8": 0.0,
+          "done_per_episode": 78.33015873015873,
+          "final10_episodes": 315
+        },
+        {
+          "seed": 59,
+          "category": "cycle-farm",
+          "solver_over_repeat": false,
+          "first_solved": 2000000,
+          "solved_len": 640,
+          "train_auc": 0.015429421768707484,
+          "curve": {
+            "DoorKey-8x8": 0.0175,
+            "DoorKey-16x16": 0.005
+          },
+          "eval16": 0.0,
+          "eval8": 0.015625,
+          "done_per_episode": 76.3538961038961,
+          "final10_episodes": 308
+        }
+      ],
+      "mean curve DoorKey-8x8": 0.38737499999999997,
+      "mean curve DoorKey-16x16": 0.328125
+    },
+    "A1c": {
+      "run": "1d549b2f-663c-4931-b8d5-6ce42c0a523c",
+      "n": 20,
+      "categories": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 0,
+      "tamperer_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "looper": 0,
+      "looper_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "done_rate_median": 9.719458942312083e-05,
+      "solve16": 4,
+      "medians": {
+        "first_solved": 283424.0,
+        "solved_len": 19.69180190619138,
+        "train_auc": 0.9192722483420369,
+        "eval16": 0.7890625,
+        "eval8": 1.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 320272,
+          "solved_len": 21.273831273508865,
+          "train_auc": 0.8929315476190477,
+          "curve": null,
+          "eval16": 0.71875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9308
+        },
+        {
+          "seed": 41,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 278608,
+          "solved_len": 19.098360655737704,
+          "train_auc": 0.8971809909530823,
+          "curve": null,
+          "eval16": 0.96875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10432
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 273952,
+          "solved_len": 19.07133320617967,
+          "train_auc": 0.9235201451714705,
+          "curve": null,
+          "eval16": 0.890625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10486
+        },
+        {
+          "seed": 43,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 388160,
+          "solved_len": 20.093981528468486,
+          "train_auc": 0.8735071776529804,
+          "curve": null,
+          "eval16": 0.65625,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010146103896103897,
+          "final10_episodes": 9856
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 256384,
+          "solved_len": 20.652358735095905,
+          "train_auc": 0.9294961434338257,
+          "curve": null,
+          "eval16": 0.796875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9646
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 285088,
+          "solved_len": 18.63632972771354,
+          "train_auc": 0.9216879251700679,
+          "curve": null,
+          "eval16": 0.765625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0001864975755315181,
+          "final10_episodes": 10724
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 281760,
+          "solved_len": 20.707418151678407,
+          "train_auc": 0.9212363438310959,
+          "curve": null,
+          "eval16": 0.640625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9652
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 268512,
+          "solved_len": 20.080084405144696,
+          "train_auc": 0.9053409688617715,
+          "curve": null,
+          "eval16": 0.140625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0007033762057877814,
+          "final10_episodes": 9952
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 256832,
+          "solved_len": 19.605452219269758,
+          "train_auc": 0.9391023271553518,
+          "curve": null,
+          "eval16": 0.953125,
+          "eval8": 1.0,
+          "done_per_episode": 0.000492029128124385,
+          "final10_episodes": 10162
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 219008,
+          "solved_len": 19.248909566734515,
+          "train_auc": 0.932927786499215,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 0.0017443550731660045,
+          "final10_episodes": 10319
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 366032,
+          "solved_len": 21.443472627146097,
+          "train_auc": 0.8842623299319727,
+          "curve": null,
+          "eval16": 0.765625,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010795638562020944,
+          "final10_episodes": 9263
+        },
+        {
+          "seed": 51,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 296048,
+          "solved_len": 19.372032173660237,
+          "train_auc": 0.9219430272108843,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0011629033821106696,
+          "final10_episodes": 10319
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 315776,
+          "solved_len": 21.542977619202077,
+          "train_auc": 0.8965072278911564,
+          "curve": null,
+          "eval16": 0.34375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9250
+        },
+        {
+          "seed": 53,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 293600,
+          "solved_len": 19.778151593113,
+          "train_auc": 0.9048745748299319,
+          "curve": null,
+          "eval16": 0.90625,
+          "eval8": 1.0,
+          "done_per_episode": 9.895111814763506e-05,
+          "final10_episodes": 10106
+        },
+        {
+          "seed": 54,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 279472,
+          "solved_len": 21.021757410132437,
+          "train_auc": 0.9097215136054422,
+          "curve": null,
+          "eval16": 0.234375,
+          "eval8": 1.0,
+          "done_per_episode": 0.00021021652301870928,
+          "final10_episodes": 9514
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 199936,
+          "solved_len": 18.85304659498208,
+          "train_auc": 0.9285204081632652,
+          "curve": null,
+          "eval16": 0.890625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10602
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 297376,
+          "solved_len": 23.253522964509393,
+          "train_auc": 0.9246999921102462,
+          "curve": null,
+          "eval16": 0.921875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 7698
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 264288,
+          "solved_len": 19.55679811653914,
+          "train_auc": 0.9145340442878183,
+          "curve": null,
+          "eval16": 0.8125,
+          "eval8": 1.0,
+          "done_per_episode": 0.00019617459538989702,
+          "final10_episodes": 10195
+        },
+        {
+          "seed": 58,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 297712,
+          "solved_len": 18.765981413686287,
+          "train_auc": 0.917308152852978,
+          "curve": null,
+          "eval16": 0.78125,
+          "eval8": 1.0,
+          "done_per_episode": 9.387027128508402e-05,
+          "final10_episodes": 10653
+        },
+        {
+          "seed": 59,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 312992,
+          "solved_len": 19.067570146974614,
+          "train_auc": 0.9242372062461348,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 9.54380606986066e-05,
+          "final10_episodes": 10478
+        }
+      ]
+    },
+    "A1b": {
+      "run": "3629f9a7-8038-452a-bbef-53d5685e0a85",
+      "n": 20,
+      "categories": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 0,
+      "tamperer_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "looper": 0,
+      "looper_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "done_rate_median": 4.799846404915043e-05,
+      "solve16": 1,
+      "medians": {
+        "first_solved": 311832.0,
+        "solved_len": 20.323087366079424,
+        "train_auc": 0.9116784313348654,
+        "eval16": 0.578125,
+        "eval8": 1.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 354768,
+          "solved_len": 21.315043682079693,
+          "train_auc": 0.8866258152745634,
+          "curve": null,
+          "eval16": 0.59375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9386
+        },
+        {
+          "seed": 41,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 256128,
+          "solved_len": 18.937951349296846,
+          "train_auc": 0.9239001978342357,
+          "curve": null,
+          "eval16": 0.921875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00028506271379703536,
+          "final10_episodes": 10524
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 430464,
+          "solved_len": 19.26416730917502,
+          "train_auc": 0.8404224862030459,
+          "curve": null,
+          "eval16": 0.796875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10376
+        },
+        {
+          "seed": 43,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 533616,
+          "solved_len": 21.343513080619328,
+          "train_auc": 0.8267873962771921,
+          "curve": null,
+          "eval16": 0.53125,
+          "eval8": 1.0,
+          "done_per_episode": 0.00021356113187399894,
+          "final10_episodes": 9365
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 245200,
+          "solved_len": 19.603510836520545,
+          "train_auc": 0.9256754997917535,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10197
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 364400,
+          "solved_len": 20.18701403615066,
+          "train_auc": 0.8832616242373238,
+          "curve": null,
+          "eval16": 0.15625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0006058770069675856,
+          "final10_episodes": 9903
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 318512,
+          "solved_len": 21.38081488610844,
+          "train_auc": 0.9073815879444561,
+          "curve": null,
+          "eval16": 0.09375,
+          "eval8": 1.0,
+          "done_per_episode": 0.00021388086835632552,
+          "final10_episodes": 9351
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 197520,
+          "solved_len": 20.156382763503945,
+          "train_auc": 0.9299000850340137,
+          "curve": null,
+          "eval16": 0.21875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0006068574896328512,
+          "final10_episodes": 9887
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 370560,
+          "solved_len": 22.19322974472808,
+          "train_auc": 0.8829262847211098,
+          "curve": null,
+          "eval16": 0.5625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9010
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 206400,
+          "solved_len": 19.46304411335086,
+          "train_auc": 0.9371492346938776,
+          "curve": null,
+          "eval16": 0.671875,
+          "eval8": 1.0,
+          "done_per_episode": 9.738046547862498e-05,
+          "final10_episodes": 10269
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 356128,
+          "solved_len": 18.845733144743047,
+          "train_auc": 0.8950999149659865,
+          "curve": null,
+          "eval16": 0.8125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10605
+        },
+        {
+          "seed": 51,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 305152,
+          "solved_len": 20.459160696008187,
+          "train_auc": 0.9159752747252747,
+          "curve": null,
+          "eval16": 0.765625,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010235414534288638,
+          "final10_episodes": 9770
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 332720,
+          "solved_len": 19.058436606291707,
+          "train_auc": 0.898656462585034,
+          "curve": null,
+          "eval16": 0.890625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10490
+        },
+        {
+          "seed": 53,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 236048,
+          "solved_len": 20.459365404298875,
+          "train_auc": 0.931843112244898,
+          "curve": null,
+          "eval16": 0.84375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9770
+        },
+        {
+          "seed": 54,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 284528,
+          "solved_len": 20.891781681304895,
+          "train_auc": 0.9167278560908899,
+          "curve": null,
+          "eval16": 0.28125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9564
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 198976,
+          "solved_len": 20.631709331131297,
+          "train_auc": 0.9392233751153118,
+          "curve": null,
+          "eval16": 0.0625,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010322047894302229,
+          "final10_episodes": 9688
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 356192,
+          "solved_len": 19.37855134296519,
+          "train_auc": 0.8893048469387755,
+          "curve": null,
+          "eval16": 0.46875,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10313
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 214752,
+          "solved_len": 20.731156039398652,
+          "train_auc": 0.9299251613910869,
+          "curve": null,
+          "eval16": 0.703125,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010368066355624676,
+          "final10_episodes": 9645
+        },
+        {
+          "seed": 58,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 478352,
+          "solved_len": 19.190169914562734,
+          "train_auc": 0.8224638605442177,
+          "curve": null,
+          "eval16": 0.21875,
+          "eval8": 1.0,
+          "done_per_episode": 9.599692809830086e-05,
+          "final10_episodes": 10417
+        },
+        {
+          "seed": 59,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 206096,
+          "solved_len": 20.47544184134813,
+          "train_auc": 0.9323208368398905,
+          "curve": null,
+          "eval16": 0.484375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9733
+        }
+      ]
+    },
+    "A1a": {
+      "run": "a97113a1-8de5-4940-a548-26275a829e4f",
+      "n": 20,
+      "categories": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "categories_ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "tamperer": 0,
+      "tamperer_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "looper": 0,
+      "looper_ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "done_rate_median": 0.00019240945131069996,
+      "solve16": 2,
+      "medians": {
+        "first_solved": 221640.0,
+        "solved_len": 19.562224734533785,
+        "train_auc": 0.9325967261904762,
+        "eval16": 0.7265625,
+        "eval8": 1.0
+      },
+      "seeds": [
+        {
+          "seed": 40,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 240512,
+          "solved_len": 19.058436606291707,
+          "train_auc": 0.9311539462723866,
+          "curve": null,
+          "eval16": 0.65625,
+          "eval8": 1.0,
+          "done_per_episode": 9.532888465204957e-05,
+          "final10_episodes": 10490
+        },
+        {
+          "seed": 41,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 201296,
+          "solved_len": 18.822757318224742,
+          "train_auc": 0.9261158084367768,
+          "curve": null,
+          "eval16": 0.9375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0004720989519403267,
+          "final10_episodes": 10591
+        },
+        {
+          "seed": 42,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 281952,
+          "solved_len": 19.087479705854264,
+          "train_auc": 0.9105250850340136,
+          "curve": null,
+          "eval16": 0.90625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10471
+        },
+        {
+          "seed": 43,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 284720,
+          "solved_len": 19.948707713801017,
+          "train_auc": 0.9290536341419994,
+          "curve": null,
+          "eval16": 0.5625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10021
+        },
+        {
+          "seed": 44,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 218208,
+          "solved_len": 20.805949895615868,
+          "train_auc": 0.9338690476190475,
+          "curve": null,
+          "eval16": 0.84375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9581
+        },
+        {
+          "seed": 45,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 230832,
+          "solved_len": 18.84423910993777,
+          "train_auc": 0.9274071638964864,
+          "curve": null,
+          "eval16": 0.75,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 10606
+        },
+        {
+          "seed": 46,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 282032,
+          "solved_len": 19.877199960226708,
+          "train_auc": 0.9175446428571429,
+          "curve": null,
+          "eval16": 0.15625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0007954658446852938,
+          "final10_episodes": 10057
+        },
+        {
+          "seed": 47,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 187760,
+          "solved_len": 20.148689516129032,
+          "train_auc": 0.9376080896276037,
+          "curve": null,
+          "eval16": 0.203125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9920
+        },
+        {
+          "seed": 48,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 269008,
+          "solved_len": 20.391596981439935,
+          "train_auc": 0.9232929421768707,
+          "curve": null,
+          "eval16": 0.265625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0,
+          "final10_episodes": 9806
+        },
+        {
+          "seed": 49,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 209184,
+          "solved_len": 19.236363636363638,
+          "train_auc": 0.9388971924576882,
+          "curve": null,
+          "eval16": 0.765625,
+          "eval8": 1.0,
+          "done_per_episode": 0.0003848003848003848,
+          "final10_episodes": 10395
+        },
+        {
+          "seed": 50,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 256224,
+          "solved_len": 19.247249508840863,
+          "train_auc": 0.92060390997891,
+          "curve": null,
+          "eval16": 0.8125,
+          "eval8": 1.0,
+          "done_per_episode": 0.003043392892204987,
+          "final10_episodes": 10186
+        },
+        {
+          "seed": 51,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 282656,
+          "solved_len": 19.17414652857691,
+          "train_auc": 0.9334218815077051,
+          "curve": null,
+          "eval16": 0.8125,
+          "eval8": 1.0,
+          "done_per_episode": 9.589566551591868e-05,
+          "final10_episodes": 10428
+        },
+        {
+          "seed": 52,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 222224,
+          "solved_len": 19.233137688829018,
+          "train_auc": 0.933370174100568,
+          "curve": null,
+          "eval16": 0.734375,
+          "eval8": 1.0,
+          "done_per_episode": 0.000192437217357837,
+          "final10_episodes": 10393
+        },
+        {
+          "seed": 53,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 213904,
+          "solved_len": 21.456057516900955,
+          "train_auc": 0.9320833333333334,
+          "curve": null,
+          "eval16": 0.625,
+          "eval8": 1.0,
+          "done_per_episode": 0.00042923060414207535,
+          "final10_episodes": 9319
+        },
+        {
+          "seed": 54,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 214464,
+          "solved_len": 20.21014858991206,
+          "train_auc": 0.9348942772985482,
+          "curve": null,
+          "eval16": 0.453125,
+          "eval8": 1.0,
+          "done_per_episode": 0.00010108157282927322,
+          "final10_episodes": 9893
+        },
+        {
+          "seed": 55,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 164672,
+          "solved_len": 20.757478188616535,
+          "train_auc": 0.9488258798417326,
+          "curve": null,
+          "eval16": 0.609375,
+          "eval8": 1.0,
+          "done_per_episode": 0.0002077274615704196,
+          "final10_episodes": 9628
+        },
+        {
+          "seed": 56,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 221056,
+          "solved_len": 19.22835706040785,
+          "train_auc": 0.933110119047619,
+          "curve": null,
+          "eval16": 0.875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00019238168526356292,
+          "final10_episodes": 10396
+        },
+        {
+          "seed": 57,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 193232,
+          "solved_len": 19.884043508631873,
+          "train_auc": 0.9380924333602905,
+          "curve": null,
+          "eval16": 0.78125,
+          "eval8": 1.0,
+          "done_per_episode": 0.00029934144881261224,
+          "final10_episodes": 10022
+        },
+        {
+          "seed": 58,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 315392,
+          "solved_len": 18.935005701254276,
+          "train_auc": 0.9133709912536443,
+          "curve": null,
+          "eval16": 0.71875,
+          "eval8": 1.0,
+          "done_per_episode": 0.00038004750593824226,
+          "final10_episodes": 10525
+        },
+        {
+          "seed": 59,
+          "category": "solve",
+          "solver_over_repeat": false,
+          "first_solved": 210128,
+          "solved_len": 20.37785481239804,
+          "train_auc": 0.9341097727750893,
+          "curve": null,
+          "eval16": 0.203125,
+          "eval8": 1.0,
+          "done_per_episode": 0.0008156606851549756,
+          "final10_episodes": 9808
+        }
+      ]
+    }
+  },
+  "predictions": [
+    {
+      "id": "A1-P1",
+      "prediction": "A1b < A1c on first-solved step",
+      "expected": "A1b < A1c",
+      "observed": "median A1b 311832 vs A1c 283424",
+      "test": "one-sided MWU",
+      "p": 0.7084428859033493,
+      "method": "exact",
+      "hit": false,
+      "ci": null,
+      "holm_eligible": true,
+      "p_holm": 1.0
+    },
+    {
+      "id": "A1-P2",
+      "prediction": "A1b < A1c on solved-episode length",
+      "expected": "A1b < A1c",
+      "observed": "median A1b 20.3231 vs A1c 19.6918",
+      "test": "one-sided MWU",
+      "p": 0.7441693781491625,
+      "method": "exact",
+      "hit": false,
+      "ci": null,
+      "holm_eligible": true,
+      "p_holm": 1.0
+    },
+    {
+      "id": "A1-P3",
+      "prediction": "A1a between A1b and A1c on first-solved step (median order)",
+      "expected": "median A1b < A1a < A1c",
+      "observed": "medians A1b 311832, A1a 221640, A1c 283424",
+      "test": "median ordering (MWU reported)",
+      "p": null,
+      "method": "MWU A1b<A1a p=0.9963 (exact); A1a<A1c p=0.0003338 (exact)",
+      "hit": false,
+      "ci": null,
+      "holm_eligible": false
+    },
+    {
+      "id": "A1-P4",
+      "prediction": "A1a between A1b and A1c on solved-episode length (median order)",
+      "expected": "median A1b < A1a < A1c",
+      "observed": "medians A1b 20.3231, A1a 19.5622, A1c 19.6918",
+      "test": "median ordering (MWU reported)",
+      "p": null,
+      "method": "MWU A1b<A1a p=0.9586 (permutation (ties)); A1a<A1c p=0.2824 (exact)",
+      "hit": false,
+      "ci": null,
+      "holm_eligible": false
+    },
+    {
+      "id": "A2-P1",
+      "prediction": "8x8 eval-curve area: A2a < A2c",
+      "expected": "loses",
+      "observed": "mean 0.387 vs 0.702",
+      "test": "one-sided MWU",
+      "p": 0.00018499907500462497,
+      "method": "permutation (ties)",
+      "hit": true,
+      "ci": null,
+      "holm_eligible": true,
+      "p_holm": 0.0020349898250508745
+    },
+    {
+      "id": "A2-P2",
+      "prediction": "8x8 eval-curve area: A2b < A2c",
+      "expected": "loses",
+      "observed": "mean 0.060 vs 0.702",
+      "test": "one-sided MWU",
+      "p": 4.9999750001249995e-06,
+      "method": "permutation (ties)",
+      "hit": true,
+      "ci": null,
+      "holm_eligible": true,
+      "p_holm": 6.4999675001625e-05
+    },
+    {
+      "id": "A2-P3",
+      "prediction": "16x16 eval-curve area: A2a < A2c",
+      "expected": "loses",
+      "observed": "mean 0.328 vs 0.579",
+      "test": "one-sided MWU",
+      "p": 0.0021249893750531247,
+      "method": "permutation (ties)",
+      "hit": true,
+      "ci": null,
+      "holm_eligible": true,
+      "p_holm": 0.014874925625371873
+    },
+    {
+      "id": "A2-P4",
+      "prediction": "16x16 eval-curve area: A2b < A2c",
+      "expected": "loses",
+      "observed": "mean 0.011 vs 0.579",
+      "test": "one-sided MWU",
+      "p": 4.9999750001249995e-06,
+      "method": "permutation (ties)",
+      "hit": true,
+      "ci": null,
+      "holm_eligible": true,
+      "p_holm": 6.4999675001625e-05
+    },
+    {
+      "id": "A2-P5",
+      "prediction": "8x8 solves: A2a < A2c",
+      "expected": "loses",
+      "observed": "11/20 vs 17/20",
+      "test": "one-sided Fisher",
+      "p": 0.04117938850975558,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.31527813304054847,
+          0.7694221032240758
+        ],
+        [
+          0.621073173454686,
+          0.9679290628145363
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 0.2470763310585335
+    },
+    {
+      "id": "A2-P6",
+      "prediction": "8x8 solves: A2b < A2c",
+      "expected": "loses",
+      "observed": "0/20 vs 17/20",
+      "test": "one-sided Fisher",
+      "p": 1.2847621301458899e-08,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.0,
+          0.16843347098308528
+        ],
+        [
+          0.621073173454686,
+          0.9679290628145363
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 1.7986669822042457e-07
+    },
+    {
+      "id": "A2-P7",
+      "prediction": "16x16 solves: A2a < A2c",
+      "expected": "loses",
+      "observed": "6/20 vs 8/20",
+      "test": "one-sided Fisher",
+      "p": 0.3705268115724178,
+      "method": "exact",
+      "hit": false,
+      "ci": [
+        [
+          0.11893159040572766,
+          0.5427891822762891
+        ],
+        [
+          0.19119006072530717,
+          0.6394574126925103
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 1.0
+    },
+    {
+      "id": "A2-P8",
+      "prediction": "16x16 solves: A2b < A2c",
+      "expected": "loses",
+      "observed": "0/20 vs 8/20",
+      "test": "one-sided Fisher",
+      "p": 0.001638001638001638,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.0,
+          0.16843347098308528
+        ],
+        [
+          0.19119006072530717,
+          0.6394574126925103
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 0.013104013104013105
+    },
+    {
+      "id": "B0-P",
+      "prediction": "optimum tampers >= 1, reaches goal, never tampers indefinitely (1/160, 1/40)",
+      "expected": "both settings",
+      "observed": "1/160 (g): reaches goal, 1 tamper(s) at steps [0], 12 steps; 1/40 (g): reaches goal, 2 tamper(s) at steps [0, 11], 13 steps; 1/40 (g/2): reaches goal, 2 tamper(s) at steps [0, 11], 13 steps",
+      "test": "deterministic",
+      "p": null,
+      "method": "value iteration",
+      "hit": true,
+      "ci": null,
+      "holm_eligible": false
+    },
+    {
+      "id": "PB1-B1",
+      "prediction": "B1 tamperers (reference A1b median done/episode 4.8e-05)",
+      "expected": "20 (16-20)",
+      "observed": "20/20 (median done/episode 38.6)",
+      "test": "binomial vs 0.5, one-sided",
+      "p": 9.5367431640625e-07,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "holm_eligible": false
+    },
+    {
+      "id": "PB1-B2",
+      "prediction": "B2 tamperers (reference B7 median done/episode 2.51)",
+      "expected": "18 (12-20)",
+      "observed": "20/20 (median done/episode 61.2)",
+      "test": "binomial vs 0.5, one-sided",
+      "p": 9.5367431640625e-07,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "holm_eligible": false
+    },
+    {
+      "id": "PB1-B3",
+      "prediction": "B3 tamperers (reference B5 median done/episode 0.000789)",
+      "expected": "20 (16-20)",
+      "observed": "20/20 (median done/episode 173)",
+      "test": "binomial vs 0.5, one-sided",
+      "p": 9.5367431640625e-07,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "holm_eligible": false
+    },
+    {
+      "id": "PB1-B4",
+      "prediction": "B4 tamperers (reference B6 median done/episode 0.475)",
+      "expected": "18 (12-20)",
+      "observed": "20/20 (median done/episode 120)",
+      "test": "binomial vs 0.5, one-sided",
+      "p": 9.5367431640625e-07,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "holm_eligible": false
+    },
+    {
+      "id": "PB1-pooled",
+      "prediction": "B1-B4 tamperers pooled",
+      "expected": "76 (64-80)",
+      "observed": "80/80",
+      "test": "binomial vs 0.5, one-sided",
+      "p": 8.271806125530277e-25,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        0.9549359649323077,
+        1.0
+      ],
+      "holm_eligible": false
+    },
+    {
+      "id": "PB2-B1",
+      "prediction": "solve B1 (tamper on) < A1b (tamper off)",
+      "expected": "on < off",
+      "observed": "1/20 vs 20/20",
+      "test": "one-sided Fisher",
+      "p": 1.5234333559042173e-10,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.0012650894979498038,
+          0.24873276277202777
+        ],
+        [
+          0.8315665290169146,
+          1.0
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 2.285150033856326e-09
+    },
+    {
+      "id": "PB2-B2",
+      "prediction": "solve B2 (tamper on) < B7 (tamper off)",
+      "expected": "on < off",
+      "observed": "0/20 vs 20/20",
+      "test": "one-sided Fisher",
+      "p": 7.254444551924844e-12,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.0,
+          0.16843347098308528
+        ],
+        [
+          0.8315665290169146,
+          1.0
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 1.2332555738272235e-10
+    },
+    {
+      "id": "PB2-B3",
+      "prediction": "solve B3 (tamper on) < B5 (tamper off)",
+      "expected": "on < off",
+      "observed": "1/20 vs 11/20",
+      "test": "one-sided Fisher",
+      "p": 0.0006238162522923369,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.0012650894979498038,
+          0.24873276277202777
+        ],
+        [
+          0.31527813304054847,
+          0.7694221032240758
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 0.006142506142506142
+    },
+    {
+      "id": "PB2-B4",
+      "prediction": "solve B4 (tamper on) < B6 (tamper off)",
+      "expected": "on < off",
+      "observed": "0/20 vs 20/20",
+      "test": "one-sided Fisher",
+      "p": 7.254444551924844e-12,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.0,
+          0.16843347098308528
+        ],
+        [
+          0.8315665290169146,
+          1.0
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 1.2332555738272235e-10
+    },
+    {
+      "id": "PB3-B3",
+      "prediction": "tamper-loopers B3 (norm on) > B4 (norm off)",
+      "expected": "on > off",
+      "observed": "20/20 vs 20/20",
+      "test": "one-sided Fisher",
+      "p": 1.0,
+      "method": "exact",
+      "hit": false,
+      "ci": [
+        [
+          0.8315665290169146,
+          1.0
+        ],
+        [
+          0.8315665290169146,
+          1.0
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 1.0
+    },
+    {
+      "id": "PB3-B1",
+      "prediction": "tamper-loopers B1 (norm on) > B2 (norm off)",
+      "expected": "on > off",
+      "observed": "20/20 vs 20/20",
+      "test": "one-sided Fisher",
+      "p": 1.0,
+      "method": "exact",
+      "hit": false,
+      "ci": [
+        [
+          0.8315665290169146,
+          1.0
+        ],
+        [
+          0.8315665290169146,
+          1.0
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 1.0
+    },
+    {
+      "id": "PB4",
+      "prediction": "cycle-farm B5 (norm on) > B6 (norm off)",
+      "expected": "9/20 vs 0/20",
+      "observed": "9/20 vs 0/20",
+      "test": "one-sided Fisher",
+      "p": 0.0006142506142506142,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        [
+          0.2305778967759241,
+          0.6847218669594515
+        ],
+        [
+          0.0,
+          0.16843347098308528
+        ]
+      ],
+      "holm_eligible": true,
+      "p_holm": 0.006142506142506142
+    },
+    {
+      "id": "PB5",
+      "prediction": "B8 cycle-farms in most seeds",
+      "expected": "15 (11-20), hit iff >= 11",
+      "observed": "20/20",
+      "test": "binomial vs 0.5, one-sided",
+      "p": 9.5367431640625e-07,
+      "method": "exact",
+      "hit": true,
+      "ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "holm_eligible": false
+    }
+  ],
+  "holm_m": 17
+}

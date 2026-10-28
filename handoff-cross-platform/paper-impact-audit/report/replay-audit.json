@@ -1,0 +1,1820 @@
+{
+  "claims": [
+    {
+      "families": [
+        "replay-n6"
+      ],
+      "issue": "Paper's pickup range is computed from eligible pickup action attempts, not successful pickups. Initial-episode door cache exposure also applies to this replay. Corrected event counts, needs and returns cannot be recovered.",
+      "numbers": {
+        "interpretation": "These reproduce archived replay summaries, not realized pickup counts or corrected-detector values.",
+        "intrinsic_return_mean_range": [
+          -1.543125033378601,
+          -1.2737500071525574
+        ],
+        "mean_episode_length_range": [
+          640.0,
+          640.0
+        ],
+        "mean_need_ranges": {
+          "explore": [
+            0.899,
+            0.964
+          ],
+          "grasp": [
+            0.099,
+            0.326
+          ],
+          "open": [
+            0.996,
+            0.996
+          ]
+        },
+        "pickup_attempt_mean_range": [
+          137.25,
+          183.75
+        ],
+        "pickup_attempt_mean_range_printed": [
+          "137",
+          "184"
+        ],
+        "pickup_drop_action_share_range_from_rounded_inputs": [
+          0.477,
+          0.634
+        ],
+        "pickup_drop_share_percent_printed": [
+          "48",
+          "63"
+        ],
+        "selected_policy_count": 9,
+        "selected_policy_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "paper_location": "Section 5.5, DoorKey farming description",
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/make_numbers.py",
+          "lines": "324-341",
+          "reason": "N6 ranges and needs generated from archived summaries"
+        }
+      ]
+    },
+    {
+      "families": [
+        "replay-payonce",
+        "exploratory-replay-A2b"
+      ],
+      "issue": "Replay descriptions support qualitative interpretations; aggregate attempt counts do not establish realized cycles. A2b's open need is disabled, so the stale open cache cannot alter that reward/state coordinate.",
+      "paper_location": "Corrections concerning pay-once and explore-only farming labels",
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/round4/round4-report.md",
+          "lines": "89-95",
+          "reason": "A2b replay scope and novelty ranges"
+        }
+      ]
+    },
+    {
+      "families": [
+        "farming-policy-returns",
+        "bound-check"
+      ],
+      "issue": "Later reset-before-attach path has no initial cache exposure. Existing scalar returns support recomputation of printed arithmetic, but not changed-detector counterfactuals or corrected-training policies.",
+      "paper_location": "Section 4 check (b)",
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/bound_summary.py",
+          "lines": "5-24",
+          "reason": "per-layout comparisons and return summaries"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/make_numbers.py",
+          "lines": "389-400",
+          "reason": "printed learned-farmer quantities"
+        }
+      ]
+    },
+    {
+      "families": [
+        "tamper-policy-returns"
+      ],
+      "issue": "Later reset-before-attach path has no initial cache exposure. Returns/drive/press-share table can be recomputed from retained per-layout scalars; repaired training outcomes remain unidentified.",
+      "paper_location": "Table 2, Sections 5.1 and 7",
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/make_tables.py",
+          "lines": "179-194",
+          "reason": "Table 2 generator"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/make_numbers.py",
+          "lines": "158-171",
+          "reason": "printed tamper-replay ranges"
+        }
+      ]
+    },
+    {
+      "families": [
+        "bound-check"
+      ],
+      "issue": "No initial cache exposure. Stored family returns support displayed arithmetic; action/event sequences were not preserved. KeyCorridor mode deliberately excludes terminal target-ball pickups.",
+      "paper_location": "Table 1 and Section 4 check (a)",
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/make_tables.py",
+          "lines": "86-112",
+          "reason": "bound table generator"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/make_numbers.py",
+          "lines": "367-388",
+          "reason": "printed bound-check quantities"
+        }
+      ]
+    }
+  ],
+  "identifiability": {
+    "corrected_training_outcomes_from_final_checkpoints": false,
+    "exact_missed_events_from_aggregates": false,
+    "exception": "Structural zeros/exposures follow source logic, not aggregate inversion. Tamper episode press totals may be recovered from length*press_share, but do not identify door/box/pickup transitions.",
+    "reason": "No retained ordered actions, object states or event sequences; floating-point aggregate returns do not uniquely identify event histories."
+  },
+  "printed_numbers_with_direct_replay_sources": {
+    "bc.dk.len.max": {
+      "source": "bound-check.json shortest_len.max",
+      "text": "26"
+    },
+    "bc.dk.len.median": {
+      "source": "bound-check.json shortest_len.median",
+      "text": "17"
+    },
+    "bc.dk.len.min": {
+      "source": "bound-check.json shortest_len.min",
+      "text": "9"
+    },
+    "bc.dk.simplemin.not20": {
+      "source": "bound-check.json DoorKey growth != 1/20, simple families, smallest discounted_min",
+      "text": "0.989"
+    },
+    "bc.dk20.rich.min": {
+      "source": "bound-check.json DoorKey 1/20 rich_no_tamper_family.discounted_min",
+      "text": "0.966"
+    },
+    "bc.dk20.short.le": {
+      "source": "bound-check.json DoorKey 1/20 shortest_no_tamper",
+      "text": "35"
+    },
+    "bc.dk20.tamper.le": {
+      "source": "bound-check.json DoorKey 1/20 tamper_once_then_shortest",
+      "text": "27"
+    },
+    "bc.kc.len.max": {
+      "source": "bound-check.json shortest_len.max",
+      "text": "15"
+    },
+    "bc.kc.len.median": {
+      "source": "bound-check.json shortest_len.median",
+      "text": "15"
+    },
+    "bc.kc.len.min": {
+      "source": "bound-check.json shortest_len.min",
+      "text": "14"
+    },
+    "bc.layouts": {
+      "source": "bound-check.json layouts",
+      "text": "200"
+    },
+    "bc.rich.min.all": {
+      "source": "bound-check.json rich_no_tamper_family discounted_min over all settings",
+      "text": "0.966"
+    },
+    "bc.tamperfam.min": {
+      "source": "bound-check.json rich_tamper_family discounted_min, tamper-tested rates, minimum",
+      "text": "1.462"
+    },
+    "bs.beat": {
+      "source": "bound-summary.json layouts_where_any_farmer_beats_best_solving",
+      "text": "0"
+    },
+    "bs.best.median": {
+      "source": "bound-summary.json best_solving_discounted.median",
+      "text": "1.244"
+    },
+    "bs.best.min": {
+      "source": "bound-summary.json best_solving_discounted.min",
+      "text": "0.966"
+    },
+    "bs.maxns": {
+      "source": "bound-summary.json max_discounted_non_solving",
+      "text": "$-$0.535"
+    },
+    "bs.maxns.u": {
+      "source": "bound-summary.json max_undiscounted_non_solving",
+      "text": "$-$1.012"
+    },
+    "bs.mean": {
+      "source": "bound-summary.json farmers_mean_discounted",
+      "text": "$-$0.936"
+    },
+    "bs.n6seed6.rate": {
+      "source": "bound-summary.json learned_policies.6.success_rate",
+      "text": "0.26"
+    },
+    "bs.nfarm": {
+      "source": "bound-summary.json farming_policy_seeds",
+      "text": "9"
+    },
+    "bs.nns": {
+      "source": "bound-summary.json non_solving_episodes",
+      "text": "1,749"
+    },
+    "bs.solveeps": {
+      "source": "bound-summary.json solving_episodes_by_farming_seeds",
+      "text": "52"
+    },
+    "bs.solverseed.rate": {
+      "source": "bound-summary.json solver seed success_rate",
+      "text": "0.995"
+    },
+    "n6.need.explore": {
+      "source": "round2-replay-n6.json farmer mean_need[explore], range",
+      "text": "0.90--0.96"
+    },
+    "n6.need.explore.hi": {
+      "source": "round2-replay-n6.json farmer mean_need[explore], maximum",
+      "text": "0.96"
+    },
+    "n6.need.explore.lo": {
+      "source": "round2-replay-n6.json farmer mean_need[explore], minimum",
+      "text": "0.90"
+    },
+    "n6.need.grasp": {
+      "source": "round2-replay-n6.json farmer mean_need[grasp], range",
+      "text": "0.10--0.33"
+    },
+    "n6.need.grasp.hi": {
+      "source": "round2-replay-n6.json farmer mean_need[grasp], maximum",
+      "text": "0.33"
+    },
+    "n6.need.grasp.lo": {
+      "source": "round2-replay-n6.json farmer mean_need[grasp], minimum",
+      "text": "0.10"
+    },
+    "n6.need.open": {
+      "source": "round2-replay-n6.json farmer mean_need[open], range",
+      "text": "1.00"
+    },
+    "n6.need.open.hi": {
+      "source": "round2-replay-n6.json farmer mean_need[open], maximum",
+      "text": "1.00"
+    },
+    "n6.need.open.lo": {
+      "source": "round2-replay-n6.json farmer mean_need[open], minimum",
+      "text": "1.00"
+    },
+    "n6.nfarm": {
+      "source": "round2-replay-n6.json seeds with success < 0.5",
+      "text": "9"
+    },
+    "n6.pdshare.hi": {
+      "source": "round2-replay-n6.json farmer action_freq pickup+drop, maximum (%)",
+      "text": "63"
+    },
+    "n6.pdshare.lo": {
+      "source": "round2-replay-n6.json farmer action_freq pickup+drop, minimum (%)",
+      "text": "48"
+    },
+    "n6.pick.hi": {
+      "source": "round2-replay-n6.json farmer pickups per episode, maximum",
+      "text": "184"
+    },
+    "n6.pick.lo": {
+      "source": "round2-replay-n6.json farmer pickups per episode, minimum",
+      "text": "137"
+    },
+    "n6.rint.hi": {
+      "source": "round2-replay-n6.json seeds (success < 0.5) r_int, maximum",
+      "text": "$-$1.27"
+    },
+    "n6.rint.lo": {
+      "source": "round2-replay-n6.json seeds (success < 0.5) r_int, minimum",
+      "text": "$-$1.54"
+    },
+    "tr.cappct.lo": {
+      "source": "tamper-policy-returns.json, smallest median discounted intrinsic return as % of 0.75",
+      "text": "93"
+    },
+    "tr.disc.hi": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_int, maximum",
+      "text": "0.722"
+    },
+    "tr.disc.lo": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_int, minimum",
+      "text": "0.694"
+    },
+    "tr.drive.hi": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_mean_drive, maximum",
+      "text": "0.043"
+    },
+    "tr.drive.lo": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_mean_drive, minimum",
+      "text": "0.018"
+    },
+    "tr.npol": {
+      "source": "tamper-policy-returns.json, number of replayed checkpoints",
+      "text": "80"
+    },
+    "tr.presscheck.max": {
+      "source": "tamper-policy-returns.json press_share_check.max_abs_diff",
+      "text": "0.007"
+    },
+    "tr.success.hi": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_success, maximum",
+      "text": "0.022"
+    },
+    "tr.success.lo": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_success, minimum",
+      "text": "0.000"
+    },
+    "tr.total.hi": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_total, maximum",
+      "text": "0.723"
+    },
+    "tr.total.lo": {
+      "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_total, minimum",
+      "text": "0.694"
+    }
+  },
+  "protocol_lock_commit": "26c14faf193a4bd21388b0f4673ace0d712aee71",
+  "replays": [
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "counts_are_attempts": true,
+      "episode_count": null,
+      "episode_count_evidence": "Not recorded in JSON or retained launch command. Writer default 8 is overridable and is not evidence of actual invocation.",
+      "episodes_per_policy": null,
+      "event_sequence_saved": false,
+      "family": "replay-growth-1-40",
+      "granularity": "Per-policy averages over episodes; action frequencies/mean needs rounded",
+      "initial_cache_exposed_episodes": 10,
+      "initial_cache_exposure_class": "structurally proved exposure: one env created and attached before explicit reset per policy",
+      "initial_cache_reward_relevant_exposed_episodes": 10,
+      "missed_box_openings": 0,
+      "missed_door_transitions": null,
+      "missed_terminal_pickups": null,
+      "open_reward_enabled": true,
+      "ordered_actions_saved": false,
+      "pickups_drops_toggles_are_per_episode_means_not_literal_counts": true,
+      "policy_count": 10,
+      "policy_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sampling": "Sampled categorical actions; environment seed=2000000+policy seed; action RNG seed/state not retained or explicitly set",
+      "saved_fields": [
+        "action_freq",
+        "drops",
+        "grasp_probe",
+        "len",
+        "mean_need",
+        "pickups",
+        "r_int",
+        "ret",
+        "success",
+        "toggles",
+        "v_mean",
+        "v_start"
+      ],
+      "source_file": "scored-results/mechanism/replay-growth-1-40.json",
+      "source_runs": [
+        "6bfabf4a-3e40-4d7c-b98a-ded07a5a0b69"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "21-28",
+          "reason": "one env per policy; attach precedes reset"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "45-70",
+          "reason": "attempt counters; transient histories discarded; per-seed averages saved"
+        }
+      ],
+      "state_sequence_saved": false,
+      "success_fraction_by_policy": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.0,
+        "4": 0.0,
+        "5": 1.0,
+        "6": 1.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 0.0
+      },
+      "success_is_fraction_of_replay_episodes": true,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "counts_are_attempts": true,
+      "episode_count": null,
+      "episode_count_evidence": "Not recorded in JSON or retained launch command. Writer default 8 is overridable and is not evidence of actual invocation.",
+      "episodes_per_policy": null,
+      "event_sequence_saved": false,
+      "family": "replay-n1",
+      "granularity": "Per-policy averages over episodes; action frequencies/mean needs rounded",
+      "initial_cache_exposed_episodes": 10,
+      "initial_cache_exposure_class": "structurally proved exposure: one env created and attached before explicit reset per policy",
+      "initial_cache_reward_relevant_exposed_episodes": 10,
+      "missed_box_openings": 0,
+      "missed_door_transitions": null,
+      "missed_terminal_pickups": null,
+      "open_reward_enabled": true,
+      "ordered_actions_saved": false,
+      "pickups_drops_toggles_are_per_episode_means_not_literal_counts": true,
+      "policy_count": 10,
+      "policy_seeds": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "sampling": "Sampled categorical actions; environment seed=2000000+policy seed; action RNG seed/state not retained or explicitly set",
+      "saved_fields": [
+        "action_freq",
+        "drops",
+        "grasp_probe",
+        "len",
+        "mean_need",
+        "p_novel_after_drop_or_pickup",
+        "p_novel_after_other_action",
+        "pickups",
+        "r_int",
+        "ret",
+        "success",
+        "toggles",
+        "v_mean",
+        "v_start"
+      ],
+      "source_file": "scored-results/mechanism/replay-n1.json",
+      "source_runs": [
+        "ed5147b6-c861-48b2-b9ff-1952774d5658"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "21-28",
+          "reason": "one env per policy; attach precedes reset"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "45-70",
+          "reason": "attempt counters; transient histories discarded; per-seed averages saved"
+        }
+      ],
+      "state_sequence_saved": false,
+      "success_fraction_by_policy": {
+        "10": 1.0,
+        "11": 0.0,
+        "12": 0.25,
+        "13": 0.25,
+        "14": 1.0,
+        "15": 0.0,
+        "16": 1.0,
+        "17": 1.0,
+        "18": 0.0,
+        "19": 0.0
+      },
+      "success_is_fraction_of_replay_episodes": true,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "counts_are_attempts": true,
+      "episode_count": null,
+      "episode_count_evidence": "Not recorded in JSON or retained launch command. Writer default 8 is overridable and is not evidence of actual invocation.",
+      "episodes_per_policy": null,
+      "event_sequence_saved": false,
+      "family": "replay-n6",
+      "granularity": "Per-policy averages over episodes; action frequencies/mean needs rounded",
+      "initial_cache_exposed_episodes": 10,
+      "initial_cache_exposure_class": "structurally proved exposure: one env created and attached before explicit reset per policy",
+      "initial_cache_reward_relevant_exposed_episodes": 10,
+      "missed_box_openings": 0,
+      "missed_door_transitions": null,
+      "missed_terminal_pickups": null,
+      "open_reward_enabled": true,
+      "ordered_actions_saved": false,
+      "pickups_drops_toggles_are_per_episode_means_not_literal_counts": true,
+      "policy_count": 10,
+      "policy_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sampling": "Sampled categorical actions; environment seed=2000000+policy seed; action RNG seed/state not retained or explicitly set",
+      "saved_fields": [
+        "action_freq",
+        "drops",
+        "grasp_probe",
+        "len",
+        "mean_need",
+        "p_novel_after_drop_or_pickup",
+        "p_novel_after_other_action",
+        "pickups",
+        "r_int",
+        "ret",
+        "success",
+        "toggles",
+        "v_mean",
+        "v_start"
+      ],
+      "source_file": "scored-results/mechanism/replay-n6.json",
+      "source_runs": [
+        "bced806e-eccb-434b-be50-ad91f57a9dfb"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "21-28",
+          "reason": "one env per policy; attach precedes reset"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "45-70",
+          "reason": "attempt counters; transient histories discarded; per-seed averages saved"
+        }
+      ],
+      "state_sequence_saved": false,
+      "success_fraction_by_policy": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 1.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "success_is_fraction_of_replay_episodes": true,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "counts_are_attempts": true,
+      "episode_count": null,
+      "episode_count_evidence": "Not recorded in JSON or retained launch command. Writer default 8 is overridable and is not evidence of actual invocation.",
+      "episodes_per_policy": null,
+      "event_sequence_saved": false,
+      "family": "replay-payonce",
+      "granularity": "Per-policy averages over episodes; action frequencies/mean needs rounded",
+      "initial_cache_exposed_episodes": 10,
+      "initial_cache_exposure_class": "structurally proved exposure: one env created and attached before explicit reset per policy",
+      "initial_cache_reward_relevant_exposed_episodes": 10,
+      "missed_box_openings": 0,
+      "missed_door_transitions": null,
+      "missed_terminal_pickups": null,
+      "open_reward_enabled": true,
+      "ordered_actions_saved": false,
+      "pickups_drops_toggles_are_per_episode_means_not_literal_counts": true,
+      "policy_count": 10,
+      "policy_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sampling": "Sampled categorical actions; environment seed=2000000+policy seed; action RNG seed/state not retained or explicitly set",
+      "saved_fields": [
+        "action_freq",
+        "drops",
+        "grasp_probe",
+        "len",
+        "mean_need",
+        "p_novel_after_drop_or_pickup",
+        "p_novel_after_other_action",
+        "pickups",
+        "r_int",
+        "ret",
+        "success",
+        "toggles",
+        "v_mean",
+        "v_start"
+      ],
+      "source_file": "scored-results/mechanism/replay-payonce.json",
+      "source_runs": [
+        "5b13189d-614e-48c4-96b7-431838a41e1c"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "21-28",
+          "reason": "one env per policy; attach precedes reset"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "45-70",
+          "reason": "attempt counters; transient histories discarded; per-seed averages saved"
+        }
+      ],
+      "state_sequence_saved": false,
+      "success_fraction_by_policy": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.25,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "success_is_fraction_of_replay_episodes": true,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "counts_are_attempts": true,
+      "episode_count": 60,
+      "episode_count_evidence": "Archived round4 report explicitly says 3 episodes per seed",
+      "episodes_per_policy": 3,
+      "event_sequence_saved": false,
+      "family": "exploratory-replay-A2b",
+      "granularity": "Per-policy averages over episodes; action frequencies/mean needs rounded",
+      "initial_cache_exposed_episodes": 20,
+      "initial_cache_exposure_class": "structurally proved exposure: one env created and attached before explicit reset per policy",
+      "initial_cache_reward_relevant_exposed_episodes": 0,
+      "missed_box_openings": 0,
+      "missed_door_transitions": null,
+      "missed_terminal_pickups": null,
+      "open_reward_enabled": false,
+      "ordered_actions_saved": false,
+      "pickups_drops_toggles_are_per_episode_means_not_literal_counts": true,
+      "policy_count": 20,
+      "policy_seeds": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "sampling": "Sampled categorical actions; environment seed=2000000+policy seed; action RNG seed/state not retained or explicitly set",
+      "saved_fields": [
+        "action_freq",
+        "drops",
+        "grasp_probe",
+        "len",
+        "mean_need",
+        "p_novel_after_drop_or_pickup",
+        "p_novel_after_other_action",
+        "pickups",
+        "r_int",
+        "ret",
+        "success",
+        "toggles",
+        "v_mean",
+        "v_start"
+      ],
+      "source_file": "scored-results/round4/exploratory-replay-A2b.json",
+      "source_runs": [
+        "7a364fed-a875-4d3d-a366-21a162be994d"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "21-28",
+          "reason": "one env per policy; attach precedes reset"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py",
+          "lines": "45-70",
+          "reason": "attempt counters; transient histories discarded; per-seed averages saved"
+        }
+      ],
+      "state_sequence_saved": false,
+      "success_fraction_by_policy": {
+        "40": 0.0,
+        "41": 0.0,
+        "42": 0.3333333333333333,
+        "43": 0.3333333333333333,
+        "44": 0.0,
+        "45": 0.0,
+        "46": 0.3333333333333333,
+        "47": 0.0,
+        "48": 0.0,
+        "49": 0.0,
+        "50": 0.0,
+        "51": 0.0,
+        "52": 0.0,
+        "53": 0.0,
+        "54": 0.0,
+        "55": 0.6666666666666666,
+        "56": 0.0,
+        "57": 0.0,
+        "58": 0.3333333333333333,
+        "59": 0.3333333333333333
+      },
+      "success_is_fraction_of_replay_episodes": true,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "episode_count": 2000,
+      "episodes_per_policy": 200,
+      "event_sequence_saved": false,
+      "family": "farming-policy-returns",
+      "granularity": "Per-policy, per-layout episode scalars plus policy means",
+      "initial_cache_exposed_episodes": 0,
+      "initial_cache_exposure_class": "structurally proved zero: attach after reset in every batch",
+      "layout_seeds": [
+        10000,
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007,
+        10008,
+        10009,
+        10010,
+        10011,
+        10012,
+        10013,
+        10014,
+        10015,
+        10016,
+        10017,
+        10018,
+        10019,
+        10020,
+        10021,
+        10022,
+        10023,
+        10024,
+        10025,
+        10026,
+        10027,
+        10028,
+        10029,
+        10030,
+        10031,
+        10032,
+        10033,
+        10034,
+        10035,
+        10036,
+        10037,
+        10038,
+        10039,
+        10040,
+        10041,
+        10042,
+        10043,
+        10044,
+        10045,
+        10046,
+        10047,
+        10048,
+        10049,
+        10050,
+        10051,
+        10052,
+        10053,
+        10054,
+        10055,
+        10056,
+        10057,
+        10058,
+        10059,
+        10060,
+        10061,
+        10062,
+        10063,
+        10064,
+        10065,
+        10066,
+        10067,
+        10068,
+        10069,
+        10070,
+        10071,
+        10072,
+        10073,
+        10074,
+        10075,
+        10076,
+        10077,
+        10078,
+        10079,
+        10080,
+        10081,
+        10082,
+        10083,
+        10084,
+        10085,
+        10086,
+        10087,
+        10088,
+        10089,
+        10090,
+        10091,
+        10092,
+        10093,
+        10094,
+        10095,
+        10096,
+        10097,
+        10098,
+        10099,
+        10100,
+        10101,
+        10102,
+        10103,
+        10104,
+        10105,
+        10106,
+        10107,
+        10108,
+        10109,
+        10110,
+        10111,
+        10112,
+        10113,
+        10114,
+        10115,
+        10116,
+        10117,
+        10118,
+        10119,
+        10120,
+        10121,
+        10122,
+        10123,
+        10124,
+        10125,
+        10126,
+        10127,
+        10128,
+        10129,
+        10130,
+        10131,
+        10132,
+        10133,
+        10134,
+        10135,
+        10136,
+        10137,
+        10138,
+        10139,
+        10140,
+        10141,
+        10142,
+        10143,
+        10144,
+        10145,
+        10146,
+        10147,
+        10148,
+        10149,
+        10150,
+        10151,
+        10152,
+        10153,
+        10154,
+        10155,
+        10156,
+        10157,
+        10158,
+        10159,
+        10160,
+        10161,
+        10162,
+        10163,
+        10164,
+        10165,
+        10166,
+        10167,
+        10168,
+        10169,
+        10170,
+        10171,
+        10172,
+        10173,
+        10174,
+        10175,
+        10176,
+        10177,
+        10178,
+        10179,
+        10180,
+        10181,
+        10182,
+        10183,
+        10184,
+        10185,
+        10186,
+        10187,
+        10188,
+        10189,
+        10190,
+        10191,
+        10192,
+        10193,
+        10194,
+        10195,
+        10196,
+        10197,
+        10198,
+        10199
+      ],
+      "missed_box_openings": 0,
+      "missed_door_transitions": 0,
+      "missed_door_transitions_scope": "initial-cache defect only; no count of other events inferred",
+      "missed_terminal_pickups": null,
+      "ordered_actions_saved": false,
+      "policy_count": 10,
+      "policy_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sampling": "Sampled multinomial actions with explicit generator seed=1000000*policy_seed+batch_start_layout; batches of at most 16",
+      "saved_fields": [
+        "discounted",
+        "mean_discounted",
+        "mean_undiscounted",
+        "success",
+        "success_rate",
+        "undiscounted"
+      ],
+      "source_file": "paper-data/farming-policy-returns.json",
+      "source_runs": [
+        "bced806e-eccb-434b-be50-ad91f57a9dfb"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/farming_policy_returns.py",
+          "lines": "21-42",
+          "reason": "reset/attach order; seeded sampling; live mask; retained scalars"
+        }
+      ],
+      "state_sequence_saved": false,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero: DoorKey generator creates no Box",
+      "counterfactual_corrected_replay_identifiable": false,
+      "episode_count": 16000,
+      "episodes_per_policy": 200,
+      "event_sequence_saved": false,
+      "family": "tamper-policy-returns",
+      "granularity": "Per-policy, per-layout episode scalars plus policy means",
+      "initial_cache_exposed_episodes": 0,
+      "initial_cache_exposure_class": "structurally proved zero: attach after reset in every batch",
+      "layout_seed_range": [
+        10000,
+        10199
+      ],
+      "missed_box_openings": 0,
+      "missed_door_transitions": 0,
+      "missed_door_transitions_scope": "initial-cache defect only; no count of other events inferred",
+      "missed_terminal_pickups": null,
+      "ordered_actions_saved": false,
+      "policy_count": 80,
+      "policy_ids": [
+        "B1/40",
+        "B1/41",
+        "B1/42",
+        "B1/43",
+        "B1/44",
+        "B1/45",
+        "B1/46",
+        "B1/47",
+        "B1/48",
+        "B1/49",
+        "B1/50",
+        "B1/51",
+        "B1/52",
+        "B1/53",
+        "B1/54",
+        "B1/55",
+        "B1/56",
+        "B1/57",
+        "B1/58",
+        "B1/59",
+        "B2/40",
+        "B2/41",
+        "B2/42",
+        "B2/43",
+        "B2/44",
+        "B2/45",
+        "B2/46",
+        "B2/47",
+        "B2/48",
+        "B2/49",
+        "B2/50",
+        "B2/51",
+        "B2/52",
+        "B2/53",
+        "B2/54",
+        "B2/55",
+        "B2/56",
+        "B2/57",
+        "B2/58",
+        "B2/59",
+        "B3/40",
+        "B3/41",
+        "B3/42",
+        "B3/43",
+        "B3/44",
+        "B3/45",
+        "B3/46",
+        "B3/47",
+        "B3/48",
+        "B3/49",
+        "B3/50",
+        "B3/51",
+        "B3/52",
+        "B3/53",
+        "B3/54",
+        "B3/55",
+        "B3/56",
+        "B3/57",
+        "B3/58",
+        "B3/59",
+        "B4/40",
+        "B4/41",
+        "B4/42",
+        "B4/43",
+        "B4/44",
+        "B4/45",
+        "B4/46",
+        "B4/47",
+        "B4/48",
+        "B4/49",
+        "B4/50",
+        "B4/51",
+        "B4/52",
+        "B4/53",
+        "B4/54",
+        "B4/55",
+        "B4/56",
+        "B4/57",
+        "B4/58",
+        "B4/59"
+      ],
+      "run_labels": {
+        "B1": "bb00e7e5-65d0-4411-a236-2dacc19f0e63",
+        "B2": "a8f5efc4-63e7-4a55-8020-08f7e7cff7bb",
+        "B3": "78c44406-6e63-466f-b309-8dfb82bfe663",
+        "B4": "f0a40d20-3702-4087-803c-8db52fefaf1e"
+      },
+      "sampling": "Sampled multinomial actions with explicit generator seed=1000000*policy_seed+batch_start_layout; batches of at most 16",
+      "saved_fields": [
+        "disc_int",
+        "disc_total",
+        "length",
+        "mean_disc_int",
+        "mean_disc_total",
+        "mean_drive",
+        "mean_length",
+        "mean_mean_drive",
+        "mean_press_share",
+        "mean_success",
+        "mean_undisc_int",
+        "press_share",
+        "success",
+        "train_press_share",
+        "undisc_int"
+      ],
+      "source_file": "paper-data/tamper-policy-returns.json",
+      "source_runs": [
+        "bb00e7e5-65d0-4411-a236-2dacc19f0e63",
+        "a8f5efc4-63e7-4a55-8020-08f7e7cff7bb",
+        "78c44406-6e63-466f-b309-8dfb82bfe663",
+        "f0a40d20-3702-4087-803c-8db52fefaf1e"
+      ],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/tamper_policy_returns.py",
+          "lines": "35-75",
+          "reason": "reset/attach order; seeded sampling; live mask; retained scalars"
+        }
+      ],
+      "state_sequence_saved": false,
+      "task": "MiniGrid-DoorKey-8x8-v0"
+    },
+    {
+      "box_evidence_class": "structurally proved zero for DoorKey; KeyCorridor key/locked-door mode does not target boxes",
+      "cell_saved_fields": {
+        "MiniGrid-DoorKey-8x8-v0": {
+          "0": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/160": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "rich_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/20": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/30": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/40": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "rich_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/60": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/640": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/80": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          }
+        },
+        "MiniGrid-KeyCorridorS3R1-v0": {
+          "1/160": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "rich_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/20": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          },
+          "1/40": {
+            "rich_no_tamper_family": [
+              "best_variant_counts_discounted",
+              "discounted_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "per_layout_best_discounted",
+              "undiscounted_min"
+            ],
+            "shortest_no_tamper": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ],
+            "tamper_once_then_shortest": [
+              "discounted_median",
+              "discounted_min",
+              "exceeds_D0_every_layout",
+              "ext_min",
+              "intr_min",
+              "layouts_discounted_at_or_below_D0",
+              "layouts_undiscounted_at_or_below_D0",
+              "shortest_len_of_worst_discounted",
+              "undiscounted_median",
+              "undiscounted_min"
+            ]
+          }
+        }
+      },
+      "counterfactual_corrected_replay_identifiable": false,
+      "episode_count": null,
+      "episode_count_evidence": "Two simple families have fixed calls per layout/cell; richer candidate count varies and action paths/candidate counts are not retained",
+      "event_sequence_saved": false,
+      "family": "bound-check",
+      "granularity": "Aggregate per task/growth/family; richer family also retains per-layout best discounted returns",
+      "initial_cache_exposed_episodes": 0,
+      "initial_cache_exposure_class": "structurally proved zero: every replay attaches after reset",
+      "layout_count_per_task": 200,
+      "missed_box_openings_doorkey": 0,
+      "missed_door_transitions": 0,
+      "missed_door_transitions_scope": "initial-cache defect only",
+      "missed_terminal_pickups": null,
+      "ordered_actions_saved": false,
+      "policy_count": null,
+      "sampling": "Deterministic BFS solution paths and explicit regrab/tamper insertions; no learned policy sampling",
+      "saved_fields": [
+        "D0",
+        "envs",
+        "gamma",
+        "layouts",
+        "note"
+      ],
+      "simple_family_episode_count": 4400,
+      "source_file": "paper-data/bound-check.json",
+      "source_runs": [],
+      "sources": [
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/bound_check.py",
+          "lines": "91-107",
+          "reason": "single-env replay resets before attach"
+        },
+        {
+          "file": "handoff-cross-platform/paper-impact-audit/release/scripts/bound_check.py",
+          "lines": "112-144",
+          "reason": "paths and candidate evaluations transient; aggregated outputs"
+        }
+      ],
+      "state_sequence_saved": false,
+      "task_growth_cells": 11,
+      "tasks": [
+        "MiniGrid-DoorKey-8x8-v0",
+        "MiniGrid-KeyCorridorS3R1-v0"
+      ]
+    }
+  ],
+  "scope": "Retained-record and source audit only; no new environment steps or policy execution",
+  "source_sha256": {
+    "handoff-cross-platform/paper-impact-audit/dependencies/minigrid/envs/doorkey.py": "b2802d8e98e9c99d54a6bbf4c04d7047cb8e0c4a3150b186bba8f4defb20114c",
+    "handoff-cross-platform/paper-impact-audit/paper-tables/replay.tex": "9e2ff878f54e7eec0e715b128482123f69b2e2d4bbcabf48ec20cd28360fa88c",
+    "handoff-cross-platform/paper-impact-audit/release/paper-data/bound-check.json": "85b9e6a72cbe6f9294ef88c324c2e38891b8cf74f9ea09b2d4c41af7566d85b9",
+    "handoff-cross-platform/paper-impact-audit/release/paper-data/farming-policy-returns.json": "603fa07daaead74b0ac51dc31b6e1b4a673a6fce3167dda24a34e22b6bd9fd37",
+    "handoff-cross-platform/paper-impact-audit/release/paper-data/numbers.json": "c1555b3e58023d5f187d4760f7172aa78118d44681178c92a183bc725403cf54",
+    "handoff-cross-platform/paper-impact-audit/release/paper-data/tamper-policy-returns.json": "9204da700c968a80759693a6097e8c0f306d56828b410133dfdb3c37572d6545",
+    "handoff-cross-platform/paper-impact-audit/release/run-records/5b13189d-614e-48c4-96b7-431838a41e1c/config.toml": "bdda441caa3ad5be19e95696c6a760c774269bfa1d96ddb6439edd8646aee8ee",
+    "handoff-cross-platform/paper-impact-audit/release/run-records/6bfabf4a-3e40-4d7c-b98a-ded07a5a0b69/config.toml": "edd43a9a68604052b93b0b2d37607123fb3508b072b0e04d4cf7f73bfd296116",
+    "handoff-cross-platform/paper-impact-audit/release/run-records/7a364fed-a875-4d3d-a366-21a162be994d/config.toml": "f58a7f424b99a0ce8dd7cb530523a9c32782bf6844a63522e4f88963ec273c52",
+    "handoff-cross-platform/paper-impact-audit/release/run-records/bced806e-eccb-434b-be50-ad91f57a9dfb/config.toml": "4f0e60884159387dd6a188d65c233e8c9ddc158ce031ca242bd4e8266500ef9c",
+    "handoff-cross-platform/paper-impact-audit/release/run-records/ed5147b6-c861-48b2-b9ff-1952774d5658/config.toml": "b95b3a2dbf3f4d93aec96b1ebc6504ff60e21b59b5c7a4b61361937aa4b5ede5",
+    "handoff-cross-platform/paper-impact-audit/release/run-records/run-list.txt": "6f9b7ccbe07ade0026c5e7b408c4b8448bbe7ed328df64d8c1ab8dbacfb6500f",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay-growth-1-40.json": "faa90cf5e861eab8a838adc21d777692040d33894c4cd81060af0ec66fd7db64",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay-n1.json": "8b42ff67b1b8867edf273b9e00b3513e6deaaf109c23c89f9105fb0669552331",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay-n6.json": "5d245d859e175dd081f08fca839cdf3d0654101ef31433aba6ac316436bfa8ab",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay-payonce.json": "dc773b7e391c45840cd0eec32221a740ae39d103981b21b558fb587215c41e79",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/mechanism/replay_checkpoints.py": "327071c9bfbe25756d93c72a79c371460a959dbe995b7b56b94bddc8d70f3930",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/round4/exploratory-replay-A2b.json": "dd60e7749235781e667f40fb4a8ebf56af5b552582136c061867a5628292dd01",
+    "handoff-cross-platform/paper-impact-audit/release/scored-results/round4/round4-report.md": "db61b9ca8a41a4410c449a8498a31fd7b5e29ead7590425b2ad299608115c5ea",
+    "handoff-cross-platform/paper-impact-audit/release/scripts/bound_check.py": "6fc5ee867b20b63950e97ca844b62a62fe07f8914329e059b0bb091cc13daa13",
+    "handoff-cross-platform/paper-impact-audit/release/scripts/bound_summary.py": "bd8879f36f5f1705153ac116db743ac421d82b05d280eea87fe1ffa2dc1e88e8",
+    "handoff-cross-platform/paper-impact-audit/release/scripts/farming_policy_returns.py": "86ebe0dd87a5aa5f4b87dc5f349aa272a081e55d20088a9cdfc2bb5dfd4a4f94",
+    "handoff-cross-platform/paper-impact-audit/release/scripts/make_numbers.py": "05680aa527590f98462f90705427df6d178d79ab8e74336f89385dc17e78e475",
+    "handoff-cross-platform/paper-impact-audit/release/scripts/make_tables.py": "7f87306c1ffb5ecb107173ead460eee87e817831a43f7b4a1cef5e04de095766",
+    "handoff-cross-platform/paper-impact-audit/release/scripts/tamper_policy_returns.py": "6c304ef90feb286f0824db71fb9a8c1f96e69cbf0e8d6c924ad94550d634af90",
+    "preregistration/paper-impact-audit-lock.json": "09bbd5e48c879ecdf45b93693c846f15eb3e95595669ea9bdbcad90aec2ce23b",
+    "preregistration/paper-impact-audit.md": "99113df632e38b9bb8e4f923876ee5f8bf966ee379c3a9f4f48312be64adf04d"
+  },
+  "table2_arithmetic_check": {
+    "all_displayed_values_match": true,
+    "displayed_numeric_values_checked": 44,
+    "max_stored_mean_absolute_error": 2.220446049250313e-16,
+    "original_table_file": "handoff-cross-platform/paper-impact-audit/paper-tables/replay.tex",
+    "rows": [
+      {
+        "exact_display_match": true,
+        "median_press_share": 0.06131652973767395,
+        "median_training_press_share": 0.06098819186333168,
+        "original_cells": [
+          "0.694 [0.690, 0.696]",
+          "0.694 [0.691, 0.696]",
+          "0.035 [0.033, 0.036]",
+          "0.061 (0.061)"
+        ],
+        "policy_count": 20,
+        "recalculated": {
+          "disc_int": {
+            "median": 0.6938601744910555,
+            "q1": 0.6898460674372403,
+            "q3": 0.6956679095329841
+          },
+          "disc_total": {
+            "median": 0.6943858825664558,
+            "q1": 0.6906255619045546,
+            "q3": 0.6961155815085829
+          },
+          "mean_drive": {
+            "median": 0.0345078015653765,
+            "q1": 0.03314768131649486,
+            "q3": 0.035596437323242
+          }
+        },
+        "rendered_cells": [
+          "0.694 [0.690, 0.696]",
+          "0.694 [0.691, 0.696]",
+          "0.035 [0.033, 0.036]",
+          "0.061 (0.061)"
+        ],
+        "run_label": "B1"
+      },
+      {
+        "exact_display_match": true,
+        "median_press_share": 0.09610821432386119,
+        "median_training_press_share": 0.09646973010973646,
+        "original_cells": [
+          "0.710 [0.707, 0.712]",
+          "0.710 [0.707, 0.712]",
+          "0.018 [0.017, 0.019]",
+          "0.096 (0.096)"
+        ],
+        "policy_count": 20,
+        "recalculated": {
+          "disc_int": {
+            "median": 0.7101665295115247,
+            "q1": 0.7066937876622843,
+            "q3": 0.712048059107817
+          },
+          "disc_total": {
+            "median": 0.7102782296048988,
+            "q1": 0.7071944951013229,
+            "q3": 0.7121436974681117
+          },
+          "mean_drive": {
+            "median": 0.01829741067716272,
+            "q1": 0.017380578894936546,
+            "q3": 0.019234067355964033
+          }
+        },
+        "rendered_cells": [
+          "0.710 [0.707, 0.712]",
+          "0.710 [0.707, 0.712]",
+          "0.018 [0.017, 0.019]",
+          "0.096 (0.096)"
+        ],
+        "run_label": "B2"
+      },
+      {
+        "exact_display_match": true,
+        "median_press_share": 0.26941818243982496,
+        "median_training_press_share": 0.2703563912158605,
+        "original_cells": [
+          "0.722 [0.721, 0.724]",
+          "0.723 [0.721, 0.724]",
+          "0.023 [0.022, 0.024]",
+          "0.269 (0.270)"
+        ],
+        "policy_count": 20,
+        "recalculated": {
+          "disc_int": {
+            "median": 0.7220476740758284,
+            "q1": 0.7207427252428924,
+            "q3": 0.7238162853439468
+          },
+          "disc_total": {
+            "median": 0.7229502536945546,
+            "q1": 0.721208742928747,
+            "q3": 0.7238665863118325
+          },
+          "mean_drive": {
+            "median": 0.022951127158126215,
+            "q1": 0.02170594094889141,
+            "q3": 0.02440296286340457
+          }
+        },
+        "rendered_cells": [
+          "0.722 [0.721, 0.724]",
+          "0.723 [0.721, 0.724]",
+          "0.023 [0.022, 0.024]",
+          "0.269 (0.270)"
+        ],
+        "run_label": "B3"
+      },
+      {
+        "exact_display_match": true,
+        "median_press_share": 0.18837619054365934,
+        "median_training_press_share": 0.1886663783119149,
+        "original_cells": [
+          "0.701 [0.700, 0.702]",
+          "0.702 [0.700, 0.703]",
+          "0.043 [0.042, 0.044]",
+          "0.188 (0.189)"
+        ],
+        "policy_count": 20,
+        "recalculated": {
+          "disc_int": {
+            "median": 0.7014574356676389,
+            "q1": 0.6998067124673654,
+            "q3": 0.7023459119242339
+          },
+          "disc_total": {
+            "median": 0.7018529643209711,
+            "q1": 0.7003972301205236,
+            "q3": 0.7027715635868762
+          },
+          "mean_drive": {
+            "median": 0.04302386588631961,
+            "q1": 0.04228848510849159,
+            "q3": 0.04369530821039617
+          }
+        },
+        "rendered_cells": [
+          "0.701 [0.700, 0.702]",
+          "0.702 [0.700, 0.703]",
+          "0.043 [0.042, 0.044]",
+          "0.188 (0.189)"
+        ],
+        "run_label": "B4"
+      }
+    ],
+    "stored_mean_checks": 560,
+    "training_press_share_scope": "Copied per-policy training scalar checked through displayed median only; source training-log audit is separate"
+  },
+  "totals": {
+    "all_historical_replay_episode_count": null,
+    "older_replay_exposures_with_open_reward_enabled": 40,
+    "older_replay_initial_cache_exposed_episodes": 60,
+    "recorded_per_layout_learned_replay_episodes": 18000,
+    "replay_families": 8
+  }
+}

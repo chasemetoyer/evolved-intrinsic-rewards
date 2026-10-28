@@ -1,0 +1,18 @@
+{
+ "C-P1": {
+  "expected": "farmers C1 0/20, C2 4/20, C3 12/20",
+  "predict_significant": true
+ },
+ "C-P2": {
+  "expected": "C3 12/20 > C4 1/20",
+  "predict_significant": true
+ },
+ "C-P3": {
+  "expected": "C5 6/20 < C1 20/20",
+  "predict_significant": true
+ },
+ "C-P4": {
+  "expected": "C5 6/20 < C6 15/20",
+  "predict_significant": true
+ }
+}

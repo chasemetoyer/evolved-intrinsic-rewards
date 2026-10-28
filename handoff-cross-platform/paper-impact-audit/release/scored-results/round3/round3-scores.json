@@ -1,0 +1,1664 @@
+{
+  "round3": {
+    "R1": {
+      "title": "R1: growth 1/60",
+      "run": "4cac9e0a-5ab1-442f-9d25-62d625570ee0",
+      "n": 20,
+      "counts": {
+        "solve": 16,
+        "cycle-farm": 4,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.5633859970033317,
+          0.9426660029499672
+        ],
+        "cycle-farm": [
+          0.05733399705003277,
+          0.4366140029966683
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve"
+      ]
+    },
+    "R2": {
+      "title": "R2: growth 1/30",
+      "run": "eea13605-38d3-4e23-adf3-a10cfc5bcbae",
+      "n": 20,
+      "counts": {
+        "solve": 2,
+        "cycle-farm": 18,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.012348527170294808,
+          0.31698271401908235
+        ],
+        "cycle-farm": [
+          0.6830172859809177,
+          0.9876514728297052
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 1,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    },
+    "R3": {
+      "title": "R3: growth 1/40, coef 0.5, norm on",
+      "run": "3d03a914-1a1d-4422-9d29-7ea01b422f2f",
+      "n": 20,
+      "counts": {
+        "solve": 14,
+        "cycle-farm": 6,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.45721081772371086,
+          0.8810684095942722
+        ],
+        "cycle-farm": [
+          0.11893159040572766,
+          0.5427891822762891
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 2,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "R4": {
+      "title": "R4: growth 1/40, coef 1, norm on (reference)",
+      "run": "fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0",
+      "n": 20,
+      "counts": {
+        "solve": 11,
+        "cycle-farm": 9,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.31527813304054847,
+          0.7694221032240758
+        ],
+        "cycle-farm": [
+          0.2305778967759241,
+          0.6847218669594515
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve"
+      ]
+    },
+    "R5": {
+      "title": "R5: growth 1/40, coef 2, norm on",
+      "run": "c3d67c09-a955-4220-a44e-bfbb68308bce",
+      "n": 20,
+      "counts": {
+        "solve": 8,
+        "cycle-farm": 12,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.19119006072530717,
+          0.6394574126925103
+        ],
+        "cycle-farm": [
+          0.36054258730748967,
+          0.8088099392746928
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    },
+    "R6": {
+      "title": "R6: growth 1/40, coef 0.5, norm off",
+      "run": "89d8e34c-dcbb-45d7-8aab-d20e928f2825",
+      "n": 20,
+      "counts": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "R7": {
+      "title": "R7: growth 1/40, coef 1, norm off",
+      "run": "135d1475-e4cf-4a4f-8ca2-be0d84c1d409",
+      "n": 20,
+      "counts": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "R8": {
+      "title": "R8: growth 1/40, coef 2, norm off",
+      "run": "1205f6d0-b06c-4061-8621-ccfb17787fb8",
+      "n": 20,
+      "counts": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "R9": {
+      "title": "R9: early-goal intervention (R4 + goal-room starts)",
+      "run": "a7cb164e-db25-4428-aa9f-165f0c285814",
+      "n": 20,
+      "counts": {
+        "solve": 10,
+        "cycle-farm": 10,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.27195784956079183,
+          0.7280421504392081
+        ],
+        "cycle-farm": [
+          0.27195784956079183,
+          0.7280421504392081
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 1,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve"
+      ]
+    },
+    "R10": {
+      "title": "R10: fixed pay-once control (all events once, scaled views)",
+      "run": "07653362-50c4-4b7a-9506-2c0428496fba",
+      "n": 20,
+      "counts": {
+        "solve": 20,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.8315665290169146,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.16843347098308528
+        ],
+        "prolong": [
+          0.0,
+          0.16843347098308528
+        ],
+        "fail": [
+          0.0,
+          0.16843347098308528
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    }
+  },
+  "prediction_rows": [
+    {
+      "prediction": "R1 cycle-farm",
+      "expected": 6,
+      "range": [
+        1,
+        10
+      ],
+      "observed": 4,
+      "n": 20,
+      "ci": [
+        0.05733399705003277,
+        0.4366140029966683
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R2 cycle-farm",
+      "expected": 16,
+      "range": [
+        12,
+        20
+      ],
+      "observed": 18,
+      "n": 20,
+      "ci": [
+        0.6830172859809177,
+        0.9876514728297052
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R3 cycle-farm",
+      "expected": 8,
+      "range": [
+        3,
+        13
+      ],
+      "observed": 6,
+      "n": 20,
+      "ci": [
+        0.11893159040572766,
+        0.5427891822762891
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R4 cycle-farm",
+      "expected": 11,
+      "range": [
+        6,
+        16
+      ],
+      "observed": 9,
+      "n": 20,
+      "ci": [
+        0.2305778967759241,
+        0.6847218669594515
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R5 cycle-farm",
+      "expected": 13,
+      "range": [
+        8,
+        18
+      ],
+      "observed": 12,
+      "n": 20,
+      "ci": [
+        0.36054258730748967,
+        0.8088099392746928
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R6 cycle-farm",
+      "expected": 4,
+      "range": [
+        0,
+        9
+      ],
+      "observed": 0,
+      "n": 20,
+      "ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R7 cycle-farm",
+      "expected": 10,
+      "range": [
+        5,
+        15
+      ],
+      "observed": 0,
+      "n": 20,
+      "ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "hit": false
+    },
+    {
+      "prediction": "R8 cycle-farm",
+      "expected": 16,
+      "range": [
+        11,
+        20
+      ],
+      "observed": 0,
+      "n": 20,
+      "ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "hit": false
+    },
+    {
+      "prediction": "R9 cycle-farm",
+      "expected": 2,
+      "range": [
+        0,
+        4
+      ],
+      "observed": 10,
+      "n": 20,
+      "ci": [
+        0.27195784956079183,
+        0.7280421504392081
+      ],
+      "hit": false
+    },
+    {
+      "prediction": "R10 cycle-farm",
+      "expected": 0,
+      "range": [
+        0,
+        1
+      ],
+      "observed": 0,
+      "n": 20,
+      "ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R10 prolong",
+      "expected": 0,
+      "range": [
+        0,
+        1
+      ],
+      "observed": 0,
+      "n": 20,
+      "ci": [
+        0.0,
+        0.16843347098308528
+      ],
+      "hit": true
+    },
+    {
+      "prediction": "R10 solve",
+      "expected": 17,
+      "range": [
+        12,
+        20
+      ],
+      "observed": 20,
+      "n": 20,
+      "ci": [
+        0.8315665290169146,
+        1.0
+      ],
+      "hit": true
+    }
+  ],
+  "tests": {
+    "R1 < R4 (Fisher, one-sided)": 0.08799781825365807,
+    "R2 > R4 (Fisher, one-sided)": 0.0028678368500392967,
+    "R8 > R6 (Fisher, one-sided)": 1.0,
+    "R9 < R4 (Fisher, one-sided)": 0.7363730079162685,
+    "logistic b1 (log2 coef) > 0": {
+      "b": -3.200526760269456e-08,
+      "ci": [
+        -56590.162449782976,
+        56590.16244971896
+      ],
+      "p_one_sided": 0.5000000000004422
+    },
+    "logistic b3 (log2 coef x norm_on) < 0": {
+      "b": 0.6259094785165825,
+      "ci": [
+        -56589.53654405116,
+        56590.7883630082
+      ],
+      "p_one_sided": 0.5000086482601357
+    },
+    "logistic b2 (norm_on)": {
+      "b": 24.016498593700465,
+      "ci": [
+        -46181.64696754353,
+        46229.67996473093
+      ]
+    }
+  },
+  "exploratory_rescore": {
+    "Agent 1: PPO, task reward only": {
+      "n": 5,
+      "counts": {
+        "solve": 2,
+        "cycle-farm": 0,
+        "prolong": 1,
+        "fail": 2
+      },
+      "ci": {
+        "solve": [
+          0.052744950526316906,
+          0.8533672003653268
+        ],
+        "cycle-farm": [
+          0.0,
+          0.5218237501049814
+        ],
+        "prolong": [
+          0.0050507633794680575,
+          0.7164179361180895
+        ],
+        "fail": [
+          0.052744950526316906,
+          0.8533672003653268
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "fail",
+        "solve",
+        "fail",
+        "prolong",
+        "solve"
+      ]
+    },
+    "Agent 2: PPO + RND novelty bonus": {
+      "n": 5,
+      "counts": {
+        "solve": 1,
+        "cycle-farm": 0,
+        "prolong": 3,
+        "fail": 1
+      },
+      "ci": {
+        "solve": [
+          0.0050507633794680575,
+          0.7164179361180895
+        ],
+        "cycle-farm": [
+          0.0,
+          0.5218237501049814
+        ],
+        "prolong": [
+          0.14663279963467313,
+          0.9472550494736831
+        ],
+        "fail": [
+          0.0050507633794680575,
+          0.7164179361180895
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "prolong",
+        "prolong",
+        "solve",
+        "fail",
+        "prolong"
+      ]
+    },
+    "Agent 3: PPO + learning-progress bonus": {
+      "n": 5,
+      "counts": {
+        "solve": 3,
+        "cycle-farm": 0,
+        "prolong": 2,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.14663279963467313,
+          0.9472550494736831
+        ],
+        "cycle-farm": [
+          0.0,
+          0.5218237501049814
+        ],
+        "prolong": [
+          0.052744950526316906,
+          0.8533672003653268
+        ],
+        "fail": [
+          0.0,
+          0.5218237501049814
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "prolong",
+        "solve",
+        "prolong"
+      ]
+    },
+    "Agent 1 @ 10 seeds (powered baseline)": {
+      "n": 10,
+      "counts": {
+        "solve": 3,
+        "cycle-farm": 0,
+        "prolong": 3,
+        "fail": 4
+      },
+      "ci": {
+        "solve": [
+          0.06673951117773447,
+          0.6524528500599973
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.06673951117773447,
+          0.6524528500599973
+        ],
+        "fail": [
+          0.12155225811982719,
+          0.7376219233930549
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "fail",
+        "solve",
+        "fail",
+        "prolong",
+        "solve",
+        "solve",
+        "fail",
+        "prolong",
+        "prolong",
+        "fail"
+      ]
+    },
+    "Agent 2b: episodic novelty, coef 3e-4": {
+      "n": 10,
+      "counts": {
+        "solve": 7,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 3
+      },
+      "ci": {
+        "solve": [
+          0.3475471499400027,
+          0.9332604888222655
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.06673951117773447,
+          0.6524528500599973
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "fail",
+        "fail",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "fail",
+        "solve",
+        "solve"
+      ]
+    },
+    "Agent 2b: episodic novelty, coef 1e-3": {
+      "n": 10,
+      "counts": {
+        "solve": 9,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 1
+      },
+      "ci": {
+        "solve": [
+          0.5549838829718047,
+          0.9974714214555382
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0025285785444617848,
+          0.4450161170281954
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "fail",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "Agent 2b: episodic novelty, coef 3e-3": {
+      "n": 10,
+      "counts": {
+        "solve": 3,
+        "cycle-farm": 0,
+        "prolong": 4,
+        "fail": 3
+      },
+      "ci": {
+        "solve": [
+          0.06673951117773447,
+          0.6524528500599973
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.12155225811982719,
+          0.7376219233930549
+        ],
+        "fail": [
+          0.06673951117773447,
+          0.6524528500599973
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "prolong",
+        "prolong",
+        "solve",
+        "fail",
+        "prolong",
+        "solve",
+        "fail",
+        "fail",
+        "solve",
+        "prolong"
+      ]
+    },
+    "LP curiosity (fixed lag), coef 0.1": {
+      "n": 10,
+      "counts": {
+        "solve": 1,
+        "cycle-farm": 0,
+        "prolong": 4,
+        "fail": 5
+      },
+      "ci": {
+        "solve": [
+          0.0025285785444617848,
+          0.4450161170281954
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.12155225811982719,
+          0.7376219233930549
+        ],
+        "fail": [
+          0.18708602844739855,
+          0.8129139715526015
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "prolong",
+        "prolong",
+        "fail",
+        "fail",
+        "fail",
+        "fail",
+        "solve",
+        "prolong",
+        "fail",
+        "prolong"
+      ]
+    },
+    "LP curiosity (fixed lag), coef 0.3": {
+      "n": 10,
+      "counts": {
+        "solve": 5,
+        "cycle-farm": 0,
+        "prolong": 3,
+        "fail": 2
+      },
+      "ci": {
+        "solve": [
+          0.18708602844739855,
+          0.8129139715526015
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.06673951117773447,
+          0.6524528500599973
+        ],
+        "fail": [
+          0.02521072632683336,
+          0.5560954623076415
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy",
+        "median"
+      ],
+      "per_seed": [
+        "prolong",
+        "prolong",
+        "prolong",
+        "fail",
+        "solve",
+        "fail",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "LP curiosity (fixed lag), coef 1.0": {
+      "n": 10,
+      "counts": {
+        "solve": 0,
+        "cycle-farm": 0,
+        "prolong": 10,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.0,
+          0.3084971078187608
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.6915028921812392,
+          1.0
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "mean-proxy"
+      ],
+      "per_seed": [
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong",
+        "prolong"
+      ]
+    },
+    "Agent 3: homeostatic satiation, growth 1/640": {
+      "n": 10,
+      "counts": {
+        "solve": 10,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.6915028921812392,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "Agent 3: homeostatic satiation, growth 1/160": {
+      "n": 10,
+      "counts": {
+        "solve": 10,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.6915028921812392,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "Agent 3: homeostatic satiation, growth 1/40": {
+      "n": 10,
+      "counts": {
+        "solve": 5,
+        "cycle-farm": 5,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.18708602844739855,
+          0.8129139715526015
+        ],
+        "cycle-farm": [
+          0.18708602844739855,
+          0.8129139715526015
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "cycle-farm"
+      ]
+    },
+    "Control: constant event bonus (no satiation)": {
+      "n": 10,
+      "counts": {
+        "solve": 0,
+        "cycle-farm": 10,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.0,
+          0.3084971078187608
+        ],
+        "cycle-farm": [
+          0.6915028921812392,
+          1.0
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    },
+    "N1: anchor replicate, growth 1/40, seeds 10-19": {
+      "n": 10,
+      "counts": {
+        "solve": 4,
+        "cycle-farm": 6,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.12155225811982719,
+          0.7376219233930549
+        ],
+        "cycle-farm": [
+          0.26237807660694507,
+          0.8784477418801728
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 1,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    },
+    "N2: growth 1/40 at gamma 0.95": {
+      "n": 10,
+      "counts": {
+        "solve": 3,
+        "cycle-farm": 7,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.06673951117773447,
+          0.6524528500599973
+        ],
+        "cycle-farm": [
+          0.3475471499400027,
+          0.9332604888222655
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    },
+    "N3: growth 1/80": {
+      "n": 10,
+      "counts": {
+        "solve": 10,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.6915028921812392,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "N4: growth 1/80, coef 1.29 (matched to anchor)": {
+      "n": 10,
+      "counts": {
+        "solve": 10,
+        "cycle-farm": 0,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.6915028921812392,
+          1.0
+        ],
+        "cycle-farm": [
+          0.0,
+          0.3084971078187608
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "N5: growth 1/40, coef 0.5": {
+      "n": 10,
+      "counts": {
+        "solve": 7,
+        "cycle-farm": 3,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.3475471499400027,
+          0.9332604888222655
+        ],
+        "cycle-farm": [
+          0.06673951117773447,
+          0.6524528500599973
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "cycle-farm",
+        "solve",
+        "solve",
+        "solve",
+        "solve",
+        "solve"
+      ]
+    },
+    "N6: growth 1/20": {
+      "n": 10,
+      "counts": {
+        "solve": 1,
+        "cycle-farm": 9,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.0025285785444617848,
+          0.4450161170281954
+        ],
+        "cycle-farm": [
+          0.5549838829718047,
+          0.9974714214555382
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 1,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "solve",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    },
+    "Control: pay each event once per episode": {
+      "n": 10,
+      "counts": {
+        "solve": 0,
+        "cycle-farm": 10,
+        "prolong": 0,
+        "fail": 0
+      },
+      "ci": {
+        "solve": [
+          0.0,
+          0.3084971078187608
+        ],
+        "cycle-farm": [
+          0.6915028921812392,
+          1.0
+        ],
+        "prolong": [
+          0.0,
+          0.3084971078187608
+        ],
+        "fail": [
+          0.0,
+          0.3084971078187608
+        ]
+      },
+      "solvers_over_repeat": 0,
+      "prolong_basis": [
+        "median"
+      ],
+      "per_seed": [
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm",
+        "cycle-farm"
+      ]
+    }
+  }
+}

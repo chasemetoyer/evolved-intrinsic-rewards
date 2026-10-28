@@ -1,0 +1,83 @@
+{
+  "seed": 20,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 2.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 272384,
+  "first_goal_step": 27856,
+  "coverage_after_solved": 0.3490664136622391,
+  "final_train": {
+    "r_int_mean": 0.02421712109612094,
+    "r_int_std": 0.15959700610902575,
+    "train/ret": 0.9680265625,
+    "train/int_ret": 1.1270193666188666,
+    "train/len": 22.736666666666665,
+    "train/success": 1.0,
+    "train/coverage": 0.3385304659498208,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.7077777777777778,
+    "train/door_flips": 1.0355555555555556,
+    "train/len_median": 21.555555555555557
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9683154296875001,
+      "int_ret": 0.0,
+      "len": 22.53125,
+      "success": 1.0,
+      "coverage": 0.33820564516129037,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.671875,
+      "door_flips": 1.03125
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97040283203125,
+      "int_ret": 0.0,
+      "len": 21.046875,
+      "success": 1.0,
+      "coverage": 0.33870967741935487,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.375,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.84937744140625,
+      "int_ret": 0.0,
+      "len": 428.4375,
+      "success": 1.0,
+      "coverage": 0.2973872950819672,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 37.890625,
+      "door_flips": 5.953125
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0154766845703125,
+      "int_ret": 0.0,
+      "len": 2520.421875,
+      "success": 0.015625,
+      "coverage": 0.061987704918032786,
+      "got_key": 0.734375,
+      "opened_door": 0.234375,
+      "pickups": 0.78125,
+      "door_flips": 476.609375
+    }
+  }
+}

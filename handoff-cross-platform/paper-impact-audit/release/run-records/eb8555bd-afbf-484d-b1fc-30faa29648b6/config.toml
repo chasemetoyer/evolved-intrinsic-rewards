@@ -1,0 +1,37 @@
+# Single source of truth for one experiment node.
+# Child branches change values here (and code in intrinsic.py); the run command never changes.
+
+[run]
+seeds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]         # each seed runs as its own process, in parallel
+total_timesteps = 2_000_000      # env steps per seed
+log_every_updates = 10
+
+[env]
+id = "MiniGrid-DoorKey-8x8-v0"   # sparse reward: +1 only after key -> door -> goal
+num_envs = 16
+# Generalization: evaluated after training on fresh layouts, same size and a larger size.
+eval_ids = ["MiniGrid-DoorKey-8x8-v0", "MiniGrid-DoorKey-16x16-v0"]
+eval_episodes = 64
+
+[ppo]
+num_steps = 128                  # rollout length per env -> batch = num_envs * num_steps
+learning_rate = 2.5e-4
+anneal_lr = true
+gamma = 0.99
+gae_lambda = 0.95
+num_minibatches = 4
+update_epochs = 4
+clip_coef = 0.2
+ent_coef = 0.01
+vf_coef = 0.5
+max_grad_norm = 0.5
+
+[intrinsic]
+# "none" | "homeostatic" (Agent 3: satiation) | "event_bonus" (control: same events, no satiation)
+kind = "homeostatic"
+coef = 0.5                       # PPO trains on r_ext + coef * r_int
+# needs, in order: explore (new 7x7 view this episode), grasp (pick up), open (door/box changes)
+h0 = 0.5                         # every need starts each episode half-deprived; setpoint is 0
+growth = [0.025, 0.025, 0.025]  # per-step need build-up
+satiety = [0.1, 1.0, 1.0]        # how much one event relieves each need
+pay_once = false          # control only: grasp/open pay once per episode

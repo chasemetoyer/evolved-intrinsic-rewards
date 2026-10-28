@@ -1,0 +1,83 @@
+{
+  "seed": 20,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 585728,
+  "first_goal_step": 18496,
+  "coverage_after_solved": 0.3484884792626728,
+  "final_train": {
+    "r_int_mean": 0.02222218530045615,
+    "r_int_std": 0.1573491460747189,
+    "train/ret": 0.9668171875,
+    "train/int_ret": 0.521963839796113,
+    "train/len": 23.596666666666668,
+    "train/success": 1.0,
+    "train/coverage": 0.3384587813620072,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.501111111111111,
+    "train/door_flips": 1.0044444444444443,
+    "train/len_median": 22.77777777777778
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.965810546875,
+      "int_ret": 0.0,
+      "len": 24.3125,
+      "success": 1.0,
+      "coverage": 0.34072580645161293,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.59375,
+      "door_flips": 1.015625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9683374023437501,
+      "int_ret": 0.0,
+      "len": 22.515625,
+      "success": 1.0,
+      "coverage": 0.3377016129032258,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.03125,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.654432373046875,
+      "int_ret": 0.0,
+      "len": 916.28125,
+      "success": 0.765625,
+      "coverage": 0.30968237704918034,
+      "got_key": 0.984375,
+      "opened_door": 0.921875,
+      "pickups": 64.796875,
+      "door_flips": 11.6875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0153778076171875,
+      "int_ret": 0.0,
+      "len": 2520.703125,
+      "success": 0.015625,
+      "coverage": 0.11535177595628415,
+      "got_key": 0.8125,
+      "opened_door": 0.3125,
+      "pickups": 6.90625,
+      "door_flips": 673.171875
+    }
+  }
+}

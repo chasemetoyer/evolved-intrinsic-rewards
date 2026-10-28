@@ -1,0 +1,86 @@
+{
+  "seed": 75,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 261920,
+  "first_goal_step": 2512,
+  "coverage_after_solved": 0.6016976744186046,
+  "final_train": {
+    "r_int_mean": 0.023280973235766094,
+    "r_int_std": 0.21803919805420768,
+    "train/ret": 0.9436851851851853,
+    "train/int_ret": 0.3927748990307251,
+    "train/len": 16.894444444444446,
+    "train/success": 1.0,
+    "train/coverage": 0.6,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.771111111111111,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.0,
+    "train/key_pickups": 1.771111111111111,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 16.77777777777778
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 11874,
+    "tampers_per_episode": 0.0,
+    "solved_episodes": 11873,
+    "solved_len_mean": 16.83028720626632
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.9449479166666667,
+      "int_ret": 0.0,
+      "len": 16.515625,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.65625,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.65625,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.9446354166666666,
+      "int_ret": 0.0,
+      "len": 16.609375,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.703125,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.703125,
+      "locked_door_opens": 1.0
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "status": "pass",
+  "checks": 12073,
+  "checks_by_area": {
+    "scope": 88,
+    "config": 43,
+    "classification": 129,
+    "seeds": 43,
+    "metrics": 3186,
+    "exposure": 86,
+    "unknown": 139,
+    "terminal": 21,
+    "archived": 525,
+    "summary": 10,
+    "table": 437,
+    "source": 431,
+    "dependency": 12,
+    "archive": 6284,
+    "replay": 639
+  },
+  "failures": [],
+  "independently_reconstructed": {
+    "training": {
+      "actual_runs": 43,
+      "detector_disabled_runs": 4,
+      "open_disabled_detector_runs": 2,
+      "completed_seed_runs": 775,
+      "exposed_initial_episodes": 11120,
+      "reward_state_exposed_initial_episodes": 10480,
+      "detector_enabled_runs": 39,
+      "archived_score_checked_runs": 25,
+      "archived_auc_seed_comparisons": 500
+    },
+    "runs_by_round": {
+      "5": 12,
+      "4": 14,
+      "3": 10,
+      "2": 7
+    },
+    "task_inventory": {
+      "MiniGrid-KeyCorridorS3R1-v0": 7,
+      "MiniGrid-DoorKey-8x8-v0": 36
+    },
+    "keycorridor_final10": {
+      "all_runs": 7,
+      "all_seeds": 125,
+      "target_pickups": 1280642,
+      "completed_episodes": 1295440,
+      "detector_runs": 6,
+      "detector_seeds": 105,
+      "detector_target_pickups": 1028028,
+      "detector_completed_episodes": 1042809
+    },
+    "source_files_checked": 172,
+    "archive_manifest_files": 3139,
+    "replay": {
+      "families": 8,
+      "older_initial_exposures": 60,
+      "older_active_exposures": 40,
+      "farming_episodes": 2000,
+      "tamper_episodes": 16000,
+      "simple_family_episodes": 4400,
+      "all_historical_episode_count": null,
+      "n6_selected_policies": 9,
+      "n6_ranges": {
+        "pickup_attempt_mean_range": [
+          137.25,
+          183.75
+        ],
+        "intrinsic_return_mean_range": [
+          -1.543125033378601,
+          -1.2737500071525574
+        ],
+        "pickup_drop_action_share_range_from_rounded_inputs": [
+          0.477,
+          0.634
+        ]
+      }
+    },
+    "table2": {
+      "displayed_values_verified": 44,
+      "stored_policy_means_verified": 560
+    }
+  },
+  "scope": "Existing files only; no environment creation, checkpoint execution, or training.",
+  "missing_count_policy": "Unknown event counts remain null; structural exposure is not a count of realized missed events."
+}

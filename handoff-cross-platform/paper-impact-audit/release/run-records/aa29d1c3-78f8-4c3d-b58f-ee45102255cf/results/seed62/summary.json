@@ -1,0 +1,86 @@
+{
+  "seed": 62,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 271072,
+  "first_goal_step": 2864,
+  "coverage_after_solved": 0.6191999999999999,
+  "final_train": {
+    "r_int_mean": 0.006326495152380731,
+    "r_int_std": 0.22674337360594007,
+    "train/ret": 0.8640074074074076,
+    "train/int_ret": 0.20389436202744643,
+    "train/len": 40.79777777777778,
+    "train/success": 1.0,
+    "train/coverage": 0.6006666666666667,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 4.66,
+    "train/door_flips": 5.239999999999999,
+    "train/tampers": 0.0,
+    "train/key_pickups": 4.66,
+    "train/locked_door_opens": 2.6100000000000003,
+    "train/len_median": 37.611111111111114
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 4859,
+    "tampers_per_episode": 0.0016464293064416546,
+    "solved_episodes": 4859,
+    "solved_len_mean": 41.12471701996296
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.8583333333333333,
+      "int_ret": 0.0,
+      "len": 42.5,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 5.0,
+      "door_flips": 5.34375,
+      "tampers": 0.0,
+      "key_pickups": 5.0,
+      "locked_door_opens": 2.671875
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 270.0,
+      "success": 0.0,
+      "coverage": 0.39999999999999997,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 133.0625,
+      "door_flips": 1.0,
+      "tampers": 0.0,
+      "key_pickups": 133.0625,
+      "locked_door_opens": 0.0
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "seed": 29,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 0.5,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 346112,
+  "first_goal_step": 29856,
+  "coverage_after_solved": 0.3532100708103855,
+  "final_train": {
+    "r_int_mean": 0.01991404075589445,
+    "r_int_std": 0.16435864402188194,
+    "train/ret": 0.961525,
+    "train/int_ret": 0.26757463946485793,
+    "train/len": 27.36,
+    "train/success": 1.0,
+    "train/coverage": 0.3399283154121864,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 2.0888888888888886,
+    "train/door_flips": 1.1622222222222223,
+    "train/len_median": 25.944444444444443
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.96253662109375,
+      "int_ret": 0.0,
+      "len": 26.640625,
+      "success": 1.0,
+      "coverage": 0.32963709677419356,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.953125,
+      "door_flips": 1.15625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9753686523437499,
+      "int_ret": 0.0,
+      "len": 17.515625,
+      "success": 1.0,
+      "coverage": 0.32106854838709675,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.8450140380859374,
+      "int_ret": 0.0,
+      "len": 427.515625,
+      "success": 0.953125,
+      "coverage": 0.20389344262295084,
+      "got_key": 0.96875,
+      "opened_door": 0.96875,
+      "pickups": 16.21875,
+      "door_flips": 4.4375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.01547119140625,
+      "int_ret": 0.0,
+      "len": 2520.4375,
+      "success": 0.015625,
+      "coverage": 0.027920081967213115,
+      "got_key": 0.390625,
+      "opened_door": 0.265625,
+      "pickups": 0.390625,
+      "door_flips": 477.3125
+    }
+  }
+}

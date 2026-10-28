@@ -1,0 +1,83 @@
+{
+  "seed": 30,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 409600,
+  "first_goal_step": 7408,
+  "coverage_after_solved": 0.3550469579420171,
+  "final_train": {
+    "r_int_mean": 0.02230132867892583,
+    "r_int_std": 0.165497331155671,
+    "train/ret": 0.9649234375,
+    "train/int_ret": 0.5604978847601969,
+    "train/len": 24.943333333333335,
+    "train/success": 1.0,
+    "train/coverage": 0.33831541218637995,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.9433333333333336,
+    "train/door_flips": 1.0577777777777777,
+    "train/len_median": 24.22222222222222
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.96583251953125,
+      "int_ret": 0.0,
+      "len": 24.296875,
+      "success": 1.0,
+      "coverage": 0.33417338709677424,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.984375,
+      "door_flips": 1.09375
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9728857421875,
+      "int_ret": 0.0,
+      "len": 19.28125,
+      "success": 1.0,
+      "coverage": 0.328125,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.793607177734375,
+      "int_ret": 0.0,
+      "len": 560.40625,
+      "success": 0.90625,
+      "coverage": 0.20816256830601093,
+      "got_key": 0.90625,
+      "opened_door": 0.90625,
+      "pickups": 23.125,
+      "door_flips": 4.640625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0154766845703125,
+      "int_ret": 0.0,
+      "len": 2520.421875,
+      "success": 0.015625,
+      "coverage": 0.05199795081967214,
+      "got_key": 0.515625,
+      "opened_door": 0.296875,
+      "pickups": 0.515625,
+      "door_flips": 595.640625
+    }
+  }
+}

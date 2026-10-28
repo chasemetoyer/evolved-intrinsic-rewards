@@ -1,0 +1,11 @@
+policy seed 0: mean discounted -1.011 (min -1.950, max -0.791) | mean undiscounted -1.335 | success 0.00
+policy seed 1: mean discounted -1.030 (min -1.915, max -0.796) | mean undiscounted -1.332 | success 0.00
+policy seed 2: mean discounted -0.808 (min -1.290, max -0.535) | mean undiscounted -1.294 | success 0.00
+policy seed 3: mean discounted -1.065 (min -1.910, max -0.829) | mean undiscounted -1.337 | success 0.00
+policy seed 4: mean discounted -1.015 (min -1.938, max -0.785) | mean undiscounted -1.332 | success 0.00
+policy seed 5: mean discounted 0.411 (min -1.016, max 1.428) | mean undiscounted 0.702 | success 0.99
+policy seed 6: mean discounted -0.671 (min -1.920, max 0.981) | mean undiscounted -0.847 | success 0.26
+policy seed 7: mean discounted -1.014 (min -1.963, max -0.811) | mean undiscounted -1.337 | success 0.00
+policy seed 8: mean discounted -0.802 (min -1.083, max -0.596) | mean undiscounted -1.311 | success 0.00
+policy seed 9: mean discounted -1.010 (min -1.937, max -0.775) | mean undiscounted -1.332 | success 0.00
+written

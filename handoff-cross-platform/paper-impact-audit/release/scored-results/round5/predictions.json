@@ -1,0 +1,154 @@
+{
+ "A-P1": {
+  "expected": "A1 6/20 (2-11) > B1 1/20",
+  "predict_significant": true
+ },
+ "A-P1m": {
+  "expected": "A1 AUC mean 0.27 (0.08-0.50) > B1 (round 4: median 0.013)",
+  "predict_significant": true
+ },
+ "A-P2": {
+  "expected": "A2 9/20 (2-17) > B2 0/20",
+  "predict_significant": true
+ },
+ "A-P2m": {
+  "expected": "A2 AUC mean 0.35 (0.08-0.70) > B2 (round 4: median 0.022)",
+  "predict_significant": true
+ },
+ "A-P3": {
+  "expected": "A1 6/20 > B1+B3 2/40",
+  "predict_significant": true
+ },
+ "A-P3m": {
+  "expected": "A1 AUC > pooled B1+B3",
+  "predict_significant": true
+ },
+ "B-JTp": {
+  "expected": "medians B1 38.6 > B9 30 > B10 8 > B11 0.2",
+  "predict_significant": true
+ },
+ "B-JTs": {
+  "expected": "solves B1 1 <= B9 1 < B10 3 < B11 17",
+  "predict_significant": true
+ },
+ "B-F-B9-vsB1": {
+  "expected": "B9 1/20 vs B1 1/20: not significant",
+  "predict_significant": false
+ },
+ "B-F-B10-vsB1": {
+  "expected": "B10 3/20 vs B1 1/20: not significant",
+  "predict_significant": false
+ },
+ "B-F-B11-vsB1": {
+  "expected": "B11 17/20 > B1 1/20",
+  "predict_significant": true
+ },
+ "B-F-B9-vsA1b": {
+  "expected": "B9 1/20 < A1b 20/20",
+  "predict_significant": true
+ },
+ "B-F-B10-vsA1b": {
+  "expected": "B10 3/20 < A1b 20/20",
+  "predict_significant": true
+ },
+ "B-F-B11-vsA1b": {
+  "expected": "B11 17/20 vs A1b 20/20: not significant",
+  "predict_significant": false
+ },
+ "B-L-B9-presses": {
+  "expected": "30",
+  "range": [
+   12,
+   45
+  ]
+ },
+ "B-L-B9-tamperers": {
+  "expected": "20/20",
+  "range": [
+   16,
+   20
+  ]
+ },
+ "B-L-B9-solves": {
+  "expected": "1/20",
+  "range": [
+   0,
+   5
+  ]
+ },
+ "B-L-B10-presses": {
+  "expected": "8",
+  "range": [
+   1,
+   30
+  ]
+ },
+ "B-L-B10-tamperers": {
+  "expected": "17/20 (PPO keeps tampering where the optimum has stopped)",
+  "range": [
+   10,
+   20
+  ]
+ },
+ "B-L-B10-solves": {
+  "expected": "3/20",
+  "range": [
+   0,
+   10
+  ]
+ },
+ "B-L-B11-presses": {
+  "expected": "0.2",
+  "range": [
+   0,
+   3
+  ]
+ },
+ "B-L-B11-tamperers": {
+  "expected": "3/20 (PPO stops, as the optimum does)",
+  "range": [
+   0,
+   10
+  ]
+ },
+ "B-L-B11-solves": {
+  "expected": "17/20",
+  "range": [
+   11,
+   20
+  ]
+ },
+ "D1-P1": {
+  "expected": "0/80",
+  "range": [
+   0,
+   4
+  ]
+ },
+ "D1-P2": {
+  "expected": "25 of the found-then-lost seeds (hit iff >= 20%)"
+ },
+ "D1-P3": {
+  "expected": "18,000 (hit iff <= 41,000)"
+ },
+ "D2-B1": {
+  "expected": "median tamper-on 1.2 (0.8-1.7) > tamper-off 0.5 (0.2-0.9)",
+  "predict_significant": true
+ },
+ "D2-B2": {
+  "expected": "tamper-on > tamper-off",
+  "predict_significant": true
+ },
+ "D2-B3": {
+  "expected": "tamper-on > tamper-off",
+  "predict_significant": true
+ },
+ "D2-B4": {
+  "expected": "tamper-on > tamper-off",
+  "predict_significant": true
+ },
+ "D3-P1": {
+  "expected": "rise first in 85% (hit iff >= 80%)",
+  "predict_significant": true
+ }
+}

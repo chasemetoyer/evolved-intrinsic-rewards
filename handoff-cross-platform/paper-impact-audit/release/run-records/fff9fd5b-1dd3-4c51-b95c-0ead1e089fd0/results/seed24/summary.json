@@ -1,0 +1,83 @@
+{
+  "seed": 24,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 1243136,
+  "first_goal_step": 16688,
+  "coverage_after_solved": 0.3931239388794567,
+  "final_train": {
+    "r_int_mean": 0.01586910616606474,
+    "r_int_std": 0.16598809758822122,
+    "train/ret": 0.9584359375000001,
+    "train/int_ret": 0.48157290846368084,
+    "train/len": 29.556666666666665,
+    "train/success": 1.0,
+    "train/coverage": 0.37444444444444447,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.9388888888888889,
+    "train/door_flips": 1.1433333333333335,
+    "train/len_median": 26.055555555555557
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.96220703125,
+      "int_ret": 0.0,
+      "len": 26.875,
+      "success": 1.0,
+      "coverage": 0.34979838709677424,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.609375,
+      "door_flips": 1.203125
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9715673828125,
+      "int_ret": 0.0,
+      "len": 20.21875,
+      "success": 1.0,
+      "coverage": 0.32610887096774194,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.7471771240234375,
+      "int_ret": 0.0,
+      "len": 679.140625,
+      "success": 0.859375,
+      "coverage": 0.31582991803278687,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 59.171875,
+      "door_flips": 42.296875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0457159423828125,
+      "int_ret": 0.0,
+      "len": 2443.296875,
+      "success": 0.046875,
+      "coverage": 0.09673838797814208,
+      "got_key": 0.75,
+      "opened_door": 0.46875,
+      "pickups": 0.75,
+      "door_flips": 878.75
+    }
+  }
+}

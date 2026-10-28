@@ -1,0 +1,84 @@
+{
+  "seed": 35,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "event_bonus",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": true,
+    "explore_bonus": 0.0008014183193531415
+  },
+  "first_solved_step": 231424,
+  "first_goal_step": 8288,
+  "coverage_after_solved": 0.35538375973303665,
+  "final_train": {
+    "r_int_mean": 0.024514312545458477,
+    "r_int_std": 0.07330448594358233,
+    "train/ret": 0.9700984375,
+    "train/int_ret": 0.5164718098418477,
+    "train/len": 21.263333333333335,
+    "train/success": 1.0,
+    "train/coverage": 0.3376702508960574,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.0022222222222221,
+    "train/door_flips": 1.0066666666666668,
+    "train/len_median": 20.22222222222222
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9714135742187501,
+      "int_ret": 0.0,
+      "len": 20.328125,
+      "success": 1.0,
+      "coverage": 0.3326612903225807,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.972841796875,
+      "int_ret": 0.0,
+      "len": 19.3125,
+      "success": 1.0,
+      "coverage": 0.3245967741935484,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.7397015380859375,
+      "int_ret": 0.0,
+      "len": 691.515625,
+      "success": 0.828125,
+      "coverage": 0.157103825136612,
+      "got_key": 0.84375,
+      "opened_door": 0.84375,
+      "pickups": 1.25,
+      "door_flips": 2.84375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.046512451171875004,
+      "int_ret": 0.0,
+      "len": 2441.03125,
+      "success": 0.046875,
+      "coverage": 0.030481557377049183,
+      "got_key": 0.53125,
+      "opened_door": 0.296875,
+      "pickups": 0.53125,
+      "door_flips": 0.296875
+    }
+  }
+}

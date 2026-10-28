@@ -1,0 +1,1094 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Installed 44 packages in 237ms
+effective config:
+{
+  "run": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "total_timesteps": 2000000,
+    "log_every_updates": 10
+  },
+  "env": {
+    "id": "MiniGrid-DoorKey-8x8-v0",
+    "num_envs": 16,
+    "eval_ids": [
+      "MiniGrid-DoorKey-8x8-v0",
+      "MiniGrid-DoorKey-16x16-v0"
+    ],
+    "eval_episodes": 64
+  },
+  "ppo": {
+    "num_steps": 128,
+    "learning_rate": 0.00025,
+    "anneal_lr": true,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "num_minibatches": 4,
+    "update_epochs": 4,
+    "clip_coef": 0.2,
+    "ent_coef": 0.01,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5
+  },
+  "intrinsic": {
+    "kind": "episodic_count",
+    "coef": 0.003
+  }
+}
+* Trackio project initialized: agents
+* Trackio metrics logged to: ~/.cache/huggingface/trackio
+* View dashboard by running in your terminal:
+[1m[38;5;208mtrackio show --project "agents"[0m
+* or by running in Python: trackio.show(project="agents")
+* Created new run: fe575571-c9c9-4359-9601-01357806f84e
+[seed 4] step     20480 sps  4360 success 0.06 ret 0.017 cov 0.54 key 0.91 door 0.22 r_int 0.4488
+[seed 2] step     20480 sps  4338 success 0.00 ret 0.000 cov 0.48 key 0.94 door 0.19 r_int 0.4188
+[seed 1] step     20480 sps  4314 success 0.09 ret 0.046 cov 0.43 key 0.97 door 0.25 r_int 0.3993
+[seed 8] step     20480 sps  4300 success 0.00 ret 0.000 cov 0.45 key 0.88 door 0.12 r_int 0.4189
+[seed 5] step     20480 sps  4262 success 0.00 ret 0.000 cov 0.39 key 0.94 door 0.16 r_int 0.3922
+[seed 0] step     20480 sps  4231 success 0.03 ret 0.008 cov 0.47 key 0.88 door 0.19 r_int 0.4557
+[seed 3] step     20480 sps  4221 success 0.09 ret 0.040 cov 0.46 key 1.00 door 0.19 r_int 0.4193
+[seed 6] step     20480 sps  4188 success 0.09 ret 0.048 cov 0.47 key 0.88 door 0.21 r_int 0.3805
+[seed 7] step     20480 sps  4161 success 0.00 ret 0.000 cov 0.45 key 0.91 door 0.03 r_int 0.3896
+[seed 9] step     20480 sps  4148 success 0.09 ret 0.029 cov 0.44 key 0.91 door 0.22 r_int 0.4127
+[seed 8] step     40960 sps  4290 success 0.02 ret 0.012 cov 0.47 key 0.91 door 0.12 r_int 0.4389
+[seed 4] step     40960 sps  4249 success 0.09 ret 0.035 cov 0.55 key 0.94 door 0.22 r_int 0.5185
+[seed 5] step     40960 sps  4232 success 0.00 ret 0.000 cov 0.42 key 0.97 door 0.16 r_int 0.4208
+[seed 6] step     40960 sps  4211 success 0.06 ret 0.026 cov 0.46 key 0.92 door 0.14 r_int 0.3835
+[seed 1] step     40960 sps  4210 success 0.06 ret 0.030 cov 0.47 key 0.97 door 0.23 r_int 0.4208
+[seed 2] step     40960 sps  4206 success 0.02 ret 0.007 cov 0.47 key 0.97 door 0.16 r_int 0.4883
+[seed 0] step     40960 sps  4198 success 0.03 ret 0.015 cov 0.49 key 0.91 door 0.20 r_int 0.4907
+[seed 9] step     40960 sps  4194 success 0.08 ret 0.027 cov 0.46 key 0.95 door 0.16 r_int 0.4809
+[seed 3] step     40960 sps  4176 success 0.05 ret 0.020 cov 0.47 key 0.98 door 0.20 r_int 0.4833
+[seed 7] step     40960 sps  4170 success 0.00 ret 0.000 cov 0.49 key 0.94 door 0.06 r_int 0.4885
+[seed 8] step     61440 sps  4259 success 0.01 ret 0.008 cov 0.47 key 0.91 door 0.16 r_int 0.4745
+[seed 5] step     61440 sps  4228 success 0.01 ret 0.004 cov 0.42 key 0.95 door 0.18 r_int 0.4431
+[seed 2] step     61440 sps  4211 success 0.03 ret 0.009 cov 0.49 key 0.98 door 0.19 r_int 0.5148
+[seed 9] step     61440 sps  4196 success 0.09 ret 0.037 cov 0.49 key 0.97 door 0.16 r_int 0.5198
+[seed 1] step     61440 sps  4191 success 0.06 ret 0.030 cov 0.48 key 0.96 door 0.21 r_int 0.5138
+[seed 6] step     61440 sps  4190 success 0.07 ret 0.027 cov 0.48 key 0.94 door 0.14 r_int 0.4679
+[seed 4] step     61440 sps  4175 success 0.08 ret 0.027 cov 0.55 key 0.96 door 0.20 r_int 0.5389
+[seed 7] step     61440 sps  4163 success 0.01 ret 0.006 cov 0.50 key 0.95 door 0.08 r_int 0.4695
+[seed 3] step     61440 sps  4155 success 0.05 ret 0.017 cov 0.49 key 0.99 door 0.16 r_int 0.4961
+[seed 0] step     61440 sps  4137 success 0.04 ret 0.014 cov 0.52 key 0.91 door 0.18 r_int 0.4925
+[seed 8] step     81920 sps  4241 success 0.04 ret 0.016 cov 0.48 key 0.95 door 0.17 r_int 0.4960
+[seed 5] step     81920 sps  4188 success 0.02 ret 0.006 cov 0.49 key 0.96 door 0.20 r_int 0.5086
+[seed 6] step     81920 sps  4174 success 0.04 ret 0.011 cov 0.48 key 0.96 door 0.08 r_int 0.4602
+[seed 9] step     81920 sps  4171 success 0.08 ret 0.033 cov 0.50 key 1.00 door 0.12 r_int 0.5375
+[seed 1] step     81920 sps  4168 success 0.07 ret 0.027 cov 0.53 key 0.96 door 0.19 r_int 0.5307
+[seed 2] step     81920 sps  4161 success 0.07 ret 0.027 cov 0.53 key 0.99 door 0.20 r_int 0.5836
+[seed 4] step     81920 sps  4152 success 0.06 ret 0.020 cov 0.52 key 0.99 door 0.14 r_int 0.5198
+[seed 7] step     81920 sps  4129 success 0.03 ret 0.015 cov 0.53 key 0.94 door 0.11 r_int 0.4454
+[seed 3] step     81920 sps  4127 success 0.02 ret 0.004 cov 0.50 key 0.98 door 0.09 r_int 0.4713
+[seed 0] step     81920 sps  4119 success 0.04 ret 0.013 cov 0.53 key 0.86 door 0.17 r_int 0.4255
+[seed 8] step    102400 sps  4246 success 0.06 ret 0.023 cov 0.51 key 0.97 door 0.18 r_int 0.5022
+[seed 5] step    102400 sps  4188 success 0.09 ret 0.039 cov 0.56 key 0.96 door 0.31 r_int 0.5405
+[seed 6] step    102400 sps  4173 success 0.03 ret 0.009 cov 0.51 key 0.95 door 0.07 r_int 0.4934
+[seed 9] step    102400 sps  4155 success 0.08 ret 0.034 cov 0.52 key 0.99 door 0.11 r_int 0.5232
+[seed 2] step    102400 sps  4143 success 0.12 ret 0.049 cov 0.57 key 0.98 door 0.27 r_int 0.5844
+[seed 1] step    102400 sps  4131 success 0.06 ret 0.023 cov 0.50 key 0.98 door 0.16 r_int 0.5044
+[seed 4] step    102400 sps  4131 success 0.02 ret 0.003 cov 0.51 key 0.99 door 0.08 r_int 0.5145
+[seed 0] step    102400 sps  4119 success 0.04 ret 0.009 cov 0.52 key 0.87 door 0.14 r_int 0.5105
+[seed 7] step    102400 sps  4119 success 0.05 ret 0.025 cov 0.53 key 0.95 door 0.15 r_int 0.4876
+[seed 3] step    102400 sps  4110 success 0.07 ret 0.025 cov 0.52 key 0.99 door 0.13 r_int 0.5807
+[seed 8] step    122880 sps  4223 success 0.08 ret 0.033 cov 0.52 key 0.95 door 0.13 r_int 0.4626
+[seed 6] step    122880 sps  4180 success 0.01 ret 0.006 cov 0.54 key 0.96 door 0.06 r_int 0.5737
+[seed 5] step    122880 sps  4177 success 0.11 ret 0.048 cov 0.59 key 0.98 door 0.35 r_int 0.4995
+[seed 9] step    122880 sps  4149 success 0.05 ret 0.018 cov 0.51 key 0.99 door 0.08 r_int 0.5527
+[seed 3] step    122880 sps  4123 success 0.07 ret 0.034 cov 0.52 key 0.98 door 0.13 r_int 0.5380
+[seed 1] step    122880 sps  4121 success 0.06 ret 0.020 cov 0.50 key 1.00 door 0.16 r_int 0.5269
+[seed 2] step    122880 sps  4119 success 0.18 ret 0.077 cov 0.58 key 0.98 door 0.31 r_int 0.5660
+[seed 7] step    122880 sps  4118 success 0.08 ret 0.044 cov 0.52 key 0.95 door 0.20 r_int 0.4613
+[seed 4] step    122880 sps  4117 success 0.03 ret 0.006 cov 0.53 key 0.99 door 0.10 r_int 0.5575
+[seed 0] step    122880 sps  4099 success 0.02 ret 0.005 cov 0.48 key 0.90 door 0.12 r_int 0.5026
+[seed 8] step    143360 sps  4186 success 0.06 ret 0.026 cov 0.51 key 0.93 door 0.09 r_int 0.5437
+[seed 5] step    143360 sps  4170 success 0.13 ret 0.056 cov 0.58 key 0.97 door 0.33 r_int 0.5308
+[seed 6] step    143360 sps  4160 success 0.01 ret 0.006 cov 0.55 key 0.97 door 0.07 r_int 0.5694
+[seed 9] step    143360 sps  4130 success 0.05 ret 0.016 cov 0.52 key 0.99 door 0.07 r_int 0.5734
+[seed 3] step    143360 sps  4109 success 0.08 ret 0.037 cov 0.54 key 0.99 door 0.15 r_int 0.5199
+[seed 2] step    143360 sps  4108 success 0.26 ret 0.129 cov 0.55 key 0.99 door 0.35 r_int 0.5535
+[seed 1] step    143360 sps  4108 success 0.02 ret 0.008 cov 0.46 key 1.00 door 0.14 r_int 0.5099
+[seed 7] step    143360 sps  4097 success 0.07 ret 0.040 cov 0.52 key 0.97 door 0.19 r_int 0.4914
+[seed 4] step    143360 sps  4090 success 0.05 ret 0.013 cov 0.53 key 0.99 door 0.14 r_int 0.5508
+[seed 0] step    143360 sps  4075 success 0.01 ret 0.003 cov 0.44 key 0.94 door 0.10 r_int 0.5127
+[seed 8] step    163840 sps  4177 success 0.06 ret 0.025 cov 0.51 key 0.93 door 0.07 r_int 0.5901
+[seed 6] step    163840 sps  4152 success 0.03 ret 0.017 cov 0.56 key 0.99 door 0.11 r_int 0.5327
+[seed 5] step    163840 sps  4139 success 0.10 ret 0.046 cov 0.56 key 0.94 door 0.30 r_int 0.4746
+[seed 3] step    163840 sps  4107 success 0.05 ret 0.028 cov 0.54 key 0.99 door 0.13 r_int 0.5097
+[seed 1] step    163840 sps  4106 success 0.03 ret 0.012 cov 0.49 key 1.00 door 0.14 r_int 0.5095
+[seed 9] step    163840 sps  4105 success 0.03 ret 0.008 cov 0.52 key 1.00 door 0.04 r_int 0.5451
+[seed 2] step    163840 sps  4091 success 0.29 ret 0.159 cov 0.57 key 0.99 door 0.35 r_int 0.6204
+[seed 7] step    163840 sps  4089 success 0.07 ret 0.033 cov 0.51 key 0.96 door 0.20 r_int 0.5128
+[seed 4] step    163840 sps  4086 success 0.05 ret 0.013 cov 0.52 key 1.00 door 0.13 r_int 0.5408
+[seed 0] step    163840 sps  4073 success 0.01 ret 0.003 cov 0.46 key 0.90 door 0.12 r_int 0.5294
+[seed 8] step    184320 sps  4158 success 0.04 ret 0.014 cov 0.50 key 0.98 door 0.05 r_int 0.5079
+[seed 6] step    184320 sps  4145 success 0.04 ret 0.023 cov 0.51 key 1.00 door 0.11 r_int 0.5530
+[seed 5] step    184320 sps  4134 success 0.13 ret 0.069 cov 0.56 key 0.95 door 0.31 r_int 0.5381
+[seed 9] step    184320 sps  4103 success 0.03 ret 0.007 cov 0.51 key 1.00 door 0.05 r_int 0.5494
+[seed 1] step    184320 sps  4096 success 0.01 ret 0.005 cov 0.48 key 1.00 door 0.11 r_int 0.4678
+[seed 3] step    184320 sps  4090 success 0.05 ret 0.021 cov 0.54 key 1.00 door 0.13 r_int 0.5549
+[seed 2] step    184320 sps  4085 success 0.26 ret 0.130 cov 0.58 key 0.99 door 0.34 r_int 0.5697
+[seed 7] step    184320 sps  4083 success 0.07 ret 0.024 cov 0.51 key 0.95 door 0.21 r_int 0.5331
+[seed 4] step    184320 sps  4073 success 0.03 ret 0.012 cov 0.51 key 1.00 door 0.07 r_int 0.5575
+[seed 0] step    184320 sps  4067 success 0.03 ret 0.006 cov 0.49 key 0.88 door 0.17 r_int 0.5653
+[seed 8] step    204800 sps  4162 success 0.03 ret 0.013 cov 0.52 key 1.00 door 0.04 r_int 0.5575
+[seed 5] step    204800 sps  4135 success 0.16 ret 0.089 cov 0.58 key 0.97 door 0.37 r_int 0.5237
+[seed 6] step    204800 sps  4131 success 0.05 ret 0.029 cov 0.51 key 0.99 door 0.11 r_int 0.5782
+[seed 3] step    204800 sps  4100 success 0.05 ret 0.023 cov 0.51 key 1.00 door 0.13 r_int 0.5755
+[seed 1] step    204800 sps  4095 success 0.02 ret 0.013 cov 0.51 key 1.00 door 0.13 r_int 0.5470
+[seed 9] step    204800 sps  4086 success 0.01 ret 0.001 cov 0.49 key 0.98 door 0.03 r_int 0.5370
+[seed 7] step    204800 sps  4080 success 0.08 ret 0.028 cov 0.52 key 0.96 door 0.19 r_int 0.4688
+[seed 4] step    204800 sps  4074 success 0.01 ret 0.005 cov 0.49 key 1.00 door 0.02 r_int 0.5899
+[seed 2] step    204800 sps  4068 success 0.26 ret 0.124 cov 0.60 key 0.99 door 0.36 r_int 0.5737
+[seed 0] step    204800 sps  4060 success 0.04 ret 0.008 cov 0.50 key 0.91 door 0.23 r_int 0.5214
+[seed 8] step    225280 sps  4159 success 0.02 ret 0.009 cov 0.51 key 1.00 door 0.04 r_int 0.5699
+[seed 5] step    225280 sps  4133 success 0.16 ret 0.082 cov 0.55 key 0.99 door 0.35 r_int 0.5557
+[seed 6] step    225280 sps  4124 success 0.03 ret 0.018 cov 0.50 key 0.99 door 0.09 r_int 0.5477
+[seed 1] step    225280 sps  4095 success 0.02 ret 0.016 cov 0.50 key 1.00 door 0.13 r_int 0.5879
+[seed 3] step    225280 sps  4091 success 0.04 ret 0.017 cov 0.49 key 1.00 door 0.11 r_int 0.5561
+[seed 4] step    225280 sps  4087 success 0.01 ret 0.005 cov 0.49 key 1.00 door 0.01 r_int 0.5635
+[seed 9] step    225280 sps  4086 success 0.02 ret 0.004 cov 0.48 key 0.93 door 0.04 r_int 0.4416
+[seed 7] step    225280 sps  4075 success 0.08 ret 0.032 cov 0.52 key 0.98 door 0.17 r_int 0.5370
+[seed 0] step    225280 sps  4062 success 0.04 ret 0.007 cov 0.51 key 0.97 door 0.28 r_int 0.5875
+[seed 2] step    225280 sps  4061 success 0.26 ret 0.124 cov 0.59 key 1.00 door 0.34 r_int 0.6216
+[seed 8] step    245760 sps  4145 success 0.05 ret 0.029 cov 0.51 key 1.00 door 0.09 r_int 0.5659
+[seed 5] step    245760 sps  4132 success 0.17 ret 0.082 cov 0.55 key 0.99 door 0.35 r_int 0.5493
+[seed 6] step    245760 sps  4120 success 0.02 ret 0.011 cov 0.52 key 0.99 door 0.08 r_int 0.5501
+[seed 1] step    245760 sps  4081 success 0.02 ret 0.016 cov 0.50 key 0.99 door 0.12 r_int 0.5310
+[seed 3] step    245760 sps  4079 success 0.02 ret 0.010 cov 0.49 key 0.96 door 0.09 r_int 0.5987
+[seed 4] step    245760 sps  4077 success 0.01 ret 0.004 cov 0.49 key 1.00 door 0.02 r_int 0.5640
+[seed 9] step    245760 sps  4070 success 0.01 ret 0.003 cov 0.47 key 0.90 door 0.01 r_int 0.5663
+[seed 7] step    245760 sps  4065 success 0.08 ret 0.026 cov 0.52 key 0.99 door 0.15 r_int 0.5591
+[seed 2] step    245760 sps  4062 success 0.23 ret 0.118 cov 0.57 key 1.00 door 0.31 r_int 0.6051
+[seed 0] step    245760 sps  4052 success 0.02 ret 0.004 cov 0.51 key 0.98 door 0.23 r_int 0.5047
+[seed 8] step    266240 sps  4139 success 0.08 ret 0.048 cov 0.54 key 1.00 door 0.13 r_int 0.5737
+[seed 5] step    266240 sps  4129 success 0.18 ret 0.095 cov 0.54 key 0.99 door 0.34 r_int 0.5616
+[seed 6] step    266240 sps  4123 success 0.02 ret 0.011 cov 0.49 key 1.00 door 0.08 r_int 0.5738
+[seed 1] step    266240 sps  4081 success 0.01 ret 0.008 cov 0.48 key 0.98 door 0.09 r_int 0.5624
+[seed 9] step    266240 sps  4078 success 0.02 ret 0.010 cov 0.46 key 0.92 door 0.04 r_int 0.5577
+[seed 3] step    266240 sps  4074 success 0.02 ret 0.008 cov 0.51 key 0.96 door 0.11 r_int 0.6039
+[seed 4] step    266240 sps  4074 success 0.03 ret 0.010 cov 0.48 key 0.99 door 0.06 r_int 0.5463
+[seed 7] step    266240 sps  4062 success 0.07 ret 0.022 cov 0.51 key 1.00 door 0.23 r_int 0.5479
+[seed 2] step    266240 sps  4055 success 0.30 ret 0.179 cov 0.61 key 1.00 door 0.38 r_int 0.5622
+[seed 0] step    266240 sps  4042 success 0.03 ret 0.009 cov 0.52 key 0.99 door 0.26 r_int 0.5792
+[seed 8] step    286720 sps  4136 success 0.16 ret 0.103 cov 0.55 key 1.00 door 0.20 r_int 0.5937
+[seed 6] step    286720 sps  4118 success 0.03 ret 0.015 cov 0.48 key 1.00 door 0.07 r_int 0.5331
+[seed 5] step    286720 sps  4113 success 0.16 ret 0.081 cov 0.55 key 1.00 door 0.36 r_int 0.6040
+[seed 4] step    286720 sps  4073 success 0.03 ret 0.010 cov 0.48 key 0.95 door 0.09 r_int 0.4750
+[seed 9] step    286720 sps  4072 success 0.01 ret 0.007 cov 0.45 key 0.95 door 0.03 r_int 0.6360
+[seed 1] step    286720 sps  4071 success 0.04 ret 0.015 cov 0.52 key 0.98 door 0.12 r_int 0.5841
+[seed 7] step    286720 sps  4068 success 0.13 ret 0.055 cov 0.55 key 1.00 door 0.36 r_int 0.5732
+[seed 3] step    286720 sps  4059 success 0.01 ret 0.004 cov 0.50 key 0.96 door 0.06 r_int 0.5818
+[seed 2] step    286720 sps  4057 success 0.34 ret 0.191 cov 0.62 key 1.00 door 0.42 r_int 0.6023
+[seed 0] step    286720 sps  4038 success 0.03 ret 0.013 cov 0.51 key 0.98 door 0.21 r_int 0.5007
+[seed 8] step    307200 sps  4127 success 0.16 ret 0.095 cov 0.57 key 1.00 door 0.23 r_int 0.5796
+[seed 5] step    307200 sps  4108 success 0.16 ret 0.084 cov 0.57 key 1.00 door 0.38 r_int 0.5843
+[seed 6] step    307200 sps  4105 success 0.03 ret 0.018 cov 0.51 key 1.00 door 0.06 r_int 0.5002
+[seed 9] step    307200 sps  4061 success 0.01 ret 0.007 cov 0.48 key 0.99 door 0.03 r_int 0.5549
+[seed 1] step    307200 sps  4059 success 0.05 ret 0.021 cov 0.54 key 0.97 door 0.15 r_int 0.4191
+[seed 4] step    307200 sps  4058 success 0.03 ret 0.008 cov 0.47 key 0.93 door 0.10 r_int 0.5690
+[seed 7] step    307200 sps  4058 success 0.12 ret 0.059 cov 0.55 key 0.99 door 0.31 r_int 0.5918
+[seed 2] step    307200 sps  4055 success 0.33 ret 0.162 cov 0.61 key 1.00 door 0.42 r_int 0.5490
+[seed 3] step    307200 sps  4055 success 0.01 ret 0.004 cov 0.51 key 0.99 door 0.06 r_int 0.5280
+[seed 0] step    307200 sps  4024 success 0.05 ret 0.025 cov 0.51 key 0.97 door 0.22 r_int 0.5527
+[seed 8] step    327680 sps  4112 success 0.22 ret 0.126 cov 0.58 key 1.00 door 0.32 r_int 0.5986
+[seed 5] step    327680 sps  4095 success 0.15 ret 0.077 cov 0.59 key 1.00 door 0.31 r_int 0.5961
+[seed 6] step    327680 sps  4091 success 0.02 ret 0.012 cov 0.52 key 0.98 door 0.03 r_int 0.5892
+[seed 4] step    327680 sps  4059 success 0.01 ret 0.002 cov 0.48 key 0.93 door 0.07 r_int 0.5425
+[seed 9] step    327680 sps  4058 success 0.01 ret 0.005 cov 0.50 key 0.99 door 0.01 r_int 0.5635
+[seed 7] step    327680 sps  4057 success 0.11 ret 0.053 cov 0.58 key 0.99 door 0.22 r_int 0.5828
+[seed 1] step    327680 sps  4054 success 0.05 ret 0.021 cov 0.54 key 0.95 door 0.14 r_int 0.5260
+[seed 3] step    327680 sps  4048 success 0.01 ret 0.001 cov 0.49 key 0.99 door 0.04 r_int 0.5692
+[seed 2] step    327680 sps  4043 success 0.27 ret 0.120 cov 0.56 key 1.00 door 0.34 r_int 0.5776
+[seed 0] step    327680 sps  4018 success 0.04 ret 0.020 cov 0.53 key 0.97 door 0.17 r_int 0.5482
+[seed 8] step    348160 sps  4107 success 0.27 ret 0.143 cov 0.58 key 1.00 door 0.35 r_int 0.5982
+[seed 5] step    348160 sps  4092 success 0.12 ret 0.067 cov 0.59 key 1.00 door 0.25 r_int 0.5530
+[seed 6] step    348160 sps  4092 success 0.03 ret 0.019 cov 0.51 key 0.98 door 0.05 r_int 0.5354
+[seed 9] step    348160 sps  4063 success 0.01 ret 0.005 cov 0.50 key 1.00 door 0.02 r_int 0.5929
+[seed 4] step    348160 sps  4060 success 0.02 ret 0.007 cov 0.49 key 0.97 door 0.08 r_int 0.5679
+[seed 7] step    348160 sps  4053 success 0.04 ret 0.017 cov 0.54 key 0.97 door 0.06 r_int 0.6084
+[seed 1] step    348160 sps  4053 success 0.02 ret 0.007 cov 0.52 key 0.95 door 0.11 r_int 0.5476
+[seed 3] step    348160 sps  4050 success 0.02 ret 0.006 cov 0.49 key 0.98 door 0.08 r_int 0.6126
+[seed 2] step    348160 sps  4039 success 0.26 ret 0.122 cov 0.56 key 1.00 door 0.37 r_int 0.6139
+[seed 0] step    348160 sps  4013 success 0.04 ret 0.017 cov 0.53 key 0.95 door 0.15 r_int 0.5089
+[seed 8] step    368640 sps  4093 success 0.29 ret 0.137 cov 0.59 key 0.99 door 0.36 r_int 0.5759
+[seed 5] step    368640 sps  4086 success 0.10 ret 0.056 cov 0.57 key 1.00 door 0.21 r_int 0.5781
+[seed 6] step    368640 sps  4078 success 0.02 ret 0.010 cov 0.50 key 0.97 door 0.03 r_int 0.5097
+[seed 4] step    368640 sps  4054 success 0.01 ret 0.004 cov 0.49 key 0.96 door 0.06 r_int 0.5671
+[seed 9] step    368640 sps  4048 success 0.01 ret 0.005 cov 0.50 key 1.00 door 0.04 r_int 0.6115
+[seed 7] step    368640 sps  4046 success 0.02 ret 0.008 cov 0.51 key 0.98 door 0.04 r_int 0.5291
+[seed 3] step    368640 sps  4041 success 0.02 ret 0.006 cov 0.50 key 0.98 door 0.09 r_int 0.5611
+[seed 1] step    368640 sps  4037 success 0.05 ret 0.013 cov 0.49 key 0.97 door 0.14 r_int 0.6092
+[seed 2] step    368640 sps  4031 success 0.29 ret 0.148 cov 0.60 key 0.99 door 0.38 r_int 0.5818
+[seed 0] step    368640 sps  4003 success 0.03 ret 0.008 cov 0.53 key 0.91 door 0.12 r_int 0.4464
+[seed 8] step    389120 sps  4084 success 0.30 ret 0.143 cov 0.58 key 0.99 door 0.36 r_int 0.5955
+[seed 5] step    389120 sps  4080 success 0.14 ret 0.068 cov 0.56 key 0.99 door 0.27 r_int 0.5757
+[seed 6] step    389120 sps  4071 success 0.02 ret 0.010 cov 0.49 key 0.98 door 0.03 r_int 0.5461
+[seed 4] step    389120 sps  4045 success 0.02 ret 0.007 cov 0.49 key 0.98 door 0.06 r_int 0.5696
+[seed 7] step    389120 sps  4043 success 0.01 ret 0.003 cov 0.51 key 0.98 door 0.03 r_int 0.5380
+[seed 3] step    389120 sps  4032 success 0.02 ret 0.006 cov 0.52 key 0.97 door 0.07 r_int 0.6121
+[seed 9] step    389120 sps  4031 success 0.01 ret 0.002 cov 0.49 key 0.99 door 0.05 r_int 0.5697
+[seed 1] step    389120 sps  4026 success 0.08 ret 0.032 cov 0.53 key 1.00 door 0.20 r_int 0.6046
+[seed 2] step    389120 sps  4025 success 0.45 ret 0.266 cov 0.60 key 0.98 door 0.54 r_int 0.5923
+[seed 0] step    389120 sps  3998 success 0.02 ret 0.005 cov 0.47 key 0.92 door 0.11 r_int 0.5700
+[seed 8] step    409600 sps  4029 success 0.37 ret 0.180 cov 0.60 key 0.99 door 0.43 r_int 0.6113
+[seed 5] step    409600 sps  4020 success 0.18 ret 0.090 cov 0.57 key 0.99 door 0.31 r_int 0.5620
+[seed 6] step    409600 sps  4001 success 0.02 ret 0.006 cov 0.49 key 0.97 door 0.04 r_int 0.5649
+[seed 7] step    409600 sps  3962 success 0.01 ret 0.005 cov 0.49 key 1.00 door 0.05 r_int 0.5686
+[seed 4] step    409600 sps  3959 success 0.01 ret 0.003 cov 0.51 key 0.98 door 0.04 r_int 0.6096
+[seed 3] step    409600 sps  3944 success 0.02 ret 0.007 cov 0.51 key 0.97 door 0.05 r_int 0.5580
+[seed 9] step    409600 sps  3943 success 0.01 ret 0.002 cov 0.49 key 0.99 door 0.05 r_int 0.5872
+[seed 2] step    409600 sps  3935 success 0.55 ret 0.336 cov 0.56 key 0.96 door 0.59 r_int 0.5920
+[seed 1] step    409600 sps  3934 success 0.14 ret 0.072 cov 0.53 key 1.00 door 0.24 r_int 0.4882
+[seed 0] step    409600 sps  3906 success 0.01 ret 0.003 cov 0.44 key 0.93 door 0.09 r_int 0.5293
+[seed 8] step    430080 sps  3956 success 0.50 ret 0.279 cov 0.63 key 1.00 door 0.55 r_int 0.6564
+[seed 5] step    430080 sps  3955 success 0.23 ret 0.121 cov 0.57 key 0.99 door 0.32 r_int 0.5729
+[seed 6] step    430080 sps  3941 success 0.02 ret 0.006 cov 0.47 key 0.98 door 0.06 r_int 0.5544
+[seed 7] step    430080 sps  3924 success 0.03 ret 0.018 cov 0.52 key 0.98 door 0.08 r_int 0.5699
+[seed 4] step    430080 sps  3915 success 0.03 ret 0.015 cov 0.52 key 1.00 door 0.09 r_int 0.5836
+[seed 9] step    430080 sps  3911 success 0.01 ret 0.002 cov 0.45 key 0.99 door 0.05 r_int 0.6341
+[seed 3] step    430080 sps  3905 success 0.05 ret 0.016 cov 0.50 key 0.98 door 0.08 r_int 0.5943
+[seed 1] step    430080 sps  3898 success 0.13 ret 0.072 cov 0.50 key 1.00 door 0.20 r_int 0.5688
+[seed 2] step    430080 sps  3898 success 0.54 ret 0.340 cov 0.62 key 0.97 door 0.59 r_int 0.5900
+[seed 0] step    430080 sps  3875 success 0.03 ret 0.016 cov 0.42 key 0.98 door 0.10 r_int 0.5480
+[seed 5] step    450560 sps  3929 success 0.26 ret 0.138 cov 0.57 key 0.99 door 0.35 r_int 0.5882
+[seed 8] step    450560 sps  3929 success 0.60 ret 0.359 cov 0.64 key 1.00 door 0.65 r_int 0.6405
+[seed 6] step    450560 sps  3914 success 0.03 ret 0.013 cov 0.49 key 0.99 door 0.07 r_int 0.4728
+[seed 7] step    450560 sps  3897 success 0.05 ret 0.021 cov 0.51 key 0.98 door 0.12 r_int 0.5895
+[seed 4] step    450560 sps  3888 success 0.04 ret 0.025 cov 0.55 key 1.00 door 0.14 r_int 0.6205
+[seed 9] step    450560 sps  3882 success 0.00 ret 0.000 cov 0.47 key 0.99 door 0.03 r_int 0.5989
+[seed 3] step    450560 sps  3876 success 0.07 ret 0.024 cov 0.52 key 1.00 door 0.11 r_int 0.5532
+[seed 1] step    450560 sps  3871 success 0.11 ret 0.054 cov 0.48 key 0.99 door 0.16 r_int 0.4973
+[seed 2] step    450560 sps  3867 success 0.65 ret 0.389 cov 0.67 key 1.00 door 0.74 r_int 0.5426
+[seed 0] step    450560 sps  3849 success 0.03 ret 0.016 cov 0.43 key 0.99 door 0.09 r_int 0.5436
+[seed 5] step    471040 sps  3909 success 0.32 ret 0.163 cov 0.57 key 0.99 door 0.42 r_int 0.6140
+[seed 8] step    471040 sps  3907 success 0.70 ret 0.463 cov 0.63 key 1.00 door 0.78 r_int 0.5920
+[seed 6] step    471040 sps  3895 success 0.02 ret 0.010 cov 0.51 key 0.99 door 0.07 r_int 0.6229
+[seed 7] step    471040 sps  3885 success 0.04 ret 0.016 cov 0.50 key 0.98 door 0.10 r_int 0.5660
+[seed 9] step    471040 sps  3873 success 0.01 ret 0.002 cov 0.47 key 1.00 door 0.03 r_int 0.5812
+[seed 4] step    471040 sps  3871 success 0.05 ret 0.027 cov 0.52 key 1.00 door 0.13 r_int 0.5884
+[seed 3] step    471040 sps  3865 success 0.09 ret 0.037 cov 0.53 key 1.00 door 0.16 r_int 0.5510
+[seed 1] step    471040 sps  3859 success 0.06 ret 0.023 cov 0.46 key 0.99 door 0.09 r_int 0.5307
+[seed 2] step    471040 sps  3853 success 0.95 ret 0.696 cov 0.61 key 1.00 door 0.95 r_int 0.5623
+[seed 0] step    471040 sps  3842 success 0.05 ret 0.022 cov 0.46 key 0.96 door 0.10 r_int 0.6059
+[seed 5] step    491520 sps  3902 success 0.27 ret 0.123 cov 0.59 key 0.99 door 0.38 r_int 0.5637
+[seed 8] step    491520 sps  3898 success 0.80 ret 0.550 cov 0.61 key 1.00 door 0.88 r_int 0.5732
+[seed 6] step    491520 sps  3888 success 0.02 ret 0.010 cov 0.51 key 1.00 door 0.08 r_int 0.5652
+[seed 7] step    491520 sps  3878 success 0.04 ret 0.010 cov 0.52 key 0.99 door 0.12 r_int 0.5513
+[seed 4] step    491520 sps  3870 success 0.03 ret 0.016 cov 0.49 key 1.00 door 0.08 r_int 0.6152
+[seed 9] step    491520 sps  3869 success 0.01 ret 0.002 cov 0.47 key 0.99 door 0.01 r_int 0.6129
+[seed 3] step    491520 sps  3853 success 0.05 ret 0.023 cov 0.54 key 1.00 door 0.12 r_int 0.5380
+[seed 1] step    491520 sps  3851 success 0.05 ret 0.024 cov 0.46 key 0.99 door 0.08 r_int 0.5623
+[seed 2] step    491520 sps  3844 success 0.94 ret 0.726 cov 0.58 key 1.00 door 1.00 r_int 0.5374
+[seed 0] step    491520 sps  3837 success 0.04 ret 0.018 cov 0.47 key 0.96 door 0.08 r_int 0.5877
+[seed 5] step    512000 sps  3882 success 0.15 ret 0.067 cov 0.56 key 1.00 door 0.27 r_int 0.5560
+[seed 8] step    512000 sps  3879 success 0.82 ret 0.573 cov 0.64 key 1.00 door 0.87 r_int 0.5888
+[seed 6] step    512000 sps  3872 success 0.04 ret 0.022 cov 0.50 key 1.00 door 0.11 r_int 0.6089
+[seed 7] step    512000 sps  3857 success 0.04 ret 0.014 cov 0.50 key 0.99 door 0.09 r_int 0.5913
+[seed 4] step    512000 sps  3855 success 0.01 ret 0.002 cov 0.49 key 1.00 door 0.02 r_int 0.5940
+[seed 9] step    512000 sps  3854 success 0.03 ret 0.011 cov 0.47 key 0.97 door 0.03 r_int 0.6456
+[seed 3] step    512000 sps  3833 success 0.05 ret 0.020 cov 0.52 key 1.00 door 0.15 r_int 0.5622
+[seed 1] step    512000 sps  3833 success 0.07 ret 0.031 cov 0.48 key 0.99 door 0.10 r_int 0.5641
+[seed 2] step    512000 sps  3823 success 0.89 ret 0.731 cov 0.50 key 1.00 door 0.99 r_int 0.6598
+[seed 0] step    512000 sps  3822 success 0.08 ret 0.034 cov 0.51 key 0.96 door 0.14 r_int 0.5554
+[seed 5] step    532480 sps  3867 success 0.15 ret 0.075 cov 0.54 key 1.00 door 0.22 r_int 0.5873
+[seed 6] step    532480 sps  3858 success 0.03 ret 0.020 cov 0.49 key 1.00 door 0.09 r_int 0.5943
+[seed 8] step    532480 sps  3855 success 0.90 ret 0.652 cov 0.60 key 1.00 door 0.92 r_int 0.5801
+[seed 7] step    532480 sps  3842 success 0.06 ret 0.021 cov 0.50 key 0.98 door 0.10 r_int 0.5715
+[seed 4] step    532480 sps  3837 success 0.00 ret 0.000 cov 0.49 key 1.00 door 0.01 r_int 0.5889
+[seed 9] step    532480 sps  3835 success 0.02 ret 0.010 cov 0.49 key 0.97 door 0.02 r_int 0.5710
+[seed 1] step    532480 sps  3818 success 0.08 ret 0.034 cov 0.50 key 0.98 door 0.13 r_int 0.5120
+[seed 3] step    532480 sps  3816 success 0.03 ret 0.012 cov 0.51 key 1.00 door 0.09 r_int 0.5954
+[seed 2] step    532480 sps  3815 success 0.99 ret 0.818 cov 0.55 key 1.00 door 1.00 r_int 0.6893
+[seed 0] step    532480 sps  3806 success 0.10 ret 0.043 cov 0.52 key 1.00 door 0.14 r_int 0.5493
+[seed 5] step    552960 sps  3861 success 0.17 ret 0.093 cov 0.53 key 1.00 door 0.21 r_int 0.5498
+[seed 8] step    552960 sps  3844 success 0.94 ret 0.725 cov 0.59 key 1.00 door 0.95 r_int 0.5419
+[seed 6] step    552960 sps  3844 success 0.08 ret 0.045 cov 0.50 key 1.00 door 0.13 r_int 0.5850
+[seed 7] step    552960 sps  3830 success 0.07 ret 0.028 cov 0.48 key 0.99 door 0.08 r_int 0.5589
+[seed 9] step    552960 sps  3822 success 0.02 ret 0.010 cov 0.48 key 0.98 door 0.02 r_int 0.6023
+[seed 4] step    552960 sps  3822 success 0.00 ret 0.000 cov 0.48 key 1.00 door 0.02 r_int 0.5582
+[seed 3] step    552960 sps  3806 success 0.05 ret 0.025 cov 0.49 key 0.99 door 0.13 r_int 0.5403
+[seed 2] step    552960 sps  3804 success 1.00 ret 0.866 cov 0.58 key 1.00 door 1.00 r_int 0.7233
+[seed 1] step    552960 sps  3803 success 0.09 ret 0.031 cov 0.53 key 0.97 door 0.18 r_int 0.5586
+[seed 0] step    552960 sps  3793 success 0.08 ret 0.031 cov 0.52 key 0.99 door 0.13 r_int 0.5501
+[seed 5] step    573440 sps  3852 success 0.19 ret 0.101 cov 0.52 key 1.00 door 0.23 r_int 0.5804
+[seed 6] step    573440 sps  3833 success 0.08 ret 0.035 cov 0.53 key 1.00 door 0.17 r_int 0.5482
+[seed 8] step    573440 sps  3832 success 0.92 ret 0.736 cov 0.60 key 1.00 door 0.95 r_int 0.6559
+[seed 7] step    573440 sps  3820 success 0.06 ret 0.023 cov 0.47 key 0.99 door 0.07 r_int 0.5843
+[seed 9] step    573440 sps  3819 success 0.01 ret 0.004 cov 0.48 key 1.00 door 0.02 r_int 0.6210
+[seed 4] step    573440 sps  3813 success 0.01 ret 0.003 cov 0.47 key 1.00 door 0.05 r_int 0.5927
+[seed 3] step    573440 sps  3800 success 0.05 ret 0.029 cov 0.47 key 0.99 door 0.13 r_int 0.5108
+[seed 2] step    573440 sps  3794 success 1.00 ret 0.905 cov 0.52 key 1.00 door 1.00 r_int 0.7589
+[seed 1] step    573440 sps  3790 success 0.08 ret 0.035 cov 0.53 key 0.97 door 0.20 r_int 0.5750
+[seed 0] step    573440 sps  3779 success 0.08 ret 0.027 cov 0.51 key 0.98 door 0.11 r_int 0.5909
+[seed 5] step    593920 sps  3841 success 0.18 ret 0.088 cov 0.53 key 1.00 door 0.24 r_int 0.5737
+[seed 8] step    593920 sps  3822 success 0.96 ret 0.774 cov 0.61 key 1.00 door 0.97 r_int 0.6703
+[seed 6] step    593920 sps  3821 success 0.13 ret 0.057 cov 0.53 key 1.00 door 0.23 r_int 0.5746
+[seed 7] step    593920 sps  3815 success 0.03 ret 0.014 cov 0.46 key 1.00 door 0.07 r_int 0.6089
+[seed 9] step    593920 sps  3815 success 0.01 ret 0.004 cov 0.47 key 0.99 door 0.03 r_int 0.6042
+[seed 4] step    593920 sps  3810 success 0.02 ret 0.009 cov 0.49 key 1.00 door 0.05 r_int 0.5910
+[seed 3] step    593920 sps  3794 success 0.06 ret 0.030 cov 0.48 key 0.98 door 0.17 r_int 0.5634
+[seed 2] step    593920 sps  3781 success 1.00 ret 0.919 cov 0.47 key 1.00 door 1.00 r_int 0.7951
+[seed 1] step    593920 sps  3778 success 0.07 ret 0.028 cov 0.54 key 0.98 door 0.18 r_int 0.5713
+[seed 0] step    593920 sps  3769 success 0.07 ret 0.017 cov 0.51 key 0.97 door 0.14 r_int 0.6237
+[seed 5] step    614400 sps  3834 success 0.17 ret 0.078 cov 0.52 key 1.00 door 0.27 r_int 0.6001
+[seed 6] step    614400 sps  3810 success 0.10 ret 0.042 cov 0.53 key 1.00 door 0.18 r_int 0.6085
+[seed 8] step    614400 sps  3810 success 1.00 ret 0.836 cov 0.57 key 1.00 door 1.00 r_int 0.7120
+[seed 9] step    614400 sps  3803 success 0.01 ret 0.004 cov 0.48 key 0.99 door 0.03 r_int 0.5971
+[seed 7] step    614400 sps  3803 success 0.02 ret 0.007 cov 0.48 key 1.00 door 0.06 r_int 0.6105
+[seed 4] step    614400 sps  3800 success 0.03 ret 0.012 cov 0.50 key 1.00 door 0.05 r_int 0.5714
+[seed 3] step    614400 sps  3783 success 0.11 ret 0.045 cov 0.53 key 0.98 door 0.21 r_int 0.5743
+[seed 1] step    614400 sps  3772 success 0.03 ret 0.014 cov 0.55 key 0.99 door 0.10 r_int 0.5722
+[seed 2] step    614400 sps  3769 success 1.00 ret 0.930 cov 0.42 key 1.00 door 1.00 r_int 0.7706
+[seed 0] step    614400 sps  3762 success 0.11 ret 0.042 cov 0.55 key 0.98 door 0.19 r_int 0.5741
+[seed 5] step    634880 sps  3827 success 0.13 ret 0.055 cov 0.53 key 1.00 door 0.22 r_int 0.5551
+[seed 8] step    634880 sps  3800 success 0.99 ret 0.839 cov 0.57 key 1.00 door 0.99 r_int 0.6318
+[seed 6] step    634880 sps  3800 success 0.10 ret 0.050 cov 0.54 key 1.00 door 0.16 r_int 0.5736
+[seed 9] step    634880 sps  3793 success 0.00 ret 0.000 cov 0.47 key 0.97 door 0.01 r_int 0.6057
+[seed 4] step    634880 sps  3791 success 0.02 ret 0.009 cov 0.49 key 1.00 door 0.04 r_int 0.5649
+[seed 7] step    634880 sps  3791 success 0.06 ret 0.022 cov 0.51 key 1.00 door 0.11 r_int 0.6028
+[seed 3] step    634880 sps  3774 success 0.19 ret 0.103 cov 0.58 key 0.98 door 0.29 r_int 0.6238
+[seed 1] step    634880 sps  3764 success 0.03 ret 0.011 cov 0.55 key 1.00 door 0.10 r_int 0.5606
+[seed 2] step    634880 sps  3756 success 1.00 ret 0.945 cov 0.40 key 1.00 door 1.00 r_int 0.8640
+[seed 0] step    634880 sps  3751 success 0.10 ret 0.042 cov 0.55 key 0.99 door 0.21 r_int 0.5896
+[seed 5] step    655360 sps  3822 success 0.10 ret 0.042 cov 0.52 key 1.00 door 0.19 r_int 0.5931
+[seed 6] step    655360 sps  3796 success 0.05 ret 0.028 cov 0.54 key 1.00 door 0.10 r_int 0.5653
+[seed 8] step    655360 sps  3794 success 1.00 ret 0.874 cov 0.52 key 1.00 door 1.00 r_int 0.7583
+[seed 4] step    655360 sps  3788 success 0.01 ret 0.003 cov 0.51 key 1.00 door 0.03 r_int 0.5530
+[seed 7] step    655360 sps  3785 success 0.08 ret 0.028 cov 0.57 key 0.99 door 0.16 r_int 0.5924
+[seed 9] step    655360 sps  3784 success 0.00 ret 0.000 cov 0.47 key 0.98 door 0.00 r_int 0.5807
+[seed 3] step    655360 sps  3769 success 0.19 ret 0.103 cov 0.58 key 0.99 door 0.30 r_int 0.5628
+[seed 1] step    655360 sps  3760 success 0.03 ret 0.015 cov 0.53 key 1.00 door 0.10 r_int 0.5921
+[seed 2] step    655360 sps  3747 success 1.00 ret 0.945 cov 0.38 key 1.00 door 1.00 r_int 0.8422
+[seed 0] step    655360 sps  3742 success 0.10 ret 0.052 cov 0.55 key 1.00 door 0.18 r_int 0.5853
+[seed 5] step    675840 sps  3813 success 0.10 ret 0.041 cov 0.51 key 1.00 door 0.15 r_int 0.5791
+[seed 6] step    675840 sps  3788 success 0.05 ret 0.026 cov 0.53 key 1.00 door 0.09 r_int 0.5781
+[seed 8] step    675840 sps  3783 success 1.00 ret 0.884 cov 0.53 key 1.00 door 1.00 r_int 0.7238
+[seed 4] step    675840 sps  3779 success 0.00 ret 0.000 cov 0.51 key 0.99 door 0.04 r_int 0.6319
+[seed 9] step    675840 sps  3778 success 0.01 ret 0.005 cov 0.50 key 0.98 door 0.01 r_int 0.6268
+[seed 7] step    675840 sps  3775 success 0.13 ret 0.049 cov 0.58 key 0.97 door 0.25 r_int 0.5979
+[seed 3] step    675840 sps  3758 success 0.18 ret 0.092 cov 0.57 key 1.00 door 0.30 r_int 0.5540
+[seed 1] step    675840 sps  3750 success 0.03 ret 0.015 cov 0.52 key 1.00 door 0.10 r_int 0.5704
+[seed 2] step    675840 sps  3734 success 1.00 ret 0.950 cov 0.38 key 1.00 door 1.00 r_int 0.8571
+[seed 0] step    675840 sps  3732 success 0.08 ret 0.030 cov 0.54 key 1.00 door 0.15 r_int 0.5590
+[seed 5] step    696320 sps  3805 success 0.10 ret 0.045 cov 0.49 key 1.00 door 0.15 r_int 0.5301
+[seed 6] step    696320 sps  3781 success 0.02 ret 0.008 cov 0.51 key 1.00 door 0.10 r_int 0.5682
+[seed 8] step    696320 sps  3769 success 1.00 ret 0.911 cov 0.45 key 1.00 door 1.00 r_int 0.7610
+[seed 9] step    696320 sps  3768 success 0.01 ret 0.005 cov 0.51 key 0.98 door 0.01 r_int 0.6337
+[seed 7] step    696320 sps  3766 success 0.10 ret 0.034 cov 0.55 key 0.97 door 0.21 r_int 0.5962
+[seed 4] step    696320 sps  3766 success 0.00 ret 0.000 cov 0.52 key 0.99 door 0.02 r_int 0.5971
+[seed 3] step    696320 sps  3747 success 0.13 ret 0.049 cov 0.58 key 1.00 door 0.22 r_int 0.5398
+[seed 1] step    696320 sps  3740 success 0.02 ret 0.008 cov 0.49 key 1.00 door 0.10 r_int 0.5508
+[seed 2] step    696320 sps  3725 success 1.00 ret 0.952 cov 0.38 key 1.00 door 1.00 r_int 0.8454
+[seed 0] step    696320 sps  3721 success 0.07 ret 0.028 cov 0.53 key 1.00 door 0.13 r_int 0.5835
+[seed 5] step    716800 sps  3792 success 0.12 ret 0.058 cov 0.48 key 1.00 door 0.17 r_int 0.5790
+[seed 6] step    716800 sps  3768 success 0.06 ret 0.019 cov 0.50 key 1.00 door 0.15 r_int 0.5820
+[seed 7] step    716800 sps  3763 success 0.08 ret 0.028 cov 0.50 key 0.98 door 0.16 r_int 0.5416
+[seed 8] step    716800 sps  3761 success 1.00 ret 0.918 cov 0.47 key 1.00 door 1.00 r_int 0.8197
+[seed 9] step    716800 sps  3759 success 0.01 ret 0.005 cov 0.53 key 0.97 door 0.01 r_int 0.6974
+[seed 4] step    716800 sps  3757 success 0.01 ret 0.002 cov 0.50 key 0.98 door 0.05 r_int 0.5020
+[seed 3] step    716800 sps  3739 success 0.09 ret 0.034 cov 0.54 key 1.00 door 0.14 r_int 0.5773
+[seed 1] step    716800 sps  3730 success 0.01 ret 0.002 cov 0.50 key 0.99 door 0.08 r_int 0.6078
+[seed 2] step    716800 sps  3722 success 1.00 ret 0.951 cov 0.36 key 1.00 door 1.00 r_int 0.8347
+[seed 0] step    716800 sps  3715 success 0.05 ret 0.022 cov 0.49 key 1.00 door 0.12 r_int 0.5728
+[seed 5] step    737280 sps  3787 success 0.10 ret 0.052 cov 0.50 key 1.00 door 0.17 r_int 0.6033
+[seed 6] step    737280 sps  3764 success 0.05 ret 0.017 cov 0.51 key 1.00 door 0.15 r_int 0.6243
+[seed 7] step    737280 sps  3757 success 0.03 ret 0.006 cov 0.48 key 0.99 door 0.06 r_int 0.5605
+[seed 9] step    737280 sps  3755 success 0.00 ret 0.000 cov 0.52 key 0.97 door 0.01 r_int 0.6166
+[seed 8] step    737280 sps  3754 success 1.00 ret 0.922 cov 0.45 key 1.00 door 1.00 r_int 0.8232
+[seed 4] step    737280 sps  3753 success 0.01 ret 0.002 cov 0.48 key 0.98 door 0.05 r_int 0.5433
+[seed 3] step    737280 sps  3736 success 0.07 ret 0.035 cov 0.54 key 1.00 door 0.13 r_int 0.5983
+[seed 1] step    737280 sps  3725 success 0.01 ret 0.002 cov 0.50 key 0.99 door 0.07 r_int 0.6189
+[seed 2] step    737280 sps  3715 success 1.00 ret 0.951 cov 0.36 key 1.00 door 1.00 r_int 0.8457
+[seed 0] step    737280 sps  3713 success 0.04 ret 0.022 cov 0.46 key 1.00 door 0.11 r_int 0.5733
+[seed 5] step    757760 sps  3783 success 0.12 ret 0.060 cov 0.53 key 1.00 door 0.20 r_int 0.6293
+[seed 6] step    757760 sps  3763 success 0.12 ret 0.053 cov 0.56 key 0.99 door 0.20 r_int 0.6470
+[seed 8] step    757760 sps  3748 success 1.00 ret 0.917 cov 0.44 key 1.00 door 1.00 r_int 0.7826
+[seed 7] step    757760 sps  3748 success 0.02 ret 0.007 cov 0.51 key 0.96 door 0.06 r_int 0.5805
+[seed 9] step    757760 sps  3745 success 0.00 ret 0.000 cov 0.51 key 0.96 door 0.01 r_int 0.6012
+[seed 4] step    757760 sps  3744 success 0.01 ret 0.002 cov 0.47 key 0.97 door 0.04 r_int 0.5815
+[seed 3] step    757760 sps  3732 success 0.11 ret 0.063 cov 0.51 key 1.00 door 0.18 r_int 0.5869
+[seed 1] step    757760 sps  3721 success 0.01 ret 0.005 cov 0.53 key 0.99 door 0.06 r_int 0.5559
+[seed 2] step    757760 sps  3708 success 1.00 ret 0.955 cov 0.36 key 1.00 door 1.00 r_int 0.9022
+[seed 0] step    757760 sps  3706 success 0.04 ret 0.023 cov 0.46 key 1.00 door 0.08 r_int 0.5951
+[seed 5] step    778240 sps  3778 success 0.10 ret 0.043 cov 0.54 key 1.00 door 0.15 r_int 0.5923
+[seed 6] step    778240 sps  3758 success 0.13 ret 0.061 cov 0.58 key 0.99 door 0.21 r_int 0.6380
+[seed 8] step    778240 sps  3749 success 1.00 ret 0.929 cov 0.47 key 1.00 door 1.00 r_int 0.8292
+[seed 7] step    778240 sps  3746 success 0.04 ret 0.022 cov 0.53 key 0.95 door 0.11 r_int 0.6218
+[seed 4] step    778240 sps  3744 success 0.00 ret 0.000 cov 0.47 key 0.97 door 0.02 r_int 0.6119
+[seed 9] step    778240 sps  3739 success 0.01 ret 0.002 cov 0.48 key 0.98 door 0.02 r_int 0.6379
+[seed 3] step    778240 sps  3726 success 0.13 ret 0.073 cov 0.52 key 1.00 door 0.22 r_int 0.6083
+[seed 1] step    778240 sps  3718 success 0.01 ret 0.005 cov 0.53 key 1.00 door 0.06 r_int 0.6014
+[seed 2] step    778240 sps  3703 success 1.00 ret 0.958 cov 0.36 key 1.00 door 1.00 r_int 0.9080
+[seed 0] step    778240 sps  3701 success 0.07 ret 0.032 cov 0.48 key 1.00 door 0.12 r_int 0.5552
+[seed 5] step    798720 sps  3772 success 0.14 ret 0.063 cov 0.54 key 1.00 door 0.17 r_int 0.6047
+[seed 6] step    798720 sps  3752 success 0.22 ret 0.107 cov 0.60 key 0.99 door 0.29 r_int 0.6379
+[seed 8] step    798720 sps  3742 success 1.00 ret 0.940 cov 0.42 key 1.00 door 1.00 r_int 0.8318
+[seed 7] step    798720 sps  3741 success 0.03 ret 0.019 cov 0.53 key 0.96 door 0.11 r_int 0.6239
+[seed 4] step    798720 sps  3738 success 0.00 ret 0.000 cov 0.49 key 0.99 door 0.01 r_int 0.5732
+[seed 9] step    798720 sps  3734 success 0.02 ret 0.004 cov 0.47 key 0.98 door 0.02 r_int 0.5984
+[seed 3] step    798720 sps  3719 success 0.13 ret 0.070 cov 0.53 key 1.00 door 0.22 r_int 0.5973
+[seed 1] step    798720 sps  3713 success 0.01 ret 0.005 cov 0.52 key 1.00 door 0.06 r_int 0.5865
+[seed 0] step    798720 sps  3698 success 0.07 ret 0.033 cov 0.49 key 1.00 door 0.12 r_int 0.5301
+[seed 2] step    798720 sps  3696 success 1.00 ret 0.958 cov 0.35 key 1.00 door 1.00 r_int 0.9002
+[seed 5] step    819200 sps  3769 success 0.32 ret 0.163 cov 0.58 key 1.00 door 0.33 r_int 0.6839
+[seed 6] step    819200 sps  3749 success 0.29 ret 0.147 cov 0.60 key 1.00 door 0.38 r_int 0.6127
+[seed 7] step    819200 sps  3737 success 0.02 ret 0.015 cov 0.49 key 0.99 door 0.09 r_int 0.5897
+[seed 4] step    819200 sps  3735 success 0.02 ret 0.006 cov 0.47 key 1.00 door 0.05 r_int 0.5516
+[seed 8] step    819200 sps  3735 success 1.00 ret 0.932 cov 0.44 key 1.00 door 1.00 r_int 0.8696
+[seed 9] step    819200 sps  3732 success 0.02 ret 0.004 cov 0.47 key 1.00 door 0.02 r_int 0.6435
+[seed 3] step    819200 sps  3713 success 0.10 ret 0.051 cov 0.56 key 1.00 door 0.18 r_int 0.5619
+[seed 1] step    819200 sps  3712 success 0.02 ret 0.006 cov 0.50 key 1.00 door 0.07 r_int 0.5964
+[seed 0] step    819200 sps  3695 success 0.08 ret 0.029 cov 0.49 key 0.98 door 0.13 r_int 0.5726
+[seed 2] step    819200 sps  3694 success 1.00 ret 0.959 cov 0.35 key 1.00 door 1.00 r_int 0.9003
+[seed 5] step    839680 sps  3764 success 0.47 ret 0.262 cov 0.60 key 1.00 door 0.48 r_int 0.5852
+[seed 6] step    839680 sps  3742 success 0.37 ret 0.188 cov 0.60 key 1.00 door 0.45 r_int 0.6591
+[seed 7] step    839680 sps  3730 success 0.00 ret 0.000 cov 0.49 key 0.98 door 0.04 r_int 0.6364
+[seed 4] step    839680 sps  3728 success 0.04 ret 0.018 cov 0.46 key 1.00 door 0.06 r_int 0.5548
+[seed 8] step    839680 sps  3728 success 1.00 ret 0.942 cov 0.42 key 1.00 door 1.00 r_int 0.8676
+[seed 9] step    839680 sps  3726 success 0.02 ret 0.008 cov 0.50 key 1.00 door 0.02 r_int 0.6027
+[seed 1] step    839680 sps  3703 success 0.03 ret 0.013 cov 0.49 key 1.00 door 0.09 r_int 0.5972
+[seed 3] step    839680 sps  3701 success 0.12 ret 0.062 cov 0.58 key 1.00 door 0.19 r_int 0.5833
+[seed 0] step    839680 sps  3685 success 0.04 ret 0.009 cov 0.45 key 0.98 door 0.08 r_int 0.5838
+[seed 2] step    839680 sps  3676 success 1.00 ret 0.960 cov 0.33 key 1.00 door 1.00 r_int 0.8623
+[seed 5] step    860160 sps  3756 success 0.54 ret 0.296 cov 0.61 key 1.00 door 0.58 r_int 0.6535
+[seed 6] step    860160 sps  3729 success 0.40 ret 0.210 cov 0.58 key 1.00 door 0.49 r_int 0.6447
+[seed 7] step    860160 sps  3718 success 0.01 ret 0.004 cov 0.50 key 0.98 door 0.06 r_int 0.6308
+[seed 4] step    860160 sps  3718 success 0.04 ret 0.018 cov 0.46 key 1.00 door 0.08 r_int 0.5585
+[seed 9] step    860160 sps  3713 success 0.02 ret 0.010 cov 0.49 key 1.00 door 0.02 r_int 0.6204
+[seed 8] step    860160 sps  3713 success 1.00 ret 0.938 cov 0.42 key 1.00 door 1.00 r_int 0.8316
+[seed 1] step    860160 sps  3693 success 0.05 ret 0.017 cov 0.50 key 0.99 door 0.12 r_int 0.5906
+[seed 3] step    860160 sps  3693 success 0.13 ret 0.061 cov 0.58 key 1.00 door 0.21 r_int 0.5554
+[seed 0] step    860160 sps  3678 success 0.04 ret 0.009 cov 0.46 key 0.98 door 0.07 r_int 0.5664
+[seed 2] step    860160 sps  3671 success 1.00 ret 0.962 cov 0.33 key 1.00 door 1.00 r_int 0.8498
+[seed 5] step    880640 sps  3748 success 0.54 ret 0.297 cov 0.60 key 1.00 door 0.60 r_int 0.6095
+[seed 6] step    880640 sps  3727 success 0.26 ret 0.143 cov 0.59 key 1.00 door 0.37 r_int 0.5731
+[seed 7] step    880640 sps  3716 success 0.04 ret 0.014 cov 0.53 key 0.98 door 0.09 r_int 0.5807
+[seed 4] step    880640 sps  3715 success 0.02 ret 0.012 cov 0.48 key 0.99 door 0.05 r_int 0.6116
+[seed 9] step    880640 sps  3712 success 0.02 ret 0.010 cov 0.50 key 1.00 door 0.02 r_int 0.6511
+[seed 8] step    880640 sps  3709 success 1.00 ret 0.942 cov 0.41 key 1.00 door 1.00 r_int 0.8521
+[seed 3] step    880640 sps  3693 success 0.10 ret 0.049 cov 0.55 key 1.00 door 0.19 r_int 0.5915
+[seed 1] step    880640 sps  3692 success 0.05 ret 0.021 cov 0.52 key 0.99 door 0.10 r_int 0.6048
+[seed 0] step    880640 sps  3675 success 0.03 ret 0.017 cov 0.47 key 1.00 door 0.06 r_int 0.6334
+[seed 2] step    880640 sps  3668 success 1.00 ret 0.963 cov 0.34 key 1.00 door 1.00 r_int 0.9255
+[seed 5] step    901120 sps  3748 success 0.57 ret 0.330 cov 0.62 key 1.00 door 0.63 r_int 0.6199
+[seed 6] step    901120 sps  3726 success 0.30 ret 0.184 cov 0.58 key 1.00 door 0.37 r_int 0.6194
+[seed 7] step    901120 sps  3715 success 0.05 ret 0.017 cov 0.51 key 1.00 door 0.11 r_int 0.6034
+[seed 4] step    901120 sps  3713 success 0.00 ret 0.000 cov 0.52 key 0.98 door 0.04 r_int 0.5902
+[seed 9] step    901120 sps  3711 success 0.01 ret 0.004 cov 0.49 key 1.00 door 0.03 r_int 0.5926
+[seed 8] step    901120 sps  3708 success 1.00 ret 0.943 cov 0.42 key 1.00 door 1.00 r_int 0.8810
+[seed 3] step    901120 sps  3693 success 0.11 ret 0.049 cov 0.56 key 0.99 door 0.20 r_int 0.5719
+[seed 1] step    901120 sps  3690 success 0.08 ret 0.039 cov 0.54 key 0.99 door 0.14 r_int 0.5893
+[seed 0] step    901120 sps  3674 success 0.04 ret 0.022 cov 0.52 key 1.00 door 0.05 r_int 0.5753
+[seed 5] step    921600 sps  3749 success 0.63 ret 0.373 cov 0.61 key 1.00 door 0.71 r_int 0.5871
+[seed 2] step    901120 sps  3665 success 0.99 ret 0.944 cov 0.35 key 1.00 door 1.00 r_int 0.8706
+[seed 6] step    921600 sps  3726 success 0.23 ret 0.132 cov 0.59 key 1.00 door 0.31 r_int 0.6281
+[seed 4] step    921600 sps  3715 success 0.01 ret 0.002 cov 0.52 key 0.98 door 0.04 r_int 0.6062
+[seed 7] step    921600 sps  3715 success 0.08 ret 0.028 cov 0.51 key 1.00 door 0.09 r_int 0.6364
+[seed 9] step    921600 sps  3711 success 0.01 ret 0.003 cov 0.51 key 1.00 door 0.03 r_int 0.6577
+[seed 8] step    921600 sps  3707 success 1.00 ret 0.951 cov 0.38 key 1.00 door 1.00 r_int 0.8751
+[seed 3] step    921600 sps  3694 success 0.12 ret 0.057 cov 0.54 key 0.99 door 0.18 r_int 0.6336
+[seed 1] step    921600 sps  3693 success 0.07 ret 0.043 cov 0.52 key 1.00 door 0.13 r_int 0.5666
+[seed 0] step    921600 sps  3672 success 0.07 ret 0.040 cov 0.53 key 0.99 door 0.08 r_int 0.5648
+[seed 5] step    942080 sps  3749 success 0.69 ret 0.404 cov 0.63 key 1.00 door 0.76 r_int 0.5918
+[seed 2] step    921600 sps  3663 success 1.00 ret 0.964 cov 0.33 key 1.00 door 1.00 r_int 0.9298
+[seed 6] step    942080 sps  3727 success 0.26 ret 0.128 cov 0.58 key 1.00 door 0.32 r_int 0.6227
+[seed 7] step    942080 sps  3714 success 0.06 ret 0.019 cov 0.50 key 1.00 door 0.09 r_int 0.5634
+[seed 4] step    942080 sps  3714 success 0.02 ret 0.009 cov 0.50 key 0.99 door 0.08 r_int 0.5748
+[seed 9] step    942080 sps  3711 success 0.02 ret 0.007 cov 0.51 key 1.00 door 0.04 r_int 0.6186
+[seed 8] step    942080 sps  3705 success 1.00 ret 0.953 cov 0.39 key 1.00 door 1.00 r_int 0.8951
+[seed 1] step    942080 sps  3694 success 0.08 ret 0.052 cov 0.49 key 1.00 door 0.15 r_int 0.5611
+[seed 3] step    942080 sps  3692 success 0.16 ret 0.063 cov 0.58 key 0.99 door 0.22 r_int 0.6307
+[seed 0] step    942080 sps  3663 success 0.06 ret 0.033 cov 0.51 key 0.99 door 0.07 r_int 0.6389
+[seed 5] step    962560 sps  3737 success 0.64 ret 0.378 cov 0.64 key 1.00 door 0.72 r_int 0.5929
+[seed 2] step    942080 sps  3650 success 1.00 ret 0.963 cov 0.35 key 1.00 door 1.00 r_int 0.9287
+[seed 6] step    962560 sps  3714 success 0.20 ret 0.098 cov 0.56 key 1.00 door 0.28 r_int 0.6139
+[seed 4] step    962560 sps  3706 success 0.03 ret 0.018 cov 0.50 key 1.00 door 0.08 r_int 0.6092
+[seed 7] step    962560 sps  3702 success 0.04 ret 0.015 cov 0.48 key 1.00 door 0.07 r_int 0.6110
+[seed 9] step    962560 sps  3698 success 0.04 ret 0.018 cov 0.50 key 1.00 door 0.05 r_int 0.6217
+[seed 8] step    962560 sps  3696 success 1.00 ret 0.952 cov 0.39 key 1.00 door 1.00 r_int 0.8668
+[seed 1] step    962560 sps  3685 success 0.07 ret 0.043 cov 0.51 key 1.00 door 0.11 r_int 0.6123
+[seed 3] step    962560 sps  3684 success 0.13 ret 0.048 cov 0.56 key 1.00 door 0.19 r_int 0.6139
+[seed 0] step    962560 sps  3663 success 0.05 ret 0.031 cov 0.49 key 0.99 door 0.08 r_int 0.6231
+[seed 5] step    983040 sps  3736 success 0.60 ret 0.363 cov 0.60 key 1.00 door 0.71 r_int 0.6289
+[seed 2] step    962560 sps  3654 success 1.00 ret 0.965 cov 0.34 key 1.00 door 1.00 r_int 0.9488
+[seed 6] step    983040 sps  3719 success 0.26 ret 0.148 cov 0.57 key 1.00 door 0.33 r_int 0.5916
+[seed 4] step    983040 sps  3701 success 0.04 ret 0.023 cov 0.51 key 1.00 door 0.08 r_int 0.5749
+[seed 7] step    983040 sps  3698 success 0.02 ret 0.008 cov 0.48 key 1.00 door 0.09 r_int 0.5921
+[seed 8] step    983040 sps  3696 success 1.00 ret 0.952 cov 0.40 key 1.00 door 1.00 r_int 0.9094
+[seed 9] step    983040 sps  3696 success 0.04 ret 0.016 cov 0.49 key 1.00 door 0.07 r_int 0.6305
+[seed 3] step    983040 sps  3681 success 0.11 ret 0.037 cov 0.57 key 1.00 door 0.20 r_int 0.5981
+[seed 1] step    983040 sps  3679 success 0.09 ret 0.049 cov 0.54 key 1.00 door 0.16 r_int 0.5805
+[seed 0] step    983040 sps  3659 success 0.05 ret 0.024 cov 0.49 key 1.00 door 0.08 r_int 0.5776
+[seed 5] step   1003520 sps  3730 success 0.70 ret 0.417 cov 0.59 key 1.00 door 0.80 r_int 0.6395
+[seed 2] step    983040 sps  3643 success 1.00 ret 0.962 cov 0.34 key 1.00 door 1.00 r_int 0.8839
+[seed 6] step   1003520 sps  3709 success 0.23 ret 0.132 cov 0.55 key 1.00 door 0.30 r_int 0.6289
+[seed 7] step   1003520 sps  3690 success 0.05 ret 0.022 cov 0.49 key 0.99 door 0.11 r_int 0.6087
+[seed 4] step   1003520 sps  3689 success 0.05 ret 0.020 cov 0.52 key 1.00 door 0.07 r_int 0.5804
+[seed 9] step   1003520 sps  3685 success 0.03 ret 0.012 cov 0.49 key 1.00 door 0.07 r_int 0.6205
+[seed 8] step   1003520 sps  3683 success 1.00 ret 0.955 cov 0.39 key 1.00 door 1.00 r_int 0.8997
+[seed 3] step   1003520 sps  3669 success 0.10 ret 0.050 cov 0.53 key 1.00 door 0.22 r_int 0.5545
+[seed 1] step   1003520 sps  3668 success 0.12 ret 0.061 cov 0.55 key 1.00 door 0.19 r_int 0.6022
+[seed 0] step   1003520 sps  3649 success 0.05 ret 0.022 cov 0.51 key 1.00 door 0.09 r_int 0.5771
+[seed 5] step   1024000 sps  3717 success 0.72 ret 0.410 cov 0.59 key 1.00 door 0.84 r_int 0.5644
+[seed 2] step   1003520 sps  3631 success 1.00 ret 0.965 cov 0.34 key 1.00 door 1.00 r_int 0.9335
+[seed 6] step   1024000 sps  3698 success 0.24 ret 0.129 cov 0.55 key 1.00 door 0.38 r_int 0.6043
+[seed 7] step   1024000 sps  3683 success 0.09 ret 0.035 cov 0.52 key 0.99 door 0.15 r_int 0.6194
+[seed 9] step   1024000 sps  3679 success 0.02 ret 0.009 cov 0.52 key 0.99 door 0.07 r_int 0.6206
+[seed 4] step   1024000 sps  3679 success 0.04 ret 0.011 cov 0.53 key 0.99 door 0.08 r_int 0.5788
+[seed 8] step   1024000 sps  3677 success 1.00 ret 0.957 cov 0.38 key 1.00 door 1.00 r_int 0.8751
+[seed 3] step   1024000 sps  3666 success 0.12 ret 0.061 cov 0.52 key 1.00 door 0.25 r_int 0.5987
+[seed 1] step   1024000 sps  3662 success 0.12 ret 0.062 cov 0.54 key 1.00 door 0.23 r_int 0.5424
+[seed 0] step   1024000 sps  3643 success 0.05 ret 0.021 cov 0.50 key 1.00 door 0.10 r_int 0.6063
+[seed 5] step   1044480 sps  3708 success 0.70 ret 0.418 cov 0.60 key 1.00 door 0.84 r_int 0.5680
+[seed 2] step   1024000 sps  3622 success 1.00 ret 0.965 cov 0.33 key 1.00 door 1.00 r_int 0.9332
+[seed 6] step   1044480 sps  3693 success 0.17 ret 0.079 cov 0.54 key 1.00 door 0.30 r_int 0.5742
+[seed 7] step   1044480 sps  3672 success 0.11 ret 0.050 cov 0.54 key 0.99 door 0.13 r_int 0.5764
+[seed 9] step   1044480 sps  3671 success 0.02 ret 0.007 cov 0.52 key 0.99 door 0.06 r_int 0.5694
+[seed 4] step   1044480 sps  3669 success 0.04 ret 0.016 cov 0.51 key 0.99 door 0.10 r_int 0.5784
+[seed 8] step   1044480 sps  3667 success 1.00 ret 0.958 cov 0.37 key 1.00 door 1.00 r_int 0.8827
+[seed 3] step   1044480 sps  3656 success 0.12 ret 0.064 cov 0.51 key 1.00 door 0.20 r_int 0.5702
+[seed 1] step   1044480 sps  3652 success 0.15 ret 0.071 cov 0.51 key 1.00 door 0.24 r_int 0.6046
+[seed 0] step   1044480 sps  3637 success 0.03 ret 0.016 cov 0.48 key 1.00 door 0.07 r_int 0.5199
+[seed 5] step   1064960 sps  3700 success 0.72 ret 0.461 cov 0.60 key 1.00 door 0.82 r_int 0.5971
+[seed 6] step   1064960 sps  3687 success 0.23 ret 0.107 cov 0.52 key 1.00 door 0.34 r_int 0.6169
+[seed 2] step   1044480 sps  3613 success 1.00 ret 0.965 cov 0.35 key 1.00 door 1.00 r_int 0.9548
+[seed 7] step   1064960 sps  3664 success 0.11 ret 0.045 cov 0.51 key 0.99 door 0.12 r_int 0.6053
+[seed 9] step   1064960 sps  3664 success 0.03 ret 0.013 cov 0.50 key 0.99 door 0.07 r_int 0.5743
+[seed 4] step   1064960 sps  3662 success 0.03 ret 0.014 cov 0.52 key 0.98 door 0.12 r_int 0.6160
+[seed 8] step   1064960 sps  3658 success 1.00 ret 0.963 cov 0.36 key 1.00 door 1.00 r_int 0.9321
+[seed 3] step   1064960 sps  3650 success 0.12 ret 0.051 cov 0.51 key 0.99 door 0.17 r_int 0.5739
+[seed 1] step   1064960 sps  3647 success 0.12 ret 0.055 cov 0.51 key 0.99 door 0.21 r_int 0.5513
+[seed 0] step   1064960 sps  3629 success 0.03 ret 0.016 cov 0.48 key 0.99 door 0.08 r_int 0.5585
+[seed 5] step   1085440 sps  3691 success 0.80 ret 0.522 cov 0.60 key 1.00 door 0.86 r_int 0.5440
+[seed 6] step   1085440 sps  3681 success 0.25 ret 0.114 cov 0.54 key 0.99 door 0.33 r_int 0.5904
+[seed 2] step   1064960 sps  3604 success 1.00 ret 0.966 cov 0.34 key 1.00 door 1.00 r_int 0.9379
+[seed 7] step   1085440 sps  3659 success 0.07 ret 0.033 cov 0.52 key 0.99 door 0.08 r_int 0.5546
+[seed 4] step   1085440 sps  3655 success 0.06 ret 0.022 cov 0.52 key 0.98 door 0.14 r_int 0.6023
+[seed 9] step   1085440 sps  3654 success 0.03 ret 0.013 cov 0.48 key 1.00 door 0.07 r_int 0.5986
+[seed 8] step   1085440 sps  3651 success 1.00 ret 0.960 cov 0.36 key 1.00 door 1.00 r_int 0.9120
+[seed 3] step   1085440 sps  3644 success 0.10 ret 0.044 cov 0.52 key 0.99 door 0.13 r_int 0.5935
+[seed 1] step   1085440 sps  3642 success 0.11 ret 0.045 cov 0.48 key 0.99 door 0.18 r_int 0.5520
+[seed 0] step   1085440 sps  3627 success 0.01 ret 0.006 cov 0.47 key 0.99 door 0.04 r_int 0.5532
+[seed 5] step   1105920 sps  3688 success 0.91 ret 0.671 cov 0.57 key 1.00 door 0.95 r_int 0.6368
+[seed 6] step   1105920 sps  3677 success 0.33 ret 0.184 cov 0.57 key 0.98 door 0.41 r_int 0.5977
+[seed 2] step   1085440 sps  3603 success 1.00 ret 0.965 cov 0.35 key 1.00 door 1.00 r_int 0.9420
+[seed 7] step   1105920 sps  3658 success 0.06 ret 0.019 cov 0.50 key 0.99 door 0.07 r_int 0.5585
+[seed 4] step   1105920 sps  3655 success 0.09 ret 0.038 cov 0.55 key 0.99 door 0.15 r_int 0.6101
+[seed 9] step   1105920 sps  3655 success 0.01 ret 0.006 cov 0.48 key 1.00 door 0.04 r_int 0.5661
+[seed 8] step   1105920 sps  3647 success 1.00 ret 0.953 cov 0.34 key 1.00 door 1.00 r_int 0.8460
+[seed 1] step   1105920 sps  3641 success 0.09 ret 0.035 cov 0.47 key 1.00 door 0.18 r_int 0.5752
+[seed 3] step   1105920 sps  3640 success 0.09 ret 0.042 cov 0.52 key 0.99 door 0.16 r_int 0.5871
+[seed 0] step   1105920 sps  3625 success 0.03 ret 0.016 cov 0.45 key 0.99 door 0.07 r_int 0.6316
+[seed 5] step   1126400 sps  3685 success 0.91 ret 0.711 cov 0.52 key 1.00 door 1.00 r_int 0.6421
+[seed 6] step   1126400 sps  3675 success 0.35 ret 0.200 cov 0.57 key 0.98 door 0.40 r_int 0.5879
+[seed 2] step   1105920 sps  3600 success 1.00 ret 0.966 cov 0.36 key 1.00 door 1.00 r_int 0.9617
+[seed 4] step   1126400 sps  3654 success 0.11 ret 0.052 cov 0.56 key 0.99 door 0.15 r_int 0.5589
+[seed 7] step   1126400 sps  3653 success 0.09 ret 0.045 cov 0.52 key 1.00 door 0.12 r_int 0.5894
+[seed 9] step   1126400 sps  3652 success 0.02 ret 0.009 cov 0.51 key 1.00 door 0.05 r_int 0.6131
+[seed 8] step   1126400 sps  3643 success 1.00 ret 0.965 cov 0.34 key 1.00 door 1.00 r_int 0.9402
+[seed 3] step   1126400 sps  3639 success 0.04 ret 0.022 cov 0.51 key 1.00 door 0.09 r_int 0.5429
+[seed 1] step   1126400 sps  3637 success 0.05 ret 0.016 cov 0.47 key 1.00 door 0.12 r_int 0.5465
+[seed 0] step   1126400 sps  3625 success 0.05 ret 0.026 cov 0.47 key 0.98 door 0.07 r_int 0.5670
+[seed 5] step   1146880 sps  3684 success 0.93 ret 0.764 cov 0.53 key 1.00 door 0.98 r_int 0.6386
+[seed 6] step   1146880 sps  3673 success 0.30 ret 0.169 cov 0.56 key 1.00 door 0.36 r_int 0.5878
+[seed 2] step   1126400 sps  3599 success 1.00 ret 0.967 cov 0.35 key 1.00 door 1.00 r_int 0.9540
+[seed 4] step   1146880 sps  3655 success 0.11 ret 0.056 cov 0.52 key 0.99 door 0.16 r_int 0.5931
+[seed 7] step   1146880 sps  3653 success 0.09 ret 0.045 cov 0.51 key 1.00 door 0.16 r_int 0.5534
+[seed 9] step   1146880 sps  3652 success 0.04 ret 0.021 cov 0.52 key 1.00 door 0.05 r_int 0.6223
+[seed 8] step   1146880 sps  3642 success 1.00 ret 0.963 cov 0.35 key 1.00 door 1.00 r_int 0.9276
+[seed 3] step   1146880 sps  3640 success 0.03 ret 0.020 cov 0.49 key 1.00 door 0.09 r_int 0.5581
+[seed 1] step   1146880 sps  3637 success 0.05 ret 0.019 cov 0.47 key 1.00 door 0.11 r_int 0.6225
+[seed 0] step   1146880 sps  3625 success 0.06 ret 0.033 cov 0.48 key 0.98 door 0.07 r_int 0.5859
+[seed 5] step   1167360 sps  3683 success 0.96 ret 0.789 cov 0.56 key 1.00 door 0.99 r_int 0.6063
+[seed 6] step   1167360 sps  3673 success 0.30 ret 0.148 cov 0.59 key 1.00 door 0.37 r_int 0.6315
+[seed 2] step   1146880 sps  3599 success 1.00 ret 0.965 cov 0.34 key 1.00 door 1.00 r_int 0.9375
+[seed 4] step   1167360 sps  3654 success 0.09 ret 0.047 cov 0.52 key 0.98 door 0.16 r_int 0.5794
+[seed 7] step   1167360 sps  3651 success 0.11 ret 0.059 cov 0.51 key 1.00 door 0.17 r_int 0.6257
+[seed 9] step   1167360 sps  3649 success 0.07 ret 0.035 cov 0.53 key 1.00 door 0.09 r_int 0.5507
+[seed 8] step   1167360 sps  3637 success 1.00 ret 0.963 cov 0.36 key 1.00 door 1.00 r_int 0.9205
+[seed 3] step   1167360 sps  3637 success 0.06 ret 0.031 cov 0.47 key 1.00 door 0.08 r_int 0.6101
+[seed 1] step   1167360 sps  3633 success 0.04 ret 0.024 cov 0.50 key 1.00 door 0.08 r_int 0.5484
+[seed 0] step   1167360 sps  3622 success 0.04 ret 0.021 cov 0.50 key 0.98 door 0.04 r_int 0.6606
+[seed 5] step   1187840 sps  3679 success 0.90 ret 0.735 cov 0.56 key 0.99 door 0.96 r_int 0.6923
+[seed 6] step   1187840 sps  3669 success 0.33 ret 0.153 cov 0.63 key 1.00 door 0.38 r_int 0.6349
+[seed 2] step   1167360 sps  3592 success 1.00 ret 0.967 cov 0.33 key 1.00 door 1.00 r_int 0.9461
+[seed 7] step   1187840 sps  3650 success 0.11 ret 0.059 cov 0.53 key 1.00 door 0.16 r_int 0.5887
+[seed 4] step   1187840 sps  3650 success 0.10 ret 0.040 cov 0.52 key 0.99 door 0.15 r_int 0.5757
+[seed 9] step   1187840 sps  3646 success 0.06 ret 0.031 cov 0.51 key 1.00 door 0.07 r_int 0.6281
+[seed 3] step   1187840 sps  3636 success 0.06 ret 0.031 cov 0.49 key 1.00 door 0.11 r_int 0.5747
+[seed 8] step   1187840 sps  3634 success 1.00 ret 0.965 cov 0.34 key 1.00 door 1.00 r_int 0.9290
+[seed 1] step   1187840 sps  3630 success 0.05 ret 0.030 cov 0.49 key 1.00 door 0.11 r_int 0.5801
+[seed 0] step   1187840 sps  3619 success 0.02 ret 0.015 cov 0.49 key 1.00 door 0.03 r_int 0.5801
+[seed 5] step   1208320 sps  3678 success 0.93 ret 0.774 cov 0.54 key 1.00 door 0.99 r_int 0.5768
+[seed 6] step   1208320 sps  3666 success 0.38 ret 0.199 cov 0.63 key 1.00 door 0.43 r_int 0.6300
+[seed 2] step   1187840 sps  3588 success 1.00 ret 0.965 cov 0.35 key 1.00 door 1.00 r_int 0.9453
+[seed 7] step   1208320 sps  3645 success 0.16 ret 0.079 cov 0.54 key 1.00 door 0.18 r_int 0.5692
+[seed 4] step   1208320 sps  3645 success 0.10 ret 0.040 cov 0.55 key 0.96 door 0.15 r_int 0.6181
+[seed 9] step   1208320 sps  3644 success 0.05 ret 0.024 cov 0.52 key 0.99 door 0.09 r_int 0.5751
+[seed 3] step   1208320 sps  3634 success 0.11 ret 0.045 cov 0.51 key 1.00 door 0.16 r_int 0.6017
+[seed 8] step   1208320 sps  3630 success 1.00 ret 0.966 cov 0.33 key 1.00 door 1.00 r_int 0.9459
+[seed 1] step   1208320 sps  3626 success 0.08 ret 0.041 cov 0.53 key 1.00 door 0.18 r_int 0.5612
+[seed 0] step   1208320 sps  3617 success 0.02 ret 0.011 cov 0.48 key 1.00 door 0.03 r_int 0.6106
+[seed 5] step   1228800 sps  3675 success 0.92 ret 0.765 cov 0.57 key 1.00 door 1.00 r_int 0.6122
+[seed 6] step   1228800 sps  3667 success 0.36 ret 0.204 cov 0.62 key 1.00 door 0.40 r_int 0.6289
+[seed 2] step   1208320 sps  3589 success 1.00 ret 0.969 cov 0.33 key 1.00 door 1.00 r_int 0.9713
+[seed 4] step   1228800 sps  3648 success 0.09 ret 0.032 cov 0.56 key 0.96 door 0.14 r_int 0.5776
+[seed 9] step   1228800 sps  3648 success 0.02 ret 0.010 cov 0.48 key 0.99 door 0.06 r_int 0.6351
+[seed 7] step   1228800 sps  3648 success 0.14 ret 0.071 cov 0.55 key 1.00 door 0.18 r_int 0.5827
+[seed 3] step   1228800 sps  3639 success 0.10 ret 0.040 cov 0.53 key 1.00 door 0.18 r_int 0.6161
+[seed 8] step   1228800 sps  3634 success 1.00 ret 0.967 cov 0.34 key 1.00 door 1.00 r_int 0.9257
+[seed 1] step   1228800 sps  3630 success 0.09 ret 0.045 cov 0.54 key 1.00 door 0.19 r_int 0.6042
+[seed 0] step   1228800 sps  3622 success 0.02 ret 0.011 cov 0.48 key 1.00 door 0.04 r_int 0.6179
+[seed 5] step   1249280 sps  3679 success 0.98 ret 0.861 cov 0.53 key 1.00 door 1.00 r_int 0.6250
+[seed 6] step   1249280 sps  3672 success 0.45 ret 0.246 cov 0.62 key 1.00 door 0.50 r_int 0.6052
+[seed 2] step   1228800 sps  3596 success 1.00 ret 0.968 cov 0.33 key 1.00 door 1.00 r_int 0.9682
+[seed 4] step   1249280 sps  3652 success 0.07 ret 0.031 cov 0.54 key 0.96 door 0.17 r_int 0.5436
+[seed 9] step   1249280 sps  3652 success 0.04 ret 0.021 cov 0.52 key 0.99 door 0.08 r_int 0.6279
+[seed 7] step   1249280 sps  3651 success 0.17 ret 0.060 cov 0.55 key 1.00 door 0.21 r_int 0.6037
+[seed 3] step   1249280 sps  3644 success 0.11 ret 0.040 cov 0.56 key 1.00 door 0.16 r_int 0.6053
+[seed 8] step   1249280 sps  3636 success 1.00 ret 0.967 cov 0.33 key 1.00 door 1.00 r_int 0.9552
+[seed 1] step   1249280 sps  3635 success 0.12 ret 0.060 cov 0.54 key 1.00 door 0.22 r_int 0.5650
+[seed 0] step   1249280 sps  3626 success 0.01 ret 0.002 cov 0.50 key 1.00 door 0.02 r_int 0.5877
+[seed 5] step   1269760 sps  3682 success 0.99 ret 0.865 cov 0.50 key 1.00 door 1.00 r_int 0.6432
+[seed 6] step   1269760 sps  3675 success 0.43 ret 0.223 cov 0.62 key 1.00 door 0.52 r_int 0.6022
+[seed 4] step   1269760 sps  3657 success 0.06 ret 0.028 cov 0.50 key 0.99 door 0.15 r_int 0.6132
+[seed 2] step   1249280 sps  3596 success 1.00 ret 0.967 cov 0.35 key 1.00 door 1.00 r_int 0.9588
+[seed 9] step   1269760 sps  3653 success 0.03 ret 0.016 cov 0.48 key 1.00 door 0.04 r_int 0.5594
+[seed 7] step   1269760 sps  3653 success 0.18 ret 0.065 cov 0.53 key 1.00 door 0.23 r_int 0.5740
+[seed 3] step   1269760 sps  3648 success 0.09 ret 0.027 cov 0.55 key 0.99 door 0.15 r_int 0.5524
+[seed 1] step   1269760 sps  3637 success 0.11 ret 0.070 cov 0.52 key 1.00 door 0.21 r_int 0.6038
+[seed 8] step   1269760 sps  3636 success 1.00 ret 0.965 cov 0.34 key 1.00 door 1.00 r_int 0.9411
+[seed 0] step   1269760 sps  3629 success 0.01 ret 0.007 cov 0.50 key 1.00 door 0.03 r_int 0.5562
+[seed 5] step   1290240 sps  3684 success 0.98 ret 0.854 cov 0.51 key 1.00 door 1.00 r_int 0.7015
+[seed 6] step   1290240 sps  3678 success 0.40 ret 0.199 cov 0.61 key 1.00 door 0.55 r_int 0.6381
+[seed 9] step   1290240 sps  3658 success 0.03 ret 0.016 cov 0.49 key 0.99 door 0.05 r_int 0.5782
+[seed 4] step   1290240 sps  3658 success 0.12 ret 0.067 cov 0.50 key 1.00 door 0.20 r_int 0.5769
+[seed 2] step   1269760 sps  3599 success 1.00 ret 0.968 cov 0.34 key 1.00 door 1.00 r_int 0.9726
+[seed 7] step   1290240 sps  3655 success 0.17 ret 0.066 cov 0.51 key 1.00 door 0.23 r_int 0.6012
+[seed 3] step   1290240 sps  3650 success 0.08 ret 0.023 cov 0.53 key 0.99 door 0.14 r_int 0.5585
+[seed 1] step   1290240 sps  3641 success 0.08 ret 0.053 cov 0.52 key 1.00 door 0.17 r_int 0.5777
+[seed 8] step   1290240 sps  3638 success 1.00 ret 0.964 cov 0.34 key 1.00 door 1.00 r_int 0.9586
+[seed 0] step   1290240 sps  3632 success 0.01 ret 0.007 cov 0.47 key 1.00 door 0.02 r_int 0.5675
+[seed 5] step   1310720 sps  3689 success 0.97 ret 0.871 cov 0.46 key 0.99 door 0.99 r_int 0.6144
+[seed 6] step   1310720 sps  3681 success 0.50 ret 0.246 cov 0.61 key 1.00 door 0.61 r_int 0.5723
+[seed 4] step   1310720 sps  3662 success 0.13 ret 0.067 cov 0.49 key 1.00 door 0.17 r_int 0.6088
+[seed 9] step   1310720 sps  3661 success 0.01 ret 0.005 cov 0.46 key 0.98 door 0.03 r_int 0.5951
+[seed 2] step   1290240 sps  3603 success 1.00 ret 0.969 cov 0.33 key 1.00 door 1.00 r_int 0.9655
+[seed 7] step   1310720 sps  3658 success 0.14 ret 0.070 cov 0.52 key 1.00 door 0.20 r_int 0.5902
+[seed 3] step   1310720 sps  3651 success 0.06 ret 0.017 cov 0.49 key 0.99 door 0.11 r_int 0.5577
+[seed 1] step   1310720 sps  3642 success 0.06 ret 0.038 cov 0.50 key 1.00 door 0.13 r_int 0.5916
+[seed 8] step   1310720 sps  3637 success 1.00 ret 0.968 cov 0.34 key 1.00 door 1.00 r_int 0.9712
+[seed 5] step   1331200 sps  3689 success 1.00 ret 0.917 cov 0.45 key 1.00 door 1.00 r_int 0.7331
+[seed 0] step   1310720 sps  3632 success 0.01 ret 0.007 cov 0.46 key 0.98 door 0.02 r_int 0.6110
+[seed 6] step   1331200 sps  3679 success 0.60 ret 0.298 cov 0.63 key 1.00 door 0.67 r_int 0.5935
+[seed 4] step   1331200 sps  3659 success 0.16 ret 0.075 cov 0.54 key 1.00 door 0.23 r_int 0.5942
+[seed 2] step   1310720 sps  3601 success 1.00 ret 0.968 cov 0.34 key 1.00 door 1.00 r_int 0.9568
+[seed 9] step   1331200 sps  3657 success 0.01 ret 0.005 cov 0.46 key 0.97 door 0.04 r_int 0.5508
+[seed 7] step   1331200 sps  3654 success 0.14 ret 0.078 cov 0.52 key 1.00 door 0.20 r_int 0.6356
+[seed 3] step   1331200 sps  3646 success 0.06 ret 0.022 cov 0.48 key 1.00 door 0.12 r_int 0.5962
+[seed 1] step   1331200 sps  3640 success 0.06 ret 0.032 cov 0.49 key 1.00 door 0.09 r_int 0.6519
+[seed 8] step   1331200 sps  3632 success 1.00 ret 0.967 cov 0.34 key 1.00 door 1.00 r_int 0.9426
+[seed 5] step   1351680 sps  3687 success 0.98 ret 0.896 cov 0.45 key 1.00 door 1.00 r_int 0.7015
+[seed 0] step   1331200 sps  3629 success 0.02 ret 0.004 cov 0.47 key 0.98 door 0.04 r_int 0.5718
+[seed 6] step   1351680 sps  3675 success 0.53 ret 0.276 cov 0.63 key 1.00 door 0.65 r_int 0.6095
+[seed 4] step   1351680 sps  3655 success 0.12 ret 0.048 cov 0.54 key 1.00 door 0.20 r_int 0.5624
+[seed 9] step   1351680 sps  3653 success 0.01 ret 0.005 cov 0.50 key 0.98 door 0.02 r_int 0.5477
+[seed 2] step   1331200 sps  3596 success 1.00 ret 0.968 cov 0.35 key 1.00 door 1.00 r_int 0.9759
+[seed 7] step   1351680 sps  3650 success 0.15 ret 0.090 cov 0.52 key 1.00 door 0.21 r_int 0.6285
+[seed 3] step   1351680 sps  3643 success 0.07 ret 0.032 cov 0.50 key 1.00 door 0.13 r_int 0.6415
+[seed 1] step   1351680 sps  3637 success 0.08 ret 0.041 cov 0.53 key 1.00 door 0.12 r_int 0.6439
+[seed 5] step   1372160 sps  3684 success 1.00 ret 0.907 cov 0.43 key 1.00 door 1.00 r_int 0.7192
+[seed 8] step   1351680 sps  3629 success 1.00 ret 0.966 cov 0.35 key 1.00 door 1.00 r_int 0.9455
+[seed 0] step   1351680 sps  3627 success 0.04 ret 0.013 cov 0.48 key 0.98 door 0.06 r_int 0.5891
+[seed 6] step   1372160 sps  3673 success 0.50 ret 0.263 cov 0.60 key 1.00 door 0.66 r_int 0.6265
+[seed 4] step   1372160 sps  3652 success 0.14 ret 0.051 cov 0.56 key 1.00 door 0.21 r_int 0.6301
+[seed 9] step   1372160 sps  3649 success 0.02 ret 0.013 cov 0.49 key 0.99 door 0.03 r_int 0.5972
+[seed 7] step   1372160 sps  3646 success 0.12 ret 0.064 cov 0.50 key 0.99 door 0.19 r_int 0.6396
+[seed 2] step   1351680 sps  3592 success 1.00 ret 0.968 cov 0.35 key 1.00 door 1.00 r_int 0.9763
+[seed 3] step   1372160 sps  3641 success 0.11 ret 0.055 cov 0.52 key 1.00 door 0.18 r_int 0.6376
+[seed 1] step   1372160 sps  3635 success 0.13 ret 0.069 cov 0.56 key 1.00 door 0.18 r_int 0.6396
+[seed 5] step   1392640 sps  3682 success 1.00 ret 0.920 cov 0.44 key 1.00 door 1.00 r_int 0.6958
+[seed 0] step   1372160 sps  3626 success 0.05 ret 0.021 cov 0.48 key 1.00 door 0.08 r_int 0.6213
+[seed 8] step   1372160 sps  3625 success 1.00 ret 0.968 cov 0.35 key 1.00 door 1.00 r_int 0.9640
+[seed 6] step   1392640 sps  3672 success 0.57 ret 0.283 cov 0.61 key 1.00 door 0.71 r_int 0.5907
+[seed 4] step   1392640 sps  3649 success 0.13 ret 0.064 cov 0.53 key 1.00 door 0.16 r_int 0.6617
+[seed 9] step   1392640 sps  3648 success 0.04 ret 0.025 cov 0.49 key 0.98 door 0.05 r_int 0.5455
+[seed 7] step   1392640 sps  3645 success 0.12 ret 0.049 cov 0.52 key 0.99 door 0.19 r_int 0.6530
+[seed 2] step   1372160 sps  3590 success 1.00 ret 0.968 cov 0.35 key 1.00 door 1.00 r_int 0.9757
+[seed 3] step   1392640 sps  3640 success 0.14 ret 0.079 cov 0.52 key 1.00 door 0.22 r_int 0.6217
+[seed 1] step   1392640 sps  3632 success 0.12 ret 0.056 cov 0.56 key 1.00 door 0.18 r_int 0.6423
+[seed 5] step   1413120 sps  3683 success 1.00 ret 0.936 cov 0.39 key 1.00 door 1.00 r_int 0.7231
+[seed 0] step   1392640 sps  3625 success 0.03 ret 0.017 cov 0.48 key 1.00 door 0.07 r_int 0.5893
+[seed 8] step   1392640 sps  3624 success 1.00 ret 0.966 cov 0.35 key 1.00 door 1.00 r_int 0.9689
+[seed 6] step   1413120 sps  3671 success 0.58 ret 0.291 cov 0.62 key 1.00 door 0.71 r_int 0.5977
+[seed 9] step   1413120 sps  3648 success 0.05 ret 0.026 cov 0.46 key 0.98 door 0.08 r_int 0.5365
+[seed 4] step   1413120 sps  3646 success 0.16 ret 0.083 cov 0.52 key 1.00 door 0.18 r_int 0.5932
+[seed 7] step   1413120 sps  3643 success 0.14 ret 0.068 cov 0.53 key 0.99 door 0.20 r_int 0.6202
+[seed 2] step   1392640 sps  3589 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9818
+[seed 3] step   1413120 sps  3640 success 0.10 ret 0.052 cov 0.53 key 0.99 door 0.16 r_int 0.6095
+[seed 5] step   1433600 sps  3682 success 1.00 ret 0.931 cov 0.41 key 1.00 door 1.00 r_int 0.7294
+[seed 1] step   1413120 sps  3629 success 0.13 ret 0.054 cov 0.54 key 1.00 door 0.19 r_int 0.6500
+[seed 0] step   1413120 sps  3622 success 0.01 ret 0.008 cov 0.49 key 0.99 door 0.05 r_int 0.5998
+[seed 8] step   1413120 sps  3620 success 1.00 ret 0.967 cov 0.35 key 1.00 door 1.00 r_int 0.9664
+[seed 6] step   1433600 sps  3669 success 0.61 ret 0.376 cov 0.61 key 1.00 door 0.69 r_int 0.6555
+[seed 9] step   1433600 sps  3647 success 0.06 ret 0.032 cov 0.48 key 0.98 door 0.09 r_int 0.5979
+[seed 4] step   1433600 sps  3644 success 0.12 ret 0.072 cov 0.53 key 1.00 door 0.14 r_int 0.5983
+[seed 7] step   1433600 sps  3641 success 0.22 ret 0.110 cov 0.57 key 1.00 door 0.29 r_int 0.5908
+[seed 2] step   1413120 sps  3586 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9865
+[seed 3] step   1433600 sps  3637 success 0.10 ret 0.043 cov 0.52 key 0.97 door 0.15 r_int 0.6222
+[seed 5] step   1454080 sps  3681 success 1.00 ret 0.933 cov 0.43 key 1.00 door 1.00 r_int 0.7438
+[seed 1] step   1433600 sps  3628 success 0.10 ret 0.041 cov 0.53 key 1.00 door 0.15 r_int 0.6655
+[seed 0] step   1433600 sps  3620 success 0.01 ret 0.007 cov 0.50 key 0.99 door 0.04 r_int 0.5844
+[seed 8] step   1433600 sps  3616 success 1.00 ret 0.968 cov 0.34 key 1.00 door 1.00 r_int 0.9729
+[seed 6] step   1454080 sps  3667 success 0.60 ret 0.402 cov 0.61 key 1.00 door 0.64 r_int 0.6683
+[seed 9] step   1454080 sps  3644 success 0.08 ret 0.028 cov 0.51 key 0.99 door 0.14 r_int 0.5868
+[seed 4] step   1454080 sps  3641 success 0.07 ret 0.036 cov 0.55 key 0.99 door 0.12 r_int 0.5913
+[seed 7] step   1454080 sps  3638 success 0.21 ret 0.105 cov 0.53 key 1.00 door 0.26 r_int 0.5767
+[seed 3] step   1454080 sps  3636 success 0.11 ret 0.054 cov 0.52 key 0.97 door 0.20 r_int 0.6278
+[seed 2] step   1433600 sps  3583 success 1.00 ret 0.968 cov 0.34 key 1.00 door 1.00 r_int 0.9718
+[seed 5] step   1474560 sps  3679 success 1.00 ret 0.939 cov 0.39 key 1.00 door 1.00 r_int 0.8644
+[seed 1] step   1454080 sps  3624 success 0.12 ret 0.051 cov 0.53 key 1.00 door 0.18 r_int 0.6562
+[seed 0] step   1454080 sps  3614 success 0.02 ret 0.015 cov 0.50 key 0.98 door 0.04 r_int 0.6057
+[seed 8] step   1454080 sps  3613 success 1.00 ret 0.968 cov 0.36 key 1.00 door 1.00 r_int 0.9720
+[seed 6] step   1474560 sps  3664 success 0.61 ret 0.395 cov 0.64 key 1.00 door 0.67 r_int 0.6647
+[seed 9] step   1474560 sps  3642 success 0.08 ret 0.031 cov 0.52 key 0.99 door 0.12 r_int 0.5637
+[seed 4] step   1474560 sps  3636 success 0.12 ret 0.069 cov 0.57 key 0.99 door 0.17 r_int 0.6137
+[seed 7] step   1474560 sps  3636 success 0.24 ret 0.111 cov 0.52 key 1.00 door 0.27 r_int 0.6092
+[seed 3] step   1474560 sps  3632 success 0.15 ret 0.071 cov 0.52 key 0.98 door 0.26 r_int 0.6363
+[seed 2] step   1454080 sps  3580 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9690
+[seed 5] step   1495040 sps  3676 success 1.00 ret 0.931 cov 0.41 key 1.00 door 1.00 r_int 0.8075
+[seed 1] step   1474560 sps  3621 success 0.09 ret 0.040 cov 0.54 key 1.00 door 0.13 r_int 0.6449
+[seed 0] step   1474560 sps  3613 success 0.02 ret 0.015 cov 0.48 key 0.99 door 0.04 r_int 0.6266
+[seed 6] step   1495040 sps  3662 success 0.73 ret 0.437 cov 0.66 key 1.00 door 0.79 r_int 0.5757
+[seed 8] step   1474560 sps  3611 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9790
+[seed 9] step   1495040 sps  3640 success 0.08 ret 0.021 cov 0.53 key 0.98 door 0.13 r_int 0.5511
+[seed 4] step   1495040 sps  3634 success 0.13 ret 0.075 cov 0.55 key 0.99 door 0.19 r_int 0.5677
+[seed 7] step   1495040 sps  3633 success 0.23 ret 0.108 cov 0.52 key 1.00 door 0.27 r_int 0.5839
+[seed 3] step   1495040 sps  3630 success 0.17 ret 0.085 cov 0.53 key 1.00 door 0.27 r_int 0.6115
+[seed 2] step   1474560 sps  3578 success 1.00 ret 0.969 cov 0.35 key 1.00 door 1.00 r_int 0.9823
+[seed 5] step   1515520 sps  3673 success 1.00 ret 0.946 cov 0.39 key 1.00 door 1.00 r_int 0.8406
+[seed 1] step   1495040 sps  3619 success 0.08 ret 0.029 cov 0.54 key 1.00 door 0.15 r_int 0.6323
+[seed 0] step   1495040 sps  3610 success 0.03 ret 0.015 cov 0.51 key 0.99 door 0.05 r_int 0.5549
+[seed 6] step   1515520 sps  3658 success 0.69 ret 0.396 cov 0.63 key 1.00 door 0.77 r_int 0.5523
+[seed 8] step   1495040 sps  3607 success 1.00 ret 0.967 cov 0.35 key 1.00 door 1.00 r_int 0.9749
+[seed 9] step   1515520 sps  3637 success 0.05 ret 0.013 cov 0.52 key 0.99 door 0.11 r_int 0.5865
+[seed 4] step   1515520 sps  3631 success 0.16 ret 0.080 cov 0.56 key 1.00 door 0.20 r_int 0.5966
+[seed 7] step   1515520 sps  3631 success 0.26 ret 0.132 cov 0.57 key 1.00 door 0.33 r_int 0.6373
+[seed 3] step   1515520 sps  3628 success 0.14 ret 0.065 cov 0.53 key 1.00 door 0.22 r_int 0.5962
+[seed 2] step   1495040 sps  3574 success 1.00 ret 0.969 cov 0.32 key 1.00 door 1.00 r_int 0.9750
+[seed 5] step   1536000 sps  3670 success 1.00 ret 0.938 cov 0.41 key 1.00 door 1.00 r_int 0.7963
+[seed 1] step   1515520 sps  3617 success 0.10 ret 0.046 cov 0.57 key 1.00 door 0.15 r_int 0.5980
+[seed 0] step   1515520 sps  3608 success 0.04 ret 0.019 cov 0.50 key 1.00 door 0.06 r_int 0.5458
+[seed 6] step   1536000 sps  3654 success 0.68 ret 0.386 cov 0.62 key 1.00 door 0.78 r_int 0.6117
+[seed 8] step   1515520 sps  3605 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9720
+[seed 9] step   1536000 sps  3636 success 0.04 ret 0.011 cov 0.53 key 0.97 door 0.11 r_int 0.6223
+[seed 7] step   1536000 sps  3629 success 0.26 ret 0.129 cov 0.60 key 1.00 door 0.32 r_int 0.5959
+[seed 4] step   1536000 sps  3627 success 0.10 ret 0.035 cov 0.54 key 1.00 door 0.17 r_int 0.5299
+[seed 3] step   1536000 sps  3626 success 0.12 ret 0.058 cov 0.53 key 1.00 door 0.18 r_int 0.5917
+[seed 5] step   1556480 sps  3668 success 0.98 ret 0.921 cov 0.39 key 1.00 door 1.00 r_int 0.8392
+[seed 2] step   1515520 sps  3571 success 1.00 ret 0.969 cov 0.34 key 1.00 door 1.00 r_int 0.9849
+[seed 1] step   1536000 sps  3616 success 0.14 ret 0.069 cov 0.55 key 1.00 door 0.22 r_int 0.6319
+[seed 0] step   1536000 sps  3605 success 0.03 ret 0.011 cov 0.49 key 1.00 door 0.03 r_int 0.6175
+[seed 6] step   1556480 sps  3650 success 0.72 ret 0.426 cov 0.62 key 1.00 door 0.81 r_int 0.5912
+[seed 8] step   1536000 sps  3602 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9756
+[seed 9] step   1556480 sps  3634 success 0.06 ret 0.033 cov 0.54 key 0.98 door 0.14 r_int 0.6201
+[seed 7] step   1556480 sps  3627 success 0.30 ret 0.144 cov 0.59 key 1.00 door 0.34 r_int 0.6413
+[seed 4] step   1556480 sps  3625 success 0.12 ret 0.050 cov 0.56 key 1.00 door 0.19 r_int 0.6269
+[seed 3] step   1556480 sps  3622 success 0.10 ret 0.050 cov 0.52 key 1.00 door 0.15 r_int 0.5853
+[seed 5] step   1576960 sps  3666 success 0.98 ret 0.923 cov 0.38 key 1.00 door 1.00 r_int 0.7974
+[seed 2] step   1536000 sps  3569 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9887
+[seed 1] step   1556480 sps  3613 success 0.16 ret 0.084 cov 0.56 key 1.00 door 0.21 r_int 0.6019
+[seed 6] step   1576960 sps  3649 success 0.66 ret 0.383 cov 0.61 key 1.00 door 0.76 r_int 0.6442
+[seed 0] step   1556480 sps  3601 success 0.02 ret 0.009 cov 0.47 key 1.00 door 0.03 r_int 0.5890
+[seed 8] step   1556480 sps  3598 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9821
+[seed 9] step   1576960 sps  3632 success 0.11 ret 0.069 cov 0.55 key 0.98 door 0.17 r_int 0.6015
+[seed 7] step   1576960 sps  3625 success 0.28 ret 0.136 cov 0.58 key 1.00 door 0.31 r_int 0.6207
+[seed 4] step   1576960 sps  3622 success 0.10 ret 0.046 cov 0.54 key 1.00 door 0.16 r_int 0.5372
+[seed 3] step   1576960 sps  3620 success 0.08 ret 0.037 cov 0.51 key 0.99 door 0.14 r_int 0.6031
+[seed 5] step   1597440 sps  3663 success 1.00 ret 0.942 cov 0.41 key 1.00 door 1.00 r_int 0.8097
+[seed 2] step   1556480 sps  3566 success 1.00 ret 0.970 cov 0.32 key 1.00 door 1.00 r_int 0.9710
+[seed 1] step   1576960 sps  3611 success 0.15 ret 0.075 cov 0.56 key 1.00 door 0.20 r_int 0.6569
+[seed 6] step   1597440 sps  3646 success 0.70 ret 0.407 cov 0.61 key 1.00 door 0.76 r_int 0.6552
+[seed 0] step   1576960 sps  3598 success 0.05 ret 0.022 cov 0.50 key 1.00 door 0.08 r_int 0.6437
+[seed 8] step   1576960 sps  3594 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9742
+[seed 9] step   1597440 sps  3627 success 0.15 ret 0.091 cov 0.56 key 1.00 door 0.20 r_int 0.6018
+[seed 7] step   1597440 sps  3621 success 0.25 ret 0.120 cov 0.57 key 1.00 door 0.30 r_int 0.6074
+[seed 4] step   1597440 sps  3618 success 0.12 ret 0.059 cov 0.52 key 1.00 door 0.14 r_int 0.5831
+[seed 3] step   1597440 sps  3616 success 0.09 ret 0.038 cov 0.50 key 0.99 door 0.16 r_int 0.6087
+[seed 5] step   1617920 sps  3660 success 1.00 ret 0.944 cov 0.39 key 1.00 door 1.00 r_int 0.7988
+[seed 1] step   1597440 sps  3607 success 0.17 ret 0.084 cov 0.57 key 1.00 door 0.20 r_int 0.5945
+[seed 2] step   1576960 sps  3561 success 1.00 ret 0.969 cov 0.34 key 1.00 door 1.00 r_int 0.9641
+[seed 6] step   1617920 sps  3642 success 0.77 ret 0.456 cov 0.64 key 1.00 door 0.82 r_int 0.6179
+[seed 0] step   1597440 sps  3594 success 0.04 ret 0.018 cov 0.54 key 0.99 door 0.09 r_int 0.6232
+[seed 8] step   1597440 sps  3593 success 1.00 ret 0.969 cov 0.33 key 1.00 door 1.00 r_int 0.9624
+[seed 9] step   1617920 sps  3626 success 0.13 ret 0.074 cov 0.55 key 1.00 door 0.21 r_int 0.6372
+[seed 7] step   1617920 sps  3622 success 0.22 ret 0.119 cov 0.55 key 1.00 door 0.34 r_int 0.6234
+[seed 4] step   1617920 sps  3621 success 0.12 ret 0.065 cov 0.52 key 0.99 door 0.13 r_int 0.5406
+[seed 3] step   1617920 sps  3618 success 0.18 ret 0.085 cov 0.54 key 0.99 door 0.27 r_int 0.6391
+[seed 5] step   1638400 sps  3661 success 0.99 ret 0.937 cov 0.39 key 1.00 door 1.00 r_int 0.8081
+[seed 1] step   1617920 sps  3608 success 0.16 ret 0.081 cov 0.56 key 1.00 door 0.19 r_int 0.6185
+[seed 2] step   1597440 sps  3562 success 1.00 ret 0.969 cov 0.34 key 1.00 door 1.00 r_int 0.9846
+[seed 6] step   1638400 sps  3641 success 0.84 ret 0.487 cov 0.64 key 1.00 door 0.89 r_int 0.6240
+[seed 0] step   1617920 sps  3594 success 0.04 ret 0.015 cov 0.55 key 0.99 door 0.12 r_int 0.5665
+[seed 8] step   1617920 sps  3593 success 1.00 ret 0.971 cov 0.33 key 1.00 door 1.00 r_int 0.9870
+[seed 9] step   1638400 sps  3626 success 0.13 ret 0.062 cov 0.55 key 1.00 door 0.20 r_int 0.5632
+[seed 7] step   1638400 sps  3621 success 0.19 ret 0.091 cov 0.54 key 1.00 door 0.34 r_int 0.6645
+[seed 4] step   1638400 sps  3620 success 0.17 ret 0.102 cov 0.52 key 0.97 door 0.20 r_int 0.6476
+[seed 3] step   1638400 sps  3620 success 0.24 ret 0.125 cov 0.57 key 1.00 door 0.32 r_int 0.6298
+[seed 5] step   1658880 sps  3662 success 1.00 ret 0.946 cov 0.39 key 1.00 door 1.00 r_int 0.8476
+[seed 1] step   1638400 sps  3611 success 0.19 ret 0.088 cov 0.56 key 1.00 door 0.20 r_int 0.5879
+[seed 2] step   1617920 sps  3562 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9849
+[seed 6] step   1658880 sps  3641 success 0.87 ret 0.511 cov 0.65 key 1.00 door 0.93 r_int 0.5787
+[seed 8] step   1638400 sps  3592 success 1.00 ret 0.968 cov 0.35 key 1.00 door 1.00 r_int 0.9721
+[seed 0] step   1638400 sps  3592 success 0.03 ret 0.011 cov 0.53 key 0.99 door 0.13 r_int 0.6318
+[seed 9] step   1658880 sps  3622 success 0.14 ret 0.070 cov 0.54 key 0.99 door 0.21 r_int 0.6095
+[seed 7] step   1658880 sps  3617 success 0.18 ret 0.090 cov 0.57 key 1.00 door 0.35 r_int 0.6248
+[seed 3] step   1658880 sps  3615 success 0.26 ret 0.138 cov 0.61 key 1.00 door 0.37 r_int 0.6056
+[seed 4] step   1658880 sps  3614 success 0.15 ret 0.091 cov 0.53 key 0.97 door 0.17 r_int 0.5895
+[seed 5] step   1679360 sps  3657 success 1.00 ret 0.945 cov 0.42 key 1.00 door 1.00 r_int 0.8365
+[seed 1] step   1658880 sps  3604 success 0.23 ret 0.104 cov 0.56 key 1.00 door 0.25 r_int 0.6215
+[seed 2] step   1638400 sps  3556 success 1.00 ret 0.971 cov 0.34 key 1.00 door 1.00 r_int 0.9824
+[seed 6] step   1679360 sps  3637 success 0.82 ret 0.522 cov 0.63 key 1.00 door 0.88 r_int 0.6807
+[seed 0] step   1658880 sps  3584 success 0.04 ret 0.017 cov 0.52 key 1.00 door 0.14 r_int 0.5424
+[seed 8] step   1658880 sps  3584 success 1.00 ret 0.971 cov 0.34 key 1.00 door 1.00 r_int 0.9855
+[seed 9] step   1679360 sps  3617 success 0.13 ret 0.071 cov 0.51 key 0.99 door 0.16 r_int 0.5811
+[seed 7] step   1679360 sps  3612 success 0.14 ret 0.066 cov 0.54 key 1.00 door 0.27 r_int 0.6207
+[seed 3] step   1679360 sps  3610 success 0.24 ret 0.126 cov 0.58 key 1.00 door 0.33 r_int 0.6280
+[seed 4] step   1679360 sps  3607 success 0.16 ret 0.097 cov 0.53 key 0.99 door 0.19 r_int 0.6159
+[seed 5] step   1699840 sps  3651 success 1.00 ret 0.951 cov 0.39 key 1.00 door 1.00 r_int 0.8645
+[seed 1] step   1679360 sps  3601 success 0.23 ret 0.108 cov 0.56 key 1.00 door 0.27 r_int 0.6489
+[seed 2] step   1658880 sps  3553 success 1.00 ret 0.969 cov 0.33 key 1.00 door 1.00 r_int 0.9865
+[seed 6] step   1699840 sps  3632 success 0.77 ret 0.542 cov 0.63 key 1.00 door 0.86 r_int 0.6352
+[seed 0] step   1679360 sps  3582 success 0.05 ret 0.023 cov 0.49 key 0.99 door 0.12 r_int 0.6244
+[seed 8] step   1679360 sps  3580 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9844
+[seed 9] step   1699840 sps  3614 success 0.12 ret 0.064 cov 0.49 key 0.99 door 0.15 r_int 0.5876
+[seed 3] step   1699840 sps  3609 success 0.22 ret 0.110 cov 0.58 key 1.00 door 0.30 r_int 0.6680
+[seed 7] step   1699840 sps  3609 success 0.15 ret 0.065 cov 0.56 key 1.00 door 0.25 r_int 0.6407
+[seed 4] step   1699840 sps  3604 success 0.14 ret 0.075 cov 0.53 key 0.99 door 0.18 r_int 0.6043
+[seed 5] step   1720320 sps  3647 success 1.00 ret 0.950 cov 0.40 key 1.00 door 1.00 r_int 0.8103
+[seed 1] step   1699840 sps  3596 success 0.20 ret 0.099 cov 0.55 key 1.00 door 0.25 r_int 0.6381
+[seed 2] step   1679360 sps  3548 success 1.00 ret 0.971 cov 0.34 key 1.00 door 1.00 r_int 0.9907
+[seed 6] step   1720320 sps  3628 success 0.84 ret 0.559 cov 0.65 key 1.00 door 0.92 r_int 0.6009
+[seed 0] step   1699840 sps  3579 success 0.09 ret 0.034 cov 0.52 key 0.99 door 0.12 r_int 0.6166
+[seed 8] step   1699840 sps  3575 success 1.00 ret 0.970 cov 0.35 key 1.00 door 1.00 r_int 0.9806
+[seed 9] step   1720320 sps  3611 success 0.09 ret 0.035 cov 0.49 key 1.00 door 0.13 r_int 0.5945
+[seed 7] step   1720320 sps  3605 success 0.18 ret 0.070 cov 0.53 key 1.00 door 0.24 r_int 0.6466
+[seed 3] step   1720320 sps  3605 success 0.12 ret 0.064 cov 0.55 key 0.99 door 0.20 r_int 0.5872
+[seed 4] step   1720320 sps  3601 success 0.13 ret 0.073 cov 0.55 key 0.99 door 0.20 r_int 0.5956
+[seed 5] step   1740800 sps  3643 success 1.00 ret 0.949 cov 0.38 key 1.00 door 1.00 r_int 0.8823
+[seed 1] step   1720320 sps  3593 success 0.13 ret 0.062 cov 0.51 key 1.00 door 0.18 r_int 0.6254
+[seed 2] step   1699840 sps  3544 success 1.00 ret 0.969 cov 0.34 key 1.00 door 1.00 r_int 0.9852
+[seed 6] step   1740800 sps  3624 success 0.83 ret 0.564 cov 0.66 key 1.00 door 0.92 r_int 0.5966
+[seed 0] step   1720320 sps  3576 success 0.09 ret 0.031 cov 0.52 key 0.99 door 0.12 r_int 0.5674
+[seed 8] step   1720320 sps  3571 success 1.00 ret 0.969 cov 0.35 key 1.00 door 1.00 r_int 0.9836
+[seed 9] step   1740800 sps  3609 success 0.09 ret 0.027 cov 0.53 key 1.00 door 0.12 r_int 0.5949
+[seed 3] step   1740800 sps  3603 success 0.11 ret 0.056 cov 0.56 key 0.99 door 0.19 r_int 0.6407
+[seed 7] step   1740800 sps  3602 success 0.21 ret 0.087 cov 0.55 key 1.00 door 0.26 r_int 0.6689
+[seed 4] step   1740800 sps  3600 success 0.11 ret 0.059 cov 0.55 key 0.99 door 0.17 r_int 0.6267
+[seed 5] step   1761280 sps  3638 success 1.00 ret 0.950 cov 0.38 key 1.00 door 1.00 r_int 0.7723
+[seed 1] step   1740800 sps  3591 success 0.09 ret 0.035 cov 0.49 key 1.00 door 0.15 r_int 0.6251
+[seed 2] step   1720320 sps  3541 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9901
+[seed 6] step   1761280 sps  3623 success 0.89 ret 0.604 cov 0.63 key 1.00 door 0.93 r_int 0.6019
+[seed 0] step   1740800 sps  3574 success 0.10 ret 0.042 cov 0.55 key 1.00 door 0.13 r_int 0.6516
+[seed 8] step   1740800 sps  3568 success 1.00 ret 0.969 cov 0.34 key 1.00 door 1.00 r_int 0.9773
+[seed 9] step   1761280 sps  3606 success 0.10 ret 0.028 cov 0.54 key 1.00 door 0.13 r_int 0.5545
+[seed 3] step   1761280 sps  3600 success 0.10 ret 0.049 cov 0.56 key 0.98 door 0.18 r_int 0.5821
+[seed 7] step   1761280 sps  3598 success 0.23 ret 0.106 cov 0.56 key 1.00 door 0.30 r_int 0.6392
+[seed 4] step   1761280 sps  3597 success 0.12 ret 0.065 cov 0.55 key 1.00 door 0.16 r_int 0.6395
+[seed 5] step   1781760 sps  3634 success 0.99 ret 0.939 cov 0.38 key 1.00 door 1.00 r_int 0.8336
+[seed 1] step   1761280 sps  3588 success 0.10 ret 0.041 cov 0.51 key 1.00 door 0.15 r_int 0.6302
+[seed 6] step   1781760 sps  3622 success 0.83 ret 0.572 cov 0.62 key 1.00 door 0.92 r_int 0.5964
+[seed 2] step   1740800 sps  3537 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9866
+[seed 0] step   1761280 sps  3572 success 0.05 ret 0.023 cov 0.54 key 1.00 door 0.08 r_int 0.6029
+[seed 8] step   1761280 sps  3563 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9806
+[seed 9] step   1781760 sps  3603 success 0.13 ret 0.052 cov 0.55 key 1.00 door 0.14 r_int 0.6038
+[seed 3] step   1781760 sps  3596 success 0.14 ret 0.067 cov 0.57 key 0.99 door 0.20 r_int 0.5898
+[seed 7] step   1781760 sps  3595 success 0.19 ret 0.095 cov 0.58 key 1.00 door 0.28 r_int 0.5971
+[seed 4] step   1781760 sps  3593 success 0.14 ret 0.074 cov 0.55 key 0.99 door 0.18 r_int 0.6212
+[seed 5] step   1802240 sps  3631 success 1.00 ret 0.949 cov 0.39 key 1.00 door 1.00 r_int 0.7913
+[seed 1] step   1781760 sps  3586 success 0.11 ret 0.049 cov 0.52 key 1.00 door 0.15 r_int 0.6018
+[seed 6] step   1802240 sps  3619 success 0.89 ret 0.655 cov 0.60 key 1.00 door 0.95 r_int 0.6647
+[seed 2] step   1761280 sps  3533 success 1.00 ret 0.967 cov 0.33 key 1.00 door 1.00 r_int 0.9473
+[seed 0] step   1781760 sps  3568 success 0.05 ret 0.022 cov 0.53 key 1.00 door 0.07 r_int 0.6086
+[seed 8] step   1781760 sps  3559 success 1.00 ret 0.969 cov 0.35 key 1.00 door 1.00 r_int 0.9814
+[seed 9] step   1802240 sps  3600 success 0.14 ret 0.062 cov 0.54 key 1.00 door 0.15 r_int 0.6393
+[seed 3] step   1802240 sps  3594 success 0.13 ret 0.074 cov 0.57 key 0.99 door 0.20 r_int 0.6204
+[seed 7] step   1802240 sps  3593 success 0.22 ret 0.109 cov 0.59 key 1.00 door 0.32 r_int 0.6418
+[seed 4] step   1802240 sps  3591 success 0.10 ret 0.044 cov 0.58 key 0.99 door 0.17 r_int 0.5679
+[seed 5] step   1822720 sps  3627 success 1.00 ret 0.952 cov 0.40 key 1.00 door 1.00 r_int 0.8492
+[seed 1] step   1802240 sps  3584 success 0.15 ret 0.079 cov 0.53 key 1.00 door 0.22 r_int 0.6419
+[seed 6] step   1822720 sps  3617 success 0.91 ret 0.659 cov 0.62 key 1.00 door 0.94 r_int 0.6761
+[seed 2] step   1781760 sps  3531 success 1.00 ret 0.971 cov 0.32 key 1.00 door 1.00 r_int 0.9858
+[seed 0] step   1802240 sps  3566 success 0.03 ret 0.010 cov 0.50 key 1.00 door 0.05 r_int 0.6226
+[seed 8] step   1802240 sps  3558 success 1.00 ret 0.968 cov 0.34 key 1.00 door 1.00 r_int 0.9694
+[seed 9] step   1822720 sps  3597 success 0.13 ret 0.061 cov 0.55 key 1.00 door 0.15 r_int 0.6236
+[seed 3] step   1822720 sps  3592 success 0.14 ret 0.086 cov 0.54 key 1.00 door 0.24 r_int 0.6256
+[seed 7] step   1822720 sps  3591 success 0.18 ret 0.089 cov 0.58 key 1.00 door 0.30 r_int 0.6127
+[seed 4] step   1822720 sps  3590 success 0.10 ret 0.042 cov 0.56 key 0.99 door 0.15 r_int 0.6036
+[seed 1] step   1822720 sps  3585 success 0.14 ret 0.070 cov 0.51 key 1.00 door 0.22 r_int 0.6054
+[seed 5] step   1843200 sps  3625 success 1.00 ret 0.951 cov 0.38 key 1.00 door 1.00 r_int 0.7648
+[seed 6] step   1843200 sps  3616 success 0.90 ret 0.623 cov 0.64 key 1.00 door 0.96 r_int 0.6135
+[seed 2] step   1802240 sps  3529 success 1.00 ret 0.971 cov 0.32 key 1.00 door 1.00 r_int 0.9852
+[seed 0] step   1822720 sps  3564 success 0.04 ret 0.012 cov 0.50 key 1.00 door 0.05 r_int 0.6162
+[seed 9] step   1843200 sps  3596 success 0.07 ret 0.033 cov 0.55 key 0.99 door 0.11 r_int 0.6274
+[seed 8] step   1822720 sps  3555 success 1.00 ret 0.970 cov 0.35 key 1.00 door 1.00 r_int 0.9831
+[seed 3] step   1843200 sps  3590 success 0.16 ret 0.089 cov 0.54 key 0.99 door 0.29 r_int 0.6149
+[seed 7] step   1843200 sps  3590 success 0.24 ret 0.120 cov 0.59 key 1.00 door 0.35 r_int 0.6058
+[seed 4] step   1843200 sps  3589 success 0.06 ret 0.026 cov 0.55 key 1.00 door 0.12 r_int 0.6084
+[seed 1] step   1843200 sps  3583 success 0.12 ret 0.056 cov 0.53 key 1.00 door 0.20 r_int 0.6543
+[seed 5] step   1863680 sps  3621 success 1.00 ret 0.951 cov 0.38 key 1.00 door 1.00 r_int 0.8633
+[seed 6] step   1863680 sps  3614 success 0.91 ret 0.633 cov 0.62 key 1.00 door 0.95 r_int 0.6340
+[seed 2] step   1822720 sps  3527 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9814
+[seed 0] step   1843200 sps  3562 success 0.05 ret 0.013 cov 0.50 key 1.00 door 0.07 r_int 0.5712
+[seed 9] step   1863680 sps  3594 success 0.06 ret 0.026 cov 0.53 key 0.99 door 0.10 r_int 0.6373
+[seed 8] step   1843200 sps  3553 success 1.00 ret 0.969 cov 0.35 key 1.00 door 1.00 r_int 0.9812
+[seed 3] step   1863680 sps  3588 success 0.18 ret 0.095 cov 0.56 key 0.99 door 0.27 r_int 0.6254
+[seed 4] step   1863680 sps  3587 success 0.04 ret 0.018 cov 0.51 key 1.00 door 0.09 r_int 0.6369
+[seed 7] step   1863680 sps  3587 success 0.29 ret 0.177 cov 0.55 key 1.00 door 0.38 r_int 0.6711
+[seed 1] step   1863680 sps  3582 success 0.09 ret 0.045 cov 0.53 key 1.00 door 0.15 r_int 0.5953
+[seed 5] step   1884160 sps  3618 success 1.00 ret 0.949 cov 0.37 key 1.00 door 1.00 r_int 0.7621
+[seed 6] step   1884160 sps  3611 success 0.90 ret 0.661 cov 0.63 key 1.00 door 0.97 r_int 0.6583
+[seed 2] step   1843200 sps  3523 success 1.00 ret 0.970 cov 0.35 key 1.00 door 1.00 r_int 0.9872
+[seed 0] step   1863680 sps  3559 success 0.05 ret 0.014 cov 0.52 key 1.00 door 0.11 r_int 0.5709
+[seed 9] step   1884160 sps  3592 success 0.07 ret 0.027 cov 0.54 key 0.99 door 0.12 r_int 0.6390
+[seed 8] step   1863680 sps  3550 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9790
+[seed 7] step   1884160 sps  3586 success 0.30 ret 0.177 cov 0.56 key 1.00 door 0.37 r_int 0.6376
+[seed 3] step   1884160 sps  3586 success 0.18 ret 0.089 cov 0.54 key 0.99 door 0.25 r_int 0.6534
+[seed 4] step   1884160 sps  3584 success 0.04 ret 0.018 cov 0.52 key 0.99 door 0.10 r_int 0.5675
+[seed 1] step   1884160 sps  3580 success 0.10 ret 0.056 cov 0.52 key 1.00 door 0.18 r_int 0.6335
+[seed 5] step   1904640 sps  3616 success 1.00 ret 0.950 cov 0.39 key 1.00 door 1.00 r_int 0.8814
+[seed 6] step   1904640 sps  3608 success 0.89 ret 0.649 cov 0.61 key 1.00 door 0.98 r_int 0.6127
+[seed 2] step   1863680 sps  3520 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9508
+[seed 0] step   1884160 sps  3557 success 0.04 ret 0.015 cov 0.52 key 1.00 door 0.13 r_int 0.6375
+[seed 9] step   1904640 sps  3589 success 0.07 ret 0.033 cov 0.53 key 0.98 door 0.10 r_int 0.5811
+[seed 8] step   1884160 sps  3548 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9315
+[seed 7] step   1904640 sps  3584 success 0.30 ret 0.163 cov 0.58 key 1.00 door 0.36 r_int 0.6643
+[seed 3] step   1904640 sps  3583 success 0.20 ret 0.100 cov 0.56 key 1.00 door 0.25 r_int 0.5962
+[seed 4] step   1904640 sps  3581 success 0.07 ret 0.039 cov 0.50 key 0.97 door 0.12 r_int 0.5927
+[seed 1] step   1904640 sps  3577 success 0.09 ret 0.050 cov 0.52 key 1.00 door 0.17 r_int 0.6000
+[seed 5] step   1925120 sps  3615 success 1.00 ret 0.952 cov 0.37 key 1.00 door 1.00 r_int 0.8350
+[seed 6] step   1925120 sps  3606 success 0.87 ret 0.615 cov 0.63 key 1.00 door 0.94 r_int 0.5915
+[seed 2] step   1884160 sps  3518 success 1.00 ret 0.971 cov 0.33 key 1.00 door 1.00 r_int 0.9904
+[seed 0] step   1904640 sps  3555 success 0.03 ret 0.013 cov 0.51 key 1.00 door 0.11 r_int 0.6101
+[seed 9] step   1925120 sps  3587 success 0.07 ret 0.030 cov 0.53 key 0.97 door 0.13 r_int 0.6163
+[seed 8] step   1904640 sps  3545 success 1.00 ret 0.970 cov 0.35 key 1.00 door 1.00 r_int 0.9877
+[seed 7] step   1925120 sps  3583 success 0.31 ret 0.152 cov 0.59 key 1.00 door 0.38 r_int 0.6083
+[seed 3] step   1925120 sps  3580 success 0.24 ret 0.118 cov 0.56 key 1.00 door 0.31 r_int 0.6513
+[seed 4] step   1925120 sps  3579 success 0.07 ret 0.036 cov 0.50 key 0.96 door 0.10 r_int 0.5620
+[seed 1] step   1925120 sps  3576 success 0.10 ret 0.053 cov 0.53 key 1.00 door 0.16 r_int 0.6471
+[seed 5] step   1945600 sps  3613 success 1.00 ret 0.954 cov 0.38 key 1.00 door 1.00 r_int 0.7892
+[seed 6] step   1945600 sps  3604 success 0.93 ret 0.645 cov 0.65 key 1.00 door 0.97 r_int 0.6207
+[seed 0] step   1925120 sps  3554 success 0.05 ret 0.024 cov 0.52 key 1.00 door 0.11 r_int 0.6254
+[seed 2] step   1904640 sps  3516 success 1.00 ret 0.969 cov 0.34 key 1.00 door 1.00 r_int 0.9886
+[seed 9] step   1945600 sps  3586 success 0.04 ret 0.017 cov 0.52 key 0.97 door 0.08 r_int 0.6479
+[seed 7] step   1945600 sps  3582 success 0.33 ret 0.148 cov 0.60 key 1.00 door 0.39 r_int 0.6080
+[seed 8] step   1925120 sps  3543 success 1.00 ret 0.971 cov 0.34 key 1.00 door 1.00 r_int 0.9712
+[seed 3] step   1945600 sps  3580 success 0.28 ret 0.141 cov 0.57 key 1.00 door 0.39 r_int 0.6670
+[seed 4] step   1945600 sps  3579 success 0.06 ret 0.033 cov 0.48 key 0.97 door 0.11 r_int 0.5339
+[seed 1] step   1945600 sps  3575 success 0.11 ret 0.056 cov 0.54 key 1.00 door 0.13 r_int 0.5765
+[seed 5] step   1966080 sps  3612 success 1.00 ret 0.952 cov 0.38 key 1.00 door 1.00 r_int 0.8654
+[seed 6] step   1966080 sps  3605 success 0.93 ret 0.675 cov 0.63 key 1.00 door 0.97 r_int 0.5824
+[seed 0] step   1945600 sps  3554 success 0.05 ret 0.022 cov 0.54 key 0.99 door 0.08 r_int 0.6276
+[seed 2] step   1925120 sps  3516 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9885
+[seed 9] step   1966080 sps  3584 success 0.06 ret 0.012 cov 0.53 key 0.99 door 0.12 r_int 0.5948
+[seed 7] step   1966080 sps  3583 success 0.36 ret 0.190 cov 0.59 key 1.00 door 0.42 r_int 0.5900
+[seed 3] step   1966080 sps  3581 success 0.33 ret 0.185 cov 0.59 key 1.00 door 0.41 r_int 0.6436
+[seed 8] step   1945600 sps  3543 success 1.00 ret 0.971 cov 0.33 key 1.00 door 1.00 r_int 0.9848
+[seed 4] step   1966080 sps  3578 success 0.03 ret 0.009 cov 0.51 key 0.97 door 0.08 r_int 0.6097
+[seed 1] step   1966080 sps  3575 success 0.18 ret 0.091 cov 0.54 key 1.00 door 0.25 r_int 0.6359
+[seed 5] step   1986560 sps  3612 success 1.00 ret 0.954 cov 0.36 key 1.00 door 1.00 r_int 0.8538
+[seed 6] step   1986560 sps  3606 success 0.88 ret 0.644 cov 0.64 key 1.00 door 0.96 r_int 0.6492
+[seed 0] step   1966080 sps  3556 success 0.06 ret 0.026 cov 0.55 key 0.99 door 0.09 r_int 0.5779
+[seed 2] step   1945600 sps  3519 success 1.00 ret 0.971 cov 0.32 key 1.00 door 1.00 r_int 0.9650
+[seed 5] step   1998848 sps  3613 success 1.00 ret 0.952 cov 0.38 key 1.00 door 1.00 r_int 0.8501
+[seed 5] eval DoorKey-8x8/sample: success 1.00 ret 0.954 cov 0.37
+[seed 9] step   1986560 sps  3587 success 0.05 ret 0.010 cov 0.51 key 1.00 door 0.09 r_int 0.6296
+[seed 6] step   1998848 sps  3608 success 0.86 ret 0.633 cov 0.64 key 1.00 door 0.95 r_int 0.6400
+[seed 7] step   1986560 sps  3585 success 0.41 ret 0.211 cov 0.60 key 1.00 door 0.48 r_int 0.6246
+[seed 3] step   1986560 sps  3583 success 0.29 ret 0.165 cov 0.58 key 1.00 door 0.33 r_int 0.6172
+[seed 8] step   1966080 sps  3545 success 1.00 ret 0.969 cov 0.35 key 1.00 door 1.00 r_int 0.9798
+[seed 4] step   1986560 sps  3580 success 0.03 ret 0.008 cov 0.52 key 0.98 door 0.11 r_int 0.6269
+[seed 1] step   1986560 sps  3577 success 0.18 ret 0.085 cov 0.53 key 1.00 door 0.26 r_int 0.6481
+[seed 6] eval DoorKey-8x8/sample: success 0.89 ret 0.629 cov 0.68
+[seed 9] step   1998848 sps  3588 success 0.05 ret 0.012 cov 0.51 key 1.00 door 0.08 r_int 0.5773
+[seed 7] step   1998848 sps  3586 success 0.37 ret 0.200 cov 0.59 key 1.00 door 0.46 r_int 0.6190
+[seed 3] step   1998848 sps  3584 success 0.27 ret 0.156 cov 0.58 key 1.00 door 0.31 r_int 0.5890
+[seed 5] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.11
+[seed 4] step   1998848 sps  3582 success 0.04 ret 0.015 cov 0.53 key 0.98 door 0.10 r_int 0.6380
+[seed 0] step   1986560 sps  3560 success 0.03 ret 0.010 cov 0.52 key 0.99 door 0.05 r_int 0.6254
+[seed 2] step   1966080 sps  3521 success 1.00 ret 0.970 cov 0.35 key 1.00 door 1.00 r_int 0.9823
+[seed 1] step   1998848 sps  3577 success 0.19 ret 0.089 cov 0.55 key 1.00 door 0.29 r_int 0.6849
+[seed 8] step   1986560 sps  3547 success 1.00 ret 0.971 cov 0.32 key 1.00 door 1.00 r_int 0.9790
+[seed 6] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.23
+[seed 5] eval DoorKey-16x16/sample: success 1.00 ret 0.926 cov 0.33
+[seed 0] step   1998848 sps  3562 success 0.02 ret 0.006 cov 0.49 key 0.99 door 0.04 r_int 0.5923
+[seed 9] eval DoorKey-8x8/sample: success 0.03 ret 0.011 cov 0.53
+[seed 7] eval DoorKey-8x8/sample: success 0.39 ret 0.203 cov 0.65
+[seed 3] eval DoorKey-8x8/sample: success 0.33 ret 0.158 cov 0.64
+[seed 4] eval DoorKey-8x8/sample: success 0.08 ret 0.020 cov 0.56
+[seed 8] step   1998848 sps  3548 success 1.00 ret 0.970 cov 0.33 key 1.00 door 1.00 r_int 0.9848
+[seed 8] eval DoorKey-8x8/sample: success 1.00 ret 0.971 cov 0.34
+[seed 1] eval DoorKey-8x8/sample: success 0.11 ret 0.073 cov 0.55
+[seed 8] eval DoorKey-8x8/greedy: success 1.00 ret 0.972 cov 0.34
+[seed 2] step   1986560 sps  3523 success 1.00 ret 0.971 cov 0.33 key 1.00 door 1.00 r_int 0.9875
+[seed 0] eval DoorKey-8x8/sample: success 0.03 ret 0.019 cov 0.52
+[seed 7] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.23
+[seed 9] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.18
+[seed 3] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.18
+[seed 2] step   1998848 sps  3525 success 1.00 ret 0.970 cov 0.34 key 1.00 door 1.00 r_int 0.9864
+[seed 2] eval DoorKey-8x8/sample: success 1.00 ret 0.970 cov 0.34
+[seed 4] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.21
+[seed 2] eval DoorKey-8x8/greedy: success 1.00 ret 0.972 cov 0.33
+[seed 1] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.24
+[seed 8] eval DoorKey-16x16/sample: success 0.98 ret 0.856 cov 0.28
+[seed 0] eval DoorKey-8x8/greedy: success 0.00 ret 0.000 cov 0.20
+[seed 6] eval DoorKey-16x16/sample: success 0.73 ret 0.467 cov 0.60
+[seed 5] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.09
+[seed 2] eval DoorKey-16x16/sample: success 0.45 ret 0.367 cov 0.30
+[seed 7] eval DoorKey-16x16/sample: success 0.03 ret 0.011 cov 0.55
+[seed 9] eval DoorKey-16x16/sample: success 0.02 ret 0.007 cov 0.54
+[seed 3] eval DoorKey-16x16/sample: success 0.06 ret 0.027 cov 0.54
+[seed 4] eval DoorKey-16x16/sample: success 0.00 ret 0.000 cov 0.52
+[seed 1] eval DoorKey-16x16/sample: success 0.00 ret 0.000 cov 0.51
+[seed 8] eval DoorKey-16x16/greedy: success 0.12 ret 0.123 cov 0.11
+[seed 0] eval DoorKey-16x16/sample: success 0.00 ret 0.000 cov 0.54
+[seed 6] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.17
+[seed 2] eval DoorKey-16x16/greedy: success 0.08 ret 0.077 cov 0.11
+[seed 7] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.16
+[seed 9] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.17
+[seed 3] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.14
+[seed 1] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.17
+[seed 4] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.17
+[seed 0] eval DoorKey-16x16/greedy: success 0.00 ret 0.000 cov 0.15
+
+===== SUMMARY (mean ± std across seeds) =====
+intrinsic: {'kind': 'episodic_count', 'coef': 0.003}  env: MiniGrid-DoorKey-8x8-v0  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+seeds solved (rolling success >= 0.9): 4/10
+first_solved_step: 963584.000 ± 520833.620 (n=4)   raw=[None, None, 468992, None, None, 1097728, 1759232, None, 528384, None]
+coverage_after_solved: 0.452 ± 0.104 (n=4)
+final_train r_int_mean: 0.711 ± 0.148 (n=10)
+final_train r_int_std: 0.224 ± 0.066 (n=10)
+final_train train/ret: 0.396 ± 0.411 (n=10)
+final_train train/int_ret: 0.731 ± 0.472 (n=10)
+final_train train/len: 392.332 ± 262.726 (n=10)
+final_train train/success: 0.474 ± 0.418 (n=10)
+final_train train/coverage: 0.493 ± 0.099 (n=10)
+final_train train/got_key: 0.996 ± 0.007 (n=10)
+final_train train/opened_door: 0.517 ± 0.398 (n=10)
+eval DoorKey-8x8/sample: success 0.486 ± 0.414 (n=10) | ret 0.401 ± 0.407 (n=10) | coverage 0.517 ± 0.122 (n=10) | key 0.997 ± 0.006 (n=10) | door 0.517 ± 0.404 (n=10)
+eval DoorKey-8x8/greedy: success 0.200 ± 0.400 (n=10) | ret 0.194 ± 0.389 (n=10) | coverage 0.226 ± 0.065 (n=10) | key 0.200 ± 0.400 (n=10) | door 0.200 ± 0.400 (n=10)
+eval DoorKey-16x16/sample: success 0.328 ± 0.405 (n=10) | ret 0.266 ± 0.352 (n=10) | coverage 0.472 ± 0.112 (n=10) | key 0.988 ± 0.018 (n=10) | door 0.384 ± 0.418 (n=10)
+eval DoorKey-16x16/greedy: success 0.020 ± 0.042 (n=10) | ret 0.020 ± 0.041 (n=10) | coverage 0.145 ± 0.029 (n=10) | key 0.102 ± 0.203 (n=10) | door 0.036 ± 0.074 (n=10)
+* Run finished. Uploading logs to Trackio (please wait...)

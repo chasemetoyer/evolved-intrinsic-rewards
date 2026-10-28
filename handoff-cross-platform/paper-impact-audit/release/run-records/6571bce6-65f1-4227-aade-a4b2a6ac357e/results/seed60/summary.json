@@ -1,0 +1,86 @@
+{
+  "seed": 60,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "none",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.00625,
+      0.00625,
+      0.00625
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 220064,
+  "first_goal_step": 2512,
+  "coverage_after_solved": 0.6034772727272726,
+  "final_train": {
+    "r_int_mean": 0.0,
+    "r_int_std": 0.0,
+    "train/ret": 0.9488037037037036,
+    "train/int_ret": 0.0,
+    "train/len": 15.358888888888888,
+    "train/success": 1.0,
+    "train/coverage": 0.6,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.0,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.0,
+    "train/key_pickups": 1.0,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 15.0
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 13031,
+    "tampers_per_episode": 0.0,
+    "solved_episodes": 13031,
+    "solved_len_mean": 15.343104903691199
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.9495833333333333,
+      "int_ret": 0.0,
+      "len": 15.125,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.0,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.9495833333333333,
+      "int_ret": 0.0,
+      "len": 15.125,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.0,
+      "locked_door_opens": 1.0
+    }
+  }
+}

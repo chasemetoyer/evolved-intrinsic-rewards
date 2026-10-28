@@ -1,0 +1,83 @@
+{
+  "seed": 26,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 464,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.001270784960878599,
+    "r_int_std": 0.11712981263796489,
+    "train/ret": 0.20039513888888888,
+    "train/int_ret": -0.4762990141841066,
+    "train/len": 523.7288888888891,
+    "train/success": 0.3688888888888889,
+    "train/coverage": 0.5336917562724015,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.9888888888888889,
+    "train/pickups": 44.05444444444444,
+    "train/door_flips": 33.73222222222223,
+    "train/len_median": 640.0
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.23405029296875,
+      "int_ret": 0.0,
+      "len": 502.453125,
+      "success": 0.40625,
+      "coverage": 0.5095766129032258,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 43.09375,
+      "door_flips": 36.0625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.1507056451612903,
+      "got_key": 0.828125,
+      "opened_door": 0.46875,
+      "pickups": 92.671875,
+      "door_flips": 216.625
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0163690185546875,
+      "int_ret": 0.0,
+      "len": 2522.328125,
+      "success": 0.03125,
+      "coverage": 0.48352117486338797,
+      "got_key": 1.0,
+      "opened_door": 0.671875,
+      "pickups": 184.25,
+      "door_flips": 34.34375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.07462431693989072,
+      "got_key": 0.734375,
+      "opened_door": 0.171875,
+      "pickups": 504.03125,
+      "door_flips": 437.1875
+    }
+  }
+}

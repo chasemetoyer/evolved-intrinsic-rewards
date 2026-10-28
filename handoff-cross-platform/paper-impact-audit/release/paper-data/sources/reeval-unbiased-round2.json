@@ -1,0 +1,248 @@
+{
+  "novelty_1e-3": {
+    "run": "02ba39cc-b063-4915-964d-8c0e3c4582da",
+    "seeds": [
+      {
+        "seed": 0,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.984375,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 1,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.84375,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 2,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.671875,
+        "DoorKey-16x16/stored": 0.671875
+      },
+      {
+        "seed": 3,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 1.0,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 4,
+        "DoorKey-8x8/unbiased": 0.46875,
+        "DoorKey-8x8/stored": 0.609375,
+        "DoorKey-16x16/unbiased": 0.203125,
+        "DoorKey-16x16/stored": 0.15625
+      },
+      {
+        "seed": 5,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.9375,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 6,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.828125,
+        "DoorKey-16x16/stored": 0.921875
+      },
+      {
+        "seed": 7,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.921875,
+        "DoorKey-16x16/stored": 0.984375
+      },
+      {
+        "seed": 8,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.921875,
+        "DoorKey-16x16/stored": 0.96875
+      },
+      {
+        "seed": 9,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.5625,
+        "DoorKey-16x16/stored": 0.75
+      }
+    ],
+    "mean": {
+      "DoorKey-8x8/unbiased": 0.946875,
+      "DoorKey-8x8/stored": 0.9609375,
+      "DoorKey-16x16/unbiased": 0.7875,
+      "DoorKey-16x16/stored": 0.8453125
+    },
+    "n_ge_0p9_16x16_unbiased": 5
+  },
+  "agent3_1/160": {
+    "run": "6e507c3e-5837-4ef3-b6d9-05a7c3990468",
+    "seeds": [
+      {
+        "seed": 0,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.890625,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 1,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.90625,
+        "DoorKey-16x16/stored": 0.96875
+      },
+      {
+        "seed": 2,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.53125,
+        "DoorKey-16x16/stored": 0.546875
+      },
+      {
+        "seed": 3,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.75,
+        "DoorKey-16x16/stored": 0.828125
+      },
+      {
+        "seed": 4,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.953125,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 5,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.703125,
+        "DoorKey-16x16/stored": 0.78125
+      },
+      {
+        "seed": 6,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.34375,
+        "DoorKey-16x16/stored": 0.359375
+      },
+      {
+        "seed": 7,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.34375,
+        "DoorKey-16x16/stored": 0.421875
+      },
+      {
+        "seed": 8,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.359375,
+        "DoorKey-16x16/stored": 0.390625
+      },
+      {
+        "seed": 9,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.75,
+        "DoorKey-16x16/stored": 0.84375
+      }
+    ],
+    "mean": {
+      "DoorKey-8x8/unbiased": 1.0,
+      "DoorKey-8x8/stored": 1.0,
+      "DoorKey-16x16/unbiased": 0.653125,
+      "DoorKey-16x16/stored": 0.7140625
+    },
+    "n_ge_0p9_16x16_unbiased": 2
+  },
+  "agent3_1/640": {
+    "run": "6518a3c8-0446-45de-805c-5f5e8aa3258e",
+    "seeds": [
+      {
+        "seed": 0,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.9375,
+        "DoorKey-16x16/stored": 1.0
+      },
+      {
+        "seed": 1,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.84375,
+        "DoorKey-16x16/stored": 0.90625
+      },
+      {
+        "seed": 2,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.3125,
+        "DoorKey-16x16/stored": 0.390625
+      },
+      {
+        "seed": 3,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.5,
+        "DoorKey-16x16/stored": 0.59375
+      },
+      {
+        "seed": 4,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.546875,
+        "DoorKey-16x16/stored": 0.625
+      },
+      {
+        "seed": 5,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.515625,
+        "DoorKey-16x16/stored": 0.515625
+      },
+      {
+        "seed": 6,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.5625,
+        "DoorKey-16x16/stored": 0.65625
+      },
+      {
+        "seed": 7,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.09375,
+        "DoorKey-16x16/stored": 0.15625
+      },
+      {
+        "seed": 8,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.5625,
+        "DoorKey-16x16/stored": 0.609375
+      },
+      {
+        "seed": 9,
+        "DoorKey-8x8/unbiased": 1.0,
+        "DoorKey-8x8/stored": 1.0,
+        "DoorKey-16x16/unbiased": 0.609375,
+        "DoorKey-16x16/stored": 0.765625
+      }
+    ],
+    "mean": {
+      "DoorKey-8x8/unbiased": 1.0,
+      "DoorKey-8x8/stored": 1.0,
+      "DoorKey-16x16/unbiased": 0.5484375,
+      "DoorKey-16x16/stored": 0.621875
+    },
+    "n_ge_0p9_16x16_unbiased": 1
+  }
+}

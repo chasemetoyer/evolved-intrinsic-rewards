@@ -1,0 +1,86 @@
+{
+  "seed": 60,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.00625,
+      0.00625,
+      0.00625
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": true,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": null,
+  "first_goal_step": 8512,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": 0.0024620923925087685,
+    "r_int_std": 0.04449631211658319,
+    "train/ret": 0.0,
+    "train/int_ret": 0.7151820867205284,
+    "train/len": 270.0,
+    "train/success": 0.0,
+    "train/coverage": 0.24088888888888885,
+    "train/got_key": 0.09555555555555556,
+    "train/opened_door": 1.0,
+    "train/pickups": 0.1711111111111111,
+    "train/door_flips": 15.24,
+    "train/tampers": 16.486666666666665,
+    "train/key_pickups": 0.1711111111111111,
+    "train/locked_door_opens": 0.061111111111111116,
+    "train/len_median": 270.0
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 739,
+    "tampers_per_episode": 16.345060893098783,
+    "solved_episodes": 0,
+    "solved_len_mean": null
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 270.0,
+      "success": 0.0,
+      "coverage": 0.22812499999999997,
+      "got_key": 0.0625,
+      "opened_door": 1.0,
+      "pickups": 0.1875,
+      "door_flips": 15.359375,
+      "tampers": 16.53125,
+      "key_pickups": 0.1875,
+      "locked_door_opens": 0.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 270.0,
+      "success": 0.0,
+      "coverage": 0.19999999999999998,
+      "got_key": 0.0,
+      "opened_door": 0.0,
+      "pickups": 0.0,
+      "door_flips": 0.0,
+      "tampers": 4.1875,
+      "key_pickups": 0.0,
+      "locked_door_opens": 0.0
+    }
+  }
+}

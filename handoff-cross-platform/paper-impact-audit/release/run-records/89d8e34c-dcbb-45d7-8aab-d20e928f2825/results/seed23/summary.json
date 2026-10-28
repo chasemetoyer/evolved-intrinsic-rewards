@@ -1,0 +1,83 @@
+{
+  "seed": 23,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 0.5,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 444416,
+  "first_goal_step": 22656,
+  "coverage_after_solved": 0.3573481357352325,
+  "final_train": {
+    "r_int_mean": 0.01858594972226355,
+    "r_int_std": 0.1663663304514355,
+    "train/ret": 0.9597998263888888,
+    "train/int_ret": 0.2613850563144984,
+    "train/len": 28.507777777777783,
+    "train/success": 0.9988888888888889,
+    "train/coverage": 0.3406451612903226,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 2.0022222222222226,
+    "train/door_flips": 1.1444444444444446,
+    "train/len_median": 26.5
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.96266845703125,
+      "int_ret": 0.0,
+      "len": 26.546875,
+      "success": 1.0,
+      "coverage": 0.32560483870967744,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.75,
+      "door_flips": 1.15625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.972841796875,
+      "int_ret": 0.0,
+      "len": 19.3125,
+      "success": 1.0,
+      "coverage": 0.3235887096774194,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.675972900390625,
+      "int_ret": 0.0,
+      "len": 868.34375,
+      "success": 0.8125,
+      "coverage": 0.19885587431693988,
+      "got_key": 0.9375,
+      "opened_door": 0.921875,
+      "pickups": 49.875,
+      "door_flips": 9.3125
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0309259033203125,
+      "int_ret": 0.0,
+      "len": 2480.921875,
+      "success": 0.03125,
+      "coverage": 0.03270150273224044,
+      "got_key": 0.578125,
+      "opened_door": 0.328125,
+      "pickups": 0.578125,
+      "door_flips": 676.171875
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "seed": 36,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "event_bonus",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": true,
+    "explore_bonus": 0.0008014183193531415
+  },
+  "first_solved_step": 307200,
+  "first_goal_step": 9888,
+  "coverage_after_solved": 0.4081682027649769,
+  "final_train": {
+    "r_int_mean": 0.022201490278045338,
+    "r_int_std": 0.07007803519566853,
+    "train/ret": 0.9668546875000001,
+    "train/int_ret": 0.5171254110098299,
+    "train/len": 23.57,
+    "train/success": 1.0,
+    "train/coverage": 0.3510035842293907,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.0,
+    "train/door_flips": 1.0,
+    "train/len_median": 22.333333333333332
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9683813476562501,
+      "int_ret": 0.0,
+      "len": 22.484375,
+      "success": 1.0,
+      "coverage": 0.344758064516129,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97172119140625,
+      "int_ret": 0.0,
+      "len": 20.109375,
+      "success": 1.0,
+      "coverage": 0.33518145161290325,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.7774652099609375,
+      "int_ret": 0.0,
+      "len": 610.765625,
+      "success": 0.921875,
+      "coverage": 0.2797984972677595,
+      "got_key": 1.0,
+      "opened_door": 0.96875,
+      "pickups": 1.46875,
+      "door_flips": 0.96875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.20023010253906248,
+      "int_ret": 0.0,
+      "len": 2048.234375,
+      "success": 0.203125,
+      "coverage": 0.11475409836065573,
+      "got_key": 0.515625,
+      "opened_door": 0.34375,
+      "pickups": 0.515625,
+      "door_flips": 0.34375
+    }
+  }
+}

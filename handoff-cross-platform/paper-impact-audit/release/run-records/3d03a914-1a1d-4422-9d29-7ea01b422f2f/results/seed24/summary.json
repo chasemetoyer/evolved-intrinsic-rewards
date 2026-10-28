@@ -1,0 +1,83 @@
+{
+  "seed": 24,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 0.5,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 1638400,
+  "first_goal_step": 19856,
+  "coverage_after_solved": 0.602427843803056,
+  "final_train": {
+    "r_int_mean": -0.0018104370101355016,
+    "r_int_std": 0.11888484987947676,
+    "train/ret": 0.67800625,
+    "train/int_ret": -0.08989502502256075,
+    "train/len": 222.57333333333335,
+    "train/success": 0.9099999999999999,
+    "train/coverage": 0.5889605734767025,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.991111111111111,
+    "train/pickups": 15.399999999999999,
+    "train/door_flips": 2.8922222222222222,
+    "train/len_median": 152.88888888888889
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.80222412109375,
+      "int_ret": 0.0,
+      "len": 140.640625,
+      "success": 1.0,
+      "coverage": 0.5574596774193548,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 8.46875,
+      "door_flips": 3.21875
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.171875,
+      "got_key": 0.8125,
+      "opened_door": 0.296875,
+      "pickups": 0.8125,
+      "door_flips": 56.765625
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.2293048095703125,
+      "int_ret": 0.0,
+      "len": 2014.421875,
+      "success": 0.375,
+      "coverage": 0.47967896174863384,
+      "got_key": 1.0,
+      "opened_door": 0.875,
+      "pickups": 136.265625,
+      "door_flips": 13.09375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.07257513661202186,
+      "got_key": 0.53125,
+      "opened_door": 0.046875,
+      "pickups": 0.53125,
+      "door_flips": 118.453125
+    }
+  }
+}

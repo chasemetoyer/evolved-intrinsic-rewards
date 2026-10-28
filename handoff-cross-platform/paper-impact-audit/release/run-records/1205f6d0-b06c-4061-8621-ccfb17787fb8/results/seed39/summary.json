@@ -1,0 +1,83 @@
+{
+  "seed": 39,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 2.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 479232,
+  "first_goal_step": 8960,
+  "coverage_after_solved": 0.3753591397849462,
+  "final_train": {
+    "r_int_mean": 0.021305269458227687,
+    "r_int_std": 0.16211387515068054,
+    "train/ret": 0.9633125000000001,
+    "train/int_ret": 1.0951888489117845,
+    "train/len": 26.08888888888889,
+    "train/success": 1.0,
+    "train/coverage": 0.35462365591397854,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.9555555555555557,
+    "train/door_flips": 1.3177777777777777,
+    "train/len_median": 22.38888888888889
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.96354736328125,
+      "int_ret": 0.0,
+      "len": 25.921875,
+      "success": 1.0,
+      "coverage": 0.3588709677419355,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.03125,
+      "door_flips": 1.25
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97185302734375,
+      "int_ret": 0.0,
+      "len": 20.015625,
+      "success": 1.0,
+      "coverage": 0.3467741935483871,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.309627685546875,
+      "int_ret": 0.0,
+      "len": 1799.28125,
+      "success": 0.421875,
+      "coverage": 0.17418032786885246,
+      "got_key": 0.875,
+      "opened_door": 0.75,
+      "pickups": 121.703125,
+      "door_flips": 20.0625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.030903930664062502,
+      "int_ret": 0.0,
+      "len": 2480.984375,
+      "success": 0.03125,
+      "coverage": 0.02587090163934426,
+      "got_key": 0.515625,
+      "opened_door": 0.265625,
+      "pickups": 1.5,
+      "door_flips": 500.140625
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "seed": 36,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 835584,
+  "first_goal_step": 15600,
+  "coverage_after_solved": 0.36973303670745267,
+  "final_train": {
+    "r_int_mean": 0.025618216436770227,
+    "r_int_std": 0.16768571899996865,
+    "train/ret": 0.9691781249999999,
+    "train/int_ret": 0.5565853769841811,
+    "train/len": 21.917777777777776,
+    "train/success": 1.0,
+    "train/coverage": 0.3462007168458781,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.198888888888889,
+    "train/door_flips": 1.017777777777778,
+    "train/len_median": 20.88888888888889
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.97027099609375,
+      "int_ret": 0.0,
+      "len": 21.140625,
+      "success": 1.0,
+      "coverage": 0.34879032258064513,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0625,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9719189453125,
+      "int_ret": 0.0,
+      "len": 19.96875,
+      "success": 1.0,
+      "coverage": 0.3397177419354839,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.5088690185546876,
+      "int_ret": 0.0,
+      "len": 1290.328125,
+      "success": 0.625,
+      "coverage": 0.19262295081967212,
+      "got_key": 0.9375,
+      "opened_door": 0.921875,
+      "pickups": 59.15625,
+      "door_flips": 8.171875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0616925048828125,
+      "int_ret": 0.0,
+      "len": 2402.296875,
+      "success": 0.0625,
+      "coverage": 0.03722677595628415,
+      "got_key": 0.578125,
+      "opened_door": 0.375,
+      "pickups": 0.578125,
+      "door_flips": 596.140625
+    }
+  }
+}

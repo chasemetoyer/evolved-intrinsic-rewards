@@ -1,0 +1,25 @@
+# run 2026-10-26T19:23:55Z
+{
+  "episodes": 50,
+  "mean_episode_length": 638.88,
+  "mean_return": {
+    "novelty": 0.28714743262380305,
+    "explore_1/640": 0.23412872633015014,
+    "explore_1/160": 0.03904323606911934
+  },
+  "mean_positive_part": {
+    "novelty": 0.28714743262380305,
+    "explore_1/640": 0.33043671585754053,
+    "explore_1/160": 1.6718649597026525
+  },
+  "coef": {
+    "explore_1/640": {
+      "rule": "primary (match mean return)",
+      "value": 1.226451094338975
+    },
+    "explore_1/160": {
+      "rule": "primary (match mean return)",
+      "value": 7.35460124553861
+    }
+  }
+}

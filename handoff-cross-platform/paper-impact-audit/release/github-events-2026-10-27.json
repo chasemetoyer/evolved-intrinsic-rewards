@@ -1,0 +1,337 @@
+{
+ "note": "GitHub REST API repos/chasemetoyer/agents/events, fetched 2026-10-27 (GitHub retains repository events for about 90 days). Third-party record of branch creation and push times; the pre-registration files themselves were never pushed.",
+ "fetched": "2026-10-27",
+ "count": 55,
+ "events": [
+  {
+   "created_at": "2026-10-26T15:20:03Z",
+   "type": "CreateEvent",
+   "ref": "orx/r1-growth-1-60",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:03Z",
+   "type": "CreateEvent",
+   "ref": "orx/r4-growth-1-40-coef-1-norm-on-reference",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-27T04:34:21Z",
+   "type": "CreateEvent",
+   "ref": "orx/r5-cal-keycorridors3r2-5m",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-27T04:34:21Z",
+   "type": "CreateEvent",
+   "ref": "orx/r5-cal-keycorridors3r2-2m",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-27T04:34:20Z",
+   "type": "CreateEvent",
+   "ref": "orx/r5-cal-unlockpickup-2m",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-27T04:34:20Z",
+   "type": "CreateEvent",
+   "ref": "orx/r5-b11-tamper-cost-1-0-b1-settings",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-27T04:34:20Z",
+   "type": "CreateEvent",
+   "ref": "orx/r5-cal-keycorridors3r1-2m",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/n5-growth-1-40-coef-0-5",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:45:40Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-3-homeostatic-satiation-growth-1-640",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/b6-tamper-off-growth-1-40-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/b2-tamper-on-growth-1-160-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/b4-tamper-on-growth-1-40-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:34Z",
+   "type": "CreateEvent",
+   "ref": "orx/a1c-urgency-control-growth-0-no-refill",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T06:51:27Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-1-ppo-task-reward-only",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:32:13Z",
+   "type": "CreateEvent",
+   "ref": "orx/lp-curiosity-fixed-lag-coef-1-0",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:32:13Z",
+   "type": "CreateEvent",
+   "ref": "orx/lp-curiosity-fixed-lag-coef-0-3",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:01:23Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-3-ppo-learning-progress-bonus",
+   "head": "ec73986bcb997116948499394e80e15c36950f52"
+  },
+  {
+   "created_at": "2026-10-26T19:24:35Z",
+   "type": "CreateEvent",
+   "ref": "orx/b1-tamper-on-growth-1-160-norm-on",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/b5-tamper-off-growth-1-40-norm-on",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/b7-tamper-off-growth-1-160-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:35Z",
+   "type": "CreateEvent",
+   "ref": "orx/a1a-urgency-growth-1-640",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:34Z",
+   "type": "CreateEvent",
+   "ref": "orx/a1b-urgency-growth-1-160",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/a2a-explore-only-satiation-growth-1-640",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:38Z",
+   "type": "CreateEvent",
+   "ref": "orx/b8-constant-event-bonus-control-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T19:24:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/b3-tamper-on-growth-1-40-norm-on",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:05Z",
+   "type": "CreateEvent",
+   "ref": "orx/r7-growth-1-40-coef-1-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:04Z",
+   "type": "CreateEvent",
+   "ref": "orx/r8-growth-1-40-coef-2-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:04Z",
+   "type": "CreateEvent",
+   "ref": "orx/r5-growth-1-40-coef-2-norm-on",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:03Z",
+   "type": "CreateEvent",
+   "ref": "orx/r2-growth-1-30",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:04Z",
+   "type": "CreateEvent",
+   "ref": "orx/r10-fixed-pay-once-control-all-events-once-scale",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:04Z",
+   "type": "CreateEvent",
+   "ref": "orx/r6-growth-1-40-coef-0-5-norm-off",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T15:20:03Z",
+   "type": "CreateEvent",
+   "ref": "orx/r3-growth-1-40-coef-0-5-norm-on",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/control-pay-each-event-once-per-episode",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/n4-growth-1-80-coef-1-29-matched-to-anchor",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:50:18Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-2b-episodic-novelty-coef-1e-3",
+   "head": "3b9c37181bc135698062ea362b5c858d59ce866e"
+  },
+  {
+   "created_at": "2026-10-26T07:01:22Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-2-ppo-rnd-novelty-bonus",
+   "head": "823dd489ba932e18ebd8e9ba3ba42fbc4e841db8"
+  },
+  {
+   "created_at": "2026-10-26T06:53:16Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-1-ppo-task-reward-only",
+   "head": "3921767595490f084bac86728d90e9c961e4be66"
+  },
+  {
+   "created_at": "2026-10-26T07:32:13Z",
+   "type": "CreateEvent",
+   "ref": "orx/lp-curiosity-fixed-lag-coef-0-1",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:29:52Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-2b-episodic-novelty-coef-3e-3",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/n6-growth-1-20",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:37Z",
+   "type": "CreateEvent",
+   "ref": "orx/n3-growth-1-80",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/n2-growth-1-40-at-gamma-0-95",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T10:15:36Z",
+   "type": "CreateEvent",
+   "ref": "orx/n1-anchor-replicate-growth-1-40-seeds-10-19",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T08:00:34Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-2b-episodic-novelty-coef-3e-3",
+   "head": "c2793401b5bde7d4bf555d4c10ae3319232cfb75"
+  },
+  {
+   "created_at": "2026-10-26T07:45:41Z",
+   "type": "CreateEvent",
+   "ref": "orx/control-constant-event-bonus-no-satiation",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:45:41Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-3-homeostatic-satiation-growth-1-40",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:45:41Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-3-homeostatic-satiation-growth-1-160",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:28:28Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-1-10-seeds-powered-baseline",
+   "head": "c162296ca1917b2c1cf9fbf4e24016a3e67a4681"
+  },
+  {
+   "created_at": "2026-10-26T07:39:32Z",
+   "type": "PushEvent",
+   "ref": "refs/heads/orx/agent-2b-episodic-novelty-coef-3e-4",
+   "head": "9f0da4d97594775449840295ea2398665eafe198"
+  },
+  {
+   "created_at": "2026-10-26T07:29:52Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-2b-episodic-novelty-coef-1e-3",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:29:52Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-2b-episodic-novelty-coef-3e-4",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T07:28:21Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-1-10-seeds-powered-baseline",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T06:53:35Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-3-ppo-learning-progress-bonus",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T06:44:10Z",
+   "type": "CreateEvent",
+   "ref": "main",
+   "head": null
+  },
+  {
+   "created_at": "2026-10-26T06:53:35Z",
+   "type": "CreateEvent",
+   "ref": "orx/agent-2-ppo-rnd-novelty-bonus",
+   "head": null
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+  "seed": 22,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 303104,
+  "first_goal_step": 17344,
+  "coverage_after_solved": 0.3543125960061444,
+  "final_train": {
+    "r_int_mean": 0.025646631916364033,
+    "r_int_std": 0.16060123840967813,
+    "train/ret": 0.9690093749999998,
+    "train/int_ret": 0.561602739225297,
+    "train/len": 22.037777777777777,
+    "train/success": 1.0,
+    "train/coverage": 0.34623655913978496,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.427777777777778,
+    "train/door_flips": 1.0155555555555555,
+    "train/len_median": 20.88888888888889
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9703149414062501,
+      "int_ret": 0.0,
+      "len": 21.109375,
+      "success": 1.0,
+      "coverage": 0.3326612903225807,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.3125,
+      "door_flips": 1.03125
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97132568359375,
+      "int_ret": 0.0,
+      "len": 20.390625,
+      "success": 1.0,
+      "coverage": 0.3321572580645162,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.329251708984375,
+      "int_ret": 0.0,
+      "len": 1747.90625,
+      "success": 0.4375,
+      "coverage": 0.35382513661202186,
+      "got_key": 1.0,
+      "opened_door": 0.796875,
+      "pickups": 204.953125,
+      "door_flips": 1.140625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.046204833984375,
+      "int_ret": 0.0,
+      "len": 2441.90625,
+      "success": 0.046875,
+      "coverage": 0.1255976775956284,
+      "got_key": 0.765625,
+      "opened_door": 0.25,
+      "pickups": 236.984375,
+      "door_flips": 0.25
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "seed": 37,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.03333333333333333,
+      0.03333333333333333,
+      0.03333333333333333
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 5344,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.0022097443191645048,
+    "r_int_std": 0.1107039608889156,
+    "train/ret": 0.17019618055555552,
+    "train/int_ret": -1.1764767825267173,
+    "train/len": 542.8333333333334,
+    "train/success": 0.33555555555555555,
+    "train/coverage": 0.6475985663082438,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.6211111111111111,
+    "train/pickups": 46.663333333333334,
+    "train/door_flips": 1.2466666666666666,
+    "train/len_median": 640.0
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.212958984375,
+      "int_ret": 0.0,
+      "len": 518.5625,
+      "success": 0.421875,
+      "coverage": 0.6935483870967742,
+      "got_key": 1.0,
+      "opened_door": 0.703125,
+      "pickups": 45.796875,
+      "door_flips": 1.28125
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.16582661290322576,
+      "got_key": 0.96875,
+      "opened_door": 0.0,
+      "pickups": 269.609375,
+      "door_flips": 0.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0705023193359375,
+      "int_ret": 0.0,
+      "len": 2395.015625,
+      "success": 0.125,
+      "coverage": 0.4555157103825136,
+      "got_key": 1.0,
+      "opened_door": 0.421875,
+      "pickups": 162.859375,
+      "door_flips": 2.515625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.07231898907103824,
+      "got_key": 0.609375,
+      "opened_door": 0.0,
+      "pickups": 674.296875,
+      "door_flips": 0.0
+    }
+  }
+}

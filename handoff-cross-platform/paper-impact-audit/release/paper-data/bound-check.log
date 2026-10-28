@@ -1,0 +1,27 @@
+MiniGrid-DoorKey-8x8-v0 {"min": 9, "median": 17.0, "max": 26} max_steps 640 (212.2s)
+  growth      0: tamper+shortest min undisc 1.712 disc 1.491 | shortest min undisc 1.713 disc 1.442 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.713 disc 1.442 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'shortest': 200}
+  growth  1/640: tamper+shortest min undisc 1.711 disc 1.490 | shortest min undisc 1.712 disc 1.439 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.712 disc 1.439 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'shortest': 200}
+  growth  1/160: tamper+shortest min undisc 1.696 disc 1.477 | shortest min undisc 1.698 disc 1.419 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.706 disc 1.419 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'shortest': 200}
+      rich_tamper_family: min undisc 1.711 disc 1.481 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'T0': 143, 'T0+Tgoal': 57}
+  growth   1/80: tamper+shortest min undisc 1.641 disc 1.437 | shortest min undisc 1.642 disc 1.369 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.688 disc 1.386 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 80, 'shortest': 120}
+  growth   1/60: tamper+shortest min undisc 1.582 disc 1.396 | shortest min undisc 1.583 disc 1.320 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.667 disc 1.364 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 160, 'shortest': 40}
+  growth   1/40: tamper+shortest min undisc 1.414 disc 1.261 | shortest min undisc 1.416 disc 1.187 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.606 disc 1.307 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 191, 'shortest': 9}
+      rich_tamper_family: min undisc 1.709 disc 1.462 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'T0+Tgoal': 200}
+  growth   1/30: tamper+shortest min undisc 1.180 disc 1.063 | shortest min undisc 1.181 disc 0.989 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.522 disc 1.211 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 194, 'shortest': 6}
+  growth   1/20: tamper+shortest min undisc 0.509 disc 0.495 | shortest min undisc 0.453 disc 0.371 | layouts <= 0.75 (undisc/disc): tamper 19/27, no-tamper 20/35
+      rich_no_tamper_family: min undisc 1.212 disc 0.966 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 199, 'shortest': 1}
+MiniGrid-KeyCorridorS3R1-v0 {"min": 14, "median": 15.0, "max": 15} max_steps 270 (17.0s)
+  growth  1/160: tamper+shortest min undisc 1.690 disc 1.558 | shortest min undisc 1.693 disc 1.540 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.693 disc 1.540 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'shortest': 200}
+      rich_tamper_family: min undisc 1.693 disc 1.558 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'T0': 200}
+  growth   1/40: tamper+shortest min undisc 1.590 disc 1.469 | shortest min undisc 1.594 disc 1.442 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.633 disc 1.461 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 200}
+  growth   1/20: tamper+shortest min undisc 1.272 disc 1.184 | shortest min undisc 1.275 disc 1.144 | layouts <= 0.75 (undisc/disc): tamper 0/0, no-tamper 0/0
+      rich_no_tamper_family: min undisc 1.451 disc 1.286 | layouts <= 0.75 (undisc/disc) 0/0 | best variants {'regrab': 200}

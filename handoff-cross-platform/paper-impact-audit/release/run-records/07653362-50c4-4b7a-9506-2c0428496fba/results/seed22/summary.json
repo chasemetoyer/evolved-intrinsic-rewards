@@ -1,0 +1,84 @@
+{
+  "seed": 22,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "event_bonus",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": true,
+    "explore_bonus": 0.0008014183193531415
+  },
+  "first_solved_step": 235520,
+  "first_goal_step": 3968,
+  "coverage_after_solved": 0.3600222469410457,
+  "final_train": {
+    "r_int_mean": 0.023914263480239444,
+    "r_int_std": 0.07246381872230107,
+    "train/ret": 0.9693453125000002,
+    "train/int_ret": 0.5168689571455535,
+    "train/len": 21.798888888888886,
+    "train/success": 1.0,
+    "train/coverage": 0.35100358422939065,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.001111111111111,
+    "train/door_flips": 1.0,
+    "train/len_median": 20.5
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9692822265625,
+      "int_ret": 0.0,
+      "len": 21.84375,
+      "success": 1.0,
+      "coverage": 0.3462701612903226,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9706005859375,
+      "int_ret": 0.0,
+      "len": 20.90625,
+      "success": 1.0,
+      "coverage": 0.3382056451612903,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.4989617919921875,
+      "int_ret": 0.0,
+      "len": 1322.953125,
+      "success": 0.640625,
+      "coverage": 0.4048838797814207,
+      "got_key": 1.0,
+      "opened_door": 0.859375,
+      "pickups": 2.46875,
+      "door_flips": 0.859375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0309149169921875,
+      "int_ret": 0.0,
+      "len": 2480.953125,
+      "success": 0.03125,
+      "coverage": 0.1676058743169399,
+      "got_key": 0.828125,
+      "opened_door": 0.359375,
+      "pickups": 0.828125,
+      "door_flips": 0.359375
+    }
+  }
+}

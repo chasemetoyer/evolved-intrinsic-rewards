@@ -1,0 +1,83 @@
+{
+  "seed": 35,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 26160,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.0009800546556814676,
+    "r_int_std": 0.11376560644971,
+    "train/ret": 0.04842899305555556,
+    "train/int_ret": -0.8127448778035533,
+    "train/len": 613.7788888888889,
+    "train/success": 0.11555555555555554,
+    "train/coverage": 0.60415770609319,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.8855555555555555,
+    "train/pickups": 45.647777777777776,
+    "train/door_flips": 9.727777777777778,
+    "train/len_median": 640.0
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.034775390625,
+      "int_ret": 0.0,
+      "len": 621.9375,
+      "success": 0.09375,
+      "coverage": 0.5786290322580645,
+      "got_key": 1.0,
+      "opened_door": 0.859375,
+      "pickups": 46.328125,
+      "door_flips": 10.359375
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.2006048387096774,
+      "got_key": 0.921875,
+      "opened_door": 0.328125,
+      "pickups": 49.671875,
+      "door_flips": 138.140625
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0123809814453125,
+      "int_ret": 0.0,
+      "len": 2533.671875,
+      "success": 0.03125,
+      "coverage": 0.4209357923497268,
+      "got_key": 1.0,
+      "opened_door": 0.625,
+      "pickups": 157.796875,
+      "door_flips": 10.109375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.08307718579234973,
+      "got_key": 0.671875,
+      "opened_door": 0.078125,
+      "pickups": 207.1875,
+      "door_flips": 79.84375
+    }
+  }
+}

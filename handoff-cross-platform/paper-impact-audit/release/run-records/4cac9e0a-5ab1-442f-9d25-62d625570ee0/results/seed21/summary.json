@@ -1,0 +1,83 @@
+{
+  "seed": 21,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.016666666666666666,
+      0.016666666666666666,
+      0.016666666666666666
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 8112,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.001452018364539577,
+    "r_int_std": 0.08330827703078587,
+    "train/ret": 0.20500659722222223,
+    "train/int_ret": -0.3499671356139394,
+    "train/len": 520.6866666666667,
+    "train/success": 0.37222222222222223,
+    "train/coverage": 0.5441935483870968,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.9266666666666666,
+    "train/pickups": 37.13666666666667,
+    "train/door_flips": 10.744444444444445,
+    "train/len_median": 640.0
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.2009326171875,
+      "int_ret": 0.0,
+      "len": 523.78125,
+      "success": 0.375,
+      "coverage": 0.5433467741935484,
+      "got_key": 1.0,
+      "opened_door": 0.9375,
+      "pickups": 38.828125,
+      "door_flips": 10.3125
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.2515120967741935,
+      "got_key": 0.796875,
+      "opened_door": 0.296875,
+      "pickups": 0.8125,
+      "door_flips": 163.703125
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0269927978515625,
+      "int_ret": 0.0,
+      "len": 2492.109375,
+      "success": 0.03125,
+      "coverage": 0.4576502732240437,
+      "got_key": 1.0,
+      "opened_door": 0.71875,
+      "pickups": 143.75,
+      "door_flips": 10.296875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.09861680327868852,
+      "got_key": 0.65625,
+      "opened_door": 0.046875,
+      "pickups": 16.59375,
+      "door_flips": 117.53125
+    }
+  }
+}

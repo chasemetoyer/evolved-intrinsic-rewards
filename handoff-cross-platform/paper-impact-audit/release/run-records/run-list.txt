@@ -1,0 +1,59 @@
+ID                                    STATUS  EXPERIMENT                                                   COMMIT   DURATION  UPDATED
+────────────────────────────────────  ──────  ───────────────────────────────────────────────────────────  ───────  ────────  ───────
+6571bce6-65f1-4227-aade-a4b2a6ac357e  done    R5-C6: KeyCorridorS3R1, task reward only, norm on            719b092  17m39s    1h ago
+35c840cd-2776-4817-9ac0-1f21f93c5e4d  done    R5-C5: KeyCorridorS3R1, growth 1/160, norm on, tamper on     38e161b  16m55s    1h ago
+2153e884-0de7-4f7c-b942-27507be467ef  done    R5-C4: KeyCorridorS3R1, growth 1/20, norm off, tamper off    47b1efd  17m09s    1h ago
+aa29d1c3-78f8-4c3d-b58f-ee45102255cf  done    R5-C3: KeyCorridorS3R1, growth 1/20, norm on, tamper off     172ecaf  16m55s    2h ago
+ad87a02f-7353-4a64-8c32-e981408dd774  done    R5-C2: KeyCorridorS3R1, growth 1/40, norm on, tamper off     f0b45e4  17m09s    2h ago
+c14516de-0174-4001-b8b2-5125e8aa49d3  done    R5-C1: KeyCorridorS3R1, growth 1/160, norm on, tamper off    bbf025b  17m39s    2h ago
+bd005cb8-bad4-4321-a593-e4d3fc1a39fd  done    R5-cal: KeyCorridorS3R1 2M                                   03653e5  7m20s     8h ago
+896b2863-59b7-44c0-addc-4091b9bab73c  done    R5-B11: tamper cost 1.0 (B1 settings)                        5aad719  17m25s    8h ago
+a25b7c99-84bb-4cbb-a742-5594444b7fc1  done    R5-B10: tamper cost 0.1 (B1 settings)                        92fdc96  17m09s    8h ago
+b971c18d-0fd7-4c68-b627-eb098b0b3569  done    R5-B9: tamper cost 0.01 (B1 settings)                        aead816  17m25s    9h ago
+1c7b2eda-0224-4a90-9755-26051f89f3f0  done    R5-A2: task reward only, norm off                            ea79ab9  17m09s    9h ago
+022a3e90-09c1-43dc-8c4e-3a266d1ee5d0  done    R5-A1: task reward only, norm on                             17bbeb8  17m09s    9h ago
+fb860207-8246-4393-b352-0f74a9e88da2  done    B8: constant event-bonus control, norm off                   62e8cf3  19m09s    11h ago
+115c6566-d1b2-4ea2-9c6d-06b31317381c  done    B7: tamper off, growth 1/160, norm off                       5bdd1fd  17m55s    12h ago
+a6e11900-bf82-4dd1-8f07-48a8f55cffbc  done    B6: tamper off, growth 1/40, norm off                        6e22cfd  19m25s    12h ago
+4d3b84f0-9f83-4f15-a20b-34c32c14ed36  done    B5: tamper off, growth 1/40, norm on                         5e3112e  19m39s    12h ago
+f0a40d20-3702-4087-803c-8db52fefaf1e  done    B4: tamper on, growth 1/40, norm off                         c29e9bc  19m25s    12h ago
+78c44406-6e63-466f-b309-8dfb82bfe663  done    B3: tamper on, growth 1/40, norm on                          757a487  19m39s    13h ago
+a8f5efc4-63e7-4a55-8020-08f7e7cff7bb  done    B2: tamper on, growth 1/160, norm off                        f7e7477  36m39s    16h ago
+bb00e7e5-65d0-4411-a236-2dacc19f0e63  done    B1: tamper on, growth 1/160, norm on                         454b36e  37m09s    16h ago
+2d94fc36-66b9-40db-b192-13b54b12bb6c  done    A2c: episodic novelty 1e-3 (round-4 seeds)                   bd0b972  21m35s    17h ago
+7a364fed-a875-4d3d-a366-21a162be994d  done    A2b: explore-only satiation, growth 1/160                    b28164f  22m51s    17h ago
+224a7d96-a57b-451d-b33e-1e156bf74fbe  done    A2a: explore-only satiation, growth 1/640                    226d8da  23m11s    17h ago
+1d549b2f-663c-4931-b8d5-6ce42c0a523c  done    A1c: urgency control, growth 0 (no refill)                   0eff1e0  18m09s    18h ago
+3629f9a7-8038-452a-bbef-53d5685e0a85  done    A1b: urgency, growth 1/160                                   1533734  17m55s    18h ago
+a97113a1-8de5-4940-a548-26275a829e4f  done    A1a: urgency, growth 1/640                                   224fdd0  18m23s    18h ago
+07653362-50c4-4b7a-9506-2c0428496fba  done    R10: fixed pay-once control (all events once, scaled views)  25e0dba  17m39s    20h ago
+a7cb164e-db25-4428-aa9f-165f0c285814  done    R9: early-goal intervention (R4 + goal-room starts)          f8e9cdf  18m09s    20h ago
+1205f6d0-b06c-4061-8621-ccfb17787fb8  done    R8: growth 1/40, coef 2, norm off                            6a23adb  18m25s    20h ago
+135d1475-e4cf-4a4f-8ca2-be0d84c1d409  done    R7: growth 1/40, coef 1, norm off                            6906eaf  17m25s    20h ago
+89d8e34c-dcbb-45d7-8aab-d20e928f2825  done    R6: growth 1/40, coef 0.5, norm off                          efcf42e  17m09s    21h ago
+c3d67c09-a955-4220-a44e-bfbb68308bce  done    R5: growth 1/40, coef 2, norm on                             2b08b47  18m25s    21h ago
+fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0  done    R4: growth 1/40, coef 1, norm on (reference)                 3ecf1f5  18m55s    21h ago
+3d03a914-1a1d-4422-9d29-7ea01b422f2f  done    R3: growth 1/40, coef 0.5, norm on                           4c52a3c  18m09s    22h ago
+eea13605-38d3-4e23-adf3-a10cfc5bcbae  done    R2: growth 1/30                                              dd7aff2  21m55s    22h ago
+4cac9e0a-5ab1-442f-9d25-62d625570ee0  done    R1: growth 1/60                                              7a0884e  20m25s    22h ago
+5b13189d-614e-48c4-96b7-431838a41e1c  done    Control: pay each event once per episode                     ad3f26f  9m53s     1d ago
+bced806e-eccb-434b-be50-ad91f57a9dfb  done    N6: growth 1/20                                              c0167bc  9m52s     1d ago
+eb8555bd-afbf-484d-b1fc-30faa29648b6  done    N5: growth 1/40, coef 0.5                                    ba9d428  9m36s     1d ago
+b58ec6e0-291c-47a2-838b-57783d35214f  done    N4: growth 1/80, coef 1.29 (matched to anchor)               517d0ac  9m37s     1d ago
+af4373da-8be6-4a69-aa61-404ce37103d1  done    N3: growth 1/80                                              885f907  9m36s     1d ago
+74b2b2d0-7f04-48ec-a1f8-6d78af326fd2  done    N2: growth 1/40 at gamma 0.95                                01705bf  10m53s    1d ago
+ed5147b6-c861-48b2-b9ff-1952774d5658  done    N1: anchor replicate, growth 1/40, seeds 10-19               4959833  10m53s    1d ago
+2aa5ebb2-1b41-406b-8829-376d79dafec7  done    Control: constant event bonus (no satiation)                 966f59e  10m22s    1d ago
+6bfabf4a-3e40-4d7c-b98a-ded07a5a0b69  done    Agent 3: homeostatic satiation, growth 1/40                  a58e220  10m22s    1d ago
+6e507c3e-5837-4ef3-b6d9-05a7c3990468  done    Agent 3: homeostatic satiation, growth 1/160                 f386bd2  10m52s    1d ago
+6518a3c8-0446-45de-805c-5f5e8aa3258e  done    Agent 3: homeostatic satiation, growth 1/640                 b1239f7  10m36s    1d ago
+ff8134b3-6be3-4be1-af8d-93025bacc3ff  done    LP curiosity (fixed lag), coef 1.0                           2761c16  18m09s    1d ago
+06112c45-bbb1-483d-b67f-8d5f101f9548  done    LP curiosity (fixed lag), coef 0.3                           c4da278  17m53s    1d ago
+44f45322-8c3b-4836-a7ec-fea842e96ef2  done    LP curiosity (fixed lag), coef 0.1                           1336b5e  18m39s    1d ago
+fe575571-c9c9-4359-9601-01357806f84e  done    Agent 2b: episodic novelty, coef 3e-3                        c279340  10m36s    1d ago
+02ba39cc-b063-4915-964d-8c0e3c4582da  done    Agent 2b: episodic novelty, coef 1e-3                        3b9c371  9m52s     1d ago
+18023803-f34a-4d1a-883b-d6e5d0d92e15  done    Agent 2b: episodic novelty, coef 3e-4                        9f0da4d  10m22s    1d ago
+192da9b3-39e6-4c23-9acf-956034d5adce  done    Agent 1 @ 10 seeds (powered baseline)                        c162296  10m38s    1d ago
+a3199664-35fd-4cc1-a784-9a1a1df9ef4e  done    Agent 3: PPO + learning-progress bonus                       ec73986  16m37s    1d ago
+ad70eefb-00de-42f2-bf97-54ac3a985458  done    Agent 2: PPO + RND novelty bonus                             823dd48  15m23s    1d ago
+2ca77641-1a17-4073-aa84-0addd68ee6c3  done    Agent 1: PPO, task reward only                               3921767  7m50s     1d ago

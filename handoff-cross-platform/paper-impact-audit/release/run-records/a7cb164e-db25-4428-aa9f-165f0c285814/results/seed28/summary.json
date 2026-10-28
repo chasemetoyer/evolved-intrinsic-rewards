@@ -1,0 +1,83 @@
+{
+  "seed": 28,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 272,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.0008942664490960953,
+    "r_int_std": 0.11990672763850954,
+    "train/ret": 0.27707656249999996,
+    "train/int_ret": -0.4458212163325192,
+    "train/len": 476.39000000000004,
+    "train/success": 0.47000000000000003,
+    "train/coverage": 0.6023297491039427,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 41.343333333333334,
+    "train/door_flips": 40.07444444444444,
+    "train/len_median": 627.1666666666666
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.34464111328124997,
+      "int_ret": 0.0,
+      "len": 434.921875,
+      "success": 0.5625,
+      "coverage": 0.5816532258064517,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 36.59375,
+      "door_flips": 40.296875
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.219758064516129,
+      "got_key": 0.84375,
+      "opened_door": 0.625,
+      "pickups": 2.859375,
+      "door_flips": 351.203125
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.1355853271484375,
+      "int_ret": 0.0,
+      "len": 2249.890625,
+      "success": 0.265625,
+      "coverage": 0.5459357923497268,
+      "got_key": 1.0,
+      "opened_door": 0.984375,
+      "pickups": 135.0625,
+      "door_flips": 41.421875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.16197062841530058,
+      "got_key": 0.8125,
+      "opened_door": 0.65625,
+      "pickups": 0.875,
+      "door_flips": 1572.015625
+    }
+  }
+}

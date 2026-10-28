@@ -1,0 +1,86 @@
+{
+  "seed": 78,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 188224,
+  "first_goal_step": 11680,
+  "coverage_after_solved": 0.602943820224719,
+  "final_train": {
+    "r_int_mean": 0.024125971727901034,
+    "r_int_std": 0.2197008513742023,
+    "train/ret": 0.9441518518518518,
+    "train/int_ret": 0.40149990268879465,
+    "train/len": 16.754444444444445,
+    "train/success": 1.0,
+    "train/coverage": 0.6,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.691111111111111,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.0,
+    "train/key_pickups": 1.691111111111111,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 16.77777777777778
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 11843,
+    "tampers_per_episode": 0.0,
+    "solved_episodes": 11843,
+    "solved_len_mean": 16.877986996538038
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.9432291666666666,
+      "int_ret": 0.0,
+      "len": 17.03125,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.859375,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.859375,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.9422916666666666,
+      "int_ret": 0.0,
+      "len": 17.3125,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.0,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 2.0,
+      "locked_door_opens": 1.0
+    }
+  }
+}

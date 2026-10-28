@@ -1,0 +1,83 @@
+{
+  "seed": 24,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 2.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 825344,
+  "first_goal_step": 25120,
+  "coverage_after_solved": 0.38948275862068965,
+  "final_train": {
+    "r_int_mean": 0.018877733084890578,
+    "r_int_std": 0.16122622622383964,
+    "train/ret": 0.9608109375,
+    "train/int_ret": 1.0587291415765259,
+    "train/len": 27.86777777777778,
+    "train/success": 1.0,
+    "train/coverage": 0.3631899641577061,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 2.0477777777777777,
+    "train/door_flips": 1.5544444444444445,
+    "train/len_median": 24.166666666666668
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.96275634765625,
+      "int_ret": 0.0,
+      "len": 26.484375,
+      "success": 1.0,
+      "coverage": 0.357358870967742,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.1875,
+      "door_flips": 1.359375
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97224853515625,
+      "int_ret": 0.0,
+      "len": 19.734375,
+      "success": 1.0,
+      "coverage": 0.3331653225806452,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.51851806640625,
+      "int_ret": 0.0,
+      "len": 1298.4375,
+      "success": 0.75,
+      "coverage": 0.32616120218579236,
+      "got_key": 1.0,
+      "opened_door": 0.96875,
+      "pickups": 138.453125,
+      "door_flips": 114.09375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0308160400390625,
+      "int_ret": 0.0,
+      "len": 2481.234375,
+      "success": 0.03125,
+      "coverage": 0.0508025956284153,
+      "got_key": 0.765625,
+      "opened_door": 0.453125,
+      "pickups": 3.609375,
+      "door_flips": 952.984375
+    }
+  }
+}

@@ -1,0 +1,28 @@
+2026-10-27T04:34:33Z launching A1 (d7be5be1-effc-4725-b472-e6bc5c479a71)
+  run  022a3e90-09c1-43dc-8c4e-3a266d1ee5d0
+2026-10-27T04:52:09Z launching A2 (23a09f6e-a040-4495-8f2b-268f573c7ba9)
+  run  1c7b2eda-0224-4a90-9755-26051f89f3f0
+2026-10-27T05:09:46Z launching B9 (2afb5e2d-5cd2-4e5d-89c4-5a4d4abd4e40)
+  run  b971c18d-0fd7-4c68-b627-eb098b0b3569
+2026-10-27T05:27:23Z launching B10 (acf327c7-3ce5-4c86-8677-697effb0b73f)
+  run  a25b7c99-84bb-4cbb-a742-5594444b7fc1
+2026-10-27T05:44:59Z launching B11 (c86cbfa4-804f-4821-91c4-c0b9faaed655)
+  run  896b2863-59b7-44c0-addc-4091b9bab73c
+2026-10-27T06:02:35Z Parts A and B finished; starting Part C calibration
+2026-10-27T06:02:36Z launching cal-KeyCorridorS3R1-2M (a3ab6052-7c10-4136-add4-020dc0ecd873)
+  run  bd005cb8-bad4-4321-a593-e4d3fc1a39fd
+2026-10-27T06:10:38Z calibration KeyCorridorS3R1 2M run bd005cb8-bad4-4321-a593-e4d3fc1a39fd: 5/5 seeds solve
+2026-10-27T06:10:38Z SELECTED KeyCorridorS3R1 2M; stop. Next: second lock (amendment), then C1-C6.
+2026-10-27T11:34:10Z launching C1 (999963d8-15e6-4e5a-9f7b-cc187e983812)
+  run  c14516de-0174-4001-b8b2-5125e8aa49d3
+2026-10-27T11:52:47Z launching C2 (c9d93561-f8c4-4f6a-a3df-36e01f34a863)
+  run  ad87a02f-7353-4a64-8c32-e981408dd774
+2026-10-27T12:10:23Z launching C3 (5c3bf33b-e253-4eab-9afe-7a0029b7d0cb)
+  run  aa29d1c3-78f8-4c3d-b58f-ee45102255cf
+2026-10-27T12:27:59Z launching C4 (bb407e10-b050-459f-95e9-bf0947387de2)
+  run  2153e884-0de7-4f7c-b942-27507be467ef
+2026-10-27T12:45:35Z launching C5 (7be513c6-add4-4713-b32c-83fda7193482)
+  run  35c840cd-2776-4817-9ac0-1f21f93c5e4d
+2026-10-27T13:03:12Z launching C6 (c6ee228c-f343-46c4-a632-06ced733e6b0)
+  run  6571bce6-65f1-4227-aade-a4b2a6ac357e
+2026-10-27T13:21:48Z Part C finished

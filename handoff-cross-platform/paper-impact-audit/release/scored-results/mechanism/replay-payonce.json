@@ -1,0 +1,261 @@
+{
+  "config": {
+    "kind": "event_bonus",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": true
+  },
+  "gamma": 0.99,
+  "seeds": {
+    "0": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 31.0,
+      "drops": 13.5,
+      "toggles": 1.25,
+      "ret": 0.0,
+      "r_int": 11.67999854683876,
+      "v_start": 1.9376539587974548,
+      "v_mean": 2.018607047619298,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.332,
+        "right": 0.13,
+        "forward": 0.391,
+        "pickup": 0.069,
+        "drop": 0.074,
+        "toggle": 0.002,
+        "done": 0.001
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.09836065573770492,
+      "p_novel_after_other_action": 0.21513217866909753
+    },
+    "1": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 23.0,
+      "drops": 14.5,
+      "toggles": 5.0,
+      "ret": 0.0,
+      "r_int": 17.10249786451459,
+      "v_start": 2.4250617027282715,
+      "v_mean": 2.4196321856230494,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.196,
+        "right": 0.183,
+        "forward": 0.481,
+        "pickup": 0.05,
+        "drop": 0.083,
+        "toggle": 0.008,
+        "done": 0.0
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.14411764705882352,
+      "p_novel_after_other_action": 0.3153153153153153
+    },
+    "2": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 26.5,
+      "drops": 19.75,
+      "toggles": 2.75,
+      "ret": 0.0,
+      "r_int": 12.309998467564583,
+      "v_start": 1.9391219913959503,
+      "v_mean": 2.02276428504847,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.269,
+        "right": 0.207,
+        "forward": 0.373,
+        "pickup": 0.062,
+        "drop": 0.084,
+        "toggle": 0.004,
+        "done": 0.002
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.10723860589812333,
+      "p_novel_after_other_action": 0.2267946959304984
+    },
+    "3": {
+      "success": 0.25,
+      "len": 593.25,
+      "pickups": 22.5,
+      "drops": 18.25,
+      "toggles": 10.5,
+      "ret": 0.09074218750000002,
+      "r_int": 10.909998647868633,
+      "v_start": 2.203319400548935,
+      "v_mean": 2.094200208790654,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.331,
+        "right": 0.191,
+        "forward": 0.326,
+        "pickup": 0.075,
+        "drop": 0.059,
+        "toggle": 0.018,
+        "done": 0.001
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.11708860759493671,
+      "p_novel_after_other_action": 0.21098687408847835
+    },
+    "4": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 27.5,
+      "drops": 16.0,
+      "toggles": 2.75,
+      "ret": 0.0,
+      "r_int": 16.112497989088297,
+      "v_start": 2.06941556930542,
+      "v_mean": 2.129001414915547,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.232,
+        "right": 0.168,
+        "forward": 0.463,
+        "pickup": 0.076,
+        "drop": 0.055,
+        "toggle": 0.004,
+        "done": 0.002
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.12238805970149254,
+      "p_novel_after_other_action": 0.29842696629213483
+    },
+    "5": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 25.75,
+      "drops": 17.75,
+      "toggles": 2.75,
+      "ret": 0.0,
+      "r_int": 19.374997578561306,
+      "v_start": 2.2242505848407745,
+      "v_mean": 2.324370117112994,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.223,
+        "right": 0.161,
+        "forward": 0.48,
+        "pickup": 0.054,
+        "drop": 0.078,
+        "toggle": 0.004,
+        "done": 0.0
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.14201183431952663,
+      "p_novel_after_other_action": 0.3609360936093609
+    },
+    "6": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 25.75,
+      "drops": 19.5,
+      "toggles": 4.75,
+      "ret": 0.0,
+      "r_int": 20.61249742284417,
+      "v_start": 2.5847200751304626,
+      "v_mean": 2.605288812983781,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.171,
+        "right": 0.242,
+        "forward": 0.448,
+        "pickup": 0.05,
+        "drop": 0.081,
+        "toggle": 0.007,
+        "done": 0.001
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.20059880239520958,
+      "p_novel_after_other_action": 0.37646001796945194
+    },
+    "7": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 35.25,
+      "drops": 17.0,
+      "toggles": 0.5,
+      "ret": 0.0,
+      "r_int": 14.267498221248388,
+      "v_start": 2.1413771510124207,
+      "v_mean": 2.0089455659501256,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.146,
+        "right": 0.303,
+        "forward": 0.384,
+        "pickup": 0.077,
+        "drop": 0.088,
+        "toggle": 0.001,
+        "done": 0.002
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.0924170616113744,
+      "p_novel_after_other_action": 0.2731524789522919
+    },
+    "8": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 21.0,
+      "drops": 20.25,
+      "toggles": 1.25,
+      "ret": 0.0,
+      "r_int": 17.912497762590647,
+      "v_start": 2.2906970381736755,
+      "v_mean": 2.3891823747660963,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.183,
+        "right": 0.264,
+        "forward": 0.427,
+        "pickup": 0.041,
+        "drop": 0.082,
+        "toggle": 0.002,
+        "done": 0.002
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.17891373801916932,
+      "p_novel_after_other_action": 0.32443257676902537
+    },
+    "9": {
+      "success": 0.0,
+      "len": 640.0,
+      "pickups": 34.25,
+      "drops": 26.5,
+      "toggles": 3.5,
+      "ret": 0.0,
+      "r_int": 17.642497796565294,
+      "v_start": 2.3092188239097595,
+      "v_mean": 2.257319913059473,
+      "mean_need": [],
+      "action_freq": {
+        "left": 0.186,
+        "right": 0.236,
+        "forward": 0.412,
+        "pickup": 0.079,
+        "drop": 0.079,
+        "toggle": 0.005,
+        "done": 0.002
+      },
+      "grasp_probe": null,
+      "p_novel_after_drop_or_pickup": 0.15841584158415842,
+      "p_novel_after_other_action": 0.32884972170686455
+    }
+  }
+}

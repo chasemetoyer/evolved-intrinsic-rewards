@@ -1,0 +1,83 @@
+{
+  "seed": 32,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 2.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 901120,
+  "first_goal_step": 4224,
+  "coverage_after_solved": 0.3811026392961877,
+  "final_train": {
+    "r_int_mean": 0.014188536856737401,
+    "r_int_std": 0.1519368655151791,
+    "train/ret": 0.94941875,
+    "train/int_ret": 1.045368035245273,
+    "train/len": 35.968888888888884,
+    "train/success": 1.0,
+    "train/coverage": 0.34985663082437274,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 3.3455555555555554,
+    "train/door_flips": 2.3022222222222224,
+    "train/len_median": 31.444444444444443
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9566479492187501,
+      "int_ret": 0.0,
+      "len": 30.828125,
+      "success": 1.0,
+      "coverage": 0.32913306451612906,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.6875,
+      "door_flips": 2.03125
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.96618408203125,
+      "int_ret": 0.0,
+      "len": 24.046875,
+      "success": 1.0,
+      "coverage": 0.3109879032258065,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.203125,
+      "door_flips": 4.390625
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.6580755615234375,
+      "int_ret": 0.0,
+      "len": 928.140625,
+      "success": 0.84375,
+      "coverage": 0.42358265027322406,
+      "got_key": 0.984375,
+      "opened_door": 0.96875,
+      "pickups": 115.46875,
+      "door_flips": 10.859375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.08615095628415301,
+      "got_key": 0.703125,
+      "opened_door": 0.28125,
+      "pickups": 66.125,
+      "door_flips": 594.828125
+    }
+  }
+}

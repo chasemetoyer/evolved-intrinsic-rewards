@@ -1,0 +1,83 @@
+{
+  "seed": 24,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 2.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 1476608,
+  "first_goal_step": 23456,
+  "coverage_after_solved": 0.46442928039702225,
+  "final_train": {
+    "r_int_mean": 0.00890353818734487,
+    "r_int_std": 0.1553128312031428,
+    "train/ret": 0.9351355902777778,
+    "train/int_ret": 0.7832611803638024,
+    "train/len": 45.96777777777778,
+    "train/success": 0.9977777777777779,
+    "train/coverage": 0.43602150537634415,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 3.4355555555555553,
+    "train/door_flips": 2.4933333333333336,
+    "train/len_median": 37.55555555555556
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9481445312500001,
+      "int_ret": 0.0,
+      "len": 36.875,
+      "success": 1.0,
+      "coverage": 0.4022177419354839,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.578125,
+      "door_flips": 2.25
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.7242260742187501,
+      "int_ret": 0.0,
+      "len": 178.328125,
+      "success": 0.75,
+      "coverage": 0.3477822580645161,
+      "got_key": 0.96875,
+      "opened_door": 0.9375,
+      "pickups": 1.046875,
+      "door_flips": 118.21875
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.7372967529296874,
+      "int_ret": 0.0,
+      "len": 720.578125,
+      "success": 0.90625,
+      "coverage": 0.4182035519125683,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 80.75,
+      "door_flips": 36.265625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.06864754098360655,
+      "got_key": 0.6875,
+      "opened_door": 0.390625,
+      "pickups": 0.6875,
+      "door_flips": 989.015625
+    }
+  }
+}

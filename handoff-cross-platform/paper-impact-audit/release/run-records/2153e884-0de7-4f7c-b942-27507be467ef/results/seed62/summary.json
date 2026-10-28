@@ -1,0 +1,86 @@
+{
+  "seed": 62,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 415936,
+  "first_goal_step": 2864,
+  "coverage_after_solved": 0.6335897435897435,
+  "final_train": {
+    "r_int_mean": 0.001811928051109943,
+    "r_int_std": 0.22565734883149466,
+    "train/ret": 0.8437703703703704,
+    "train/int_ret": 0.0521582527168923,
+    "train/len": 46.86888888888889,
+    "train/success": 1.0,
+    "train/coverage": 0.6186666666666666,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 5.162222222222223,
+    "train/door_flips": 5.713333333333334,
+    "train/tampers": 0.23888888888888887,
+    "train/key_pickups": 5.162222222222223,
+    "train/locked_door_opens": 2.8244444444444445,
+    "train/len_median": 41.77777777777778
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 4191,
+    "tampers_per_episode": 0.2677165354330709,
+    "solved_episodes": 4191,
+    "solved_len_mean": 47.71271772846576
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.8488541666666667,
+      "int_ret": 0.0,
+      "len": 45.34375,
+      "success": 1.0,
+      "coverage": 0.6187499999999999,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 5.359375,
+      "door_flips": 5.78125,
+      "tampers": 0.359375,
+      "key_pickups": 5.359375,
+      "locked_door_opens": 2.875
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 270.0,
+      "success": 0.0,
+      "coverage": 0.39999999999999997,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 133.015625,
+      "door_flips": 1.0,
+      "tampers": 0.0,
+      "key_pickups": 133.015625,
+      "locked_door_opens": 0.0
+    }
+  }
+}

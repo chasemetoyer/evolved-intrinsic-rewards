@@ -1,0 +1,83 @@
+{
+  "seed": 24,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 456704,
+  "first_goal_step": 16928,
+  "coverage_after_solved": 0.3701825127334465,
+  "final_train": {
+    "r_int_mean": 0.022471481727229223,
+    "r_int_std": 0.16423201064268747,
+    "train/ret": 0.9641968750000002,
+    "train/int_ret": 0.574283306755436,
+    "train/len": 25.459999999999997,
+    "train/success": 1.0,
+    "train/coverage": 0.34924731182795704,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 2.1144444444444446,
+    "train/door_flips": 1.108888888888889,
+    "train/len_median": 24.166666666666668
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9666674804687501,
+      "int_ret": 0.0,
+      "len": 23.703125,
+      "success": 1.0,
+      "coverage": 0.326108870967742,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.765625,
+      "door_flips": 1.296875
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9745336914062499,
+      "int_ret": 0.0,
+      "len": 18.109375,
+      "success": 1.0,
+      "coverage": 0.3382056451612903,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.9066766357421876,
+      "int_ret": 0.0,
+      "len": 265.453125,
+      "success": 1.0,
+      "coverage": 0.29619193989071035,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 24.296875,
+      "door_flips": 10.5625
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.1687548828125,
+      "int_ret": 0.0,
+      "len": 2128.875,
+      "success": 0.171875,
+      "coverage": 0.11449795081967212,
+      "got_key": 0.734375,
+      "opened_door": 0.5625,
+      "pickups": 0.734375,
+      "door_flips": 871.234375
+    }
+  }
+}

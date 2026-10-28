@@ -1,0 +1,86 @@
+{
+  "seed": 72,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 126464,
+  "first_goal_step": 4096,
+  "coverage_after_solved": 0.603891304347826,
+  "final_train": {
+    "r_int_mean": 0.02354613712264432,
+    "r_int_std": 0.21930679347780016,
+    "train/ret": 0.9439333333333333,
+    "train/int_ret": 0.3943276775793897,
+    "train/len": 16.820000000000004,
+    "train/success": 1.0,
+    "train/coverage": 0.6,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.7199999999999998,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.0,
+    "train/key_pickups": 1.7199999999999998,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 16.77777777777778
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 11872,
+    "tampers_per_episode": 0.0,
+    "solved_episodes": 11872,
+    "solved_len_mean": 16.837348382749326
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.9455729166666667,
+      "int_ret": 0.0,
+      "len": 16.328125,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.609375,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.609375,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.9461979166666667,
+      "int_ret": 0.0,
+      "len": 16.140625,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.53125,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.53125,
+      "locked_door_opens": 1.0
+    }
+  }
+}

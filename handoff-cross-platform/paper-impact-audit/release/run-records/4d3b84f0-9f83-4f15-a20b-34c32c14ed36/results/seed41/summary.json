@@ -1,0 +1,101 @@
+{
+  "seed": 41,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false
+  },
+  "first_solved_step": null,
+  "first_goal_step": 4160,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.0008760911166771419,
+    "r_int_std": 0.07591403110159768,
+    "train/ret": 0.0,
+    "train/int_ret": -0.9916198269526164,
+    "train/len": 640.0,
+    "train/success": 0.0,
+    "train/coverage": 0.49351254480286744,
+    "train/got_key": 1.0,
+    "train/opened_door": 0.0,
+    "train/pickups": 55.248888888888885,
+    "train/door_flips": 0.0,
+    "train/tampers": 8.011111111111111,
+    "train/len_median": 640.0
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 318,
+    "tampers_per_episode": 8.069182389937106,
+    "solved_episodes": 0,
+    "solved_len_mean": null
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.4702620967741935,
+      "got_key": 1.0,
+      "opened_door": 0.0,
+      "pickups": 58.203125,
+      "door_flips": 0.0,
+      "tampers": 7.875
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.2847782258064516,
+      "got_key": 0.984375,
+      "opened_door": 0.0,
+      "pickups": 222.25,
+      "door_flips": 0.0,
+      "tampers": 0.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.44945355191256825,
+      "got_key": 1.0,
+      "opened_door": 0.0,
+      "pickups": 123.140625,
+      "door_flips": 0.0,
+      "tampers": 39.28125
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.10732581967213115,
+      "got_key": 0.453125,
+      "opened_door": 0.0,
+      "pickups": 144.984375,
+      "door_flips": 0.0,
+      "tampers": 0.0
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "seed": 65,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "none",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.00625,
+      0.00625,
+      0.00625
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 1454032,
+  "first_goal_step": 3584,
+  "coverage_after_solved": 0.6647857142857141,
+  "final_train": {
+    "r_int_mean": 0.0,
+    "r_int_std": 0.0,
+    "train/ret": 0.886262962962963,
+    "train/int_ret": 0.0,
+    "train/len": 34.05444444444444,
+    "train/success": 0.9977777777777779,
+    "train/coverage": 0.6275555555555554,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.0244444444444443,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.11444444444444445,
+    "train/key_pickups": 1.0244444444444443,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 31.0
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 5719,
+    "tampers_per_episode": 0.11260709914320685,
+    "solved_episodes": 5710,
+    "solved_len_mean": 34.59982486865149
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.8913541666666667,
+      "int_ret": 0.0,
+      "len": 32.59375,
+      "success": 1.0,
+      "coverage": 0.621875,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 2.0,
+      "tampers": 0.09375,
+      "key_pickups": 1.0,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 270.0,
+      "success": 0.0,
+      "coverage": 0.475,
+      "got_key": 0.6875,
+      "opened_door": 0.6875,
+      "pickups": 0.6875,
+      "door_flips": 1.375,
+      "tampers": 0.0,
+      "key_pickups": 0.6875,
+      "locked_door_opens": 0.6875
+    }
+  }
+}

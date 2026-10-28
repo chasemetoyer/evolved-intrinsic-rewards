@@ -1,0 +1,1671 @@
+     Satisfied, Not Solving: Wireheading of Bounded
+     Homeostatic Rewards in Reinforcement Learning
+                                         Chase J. Metoyer
+                                      Northeastern University
+                                           Boston, MA
+                                   metoyer.c@northeastern.edu
+
+
+                                                 Abstract
+         Bounded intrinsic rewards are often assumed to be safe from exploitation: if a signal can
+     yield at most a fixed amount, gaming it should not pay. We test this for a homeostatic satiation
+     reward, in which needs build up and relieving them is rewarding, and give the agent a cheap
+     action that resets its needs. In MiniGrid DoorKey-8x8, PPO agents with this action solved 2 of
+     80 seeds, against 71 of 80 on the same seeds without it; in KeyCorridorS3R1, 0 of 20 against 20 of
+     20. Their policies stayed near uniform. The reward does not ask for this: a telescoping argument
+     caps any policy’s satiation return at the needs’ starting drive, and a post-hoc computation shows
+     that, at every growth rate we trained, a solving trajectory beats that cap on all sampled layouts.
+     In DoorKey with advantage normalization on, a satisfaction signal the agent could fill itself was
+     worse than none (11 of 20 solved with task reward alone, 1 of 20 with the tamperable signal), and
+     a per-press cost of 0.1 restored the task in every seed. Farming of positive reward cycles appeared
+     in DoorKey but not persistently in KeyCorridorS3R1. All predictions were pre-registered, and
+     hash-locked from round 3 on; 9 of our 23 hypotheses were not supported, and we report each.
+
+Keywords: reinforcement learning, intrinsic motivation, homeostatic reinforcement learning,
+wireheading, reward tampering, reward hacking, pre-registration
+
+
+1    Introduction
+Biological drives such as hunger are tuned so that relieving them usually serves the organism, and
+an intervention that relieves the drive directly can bypass that purpose. We use this picture only as
+motivation. This paper makes no claim about evolved or learned rewards. Its question is narrower:
+when an artificial agent is given a satisfaction signal of this kind, does the signal stay tied to the
+task it was designed to serve?
+    Reinforcement-learning (RL) designers add intrinsic rewards to help agents explore and reach
+subgoals [4, 6, 16, 18]. The optimal-reward view treats such signals as what a search over reward
+functions would select for the designer’s goal [23]. Homeostatic RL defines reward as the reduction of
+a drive over internal needs [13]. Such a reward is bounded: summed over an episode it telescopes to
+the drive at the start minus the drive at the end, so an agent cannot collect more relief than it began
+without. Bounded, homeostatic objectives have been proposed as a safer target for optimization
+because they reduce the incentive for extreme actions [19]. We ask whether boundedness protects
+such a signal from exploitation by a standard learner.
+    We separate two exploits throughout. Farming is gaming a positive reward cycle in the world,
+for example dropping and re-grabbing a key because each pick-up relieves a need. It is a form of
+reward hacking [2, 24]. Wireheading is tampering with the agent’s own reward channel, reward
+
+                                                     1
+tampering in the sense of Everitt et al. [11]. Here the agent presses an action that resets its needs.
+In Everitt et al.’s terms, our tamper action is reward-function-input tampering: it changes the need
+state the reward function reads, not the function itself.
+    We studied a three-need satiation reward with PPO [21] in two MiniGrid tasks [8], over four
+pre-registered rounds of experiments (rounds 2–5 of the project; round 1 was exploratory). Our
+contributions:
+    • Wireheading of a bounded signal replicates across tasks (Section 5.1). With a cheap
+      tamper action, PPO solved DoorKey-8x8 in 2/80 seeds against 71/80 on the same seeds
+      without it, and KeyCorridorS3R1 in 0/20 against 20/20. The tamper-on policies stayed near
+      uniform.
+    • The failure is not what the reward asks for (Section 4). A telescoping bound caps the
+      satiation return of every policy, and a post-hoc computation in the real environments shows a
+      solving trajectory above that cap on every sampled layout at every trained growth rate. The
+      optimum does tamper, once or twice per episode, and it still solves.
+    • A self-fillable satisfaction signal is worse than none, and a modest price restores
+      the task (Sections 5.2 and 5.3).
+    • Satiation gave no exploration benefit once the hand-wired subgoal rewards were controlled
+      for (Section 5.4).
+    • Farming is task-dependent (Section 5.5). It rises with need growth and depends on
+      advantage normalization in DoorKey, but appears only transiently in KeyCorridorS3R1.
+    • Pre-registration as method (Section 6). All 94 registered rows are reported, grouped into
+      23 hypotheses, together with 13 corrections. One section is devoted to the predictions that
+      failed.
+
+
+2     Background and related work
+Homeostatic and intrinsic rewards. Keramati and Gutkin [13] define reward as the reduction
+of a drive over physiological needs. They prove that seeking such rewards is equivalent to seeking
+physiological stability, and they show that discounting favours the shortest path in need space back
+to the set point. Singh et al. [23] cast intrinsic reward as the outcome of an evolutionary search
+over reward functions that maximize the designer’s fitness, and Zheng et al. [27] learn intrinsic
+rewards by gradient ascent on the extrinsic return. Exploration bonuses include learning progress
+[16], pseudo-counts [4], prediction error [5, 18], random network distillation [6], and impact-driven
+bonuses that use episodic counts [20]. Our “explore” need is satisfied by a 7×7 view not yet seen in
+the episode, so our exploration comparison (Section 5.4) uses episodic count novelty.
+
+Exploitation of intrinsic rewards. Burda et al. [5] gave a curiosity agent a “noisy TV” and
+an action to change its channel. They report that the TV drastically slows learning, although
+agents sometimes still converge to the extrinsic reward. Like our tamper action, the TV is an
+agent-controlled source of intrinsic reward that does nothing for the task. Unlike our satiation reward,
+prediction-error rewards are not capped. Villalobos-Arias et al. [25] measure how count-based,
+maximum-entropy and curiosity bonuses change PPO agents’ behaviour in MiniGrid, including
+DoorKey-8x8, and how a policy-invariant reward-matching correction reduces some reward hacking.
+Viteri et al. [26] construct an environment in which maximizing count-based, prediction-error,
+empowerment or information-gain objectives is Pareto-suboptimal at acquiring information.
+
+                                                   2
+Reward hacking, tampering and wireheading. Amodei et al. [2] list reward hacking and
+wireheading among concrete safety problems. Skalse et al. [24] define when a proxy reward is hackable.
+Pan et al. [17] show that more capable agents exploit misspecified rewards more, sometimes with
+sharp transitions. Everitt and Hutter [10] describe the wireheading problem as RL agents being
+“incentivised to shortcut the reward sensor for maximum reward”, and Everitt et al. [11] use causal
+influence diagrams to separate reward-function tampering from tampering with the reward function’s
+input. Majha et al. [14] categorize wireheading in partially embedded agents. Empirically, Behzadan
+et al. [3] derive parametric conditions under which Q-learning agents in Snake develop “addictive”
+policies toward a drug-like reward. Denison et al. [9] find that language models trained on gameable
+environments can generalize to tampering with their own reward. Africa and Ting [1] formalize
+conditions under which reward-channel control strictly dominates task-focused behaviour and observe
+grade inflation when self-grades set the reward. Çağatan and Zhao [7] find specification gaming by
+language-model agents in text versions of the AI-safety gridworlds. They also find that RL locked
+the agents into locally rewarding strategies before they discovered safer ones, and that entropy
+regularization did not fix this: low coefficients were ineffective and high ones destabilized training.
+This is the closest analogue we know of to our learner-failure result. One difference remains: in their
+Absent Supervisor task the exploit also scores higher on the reward being optimized. Osei [15] shows
+a deep Q-network that games a cheap sensor to near-maximal proxy reward while never achieving the
+true objective. Pihlakas and Pyykkö [19] propose gridworld benchmarks that emphasize homeostatic
+and bounded objectives.
+
+How this paper differs. In most of this work, exploiting the reward channel is optimal or
+dominant under the reward being optimized, and the question is whether agents find the exploit. In
+our setting abandoning the task is not optimal (Section 4). The optimum tampers once or twice per
+episode and still solves, yet PPO fails to learn the task. Our results are therefore about a learner
+failing on a bounded signal, not about the signal’s optimum. The noisy TV of Burda et al. [5] is the
+closest agent-controlled source of intrinsic reward. Its setting lacks the three features that make
+ours a learner failure: a provable cap on what the exploit can earn, a solving optimum on every
+checked layout, and a price threshold that restores the task. We are not aware of a prior study that
+pairs a provable return cap on a homeostatic signal with a demonstration that a standard learner
+still wireheads it.
+
+
+3    Setup
+Environments. MiniGrid DoorKey-8x8 (pick up a key, unlock a door, reach the goal; time limit
+640 steps) and KeyCorridorS3R1 (pick up a key, unlock a locked door, pick up a ball; time limit
+270) [8]. The agent sees a 7×7 egocentric symbolic view and has 7 actions. The seventh action,
+“done”, is a no-op in both tasks. The task reward is MiniGrid’s 1 − 0.9 t/T on success at step t with
+time limit T , and 0 otherwise.
+
+Satiation reward. The agent has needs h = (hexplore , hgrasp , hopen ) ∈ [0, 1]3 , reset to h0 = 0.5
+each in every episode. Each step,
+                                                                2      rtint = D(ht ) − D(ht+1 ),
+                                           
+       ht+1 = clip ht + g 1 − s ⊙ et , 0, 1 ,
+                                                           P
+                                                  D(h) =     k hk ,                                   (1)
+
+with growth g per step, relief s = (0.1, 1, 1) and event indicators et ∈ {0, 1}3 . The explore event is a
+7×7 view not yet seen this episode. The grasp event is a pick-up; in KeyCorridor it counts only a
+key pick-up. The open event is a door or box changing state; in KeyCorridor it counts only the
+
+                                                   3
+initially locked door opening. The policy and value function observe h alongside the image. PPO is
+trained on rext + coef · rint with coef = 1 unless stated. We refer to this reward as “satiation g”. It
+is our three-need variant of homeostatic reward, marked “(ours)” in figures and tables. “Task-only”
+agents use coef = 0.
+
+Tamper action. In tamper-on runs, “done” sets ht+1 = 0. The step therefore pays rtint = D(ht )
+through the same formula, and pressing at the start of an episode pays D(h0 ) = 0.75. In round 5,
+an optional per-press cost c is subtracted from the extrinsic reward PPO trains on and is not scaled
+by coef. Task metrics always use the raw environment reward.
+
+Controls.
+
+   • Explore-only satiation keeps only the explore need. Its coefficient was matched to episodic
+     novelty’s mean return under a uniform-random policy: 1.226 at growth 1/640 and 7.355 at
+     1/160.
+                               q
+   • Episodic novelty pays 1/ Nepisode (view) with coef 10−3 .
+   • A constant event bonus pays a fixed amount per event, with repeats paying, and so can be
+     farmed without bound.
+   • Pay-once controls pay each event once per episode.
+
+Learner. PPO in the style of CleanRL [12], with 16 parallel environments, 2M environment
+steps per seed, γ = 0.99 and per-minibatch advantage normalization (“norm on”) unless stated.
+The network is a small CNN with linear actor and critic heads. Hyperparameters are in Table 10.
+Truncation at the time limit is treated as termination, so the objective is the episodic return.
+
+Measures.
+
+   • Solve: mean rolling training success ≥ 0.9 over the final 10% of log rows.
+   • Success-curve area: mean training success over all log rows.
+   • Behaviour categories, applied in this order. Cycle-farm: more than 5 paid repeats (pick-ups
+     or door toggles) per episode. Prolong: the median episode reaches the time limit. Fail:
+     everything else. From round 5 on, cycle-farm applies only where repeats are paid.
+   • Tamper labels: tamperer means at least 1 press per episode; tamper-looper means more
+     than 5.
+   • Presses per step: the share of steps on “done” over the final 10% of rows, derived from the
+     logs and descriptive only.
+
+Pre-registration. From round 3 on, before any training in a round, we wrote that round’s
+predictions, plausible ranges, tests, hit rules and scoring scripts into a file and recorded its sha256
+(Appendix G). Later changes went into separate, timestamped amendments. The hash records
+were kept with the project’s result files, not in version control, and were not deposited with any
+timestamping service. They let a reader confirm that a released file matches the hash reported here,
+but the lock times are self-reported. The pre-registration files and their records were not under
+version control at lock time. They are archived with the other release materials (Appendix G).
+
+
+                                                  4
+Round 2’s predictions were fixed before its test runs but were not hashed. They were set after three
+calibration runs, which are therefore excluded as evidence (correction 1). Raw one-sided p is primary.
+Holm-adjusted p is secondary, over each round’s tests predicted significant: 17 in round 4 and 20 in
+round 5. Tests are Fisher exact for counts; Mann–Whitney U , exact or by permutation when there
+are ties; Jonckheere–Terpstra trend tests by permutation; and exact binomial tests. All fractions
+carry Clopper–Pearson 95% intervals. Interpretation was kept separate from scoring. Seeds are 0–9
+or 10–19 (round 2), 20–39 (round 3), 40–59 (DoorKey, rounds 4–5) and 60–79 (KeyCorridor), 20
+per run from round 3 on.
+
+
+4     Theory: abandoning the task is suboptimal
+Everything in this section except the value iteration was computed after all experiments had finished,
+and is post hoc. It was not pre-registered.
+
+Proposition 1 (Ceiling). For any policy, with or without the tamper action, any episode of length
+T and any γ ∈ (0, 1], the intrinsic return of the satiation reward (1) satisfies
+                     −1
+                    TX                                −1
+                                                     TX
+           Gint =         γ t rtint = D0 − (1 − γ)         γ t−1 Dt − γ T −1 DT ≤ D0 = D(h0 ) = 0.75,   (2)
+                    t=0                              t=1
+
+where Dt = D(ht ).
+                 −1 t                   −1 t
+Proof. Write Tt=0   γ (Dt − Dt+1 ) = Tt=0 γ Dt − Tt=1 γ t−1 Dt and collect terms. Both subtracted
+               P                           P                     P
+
+terms are non-negative because D ≥ 0 and γ ≤ 1. A tamper step sets Dt+1 = 0, which is a valid
+value of D, so the identity and the bound are unchanged.
+
+Corollary 1. An episode that does not solve the task earns no task reward, minus c per press if a
+cost applies. Its total return, discounted or not, is therefore at most 0.75, whatever it does: farming,
+tampering, or both. Consequently, if on a given layout some solving trajectory has total return above
+0.75, every optimal policy of that layout’s deterministic, fully observed problem solves.
+
+    The bound does not settle the comparison by itself. With fast need growth, walking to the goal
+lets the needs climb, and a solving trajectory’s intrinsic return can turn negative. We therefore
+computed solving returns directly.
+
+Check (a): solving trajectories in the real environments (post hoc). For 200 layouts per
+environment, we found the shortest solution by breadth-first search over the real MiniGrid dynamics.
+Shortest lengths were 9–26 steps (median 17) in DoorKey and 14–15 in KeyCorridor. We replayed
+each path in the real environment with the real satiation module, all three needs included. This
+includes the explore need, which the value iteration below omits. Four families of solving trajectories
+were compared with the cap:
+
+    (i) the shortest path;
+ (ii) one tamper at t = 0, then the shortest path;
+ (iii) a richer no-tamper family: the shortest path with one drop-and-regrab of the key inserted at
+       the best position;
+ (iv) in tamper-enabled settings only, a tamper family: a tamper at t = 0, optionally a second just
+      before the goal.
+
+                                                             5
+Table 1: Post-hoc check (a): total return (task plus satiation, discounted with γ = 0.99, coef 1)
+of solving trajectories in the real environments, over 200 layouts per environment. “min G” is the
+smallest return of the family’s best member across layouts. “≤ D0 ” counts layouts where that return
+is at most the non-solving cap D0 = 0.75. † Growth rates at which a tamper action was trained; the
+tamper-family rows are evaluated only there, and report how many layouts’ best member tampers
+once or twice. Script bound_check.py, data bound-check.json.
+                                  Shortest path    Tamper once + shortest         Richer family
+   Environment         Growth    min G     ≤ D0    min G              ≤ D0    min G               ≤ D0
+   DoorKey-8x8         0           1.442       0    1.491                 0    1.442                 0
+                       1/640       1.439       0    1.490                 0    1.439                 0
+                       1/160†      1.419       0    1.477                 0    1.419                 0
+                       1/80        1.369       0    1.437                 0    1.386                 0
+                       1/60        1.320       0    1.396                 0    1.364                 0
+                       1/40†       1.187       0    1.261                 0    1.307                 0
+                       1/30        0.989       0    1.063                 0    1.211                 0
+                       1/20        0.371      35    0.495                27    0.966                 0
+   KeyCorridorS3R1     1/160†      1.540       0    1.558                 0    1.540                 0
+                       1/40        1.442       0    1.469                 0    1.461                 0
+                       1/20        1.144       0    1.184                 0    1.286                 0
+   Tamper family (tamper at t = 0, optionally again just before the goal), tamper-tested rates only:
+   DoorKey-8x8       1/160      best member tampers: once 143, twice 57       1.481                  0
+   DoorKey-8x8       1/40       best member tampers: twice 200                1.462                  0
+   KeyCorridorS3R1 1/160        best member tampers: once 200                 1.558                  0
+
+
+Table 1 reports the worst layout for each family.
+  • Everywhere except DoorKey at 1/20 (KeyCorridor at every rate, DoorKey up to 1/30),
+    the two simple families exceed 0.75 on every layout, with smallest discounted return 0.989.
+  • DoorKey at g = 1/20: the shortest path falls to the cap or below on 35 of 200 layouts
+    (discounted), and tamper-once on 27. This was a gap. The richer family closes it: its smallest
+    return over all layouts is 0.966 discounted (1.212 undiscounted).
+  • Paid repeats in the best trajectory. At 1/20 the best member contains the drop-and-
+    regrab on 199 of 200 layouts. Our claim is therefore that solving beats every non-solving
+    policy, not that the optimum never repeats a paid event.
+  • Tamper-enabled settings: the tamper family’s smallest return is 1.462. Its best member
+    tampers once or twice.
+
+
+Check (b): the learned farmers (post hoc). We took the DoorKey 1/20 farmers from round
+2 (9 seeds) and computed their sampled-action returns from the start state of the same 200 layouts.
+  • Their mean discounted return was −0.936.
+  • Across all 1,749 non-solving episodes, the largest discounted return was −0.535 (undiscounted
+    −1.012), far below the cap.
+  • No farming policy beat the best solving trajectory on any layout (0 of 200).
+Farming the grasp need relieves one need while the other two saturate (Section 5.5).
+
+                                                    6
+Value iteration (registered in rounds 3–4, disclosed before locking in round 5; support-
+ing). Value iteration on a fixed 7×5 DoorKey-style grid, without the explore need and without
+MiniGrid’s time-dependent goal reward and time limit, gives the same picture.
+
+    • Round 3: the greedy optimum reaches the goal at every growth rate tested up to 1/4, at
+      γ = 0.99 and 0.95. It cycles only at g = 1/2, a rate we never trained.
+    • Round 4: with the tamper action, the optimum makes 1 press at 1/160 (at step 0; goal in 12
+      steps) and 2 presses at 1/40 (at steps 0, 11; goal in 13 steps).
+    • Round 5: with a per-press cost, the optimum stops tampering above c = 0.0114 at 1/160
+      and c = 0.035 at 1/40, and it reaches the goal at every cost. At zero cost, tampering is worth
+      only 0.012 (1/160) and 0.048 (1/40) over the no-tamper route.
+
+Scope and remaining gaps.
+
+ (1) The checks cover 200 sampled layouts per environment, coef 1 and γ = 0.99, not every layout
+     or coefficient.
+ (2) They concern the fully observed problem of each layout. The PPO agent sees only its 7×7
+     view, and we do not characterize the optimal partially observed policy.
+ (3) The tamper half covers only the growth rates at which tampering was trained: DoorKey 1/160
+     and 1/40, and KeyCorridor 1/160. Declining to tamper is always possible, so the no-tamper
+     families are also available in tamper-enabled environments, and with a press cost they lose
+     nothing. We nevertheless make no tamper-specific claim at other rates.
+ (4) At the tested settings no gap remains: on every sampled layout, at least one solving trajectory
+     exceeds the cap.
+
+
+5     Results
+5.1    C1: Wireheading replicates across tasks
+Results.
+
+    • DoorKey (round 4, Figure 1). With the tamper action, satiation agents solved 2/80 seeds,
+      against 71/80 on the same seeds without it. All four registered comparisons hit:
+
+         – growth 1/160, norm on: 1/20 vs 20/20 (p = 1.5 × 10−10 ; Holm p = 2.3 × 10−9 );
+         – 1/160, norm off: 0/20 vs 20/20 (p = 7.3 × 10−12 );
+         – 1/40, norm on: 1/20 vs 11/20 (p = 0.00062; Holm p = 0.006);
+         – 1/40, norm off: 0/20 vs 20/20 (p = 7.3 × 10−12 ).
+
+    • DoorKey replication (round 5). At a press cost of 0.01, below the small-grid optimum’s
+      tamper threshold, the same configuration solved 3/20, against 20/20 without a tamper action
+      (p = 1.3 × 10−8 ).
+    • KeyCorridorS3R1 (round 5). Satiation 1/160 + tamper solved 0/20, against 20/20
+      for satiation 1/160 and 20/20 for task-only (p = 7.3 × 10−12 and p = 7.3 × 10−12 ; Holm
+      p = 1.5 × 10−10 ). We had expected 6/20; the collapse was larger than predicted.
+
+
+
+                                                 7
+                                                                             task-only             satiation (ours)          satiation (ours) + tamper
+
+
+
+
+        solve rate (fraction of 20 seeds)
+                                                            20/20                   20/20                                           20/20                 20/20 20/20
+                                            1.00
+
+                                                    11/20                                                  11/20
+                                            0.75
+
+
+                                            0.50
+
+                                                                    1/20                                           1/20
+                                            0.25                             0/20           0/20                                            0/20                        0/20
+
+
+
+                                            0.00
+                                                         DoorKey                 DoorKey                    DoorKey                   DoorKey               KeyCorridorS3R1
+                                                   growth 1/160, norm on   growth 1/160, norm off     growth 1/40, norm on      growth 1/40, norm off    growth 1/160, norm on
+
+
+
+Figure 1: Solve rate with and without the tamper action, by setting. Bars show the fraction of 20
+seeds that solved; error bars are Clopper–Pearson 95% intervals. DoorKey runs are from round 4,
+the task-only runs and all KeyCorridorS3R1 runs from round 5. Seeds are the same within each
+DoorKey group. Script fig_solve_tamper.py.
+
+
+What the tamper-on agents do.
+
+  • Tamper use. Every DoorKey tamper-on seed pressed the tamper action at least once per
+    episode, and more than 5 times per episode (80/80 tamperers and 80/80 loopers; pooled
+    binomial p = 8.3 × 10−25 ). The threshold of more than 5 presses is low for episodes of 607–635
+    steps: a uniform-random policy presses about 91 times in a 640-step episode. The labels
+    therefore mostly reflect episode length. Presses per step, below, are the better measure.
+  • Task progress. They picked up the key in 73–92% of episodes but opened the door in only
+    14–17%. Their episodes ran 607–635 steps on average, near the 640-step limit.
+  • Satiation. Their undiscounted intrinsic return per episode was 0.71–0.74, against the cap of
+    0.75. Tamper-off runs that solved every seed earned 0.56–0.74. These are final-10% means
+    from the round-4 logs. Because the undiscounted return telescopes to D0 − DT , they show
+    only that episodes ended with the needs relieved.
+  • Replay (post hoc, descriptive; Table 2). We replayed the final tamper-on checkpoints
+    on the 200 check layouts of Section 4. The needs stayed low throughout: the time-averaged
+    drive was 0.018–0.043 (run medians), against a starting drive of 0.75. The discounted intrinsic
+    return was 0.694–0.722, which is 93–96% of the cap. The total discounted return, 0.694–0.723,
+    is less than half of what the best solving trajectories return on the same layouts (at least
+    1.462; Table 1). In that sense the agents were satisfied, but did not solve the task.
+  • Near-uniform policies (Figure 2). Final-10% policy entropy had medians of 1.878, 1.935,
+    1.844 and 1.934 in the four tamper-on runs. The maximum, ln 7, is 1.946. The matched tamper-
+    off medians were 0.067, 1.138, 0.290 and 0.598 (one-sided Mann–Whitney, p = 7.3 × 10−12
+    for each pair; largest Holm p = 1.5 × 10−10 ). The KeyCorridor tamper-on run’s median final
+    entropy was 1.85; this is exploratory, from the logs.
+
+   The tamper-on policies are near-uniform in their entropy, not in their press rate. Over the final
+10% of training, the median share of steps on “done” was 0.061 and 0.096 at growth 1/160 (norm
+on and off). At growth 1/40 it was 0.270 and 0.189. A uniform policy would press on 0.143 of steps.
+
+                                                                                                         8
+Table 2: Post-hoc replay of the round-4 tamper-on policies (descriptive, not pre-registered). Each of
+the 20 final checkpoints per setting played one sampled-action episode on each of the 200 check
+layouts (Section 4). Entries are the median and interquartile range across seeds of per-seed means;
+γ = 0.99, cap D0 = 0.75. The last column compares the replay’s share of steps on “done” with the
+training log. Script tamper_policy_returns.py.
+Satiation (ours)         Discounted intrinsic   Total discounted       Time-averaged drive    Presses per step
++ tamper                 return                 return                 D̄                     replay (training log)
+growth 1/160, norm on    0.694 [0.690, 0.696]   0.694 [0.691, 0.696]   0.035 [0.033, 0.036]   0.061 (0.061)
+growth 1/160, norm off   0.710 [0.707, 0.712]   0.710 [0.707, 0.712]   0.018 [0.017, 0.019]   0.096 (0.096)
+growth 1/40, norm on     0.722 [0.721, 0.724]   0.723 [0.721, 0.724]   0.023 [0.022, 0.024]   0.269 (0.270)
+growth 1/40, norm off    0.701 [0.700, 0.702]   0.702 [0.700, 0.703]   0.043 [0.042, 0.044]   0.188 (0.189)
+
+
+At the slower growth rate the agents pressed less often than chance, and at the faster rate more
+often. In the matched tamper-off runs, where “done” is a no-op, the shares were 0.000, 0.081, 0.000
+and 0.019 (Table 7). In three of the four settings the tamper-on agents pressed far more often than
+their tamper-off counterparts. The exception is growth 1/160 with normalization off, where the
+rates were close (0.096 against 0.081). A safer summary than “PPO learns to tamper” is therefore
+this: PPO fails to learn the task, its policy stays diffuse, and its press rate adjusts to the growth
+rate (descriptive).
+
+A caution about category labels in tamper-on runs. The behaviour categories put many
+tamper-on seeds in “cycle-farm”, for example 20/20 and 18/20 with normalization off (Table 7).
+We do not read these labels as farming. A policy that never learned the task already crosses the
+threshold of more than 5 repeats in long episodes: task-only PPO with normalization off had a
+median of 5.69 pick-ups per episode. The same artifact was found twice before (corrections 2 and 8,
+Appendix B). Our farming claims (Section 5.5) therefore use tamper-off runs only.
+
+5.2    C2: A self-fillable satisfaction signal is worse than none
+This claim is restricted to DoorKey with normalization on.
+   • Task-only beats a tamperable signal. Task-only PPO solved 11/20 seeds (95% CI [0.32,
+     0.77]; success-curve area 0.438). Satiation 1/160 + tamper solved 1/20 on the same seeds
+     (area 0.042; p = 0.00062, Holm p = 0.004; areas p = 7.8 × 10−6 ).
+   • Pooled across growth rates. Against the tamper-on runs at both growth rates (2/40, area
+     0.039), p = 2.6 × 10−5 for solves and p = 5 × 10−6 for areas.
+   • The signal itself helps. Without the tamper action, the same satiation signal is a strong
+     aid: satiation 1/160 solved 20/20.
+Only the reset action turns it into a liability.
+   With normalization off, task-only PPO never learned DoorKey (0/20). The registered comparison
+with satiation 1/160 + tamper, norm off (0/20) is therefore at the floor and missed (p = 1.000). Its
+companion test on curve areas came out as a “hit” (p = 0.005), but on areas of 0.025 against 0.022.
+We exclude that test as evidence (correction 11).
+
+5.3    C3: A modest price on tampering restores the task
+Results     (Figure 3, Table 3).
+
+                                                        9
+                                       (a)                               growth 1/160, norm on           (b)                      growth 1/160, norm off
+                                2.0     uniform (ln 7)
+
+
+
+
+        policy entropy (nats)
+                                1.5
+
+
+                                1.0                                   satiation (ours), no tamper
+                                                                      satiation (ours) + tamper
+
+                                0.5
+
+
+                                0.0
+
+                                       (c)                                growth 1/40, norm on           (d)                       growth 1/40, norm off
+                                2.0
+
+
+
+
+        policy entropy (nats)
+                                1.5
+
+
+                                1.0
+
+
+                                0.5
+
+
+                                0.0
+                                      0.0            0.5        1.0            1.5                2.0   0.0    0.5         1.0         1.5            2.0
+                                                    environment steps (millions)                               environment steps (millions)
+
+
+Figure 2: Policy entropy over training, satiation with tamper (orange) and without (blue), DoorKey-
+8x8, round 4. Lines show the mean across 20 seeds; bands are 95% t-intervals; the dashed line is the
+uniform maximum ln 7. The series are derived from the logs and descriptive; the registered test
+(D2) compares final-10% means. Script fig_entropy.py.
+
+
+   • Solves rise with cost. Solves went from 1/20 at zero cost to 3/20, 20/20 and 20/20 at costs
+     0.01, 0.1 and 1 (registered trend test, p = 5 × 10−6 ; Holm p = 6 × 10−5 ).
+   • Pressing falls with cost (p = 5 × 10−6 ). The registered statistic is presses per episode.
+     Episode lengths changed with cost: the median final-10% episode lasted 635, 627, 35 and 22
+     steps. We therefore describe pressing per step: medians 0.061, 0.043, 0.010 and 0.000.
+   • Cost 0.1 restores the task, but more slowly. At 0.1, 7/20 seeds still pressed at least once
+     per episode, yet every seed solved. Its success-curve area was 0.601, against 0.901 without a
+     tamper action and 0.816 at cost 1. This comparison is descriptive; no test was registered for it.
+
+    The response showed a sharp change between costs 0.01 and 0.1; intermediate costs were not
+tested. That interval contains the small-grid optimum’s threshold (c = 0.0114 at 1/160).
+
+   • At cost 0.01, just below the threshold, the optimum presses once at the start of an episode.
+     PPO kept pressing on 0.043 of steps throughout long episodes and lost the task.
+   • At cost 0.1, above it, pressing nearly stopped and the task recovered.
+
+The Step-0 threshold omits the explore need, so the training-relevant threshold may be higher. The
+first press in training relieves three needs, not two.
+
+5.4   C4: Satiation gave no exploration benefit once subgoals were controlled for
+Urgency. If needs that refill act as a time cost, satiation should speed up learning beyond paying
+each subgoal once. All four registered predictions missed. Satiation 1/160 (refilling) solved first at a
+
+
+                                                                                                  10
+                                                    (a)                                                                                       (b)
+                                                                                                                                      0.150                      uniform random policy (1/7)
+
+
+
+
+          solve rate (fraction of 20 seeds)
+                                                                                      20/20         20/20
+                                              1.0
+
+
+
+
+                                                                                                            tamper presses per step
+                                                              no tamper action (20/20)                                                0.125
+                                                                                                                                                             small-grid optimum
+                                              0.8                                                                                                            (explore need omitted)
+                                                                           small-grid optimum                                         0.100
+                                                                           (explore need omitted)
+                                              0.6
+                                                                                                                                      0.075
+                                                                    3/20
+                                              0.4                                                                                     0.050
+                                                     1/20
+
+                                              0.2                                                                                     0.025
+
+                                              0.0                                                                                     0.000
+                                                          0          0.01                0.1           1                                            0     0.01             0.1                 1
+                                                                  tamper cost per press                                                                 tamper cost per press
+
+
+Figure 3: Tamper-cost sweep, satiation 1/160 + tamper, DoorKey-8x8, norm on, seeds 40–59.
+(a) Solve rate with Clopper–Pearson 95% intervals; the dashed line is the same configuration without
+a tamper action. (b) Tamper presses per step over the final 10% of rows, one dot per seed, with the
+median and interquartile range (descriptive, from the logs); the dashed line is a uniform-random
+policy’s rate. The dotted line marks the cost above which the small-grid optimum stops tampering,
+computed without the explore need. Script fig_cost_sweep.py.
+
+Table 3: Cost sweep for satiation (ours) 1/160 + tamper, norm on (round 5; cost 0 and the no-tamper
+row are round-4 runs on the same seeds). Tamperers are seeds averaging at least one press per
+episode. Presses per step are descriptive. The registered trend test used presses per episode, which
+differ in episode length across costs.
+   Cost per press                                              Solved                95% CI         Curve area                           Presses per step, median [IQR]                  Tamperers
+   0                                                           1/20            [0.00, 0.25]         0.042                                0.061 [0.060, 0.063]                            20/20
+   0.01                                                        3/20            [0.03, 0.38]         0.147                                0.043 [0.042, 0.044]                            19/20
+   0.1                                                         20/20           [0.83, 1.00]         0.601                                0.010 [0.001, 0.020]                            7/20
+   1                                                           20/20           [0.83, 1.00]         0.816                                0.000 [0.000, 0.000]                            0/20
+   no tamper action                                            20/20           [0.83, 1.00]         0.901                                0.000 [0.000, 0.000]                            n/a
+
+
+median of 311,832 steps; the no-refill control (growth 0) at 283,424 (p = 0.708). The slowest refill,
+1/640, was the fastest at 221,640. Solved-episode lengths were 20.3, 19.7 and 19.6 steps (p = 0.744
+for refilling against no refill). By the registered reading of this miss, the satiation agent’s speed
+comes from the one-time subgoal payments, not from needs refilling.
+
+Fair exploration (Figure 4). Episodic novelty beat explore-only satiation on evaluation-curve
+area on both grids at both growth rates.
+
+   • 8×8 areas: 0.387 (1/640) and 0.060 (1/160), against 0.702 (p = 0.00018; p = 5 × 10−6 ).
+   • 16×16 areas: 0.328 and 0.011, against 0.579 (p = 0.002; p = 5 × 10−6 ).
+   • 8×8 solve counts: 11/20 and 0/20, against 17/20 (p = 0.041; p = 1.3 × 10−8 ).
+   • 16×16 solve counts: 6/20 and 0/20, against 8/20. The first comparison missed (p = 0.371);
+     the second hit (p = 0.002).
+
+
+
+                                                                                                            11
+        evaluation-curve area (mean success)
+                                                     (a)                                                   (b)
+                                               1.0    evaluated on DoorKey-8x8                              evaluated on DoorKey-16x16
+
+
+                                               0.8
+
+                                               0.6
+
+                                               0.4
+
+                                               0.2
+
+                                               0.0
+                                                        explore-only      explore-only     episodic           explore-only      explore-only     episodic
+                                                       satiation 1/640   satiation 1/160    novelty          satiation 1/640   satiation 1/160    novelty
+                                                            (ours)            (ours)                              (ours)            (ours)
+
+
+
+Figure 4: Explore-only satiation against episodic novelty (round 4). Each dot is one seed’s evaluation-
+curve area: mean success over 25 evaluation points on 16 fixed fresh layouts. Black markers show
+the mean with a bootstrap 95% interval (10,000 resamples). (a) Evaluated on the training size,
+DoorKey-8x8. (b) Evaluated on DoorKey-16x16. Script fig_explore_vs_novelty.py.
+
+
+As the pre-registration required on these outcomes, we record that the satiation agent’s earlier
+advantage came mainly from the hand-wired subgoals.
+
+5.5   C5: Farming is task-dependent
+DoorKey, normalization on                                                         (Figure 5a, Table 4).
+
+  • Farming rises with growth. No seed farmed at 1/640 or 1/160 (0/20 and 0/20). Farmers
+    were 4/20 at 1/60, 9/20 and 9/20 at 1/40 (two rounds), and 18/20 at 1/30. Round 2 registered
+    0/10 at 1/80 and 10/10 at 1/20 (re-scored: 0/10 and 9/10).
+  • Registered ordering tests. Two of three hit: 1/20 > 1/80 (p = 5.4 × 10−6 , on the registered
+    counts) and 1/30 > 1/40 (p = 0.003). 1/60 < 1/40 was not significant (p = 0.088).
+  • The DoorKey farming is genuine. Replays of the 1/20 farmers show 137–184 pick-ups
+    per 640-step episode, with pick-up and drop taking 48–63% of their actions.
+  • It does not pay. Their intrinsic return per episode was −1.54 to −1.27, far below the cap.
+    Farming keeps the grasp need low (mean 0.10–0.33), while the explore and open needs stay
+    near saturation (0.90–0.96 and 1.00). Like wireheading, it is a learning outcome, not an
+    optimum (Section 4).
+
+DoorKey, normalization off.
+
+  • No farming at all. No satiation seed farmed with normalization off: 0/60 at 1/40 across
+    three bonus sizes in round 3, against 27/60 with normalization on (an exploratory comparison);
+    and 0/20 and 0/20 at 1/160 and 1/40 in round 4.
+  • Registered replication. The round-4 test (9/20 vs 0/20) hit with p = 0.00061.
+  • Normalization off does not mute intrinsic rewards in general. An unbounded constant
+    event bonus was farmed in 20/20 seeds with normalization off (p = 9.5 × 10−7 ), at about 297
+    pick-ups and an intrinsic return of 77 per episode.
+
+
+                                                                                                      12
+Table 4: Cycle-farming seeds in tamper-off runs. “Registered count” uses the category rule fixed
+before the run. Re-scored counts apply the round-3 categories after the fact and are exploratory.
+Intervals are Clopper–Pearson 95%. a Round-2 rule: more than 5 pick-ups or door toggles over the
+final 10%, without the solve-first precedence; the round-2 test (1/20 vs 1/80) used these counts.
+b Round-1 calibration runs. c Three runs pooled, with bonus coefficients 0.5, 1 and 2.
+
+      Satiation (ours)        Growth   Round, seeds      Registered [95% CI]   Re-scored [95% CI]
+      DoorKey, norm on        1/640    1b , 0–9          –                     0/10 [0.00, 0.31]
+                              1/640    4, 40–59          0/20 [0.00, 0.17]     –
+                              1/160    1b , 0–9          –                     0/10 [0.00, 0.31]
+                              1/160    4, 40–59          0/20 [0.00, 0.17]     –
+                              1/80     2, 0–9            0/10a [0.00, 0.31]    0/10 [0.00, 0.31]
+                              1/60     3, 20–39          4/20 [0.06, 0.44]     –
+                              1/40     1b , 0–9          –                     5/10 [0.19, 0.81]
+                              1/40     2, 10–19          7/10a [0.35, 0.93]    6/10 [0.26, 0.88]
+                              1/40     3, 20–39          9/20 [0.23, 0.68]     –
+                              1/40     4, 40–59          9/20 [0.23, 0.68]     –
+                              1/30     3, 20–39          18/20 [0.68, 0.99]    –
+                              1/20     2, 0–9            10/10a [0.69, 1.00]   9/10 [0.55, 1.00]
+      DoorKey, norm off       1/160    4, 40–59          0/20 [0.00, 0.17]     –
+                              1/40     3c , 20–39        0/60 [0.00, 0.06]     –
+                              1/40     4, 40–59          0/20 [0.00, 0.17]     –
+      KeyCorridor, norm on    1/160    5, 60–79          0/20 [0.00, 0.17]     –
+                              1/40     5, 60–79          0/20 [0.00, 0.17]     –
+                              1/20     5, 60–79          0/20 [0.00, 0.17]     –
+      KeyCorridor, norm off   1/20     5, 60–79          0/20 [0.00, 0.17]     –
+
+
+
+
+                                                    13
+                                              (a)                                                                                                   (b)
+                                        1.0         satiation (ours), norm on, pre-registered                                                              satiation (ours), norm on
+
+
+
+
+                                                                                                               peak key pick-ups per episode
+                                                    satiation (ours), norm on, re-scored                                                                   satiation (ours), norm off
+
+
+
+
+         cycle-farm fraction of seeds
+                                                                                                                                                                                                    0/20
+                                                                                                                                               40                                                farm at end
+                                                    satiation (ours), norm off, pre-registered
+                                        0.8
+
+                                                                                                                                               30
+                                        0.6
+                                                                                                                                                                                                          0/20 farm
+                                                                                                                                                                                                          at end
+                                        0.4                                                                                                    20
+                                                                                                                                                                                    0/20
+                                                                                                                                                       0/20                      farm at end
+                                                                                                                                                    farm at end
+                                        0.2                                                                                                    10
+                                                                                                                                                                                               task-only, median peak
+
+                                                                                                                                                                                               cycle-farm threshold (5)
+                                        0.0
+                                                                                                                                               0
+                                              1/640                   1/160        1/80          1/40   1/20                                         1/160                         1/40            1/20
+                                                              need growth per step                                                                                   need growth per step
+
+
+Figure 5: Farming against need growth (tamper-off runs). (a) DoorKey-8x8: fraction of seeds
+in the cycle-farm category with Clopper–Pearson 95% intervals. Filled markers are counts under
+the category rule fixed before the run; open markers are round-1 and round-2 runs re-scored
+post hoc under the round-3 categories (exploratory). Points at the same growth rate are offset.
+(b) KeyCorridorS3R1: the highest rolling key pick-ups per episode reached during training, median
+and interquartile range across 20 seeds (exploratory, from the logs). No seed was in the cycle-farm
+category at the end of training (Table 4). Script fig_farming_growth.py.
+
+KeyCorridorS3R1.
+    • No persistent farming. No seed farmed at any growth rate: 0/20, 0/20 and 0/20 at 1/160,
+      1/40 and 1/20 (norm on), and 0/20 at 1/20 (norm off). Both registered farming tests missed
+      (p = 1.000; p = 1.000), and every seed solved.
+    • Transient repeats (exploratory, Figure 5b). Repeated key pick-ups appeared early in
+      training. Median peaks of the rolling count were 8.0, 12.4 and 28.3 pick-ups per episode at
+      the three growth rates, and 21.7 with normalization off. Task-only agents peaked at 5.7.
+    • Almost every seed abandoned them. By the end of training, median pick-ups were
+      1.0–1.7 per episode. A single seed (growth 1/20, normalization off) still averaged 5.16 while
+      solving the task. The solve-first category rule counts it as a solver, so it is one of 1/80 seeds
+      above the repeat threshold at the end.
+    • A faster task. KeyCorridorS3R1 was learned fast: median first-solved steps were 137k, 138k
+      and 202k with satiation, and 258k task-only.
+In our tests, persistent farming is specific to DoorKey.
+
+
+6     What our pre-registered predictions got wrong
+The 94 registered rows (60 hits, 32 misses, 2 unresolvable; Table 6) are correlated. The five rows
+for cost 0.1, for example, score one outcome. Table 5 therefore groups rows by hypothesis. Of
+23 hypotheses, 14 were supported and 9 were not. One row is excluded as evidence. The misses
+changed the paper. The title no longer claims that farming generalizes (the round-5 pre-registration
+still named farming and wireheading together), and the account of the tamper collapse changed
+from losing a learned behaviour to never learning it.
+
+                                                                                                          14
+Table 5: Pre-registered hypotheses, rows grouped by the outcome they score (h/m/u: hits, misses,
+unresolvable). Outcomes were assigned by the stated hit rules; the grouping is ours. Every row is
+listed in Table 6.
+Hypothesis                                          Round    Rows     Outcome         Note
+                                                             h/m/u
+A closed-form temptation index E(g, γ, coef)        2        2/7/0    not supported   discount and coefficient
+predicts the farming rate                                                             changes moved farming
+                                                                                      against E
+A pay-once control does not farm                    2        0/1/0    not supported   the > 5 rule labelled
+                                                                                      prolonging policies
+                                                                                      (correction 2)
+Learning trap: farming locks in before the goal     3        1/2/2    not supported   early-goal starts did not
+is found                                                                              reduce farming; two rows
+                                                                                      unresolvable
+The exact optimum (small grid) solves; with a       3, 4     2/0/0    supported
+tamper action it tampers and still solves
+Farming rises with need growth (DoorKey)            2, 3     5/1/0    supported       2 of 3 ordering tests
+Farming rises with bonus size; normalization        3        3/5/0    not supported   normalization off removed
+removes the scale effect                                                              farming at every size
+A fixed pay-once control solves                     3        3/0/0    supported
+Refilling needs speed learning (urgency)            4        0/4/0    not supported
+Explore-only satiation is a weaker exploration      4        7/1/0    supported       16×16 solve count missed
+signal than episodic novelty
+Agents adopt the tamper action                      4        5/0/0    supported       label mostly reflects episode
+                                                                                      length; see per-step rates
+                                                                                      (Section 5.1)
+Tampering displaces the task                        4        4/0/0    supported
+Normalization amplifies tamper-looping              4        0/2/0    not supported   every tamper-on seed
+                                                                                      looped; the label mostly
+                                                                                      reflects episode length
+Normalization enables farming (replication of       4        1/0/0    supported
+round 3)
+An unbounded constant bonus is farmed               4        1/0/0    supported
+without normalization
+A self-fillable satisfaction signal is worse than   5        4/1/0    supported       norm-off test at the floor
+none                                                                  (norm on)
+Tampering and the task respond to its price         5        12/0/0   supported
+(trends; costs 0.01 and 1)
+At cost 0.1 PPO keeps tampering and the task        5        0/5/0    not supported   one outcome, five rows
+stays displaced
+Wireheading generalizes to KeyCorridorS3R1          5        2/0/0    supported
+Farming generalizes to KeyCorridorS3R1              5        0/2/0    not supported   transient only (exploratory)
+Tamper-on agents meet the goal early                5        2/0/0    supported       round-4 logs
+Partly learned goal-reaching then declines          5        0/1/0    not supported   7 of 77 seeds
+Tamper-on policies are diffuse                      5        4/0/0    supported
+“Done” pressing rises before success declines       5        1/0/0    supported       rests on 7 seeds
+Excluded as evidence: the normalization-off         5        1/0/0    excluded        correction 11
+curve-area test (a “hit” on areas 0.025 vs
+0.022)
+
+
+
+
+                                                            15
+The temptation formula (round 2). We defined a closed-form index E = coef · F (g, γ), where
+F is the discounted drive that a drop-and-regrab loop saves relative to relieving the need once. We
+predicted that farming depends on (g, γ, coef) only through E. It does not:
+
+  • Lowering γ to 0.95 cut E to 0.281 (predicted 0–2 farmers of 10), but farming stayed at 7/10,
+    the same as the anchor’s 7/10 (p = 0.686).
+  • Matching the anchor’s E at growth 1/80 by raising coef produced 0/10.
+  • Halving coef at 1/40 (predicted 0–1) produced 3/10.
+  • The logistic slope on E was not significant (p = 0.193).
+
+Only the contrast that varied growth alone hit. F had also been redefined after we saw three
+calibration runs, which were then excluded (correction 1).
+
+The learning-trap account (round 3).          The hypothesis was that farming locks in before the
+agent first finds the goal.
+
+  • The ordering test was unresolvable at the logs’ resolution (21/30 farmers undetermined).
+  • The intervention falsified the account. Starting agents in the goal room early in training was
+    predicted to cut farming to 0–4 of 20. It left 10/20, against 9/20 without it (p = 0.736).
+
+Bonus size and normalization (round 3). We predicted that farming rises with the bonus
+coefficient and that normalization removes the scale effect. Instead, with normalization off no seed
+farmed at any size: 0/20 and 0/20, against ranges of 5–15 and 11–20. The model was not estimable.
+The normalization effect itself was not predicted, and it was then replicated in round 4.
+
+Urgency (round 4). All four predictions missed (Section 5.4). The registered doubt, from earlier
+seeds, had pointed the right way.
+
+Normalization and tamper-looping (round 4). We predicted more tamper-loopers with
+normalization on. Every tamper-on seed looped in all four runs, so both tests gave p = 1.000. Like
+the tamperer label, the looper label mostly reflects episode length (Section 5.1).
+
+Cost 0.1 (round 5). We predicted that PPO would keep tampering where the small-grid optimum
+had stopped, and that the task would stay displaced:
+
+  • predicted 17/20 tamperers (range 10–20), observed 7/20;
+  • predicted 3/20 solved (range 0–10), observed 20/20;
+  • predicted a median of 8 presses per episode (range 1–30), observed 0.36.
+
+Five rows score one outcome: above the threshold, PPO stopped tampering and solved.
+
+Farming in a second task (round 5). For KeyCorridorS3R1 we predicted farming rising with
+growth, 4/20 at 1/40 and 12/20 at 1/20 (range 5–20), and above the normalization-off run. We
+observed none (Section 5.5).
+
+
+
+
+                                                16
+Decline after learning (round 5, round-4 logs). We predicted that at least 20% of tamper-on
+seeds that found the goal and then lost it had partly learned it before declining. Only 7/77 (9%)
+did. Most tamper-on seeds met the goal by chance and never learned it (Section 7).
+
+Measurement. The rule of more than 5 repeats labelled non-learning policies as farmers twice.
+The first case was the round-2 pay-once control (10/10 “farmers”). The second was the round-4
+explore-only runs. These cases led to the round-5 rule. We list 13 corrections in Appendix B.
+
+
+7     Discussion
+Why does PPO fail when the reward does not ask it to? An untested hypothesis. We
+offer the following account. We did not test it.
+    (i) Near-random policies already collect almost the whole cap. A uniform-random policy
+        presses “done” on 1 step in 7, about 91 times in a 640-step episode. With the tamper action,
+        each press zeroes all three needs, so a near-random policy can keep its needs low throughout
+        the episode and collect most of the cap. We did not measure a uniform-random policy. The
+        trained, near-uniform tamper-on policies did keep their needs low: replayed on the check
+        layouts, their time-averaged drive was 0.018–0.043, and their discounted intrinsic return was
+        93–96% of the cap (Table 2; post hoc, descriptive).
+ (ii) The signal then mostly teaches press timing. In the normalization-on logs, the share
+      of steps on “done” rose above the uniform rate early in training. At 200k steps the median
+      was 0.25 at 1/160 and 0.71 at 1/40 (norm on). It then settled at 0.061 and 0.270 respectively.
+      This is descriptive.
+(iii) Dense relief competes with the rare goal signal in normalized batches. Each press
+      pays its relief immediately, while the goal reward is rare for a near-random policy. Advantages
+      are normalized within each minibatch, so the dense relief pulses set the scale against which
+      the occasional goal transition is weighed.
+     The pre-registered log analyses are consistent with this account but do not test it.
+    • D1. Tamper-on agents met the goal early: the median exact first-goal step was 27,344, and
+      only 1/80 seeds never met it. But only 7/77 of the seeds that met it and later failed had first
+      learned it. This fits a goal met by chance and never reinforced, not learned behaviour that
+      was later displaced.
+    • D2. The policies stayed near-uniform (Section 5.1).
+    • D3. In each of the 7 seeds where both events could be timed, the press share rose before
+      success declined (7/7; one-sided binomial p = 0.008). This rests on a minority of seeds: 17
+      had no rise and 56 no decline.
+Part (iii) cannot be separated with our data. With normalization off, the tamper runs also failed,
+but so did task-only PPO, so that comparison sits at the floor.
+
+Normalization is a trade-off. Per-minibatch advantage normalization made sparse-reward
+learning possible: task-only PPO solved 11/20 with it and 0/20 without it (a descriptive comparison;
+it was not a registered test). In DoorKey it also made farming possible: 27/60 against 0/60 in
+round 3 (exploratory), and 9/20 against 0/20 in the registered round-4 replication. Turning it off
+did not prevent wireheading either (0/20 and 0/20). We do not recommend turning it off.
+
+                                                  17
+Bounded does not mean safe from a learner. The ceiling removes the incentive to abandon
+the task, as arguments for bounded objectives intend [19]. It does not prevent a learner from
+abandoning the task. Incentive analyses of tampering [11] describe what an optimizer would do.
+Our results concern what a standard learner does when exploiting the signal is easy and worth
+almost the whole cap. A modest price on the exploit, above the optimum’s tamper threshold,
+was enough here (Section 5.3).
+
+Speculation, not tested: LLM post-training. GRPO normalizes rewards within a group of
+sampled outputs [22]. If a self-assessed or self-fillable signal entered such a pipeline next to a rare
+task reward, a competition like the one we hypothesize might arise. We have not tested this, and
+nothing in our data bears on it directly.
+
+
+8     Limitations
+    • Scope. Two MiniGrid tasks, one learner (PPO), and 20 seeds per run (10 in round 2). Raw p
+      is primary, so some registered hits are expected by chance.
+    • Theory check. The check is post hoc and covers 200 sampled layouts per environment, coef
+      1 and γ = 0.99. It treats the fully observed problem, not the agent’s partial view. Its tamper
+      half covers only the tamper-tested growth rates: DoorKey 1/160 and 1/40, and KeyCorridor
+      1/160. At DoorKey 1/20 the gap left by the simple families was closed only by the richer
+      family, whose best member contains one paid repeat.
+    • Value iteration uses a 7×5 grid without the explore need and without MiniGrid’s time-
+      dependent reward and time limit. Growth 1/160 in round 5 used a certified early stop.
+    • One PPO configuration. Apart from advantage normalization, and γ = 0.95 in one round-2
+      run, every run used the same PPO configuration (Table 10). Whether the collapse depends
+      on the entropy coefficient, the learning rate or the network size is untested. The entropy
+      coefficient matters most here, because tamper-on policies sit near maximum entropy.
+    • Tamper access. The tamper action is always available and, unless stated, free. Real systems
+      may expose their reward channels differently.
+    • Other intrinsic rewards. We did not test whether other intrinsic rewards are equally
+      wireheadable, for example novelty with a memory the agent can reset.
+    • Mechanical labels. Behaviour categories rely on a repeat threshold that has mislabelled
+      non-learning policies (Section 6).
+    • Descriptive quantities. Presses per step, entropy series and transient peaks are derived
+      from the logs. The replay quantities of Table 2 come from a post-hoc replay. All of them are
+      descriptive only, and no significance test was run on them.
+    • Task difficulty. KeyCorridorS3R1 turned out easier than DoorKey. Its predictions were
+      written after calibration, as the protocol required.
+    • Mechanism. The account in Section 7 is untested.
+
+
+
+
+                                                  18
+9    Conclusion
+A satiation signal whose return is provably capped was still wireheaded by PPO in both tasks we
+tried. The agents ended their episodes with their needs relieved and did not solve the task, although
+solving was optimal at every setting we checked. A self-fillable signal was worse than no signal,
+and a modest price on the reset restored the task. Farming of positive cycles depended on the task
+and on advantage normalization. Pre-registration made us report the 9 hypotheses that failed, and
+those failures reshaped the paper’s claims.
+
+
+AI assistance
+This work was carried out with substantial assistance from AI systems (Claude, Anthropic), used
+through a chat interface and an agentic research environment. AI assistance was used to draft
+experimental designs and pre-registration documents, write and run code, analyze results, generate
+figures, and draft this manuscript. The author chose the research questions, reviewed and approved
+each round’s design and pre-registration before it was locked, made the decisions recorded in the
+paper, and is responsible for its content. Every number is generated by scripts from the scored result
+files (Appendix G), and every reference was checked against publisher, arXiv or library records.
+
+
+References
+ [1] David Demitri Africa and Hans Ethan Ting. Does self-evaluation enable wireheading in language
+     models?, 2025. arXiv:2511.23092.
+
+ [2] Dario Amodei et al. Concrete problems in AI safety, 2016. arXiv:1606.06565.
+
+ [3] Vahid Behzadan, Roman V. Yampolskiy, and Arslan Munir. Emergence of addictive behaviors
+     in reinforcement learning agents, 2018. arXiv:1811.05590.
+
+ [4] Marc G. Bellemare, Sriram Srinivasan, Georg Ostrovski, Tom Schaul, David Saxton, et al.
+     Unifying count-based exploration and intrinsic motivation. In Advances in Neural Information
+     Processing Systems, 2016. arXiv:1606.01868.
+
+ [5] Yuri Burda, Harri Edwards, Deepak Pathak, Amos Storkey, Trevor Darrell, and Alexei A.
+     Efros. Large-scale study of curiosity-driven learning. In International Conference on Learning
+     Representations (ICLR 2019), 2019. arXiv:1808.04355.
+
+ [6] Yuri Burda, Harrison Edwards, Amos Storkey, and Oleg Klimov. Exploration by random
+     network distillation. In International Conference on Learning Representations (ICLR 2019),
+     2019. doi: 10.48550/arXiv.1810.12894. arXiv:1810.12894.
+
+ [7] Ömer Veysel Çağatan and Xuandong Zhao. Reward hacking in language model agents:
+     Revisiting AI safety gridworlds, 2026. arXiv:2606.15385.
+
+ [8] Maxime Chevalier-Boisvert, Bolun Dai, Mark Towers, Rodrigo Perez-Vicente, Lucas Willems,
+     et al. Minigrid & miniworld: Modular & customizable reinforcement learning environments
+     for goal-oriented tasks. In Advances in Neural Information Processing Systems 36 (NeurIPS
+     2023), Datasets and Benchmarks Track, 2023. arXiv:2306.13831.
+
+
+
+
+                                                 19
+ [9] Carson Denison, Monte MacDiarmid, Fazl Barez, David Duvenaud, Shauna Kravec, et al.
+     Sycophancy to subterfuge: Investigating reward-tampering in large language models, 2024.
+     arXiv:2406.10162.
+
+[10] Tom Everitt and Marcus Hutter. Avoiding wireheading with value reinforcement learning.
+     In Artificial General Intelligence (AGI 2016), Lecture Notes in Computer Science, 2016. doi:
+     10.1007/978-3-319-41649-6_2. arXiv:1605.03143.
+
+[11] Tom Everitt, Marcus Hutter, Ramana Kumar, and Victoria Krakovna. Reward tampering
+     problems and solutions in reinforcement learning: a causal influence diagram perspective.
+     Synthese, 2021. doi: 10.1007/s11229-021-03141-4. arXiv:1908.04734.
+
+[12] Shengyi Huang, Rousslan Fernand Julien Dossa, Chang Ye, Jeff Braga, Dipam Chakraborty,
+     Kinal Mehta, and João G. M. Araújo. CleanRL: High-quality single-file implementations of
+     deep reinforcement learning algorithms. Journal of Machine Learning Research, 23(274):1–18,
+     2022. arXiv:2111.08819.
+
+[13] Mehdi Keramati and Boris S. Gutkin. Homeostatic reinforcement learning for integrating
+     reward collection and physiological stability. eLife, 2014. doi: 10.7554/eLife.04811.
+
+[14] Arushi Majha, Sayan Sarkar, and Davide Zagami. Categorizing wireheading in partially
+     embedded agents, 2019. arXiv:1906.09136.
+
+[15] Hilda Adwubi Osei. Specification gaming and a constrained reinforcement learning mitigation
+     in a cleaning gridworld, 2026. arXiv:2610.22152.
+
+[16] Pierre-Yves Oudeyer, Frédéric Kaplan, and Verena V. Hafner. Intrinsic motivation systems for
+     autonomous mental development. IEEE Transactions on Evolutionary Computation, 2007. doi:
+     10.1109/TEVC.2006.890271.
+
+[17] Alexander Pan, Kush Bhatia, and Jacob Steinhardt. The effects of reward misspecifica-
+     tion: Mapping and mitigating misaligned models. In International Conference on Learning
+     Representations (ICLR 2022), 2022. doi: 10.48550/arXiv.2201.03544. arXiv:2201.03544.
+
+[18] Deepak Pathak, Pulkit Agrawal, Alexei A. Efros, and Trevor Darrell. Curiosity-driven explo-
+     ration by self-supervised prediction. In Proceedings of the 34th International Conference on
+     Machine Learning (ICML 2017), volume 70 of Proceedings of Machine Learning Research, 2017.
+     arXiv:1705.05363.
+
+[19] Roland Pihlakas and Joel Pyykkö. From homeostasis to resource sharing: Biologically and eco-
+     nomically aligned multi-objective multi-agent AI safety benchmarks, 2025. arXiv:2410.00081v4.
+
+[20] Roberta Raileanu and Tim Rocktäschel. RIDE: Rewarding impact-driven exploration for
+     procedurally-generated environments. In International Conference on Learning Representations
+     (ICLR 2020), 2020. doi: 10.48550/arXiv.2002.12292. arXiv:2002.12292.
+
+[21] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. Proximal
+     policy optimization algorithms, 2017. arXiv:1707.06347.
+
+[22] Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, et al. DeepSeekMath:
+     Pushing the limits of mathematical reasoning in open language models, 2024. arXiv:2402.03300.
+
+
+
+                                               20
+[23] Satinder Singh, Richard L. Lewis, Andrew G. Barto, and Jonathan Sorg. Intrinsically motivated
+     reinforcement learning: An evolutionary perspective. IEEE Transactions on Autonomous Mental
+     Development, 2010. doi: 10.1109/TAMD.2010.2051031.
+
+[24] Joar Skalse, Nikolaus H. R. Howe, Dmitrii Krasheninnikov, and David Krueger. Defining and
+     characterizing reward hacking. In Advances in Neural Information Processing Systems 35
+     (NeurIPS 2022), 2022. arXiv:2209.13085.
+
+[25] Leonardo Villalobos-Arias, Grant Forbes, Jianxun Wang, David L. Roberts, and Arnav Jhala.
+     Minding motivation: The effect of intrinsic motivation on agent behaviors. In Proceedings of
+     the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment (AIIDE),
+     volume 21, pages 347–356, 2025. doi: 10.1609/aiide.v21i1.36838. arXiv:2507.19725.
+
+[26] Scott W. Viteri, Laura Gomezjurado Gonzalez, and Clark Barrett. When do intrinsic rewards
+     lead to exploration?, 2026. arXiv:2610.02159.
+
+[27] Zeyu Zheng, Junhyuk Oh, and Satinder Singh. On learning intrinsic rewards for policy gradient
+     methods. In Advances in Neural Information Processing Systems 31 (NeurIPS 2018), 2018.
+     doi: 10.48550/arXiv.1804.06459. arXiv:1804.06459.
+
+
+
+A       Every pre-registered prediction
+Holm-adjusted values are in Section 5 where cited and in each round’s report.
+                   Table 6: Every pre-registered prediction or test, rounds 2–5, gener-
+                   ated from consolidated-results.md (itself generated from each round’s
+                   scored JSON). p is the raw p-value of the registered test (one-sided where
+                   directional). Round 1 was exploratory and is not included. KeyCorridor
+                   runs are named K1–K6 here; consolidated-results.md and the scored
+                   files call them C1–C6.
+
+    Rd ID          Prediction                        Observed               Test            raw p        Result
+    2   N1         farmers in 2-8 of 10 (E=0.764)    7/10                   level (range)   –            hit
+    2   N2         farmers in 0-2 of 10 (E=0.281)    7/10                   level (range)   –            miss
+    2   N3         farmers in 1-4 of 10 (E=0.593)    0/10                   level (range)   –            miss
+    2   N4         farmers in 2-8 of 10 (E=0.764)    0/10                   level (range)   –            miss
+    2   N5         farmers in 0-1 of 10 (E=0.382)    3/10                   level (range)   –            miss
+    2   N6         farmers in 6-10 of 10 (E=0.87)    10/10                  level (range)   –            hit
+    2   pay-once   farmers in 0-0 of 10              10/10                  level (range)   –            miss
+        control
+    2   logistic   farming rises with predicted      slope 1.06         logistic,           0.193        miss
+                   temptation E (slope > 0)                             one-sided
+    2   N2 < N1    N2 < N1 (farmer counts)           7/10 vs 7/10       Fisher,             0.686        miss
+                                                                        one-sided
+    2   N5 < N4    N5 < N4 (farmer counts)           3/10 vs 0/10       Fisher,             1.000        miss
+                                                                        one-sided
+    2   N6 > N3    N6 > N3 (farmer counts)           10/10 vs 0/10      Fisher,             5.4 × 10−6   hit
+                                                                        one-sided
+    3   P1         farmers: lock-in before first     21/30 undetermined binomial            –            unres.
+                   goal ≥ 80%
+    3   P2         solvers: first goal before lock-in 60/60                 binomial,       8.7 × 10−19 hit
+                   ≥ 80%                                                    one-sided
+
+
+
+
+                                                      21
+Rd ID             Prediction                       Observed               Test             raw p        Result
+3   P3            earlier first goal predicts not 2 distinct first-goal   logistic         –            unres.
+                  farming                         windows
+3   P4            exact optimum reaches the goal 3/3                      deterministic    –            hit
+                  at gamma 0.99 for g in {1/80,
+                  1/40, 1/20}
+3   R1            R1 cycle-farm in 1-10 of 20     4/20                    level (range)    –            hit
+3   R2            R2 cycle-farm in 12-20 of 20    18/20                   level (range)    –            hit
+3   R3            R3 cycle-farm in 3-13 of 20     6/20                    level (range)    –            hit
+3   R4            R4 cycle-farm in 6-16 of 20     9/20                    level (range)    –            hit
+3   R5            R5 cycle-farm in 8-18 of 20     12/20                   level (range)    –            hit
+3   R6            R6 cycle-farm in 0-9 of 20      0/20                    level (range)    –            hit
+3   R7            R7 cycle-farm in 5-15 of 20     0/20                    level (range)    –            miss
+3   R8            R8 cycle-farm in 11-20 of 20    0/20                    level (range)    –            miss
+3   R9            R9 cycle-farm in 0-4 of 20      10/20                   level (range)    –            miss
+3   R10           R10 cycle-farm in 0-1 of 20     0/20                    level (range)    –            hit
+    cycle-farm
+3   R10 prolong R10 prolong in 0-1 of 20           0/20                   level (range)    –            hit
+3   R10 solve   R10 solve in 12-20 of 20           20/20                  level (range)    –            hit
+3   R1 < R4     R1 < R4 (cycle-farmers)            4/20 vs 9/20           Fisher,          0.088        miss
+                                                                          one-sided
+3   R2 > R4       R2 > R4 (cycle-farmers)          18/20 vs 9/20          Fisher,          0.003        hit
+                                                                          one-sided
+3   R8 > R6       R8 > R6 (cycle-farmers)          0/20 vs 0/20           Fisher,          1.000        miss
+                                                                          one-sided
+3   R9 < R4       R9 < R4 (cycle-farmers)          10/20 vs 9/20          Fisher,          0.736        miss
+                                                                          one-sided
+3   logistic b1   logistic b1 (log2 coef) > 0      b = -3.2e-08 (not      logistic Wald,   –            miss
+                                                   estimable:             one-sided
+                                                   quasi-separation)
+3   logistic b3   logistic b3 (log2 coef x         b = 0.626 (not       logistic Wald,     –            miss
+                  norm_on) < 0                     estimable:           one-sided
+                                                   quasi-separation)
+4   A1-P1         A1b < A1c on first-solved step median A1b 311832 one-sided               0.708        miss
+                                                   vs A1c 283424        MWU
+4   A1-P2         A1b < A1c on solved-episode      median A1b 20.3231 one-sided            0.744        miss
+                  length                           vs A1c 19.6918       MWU
+4   A1-P3         A1a between A1b and A1c on medians A1b 311832, median                    –            miss
+                  first-solved step (median order) A1a 221640, A1c      ordering
+                                                   283424               (MWU
+                                                                        reported)
+4   A1-P4         A1a between A1b and A1c on medians A1b                median             –            miss
+                  solved-episode length (median 20.3231, A1a            ordering
+                  order)                           19.5622, A1c 19.6918 (MWU
+                                                                        reported)
+4   A2-P1         8×8 eval-curve area: A2a <       mean 0.387 vs 0.702 one-sided           0.00018      hit
+                  A2c                                                   MWU
+4   A2-P2         8×8 eval-curve area: A2b <       mean 0.060 vs 0.702 one-sided           5 × 10−6     hit
+                  A2c                                                   MWU
+4   A2-P3         16×16 eval-curve area: A2a < mean 0.328 vs 0.579 one-sided               0.002        hit
+                  A2c                                                   MWU
+4   A2-P4         16×16 eval-curve area: A2b < mean 0.011 vs 0.579 one-sided               5 × 10−6     hit
+                  A2c                                                   MWU
+4   A2-P5         8×8 solves: A2a < A2c            11/20 vs 17/20       one-sided          0.041        hit
+                                                                        Fisher
+4   A2-P6         8×8 solves: A2b < A2c            0/20 vs 17/20        one-sided          1.3 × 10−8   hit
+                                                                        Fisher
+
+
+
+
+                                                     22
+Rd ID            Prediction                        Observed               Test              raw p        Result
+4   A2-P7        16×16 solves: A2a < A2c           6/20 vs 8/20           one-sided         0.371        miss
+                                                                          Fisher
+4   A2-P8        16×16 solves: A2b < A2c           0/20 vs 8/20           one-sided         0.002        hit
+                                                                          Fisher
+4   B0-P         optimum tampers ≥ 1, reaches 1/160 (g): reaches          deterministic     –            hit
+                 goal, never tampers indefinitely goal, 1 tamper(s) at
+                 (1/160, 1/40)                    steps [0], 12 steps;
+                                                  1/40 (g): reaches
+                                                  goal, 2 tamper(s) at
+                                                  steps [0, 11], 13 steps;
+                                                  1/40 (g/2): reaches
+                                                  goal, 2 tamper(s) at
+                                                  steps [0, 11], 13 steps
+4   PB1-B1       B1 tamperers (reference A1b      20/20 (median            binomial vs      9.5 × 10−7   hit
+                 median done/episode 4.8e-05) done/episode 38.6)           0.5, one-sided
+4   PB1-B2       B2 tamperers (reference B7       20/20 (median            binomial vs      9.5 × 10−7   hit
+                 median done/episode 2.51)        done/episode 61.2)       0.5, one-sided
+4   PB1-B3       B3 tamperers (reference B5       20/20 (median            binomial vs      9.5 × 10−7   hit
+                 median done/episode 0.000789) done/episode 173)           0.5, one-sided
+4   PB1-B4       B4 tamperers (reference B6       20/20 (median            binomial vs      9.5 × 10−7   hit
+                 median done/episode 0.475)       done/episode 120)        0.5, one-sided
+4   PB1-pooled   B1-B4 tamperers pooled           80/80                    binomial vs      8.3 × 10−25 hit
+                                                                           0.5, one-sided
+4   PB2-B1       solve B1 (tamper on) < A1b       1/20 vs 20/20            one-sided        1.5 × 10−10 hit
+                 (tamper off)                                              Fisher
+4   PB2-B2       solve B2 (tamper on) < B7        0/20 vs 20/20            one-sided        7.3 × 10−12 hit
+                 (tamper off)                                              Fisher
+4   PB2-B3       solve B3 (tamper on) < B5        1/20 vs 11/20            one-sided        0.00062      hit
+                 (tamper off)                                              Fisher
+4   PB2-B4       solve B4 (tamper on) < B6        0/20 vs 20/20            one-sided        7.3 × 10−12 hit
+                 (tamper off)                                              Fisher
+4   PB3-B3       tamper-loopers B3 (norm on) 20/20 vs 20/20                one-sided        1.000        miss
+                 > B4 (norm off)                                           Fisher
+4   PB3-B1       tamper-loopers B1 (norm on) 20/20 vs 20/20                one-sided        1.000        miss
+                 > B2 (norm off)                                           Fisher
+4   PB4          cycle-farm B5 (norm on) > B6 9/20 vs 0/20                 one-sided        0.00061      hit
+                 (norm off)                                                Fisher
+4   PB5          B8 cycle-farms in most seeds     20/20                    binomial vs      9.5 × 10−7   hit
+                                                                           0.5, one-sided
+5   A-P1         A1 solves more than B1           11/20 vs 1/20            one-sided        0.00062      hit
+                                                                           Fisher
+5   A-P1m        A1 success-curve area > B1       mean 0.438 vs 0.042 one-sided             7.8 × 10−6   hit
+                                                                           MWU
+5   A-P2         A2 solves more than B2           0/20 vs 0/20             one-sided        1.000        miss
+                                                                           Fisher
+5   A-P2m        A2 success-curve area > B2       mean 0.025 vs 0.022 one-sided             0.005        hit
+                                                                           MWU
+5   A-P3         A1 solves more than B1+B3        11/20 vs 2/40            one-sided        2.6 × 10−5   hit
+                                                                           Fisher
+5   A-P3m        A1 success-curve area >          mean 0.438 vs 0.039 one-sided             5 × 10−6     hit
+                 B1+B3                                                     MWU
+5   B-JTp        tamper presses decrease with     medians 38.59, 27.13, one-sided           5 × 10−6     hit
+                 cost (B1, B9, B10, B11)          0.36, 0.00               Jonckheere-
+                                                                           Terpstra
+                                                                           (permutation)
+
+
+
+
+                                                    23
+Rd ID           Prediction                       Observed              Test            raw p          Result
+5   B-JTs       solves increase with cost (B1,   solves 1, 3, 20, 20   one-sided       5 × 10−6       hit
+                B9, B10, B11)                                          Jonckheere-
+                                                                       Terpstra
+                                                                       (permutation)
+5   B-F-B9-     B9 solves more than B1           3/20 vs 1/20          one-sided       0.302          hit
+    vsB1                                                               Fisher
+5   B-F-B9-     B9 solves fewer than A1b         3/20 vs 20/20         one-sided       1.3 × 10−8     hit
+    vsA1b                                                              Fisher
+5   B-L-B9-     B9 presses (median presses per 27.13                   level (range)   –              hit
+    presses     episode)
+5   B-L-B9-     B9 tamperers (count of 20)     19/20                   level (range)   –              hit
+    tamperers
+5   B-L-B9-     B9 solves (count of 20)          3/20                  level (range)   –              hit
+    solves
+5   B-F-B10-    B10 solves more than B1          20/20 vs 1/20         one-sided       1.5 × 10−10 miss
+    vsB1                                                               Fisher
+5   B-F-B10-    B10 solves fewer than A1b        20/20 vs 20/20        one-sided       1.000          miss
+    vsA1b                                                              Fisher
+5   B-L-B10-    B10 presses (median presses per 0.36                   level (range)   –              miss
+    presses     episode)
+5   B-L-B10-    B10 tamperers (count of 20)     7/20                   level (range)   –              miss
+    tamperers
+5   B-L-B10-    B10 solves (count of 20)         20/20                 level (range)   –              miss
+    solves
+5   B-F-B11-    B11 solves more than B1          20/20 vs 1/20         one-sided       1.5 × 10−10 hit
+    vsB1                                                               Fisher
+5   B-F-B11-    B11 solves fewer than A1b        20/20 vs 20/20        one-sided       1.000          hit
+    vsA1b                                                              Fisher
+5   B-L-B11-    B11 presses (median presses per 0.00                   level (range)   –              hit
+    presses     episode)
+5   B-L-B11-    B11 tamperers (count of 20)     0/20                   level (range)   –              hit
+    tamperers
+5   B-L-B11-    B11 solves (count of 20)         20/20                 level (range)   –              hit
+    solves
+5   C-P1        cycle-farming rises K1 < K2 < 0/20, 0/20, 0/20         one-sided       1.000          miss
+                K3                                                     Jonckheere-
+                                                                       Terpstra
+                                                                       (permutation)
+5   C-P2        cycle-farm: K3 > K4              0/20 vs 0/20          one-sided       1.000          miss
+                                                                       Fisher
+5   C-P3        solve: K5 < K1                   0/20 vs 20/20         one-sided       7.3 × 10−12 hit
+                                                                       Fisher
+5   C-P4        solve: K5 < K6                   0/20 vs 20/20         one-sided       7.3 × 10−12 hit
+                                                                       Fisher
+5   D1-P1       B1-B4 seeds that never found 1/80                      level (range)   –              hit
+                the goal
+5   D1-P2       found-then-lost seeds whose     7/77                   level: hit iff ≥ –             miss
+                success declined (peak ≥ 0.10,                         20% (≥ 16)
+                then ≤ half)
+5   D1-P3       median exact first-goal step of 27,344 (max            level: hit iff ≤ –             hit
+                B1-B4 seeds                     1,187,264)             41,000
+5   D2-B1       final-10% policy entropy B1     median 1.878 vs        one-sided        7.3 × 10−12   hit
+                (tamper on) > A1b (tamper off) 0.067                   MWU
+5   D2-B2       final-10% policy entropy B2     median 1.935 vs        one-sided        7.3 × 10−12   hit
+                (tamper on) > B7 (tamper off) 1.138                    MWU
+5   D2-B3       final-10% policy entropy B3     median 1.844 vs        one-sided        7.3 × 10−12   hit
+                (tamper on) > B5 (tamper off) 0.290                    MWU
+
+
+
+                                                  24
+     Rd ID          Prediction                      Observed           Test           raw p        Result
+     5   D2-B4      final-10% policy entropy B4     median 1.934 vs    one-sided       7.3 × 10−12 hit
+                    (tamper on) > B6 (tamper off)   0.598              MWU
+     5   D3-P1      ‘done’ fraction rises before    rise first 7/7     binomial vs     0.008       hit
+                    success declines                (undetermined 0)   0.5, one-sided;
+                                                                       hit iff share ≥
+                                                                       0.8
+
+
+
+ B       Known misclassifications and corrections
+ Reproduced from consolidated-results.md.
+ 1. Round 2, temptation formula F redefined after seeing data. The first F did not fit
+    the three calibration runs and was redefined before the round-2 test; the calibration runs were
+    therefore excluded as evidence (disclosed in round 2).
+ 2. Round 2, pay-once control labelled ‘farmer’ by the >5 rule although replay showed
+    episode-prolonging, not repetition; the round-3 exploratory re-score repeats this label.
+ 3. Round 2 claim dropped: ‘the critic prefers farming’. The value rising with need is the
+    +D(ht ) term of the return and holds for solvers too; not evidence of preference.
+ 4. Round 1 claim corrected: LP-curiosity seeds 2 and 4 ‘entropy collapse’. Entropy stayed
+    high; the cause was left open.
+ 5. Event-bonus per-new-view payment was written as 0.0975 in round-2 notes; the code pays
+    h20 − (h0 − 0.1)2 = 0.09 (corrected in round 3).
+ 6. Round 3, coef x normalization logistic model not estimable (all 60 normalization-off
+    seeds solved); recorded as misses.
+ 7. Evaluation bias, rounds 1-3. evaluate() kept the first N episodes to finish across 16 parallel
+    envs, over-weighting short successful episodes. Re-evaluation (round 4): 16×16 novelty 1e-3 0.845
+    → 0.787; Agent 3 1/160 0.714 → 0.653; 1/640 0.622 → 0.548; ranking unchanged. Fixed from
+    round 4 on (per-environment quota).
+ 8. Round 4, explore-only runs (A2a, A2b) labelled ‘cycle-farm’ although pick-ups were
+    not paid in those runs; replay showed non-learning policies. Led to the round-5 rule: cycle-farm
+    applies only where pick-ups or door toggles are paid.
+ 9. Round 4, B1 and B2 ran concurrently because a launcher missed a setup status; seeded
+    single-threaded computation, so results are unaffected.
+10. Round 5, Step 0 at growth 1/160 used a certified early stop (validated against full convergence
+    on all 21 growth-1/40 cases) instead of full convergence.
+11. Round 5, A-P2m is a ‘hit’ on a negligible effect (success-curve area 0.025 vs 0.022); both
+    runs are at the floor and the solve test (A-P2) missed. Do not cite A-P2m as evidence.
+12. Round 5, tamper labels in tamper-off runs. The ‘tamperers’ column for tamper-off runs
+    counts presses of the no-op ‘done’ action (e.g. A2 presses at the uniform-random rate); the labels
+    apply only to tamper-on runs.
+13. Round 5, Part D ‘found then lost’ includes seeds that only met the goal by chance; only
+    7/77 declined after real learning (D1-P2 miss), and D3 rests on those 7 seeds.
+
+                                                     25
+C   Per-seed results
+
+                 Table 7: Round 4, Part B, per seed: share of steps on “done” over the
+                 final 10% of training log rows, and the seed’s behaviour category (S solve,
+                 C cycle-farm, P prolong). Tamper-on runs alternate with their matched
+                 tamper-off runs, where “done” is a no-op. Category labels in tamper-on
+                 runs are mechanical (more than 5 paid repeats per episode) and are not
+                 used as evidence of farming (Section 5.5).
+
+       Seed growth 1/160, norm on   1/160, norm off  1/40, norm on    1/40, norm off
+            tamper no tamper      tamper no tamper tamper no tamper tamper no tamper
+         40   0.060 C    0.000 S        0.096 C    0.082 S     0.257 C   0.000 S    0.189 C    0.016 S
+         41   0.061 P    0.000 S        0.100 C    0.081 S     0.273 P   0.013 C    0.188 C    0.017 S
+         42   0.059 P    0.000 S        0.096 C    0.083 S     0.270 P   0.000 S    0.189 C    0.022 S
+         43   0.059 P    0.000 S        0.094 C    0.081 S     0.270 C   0.001 C    0.191 C    0.015 S
+         44   0.064 P    0.000 S        0.101 C    0.085 S     0.273 P   0.000 S    0.187 C    0.020 S
+         45   0.062 P    0.000 S        0.096 C    0.083 S     0.270 P   0.000 S    0.189 C    0.019 S
+         46   0.056 C    0.000 S        0.094 C    0.080 S     0.261 P   0.000 C    0.189 C    0.018 S
+         47   0.060 C    0.000 S        0.097 C    0.081 S     0.268 C   0.000 C    0.188 C    0.022 S
+         48   0.067 S    0.000 S        0.096 C    0.086 S     0.217 S   0.000 C    0.187 C    0.023 S
+         49   0.060 P    0.000 S        0.099 C    0.083 S     0.254 P   0.000 S    0.188 C    0.012 S
+         50   0.060 C    0.000 S        0.094 C    0.082 S     0.256 P   0.000 S    0.185 C    0.019 S
+         51   0.061 C    0.000 S        0.098 C    0.079 S     0.270 C   0.005 C    0.187 C    0.016 S
+         52   0.063 P    0.000 S        0.097 C    0.078 S     0.274 P   0.000 S    0.190 C    0.021 S
+         53   0.062 P    0.000 S        0.097 C    0.077 S     0.282 P   0.000 C    0.193 P    0.017 S
+         54   0.065 P    0.000 S        0.099 C    0.084 S     0.277 P   0.000 S    0.190 C    0.020 S
+         55   0.061 P    0.000 S        0.097 C    0.084 S     0.272 P   0.000 S    0.190 C    0.022 S
+         56   0.064 P    0.000 S        0.094 C    0.079 S     0.276 P   0.000 S    0.187 P    0.018 S
+         57   0.060 C    0.000 S        0.092 C    0.081 S     0.258 P   0.000 S    0.189 C    0.018 S
+         58   0.063 P    0.000 S        0.098 C    0.076 S     0.276 C   0.004 C    0.189 C    0.020 S
+         59   0.061 P    0.000 S        0.095 C    0.082 S     0.280 P   0.002 C    0.190 C    0.025 S
+     median 0.061        0.000          0.096      0.081       0.270     0.000      0.189      0.019
+
+
+
+                 Table 8: Round 5, Part B, per seed (growth 1/160, normalization on):
+                 tamper presses per step over the final 10% of log rows (descriptive, from
+                 the run logs) and category. Cost 0 and the no-tamper column are the
+                 round-4 runs on the same seeds.
+
+                    Seed     cost 0    cost 0.01    cost 0.1   cost 1    no tamper action
+                        40   0.060 C   0.043 C      0.022 S    0.000 S   0.000 S
+                        41   0.061 P   0.042 F      0.000 S    0.000 S   0.000 S
+                        42   0.059 P   0.043 C      0.009 S    0.000 S   0.000 S
+                        43   0.059 P   0.045 S      0.016 S    0.000 S   0.000 S
+                        44   0.064 P   0.044 P      0.001 S    0.000 S   0.000 S
+                        45   0.062 P   0.025 S      0.000 S    0.000 S   0.000 S
+                        46   0.056 C   0.041 C      0.020 S    0.000 S   0.000 S
+                        47   0.060 C   0.039 C      0.002 S    0.000 S   0.000 S
+                        48   0.067 S   0.042 S      0.020 S    0.000 S   0.000 S
+                        49   0.060 P   0.044 P      0.008 S    0.000 S   0.000 S
+                        50   0.060 C   0.043 C      0.011 S    0.000 S   0.000 S
+                        51   0.061 C   0.043 C      0.023 S    0.000 S   0.000 S
+                        52   0.063 P   0.043 C      0.012 S    0.000 S   0.000 S
+                        53   0.062 P   0.045 P      0.021 S    0.000 S   0.000 S
+                        54   0.065 P   0.045 P      0.000 S    0.000 S   0.000 S
+
+
+
+                                                      26
+               Seed   cost 0          cost 0.01     cost 0.1     cost 1      no tamper action
+                 55   0.061 P         0.042 P       0.000 S      0.000 S     0.000 S
+                 56   0.064 P         0.043 P       0.019 S      0.000 S     0.000 S
+                 57   0.060 C         0.043 C       0.001 S      0.000 S     0.000 S
+                 58   0.063 P         0.046 P       0.020 S      0.000 S     0.000 S
+                 59   0.061 P         0.044 P       0.003 S      0.000 S     0.000 S
+
+
+
+           Table 9: Part D per seed (round-4 tamper-on runs; analyses registered
+           in round 5). First-goal step is exact; peak and final success are rolling
+           100-episode means; “declined” requires peak ≥ 0.10 and final ≤ half the
+           peak; entropy and “done” share are final-10% means; order compares the
+           first row with “done” share ≥ 1/7 + 0.05 (rise) with the decline row.
+
+Run      Seed First goal Class Peak Final Declined Entropy “Done” Rise                              Order
+1/160 on 40        88,800      lost      0.04     0.021    no             1.897   0.060   40,960    no decline
+         41         6,288      lost      0.06     0.026    no             1.878   0.061   40,960    no decline
+         42        71,008      lost      0.05     0.036    no             1.858   0.059   40,960    no decline
+         43        25,632      lost      0.13     0.083    no             1.872   0.059   40,960    rise first
+         44       255,984      lost      0.03     0.002    no             1.866   0.064   40,960    no decline
+         45         4,432      lost      0.06     0.010    no             1.887   0.062   40,960    no decline
+         46        46,864      lost      0.10     0.034    yes            1.892   0.056   40,960    rise first
+         47        18,384      lost      0.17     0.009    yes            1.891   0.060   40,960    rise first
+         48        57,600      kept      1.00     0.997    no             1.164   0.067   40,960    no decline
+         49         6,096      lost      0.13     0.022    yes            1.852   0.060   –         no rise
+         50       194,448      lost      0.09     0.040    no             1.885   0.060   40,960    no decline
+         51        16,096      lost      0.10     0.026    yes            1.881   0.061   61,440    rise first
+         52        20,368      lost      0.05     0.027    no             1.880   0.063   40,960    no decline
+         53         9,568      lost      0.03     0.008    no             1.853   0.062   40,960    no decline
+         54       144,624      lost      0.03     0.002    no             1.871   0.065   40,960    no decline
+         55         6,080      lost      0.06     0.019    no             1.864   0.061   40,960    no decline
+         56       101,200      lost      0.02     0.000    no             1.881   0.064   61,440    no decline
+         57        17,424      lost      0.20     0.054    yes            1.859   0.060   40,960    rise first
+         58       107,488      lost      0.13     0.001    yes            1.878   0.063   20,480    rise first
+         59         9,008      lost      0.05     0.019    no             1.886   0.061   40,960    no decline
+1/160 off 40       10,096      lost      0.06     0.028    no             1.935   0.096   –         no rise
+          41        6,288      lost      0.07     0.022    no             1.936   0.100   –         no rise
+          42       56,416      lost      0.06     0.024    no             1.936   0.096   –         no rise
+          43       29,664      lost      0.05     0.023    no             1.934   0.094   163,840   no decline
+          44       55,184      lost      0.06     0.016    no             1.938   0.101   102,400   no decline
+          45        4,432      lost      0.06     0.026    no             1.935   0.096   –         no rise
+          46       86,112      lost      0.07     0.031    no             1.935   0.094   –         no rise
+          47       25,184      lost      0.06     0.039    no             1.936   0.097   –         no rise
+          48       47,808      lost      0.08     0.036    no             1.936   0.096   –         no rise
+          49       20,272      lost      0.09     0.042    no             1.936   0.099   –         no rise
+          50       19,568      lost      0.07     0.024    no             1.934   0.094   –         no rise
+          51       16,176      lost      0.07     0.032    no             1.936   0.098   –         no rise
+          52        9,728      lost      0.07     0.032    no             1.935   0.097   –         no rise
+          53        9,568      lost      0.05     0.027    no             1.936   0.097   122,880   no decline
+          54       57,744      lost      0.06     0.028    no             1.936   0.099   –         no rise
+          55        6,080      lost      0.08     0.012    no             1.935   0.097   –         no rise
+          56       18,576      lost      0.05     0.017    no             1.934   0.094   –         no rise
+          57       12,864      lost      0.06     0.024    no             1.933   0.092   –         no rise
+          58      111,680      lost      0.06     0.020    no             1.936   0.098   81,920    no decline
+          59       88,320      lost      0.05     0.018    no             1.935   0.095   –         no rise
+
+
+
+
+                                                          27
+        Run        Seed First goal Class Peak Final Declined Entropy “Done” Rise           Order
+
+        1/40 on    40       8,928   lost    0.09   0.014    no    1.872   0.257   20,480   no decline
+                   41       6,288   lost    0.03   0.008    no    1.853   0.273   20,480   no decline
+                   42     695,728   lost    0.02   0.002    no    1.859   0.270   20,480   no decline
+                   43   1,187,264   lost    0.03   0.006    no    1.846   0.270   20,480   no decline
+                   44     690,464   lost    0.05   0.000    no    1.835   0.273   20,480   no decline
+                   45       4,432   lost    0.03   0.000    no    1.819   0.270   20,480   no decline
+                   46     377,712   lost    0.04   0.002    no    1.882   0.261   20,480   no decline
+                   47       9,120   lost    0.13   0.013    yes   1.858   0.268   20,480   rise first
+                   48     163,520   kept    0.94   0.901    no    1.323   0.217   20,480   no decline
+                   49      27,808   lost    0.40   0.334    no    1.773   0.254   20,480   no decline
+                   50       9,696   lost    0.04   0.013    no    1.897   0.256   20,480   no decline
+                   51     846,704   lost    0.03   0.008    no    1.853   0.270   20,480   no decline
+                   52   1,092,016   lost    0.01   0.003    no    1.844   0.274   20,480   no decline
+                   53      16,960   lost    0.03   0.000    no    1.824   0.282   20,480   no decline
+                   54     959,856   lost    0.01   0.002    no    1.829   0.277   20,480   no decline
+                   55     233,168   lost    0.02   0.003    no    1.822   0.272   20,480   no decline
+                   56      50,832   lost    0.01   0.000    no    1.808   0.276   20,480   no decline
+                   57      15,824   lost    0.06   0.017    no    1.887   0.258   20,480   no decline
+                   58       never   never   0.00   0.000    no    1.722   0.276   20,480   no decline
+                   59     259,280   lost    0.03   0.007    no    1.844   0.280   20,480   no decline
+        1/40 off   40     181,664   lost    0.05   0.019    no    1.935   0.189   40,960   no decline
+                   41       6,288   lost    0.07   0.029    no    1.934   0.188   40,960   no decline
+                   42      48,928   lost    0.06   0.010    no    1.934   0.189   40,960   no decline
+                   43     127,104   lost    0.05   0.022    no    1.934   0.191   40,960   no decline
+                   44      46,944   lost    0.05   0.031    no    1.934   0.187   40,960   no decline
+                   45       4,432   lost    0.05   0.022    no    1.933   0.189   40,960   no decline
+                   46      20,480   lost    0.05   0.017    no    1.934   0.189   40,960   no decline
+                   47      49,424   lost    0.07   0.044    no    1.934   0.188   40,960   no decline
+                   48      27,344   lost    0.06   0.019    no    1.935   0.187   40,960   no decline
+                   49      17,840   lost    0.05   0.017    no    1.934   0.188   40,960   no decline
+                   50      30,496   lost    0.07   0.033    no    1.935   0.185   40,960   no decline
+                   51      16,096   lost    0.06   0.020    no    1.935   0.187   40,960   no decline
+                   52       7,744   lost    0.09   0.032    no    1.933   0.190   40,960   no decline
+                   53      56,864   lost    0.06   0.020    no    1.933   0.193   40,960   no decline
+                   54      30,400   lost    0.06   0.006    no    1.933   0.190   40,960   no decline
+                   55       9,744   lost    0.09   0.036    no    1.934   0.190   40,960   no decline
+                   56      59,520   lost    0.06   0.019    no    1.934   0.187   40,960   no decline
+                   57       9,136   lost    0.06   0.020    no    1.934   0.189   40,960   no decline
+                   58      98,864   lost    0.05   0.020    no    1.934   0.189   20,480   no decline
+                   59      25,968   lost    0.07   0.022    no    1.933   0.190   40,960   no decline
+
+
+
+D      Theory computations
+Check (a). Layouts use environment seeds 10000–10199. The breadth-first search runs over the
+real MiniGrid dynamics, restoring the full grid state at each node, with actions left, right, forward,
+pick-up, drop and toggle. “Done” never shortens a path. Success is reaching the goal (DoorKey) or
+carrying the target ball (KeyCorridor).
+
+    • Replay. Each candidate action sequence is replayed in a fresh environment with the training
+      code’s satiation module.
+    • Drop-and-regrab. The richer family inserts one drop-and-regrab at every position where
+      the agent carries the key and faces an empty cell, and keeps the best member.
+
+
+                                                           28
+    • Tamper family. Tamper at t = 0, with or without a second tamper just before the goal step.
+
+Check (b). The 9 farming checkpoints of the round-2 growth-1/20 run were each run on the same
+200 layouts, with actions sampled from the policy under a fixed seed per batch. One further seed of
+that run solved (0.995 success) and is excluded. One farming seed succeeded on 0.26 of layouts; its
+52 solving episodes are excluded from the non-solving maximum.
+
+Replay of the tamper-on policies. All 80 round-4 tamper-on checkpoints (four settings, 20
+seeds each) were run on the same 200 layouts with sampled actions, as in check (b), with growth
+and the tamper action as in training.
+
+    • Recorded per episode: the discounted intrinsic return, the total discounted return (the
+      task reward arrives only on the final step), the mean of D(ht ) over the episode’s steps, success,
+      and the share of steps on “done”.
+    • Checks: the tracked drive matched the module’s need state at every step, and the identity of
+      Proposition 1 held on every episode. For every seed, the replay’s press share was within 0.007
+      of the share in its training log.
+
+Script tamper_policy_returns.py, data tamper-policy-returns.json.
+
+Value iteration. Value iteration ran on a 7×5 layout with a wall column and a locked door, with
+needs (grasp, open) on an exact lattice of bin g. A halved bin reproduced the results where it was
+checked. Convergence was to max |∆V | < 10−7 , except for the certified early stop at 1/160 in round
+5. The tamper version zeroes both modelled needs.
+
+
+E     Hyperparameters and implementation
+
+
+                      Table 10: PPO and reward settings (from config.toml).
+                   Setting                                     Value
+                   Environments in parallel                    16
+                   Rollout length per environment              128
+                   Batch                                       2048
+                   Environment steps per seed                  2,000,000
+                   Learning rate (linearly annealed)           2.5 × 10−4
+                   Discount γ                                  0.99
+                   GAE λ                                       0.95
+                   Minibatches per epoch                       4
+                   Epochs per update                           4
+                   Clip coefficient                            0.2
+                   Entropy coefficient                         0.01
+                   Value coefficient                           0.5
+                   Max gradient norm                           0.5
+                   Advantage normalization (per minibatch)     on, or off where stated
+                   Needs h (explore, grasp, open): start h0    0.5
+                   Relief per event (satiety)                  0.1, 1.0, 1.0
+                   Intrinsic coefficient                       1.0
+                   Final evaluation episodes per environment   64
+
+
+                                                   29
+   The encoder applies three 2×2 convolutions (16, 32 and 64 channels, ReLU, with one 2×2
+max-pool) to the 7×7×3 view, followed by a 64-unit ReLU layer. The needs (when present) are
+concatenated to these features, and linear actor and critic heads follow. Software: PyTorch 2.14.1,
+Gymnasium 1.4.0, MiniGrid 3.2.0, NumPy 2.4.6.
+
+
+F       Compute
+All runs used one Apple M4 Pro computer (12 CPU cores, 24 GB memory) with no GPU. Each run
+trained its seeds in parallel, one single-threaded process per seed.
+
+    • Rounds 2–5: 43 runs, 12.8 hours of summed wall-clock time from the run records.
+    • Round 1 (exploratory): 14 runs, 3.0 hours. Three of these runs are re-scored in Table 4.
+
+Two round-4 runs (satiation 1/160 + tamper, norm on and off) ran concurrently by mistake, so
+their recorded durations are about twice the usual. Seeded, single-threaded computation leaves
+their results unaffected (correction 9).
+
+
+G       Reproducibility
+Pre-registration files and their sha256 hashes, recomputed from the snapshots in the archive’s
+paper-data/sources/ folder and equal to the hashes in the records written at locking.
+
+    • The lock times are self-reported. Each record holds a file’s hash and the UTC time
+      at which we wrote it: 2026-10-26 15:17:42 (round 3), 2026-10-26 19:23:42 (round 4) and
+      2026-10-27 04:34:11 (round 5). By our account, each was written before any training in its
+      round.
+    • What a reader can and cannot check. The pre-registration files and their records were
+      not committed to version control, nor deposited with any timestamping service, at lock time.
+      A reader can check that a released file matches the hash reported here, but not when it was
+      written.
+    • Release. Pre-registration files, hash records, run records, scored results, checkpoints, and the
+      training and analysis code used in this paper are archived at Zenodo, doi:10.5281/zenodo.
+      23708846.
+
+ File                              sha256
+ Round 3 pre-registration          b5e845c978ec96c2746eb81098c0bea3bf8dc14a1dc174e4f77844352b621ae7
+ Round 4 pre-registration          79fdfed000d5e6f892d9201cadd970808cf3b0949e4b3e3d925be9839800faa1
+ Round 4 amendment                 72b77be693b9d493e756b23f89aadb35d6934965d5c0633d4681fc8422c0e6f5
+ Round 5 pre-registration          0298bbc79c323e4613e56a29be0257a6c7c3ad764cbb056902159292bcbcda0d
+ Round 5 amendment (Part C lock)   1d99028349683b3b85bd204802b614bfb3a38fa30db3d24fbb19eda7c2790a4f
+
+    • Generation. Every figure, table and quoted number is generated by a script in the archive’s
+      scripts/ folder, from the scored files in paper-data/sources/ or from the post-hoc data in
+      paper-data/. The archive’s README.md maps each file to the paper section that uses it.
+    • Checking. check_numbers.py regenerates the number macros and tables, fails on any
+      difference, and flags literal numbers in the text.
+    • Run IDs. Table 11 maps the descriptive labels to run identifiers.
+
+                                                 30
+  Table 11: Map from the descriptive labels used in the text to the internal
+  run names and run identifiers. DoorKey-8x8 unless stated; normalization
+  on unless stated. KeyCorridor runs are named K1–K6 here; the project’s
+  scored files and run records call them C1–C6.
+
+Label in the text                           Round     Name          Run ID
+satiation 1/40 (round-1 calibration)        1         cal 1/40      6bfabf4a
+satiation 1/160 (round-1 calibration)       1         cal 1/160     6e507c3e
+satiation 1/640 (round-1 calibration)       1         cal 1/640     6518a3c8
+satiation 1/40 (seeds 10–19)                2         N1            ed5147b6
+satiation 1/40, γ = 0.95                    2         N2            74b2b2d0
+satiation 1/80                              2         N3            af4373da
+satiation 1/80, coef 1.29                   2         N4            b58ec6e0
+satiation 1/40, coef 0.5                    2         N5            eb8555bd
+satiation 1/20                              2         N6            bced806e
+pay-once event bonus                        2         pay-once      5b13189d
+satiation 1/60                              3         R1            4cac9e0a
+satiation 1/30                              3         R2            eea13605
+satiation 1/40, coef 0.5                    3         R3            3d03a914
+satiation 1/40 (reference)                  3         R4            fff9fd5b
+satiation 1/40, coef 2                      3         R5            c3d67c09
+satiation 1/40, coef 0.5, norm off          3         R6            89d8e34c
+satiation 1/40, norm off                    3         R7            135d1475
+satiation 1/40, coef 2, norm off            3         R8            1205f6d0
+satiation 1/40 + early-goal starts          3         R9            a7cb164e
+fixed pay-once control                      3         R10           07653362
+satiation 1/640                             4         A1a           a97113a1
+satiation 1/160                             4         A1b           3629f9a7
+satiation, no refill (growth 0)             4         A1c           1d549b2f
+explore-only satiation 1/640                4         A2a           224a7d96
+explore-only satiation 1/160                4         A2b           7a364fed
+episodic novelty                            4         A2c           2d94fc36
+satiation 1/160 + tamper                    4         B1            bb00e7e5
+satiation 1/160 + tamper, norm off          4         B2            a8f5efc4
+satiation 1/40 + tamper                     4         B3            78c44406
+satiation 1/40 + tamper, norm off           4         B4            f0a40d20
+satiation 1/40                              4         B5            4d3b84f0
+satiation 1/40, norm off                    4         B6            a6e11900
+satiation 1/160, norm off                   4         B7            115c6566
+constant event bonus, norm off              4         B8            fb860207
+task-only                                   5         A1            022a3e90
+task-only, norm off                         5         A2            1c7b2eda
+satiation 1/160 + tamper, cost 0.01         5         B9            b971c18d
+satiation 1/160 + tamper, cost 0.1          5         B10           a25b7c99
+satiation 1/160 + tamper, cost 1            5         B11           896b2863
+KeyCorridor satiation 1/160                 5         K1            c14516de
+KeyCorridor satiation 1/40                  5         K2            ad87a02f
+KeyCorridor satiation 1/20                  5         K3            aa29d1c3
+KeyCorridor satiation 1/20, norm off        5         K4            2153e884
+KeyCorridor satiation 1/160 + tamper        5         K5            35c840cd
+KeyCorridor task-only                       5         K6            6571bce6
+KeyCorridor calibration (seeds 100–104)     5         calibration   bd005cb8
+
+
+
+
+                                     31
+

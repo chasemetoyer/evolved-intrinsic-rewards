@@ -1,0 +1,973 @@
+{
+  "Control: pay each event once": {
+    "run": "5b13189d-614e-48c4-96b7-431838a41e1c",
+    "E": null,
+    "predicted": [
+      0,
+      0
+    ],
+    "farmers": 10,
+    "n": 10,
+    "within": false,
+    "solved": 0,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 14.041111111111112,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 1,
+        "pickups": 18.354444444444443,
+        "door_flips": 0.10555555555555557,
+        "success": 0.04,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 2,
+        "pickups": 17.267777777777773,
+        "door_flips": 0.02444444444444445,
+        "success": 0.0044444444444444444,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 3,
+        "pickups": 14.395555555555555,
+        "door_flips": 0.1611111111111111,
+        "success": 0.03555555555555556,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 4,
+        "pickups": 14.915555555555557,
+        "door_flips": 0.03333333333333333,
+        "success": 0.02333333333333333,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 5,
+        "pickups": 16.584444444444443,
+        "door_flips": 0.04777777777777778,
+        "success": 0.01888888888888889,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 6,
+        "pickups": 17.265555555555558,
+        "door_flips": 0.24222222222222223,
+        "success": 0.08777777777777779,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 7,
+        "pickups": 17.394444444444446,
+        "door_flips": 0.003333333333333333,
+        "success": 0.003333333333333333,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 8,
+        "pickups": 21.877777777777776,
+        "door_flips": 0.006666666666666666,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 9,
+        "pickups": 18.831111111111113,
+        "door_flips": 0.003333333333333333,
+        "success": 0.003333333333333333,
+        "farmer": true,
+        "solved": false
+      }
+    ]
+  },
+  "N6": {
+    "run": "bced806e-eccb-434b-be50-ad91f57a9dfb",
+    "E": 0.87,
+    "predicted": [
+      6,
+      10
+    ],
+    "farmers": 10,
+    "n": 10,
+    "within": true,
+    "solved": 1,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 155.63,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 1,
+        "pickups": 152.6377777777778,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 2,
+        "pickups": 150.6511111111111,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 3,
+        "pickups": 164.23333333333332,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 4,
+        "pickups": 163.54333333333332,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 5,
+        "pickups": 5.368888888888889,
+        "door_flips": 2.0611111111111113,
+        "success": 0.9977777777777779,
+        "farmer": true,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 108.04222222222224,
+        "door_flips": 0.33666666666666667,
+        "success": 0.19222222222222218,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 7,
+        "pickups": 150.11,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 8,
+        "pickups": 152.3111111111111,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 9,
+        "pickups": 159.9611111111111,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      }
+    ]
+  },
+  "N5": {
+    "run": "eb8555bd-afbf-484d-b1fc-30faa29648b6",
+    "E": 0.382,
+    "predicted": [
+      0,
+      1
+    ],
+    "farmers": 3,
+    "n": 10,
+    "within": false,
+    "solved": 7,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 48.86333333333334,
+        "door_flips": 42.16444444444445,
+        "success": 0.0022222222222222222,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 1,
+        "pickups": 50.525555555555556,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 2,
+        "pickups": 1.0966666666666667,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 3,
+        "pickups": 1.347777777777778,
+        "door_flips": 1.0044444444444443,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 55.26222222222222,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 5,
+        "pickups": 1.0544444444444445,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 1.1577777777777778,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 7,
+        "pickups": 1.2522222222222221,
+        "door_flips": 1.02,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 8,
+        "pickups": 1.17,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 9,
+        "pickups": 1.1333333333333333,
+        "door_flips": 1.0022222222222221,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      }
+    ]
+  },
+  "N4": {
+    "run": "b58ec6e0-291c-47a2-838b-57783d35214f",
+    "E": 0.764,
+    "predicted": [
+      2,
+      8
+    ],
+    "farmers": 0,
+    "n": 10,
+    "within": false,
+    "solved": 10,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 1.0055555555555555,
+        "door_flips": 1.0022222222222221,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 1,
+        "pickups": 2.5133333333333336,
+        "door_flips": 3.1444444444444444,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 2,
+        "pickups": 1.0822222222222222,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 3,
+        "pickups": 1.01,
+        "door_flips": 1.0022222222222221,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 1.0455555555555558,
+        "door_flips": 1.0044444444444443,
+        "success": 0.9988888888888889,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 5,
+        "pickups": 1.0033333333333332,
+        "door_flips": 1.0066666666666666,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 1.0266666666666668,
+        "door_flips": 1.0044444444444443,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 7,
+        "pickups": 1.0422222222222224,
+        "door_flips": 1.008888888888889,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 8,
+        "pickups": 1.0700000000000003,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 9,
+        "pickups": 1.0,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      }
+    ]
+  },
+  "N3": {
+    "run": "af4373da-8be6-4a69-aa61-404ce37103d1",
+    "E": 0.593,
+    "predicted": [
+      1,
+      4
+    ],
+    "farmers": 0,
+    "n": 10,
+    "within": false,
+    "solved": 10,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 1.0,
+        "door_flips": 1.0044444444444443,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 1,
+        "pickups": 1.0022222222222221,
+        "door_flips": 1.0066666666666668,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 2,
+        "pickups": 1.0333333333333334,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 3,
+        "pickups": 1.0022222222222221,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 1.0877777777777777,
+        "door_flips": 1.0022222222222221,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 5,
+        "pickups": 1.0,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 1.0022222222222221,
+        "door_flips": 1.0044444444444443,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 7,
+        "pickups": 1.0033333333333332,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 8,
+        "pickups": 1.0055555555555555,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 9,
+        "pickups": 1.001111111111111,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      }
+    ]
+  },
+  "N2": {
+    "run": "74b2b2d0-7f04-48ec-a1f8-6d78af326fd2",
+    "E": 0.281,
+    "predicted": [
+      0,
+      2
+    ],
+    "farmers": 7,
+    "n": 10,
+    "within": false,
+    "solved": 3,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 52.263333333333335,
+        "door_flips": 56.66666666666666,
+        "success": 0.28444444444444444,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 1,
+        "pickups": 74.97333333333334,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 2,
+        "pickups": 1.0133333333333332,
+        "door_flips": 1.0111111111111113,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 3,
+        "pickups": 1.2033333333333334,
+        "door_flips": 1.1033333333333333,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 48.81666666666667,
+        "door_flips": 41.812222222222225,
+        "success": 0.5233333333333334,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 5,
+        "pickups": 1.0,
+        "door_flips": 1.0044444444444443,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 77.57,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 7,
+        "pickups": 77.00555555555556,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 8,
+        "pickups": 77.22444444444444,
+        "door_flips": 0.0022222222222222222,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 9,
+        "pickups": 79.19111111111111,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      }
+    ]
+  },
+  "N1": {
+    "run": "ed5147b6-c861-48b2-b9ff-1952774d5658",
+    "E": 0.764,
+    "predicted": [
+      2,
+      8
+    ],
+    "farmers": 7,
+    "n": 10,
+    "within": true,
+    "solved": 4,
+    "seeds": [
+      {
+        "seed": 10,
+        "pickups": 5.1755555555555555,
+        "door_flips": 3.692222222222222,
+        "success": 0.9877777777777779,
+        "farmer": true,
+        "solved": true
+      },
+      {
+        "seed": 11,
+        "pickups": 56.364444444444445,
+        "door_flips": 0.02,
+        "success": 0.0011111111111111111,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 12,
+        "pickups": 59.39777777777778,
+        "door_flips": 0.6044444444444445,
+        "success": 0.07,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 13,
+        "pickups": 42.63777777777778,
+        "door_flips": 10.37111111111111,
+        "success": 0.37111111111111117,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 14,
+        "pickups": 1.468888888888889,
+        "door_flips": 1.0155555555555555,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 15,
+        "pickups": 52.050000000000004,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 16,
+        "pickups": 1.218888888888889,
+        "door_flips": 1.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 17,
+        "pickups": 1.27,
+        "door_flips": 1.0044444444444443,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 18,
+        "pickups": 58.797777777777775,
+        "door_flips": 10.57,
+        "success": 0.0044444444444444444,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 19,
+        "pickups": 51.46444444444444,
+        "door_flips": 0.005555555555555556,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      }
+    ]
+  },
+  "calibration growth 1/640": {
+    "run": "6518a3c8-0446-45de-805c-5f5e8aa3258e",
+    "E": 0.048,
+    "farmers": 0,
+    "n": 10,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 1,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 2,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 3,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 5,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 7,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 8,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 9,
+        "pickups": 1.001111111111111,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      }
+    ]
+  },
+  "calibration growth 1/160": {
+    "run": "6e507c3e-5837-4ef3-b6d9-05a7c3990468",
+    "E": 0.368,
+    "farmers": 0,
+    "n": 10,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 1,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 2,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 3,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 5,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 1.0022222222222221,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 7,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 0.9988888888888889,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 8,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 9,
+        "pickups": 1.0,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      }
+    ]
+  },
+  "calibration growth 1/40": {
+    "run": "6bfabf4a-3e40-4d7c-b98a-ded07a5a0b69",
+    "E": 0.764,
+    "farmers": 5,
+    "n": 10,
+    "seeds": [
+      {
+        "seed": 0,
+        "pickups": 48.18,
+        "door_flips": 0.0,
+        "success": 0.027777777777777776,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 1,
+        "pickups": 53.82666666666667,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 2,
+        "pickups": 54.66222222222221,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 3,
+        "pickups": 1.3422222222222222,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 4,
+        "pickups": 58.888888888888886,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      },
+      {
+        "seed": 5,
+        "pickups": 1.1788888888888889,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 6,
+        "pickups": 1.338888888888889,
+        "door_flips": 0.0,
+        "success": 0.9988888888888889,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 7,
+        "pickups": 1.2611111111111113,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 8,
+        "pickups": 1.62,
+        "door_flips": 0.0,
+        "success": 1.0,
+        "farmer": false,
+        "solved": true
+      },
+      {
+        "seed": 9,
+        "pickups": 50.15,
+        "door_flips": 0.0,
+        "success": 0.0,
+        "farmer": true,
+        "solved": false
+      }
+    ]
+  },
+  "logistic": {
+    "slope": 1.0646012387409873,
+    "slope_ci": [
+      -1.3436982273779743,
+      3.472900704859949
+    ],
+    "p_one_sided": 0.19313207261347903
+  },
+  "fisher": {
+    "N2 < N1": {
+      "table": [
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "p": 0.6857585139318885
+    },
+    "N5 < N4": {
+      "table": [
+        [
+          3,
+          7
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "p": 1.0
+    },
+    "N6 > N3": {
+      "table": [
+        [
+          10,
+          0
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "p": 5.412544112234515e-06
+    }
+  }
+}

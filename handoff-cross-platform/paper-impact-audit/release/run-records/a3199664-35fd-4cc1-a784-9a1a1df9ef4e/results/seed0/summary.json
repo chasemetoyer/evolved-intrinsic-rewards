@@ -1,0 +1,58 @@
+{
+  "seed": 0,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "lp",
+    "coef": 0.005,
+    "lr": 0.0001,
+    "update_epochs": 1,
+    "minibatch_size": 512,
+    "lag_updates": 5
+  },
+  "first_solved_step": 739328,
+  "coverage_after_solved": 0.4597814776274714,
+  "final_train": {
+    "r_int_mean": 4.81501427000492e-05,
+    "r_int_std": 8.49783722919205e-05,
+    "train/ret": 0.9603781250000001,
+    "train/len": 28.175555555555555,
+    "train/success": 1.0,
+    "train/coverage": 0.4109677419354838,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.95779052734375,
+      "len": 30.015625,
+      "success": 1.0,
+      "coverage": 0.4435483870967742,
+      "got_key": 1.0,
+      "opened_door": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.1516357421875,
+      "len": 543.28125,
+      "success": 0.15625,
+      "coverage": 0.15272177419354838,
+      "got_key": 0.15625,
+      "opened_door": 0.15625
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.9636462402343751,
+      "len": 103.40625,
+      "success": 1.0,
+      "coverage": 0.27595628415300544,
+      "got_key": 1.0,
+      "opened_door": 1.0
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0154437255859375,
+      "len": 2520.515625,
+      "success": 0.015625,
+      "coverage": 0.08367486338797815,
+      "got_key": 0.015625,
+      "opened_door": 0.015625
+    }
+  }
+}

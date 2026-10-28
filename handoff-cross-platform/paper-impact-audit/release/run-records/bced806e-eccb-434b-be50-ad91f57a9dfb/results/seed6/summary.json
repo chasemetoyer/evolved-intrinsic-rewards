@@ -1,0 +1,81 @@
+{
+  "seed": 6,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": null,
+  "coverage_after_solved": null,
+  "final_train": {
+    "r_int_mean": -0.001896294661694103,
+    "r_int_std": 0.062062584277656346,
+    "train/ret": 0.1766175347222222,
+    "train/int_ret": -1.2111722694533984,
+    "train/len": 528.0744444444445,
+    "train/success": 0.19222222222222218,
+    "train/coverage": 0.43193548387096775,
+    "train/got_key": 0.8955555555555557,
+    "train/opened_door": 0.19222222222222218,
+    "train/pickups": 108.04222222222224,
+    "train/door_flips": 0.33666666666666667
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.2458056640625,
+      "int_ret": 0.0,
+      "len": 484.09375,
+      "success": 0.265625,
+      "coverage": 0.4838709677419355,
+      "got_key": 0.875,
+      "opened_door": 0.265625,
+      "pickups": 97.609375,
+      "door_flips": 0.265625
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.15007568359375,
+      "int_ret": 0.0,
+      "len": 544.390625,
+      "success": 0.15625,
+      "coverage": 0.3825604838709677,
+      "got_key": 0.703125,
+      "opened_door": 0.15625,
+      "pickups": 165.203125,
+      "door_flips": 0.15625
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.0488165283203125,
+      "int_ret": 0.0,
+      "len": 2438.921875,
+      "success": 0.0625,
+      "coverage": 0.2610997267759563,
+      "got_key": 0.6875,
+      "opened_door": 0.09375,
+      "pickups": 391.671875,
+      "door_flips": 0.09375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.015394287109375,
+      "int_ret": 0.0,
+      "len": 2520.65625,
+      "success": 0.015625,
+      "coverage": 0.20739412568306012,
+      "got_key": 0.5,
+      "opened_door": 0.03125,
+      "pickups": 607.09375,
+      "door_flips": 0.03125
+    }
+  }
+}

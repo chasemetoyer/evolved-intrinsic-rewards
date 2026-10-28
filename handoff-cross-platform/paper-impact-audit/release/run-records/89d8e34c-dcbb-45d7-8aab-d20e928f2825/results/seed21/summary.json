@@ -1,0 +1,83 @@
+{
+  "seed": 21,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 0.5,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 397312,
+  "first_goal_step": 30560,
+  "coverage_after_solved": 0.3636872192731727,
+  "final_train": {
+    "r_int_mean": 0.019340073896778956,
+    "r_int_std": 0.1670195675558514,
+    "train/ret": 0.9618374999999999,
+    "train/int_ret": 0.2691819316261293,
+    "train/len": 27.137777777777778,
+    "train/success": 1.0,
+    "train/coverage": 0.3460215053763441,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.9122222222222223,
+    "train/door_flips": 1.1199999999999999,
+    "train/len_median": 25.333333333333332
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9609106445312501,
+      "int_ret": 0.0,
+      "len": 27.796875,
+      "success": 1.0,
+      "coverage": 0.3341733870967742,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.078125,
+      "door_flips": 1.09375
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97451171875,
+      "int_ret": 0.0,
+      "len": 18.125,
+      "success": 1.0,
+      "coverage": 0.32560483870967744,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.9453485107421875,
+      "int_ret": 0.0,
+      "len": 155.453125,
+      "success": 1.0,
+      "coverage": 0.211150956284153,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 13.265625,
+      "door_flips": 2.1875
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.7537652587890624,
+      "int_ret": 0.0,
+      "len": 633.734375,
+      "success": 0.765625,
+      "coverage": 0.14156420765027322,
+      "got_key": 0.84375,
+      "opened_door": 0.765625,
+      "pickups": 0.84375,
+      "door_flips": 0.765625
+    }
+  }
+}

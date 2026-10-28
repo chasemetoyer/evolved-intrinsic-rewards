@@ -1,0 +1,85 @@
+{
+  "purpose": "Unchanged source snapshots for the retrospective detector control-flow audit; not a complete execution environment.",
+  "copied_from": "Session-local installed packages",
+  "python_used_by_copy_utility": "3.11.14 (main, Oct 28 2025, 12:11:54) [Clang 20.1.4 ]",
+  "package_versions": {
+    "minigrid": "3.2.0",
+    "gymnasium": "1.4.0"
+  },
+  "original_training_python_evidence": "release/run-records/3629f9a7-8038-452a-bbef-53d5685e0a85/log:1 declares CPython 3.12.12",
+  "numpy_provenance_caveat": "release/code/requirements.txt selects 2.4.6 for Python<3.12 and 2.5.4 for Python>=3.12. Original installed inventories are not included; do not equate the current Python3.11 audit environment with the old run environment.",
+  "files": [
+    {
+      "path": "minigrid/__init__.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/__init__.py",
+      "sha256": "b3d1022f46265d2fc67e85077392b71a482f98203230c91afe39a29f1d2a2860",
+      "bytes": 29267
+    },
+    {
+      "path": "minigrid/minigrid_env.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/minigrid_env.py",
+      "sha256": "b1a4d14b75cf24eb5efa6dc962aa135ed0df20d9e81205c83c781cf7d48e03ae",
+      "bytes": 24654
+    },
+    {
+      "path": "minigrid/core/grid.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/core/grid.py",
+      "sha256": "56bc6829d15206e45702c249616682c0acfa7fdab4ab346d84b05eb09dbf82b0",
+      "bytes": 9463
+    },
+    {
+      "path": "minigrid/core/roomgrid.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/core/roomgrid.py",
+      "sha256": "a6cebd1c2cec45ee61a1de21f53474b8660d33a5f642aa6916e8f522af30a3cf",
+      "bytes": 13059
+    },
+    {
+      "path": "minigrid/core/world_object.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/core/world_object.py",
+      "sha256": "f60793fd1fcaa58f373a7a8773261821b0fe0a86461412abbedd2a64ea65757d",
+      "bytes": 8465
+    },
+    {
+      "path": "minigrid/envs/doorkey.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/envs/doorkey.py",
+      "sha256": "b2802d8e98e9c99d54a6bbf4c04d7047cb8e0c4a3150b186bba8f4defb20114c",
+      "bytes": 3368
+    },
+    {
+      "path": "minigrid/envs/keycorridor.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/envs/keycorridor.py",
+      "sha256": "9542b175a59921dcff0e4a8a3c38cfad86c1a217965f78c270c8e758df4c692e",
+      "bytes": 4316
+    },
+    {
+      "path": "minigrid/envs/unlockpickup.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/envs/unlockpickup.py",
+      "sha256": "2727f3cfca82eb5c18feaba240118432a76b0f9fbaff3ff51010f554b25ac240",
+      "bytes": 3205
+    },
+    {
+      "path": "minigrid/envs/blockedunlockpickup.py",
+      "source": ".venv/lib/python3.11/site-packages/minigrid/envs/blockedunlockpickup.py",
+      "sha256": "bc25c6f066a3658b127fad0ed8a94e13b7e11ff5d90c977d6499c55e62600b3b",
+      "bytes": 3652
+    },
+    {
+      "path": "minigrid/METADATA",
+      "source": ".venv/lib/python3.11/site-packages/minigrid-3.2.0.dist-info/METADATA",
+      "sha256": "863873742431486f8cf50836f11c134caef182d142947071e90395ddd8ffd3c6",
+      "bytes": 7077
+    },
+    {
+      "path": "gymnasium/vector/sync_vector_env.py",
+      "source": ".venv/lib/python3.11/site-packages/gymnasium/vector/sync_vector_env.py",
+      "sha256": "57d20351383e5376b700a742309176a01e392642acb74c935b3a568987079805",
+      "bytes": 17234
+    },
+    {
+      "path": "gymnasium/METADATA",
+      "source": ".venv/lib/python3.11/site-packages/gymnasium-1.4.0.dist-info/METADATA",
+      "sha256": "0298da13dd405e80fe6330dda41c56b397d99a3803b82be51a729d12b8386486",
+      "bytes": 9018
+    }
+  ]
+}

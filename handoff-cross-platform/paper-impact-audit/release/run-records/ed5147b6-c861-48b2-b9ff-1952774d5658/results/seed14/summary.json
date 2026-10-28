@@ -1,0 +1,81 @@
+{
+  "seed": 14,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 907264,
+  "coverage_after_solved": 0.37003584229390685,
+  "final_train": {
+    "r_int_mean": 0.023621315550473,
+    "r_int_std": 0.16186516814761692,
+    "train/ret": 0.9677062500000001,
+    "train/int_ret": 0.5417277424179742,
+    "train/len": 22.964444444444446,
+    "train/success": 1.0,
+    "train/coverage": 0.3399283154121864,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.468888888888889,
+    "train/door_flips": 1.0155555555555555
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9690185546875001,
+      "int_ret": 0.0,
+      "len": 22.03125,
+      "success": 1.0,
+      "coverage": 0.32106854838709675,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.28125,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9711938476562499,
+      "int_ret": 0.0,
+      "len": 20.484375,
+      "success": 1.0,
+      "coverage": 0.32258064516129037,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.453125,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.6554913330078125,
+      "int_ret": 0.0,
+      "len": 931.046875,
+      "success": 0.828125,
+      "coverage": 0.24479166666666663,
+      "got_key": 0.984375,
+      "opened_door": 0.984375,
+      "pickups": 89.453125,
+      "door_flips": 6.984375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0153448486328125,
+      "int_ret": 0.0,
+      "len": 2520.796875,
+      "success": 0.015625,
+      "coverage": 0.048241120218579236,
+      "got_key": 0.53125,
+      "opened_door": 0.15625,
+      "pickups": 20.34375,
+      "door_flips": 5.109375
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "seed": 73,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 159744,
+  "first_goal_step": 8496,
+  "coverage_after_solved": 0.6048351648351648,
+  "final_train": {
+    "r_int_mean": 0.023673226022058062,
+    "r_int_std": 0.21657615072197384,
+    "train/ret": 0.9437666666666669,
+    "train/int_ret": 0.40544157269100345,
+    "train/len": 16.87,
+    "train/success": 1.0,
+    "train/coverage": 0.6002222222222221,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.7855555555555556,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.0,
+    "train/key_pickups": 1.7855555555555556,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 16.88888888888889
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 11799,
+    "tampers_per_episode": 0.0,
+    "solved_episodes": 11799,
+    "solved_len_mean": 16.944825832697685
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.9451041666666666,
+      "int_ret": 0.0,
+      "len": 16.46875,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.609375,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.609375,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.9428125,
+      "int_ret": 0.0,
+      "len": 17.15625,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.0,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 2.0,
+      "locked_door_opens": 1.0
+    }
+  }
+}

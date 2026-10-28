@@ -1,0 +1,83 @@
+{
+  "seed": 34,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 765952,
+  "first_goal_step": 1728,
+  "coverage_after_solved": 0.37494976203067154,
+  "final_train": {
+    "r_int_mean": 0.023949006779326334,
+    "r_int_std": 0.16115951206949022,
+    "train/ret": 0.9684140624999998,
+    "train/int_ret": 0.5519235712240655,
+    "train/len": 22.461111111111112,
+    "train/success": 1.0,
+    "train/coverage": 0.3446236559139785,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.441111111111111,
+    "train/door_flips": 1.0066666666666666,
+    "train/len_median": 21.72222222222222
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9694580078124999,
+      "int_ret": 0.0,
+      "len": 21.71875,
+      "success": 1.0,
+      "coverage": 0.33719758064516125,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.390625,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97240234375,
+      "int_ret": 0.0,
+      "len": 19.625,
+      "success": 1.0,
+      "coverage": 0.3276209677419355,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.334013671875,
+      "int_ret": 0.0,
+      "len": 1743.25,
+      "success": 0.46875,
+      "coverage": 0.3964310109289617,
+      "got_key": 0.984375,
+      "opened_door": 0.6875,
+      "pickups": 130.21875,
+      "door_flips": 1.34375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.06173095703125,
+      "int_ret": 0.0,
+      "len": 2402.1875,
+      "success": 0.0625,
+      "coverage": 0.12175546448087432,
+      "got_key": 0.609375,
+      "opened_door": 0.265625,
+      "pickups": 10.78125,
+      "door_flips": 0.265625
+    }
+  }
+}

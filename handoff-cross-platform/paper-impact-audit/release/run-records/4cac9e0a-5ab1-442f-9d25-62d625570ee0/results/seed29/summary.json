@@ -1,0 +1,83 @@
+{
+  "seed": 29,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.016666666666666666,
+      0.016666666666666666,
+      0.016666666666666666
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 311296,
+  "first_goal_step": 16400,
+  "coverage_after_solved": 0.35112708900116596,
+  "final_train": {
+    "r_int_mean": 0.03391401221354803,
+    "r_int_std": 0.1269873711797926,
+    "train/ret": 0.9721765625000001,
+    "train/int_ret": 0.6679021484716536,
+    "train/len": 19.785555555555554,
+    "train/success": 1.0,
+    "train/coverage": 0.334910394265233,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.008888888888889,
+    "train/door_flips": 1.0,
+    "train/len_median": 19.333333333333332
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.97277587890625,
+      "int_ret": 0.0,
+      "len": 19.359375,
+      "success": 1.0,
+      "coverage": 0.32056451612903225,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9729077148437499,
+      "int_ret": 0.0,
+      "len": 19.265625,
+      "success": 1.0,
+      "coverage": 0.3235887096774194,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.5106866455078125,
+      "int_ret": 0.0,
+      "len": 1294.046875,
+      "success": 0.65625,
+      "coverage": 0.17486338797814208,
+      "got_key": 0.796875,
+      "opened_door": 0.78125,
+      "pickups": 12.078125,
+      "door_flips": 26.109375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.01547119140625,
+      "int_ret": 0.0,
+      "len": 2520.4375,
+      "success": 0.015625,
+      "coverage": 0.02459016393442623,
+      "got_key": 0.484375,
+      "opened_door": 0.234375,
+      "pickups": 0.484375,
+      "door_flips": 437.390625
+    }
+  }
+}

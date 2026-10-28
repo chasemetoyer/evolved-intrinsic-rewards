@@ -1,0 +1,86 @@
+{
+  "seed": 65,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 119280,
+  "first_goal_step": 2944,
+  "coverage_after_solved": 0.7984946236559136,
+  "final_train": {
+    "r_int_mean": 0.03432467745410071,
+    "r_int_std": 0.14516621828079224,
+    "train/ret": 0.9379296296296297,
+    "train/int_ret": 0.6395992912724614,
+    "train/len": 18.621111111111112,
+    "train/success": 1.0,
+    "train/coverage": 0.7999999999999998,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.6255555555555554,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.0,
+    "train/key_pickups": 1.6255555555555554,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 18.72222222222222
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 10774,
+    "tampers_per_episode": 0.0,
+    "solved_episodes": 10774,
+    "solved_len_mean": 18.54928531650269
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.9397395833333333,
+      "int_ret": 0.0,
+      "len": 18.078125,
+      "success": 1.0,
+      "coverage": 0.7999999999999999,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.4375,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.4375,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.94265625,
+      "int_ret": 0.0,
+      "len": 17.203125,
+      "success": 1.0,
+      "coverage": 0.7999999999999999,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.0,
+      "locked_door_opens": 1.0
+    }
+  }
+}

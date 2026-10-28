@@ -1,0 +1,84 @@
+{
+  "seed": 37,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "event_bonus",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": true,
+    "explore_bonus": 0.0008014183193531415
+  },
+  "first_solved_step": 305152,
+  "first_goal_step": 10080,
+  "coverage_after_solved": 0.3877649769585254,
+  "final_train": {
+    "r_int_mean": 0.02529933386378818,
+    "r_int_std": 0.07439378566212124,
+    "train/ret": 0.9709890624999998,
+    "train/int_ret": 0.5156748438400165,
+    "train/len": 20.630000000000003,
+    "train/success": 1.0,
+    "train/coverage": 0.3557706093189964,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.0044444444444443,
+    "train/door_flips": 1.0,
+    "train/len_median": 19.61111111111111
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9715234375,
+      "int_ret": 0.0,
+      "len": 20.25,
+      "success": 1.0,
+      "coverage": 0.3492943548387097,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.015625,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97378662109375,
+      "int_ret": 0.0,
+      "len": 18.640625,
+      "success": 1.0,
+      "coverage": 0.34526209677419356,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.9448980712890626,
+      "int_ret": 0.0,
+      "len": 156.734375,
+      "success": 1.0,
+      "coverage": 0.2679303278688525,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.78125,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.2611480712890625,
+      "int_ret": 0.0,
+      "len": 1892.734375,
+      "success": 0.265625,
+      "coverage": 0.11483948087431695,
+      "got_key": 0.640625,
+      "opened_door": 0.453125,
+      "pickups": 0.640625,
+      "door_flips": 0.453125
+    }
+  }
+}

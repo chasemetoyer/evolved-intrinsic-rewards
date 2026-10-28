@@ -1,0 +1,86 @@
+{
+  "seed": 74,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false,
+    "needs_on": [
+      1,
+      1,
+      1
+    ],
+    "tamper": false,
+    "event_mode": "locked_door_key"
+  },
+  "env_id": "MiniGrid-KeyCorridorS3R1-v0",
+  "max_steps": 270,
+  "first_solved_step": 208416,
+  "first_goal_step": 1664,
+  "coverage_after_solved": 0.6020454545454544,
+  "final_train": {
+    "r_int_mean": 0.022726232185959816,
+    "r_int_std": 0.22019420233037737,
+    "train/ret": 0.9447666666666668,
+    "train/int_ret": 0.382422129234506,
+    "train/len": 16.57,
+    "train/success": 1.0,
+    "train/coverage": 0.6,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.5922222222222224,
+    "train/door_flips": 2.0,
+    "train/tampers": 0.003333333333333333,
+    "train/key_pickups": 1.5922222222222224,
+    "train/locked_door_opens": 1.0,
+    "train/len_median": 16.555555555555557
+  },
+  "final10_exact": {
+    "start_step": 1798963.2,
+    "episodes": 11962,
+    "tampers_per_episode": 0.0040963049657247955,
+    "solved_episodes": 11962,
+    "solved_len_mean": 16.705902023073065
+  },
+  "eval": {
+    "KeyCorridorS3R1/sample": {
+      "ret": 0.944375,
+      "int_ret": 0.0,
+      "len": 16.6875,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.78125,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.78125,
+      "locked_door_opens": 1.0
+    },
+    "KeyCorridorS3R1/greedy": {
+      "ret": 0.9494791666666667,
+      "int_ret": 0.0,
+      "len": 15.15625,
+      "success": 1.0,
+      "coverage": 0.6,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.03125,
+      "door_flips": 2.0,
+      "tampers": 0.0,
+      "key_pickups": 1.03125,
+      "locked_door_opens": 1.0
+    }
+  }
+}

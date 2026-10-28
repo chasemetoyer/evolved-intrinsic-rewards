@@ -1,0 +1,83 @@
+{
+  "seed": 33,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 0.5,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 528384,
+  "first_goal_step": 18352,
+  "coverage_after_solved": 0.34803800265134777,
+  "final_train": {
+    "r_int_mean": 0.026829662836260267,
+    "r_int_std": 0.1591274936993917,
+    "train/ret": 0.9712296875,
+    "train/int_ret": 0.27688469930487275,
+    "train/len": 20.45888888888889,
+    "train/success": 1.0,
+    "train/coverage": 0.3350537634408603,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.0644444444444447,
+    "train/door_flips": 1.0022222222222221,
+    "train/len_median": 19.72222222222222
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9729956054687501,
+      "int_ret": 0.0,
+      "len": 19.203125,
+      "success": 1.0,
+      "coverage": 0.3210685483870968,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.09375,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.9732373046875,
+      "int_ret": 0.0,
+      "len": 19.03125,
+      "success": 1.0,
+      "coverage": 0.32207661290322587,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.7027606201171874,
+      "int_ret": 0.0,
+      "len": 787.703125,
+      "success": 0.796875,
+      "coverage": 0.2254098360655738,
+      "got_key": 0.875,
+      "opened_door": 0.8125,
+      "pickups": 22.5625,
+      "door_flips": 0.84375
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.13852111816406248,
+      "int_ret": 0.0,
+      "len": 2205.984375,
+      "success": 0.140625,
+      "coverage": 0.07120901639344263,
+      "got_key": 0.5,
+      "opened_door": 0.203125,
+      "pickups": 0.5,
+      "door_flips": 0.203125
+    }
+  }
+}

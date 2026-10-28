@@ -1,0 +1,83 @@
+{
+  "seed": 23,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 1.0,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 1875968,
+  "first_goal_step": 3728,
+  "coverage_after_solved": 0.6298617511520738,
+  "final_train": {
+    "r_int_mean": -0.0014962422299302286,
+    "r_int_std": 0.12141366551319759,
+    "train/ret": 0.6086723958333333,
+    "train/int_ret": -0.2642553032769097,
+    "train/len": 269.27000000000004,
+    "train/success": 0.8733333333333335,
+    "train/coverage": 0.6314336917562725,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 20.64333333333333,
+    "train/door_flips": 17.79555555555556,
+    "train/len_median": 210.33333333333334
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.711376953125,
+      "int_ret": 0.0,
+      "len": 199.6875,
+      "success": 0.921875,
+      "coverage": 0.5801411290322581,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 14.953125,
+      "door_flips": 16.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 640.0,
+      "success": 0.0,
+      "coverage": 0.20564516129032256,
+      "got_key": 0.84375,
+      "opened_door": 0.671875,
+      "pickups": 0.84375,
+      "door_flips": 409.734375
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.26339355468750003,
+      "int_ret": 0.0,
+      "len": 1944.125,
+      "success": 0.46875,
+      "coverage": 0.4740437158469945,
+      "got_key": 1.0,
+      "opened_door": 0.953125,
+      "pickups": 147.546875,
+      "door_flips": 53.703125
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.0,
+      "int_ret": 0.0,
+      "len": 2560.0,
+      "success": 0.0,
+      "coverage": 0.13336748633879783,
+      "got_key": 0.921875,
+      "opened_door": 0.5,
+      "pickups": 24.796875,
+      "door_flips": 1218.21875
+    }
+  }
+}

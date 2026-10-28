@@ -1,0 +1,1335 @@
+[
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1431,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ed5147b6-c861-48b2-b9ff-1952774d5658/config.toml",
+        "sha256": "b95b3a2dbf3f4d93aec96b1ebc6504ff60e21b59b5c7a4b61361937aa4b5ede5"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ed5147b6-c861-48b2-b9ff-1952774d5658/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ed5147b6-c861-48b2-b9ff-1952774d5658/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ed5147b6-c861-48b2-b9ff-1952774d5658/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "49598335cfbd30ce579d5d65cc937f4aa57b8f7e",
+    "recorded_commit": "4959833",
+    "run": "ed5147b6-c861-48b2-b9ff-1952774d5658"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1478,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/74b2b2d0-7f04-48ec-a1f8-6d78af326fd2/config.toml",
+        "sha256": "2da5a9445e36c64e0a4a09c6a1ea1726b9199bf50cbe2a946a841235a86ec40d"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/74b2b2d0-7f04-48ec-a1f8-6d78af326fd2/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/74b2b2d0-7f04-48ec-a1f8-6d78af326fd2/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/74b2b2d0-7f04-48ec-a1f8-6d78af326fd2/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "01705bfa0e3d2c57669a5c15218cc527b3537266",
+    "recorded_commit": "01705bf",
+    "run": "74b2b2d0-7f04-48ec-a1f8-6d78af326fd2"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1481,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/af4373da-8be6-4a69-aa61-404ce37103d1/config.toml",
+        "sha256": "b715a968a716751928cc0b70dfda6b9236561f3013bd96c2843e06233dfbd643"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/af4373da-8be6-4a69-aa61-404ce37103d1/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/af4373da-8be6-4a69-aa61-404ce37103d1/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/af4373da-8be6-4a69-aa61-404ce37103d1/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "885f907427bf120cb30fb2eeed4be50e5aaebf0b",
+    "recorded_commit": "885f907",
+    "run": "af4373da-8be6-4a69-aa61-404ce37103d1"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1483,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b58ec6e0-291c-47a2-838b-57783d35214f/config.toml",
+        "sha256": "2e7f0d63787be531a0e885d110a16d6fc0eb3e0bb532c76263db5624d35459c1"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b58ec6e0-291c-47a2-838b-57783d35214f/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b58ec6e0-291c-47a2-838b-57783d35214f/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b58ec6e0-291c-47a2-838b-57783d35214f/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "517d0ac962544704756cdcac6d92860115d08a72",
+    "recorded_commit": "517d0ac",
+    "run": "b58ec6e0-291c-47a2-838b-57783d35214f"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1478,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eb8555bd-afbf-484d-b1fc-30faa29648b6/config.toml",
+        "sha256": "9d3d9c927c42781b1c7d5ec71a809aca10dd39aee858464acb719873cf6b5d30"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eb8555bd-afbf-484d-b1fc-30faa29648b6/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eb8555bd-afbf-484d-b1fc-30faa29648b6/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eb8555bd-afbf-484d-b1fc-30faa29648b6/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "ba9d4281a826ffea6b8954ef699609760a1a08be",
+    "recorded_commit": "ba9d428",
+    "run": "eb8555bd-afbf-484d-b1fc-30faa29648b6"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1475,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bced806e-eccb-434b-be50-ad91f57a9dfb/config.toml",
+        "sha256": "4f0e60884159387dd6a188d65c233e8c9ddc158ce031ca242bd4e8266500ef9c"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bced806e-eccb-434b-be50-ad91f57a9dfb/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bced806e-eccb-434b-be50-ad91f57a9dfb/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bced806e-eccb-434b-be50-ad91f57a9dfb/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "c0167bcebe562081223d1cc43932fa7a9a4cd2ef",
+    "recorded_commit": "c0167bc",
+    "run": "bced806e-eccb-434b-be50-ad91f57a9dfb"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1477,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/5b13189d-614e-48c4-96b7-431838a41e1c/config.toml",
+        "sha256": "bdda441caa3ad5be19e95696c6a760c774269bfa1d96ddb6439edd8646aee8ee"
+      },
+      "intrinsic.py": {
+        "bytes": 7211,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/5b13189d-614e-48c4-96b7-431838a41e1c/intrinsic.py",
+        "sha256": "618615d62293e6b254a67ed410488709300119f56747fcb3ee53a91e13ecf293"
+      },
+      "ppo.py": {
+        "bytes": 16413,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/5b13189d-614e-48c4-96b7-431838a41e1c/ppo.py",
+        "sha256": "ba3e30ccbd80e3c0d47bca9f99dda70043c465c54a44f79493c4b07f947c5349"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/5b13189d-614e-48c4-96b7-431838a41e1c/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "ad3f26f4df9598abcac60503da1d26f01820c258",
+    "recorded_commit": "ad3f26f",
+    "run": "5b13189d-614e-48c4-96b7-431838a41e1c"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1755,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4cac9e0a-5ab1-442f-9d25-62d625570ee0/config.toml",
+        "sha256": "ebbb1e3605ed110e0e77f64eef8c6eb6979add58f5f8b76ccdf7aeb99a961274"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4cac9e0a-5ab1-442f-9d25-62d625570ee0/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4cac9e0a-5ab1-442f-9d25-62d625570ee0/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4cac9e0a-5ab1-442f-9d25-62d625570ee0/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "7a0884eaeab13310ba4d2beb87da0137fa85c762",
+    "recorded_commit": "7a0884e",
+    "run": "4cac9e0a-5ab1-442f-9d25-62d625570ee0"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1752,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eea13605-38d3-4e23-adf3-a10cfc5bcbae/config.toml",
+        "sha256": "f765a51aabd4bd260886bcdaa2f813433b51f4292857da870ee98396a29f9225"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eea13605-38d3-4e23-adf3-a10cfc5bcbae/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eea13605-38d3-4e23-adf3-a10cfc5bcbae/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/eea13605-38d3-4e23-adf3-a10cfc5bcbae/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "dd7aff22fd431b15ea868624051a65aae79279a2",
+    "recorded_commit": "dd7aff2",
+    "run": "eea13605-38d3-4e23-adf3-a10cfc5bcbae"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1710,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3d03a914-1a1d-4422-9d29-7ea01b422f2f/config.toml",
+        "sha256": "a435ac8468a285ee073bdf9bee3b34379f643f92c071d4533311933837585e78"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3d03a914-1a1d-4422-9d29-7ea01b422f2f/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3d03a914-1a1d-4422-9d29-7ea01b422f2f/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3d03a914-1a1d-4422-9d29-7ea01b422f2f/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "4c52a3c4aefff5e403bedfd261bc60829a8f1192",
+    "recorded_commit": "4c52a3c",
+    "run": "3d03a914-1a1d-4422-9d29-7ea01b422f2f"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1710,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0/config.toml",
+        "sha256": "de4c0ccdb2d726198ce410ac9d038e6f09cd912965178e8256dd9e8b2debeba7"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "3ecf1f5441f128860f5558a3d2b7cfea824dcfb3",
+    "recorded_commit": "3ecf1f5",
+    "run": "fff9fd5b-1dd3-4c51-b95c-0ead1e089fd0"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1710,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c3d67c09-a955-4220-a44e-bfbb68308bce/config.toml",
+        "sha256": "87c7b94d40cec949c6ecfaf30766e2558c4b98cbabd50ec1e6ad7f13a189bd07"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c3d67c09-a955-4220-a44e-bfbb68308bce/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c3d67c09-a955-4220-a44e-bfbb68308bce/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c3d67c09-a955-4220-a44e-bfbb68308bce/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "2b08b47fda28bdf243eaa7b7a0674ce75a261345",
+    "recorded_commit": "2b08b47",
+    "run": "c3d67c09-a955-4220-a44e-bfbb68308bce"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1711,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/89d8e34c-dcbb-45d7-8aab-d20e928f2825/config.toml",
+        "sha256": "84ead4e33f861a8d0e0f7b552819fa6b9c4b2a07ad3f78722aca12f7eb7a4bd8"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/89d8e34c-dcbb-45d7-8aab-d20e928f2825/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/89d8e34c-dcbb-45d7-8aab-d20e928f2825/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/89d8e34c-dcbb-45d7-8aab-d20e928f2825/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "efcf42e456fc7594dae81f12a36b5879b628e227",
+    "recorded_commit": "efcf42e",
+    "run": "89d8e34c-dcbb-45d7-8aab-d20e928f2825"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1711,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/135d1475-e4cf-4a4f-8ca2-be0d84c1d409/config.toml",
+        "sha256": "d8cf79d7d49186bafb4db87c713e356e52f730c9ae6822b16f8f9e80912d2003"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/135d1475-e4cf-4a4f-8ca2-be0d84c1d409/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/135d1475-e4cf-4a4f-8ca2-be0d84c1d409/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/135d1475-e4cf-4a4f-8ca2-be0d84c1d409/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "6906eaf7ad775ceeb2335fc5634a017ff1bc05c3",
+    "recorded_commit": "6906eaf",
+    "run": "135d1475-e4cf-4a4f-8ca2-be0d84c1d409"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1711,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1205f6d0-b06c-4061-8621-ccfb17787fb8/config.toml",
+        "sha256": "1c2030a145dc826a39638ad5991aa82924aa2d84e1c1f4d6f97ffa5819b5ba6b"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1205f6d0-b06c-4061-8621-ccfb17787fb8/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1205f6d0-b06c-4061-8621-ccfb17787fb8/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1205f6d0-b06c-4061-8621-ccfb17787fb8/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "6a23adb01b2082f24e00d585f7646b02909f65f2",
+    "recorded_commit": "6a23adb",
+    "run": "1205f6d0-b06c-4061-8621-ccfb17787fb8"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1667,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a7cb164e-db25-4428-aa9f-165f0c285814/config.toml",
+        "sha256": "85da9f7f0ff436d483051c3de52aea42d237780bdf42d4be4ba03142b1474f9d"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a7cb164e-db25-4428-aa9f-165f0c285814/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a7cb164e-db25-4428-aa9f-165f0c285814/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a7cb164e-db25-4428-aa9f-165f0c285814/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "f8e9cdf31fa76be747ae482f2340346ea960541e",
+    "recorded_commit": "f8e9cdf",
+    "run": "a7cb164e-db25-4428-aa9f-165f0c285814"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 1756,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/07653362-50c4-4b7a-9506-2c0428496fba/config.toml",
+        "sha256": "30d14fe5aa30ba06733cca3d1bc325a4e940c692ea70428cb4b5dbaa8a8bc93f"
+      },
+      "intrinsic.py": {
+        "bytes": 7418,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/07653362-50c4-4b7a-9506-2c0428496fba/intrinsic.py",
+        "sha256": "b4b6f3e696f6c4b34eed9d8437d8b79ef9a7a995dee595edf588ddb1fb4b4503"
+      },
+      "ppo.py": {
+        "bytes": 18464,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/07653362-50c4-4b7a-9506-2c0428496fba/ppo.py",
+        "sha256": "1845c679f661548a11c2002db01a18598e051344e3d94c228ca8e5d447147d4b"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/07653362-50c4-4b7a-9506-2c0428496fba/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "25e0dbaa41babc7e5329c942e7ee2335036e01e8",
+    "recorded_commit": "25e0dba",
+    "run": "07653362-50c4-4b7a-9506-2c0428496fba"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2148,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a97113a1-8de5-4940-a548-26275a829e4f/config.toml",
+        "sha256": "2d9afc59c2f9118911d063ee6974e794c59dc235283c16ff5139a8acc35fe832"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a97113a1-8de5-4940-a548-26275a829e4f/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a97113a1-8de5-4940-a548-26275a829e4f/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a97113a1-8de5-4940-a548-26275a829e4f/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "224fdd0992e5322471915c9137151fe5acdc3e1a",
+    "recorded_commit": "224fdd0",
+    "run": "a97113a1-8de5-4940-a548-26275a829e4f"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2142,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3629f9a7-8038-452a-bbef-53d5685e0a85/config.toml",
+        "sha256": "5db816dbc4ad85c4bb2d256e574ae4f75d43a43e25be9d96d789bc61c134e2b3"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3629f9a7-8038-452a-bbef-53d5685e0a85/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3629f9a7-8038-452a-bbef-53d5685e0a85/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/3629f9a7-8038-452a-bbef-53d5685e0a85/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "15337349ef54ce1c5d0a7f9f6522435052324b4a",
+    "recorded_commit": "1533734",
+    "run": "3629f9a7-8038-452a-bbef-53d5685e0a85"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2130,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1d549b2f-663c-4931-b8d5-6ce42c0a523c/config.toml",
+        "sha256": "f6faae3f931fc6e5574ff8e43f1ab8e9bb6638629a83bf79ce9bd78759deb782"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1d549b2f-663c-4931-b8d5-6ce42c0a523c/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1d549b2f-663c-4931-b8d5-6ce42c0a523c/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1d549b2f-663c-4931-b8d5-6ce42c0a523c/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "0eff1e093d3d88a625b1daf8bae72b0d0b5bd040",
+    "recorded_commit": "0eff1e0",
+    "run": "1d549b2f-663c-4931-b8d5-6ce42c0a523c"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2024,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/224a7d96-a57b-451d-b33e-1e156bf74fbe/config.toml",
+        "sha256": "5cb28b1c2da5d8f8d5ae7eef5bfacc6f9fa2456628233419da9a67a7c0039550"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/224a7d96-a57b-451d-b33e-1e156bf74fbe/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/224a7d96-a57b-451d-b33e-1e156bf74fbe/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/224a7d96-a57b-451d-b33e-1e156bf74fbe/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "226d8da38fb3dd96aa1c44bb299eae66816bb713",
+    "recorded_commit": "226d8da",
+    "run": "224a7d96-a57b-451d-b33e-1e156bf74fbe"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2017,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/7a364fed-a875-4d3d-a366-21a162be994d/config.toml",
+        "sha256": "f58a7f424b99a0ce8dd7cb530523a9c32782bf6844a63522e4f88963ec273c52"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/7a364fed-a875-4d3d-a366-21a162be994d/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/7a364fed-a875-4d3d-a366-21a162be994d/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/7a364fed-a875-4d3d-a366-21a162be994d/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "b28164f5a7455a32a2937bc5208cfc4f1cdd4125",
+    "recorded_commit": "b28164f",
+    "run": "7a364fed-a875-4d3d-a366-21a162be994d"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2071,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2d94fc36-66b9-40db-b192-13b54b12bb6c/config.toml",
+        "sha256": "a8544d3bb343c9637c7a3c26ce1080804b5e33904325aa90f46d78f38cf7cc30"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2d94fc36-66b9-40db-b192-13b54b12bb6c/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2d94fc36-66b9-40db-b192-13b54b12bb6c/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2d94fc36-66b9-40db-b192-13b54b12bb6c/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "bd0b972a5750193ecc16ed019f88ae97ff05d6a9",
+    "recorded_commit": "bd0b972",
+    "run": "2d94fc36-66b9-40db-b192-13b54b12bb6c"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2099,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bb00e7e5-65d0-4411-a236-2dacc19f0e63/config.toml",
+        "sha256": "3c51359cf90fc29c02f796e06535469a03cac0432feaa21777e292e216e5777c"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bb00e7e5-65d0-4411-a236-2dacc19f0e63/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bb00e7e5-65d0-4411-a236-2dacc19f0e63/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bb00e7e5-65d0-4411-a236-2dacc19f0e63/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "454b36ea9380affb3af1c8eff96e4a7cac570de8",
+    "recorded_commit": "454b36e",
+    "run": "bb00e7e5-65d0-4411-a236-2dacc19f0e63"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2084,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a8f5efc4-63e7-4a55-8020-08f7e7cff7bb/config.toml",
+        "sha256": "5fefe68c7bf6d958a0c0e76117c2f688adb9e015b0b1f149d1fb8ff2cebf521a"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a8f5efc4-63e7-4a55-8020-08f7e7cff7bb/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a8f5efc4-63e7-4a55-8020-08f7e7cff7bb/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a8f5efc4-63e7-4a55-8020-08f7e7cff7bb/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "f7e74775fc980803fa8bdf3e5e123980c8540cc0",
+    "recorded_commit": "f7e7477",
+    "run": "a8f5efc4-63e7-4a55-8020-08f7e7cff7bb"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2093,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/78c44406-6e63-466f-b309-8dfb82bfe663/config.toml",
+        "sha256": "851114f4dc248c3d8a00d91c0405628af73ee8adc3e5867a411d163e5929a240"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/78c44406-6e63-466f-b309-8dfb82bfe663/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/78c44406-6e63-466f-b309-8dfb82bfe663/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/78c44406-6e63-466f-b309-8dfb82bfe663/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "757a487df8696e0782f53669369ebcdfdda975f7",
+    "recorded_commit": "757a487",
+    "run": "78c44406-6e63-466f-b309-8dfb82bfe663"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2078,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/f0a40d20-3702-4087-803c-8db52fefaf1e/config.toml",
+        "sha256": "b4761e909ba8adb70db5c1cba4eec3dc02bc7795cd4cd18490923e7892eec334"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/f0a40d20-3702-4087-803c-8db52fefaf1e/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/f0a40d20-3702-4087-803c-8db52fefaf1e/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/f0a40d20-3702-4087-803c-8db52fefaf1e/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "c29e9bc7a44150d1e8c5c2c3abc551e777c0e11f",
+    "recorded_commit": "c29e9bc",
+    "run": "f0a40d20-3702-4087-803c-8db52fefaf1e"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2136,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4d3b84f0-9f83-4f15-a20b-34c32c14ed36/config.toml",
+        "sha256": "1931f7bce811dbdc43e56850a06be96ba9a719f8851b1b093e010fbb8c85f208"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4d3b84f0-9f83-4f15-a20b-34c32c14ed36/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4d3b84f0-9f83-4f15-a20b-34c32c14ed36/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/4d3b84f0-9f83-4f15-a20b-34c32c14ed36/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "5e3112ec03ab4b152b7964568d3fea1d633454e7",
+    "recorded_commit": "5e3112e",
+    "run": "4d3b84f0-9f83-4f15-a20b-34c32c14ed36"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2121,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a6e11900-bf82-4dd1-8f07-48a8f55cffbc/config.toml",
+        "sha256": "533161cdc264286534a70e1eba9785d0461315811c8d42a286b1177ffc54ff65"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a6e11900-bf82-4dd1-8f07-48a8f55cffbc/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a6e11900-bf82-4dd1-8f07-48a8f55cffbc/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a6e11900-bf82-4dd1-8f07-48a8f55cffbc/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "6e22cfd134e274b14eb0c51c47e3af14327569b4",
+    "recorded_commit": "6e22cfd",
+    "run": "a6e11900-bf82-4dd1-8f07-48a8f55cffbc"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2127,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/115c6566-d1b2-4ea2-9c6d-06b31317381c/config.toml",
+        "sha256": "75b6282d85d8d85e2d1b9583d513eb01bbc35b1c2800ff915ca3662e5ecee64e"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/115c6566-d1b2-4ea2-9c6d-06b31317381c/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/115c6566-d1b2-4ea2-9c6d-06b31317381c/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/115c6566-d1b2-4ea2-9c6d-06b31317381c/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "5bdd1fd0e6317a7f215b947dcd6d452e757a6e15",
+    "recorded_commit": "5bdd1fd",
+    "run": "115c6566-d1b2-4ea2-9c6d-06b31317381c"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2121,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fb860207-8246-4393-b352-0f74a9e88da2/config.toml",
+        "sha256": "41ead51dac6dde418e4d40a2f1c62fd57053f41e2dcc855f2e50910dcb4ab4f5"
+      },
+      "intrinsic.py": {
+        "bytes": 9630,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fb860207-8246-4393-b352-0f74a9e88da2/intrinsic.py",
+        "sha256": "f6f04cd1061ce3ce080f3f49700b70ca243330074d66153690de796c3f561242"
+      },
+      "ppo.py": {
+        "bytes": 21609,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fb860207-8246-4393-b352-0f74a9e88da2/ppo.py",
+        "sha256": "a9dbee05f5a13213de6d5114e50ba68546a2cb62c534370a0426e01c22b61617"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/fb860207-8246-4393-b352-0f74a9e88da2/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "62e8cf3a151acebf5af164802772961f1753d8de",
+    "recorded_commit": "62e8cf3",
+    "run": "fb860207-8246-4393-b352-0f74a9e88da2"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2077,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/022a3e90-09c1-43dc-8c4e-3a266d1ee5d0/config.toml",
+        "sha256": "4b3912ad6b0ddc3ca9c67dc244890dac71f803efdb2502da3681476b710addbd"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/022a3e90-09c1-43dc-8c4e-3a266d1ee5d0/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/022a3e90-09c1-43dc-8c4e-3a266d1ee5d0/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/022a3e90-09c1-43dc-8c4e-3a266d1ee5d0/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "17bbeb8f36bea30307f0bca4b41fc6f4ad3e5c90",
+    "recorded_commit": "17bbeb8",
+    "run": "022a3e90-09c1-43dc-8c4e-3a266d1ee5d0"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2078,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1c7b2eda-0224-4a90-9755-26051f89f3f0/config.toml",
+        "sha256": "8ea2838e3fc8784a1e0ea32ed8f52f6d82d6d424eb8d14c3f3ef4eb9162d4107"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1c7b2eda-0224-4a90-9755-26051f89f3f0/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1c7b2eda-0224-4a90-9755-26051f89f3f0/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/1c7b2eda-0224-4a90-9755-26051f89f3f0/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "ea79ab9137eeea14d649d9962fb5636c501e0b04",
+    "recorded_commit": "ea79ab9",
+    "run": "1c7b2eda-0224-4a90-9755-26051f89f3f0"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2188,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a25b7c99-84bb-4cbb-a742-5594444b7fc1/config.toml",
+        "sha256": "f21d23bf2a1233b59362d53afc8bd1e2fa79e05d1fe1a33c1bdae6d959bbb08c"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a25b7c99-84bb-4cbb-a742-5594444b7fc1/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a25b7c99-84bb-4cbb-a742-5594444b7fc1/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/a25b7c99-84bb-4cbb-a742-5594444b7fc1/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "92fdc9674f34c3ed2011901913a51637af8adb87",
+    "recorded_commit": "92fdc96",
+    "run": "a25b7c99-84bb-4cbb-a742-5594444b7fc1"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2188,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/896b2863-59b7-44c0-addc-4091b9bab73c/config.toml",
+        "sha256": "a5d3f245c6d3dac56f5c8bee68e836ef6b4c87c50ed9bd129a0884ef8fc4a62a"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/896b2863-59b7-44c0-addc-4091b9bab73c/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/896b2863-59b7-44c0-addc-4091b9bab73c/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/896b2863-59b7-44c0-addc-4091b9bab73c/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "5aad7198c7406d9b4c088594707ed35d3f5457bc",
+    "recorded_commit": "5aad719",
+    "run": "896b2863-59b7-44c0-addc-4091b9bab73c"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2189,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b971c18d-0fd7-4c68-b627-eb098b0b3569/config.toml",
+        "sha256": "a8a83fe65d1a20f03a9494eac4a5717540154cf8891c356e27ee4cae95eb0704"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b971c18d-0fd7-4c68-b627-eb098b0b3569/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b971c18d-0fd7-4c68-b627-eb098b0b3569/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/b971c18d-0fd7-4c68-b627-eb098b0b3569/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "aead8161564e6fa95bb502d5ada57943234de7e1",
+    "recorded_commit": "aead816",
+    "run": "b971c18d-0fd7-4c68-b627-eb098b0b3569"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2113,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c14516de-0174-4001-b8b2-5125e8aa49d3/config.toml",
+        "sha256": "4d81dc279f97ea4c10e48d6216c442c1a79ba7740d99930fbd702a457684b21a"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c14516de-0174-4001-b8b2-5125e8aa49d3/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c14516de-0174-4001-b8b2-5125e8aa49d3/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/c14516de-0174-4001-b8b2-5125e8aa49d3/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "bbf025b4636c3b2c4fdc9c4e6ebd748b96ba491c",
+    "recorded_commit": "bbf025b",
+    "run": "c14516de-0174-4001-b8b2-5125e8aa49d3"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2107,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ad87a02f-7353-4a64-8c32-e981408dd774/config.toml",
+        "sha256": "6f1561a776b4bbe6c59511b5fb1aaae9bcd4f3d9bdb550966993f91b59a94bce"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ad87a02f-7353-4a64-8c32-e981408dd774/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ad87a02f-7353-4a64-8c32-e981408dd774/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/ad87a02f-7353-4a64-8c32-e981408dd774/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "f0b45e481b6d071ea24a760a5c694b2bbf5d0ba4",
+    "recorded_commit": "f0b45e4",
+    "run": "ad87a02f-7353-4a64-8c32-e981408dd774"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2104,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/aa29d1c3-78f8-4c3d-b58f-ee45102255cf/config.toml",
+        "sha256": "3aff501d1517eb8d73c0ca63ac31c5711e5010ddcd95e15c9f89944094ab78b0"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/aa29d1c3-78f8-4c3d-b58f-ee45102255cf/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/aa29d1c3-78f8-4c3d-b58f-ee45102255cf/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/aa29d1c3-78f8-4c3d-b58f-ee45102255cf/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "172ecafb2d37d5b9bbe9bd5db2c4f1784c4dfb1d",
+    "recorded_commit": "172ecaf",
+    "run": "aa29d1c3-78f8-4c3d-b58f-ee45102255cf"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2105,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2153e884-0de7-4f7c-b942-27507be467ef/config.toml",
+        "sha256": "0514c7faa2b7ba42a0bbc93ff8b6d2027ac5a7946c3ec81d13f1bd3153425518"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2153e884-0de7-4f7c-b942-27507be467ef/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2153e884-0de7-4f7c-b942-27507be467ef/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/2153e884-0de7-4f7c-b942-27507be467ef/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "47b1efd337d6bd7a20aae0733875df8800997fa1",
+    "recorded_commit": "47b1efd",
+    "run": "2153e884-0de7-4f7c-b942-27507be467ef"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2112,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/35c840cd-2776-4817-9ac0-1f21f93c5e4d/config.toml",
+        "sha256": "2a09c3a5ea1ed9a526937e7ade8c2c9e6989d3c65add77a32f42309dbf9ea0ec"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/35c840cd-2776-4817-9ac0-1f21f93c5e4d/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/35c840cd-2776-4817-9ac0-1f21f93c5e4d/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/35c840cd-2776-4817-9ac0-1f21f93c5e4d/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "38e161b70594d409a9065c486a9ba48054f7b236",
+    "recorded_commit": "38e161b",
+    "run": "35c840cd-2776-4817-9ac0-1f21f93c5e4d"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2106,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/6571bce6-65f1-4227-aade-a4b2a6ac357e/config.toml",
+        "sha256": "9f072fb2b79307ae663e30d099db205370f5aa3bd74cc2ce5b855035605b3419"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/6571bce6-65f1-4227-aade-a4b2a6ac357e/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/6571bce6-65f1-4227-aade-a4b2a6ac357e/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/6571bce6-65f1-4227-aade-a4b2a6ac357e/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "719b09298c33960edd46573d116746134081fe64",
+    "recorded_commit": "719b092",
+    "run": "6571bce6-65f1-4227-aade-a4b2a6ac357e"
+  },
+  {
+    "files": {
+      "config.toml": {
+        "bytes": 2058,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bd005cb8-bad4-4321-a593-e4d3fc1a39fd/config.toml",
+        "sha256": "662679cbed2450ea788129ebbcc6b154286a30410fdb259b503cc9e8c175a713"
+      },
+      "intrinsic.py": {
+        "bytes": 10792,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bd005cb8-bad4-4321-a593-e4d3fc1a39fd/intrinsic.py",
+        "sha256": "9322f41b0ad50b2c539e016cc19191beb8fb9f15451a3fbef31905225140548b"
+      },
+      "ppo.py": {
+        "bytes": 23054,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bd005cb8-bad4-4321-a593-e4d3fc1a39fd/ppo.py",
+        "sha256": "eedbe2358d7e07c9155b62fe183492ba3cf6fc875da7465b66333f7b9881383f"
+      },
+      "run_seeds.py": {
+        "bytes": 5098,
+        "matches_recorded_commit": true,
+        "reference": "handoff-cross-platform/paper-impact-audit/run-source/bd005cb8-bad4-4321-a593-e4d3fc1a39fd/run_seeds.py",
+        "sha256": "c6e9ebe469b94a543093bd5efa3cda8fb941a12ca043ad8bce6c6e4ec21c3131"
+      }
+    },
+    "full_commit": "03653e536808da2b7c6fb46405cc9e7840478fe7",
+    "recorded_commit": "03653e5",
+    "run": "bd005cb8-bad4-4321-a593-e4d3fc1a39fd"
+  }
+]

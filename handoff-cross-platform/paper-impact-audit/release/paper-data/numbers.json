@@ -1,0 +1,2594 @@
+{
+ "cons.rows": {
+  "text": "94",
+  "source": "consolidated-results.md, rows"
+ },
+ "cons.hits": {
+  "text": "60",
+  "source": "consolidated-results.md, Result = hit"
+ },
+ "cons.misses": {
+  "text": "32",
+  "source": "consolidated-results.md, Result = miss"
+ },
+ "cons.unres": {
+  "text": "2",
+  "source": "consolidated-results.md, unresolvable"
+ },
+ "cons.ncorr": {
+  "text": "13",
+  "source": "consolidated-results.md, corrections list"
+ },
+ "r4.solve.B1": {
+  "text": "1/20",
+  "source": "round4-scores.json runs.B1.categories.solve"
+ },
+ "r4.farm.B1": {
+  "text": "6/20",
+  "source": "round4-scores.json runs.B1.categories.cycle-farm"
+ },
+ "r4.prolong.B1": {
+  "text": "13/20",
+  "source": "round4-scores.json runs.B1.categories.prolong"
+ },
+ "r4.solve.B2": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B2.categories.solve"
+ },
+ "r4.farm.B2": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.B2.categories.cycle-farm"
+ },
+ "r4.prolong.B2": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B2.categories.prolong"
+ },
+ "r4.solve.B3": {
+  "text": "1/20",
+  "source": "round4-scores.json runs.B3.categories.solve"
+ },
+ "r4.farm.B3": {
+  "text": "5/20",
+  "source": "round4-scores.json runs.B3.categories.cycle-farm"
+ },
+ "r4.prolong.B3": {
+  "text": "14/20",
+  "source": "round4-scores.json runs.B3.categories.prolong"
+ },
+ "r4.solve.B4": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B4.categories.solve"
+ },
+ "r4.farm.B4": {
+  "text": "18/20",
+  "source": "round4-scores.json runs.B4.categories.cycle-farm"
+ },
+ "r4.prolong.B4": {
+  "text": "2/20",
+  "source": "round4-scores.json runs.B4.categories.prolong"
+ },
+ "r4.solve.B5": {
+  "text": "11/20",
+  "source": "round4-scores.json runs.B5.categories.solve"
+ },
+ "r4.farm.B5": {
+  "text": "9/20",
+  "source": "round4-scores.json runs.B5.categories.cycle-farm"
+ },
+ "r4.prolong.B5": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B5.categories.prolong"
+ },
+ "r4.solve.B6": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.B6.categories.solve"
+ },
+ "r4.farm.B6": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B6.categories.cycle-farm"
+ },
+ "r4.prolong.B6": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B6.categories.prolong"
+ },
+ "r4.solve.B7": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.B7.categories.solve"
+ },
+ "r4.farm.B7": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B7.categories.cycle-farm"
+ },
+ "r4.prolong.B7": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B7.categories.prolong"
+ },
+ "r4.solve.B8": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B8.categories.solve"
+ },
+ "r4.farm.B8": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.B8.categories.cycle-farm"
+ },
+ "r4.prolong.B8": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.B8.categories.prolong"
+ },
+ "r4.solve.A1a": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.A1a.categories.solve"
+ },
+ "r4.farm.A1a": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A1a.categories.cycle-farm"
+ },
+ "r4.prolong.A1a": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A1a.categories.prolong"
+ },
+ "r4.solve.A1b": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.A1b.categories.solve"
+ },
+ "r4.farm.A1b": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A1b.categories.cycle-farm"
+ },
+ "r4.prolong.A1b": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A1b.categories.prolong"
+ },
+ "r4.solve.A1c": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.A1c.categories.solve"
+ },
+ "r4.farm.A1c": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A1c.categories.cycle-farm"
+ },
+ "r4.prolong.A1c": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A1c.categories.prolong"
+ },
+ "r4.solve.A2a": {
+  "text": "11/20",
+  "source": "round4-scores.json runs.A2a.categories.solve"
+ },
+ "r4.farm.A2a": {
+  "text": "7/20",
+  "source": "round4-scores.json runs.A2a.categories.cycle-farm"
+ },
+ "r4.prolong.A2a": {
+  "text": "2/20",
+  "source": "round4-scores.json runs.A2a.categories.prolong"
+ },
+ "r4.solve.A2b": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A2b.categories.solve"
+ },
+ "r4.farm.A2b": {
+  "text": "20/20",
+  "source": "round4-scores.json runs.A2b.categories.cycle-farm"
+ },
+ "r4.prolong.A2b": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A2b.categories.prolong"
+ },
+ "r4.solve.A2c": {
+  "text": "17/20",
+  "source": "round4-scores.json runs.A2c.categories.solve"
+ },
+ "r4.farm.A2c": {
+  "text": "2/20",
+  "source": "round4-scores.json runs.A2c.categories.cycle-farm"
+ },
+ "r4.prolong.A2c": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A2c.categories.prolong"
+ },
+ "r4.solve.on": {
+  "text": "2/80",
+  "source": "round4-scores.json, B1-B4 solves summed"
+ },
+ "r4.solve.off": {
+  "text": "71/80",
+  "source": "round4-scores.json, A1b+B7+B5+B6 solves summed"
+ },
+ "p.PB2-B1": {
+  "text": "$1.5\\times10^{-10}$",
+  "source": "round4-scores.json predictions[PB2-B1].p"
+ },
+ "ph.PB2-B1": {
+  "text": "$2.3\\times10^{-9}$",
+  "source": "round4-scores.json predictions[PB2-B1].p_holm"
+ },
+ "p.PB2-B2": {
+  "text": "$7.3\\times10^{-12}$",
+  "source": "round4-scores.json predictions[PB2-B2].p"
+ },
+ "ph.PB2-B2": {
+  "text": "$1.2\\times10^{-10}$",
+  "source": "round4-scores.json predictions[PB2-B2].p_holm"
+ },
+ "p.PB2-B3": {
+  "text": "0.00062",
+  "source": "round4-scores.json predictions[PB2-B3].p"
+ },
+ "ph.PB2-B3": {
+  "text": "0.006",
+  "source": "round4-scores.json predictions[PB2-B3].p_holm"
+ },
+ "p.PB2-B4": {
+  "text": "$7.3\\times10^{-12}$",
+  "source": "round4-scores.json predictions[PB2-B4].p"
+ },
+ "ph.PB2-B4": {
+  "text": "$1.2\\times10^{-10}$",
+  "source": "round4-scores.json predictions[PB2-B4].p_holm"
+ },
+ "p.PB4": {
+  "text": "0.00061",
+  "source": "round4-scores.json predictions[PB4].p"
+ },
+ "ph.PB4": {
+  "text": "0.006",
+  "source": "round4-scores.json predictions[PB4].p_holm"
+ },
+ "p.PB3-B1": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[PB3-B1].p"
+ },
+ "ph.PB3-B1": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[PB3-B1].p_holm"
+ },
+ "p.PB3-B3": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[PB3-B3].p"
+ },
+ "ph.PB3-B3": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[PB3-B3].p_holm"
+ },
+ "p.A1-P1": {
+  "text": "0.708",
+  "source": "round4-scores.json predictions[A1-P1].p"
+ },
+ "ph.A1-P1": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[A1-P1].p_holm"
+ },
+ "p.A1-P2": {
+  "text": "0.744",
+  "source": "round4-scores.json predictions[A1-P2].p"
+ },
+ "ph.A1-P2": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[A1-P2].p_holm"
+ },
+ "p.A2-P1": {
+  "text": "0.00018",
+  "source": "round4-scores.json predictions[A2-P1].p"
+ },
+ "ph.A2-P1": {
+  "text": "0.002",
+  "source": "round4-scores.json predictions[A2-P1].p_holm"
+ },
+ "p.A2-P2": {
+  "text": "$5\\times10^{-6}$",
+  "source": "round4-scores.json predictions[A2-P2].p"
+ },
+ "ph.A2-P2": {
+  "text": "$6.5\\times10^{-5}$",
+  "source": "round4-scores.json predictions[A2-P2].p_holm"
+ },
+ "p.A2-P3": {
+  "text": "0.002",
+  "source": "round4-scores.json predictions[A2-P3].p"
+ },
+ "ph.A2-P3": {
+  "text": "0.015",
+  "source": "round4-scores.json predictions[A2-P3].p_holm"
+ },
+ "p.A2-P4": {
+  "text": "$5\\times10^{-6}$",
+  "source": "round4-scores.json predictions[A2-P4].p"
+ },
+ "ph.A2-P4": {
+  "text": "$6.5\\times10^{-5}$",
+  "source": "round4-scores.json predictions[A2-P4].p_holm"
+ },
+ "p.A2-P5": {
+  "text": "0.041",
+  "source": "round4-scores.json predictions[A2-P5].p"
+ },
+ "ph.A2-P5": {
+  "text": "0.247",
+  "source": "round4-scores.json predictions[A2-P5].p_holm"
+ },
+ "p.A2-P6": {
+  "text": "$1.3\\times10^{-8}$",
+  "source": "round4-scores.json predictions[A2-P6].p"
+ },
+ "ph.A2-P6": {
+  "text": "$1.8\\times10^{-7}$",
+  "source": "round4-scores.json predictions[A2-P6].p_holm"
+ },
+ "p.A2-P7": {
+  "text": "0.371",
+  "source": "round4-scores.json predictions[A2-P7].p"
+ },
+ "ph.A2-P7": {
+  "text": "1.000",
+  "source": "round4-scores.json predictions[A2-P7].p_holm"
+ },
+ "p.A2-P8": {
+  "text": "0.002",
+  "source": "round4-scores.json predictions[A2-P8].p"
+ },
+ "ph.A2-P8": {
+  "text": "0.013",
+  "source": "round4-scores.json predictions[A2-P8].p_holm"
+ },
+ "p.PB1-pooled": {
+  "text": "$8.3\\times10^{-25}$",
+  "source": "round4-scores.json predictions[PB1-pooled].p"
+ },
+ "p.PB5": {
+  "text": "$9.5\\times10^{-7}$",
+  "source": "round4-scores.json predictions[PB5].p"
+ },
+ "r4.tamperers.on": {
+  "text": "80/80",
+  "source": "round4-scores.json B1-B4 tamperer"
+ },
+ "r4.loopers.on": {
+  "text": "80/80",
+  "source": "round4-scores.json B1-B4 looper"
+ },
+ "r4.solverseed.B1": {
+  "text": "48",
+  "source": "round4-scores.json B1 seeds with category solve"
+ },
+ "r4.solverseed.B3": {
+  "text": "48",
+  "source": "round4-scores.json B3 seeds with category solve"
+ },
+ "r4.intr.on.lo": {
+  "text": "0.71",
+  "source": "round4-report.md final-10% behavior, B1-B4 intrinsic return / episode"
+ },
+ "r4.intr.on.hi": {
+  "text": "0.74",
+  "source": "same"
+ },
+ "r4.intr.off.lo": {
+  "text": "0.56",
+  "source": "round4-report.md final-10% behavior, A1b, B7, B6"
+ },
+ "r4.intr.off.hi": {
+  "text": "0.74",
+  "source": "same"
+ },
+ "r4.key.on.lo": {
+  "text": "73",
+  "source": "round4-report.md, key picked up, B1-B4"
+ },
+ "r4.key.on.hi": {
+  "text": "92",
+  "source": "same"
+ },
+ "r4.door.on.lo": {
+  "text": "14",
+  "source": "round4-report.md, door opened, B1-B4"
+ },
+ "r4.door.on.hi": {
+  "text": "17",
+  "source": "same"
+ },
+ "r4.len.on.lo": {
+  "text": "607",
+  "source": "round4-report.md, episode length, B1-B4"
+ },
+ "r4.len.on.hi": {
+  "text": "635",
+  "source": "same"
+ },
+ "r4.B8.pick": {
+  "text": "297",
+  "source": "round4-report.md, B8 pick-ups / episode"
+ },
+ "r4.B8.intr": {
+  "text": "77",
+  "source": "round4-report.md, B8 intrinsic return / episode"
+ },
+ "d.doneshare.B1": {
+  "text": "0.061",
+  "source": "part-d-results.json seeds.B1.*.done_frac_final10, median"
+ },
+ "d.doneshare.B2": {
+  "text": "0.096",
+  "source": "part-d-results.json seeds.B2.*.done_frac_final10, median"
+ },
+ "d.doneshare.B3": {
+  "text": "0.270",
+  "source": "part-d-results.json seeds.B3.*.done_frac_final10, median"
+ },
+ "d.doneshare.B4": {
+  "text": "0.189",
+  "source": "part-d-results.json seeds.B4.*.done_frac_final10, median"
+ },
+ "d.doneshare.A1b": {
+  "text": "0.000",
+  "source": "part-d-results.json seeds.A1b.*.done_frac_final10, median (no-op presses)"
+ },
+ "d.doneshare.B7": {
+  "text": "0.081",
+  "source": "part-d-results.json seeds.B7.*.done_frac_final10, median (no-op presses)"
+ },
+ "d.doneshare.B5": {
+  "text": "0.000",
+  "source": "part-d-results.json seeds.B5.*.done_frac_final10, median (no-op presses)"
+ },
+ "d.doneshare.B6": {
+  "text": "0.019",
+  "source": "part-d-results.json seeds.B6.*.done_frac_final10, median (no-op presses)"
+ },
+ "tr.disc.lo": {
+  "text": "0.694",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_int, minimum"
+ },
+ "tr.disc.hi": {
+  "text": "0.722",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_int, maximum"
+ },
+ "tr.total.lo": {
+  "text": "0.694",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_total, minimum"
+ },
+ "tr.total.hi": {
+  "text": "0.723",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_disc_total, maximum"
+ },
+ "tr.drive.lo": {
+  "text": "0.018",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_mean_drive, minimum"
+ },
+ "tr.drive.hi": {
+  "text": "0.043",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_mean_drive, maximum"
+ },
+ "tr.success.lo": {
+  "text": "0.000",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_success, minimum"
+ },
+ "tr.success.hi": {
+  "text": "0.022",
+  "source": "tamper-policy-returns.json, per-run median over seeds of mean_success, maximum"
+ },
+ "tr.npol": {
+  "text": "80",
+  "source": "tamper-policy-returns.json, number of replayed checkpoints"
+ },
+ "tr.presscheck.max": {
+  "text": "0.007",
+  "source": "tamper-policy-returns.json press_share_check.max_abs_diff"
+ },
+ "tr.cappct.lo": {
+  "text": "93",
+  "source": "tamper-policy-returns.json, smallest median discounted intrinsic return as % of 0.75"
+ },
+ "tr.cappct.hi": {
+  "text": "96",
+  "source": "same, largest"
+ },
+ "d.done200k.B1": {
+  "text": "0.25",
+  "source": "part-d-results.json seeds.B1.*.done_frac_at[200000], median"
+ },
+ "d.ent200k.B1": {
+  "text": "1.86",
+  "source": "part-d-results.json seeds.B1.*.entropy_at[200000], median"
+ },
+ "d.done200k.B2": {
+  "text": "0.16",
+  "source": "part-d-results.json seeds.B2.*.done_frac_at[200000], median"
+ },
+ "d.ent200k.B2": {
+  "text": "1.94",
+  "source": "part-d-results.json seeds.B2.*.entropy_at[200000], median"
+ },
+ "d.done200k.B3": {
+  "text": "0.71",
+  "source": "part-d-results.json seeds.B3.*.done_frac_at[200000], median"
+ },
+ "d.ent200k.B3": {
+  "text": "1.02",
+  "source": "part-d-results.json seeds.B3.*.entropy_at[200000], median"
+ },
+ "d.done200k.B4": {
+  "text": "0.27",
+  "source": "part-d-results.json seeds.B4.*.done_frac_at[200000], median"
+ },
+ "d.ent200k.B4": {
+  "text": "1.90",
+  "source": "part-d-results.json seeds.B4.*.entropy_at[200000], median"
+ },
+ "uniform.press": {
+  "text": "0.143",
+  "source": "1/7, uniform choice over 7 actions"
+ },
+ "uniform.press.ep": {
+  "text": "91",
+  "source": "640/7, uniform presses in a 640-step episode"
+ },
+ "ln7": {
+  "text": "1.946",
+  "source": "ln 7"
+ },
+ "d2.on.B1": {
+  "text": "1.878",
+  "source": "part-d-results.json D2.B1>A1b.median_on"
+ },
+ "d2.off.A1b": {
+  "text": "0.067",
+  "source": "part-d-results.json D2.B1>A1b.median_off"
+ },
+ "d2.on.B2": {
+  "text": "1.935",
+  "source": "part-d-results.json D2.B2>B7.median_on"
+ },
+ "d2.off.B7": {
+  "text": "1.138",
+  "source": "part-d-results.json D2.B2>B7.median_off"
+ },
+ "d2.on.B3": {
+  "text": "1.844",
+  "source": "part-d-results.json D2.B3>B5.median_on"
+ },
+ "d2.off.B5": {
+  "text": "0.290",
+  "source": "part-d-results.json D2.B3>B5.median_off"
+ },
+ "d2.on.B4": {
+  "text": "1.934",
+  "source": "part-d-results.json D2.B4>B6.median_on"
+ },
+ "d2.off.B6": {
+  "text": "0.598",
+  "source": "part-d-results.json D2.B4>B6.median_off"
+ },
+ "p.D2": {
+  "text": "$7.3\\times10^{-12}$",
+  "source": "part-d-results.json D2.*.p (identical for all four pairs)"
+ },
+ "ph.D2.max": {
+  "text": "$1.5\\times10^{-10}$",
+  "source": "round5-scores.json predictions D2-B1..B4 p_holm, maximum"
+ },
+ "d1.never": {
+  "text": "1/80",
+  "source": "part-d-results.json D1.classes"
+ },
+ "d1.lost": {
+  "text": "77/80",
+  "source": "part-d-results.json D1.classes"
+ },
+ "d1.kept": {
+  "text": "2/80",
+  "source": "part-d-results.json D1.classes"
+ },
+ "d1.declined": {
+  "text": "7/77",
+  "source": "part-d-results.json D1"
+ },
+ "d1.declined.pct": {
+  "text": "9",
+  "source": "same, percent"
+ },
+ "d1.firstgoal.median": {
+  "text": "27,344",
+  "source": "part-d-results.json D1.first_goal_median"
+ },
+ "d1.firstgoal.max": {
+  "text": "1,187,264",
+  "source": "part-d-results.json D1.first_goal_max"
+ },
+ "d3.rise": {
+  "text": "7/7",
+  "source": "part-d-results.json D3"
+ },
+ "d3.n": {
+  "text": "7",
+  "source": "part-d-results.json D3.seeds_with_both"
+ },
+ "d3.norise": {
+  "text": "17",
+  "source": "part-d-results.json D3.no_rise"
+ },
+ "d3.nodecline": {
+  "text": "56",
+  "source": "part-d-results.json D3.no_decline"
+ },
+ "p.D3": {
+  "text": "0.008",
+  "source": "part-d-results.json D3.p_binom"
+ },
+ "r5.solve.A1": {
+  "text": "11/20",
+  "source": "round5-scores.json runs.A1.categories.solve"
+ },
+ "r5.ci.A1": {
+  "text": "[0.32, 0.77]",
+  "source": "Clopper-Pearson 95% of runs.A1 solve"
+ },
+ "r5.auc.A1": {
+  "text": "0.438",
+  "source": "round5-scores.json runs.A1.auc_mean"
+ },
+ "r5.farm.A1": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.A1.categories.cycle-farm"
+ },
+ "r5.tamperers.A1": {
+  "text": "9/20",
+  "source": "round5-scores.json runs.A1.tamperers"
+ },
+ "r5.solve.A2": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.A2.categories.solve"
+ },
+ "r5.ci.A2": {
+  "text": "[0.00, 0.17]",
+  "source": "Clopper-Pearson 95% of runs.A2 solve"
+ },
+ "r5.auc.A2": {
+  "text": "0.025",
+  "source": "round5-scores.json runs.A2.auc_mean"
+ },
+ "r5.farm.A2": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.A2.categories.cycle-farm"
+ },
+ "r5.tamperers.A2": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.A2.tamperers"
+ },
+ "r5.solve.B9": {
+  "text": "3/20",
+  "source": "round5-scores.json runs.B9.categories.solve"
+ },
+ "r5.ci.B9": {
+  "text": "[0.03, 0.38]",
+  "source": "Clopper-Pearson 95% of runs.B9 solve"
+ },
+ "r5.auc.B9": {
+  "text": "0.147",
+  "source": "round5-scores.json runs.B9.auc_mean"
+ },
+ "r5.farm.B9": {
+  "text": "8/20",
+  "source": "round5-scores.json runs.B9.categories.cycle-farm"
+ },
+ "r5.tamperers.B9": {
+  "text": "19/20",
+  "source": "round5-scores.json runs.B9.tamperers"
+ },
+ "r5.solve.B10": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.B10.categories.solve"
+ },
+ "r5.ci.B10": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.B10 solve"
+ },
+ "r5.auc.B10": {
+  "text": "0.601",
+  "source": "round5-scores.json runs.B10.auc_mean"
+ },
+ "r5.farm.B10": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.B10.categories.cycle-farm"
+ },
+ "r5.tamperers.B10": {
+  "text": "7/20",
+  "source": "round5-scores.json runs.B10.tamperers"
+ },
+ "r5.solve.B11": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.B11.categories.solve"
+ },
+ "r5.ci.B11": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.B11 solve"
+ },
+ "r5.auc.B11": {
+  "text": "0.816",
+  "source": "round5-scores.json runs.B11.auc_mean"
+ },
+ "r5.farm.B11": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.B11.categories.cycle-farm"
+ },
+ "r5.tamperers.B11": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.B11.tamperers"
+ },
+ "r5.solve.C1": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.C1.categories.solve"
+ },
+ "r5.ci.C1": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.C1 solve"
+ },
+ "r5.auc.C1": {
+  "text": "0.958",
+  "source": "round5-scores.json runs.C1.auc_mean"
+ },
+ "r5.farm.C1": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C1.categories.cycle-farm"
+ },
+ "r5.tamperers.C1": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C1.tamperers"
+ },
+ "r5.solve.C2": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.C2.categories.solve"
+ },
+ "r5.ci.C2": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.C2 solve"
+ },
+ "r5.auc.C2": {
+  "text": "0.961",
+  "source": "round5-scores.json runs.C2.auc_mean"
+ },
+ "r5.farm.C2": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C2.categories.cycle-farm"
+ },
+ "r5.tamperers.C2": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C2.tamperers"
+ },
+ "r5.solve.C3": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.C3.categories.solve"
+ },
+ "r5.ci.C3": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.C3 solve"
+ },
+ "r5.auc.C3": {
+  "text": "0.932",
+  "source": "round5-scores.json runs.C3.auc_mean"
+ },
+ "r5.farm.C3": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C3.categories.cycle-farm"
+ },
+ "r5.tamperers.C3": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C3.tamperers"
+ },
+ "r5.solve.C4": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.C4.categories.solve"
+ },
+ "r5.ci.C4": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.C4 solve"
+ },
+ "r5.auc.C4": {
+  "text": "0.929",
+  "source": "round5-scores.json runs.C4.auc_mean"
+ },
+ "r5.farm.C4": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C4.categories.cycle-farm"
+ },
+ "r5.tamperers.C4": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C4.tamperers"
+ },
+ "r5.solve.C5": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C5.categories.solve"
+ },
+ "r5.ci.C5": {
+  "text": "[0.00, 0.17]",
+  "source": "Clopper-Pearson 95% of runs.C5 solve"
+ },
+ "r5.auc.C5": {
+  "text": "0.002",
+  "source": "round5-scores.json runs.C5.auc_mean"
+ },
+ "r5.farm.C5": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C5.categories.cycle-farm"
+ },
+ "r5.tamperers.C5": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.C5.tamperers"
+ },
+ "r5.solve.C6": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.C6.categories.solve"
+ },
+ "r5.ci.C6": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.C6 solve"
+ },
+ "r5.auc.C6": {
+  "text": "0.875",
+  "source": "round5-scores.json runs.C6.auc_mean"
+ },
+ "r5.farm.C6": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C6.categories.cycle-farm"
+ },
+ "r5.tamperers.C6": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.C6.tamperers"
+ },
+ "r5.solve.r4B1": {
+  "text": "1/20",
+  "source": "round5-scores.json runs.r4-B1.categories.solve"
+ },
+ "r5.ci.r4B1": {
+  "text": "[0.00, 0.25]",
+  "source": "Clopper-Pearson 95% of runs.r4-B1 solve"
+ },
+ "r5.auc.r4B1": {
+  "text": "0.042",
+  "source": "round5-scores.json runs.r4-B1.auc_mean"
+ },
+ "r5.farm.r4B1": {
+  "text": "6/20",
+  "source": "round5-scores.json runs.r4-B1.categories.cycle-farm"
+ },
+ "r5.tamperers.r4B1": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.r4-B1.tamperers"
+ },
+ "r5.solve.r4B2": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.r4-B2.categories.solve"
+ },
+ "r5.ci.r4B2": {
+  "text": "[0.00, 0.17]",
+  "source": "Clopper-Pearson 95% of runs.r4-B2 solve"
+ },
+ "r5.auc.r4B2": {
+  "text": "0.022",
+  "source": "round5-scores.json runs.r4-B2.auc_mean"
+ },
+ "r5.farm.r4B2": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.r4-B2.categories.cycle-farm"
+ },
+ "r5.tamperers.r4B2": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.r4-B2.tamperers"
+ },
+ "r5.solve.r4B3": {
+  "text": "1/20",
+  "source": "round5-scores.json runs.r4-B3.categories.solve"
+ },
+ "r5.ci.r4B3": {
+  "text": "[0.00, 0.25]",
+  "source": "Clopper-Pearson 95% of runs.r4-B3 solve"
+ },
+ "r5.auc.r4B3": {
+  "text": "0.036",
+  "source": "round5-scores.json runs.r4-B3.auc_mean"
+ },
+ "r5.farm.r4B3": {
+  "text": "5/20",
+  "source": "round5-scores.json runs.r4-B3.categories.cycle-farm"
+ },
+ "r5.tamperers.r4B3": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.r4-B3.tamperers"
+ },
+ "r5.solve.r4A1b": {
+  "text": "20/20",
+  "source": "round5-scores.json runs.r4-A1b.categories.solve"
+ },
+ "r5.ci.r4A1b": {
+  "text": "[0.83, 1.00]",
+  "source": "Clopper-Pearson 95% of runs.r4-A1b solve"
+ },
+ "r5.auc.r4A1b": {
+  "text": "0.901",
+  "source": "round5-scores.json runs.r4-A1b.auc_mean"
+ },
+ "r5.farm.r4A1b": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.r4-A1b.categories.cycle-farm"
+ },
+ "r5.tamperers.r4A1b": {
+  "text": "0/20",
+  "source": "round5-scores.json runs.r4-A1b.tamperers"
+ },
+ "r5.auc.B1B3": {
+  "text": "0.039",
+  "source": "round5-scores.json r4-B1 and r4-B3 per-seed auc, pooled mean"
+ },
+ "r5.solve.B1B3": {
+  "text": "2/40",
+  "source": "round5-scores.json r4-B1 + r4-B3"
+ },
+ "p.A-P1": {
+  "text": "0.00062",
+  "source": "round5-scores.json predictions[A-P1].p"
+ },
+ "ph.A-P1": {
+  "text": "0.004",
+  "source": "round5-scores.json predictions[A-P1].p_holm"
+ },
+ "p.A-P1m": {
+  "text": "$7.8\\times10^{-6}$",
+  "source": "round5-scores.json predictions[A-P1m].p"
+ },
+ "ph.A-P1m": {
+  "text": "$7\\times10^{-5}$",
+  "source": "round5-scores.json predictions[A-P1m].p_holm"
+ },
+ "p.A-P2": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[A-P2].p"
+ },
+ "ph.A-P2": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[A-P2].p_holm"
+ },
+ "p.A-P2m": {
+  "text": "0.005",
+  "source": "round5-scores.json predictions[A-P2m].p"
+ },
+ "ph.A-P2m": {
+  "text": "0.028",
+  "source": "round5-scores.json predictions[A-P2m].p_holm"
+ },
+ "p.A-P3": {
+  "text": "$2.6\\times10^{-5}$",
+  "source": "round5-scores.json predictions[A-P3].p"
+ },
+ "ph.A-P3": {
+  "text": "0.00021",
+  "source": "round5-scores.json predictions[A-P3].p_holm"
+ },
+ "p.A-P3m": {
+  "text": "$5\\times10^{-6}$",
+  "source": "round5-scores.json predictions[A-P3m].p"
+ },
+ "ph.A-P3m": {
+  "text": "$6\\times10^{-5}$",
+  "source": "round5-scores.json predictions[A-P3m].p_holm"
+ },
+ "p.B-JTp": {
+  "text": "$5\\times10^{-6}$",
+  "source": "round5-scores.json predictions[B-JTp].p"
+ },
+ "ph.B-JTp": {
+  "text": "$6\\times10^{-5}$",
+  "source": "round5-scores.json predictions[B-JTp].p_holm"
+ },
+ "p.B-JTs": {
+  "text": "$5\\times10^{-6}$",
+  "source": "round5-scores.json predictions[B-JTs].p"
+ },
+ "ph.B-JTs": {
+  "text": "$6\\times10^{-5}$",
+  "source": "round5-scores.json predictions[B-JTs].p_holm"
+ },
+ "p.B-F-B9-vsB1": {
+  "text": "0.302",
+  "source": "round5-scores.json predictions[B-F-B9-vsB1].p"
+ },
+ "p.B-F-B9-vsA1b": {
+  "text": "$1.3\\times10^{-8}$",
+  "source": "round5-scores.json predictions[B-F-B9-vsA1b].p"
+ },
+ "ph.B-F-B9-vsA1b": {
+  "text": "$1.7\\times10^{-7}$",
+  "source": "round5-scores.json predictions[B-F-B9-vsA1b].p_holm"
+ },
+ "p.B-F-B10-vsB1": {
+  "text": "$1.5\\times10^{-10}$",
+  "source": "round5-scores.json predictions[B-F-B10-vsB1].p"
+ },
+ "p.B-F-B10-vsA1b": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[B-F-B10-vsA1b].p"
+ },
+ "ph.B-F-B10-vsA1b": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[B-F-B10-vsA1b].p_holm"
+ },
+ "p.B-F-B11-vsB1": {
+  "text": "$1.5\\times10^{-10}$",
+  "source": "round5-scores.json predictions[B-F-B11-vsB1].p"
+ },
+ "ph.B-F-B11-vsB1": {
+  "text": "$2.1\\times10^{-9}$",
+  "source": "round5-scores.json predictions[B-F-B11-vsB1].p_holm"
+ },
+ "p.B-F-B11-vsA1b": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[B-F-B11-vsA1b].p"
+ },
+ "p.C-P1": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[C-P1].p"
+ },
+ "ph.C-P1": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[C-P1].p_holm"
+ },
+ "p.C-P2": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[C-P2].p"
+ },
+ "ph.C-P2": {
+  "text": "1.000",
+  "source": "round5-scores.json predictions[C-P2].p_holm"
+ },
+ "p.C-P3": {
+  "text": "$7.3\\times10^{-12}$",
+  "source": "round5-scores.json predictions[C-P3].p"
+ },
+ "ph.C-P3": {
+  "text": "$1.5\\times10^{-10}$",
+  "source": "round5-scores.json predictions[C-P3].p_holm"
+ },
+ "p.C-P4": {
+  "text": "$7.3\\times10^{-12}$",
+  "source": "round5-scores.json predictions[C-P4].p"
+ },
+ "ph.C-P4": {
+  "text": "$1.5\\times10^{-10}$",
+  "source": "round5-scores.json predictions[C-P4].p_holm"
+ },
+ "exp.B-L-B9-presses": {
+  "text": "30",
+  "source": "round5-preregistration.md, B-L-B9-presses expected"
+ },
+ "rng.B-L-B9-presses": {
+  "text": "12--45",
+  "source": "round5-preregistration.md, B-L-B9-presses range"
+ },
+ "obs.B-L-B9-presses": {
+  "text": "27.13",
+  "source": "round5-scores.json predictions[B-L-B9-presses].observed"
+ },
+ "exp.B-L-B9-tamperers": {
+  "text": "20/20",
+  "source": "round5-preregistration.md, B-L-B9-tamperers expected"
+ },
+ "rng.B-L-B9-tamperers": {
+  "text": "16--20",
+  "source": "round5-preregistration.md, B-L-B9-tamperers range"
+ },
+ "obs.B-L-B9-tamperers": {
+  "text": "19/20",
+  "source": "round5-scores.json predictions[B-L-B9-tamperers].observed"
+ },
+ "exp.B-L-B9-solves": {
+  "text": "1/20",
+  "source": "round5-preregistration.md, B-L-B9-solves expected"
+ },
+ "rng.B-L-B9-solves": {
+  "text": "0--5",
+  "source": "round5-preregistration.md, B-L-B9-solves range"
+ },
+ "obs.B-L-B9-solves": {
+  "text": "3/20",
+  "source": "round5-scores.json predictions[B-L-B9-solves].observed"
+ },
+ "exp.B-L-B10-presses": {
+  "text": "8",
+  "source": "round5-preregistration.md, B-L-B10-presses expected"
+ },
+ "rng.B-L-B10-presses": {
+  "text": "1--30",
+  "source": "round5-preregistration.md, B-L-B10-presses range"
+ },
+ "obs.B-L-B10-presses": {
+  "text": "0.36",
+  "source": "round5-scores.json predictions[B-L-B10-presses].observed"
+ },
+ "exp.B-L-B10-tamperers": {
+  "text": "17/20",
+  "source": "round5-preregistration.md, B-L-B10-tamperers expected"
+ },
+ "rng.B-L-B10-tamperers": {
+  "text": "10--20",
+  "source": "round5-preregistration.md, B-L-B10-tamperers range"
+ },
+ "obs.B-L-B10-tamperers": {
+  "text": "7/20",
+  "source": "round5-scores.json predictions[B-L-B10-tamperers].observed"
+ },
+ "exp.B-L-B10-solves": {
+  "text": "3/20",
+  "source": "round5-preregistration.md, B-L-B10-solves expected"
+ },
+ "rng.B-L-B10-solves": {
+  "text": "0--10",
+  "source": "round5-preregistration.md, B-L-B10-solves range"
+ },
+ "obs.B-L-B10-solves": {
+  "text": "20/20",
+  "source": "round5-scores.json predictions[B-L-B10-solves].observed"
+ },
+ "exp.B-L-B11-presses": {
+  "text": "0.2",
+  "source": "round5-preregistration.md, B-L-B11-presses expected"
+ },
+ "rng.B-L-B11-presses": {
+  "text": "0--3",
+  "source": "round5-preregistration.md, B-L-B11-presses range"
+ },
+ "obs.B-L-B11-presses": {
+  "text": "0.00",
+  "source": "round5-scores.json predictions[B-L-B11-presses].observed"
+ },
+ "exp.B-L-B11-tamperers": {
+  "text": "3/20",
+  "source": "round5-preregistration.md, B-L-B11-tamperers expected"
+ },
+ "rng.B-L-B11-tamperers": {
+  "text": "0--10",
+  "source": "round5-preregistration.md, B-L-B11-tamperers range"
+ },
+ "obs.B-L-B11-tamperers": {
+  "text": "0/20",
+  "source": "round5-scores.json predictions[B-L-B11-tamperers].observed"
+ },
+ "exp.B-L-B11-solves": {
+  "text": "17/20",
+  "source": "round5-preregistration.md, B-L-B11-solves expected"
+ },
+ "rng.B-L-B11-solves": {
+  "text": "11--20",
+  "source": "round5-preregistration.md, B-L-B11-solves range"
+ },
+ "obs.B-L-B11-solves": {
+  "text": "20/20",
+  "source": "round5-scores.json predictions[B-L-B11-solves].observed"
+ },
+ "pps.B1": {
+  "text": "0.061",
+  "source": "run-series.json presses.B1 presses_per_step, median"
+ },
+ "pps.iqr.B1": {
+  "text": "[0.060, 0.063]",
+  "source": "run-series.json presses.B1, interquartile range"
+ },
+ "len.B1": {
+  "text": "635",
+  "source": "run-series.json presses.B1 mean_len_final10, median"
+ },
+ "pps.B9": {
+  "text": "0.043",
+  "source": "run-series.json presses.B9 presses_per_step, median"
+ },
+ "pps.iqr.B9": {
+  "text": "[0.042, 0.044]",
+  "source": "run-series.json presses.B9, interquartile range"
+ },
+ "len.B9": {
+  "text": "627",
+  "source": "run-series.json presses.B9 mean_len_final10, median"
+ },
+ "pps.B10": {
+  "text": "0.010",
+  "source": "run-series.json presses.B10 presses_per_step, median"
+ },
+ "pps.iqr.B10": {
+  "text": "[0.001, 0.020]",
+  "source": "run-series.json presses.B10, interquartile range"
+ },
+ "len.B10": {
+  "text": "35",
+  "source": "run-series.json presses.B10 mean_len_final10, median"
+ },
+ "pps.B11": {
+  "text": "0.000",
+  "source": "run-series.json presses.B11 presses_per_step, median"
+ },
+ "pps.iqr.B11": {
+  "text": "[0.000, 0.000]",
+  "source": "run-series.json presses.B11, interquartile range"
+ },
+ "len.B11": {
+  "text": "22",
+  "source": "run-series.json presses.B11 mean_len_final10, median"
+ },
+ "pps.A1b": {
+  "text": "0.000",
+  "source": "run-series.json presses.A1b presses_per_step, median"
+ },
+ "pps.iqr.A1b": {
+  "text": "[0.000, 0.000]",
+  "source": "run-series.json presses.A1b, interquartile range"
+ },
+ "len.A1b": {
+  "text": "20",
+  "source": "run-series.json presses.A1b mean_len_final10, median"
+ },
+ "s0.160.tamper": {
+  "text": "0.0114",
+  "source": "step0-tamper-cost.json 1/160.largest_c_still_tampers"
+ },
+ "s0.160.notamper": {
+  "text": "0.0128",
+  "source": "step0-tamper-cost.json 1/160.smallest_c_no_tamper"
+ },
+ "s0.160.adv": {
+  "text": "0.012",
+  "source": "step0-tamper-cost.json 1/160: V_start(c=0) - V_start(c=1)"
+ },
+ "s0.40.tamper": {
+  "text": "0.035",
+  "source": "step0-tamper-cost.json 1/40.largest_c_still_tampers"
+ },
+ "s0.40.notamper": {
+  "text": "0.0351",
+  "source": "step0-tamper-cost.json 1/40.smallest_c_no_tamper"
+ },
+ "s0.40.adv": {
+  "text": "0.048",
+  "source": "step0-tamper-cost.json 1/40: V_start(c=0) - V_start(c=1)"
+ },
+ "r5.fs.C1": {
+  "text": "137k",
+  "source": "round5-scores.json runs.C1.seeds.first_solved, median"
+ },
+ "r5.fs.C2": {
+  "text": "138k",
+  "source": "round5-scores.json runs.C2.seeds.first_solved, median"
+ },
+ "r5.fs.C3": {
+  "text": "202k",
+  "source": "round5-scores.json runs.C3.seeds.first_solved, median"
+ },
+ "r5.fs.C6": {
+  "text": "258k",
+  "source": "round5-scores.json runs.C6.seeds.first_solved, median"
+ },
+ "kc.peak.C1": {
+  "text": "8.0",
+  "source": "run-series.json keycorridor_pickups.C1 peak, median"
+ },
+ "kc.peakmax.C1": {
+  "text": "9.9",
+  "source": "run-series.json keycorridor_pickups.C1 peak, maximum"
+ },
+ "kc.peak.C2": {
+  "text": "12.4",
+  "source": "run-series.json keycorridor_pickups.C2 peak, median"
+ },
+ "kc.peakmax.C2": {
+  "text": "14.4",
+  "source": "run-series.json keycorridor_pickups.C2 peak, maximum"
+ },
+ "kc.peak.C3": {
+  "text": "28.3",
+  "source": "run-series.json keycorridor_pickups.C3 peak, median"
+ },
+ "kc.peakmax.C3": {
+  "text": "48.5",
+  "source": "run-series.json keycorridor_pickups.C3 peak, maximum"
+ },
+ "kc.peak.C4": {
+  "text": "21.7",
+  "source": "run-series.json keycorridor_pickups.C4 peak, median"
+ },
+ "kc.peakmax.C4": {
+  "text": "26.8",
+  "source": "run-series.json keycorridor_pickups.C4 peak, maximum"
+ },
+ "kc.peak.C5": {
+  "text": "2.0",
+  "source": "run-series.json keycorridor_pickups.C5 peak, median"
+ },
+ "kc.peakmax.C5": {
+  "text": "2.4",
+  "source": "run-series.json keycorridor_pickups.C5 peak, maximum"
+ },
+ "kc.peak.C6": {
+  "text": "5.7",
+  "source": "run-series.json keycorridor_pickups.C6 peak, median"
+ },
+ "kc.peakmax.C6": {
+  "text": "9.6",
+  "source": "run-series.json keycorridor_pickups.C6 peak, maximum"
+ },
+ "kc.final.lo": {
+  "text": "1.0",
+  "source": "round5-scores.json C1-C4 pickups_median, minimum"
+ },
+ "kc.final.hi": {
+  "text": "1.7",
+  "source": "round5-scores.json C1-C4 pickups_median, maximum"
+ },
+ "kc.C5.pick": {
+  "text": "0.15",
+  "source": "round5-scores.json runs.C5.pickups_median"
+ },
+ "kc.overrepeat": {
+  "text": "1/80",
+  "source": "round5-scores.json C1-C4 seeds with repeat_over_5"
+ },
+ "kc.final.max": {
+  "text": "5.16",
+  "source": "round5-scores.json C1-C4 per-seed final key pick-ups, maximum"
+ },
+ "kc.C5.entropy": {
+  "text": "1.85",
+  "source": "round5-report.md, Part C exploratory paragraph"
+ },
+ "exp.C3.farm": {
+  "text": "12/20",
+  "source": "round5 amendment, C-P1 expectation for C3"
+ },
+ "exp.C3.range": {
+  "text": "5--20",
+  "source": "round5 amendment, C-P1 range for C3"
+ },
+ "exp.C2.farm": {
+  "text": "4/20",
+  "source": "round5 amendment, C-P1 expectation for C2"
+ },
+ "exp.C5.solve": {
+  "text": "6/20",
+  "source": "round5 amendment, C-P3 expectation for C5"
+ },
+ "r5.A2.presses.ep": {
+  "text": "91",
+  "source": "round5-scores.json runs.A2.presses_median"
+ },
+ "r5.A2.pick": {
+  "text": "5.69",
+  "source": "round5-scores.json runs.A2.pickups_median"
+ },
+ "holm.r4": {
+  "text": "17",
+  "source": "round4-scores.json holm_m"
+ },
+ "holm.r5": {
+  "text": "20",
+  "source": "round5-scores.json predictions holm_eligible"
+ },
+ "r4.fs.A1a": {
+  "text": "221,640",
+  "source": "round4-scores.json runs.A1a.medians.first_solved"
+ },
+ "r4.sl.A1a": {
+  "text": "19.6",
+  "source": "round4-scores.json runs.A1a.medians.solved_len"
+ },
+ "r4.fs.A1b": {
+  "text": "311,832",
+  "source": "round4-scores.json runs.A1b.medians.first_solved"
+ },
+ "r4.sl.A1b": {
+  "text": "20.3",
+  "source": "round4-scores.json runs.A1b.medians.solved_len"
+ },
+ "r4.fs.A1c": {
+  "text": "283,424",
+  "source": "round4-scores.json runs.A1c.medians.first_solved"
+ },
+ "r4.sl.A1c": {
+  "text": "19.7",
+  "source": "round4-scores.json runs.A1c.medians.solved_len"
+ },
+ "r4.curve8.A2a": {
+  "text": "0.387",
+  "source": "round4-scores.json runs.A2a.seeds.curve[DoorKey-8x8], mean"
+ },
+ "r4.curve16.A2a": {
+  "text": "0.328",
+  "source": "round4-scores.json runs.A2a.seeds.curve[DoorKey-16x16], mean"
+ },
+ "r4.solve16.A2a": {
+  "text": "6/20",
+  "source": "round4-scores.json runs.A2a.solve16"
+ },
+ "r4.curve8.A2b": {
+  "text": "0.060",
+  "source": "round4-scores.json runs.A2b.seeds.curve[DoorKey-8x8], mean"
+ },
+ "r4.curve16.A2b": {
+  "text": "0.011",
+  "source": "round4-scores.json runs.A2b.seeds.curve[DoorKey-16x16], mean"
+ },
+ "r4.solve16.A2b": {
+  "text": "0/20",
+  "source": "round4-scores.json runs.A2b.solve16"
+ },
+ "r4.curve8.A2c": {
+  "text": "0.702",
+  "source": "round4-scores.json runs.A2c.seeds.curve[DoorKey-8x8], mean"
+ },
+ "r4.curve16.A2c": {
+  "text": "0.579",
+  "source": "round4-scores.json runs.A2c.seeds.curve[DoorKey-16x16], mean"
+ },
+ "r4.solve16.A2c": {
+  "text": "8/20",
+  "source": "round4-scores.json runs.A2c.solve16"
+ },
+ "a2.coef.640": {
+  "text": "1.226",
+  "source": "a2-matching.json coef explore_1/640"
+ },
+ "a2.coef.160": {
+  "text": "7.355",
+  "source": "a2-matching.json coef explore_1/160"
+ },
+ "r3.farm.R1": {
+  "text": "4/20",
+  "source": "round3-scores.json round3.R1.counts.cycle-farm"
+ },
+ "r3.solve.R1": {
+  "text": "16/20",
+  "source": "round3-scores.json round3.R1.counts.solve"
+ },
+ "r3.farm.R2": {
+  "text": "18/20",
+  "source": "round3-scores.json round3.R2.counts.cycle-farm"
+ },
+ "r3.solve.R2": {
+  "text": "2/20",
+  "source": "round3-scores.json round3.R2.counts.solve"
+ },
+ "r3.farm.R3": {
+  "text": "6/20",
+  "source": "round3-scores.json round3.R3.counts.cycle-farm"
+ },
+ "r3.solve.R3": {
+  "text": "14/20",
+  "source": "round3-scores.json round3.R3.counts.solve"
+ },
+ "r3.farm.R4": {
+  "text": "9/20",
+  "source": "round3-scores.json round3.R4.counts.cycle-farm"
+ },
+ "r3.solve.R4": {
+  "text": "11/20",
+  "source": "round3-scores.json round3.R4.counts.solve"
+ },
+ "r3.farm.R5": {
+  "text": "12/20",
+  "source": "round3-scores.json round3.R5.counts.cycle-farm"
+ },
+ "r3.solve.R5": {
+  "text": "8/20",
+  "source": "round3-scores.json round3.R5.counts.solve"
+ },
+ "r3.farm.R6": {
+  "text": "0/20",
+  "source": "round3-scores.json round3.R6.counts.cycle-farm"
+ },
+ "r3.solve.R6": {
+  "text": "20/20",
+  "source": "round3-scores.json round3.R6.counts.solve"
+ },
+ "r3.farm.R7": {
+  "text": "0/20",
+  "source": "round3-scores.json round3.R7.counts.cycle-farm"
+ },
+ "r3.solve.R7": {
+  "text": "20/20",
+  "source": "round3-scores.json round3.R7.counts.solve"
+ },
+ "r3.farm.R8": {
+  "text": "0/20",
+  "source": "round3-scores.json round3.R8.counts.cycle-farm"
+ },
+ "r3.solve.R8": {
+  "text": "20/20",
+  "source": "round3-scores.json round3.R8.counts.solve"
+ },
+ "r3.farm.R9": {
+  "text": "10/20",
+  "source": "round3-scores.json round3.R9.counts.cycle-farm"
+ },
+ "r3.solve.R9": {
+  "text": "10/20",
+  "source": "round3-scores.json round3.R9.counts.solve"
+ },
+ "r3.farm.R10": {
+  "text": "0/20",
+  "source": "round3-scores.json round3.R10.counts.cycle-farm"
+ },
+ "r3.solve.R10": {
+  "text": "20/20",
+  "source": "round3-scores.json round3.R10.counts.solve"
+ },
+ "r3.normon.total": {
+  "text": "27/60",
+  "source": "round3-scores.json R3+R4+R5 cycle-farm"
+ },
+ "r3.normoff.total": {
+  "text": "0/60",
+  "source": "round3-scores.json R6+R7+R8 cycle-farm"
+ },
+ "p.R1<R4": {
+  "text": "0.088",
+  "source": "round3-scores.json tests[R1 < R4 (Fisher, one-sided)]"
+ },
+ "p.R2>R4": {
+  "text": "0.003",
+  "source": "round3-scores.json tests[R2 > R4 (Fisher, one-sided)]"
+ },
+ "p.R8>R6": {
+  "text": "1.000",
+  "source": "round3-scores.json tests[R8 > R6 (Fisher, one-sided)]"
+ },
+ "p.R9<R4": {
+  "text": "0.736",
+  "source": "round3-scores.json tests[R9 < R4 (Fisher, one-sided)]"
+ },
+ "exp.R7.range": {
+  "text": "5--15",
+  "source": "round3-scores.json prediction_rows[R7 cycle-farm].range"
+ },
+ "exp.R8.range": {
+  "text": "11--20",
+  "source": "round3-scores.json prediction_rows[R8 cycle-farm].range"
+ },
+ "exp.R9.range": {
+  "text": "0--4",
+  "source": "round3-scores.json prediction_rows[R9 cycle-farm].range"
+ },
+ "r2.farm.N1": {
+  "text": "7/10",
+  "source": "round2-prediction-results.json N1.farmers (round-2 rule)"
+ },
+ "r2.rescore.N1": {
+  "text": "6/10",
+  "source": "round3-scores.json exploratory_rescore[N1: anchor replicate, growth 1/40, seeds 10-19]"
+ },
+ "r2.E.N1": {
+  "text": "0.764",
+  "source": "round2-prediction-results.json N1.E"
+ },
+ "r2.range.N1": {
+  "text": "2--8",
+  "source": "round2-prediction-results.json N1.predicted"
+ },
+ "r2.farm.N2": {
+  "text": "7/10",
+  "source": "round2-prediction-results.json N2.farmers (round-2 rule)"
+ },
+ "r2.rescore.N2": {
+  "text": "7/10",
+  "source": "round3-scores.json exploratory_rescore[N2: growth 1/40 at gamma 0.95]"
+ },
+ "r2.E.N2": {
+  "text": "0.281",
+  "source": "round2-prediction-results.json N2.E"
+ },
+ "r2.range.N2": {
+  "text": "0--2",
+  "source": "round2-prediction-results.json N2.predicted"
+ },
+ "r2.farm.N3": {
+  "text": "0/10",
+  "source": "round2-prediction-results.json N3.farmers (round-2 rule)"
+ },
+ "r2.rescore.N3": {
+  "text": "0/10",
+  "source": "round3-scores.json exploratory_rescore[N3: growth 1/80]"
+ },
+ "r2.E.N3": {
+  "text": "0.593",
+  "source": "round2-prediction-results.json N3.E"
+ },
+ "r2.range.N3": {
+  "text": "1--4",
+  "source": "round2-prediction-results.json N3.predicted"
+ },
+ "r2.farm.N4": {
+  "text": "0/10",
+  "source": "round2-prediction-results.json N4.farmers (round-2 rule)"
+ },
+ "r2.rescore.N4": {
+  "text": "0/10",
+  "source": "round3-scores.json exploratory_rescore[N4: growth 1/80, coef 1.29 (matched to anchor)]"
+ },
+ "r2.E.N4": {
+  "text": "0.764",
+  "source": "round2-prediction-results.json N4.E"
+ },
+ "r2.range.N4": {
+  "text": "2--8",
+  "source": "round2-prediction-results.json N4.predicted"
+ },
+ "r2.farm.N5": {
+  "text": "3/10",
+  "source": "round2-prediction-results.json N5.farmers (round-2 rule)"
+ },
+ "r2.rescore.N5": {
+  "text": "3/10",
+  "source": "round3-scores.json exploratory_rescore[N5: growth 1/40, coef 0.5]"
+ },
+ "r2.E.N5": {
+  "text": "0.382",
+  "source": "round2-prediction-results.json N5.E"
+ },
+ "r2.range.N5": {
+  "text": "0--1",
+  "source": "round2-prediction-results.json N5.predicted"
+ },
+ "r2.farm.N6": {
+  "text": "10/10",
+  "source": "round2-prediction-results.json N6.farmers (round-2 rule)"
+ },
+ "r2.rescore.N6": {
+  "text": "9/10",
+  "source": "round3-scores.json exploratory_rescore[N6: growth 1/20]"
+ },
+ "r2.E.N6": {
+  "text": "0.87",
+  "source": "round2-prediction-results.json N6.E"
+ },
+ "r2.range.N6": {
+  "text": "6--10",
+  "source": "round2-prediction-results.json N6.predicted"
+ },
+ "r2.farm.payonce": {
+  "text": "10/10",
+  "source": "round2-prediction-results.json pay-once control"
+ },
+ "p.N2<N1": {
+  "text": "0.686",
+  "source": "round2-prediction-results.json fisher[N2 < N1].p"
+ },
+ "p.N5<N4": {
+  "text": "1.000",
+  "source": "round2-prediction-results.json fisher[N5 < N4].p"
+ },
+ "p.N6>N3": {
+  "text": "$5.4\\times10^{-6}$",
+  "source": "round2-prediction-results.json fisher[N6 > N3].p"
+ },
+ "r2.slope": {
+  "text": "1.06",
+  "source": "round2-prediction-results.json logistic.slope"
+ },
+ "p.r2logistic": {
+  "text": "0.193",
+  "source": "round2-prediction-results.json logistic.p_one_sided"
+ },
+ "n6.rint.lo": {
+  "text": "$-$1.54",
+  "source": "round2-replay-n6.json seeds (success < 0.5) r_int, minimum"
+ },
+ "n6.rint.hi": {
+  "text": "$-$1.27",
+  "source": "round2-replay-n6.json seeds (success < 0.5) r_int, maximum"
+ },
+ "n6.pick.lo": {
+  "text": "137",
+  "source": "round2-replay-n6.json farmer pickups per episode, minimum"
+ },
+ "n6.pick.hi": {
+  "text": "184",
+  "source": "round2-replay-n6.json farmer pickups per episode, maximum"
+ },
+ "n6.pdshare.lo": {
+  "text": "48",
+  "source": "round2-replay-n6.json farmer action_freq pickup+drop, minimum (%)"
+ },
+ "n6.pdshare.hi": {
+  "text": "63",
+  "source": "round2-replay-n6.json farmer action_freq pickup+drop, maximum (%)"
+ },
+ "n6.nfarm": {
+  "text": "9",
+  "source": "round2-replay-n6.json seeds with success < 0.5"
+ },
+ "n6.need.explore.lo": {
+  "text": "0.90",
+  "source": "round2-replay-n6.json farmer mean_need[explore], minimum"
+ },
+ "n6.need.explore.hi": {
+  "text": "0.96",
+  "source": "round2-replay-n6.json farmer mean_need[explore], maximum"
+ },
+ "n6.need.explore": {
+  "text": "0.90--0.96",
+  "source": "round2-replay-n6.json farmer mean_need[explore], range"
+ },
+ "n6.need.grasp.lo": {
+  "text": "0.10",
+  "source": "round2-replay-n6.json farmer mean_need[grasp], minimum"
+ },
+ "n6.need.grasp.hi": {
+  "text": "0.33",
+  "source": "round2-replay-n6.json farmer mean_need[grasp], maximum"
+ },
+ "n6.need.grasp": {
+  "text": "0.10--0.33",
+  "source": "round2-replay-n6.json farmer mean_need[grasp], range"
+ },
+ "n6.need.open.lo": {
+  "text": "1.00",
+  "source": "round2-replay-n6.json farmer mean_need[open], minimum"
+ },
+ "n6.need.open.hi": {
+  "text": "1.00",
+  "source": "round2-replay-n6.json farmer mean_need[open], maximum"
+ },
+ "n6.need.open": {
+  "text": "1.00",
+  "source": "round2-replay-n6.json farmer mean_need[open], range"
+ },
+ "acct.groups": {
+  "text": "23",
+  "source": "tables-summary.json (make_tables.py grouping of consolidated rows)"
+ },
+ "acct.supported": {
+  "text": "14",
+  "source": "tables-summary.json"
+ },
+ "acct.notsupported": {
+  "text": "9",
+  "source": "tables-summary.json"
+ },
+ "race.P1.undet": {
+  "text": "21/30",
+  "source": "race-results.json P1"
+ },
+ "race.P2": {
+  "text": "60/60",
+  "source": "race-results.json P2"
+ },
+ "p.race.P2": {
+  "text": "$8.7\\times10^{-19}$",
+  "source": "race-results.json P2.p_binom_gt_half"
+ },
+ "vi.maxreach": {
+  "text": "1/4",
+  "source": "value-iteration-results.json: largest growth that reaches the goal"
+ },
+ "vi.cycles": {
+  "text": "1/2",
+  "source": "value-iteration-results.json: growth values whose greedy rollout cycles"
+ },
+ "vi.steps": {
+  "text": "11",
+  "source": "value-iteration-results.json shortest optimal route"
+ },
+ "b0.160.tampers": {
+  "text": "1",
+  "source": "b0-value-iteration.json 1/160 tampers"
+ },
+ "b0.160.at": {
+  "text": "0",
+  "source": "b0-value-iteration.json 1/160 tamper_steps"
+ },
+ "b0.160.steps": {
+  "text": "12",
+  "source": "b0-value-iteration.json 1/160 steps"
+ },
+ "b0.40.tampers": {
+  "text": "2",
+  "source": "b0-value-iteration.json 1/40 tampers"
+ },
+ "b0.40.at": {
+  "text": "0, 11",
+  "source": "b0-value-iteration.json 1/40 tamper_steps"
+ },
+ "b0.40.steps": {
+  "text": "13",
+  "source": "b0-value-iteration.json 1/40 steps"
+ },
+ "bc.layouts": {
+  "text": "200",
+  "source": "bound-check.json layouts"
+ },
+ "bc.dk.len.min": {
+  "text": "9",
+  "source": "bound-check.json shortest_len.min"
+ },
+ "bc.dk.len.median": {
+  "text": "17",
+  "source": "bound-check.json shortest_len.median"
+ },
+ "bc.dk.len.max": {
+  "text": "26",
+  "source": "bound-check.json shortest_len.max"
+ },
+ "bc.kc.len.min": {
+  "text": "14",
+  "source": "bound-check.json shortest_len.min"
+ },
+ "bc.kc.len.median": {
+  "text": "15",
+  "source": "bound-check.json shortest_len.median"
+ },
+ "bc.kc.len.max": {
+  "text": "15",
+  "source": "bound-check.json shortest_len.max"
+ },
+ "bc.dk20.short.le": {
+  "text": "35",
+  "source": "bound-check.json DoorKey 1/20 shortest_no_tamper"
+ },
+ "bc.dk20.short.le.u": {
+  "text": "20",
+  "source": "same, undiscounted"
+ },
+ "bc.dk20.short.min": {
+  "text": "0.371",
+  "source": "same, discounted_min"
+ },
+ "bc.dk20.tamper.le": {
+  "text": "27",
+  "source": "bound-check.json DoorKey 1/20 tamper_once_then_shortest"
+ },
+ "bc.dk20.rich.min": {
+  "text": "0.966",
+  "source": "bound-check.json DoorKey 1/20 rich_no_tamper_family.discounted_min"
+ },
+ "bc.dk20.rich.umin": {
+  "text": "1.212",
+  "source": "same, undiscounted_min"
+ },
+ "bc.dk20.rich.regrab": {
+  "text": "199",
+  "source": "same, best variant counts (regrab)"
+ },
+ "bc.dk.simplemin.not20": {
+  "text": "0.989",
+  "source": "bound-check.json DoorKey growth != 1/20, simple families, smallest discounted_min"
+ },
+ "bc.tamperfam.min": {
+  "text": "1.462",
+  "source": "bound-check.json rich_tamper_family discounted_min, tamper-tested rates, minimum"
+ },
+ "bc.rich.min.all": {
+  "text": "0.966",
+  "source": "bound-check.json rich_no_tamper_family discounted_min over all settings"
+ },
+ "bs.nfarm": {
+  "text": "9",
+  "source": "bound-summary.json farming_policy_seeds"
+ },
+ "bs.mean": {
+  "text": "$-$0.936",
+  "source": "bound-summary.json farmers_mean_discounted"
+ },
+ "bs.maxns": {
+  "text": "$-$0.535",
+  "source": "bound-summary.json max_discounted_non_solving"
+ },
+ "bs.maxns.u": {
+  "text": "$-$1.012",
+  "source": "bound-summary.json max_undiscounted_non_solving"
+ },
+ "bs.nns": {
+  "text": "1,749",
+  "source": "bound-summary.json non_solving_episodes"
+ },
+ "bs.beat": {
+  "text": "0",
+  "source": "bound-summary.json layouts_where_any_farmer_beats_best_solving"
+ },
+ "bs.best.min": {
+  "text": "0.966",
+  "source": "bound-summary.json best_solving_discounted.min"
+ },
+ "bs.best.median": {
+  "text": "1.244",
+  "source": "bound-summary.json best_solving_discounted.median"
+ },
+ "bs.solveeps": {
+  "text": "52",
+  "source": "bound-summary.json solving_episodes_by_farming_seeds"
+ },
+ "bs.solverseed.rate": {
+  "text": "0.995",
+  "source": "bound-summary.json solver seed success_rate"
+ },
+ "bs.n6seed6.rate": {
+  "text": "0.26",
+  "source": "bound-summary.json learned_policies.6.success_rate"
+ },
+ "compute.runs.r25": {
+  "text": "43",
+  "source": "orx-runs.txt, rounds 2-5 runs"
+ },
+ "compute.hours.r25": {
+  "text": "12.8",
+  "source": "orx-runs.txt, rounds 2-5 summed wall-clock"
+ },
+ "compute.runs.r1": {
+  "text": "14",
+  "source": "orx-runs.txt, round-1 runs"
+ },
+ "compute.hours.r1": {
+  "text": "3.0",
+  "source": "orx-runs.txt, round-1 summed wall-clock"
+ },
+ "hash.r3": {
+  "text": "b5e845c978ec96c2746eb81098c0bea3bf8dc14a1dc174e4f77844352b621ae7",
+  "source": "sha256 of paper/data/sources/round3-preregistration.md"
+ },
+ "hash.r4": {
+  "text": "79fdfed000d5e6f892d9201cadd970808cf3b0949e4b3e3d925be9839800faa1",
+  "source": "sha256 of paper/data/sources/round4-preregistration.md"
+ },
+ "hash.r4a": {
+  "text": "72b77be693b9d493e756b23f89aadb35d6934965d5c0633d4681fc8422c0e6f5",
+  "source": "sha256 of paper/data/sources/round4-amendment-20261026T192733Z.md"
+ },
+ "hash.r5": {
+  "text": "0298bbc79c323e4613e56a29be0257a6c7c3ad764cbb056902159292bcbcda0d",
+  "source": "sha256 of paper/data/sources/round5-preregistration.md"
+ },
+ "hash.r5a": {
+  "text": "1d99028349683b3b85bd204802b614bfb3a38fa30db3d24fbb19eda7c2790a4f",
+  "source": "sha256 of paper/data/sources/round5-amendment-20261027T113334Z.md"
+ },
+ "lock.r3": {
+  "text": "2026-10-26 15:17:42",
+  "source": "round3-preregistration.sha256 (lock time, UTC)"
+ },
+ "lock.r4": {
+  "text": "2026-10-26 19:23:42",
+  "source": "round4-preregistration.sha256 (lock time, UTC)"
+ },
+ "lock.r5": {
+  "text": "2026-10-27 04:34:11",
+  "source": "round5-preregistration.sha256 (lock time, UTC)"
+ },
+ "ver.torch": {
+  "text": "2.14.1",
+  "source": "uv.lock torch"
+ },
+ "ver.gymnasium": {
+  "text": "1.4.0",
+  "source": "uv.lock gymnasium"
+ },
+ "ver.minigrid": {
+  "text": "3.2.0",
+  "source": "uv.lock minigrid"
+ },
+ "ver.numpy": {
+  "text": "2.4.6",
+  "source": "uv.lock numpy"
+ },
+ "r4.solve.B1.of": {
+  "text": "1 of 20",
+  "source": "round4-scores.json runs.B1.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B1.of": {
+  "text": "6 of 20",
+  "source": "round4-scores.json runs.B1.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B1.of": {
+  "text": "13 of 20",
+  "source": "round4-scores.json runs.B1.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B2.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B2.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B2.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.B2.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B2.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B2.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B3.of": {
+  "text": "1 of 20",
+  "source": "round4-scores.json runs.B3.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B3.of": {
+  "text": "5 of 20",
+  "source": "round4-scores.json runs.B3.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B3.of": {
+  "text": "14 of 20",
+  "source": "round4-scores.json runs.B3.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B4.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B4.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B4.of": {
+  "text": "18 of 20",
+  "source": "round4-scores.json runs.B4.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B4.of": {
+  "text": "2 of 20",
+  "source": "round4-scores.json runs.B4.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B5.of": {
+  "text": "11 of 20",
+  "source": "round4-scores.json runs.B5.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B5.of": {
+  "text": "9 of 20",
+  "source": "round4-scores.json runs.B5.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B5.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B5.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B6.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.B6.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B6.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B6.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B6.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B6.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B7.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.B7.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B7.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B7.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B7.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B7.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.B8.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B8.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.B8.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.B8.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.B8.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.B8.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.A1a.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.A1a.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.A1a.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A1a.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.A1a.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A1a.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.A1b.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.A1b.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.A1b.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A1b.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.A1b.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A1b.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.A1c.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.A1c.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.A1c.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A1c.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.A1c.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A1c.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.A2a.of": {
+  "text": "11 of 20",
+  "source": "round4-scores.json runs.A2a.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.A2a.of": {
+  "text": "7 of 20",
+  "source": "round4-scores.json runs.A2a.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.A2a.of": {
+  "text": "2 of 20",
+  "source": "round4-scores.json runs.A2a.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.A2b.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A2b.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.A2b.of": {
+  "text": "20 of 20",
+  "source": "round4-scores.json runs.A2b.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.A2b.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A2b.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.A2c.of": {
+  "text": "17 of 20",
+  "source": "round4-scores.json runs.A2c.categories.solve (written as 'k of n')"
+ },
+ "r4.farm.A2c.of": {
+  "text": "2 of 20",
+  "source": "round4-scores.json runs.A2c.categories.cycle-farm (written as 'k of n')"
+ },
+ "r4.prolong.A2c.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A2c.categories.prolong (written as 'k of n')"
+ },
+ "r4.solve.on.of": {
+  "text": "2 of 80",
+  "source": "round4-scores.json, B1-B4 solves summed (written as 'k of n')"
+ },
+ "r4.solve.off.of": {
+  "text": "71 of 80",
+  "source": "round4-scores.json, A1b+B7+B5+B6 solves summed (written as 'k of n')"
+ },
+ "r4.tamperers.on.of": {
+  "text": "80 of 80",
+  "source": "round4-scores.json B1-B4 tamperer (written as 'k of n')"
+ },
+ "r4.loopers.on.of": {
+  "text": "80 of 80",
+  "source": "round4-scores.json B1-B4 looper (written as 'k of n')"
+ },
+ "d1.never.of": {
+  "text": "1 of 80",
+  "source": "part-d-results.json D1.classes (written as 'k of n')"
+ },
+ "d1.lost.of": {
+  "text": "77 of 80",
+  "source": "part-d-results.json D1.classes (written as 'k of n')"
+ },
+ "d1.kept.of": {
+  "text": "2 of 80",
+  "source": "part-d-results.json D1.classes (written as 'k of n')"
+ },
+ "d1.declined.of": {
+  "text": "7 of 77",
+  "source": "part-d-results.json D1 (written as 'k of n')"
+ },
+ "d3.rise.of": {
+  "text": "7 of 7",
+  "source": "part-d-results.json D3 (written as 'k of n')"
+ },
+ "r5.solve.A1.of": {
+  "text": "11 of 20",
+  "source": "round5-scores.json runs.A1.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.A1.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.A1.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.A1.of": {
+  "text": "9 of 20",
+  "source": "round5-scores.json runs.A1.tamperers (written as 'k of n')"
+ },
+ "r5.solve.A2.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.A2.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.A2.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.A2.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.A2.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.A2.tamperers (written as 'k of n')"
+ },
+ "r5.solve.B9.of": {
+  "text": "3 of 20",
+  "source": "round5-scores.json runs.B9.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.B9.of": {
+  "text": "8 of 20",
+  "source": "round5-scores.json runs.B9.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.B9.of": {
+  "text": "19 of 20",
+  "source": "round5-scores.json runs.B9.tamperers (written as 'k of n')"
+ },
+ "r5.solve.B10.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.B10.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.B10.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.B10.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.B10.of": {
+  "text": "7 of 20",
+  "source": "round5-scores.json runs.B10.tamperers (written as 'k of n')"
+ },
+ "r5.solve.B11.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.B11.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.B11.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.B11.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.B11.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.B11.tamperers (written as 'k of n')"
+ },
+ "r5.solve.C1.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.C1.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.C1.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C1.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.C1.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C1.tamperers (written as 'k of n')"
+ },
+ "r5.solve.C2.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.C2.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.C2.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C2.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.C2.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C2.tamperers (written as 'k of n')"
+ },
+ "r5.solve.C3.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.C3.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.C3.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C3.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.C3.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C3.tamperers (written as 'k of n')"
+ },
+ "r5.solve.C4.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.C4.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.C4.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C4.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.C4.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C4.tamperers (written as 'k of n')"
+ },
+ "r5.solve.C5.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C5.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.C5.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C5.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.C5.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.C5.tamperers (written as 'k of n')"
+ },
+ "r5.solve.C6.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.C6.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.C6.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C6.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.C6.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.C6.tamperers (written as 'k of n')"
+ },
+ "r5.solve.r4B1.of": {
+  "text": "1 of 20",
+  "source": "round5-scores.json runs.r4-B1.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.r4B1.of": {
+  "text": "6 of 20",
+  "source": "round5-scores.json runs.r4-B1.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.r4B1.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.r4-B1.tamperers (written as 'k of n')"
+ },
+ "r5.solve.r4B2.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.r4-B2.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.r4B2.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.r4-B2.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.r4B2.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.r4-B2.tamperers (written as 'k of n')"
+ },
+ "r5.solve.r4B3.of": {
+  "text": "1 of 20",
+  "source": "round5-scores.json runs.r4-B3.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.r4B3.of": {
+  "text": "5 of 20",
+  "source": "round5-scores.json runs.r4-B3.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.r4B3.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.r4-B3.tamperers (written as 'k of n')"
+ },
+ "r5.solve.r4A1b.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json runs.r4-A1b.categories.solve (written as 'k of n')"
+ },
+ "r5.farm.r4A1b.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.r4-A1b.categories.cycle-farm (written as 'k of n')"
+ },
+ "r5.tamperers.r4A1b.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json runs.r4-A1b.tamperers (written as 'k of n')"
+ },
+ "r5.solve.B1B3.of": {
+  "text": "2 of 40",
+  "source": "round5-scores.json r4-B1 + r4-B3 (written as 'k of n')"
+ },
+ "exp.B-L-B9-tamperers.of": {
+  "text": "20 of 20",
+  "source": "round5-preregistration.md, B-L-B9-tamperers expected (written as 'k of n')"
+ },
+ "obs.B-L-B9-tamperers.of": {
+  "text": "19 of 20",
+  "source": "round5-scores.json predictions[B-L-B9-tamperers].observed (written as 'k of n')"
+ },
+ "exp.B-L-B9-solves.of": {
+  "text": "1 of 20",
+  "source": "round5-preregistration.md, B-L-B9-solves expected (written as 'k of n')"
+ },
+ "obs.B-L-B9-solves.of": {
+  "text": "3 of 20",
+  "source": "round5-scores.json predictions[B-L-B9-solves].observed (written as 'k of n')"
+ },
+ "exp.B-L-B10-tamperers.of": {
+  "text": "17 of 20",
+  "source": "round5-preregistration.md, B-L-B10-tamperers expected (written as 'k of n')"
+ },
+ "obs.B-L-B10-tamperers.of": {
+  "text": "7 of 20",
+  "source": "round5-scores.json predictions[B-L-B10-tamperers].observed (written as 'k of n')"
+ },
+ "exp.B-L-B10-solves.of": {
+  "text": "3 of 20",
+  "source": "round5-preregistration.md, B-L-B10-solves expected (written as 'k of n')"
+ },
+ "obs.B-L-B10-solves.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json predictions[B-L-B10-solves].observed (written as 'k of n')"
+ },
+ "exp.B-L-B11-tamperers.of": {
+  "text": "3 of 20",
+  "source": "round5-preregistration.md, B-L-B11-tamperers expected (written as 'k of n')"
+ },
+ "obs.B-L-B11-tamperers.of": {
+  "text": "0 of 20",
+  "source": "round5-scores.json predictions[B-L-B11-tamperers].observed (written as 'k of n')"
+ },
+ "exp.B-L-B11-solves.of": {
+  "text": "17 of 20",
+  "source": "round5-preregistration.md, B-L-B11-solves expected (written as 'k of n')"
+ },
+ "obs.B-L-B11-solves.of": {
+  "text": "20 of 20",
+  "source": "round5-scores.json predictions[B-L-B11-solves].observed (written as 'k of n')"
+ },
+ "kc.overrepeat.of": {
+  "text": "1 of 80",
+  "source": "round5-scores.json C1-C4 seeds with repeat_over_5 (written as 'k of n')"
+ },
+ "exp.C3.farm.of": {
+  "text": "12 of 20",
+  "source": "round5 amendment, C-P1 expectation for C3 (written as 'k of n')"
+ },
+ "exp.C2.farm.of": {
+  "text": "4 of 20",
+  "source": "round5 amendment, C-P1 expectation for C2 (written as 'k of n')"
+ },
+ "exp.C5.solve.of": {
+  "text": "6 of 20",
+  "source": "round5 amendment, C-P3 expectation for C5 (written as 'k of n')"
+ },
+ "r4.solve16.A2a.of": {
+  "text": "6 of 20",
+  "source": "round4-scores.json runs.A2a.solve16 (written as 'k of n')"
+ },
+ "r4.solve16.A2b.of": {
+  "text": "0 of 20",
+  "source": "round4-scores.json runs.A2b.solve16 (written as 'k of n')"
+ },
+ "r4.solve16.A2c.of": {
+  "text": "8 of 20",
+  "source": "round4-scores.json runs.A2c.solve16 (written as 'k of n')"
+ },
+ "r3.farm.R1.of": {
+  "text": "4 of 20",
+  "source": "round3-scores.json round3.R1.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R1.of": {
+  "text": "16 of 20",
+  "source": "round3-scores.json round3.R1.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R2.of": {
+  "text": "18 of 20",
+  "source": "round3-scores.json round3.R2.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R2.of": {
+  "text": "2 of 20",
+  "source": "round3-scores.json round3.R2.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R3.of": {
+  "text": "6 of 20",
+  "source": "round3-scores.json round3.R3.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R3.of": {
+  "text": "14 of 20",
+  "source": "round3-scores.json round3.R3.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R4.of": {
+  "text": "9 of 20",
+  "source": "round3-scores.json round3.R4.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R4.of": {
+  "text": "11 of 20",
+  "source": "round3-scores.json round3.R4.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R5.of": {
+  "text": "12 of 20",
+  "source": "round3-scores.json round3.R5.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R5.of": {
+  "text": "8 of 20",
+  "source": "round3-scores.json round3.R5.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R6.of": {
+  "text": "0 of 20",
+  "source": "round3-scores.json round3.R6.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R6.of": {
+  "text": "20 of 20",
+  "source": "round3-scores.json round3.R6.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R7.of": {
+  "text": "0 of 20",
+  "source": "round3-scores.json round3.R7.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R7.of": {
+  "text": "20 of 20",
+  "source": "round3-scores.json round3.R7.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R8.of": {
+  "text": "0 of 20",
+  "source": "round3-scores.json round3.R8.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R8.of": {
+  "text": "20 of 20",
+  "source": "round3-scores.json round3.R8.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R9.of": {
+  "text": "10 of 20",
+  "source": "round3-scores.json round3.R9.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R9.of": {
+  "text": "10 of 20",
+  "source": "round3-scores.json round3.R9.counts.solve (written as 'k of n')"
+ },
+ "r3.farm.R10.of": {
+  "text": "0 of 20",
+  "source": "round3-scores.json round3.R10.counts.cycle-farm (written as 'k of n')"
+ },
+ "r3.solve.R10.of": {
+  "text": "20 of 20",
+  "source": "round3-scores.json round3.R10.counts.solve (written as 'k of n')"
+ },
+ "r3.normon.total.of": {
+  "text": "27 of 60",
+  "source": "round3-scores.json R3+R4+R5 cycle-farm (written as 'k of n')"
+ },
+ "r3.normoff.total.of": {
+  "text": "0 of 60",
+  "source": "round3-scores.json R6+R7+R8 cycle-farm (written as 'k of n')"
+ },
+ "r2.farm.N1.of": {
+  "text": "7 of 10",
+  "source": "round2-prediction-results.json N1.farmers (round-2 rule) (written as 'k of n')"
+ },
+ "r2.rescore.N1.of": {
+  "text": "6 of 10",
+  "source": "round3-scores.json exploratory_rescore[N1: anchor replicate, growth 1/40, seeds 10-19] (written as 'k of n')"
+ },
+ "r2.farm.N2.of": {
+  "text": "7 of 10",
+  "source": "round2-prediction-results.json N2.farmers (round-2 rule) (written as 'k of n')"
+ },
+ "r2.rescore.N2.of": {
+  "text": "7 of 10",
+  "source": "round3-scores.json exploratory_rescore[N2: growth 1/40 at gamma 0.95] (written as 'k of n')"
+ },
+ "r2.farm.N3.of": {
+  "text": "0 of 10",
+  "source": "round2-prediction-results.json N3.farmers (round-2 rule) (written as 'k of n')"
+ },
+ "r2.rescore.N3.of": {
+  "text": "0 of 10",
+  "source": "round3-scores.json exploratory_rescore[N3: growth 1/80] (written as 'k of n')"
+ },
+ "r2.farm.N4.of": {
+  "text": "0 of 10",
+  "source": "round2-prediction-results.json N4.farmers (round-2 rule) (written as 'k of n')"
+ },
+ "r2.rescore.N4.of": {
+  "text": "0 of 10",
+  "source": "round3-scores.json exploratory_rescore[N4: growth 1/80, coef 1.29 (matched to anchor)] (written as 'k of n')"
+ },
+ "r2.farm.N5.of": {
+  "text": "3 of 10",
+  "source": "round2-prediction-results.json N5.farmers (round-2 rule) (written as 'k of n')"
+ },
+ "r2.rescore.N5.of": {
+  "text": "3 of 10",
+  "source": "round3-scores.json exploratory_rescore[N5: growth 1/40, coef 0.5] (written as 'k of n')"
+ },
+ "r2.farm.N6.of": {
+  "text": "10 of 10",
+  "source": "round2-prediction-results.json N6.farmers (round-2 rule) (written as 'k of n')"
+ },
+ "r2.rescore.N6.of": {
+  "text": "9 of 10",
+  "source": "round3-scores.json exploratory_rescore[N6: growth 1/20] (written as 'k of n')"
+ },
+ "r2.farm.payonce.of": {
+  "text": "10 of 10",
+  "source": "round2-prediction-results.json pay-once control (written as 'k of n')"
+ },
+ "race.P1.undet.of": {
+  "text": "21 of 30",
+  "source": "race-results.json P1 (written as 'k of n')"
+ },
+ "race.P2.of": {
+  "text": "60 of 60",
+  "source": "race-results.json P2 (written as 'k of n')"
+ },
+ "vi.maxreach.of": {
+  "text": "1 of 4",
+  "source": "value-iteration-results.json: largest growth that reaches the goal (written as 'k of n')"
+ },
+ "vi.cycles.of": {
+  "text": "1 of 2",
+  "source": "value-iteration-results.json: growth values whose greedy rollout cycles (written as 'k of n')"
+ }
+}

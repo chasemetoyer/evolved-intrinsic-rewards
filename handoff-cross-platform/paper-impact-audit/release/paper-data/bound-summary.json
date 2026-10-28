@@ -1,0 +1,86 @@
+{
+ "note": "POST HOC, not pre-registered",
+ "growth": "1/20",
+ "layouts": 200,
+ "D0": 0.75,
+ "best_solving_discounted": {
+  "min": 0.966392,
+  "median": 1.2441360000000001,
+  "max": 1.508139
+ },
+ "learned_policies": {
+  "0": {
+   "success_rate": 0.0,
+   "mean_discounted": -1.0109051742166666,
+   "max_discounted": -0.7907290714783366
+  },
+  "1": {
+   "success_rate": 0.0,
+   "mean_discounted": -1.0297019551628677,
+   "max_discounted": -0.7958503341167983
+  },
+  "2": {
+   "success_rate": 0.0,
+   "mean_discounted": -0.8083176816125146,
+   "max_discounted": -0.5348512973714904
+  },
+  "3": {
+   "success_rate": 0.0,
+   "mean_discounted": -1.0645895639210994,
+   "max_discounted": -0.8289999009744364
+  },
+  "4": {
+   "success_rate": 0.0,
+   "mean_discounted": -1.0154536386731285,
+   "max_discounted": -0.7846232363284873
+  },
+  "5": {
+   "success_rate": 0.995,
+   "mean_discounted": 0.4111952711299584,
+   "max_discounted": 1.4281015868943896
+  },
+  "6": {
+   "success_rate": 0.26,
+   "mean_discounted": -0.6713971507606062,
+   "max_discounted": 0.980779664769637
+  },
+  "7": {
+   "success_rate": 0.0,
+   "mean_discounted": -1.0142529989063016,
+   "max_discounted": -0.8105381772872365
+  },
+  "8": {
+   "success_rate": 0.0,
+   "mean_discounted": -0.8016536538720106,
+   "max_discounted": -0.5958074975333102
+  },
+  "9": {
+   "success_rate": 0.0,
+   "mean_discounted": -1.0096560141378343,
+   "max_discounted": -0.7751702837437477
+  }
+ },
+ "farming_policy_seeds": [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "6",
+  "7",
+  "8",
+  "9"
+ ],
+ "solver_seeds": [
+  "5"
+ ],
+ "farmers_mean_discounted": -0.9362142034736699,
+ "farmers_max_discounted_any_layout": 0.980779664769637,
+ "layouts_where_any_farmer_beats_best_solving": 0,
+ "layouts_where_any_farmer_reaches_D0": 7,
+ "non_solving_episodes": 1749,
+ "max_discounted_non_solving": -0.5348512973714904,
+ "max_undiscounted_non_solving": -1.0124998092651367,
+ "bound_holds_on_all_non_solving_episodes": true,
+ "solving_episodes_by_farming_seeds": 52
+}

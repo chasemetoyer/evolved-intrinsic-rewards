@@ -1,0 +1,83 @@
+{
+  "seed": 20,
+  "total_timesteps": 1998848,
+  "intrinsic": {
+    "kind": "homeostatic",
+    "coef": 0.5,
+    "h0": 0.5,
+    "growth": [
+      0.025,
+      0.025,
+      0.025
+    ],
+    "satiety": [
+      0.1,
+      1.0,
+      1.0
+    ],
+    "pay_once": false
+  },
+  "first_solved_step": 288768,
+  "first_goal_step": 24096,
+  "coverage_after_solved": 0.350510752688172,
+  "final_train": {
+    "r_int_mean": 0.019076503192385037,
+    "r_int_std": 0.1673437390062544,
+    "train/ret": 0.9607453125000001,
+    "train/int_ret": 0.26184478056500665,
+    "train/len": 27.91444444444444,
+    "train/success": 1.0,
+    "train/coverage": 0.3368458781362007,
+    "train/got_key": 1.0,
+    "train/opened_door": 1.0,
+    "train/pickups": 1.9322222222222223,
+    "train/door_flips": 1.1533333333333333,
+    "train/len_median": 26.944444444444443
+  },
+  "eval": {
+    "DoorKey-8x8/sample": {
+      "ret": 0.9593066406249999,
+      "int_ret": 0.0,
+      "len": 28.9375,
+      "success": 1.0,
+      "coverage": 0.3336693548387097,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 2.09375,
+      "door_flips": 1.0
+    },
+    "DoorKey-8x8/greedy": {
+      "ret": 0.97273193359375,
+      "int_ret": 0.0,
+      "len": 19.390625,
+      "success": 1.0,
+      "coverage": 0.3311491935483871,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 1.0,
+      "door_flips": 1.0
+    },
+    "DoorKey-16x16/sample": {
+      "ret": 0.8724707031250001,
+      "int_ret": 0.0,
+      "len": 362.75,
+      "success": 1.0,
+      "coverage": 0.26844262295081966,
+      "got_key": 1.0,
+      "opened_door": 1.0,
+      "pickups": 28.046875,
+      "door_flips": 3.03125
+    },
+    "DoorKey-16x16/greedy": {
+      "ret": 0.030947875976562497,
+      "int_ret": 0.0,
+      "len": 2480.859375,
+      "success": 0.03125,
+      "coverage": 0.06471994535519127,
+      "got_key": 0.796875,
+      "opened_door": 0.265625,
+      "pickups": 0.796875,
+      "door_flips": 476.703125
+    }
+  }
+}
