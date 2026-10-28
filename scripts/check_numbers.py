@@ -153,6 +153,16 @@ def main():
         suites = list(ET.parse(Path(record['directory'])/'validation.xml').getroot().iter('testsuite'))
         for k in ('tests','failures','errors','skipped'):
             check('validation:'+k,record[k],sum(int(s.get(k,0)) for s in suites))
+        cases = list(ET.parse(Path(record['directory'])/'validation.xml').getroot().iter('testcase'))
+        check('validation:testcase_nodes', record['testcase_nodes'], len(cases))
+        import re
+        counts = re.search(r'(\d+) passed, (\d+) subtests passed', (Path(record['directory'])/'stdout.log').read_text())
+        if counts:
+            check('validation:passed_cases', record['passed_cases'], int(counts.group(1)))
+            check('validation:passed_subtests', record['passed_subtests'], int(counts.group(2)))
+        check('validation:passing_targeted_tests', record.get('passing_targeted_tests'),
+              [case.attrib['name'] for case in cases
+               if not any(child.tag in ('failure','error','skipped') for child in case)])
         for name, value in record.get('unit_data',{}).items():
             check('validation:unit:'+name,value,read(Path(record['directory'])/'unit-tests'/name))
     for record in data['determinism']:

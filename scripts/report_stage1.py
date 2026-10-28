@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import sys
 import tomllib
 import xml.etree.ElementTree as ET
@@ -48,7 +49,8 @@ def validation_records(results, manifest):
         if len(markers) > 1:
             raise ValueError("Duplicate validation completion records")
         record = {"id": spec["id"], "complete": False, "tests": None, "failures": None,
-                  "errors": None, "skipped": None, "passed": None, "unit_data": {}}
+                  "errors": None, "skipped": None, "passed": None, "unit_data": {},
+                  "testcase_nodes": None, "passed_cases": None, "passed_subtests": None}
         if markers:
             complete = read_optional(markers[0])
             out = markers[0].parent / "attempts" / complete["attempt"]
@@ -59,6 +61,13 @@ def validation_records(results, manifest):
                 totals = {key: sum(int(suite.attrib.get(key, 0)) for suite in suites)
                           for key in ("tests", "failures", "errors", "skipped")}
                 record.update(complete=True, **totals, passed=totals["tests"] > 0 and totals["failures"] == totals["errors"] == totals["skipped"] == 0)
+                record["testcase_nodes"] = len(list(tree.iter("testcase")))
+                stdout = (out / "stdout.log").read_text() if (out / "stdout.log").exists() else ""
+                counts = re.search(r"(\d+) passed, (\d+) subtests passed", stdout)
+                if counts:
+                    record["passed_cases"], record["passed_subtests"] = map(int, counts.groups())
+                record["passing_targeted_tests"] = [case.attrib["name"] for case in tree.iter("testcase")
+                                                    if not any(child.tag in ("failure", "error", "skipped") for child in case)]
             record["directory"] = str(out)
             for path in sorted((out / "unit-tests").glob("*.json")):
                 record["unit_data"][path.name] = read_optional(path)
@@ -154,6 +163,7 @@ No evolutionary or random-search evaluation has been run. Every proposal below
 needs approval at the Stage 1 boundary before it becomes a Stage 2 commitment.
 
 - Genome: four events, each with weight in [-1,1], relief in [0,1], and growth either zero or log-scaled in [1/640,1/20]; h0=.5 fixed. Preserve the corrected generic event definitions approved for Stage 1, including exclusion of success-terminal target pickup. Twelve physical parameters. A proposed latent representation uses direct bounded weight/relief coordinates and a growth coordinate with a zero atom plus a positive logarithmic interval. OPEN: zero-atom probability/threshold, transformation, clipping/reflection at CMA boundaries, initialization and sigma.
+- Event semantics — four separate OPEN decisions for the Stage 2 lock: retain final-step event inclusion; retain box-opening inclusion; retain successful target-pickup exclusion; retain attachment only after the initial seeded reset. These are fixed for the present Stage 1 batch and must not be silently treated as locked Stage 2 choices. Also confirm exact-view byte novelty, no preinserted reset view, and state-change rather than attempted-action events.
 - Fitness proposal: equal-weight mean training-success curve area over the kept training tasks and three seeds per candidate at the chosen fitness budget. No task-specific fitted formula and no held-out-task feedback. OPEN: confirm the budget, aggregation, treatment of failed/time-limited evaluations, and safeguards for repeated positively paid events.
 - CMA-ES: population ten, twelve generations. OPEN: optimizer/library version, seed and initial mean/covariance/sigma; stopping behavior under numerical failure; number of finalists and independent re-evaluation seeds/budget; winner tie-break and whether to reserve candidate evaluations for re-evaluation.
 - Random-search control: the same number of candidate evaluations, task set, training budgets and seed counts. OPEN: prior over mixed zero/log growth, matched handling of boundary atoms, winner re-evaluation, and whether random-search winner joins final evaluation. No search starts in Stage 1.
@@ -188,22 +198,58 @@ def render(data):
             ("C5 fixed scoring", "stage1/score.py; preregistration", "No formulas fitted to outcomes; failures and unavailable cells retained."),
             ("C6 credentials", ".gitignore; environment / Modal configuration", "Credential ignore rules established before source publication."),
             ("C7 stage boundary", "this report and draft outline", "Stop for approval before Stage 2."),
-        ]), "", "## Validation and signed ceiling", ""]
+        ]), "", "## Corrected detector definitions", "",
+        "The new project uses corrected detection throughout. The archived-detector Modal reproduction is the explicitly authorized exception. Physical events are captured before SAME_STEP autoreset, and new_view uses the true final observation on a final step.", "",
+        table(["Event", "Exact Stage 1 definition"], [
+            ("new_view", "Exact bytes of the symbolic 7x7 post-action observation not yet seen in this episode. The reset view is not preinserted; clear seen views after processing a terminal/truncated transition."),
+            ("pickup", "Carrying changes from nothing to any object, except a pickup that itself terminates the task with positive raw task reward. Excluded successful target pickups are recorded separately. A timeout alone does not exclude a pickup."),
+            ("drop", "An executed drop action changes carrying from an object to nothing. Blocked attempts do not count."),
+            ("toggle", "A door changes open/locked state, including closing/reopening, or a toggle action removes/replaces a box with its contents. Blocked attempts do not count."),
+        ]), "",
+        table(["Choice", "Fixed Stage 1 behavior", "Stage 2 pre-registration"], [
+            ("Final-step events", "Count, subject to the successful target-pickup exception", "OPEN decision"),
+            ("Box openings", "Count as toggle", "OPEN decision"),
+            ("Successful target pickup", "Excluded from paid pickup event; separately diagnosed", "OPEN decision"),
+            ("Detector attachment", "Only after the initial seeded reset", "OPEN decision"),
+        ]), "",
+        "The corrected descriptive satiation control maps new_view/pickup/toggle to the original three needs and observed state; it adds no drop need. The four-event module retains all four needs, including zero-weight channels.", "",
+        "## Validation and signed ceiling", ""]
     for validation in data["validation"]:
-        lines.append(f"Validation `{validation['id']}`: complete={number(validation['complete'])}; tests={number(validation['tests'])}, failures={number(validation['failures'])}, errors={number(validation['errors'])}, skipped={number(validation['skipped'])}; passed={number(validation['passed'])}.")
+        lines.append(f"Validation `{validation['id']}`: complete={number(validation['complete'])}; passed cases={number(validation['passed_cases'])}, passed subtests={number(validation['passed_subtests'])}; XML aggregate tests={number(validation['tests'])}, testcase nodes={number(validation['testcase_nodes'])}, failures={number(validation['failures'])}, errors={number(validation['errors'])}, skipped={number(validation['skipped'])}; passed={number(validation['passed'])}. The XML aggregate includes subtests and is not the number of standalone test cases.")
         for filename, value in validation["unit_data"].items():
             if filename == "bound-check.json":
                 checks = value.get("episode_checks", [])
                 violations = sum(not row["lower"] - value["tolerance"] <= row["return_value"] <= row["upper"] + value["tolerance"] for row in checks)
                 lines.append(f"Numerical bound checks: {len(checks)} episode/prefix records; {violations} tolerance violations; tolerance={value['tolerance']}.")
+            elif filename == "detector-trajectory-comparison.json":
+                lines.extend(["", "Both detectors on the same recorded trajectories:", "",
+                    table(["Seed", "Steps", "new_view disagreements", "pickup disagreements", "drop disagreements", "toggle disagreements", "Reward mismatches"],
+                          [(row["seed"], row["scalar_steps"], *[row["event_disagreement_counts"][event]
+                            for event in value["events"]], row["reward_mismatch_count"]) for row in value["seeds"]]), "",
+                    "Drop is an added channel absent from the archived detector and has zero weight in the reduction configuration; its disagreement counts are not detector defects. Per-step disagreement details and indices are retained in the JSON. The reduction criterion concerns arithmetic on recorded paper events; the detector comparison is separate.", "",
+                    "Corrected event totals in the recorded corpus:", "",
+                    table(["Event", "Count"], [(event, int(sum(row["full_generic_event_counts"][j] for row in value["seeds"])))
+                                               for j, event in enumerate(value["events"])])])
+                if sum(row["full_generic_event_counts"][3] for row in value["seeds"]) == 0:
+                    lines.append("Coverage limitation: this random DoorKey corpus contains no toggle events. Its detector agreement cannot validate door or box fixes; targeted fixtures cover those cases.")
             elif isinstance(value, dict) and "seeds" in value:
                 lines.extend(["", f"`{filename}`:", "", table(["Seed", "Scalar steps", "Bit identical"],
                     [(row["seed"], row.get("scalar_steps", "pending"), number(row.get("bit_identical"))) for row in value["seeds"]])])
+        targeted = [
+            ("Initial empty/stale door cache", "test_initial_door_cache_is_populated_after_reset"),
+            ("Box opening and timeout events", "test_box_and_timeout_events_compare_both_detectors_on_same_transition"),
+            ("Terminal pickup, target exclusion and physical events", "test_any_object_pickup_drop_toggle_and_terminal_capture"),
+        ]
+        lines.extend(["", table(["Targeted coverage", "Test", "Passed"],
+                     [(description, name, number(name in validation.get("passing_targeted_tests", [])))
+                      for description, name in targeted]), "",
+                     "Evidence limits: targeted fixture pass status and source are retained, but detailed fixture trajectories were not saved. The recorded corpus retains observations/actions/done/events/rewards; it does not retain raw object states, raw task rewards, separate termination/truncation flags or need histories. Need histories can be reconstructed from the saved events. The separate bound-rollout helper did not retain its own raw arrays. Independent verification against the saved reduction corpus reproduces the bound returns, but does not establish direct provenance of those unretained helper arrays."])
     lines += ["", r"Let $V(h)=\sum_k w_k h_k^2$, $L=\sum_k\min(w_k,0)$, and $U=\sum_k\max(w_k,0)$. The archived dynamics apply one clip after growth minus event relief: $h_{t+1}=\operatorname{clip}(h_t+g-s e_t,0,1)$, followed by an optional tamper reset. For one episode or finite prefix with $0<\gamma\le1$:", "",
         r"$$G_T=V(h_0)-(1-\gamma)\sum_{t=1}^{T-1}\gamma^{t-1}V(h_t)-\gamma^{T-1}V(h_T).$$", "",
         r"The coefficients on future potentials are nonnegative and sum to one. Consequently $V(h_0)-U\le G_T\le V(h_0)-L$. At fixed $h_0=.5$, the upper bound is $\frac14\sum_{w_k\ge0}w_k+\frac34\sum_{w_k<0}|w_k|\le3$. For nonnegative unit weights on the three legacy needs this reduces to $.75$. Episode resets are not paid transitions; adding returns over repeated episodes does not inherit a single-episode constant ceiling. Floating-point checks use an explicit numerical tolerance.", "",
         "## Modal, reproducibility and spending", "", "Declared environment:", "", "```json", json.dumps(data["environment"], indent=2), "```", "",
         "One function input represents one configuration/task/seed/budget. Outputs and complete package inventories are stored on the Modal volume and synchronized with hashes. Raw timing and serializer metadata are excluded from numerical bit-identity checks.", "",
+        "Python 3.12.12 and NumPy 2.5.4 follow the archived Mac runtime log and conditional dependency markers. This choice was registered before new results; the earlier unconditional NumPy 2.4.6 statement was incomplete. The container base digest and each attempt's actual installed package inventory are retained in environment/provenance files. The full transitive package lock is uv.lock.", "",
         table(["Task / method", "Seed", "Budget", "Completed repeats", "Numerically bit identical"],
               [(row["task"] + " / " + row["method"], row["seed"], row["budget"], row["completed"], number(row["bit_identical"])) for row in data["determinism"]]), "",
         "Spending record (guard estimates and provider-reported completed intervals are distinct from an invoice):", "", "```json", json.dumps(data["spending"], indent=2), "```", "",
@@ -246,7 +292,7 @@ def main():
     spend = {"completed_training_calls": len(scores), "guard_total_usd": None,
              "provider_invoice_cost_usd": None, "provider_reported_complete_intervals_cost_usd": None}
     if ledger:
-        for key in ("guard_total_usd", "provider_invoice_cost_usd", "provider_reported_complete_intervals_cost_usd", "limit_usd", "overhead_allowance_usd"):
+        for key in ("guard_total_usd", "provider_invoice_cost_usd", "provider_reported_complete_intervals_cost_usd", "limit_usd", "overhead_allowance_usd", "setup_failures", "setup_attempt_guard_usd", "setup_guard_basis", "limitations"):
             spend[key] = ledger.get(key)
         spend["ledger_call_count"] = len(ledger.get("calls", {}))
     environment = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]
