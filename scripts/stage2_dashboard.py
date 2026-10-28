@@ -246,7 +246,7 @@ def render(data, output, interval):
     bars('runs', 'Runs completed out of 1,560', 'logical runs', [('Completed', data['completed_runs']),
          ('In flight', data['running_runs']), ('Awaiting retry', data.get('retry_pending_runs', 0)),
          ('Uncertain', data['uncertain_runs']), ('Not submitted', data['not_submitted_runs'])])
-    bars('spend', 'Spend against $35 cap', 'USD (not additive)', [('Guard', data['guard_usd']),
+    bars('spend', f"Spend against ${data['cap_usd']:g} cap", 'USD (not additive)', [('Guard', data['guard_usd']),
          ('Compute estimate', data['measured_compute_estimate_usd']), ('Billed intervals', data['billed_complete_intervals_usd']), ('Cap', data['cap_usd'])])
     bars('failures', 'Failures and restarts', 'observed count', [('Candidate failures', data['candidate_failures']),
          ('Infrastructure attempts', data['infrastructure_failure_attempts']), ('All restarts', data['observed_restarts']),
@@ -254,7 +254,7 @@ def render(data, output, interval):
     bars('cpu', 'CPU class mix', 'container attempts', sorted(data['cpu_attempt_mix'].items()) or [('No CPU metadata yet', 0)])
     render_chart(output, title=TITLE, subtitle='Stage 2 search · read-only observer · choose a view · no inferential claims', metrics=views)
     doc = output.read_text()
-    cards = [('Completed', f"{data['completed_runs']:,} / 1,560"), ('Guard / cap', f"${data['guard_usd']:.2f} / $35"),
+    cards = [('Completed', f"{data['completed_runs']:,} / 1,560"), ('Guard / cap', f"${data['guard_usd']:.2f} / ${data['cap_usd']:g}"),
              ('Candidate failures', str(data['candidate_failures'])), ('Confirmed preemptions',
               'Not recorded' if data['confirmed_preemptions'] is None else str(data['confirmed_preemptions']))]
     panel = '<section class="cards">' + ''.join(f'<div><small>{html.escape(k)}</small><strong>{html.escape(v)}</strong></div>' for k, v in cards) + '</section>'
