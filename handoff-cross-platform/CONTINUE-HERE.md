@@ -169,3 +169,8 @@ No locked files or controller code were changed.
 ## Approved recovery (approval26)
 
 User said Resume after the interruption audit and controller-restart approval request. Follow stage2-interruption/approved-recovery.md and preregistration/stage2-recovery-amendment-20261028.json. Original locked registration is unchanged; four original runtime versions are preserved in preregistration/frozen-original-stage2/ and replacements are hash-authorized.93fixture tests pass. Resume445saved scientific inputs, retry23confirmed-terminated identical inputs with all old charges retained. One tracked replacement controller only; noStage3.
+
+
+## Replacement controller running after approval26
+
+Tracked run13b2db55-d617-48f4-8c3e-78093f0be19a replaces failed55d43a42, source739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d. Public amendment commit verified. Production reconciliation recovered7saved successes without retraining and marked23confirmed-terminated inputs for identical retries; allpriorchargesretained.445scientific completions now inledger, plus192pre-lock checks. Completion wake registered. ControllerPID43575; caffeinate idle-sleep inhibitorPID44276 exits withcontroller; keep lidopen andapponline. Dashboard observer81939 remains independent. Do not launch another controller. Reconcile latest ledger/logs, then checkedStage2report andSTOPbeforeStage3.

@@ -1,0 +1,12 @@
+{
+  "run_id": "13b2db55-d617-48f4-8c3e-78093f0be19a",
+  "experiment_id": "85df77cf-bcd9-4bf3-8c9c-f96c989f99e7",
+  "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+  "original_run_id": "55d43a42-6cbd-493c-b74d-202f5714f064",
+  "approval_seq": 26,
+  "amendment_sha256": "6a43c36a74d0bceb0386d8256e4ba4dc9fc2d807b6479f90c260bebcdce722b4",
+  "public_github_commit_verified": true,
+  "completion_wake_registered": true,
+  "recorded_utc": "2026-10-28T19:46:36.814531+00:00",
+  "next_action": "Monitor saved run logs for completed reconstruction/first training submissions. Do not start another controller. Completion wake handles success/failure; reportStage2beforeStage3."
+}

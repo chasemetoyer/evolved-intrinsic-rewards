@@ -1,0 +1,12 @@
+{
+  "pid": 44276,
+  "wait_for_controller_pid": 43575,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "-w",
+    "43575"
+  ],
+  "role": "Prevent idle system sleep; closing lid or exiting application remains unsafe",
+  "started_utc": "2026-10-28T19:47:04.168954+00:00"
+}
