@@ -219,3 +219,8 @@ Hard50USD cap restored/readback and publicly committed amendments. CurrentMac re
 ### Approval32 startup verified
 
 All492savedscientificoutputs resynced andscored byproductioncontroller. First9newsubmittedinputs aredisjointfromall492savedcompletions. Hardcap50confirmed; readmac-resume/startup-verification.json forguardsnapshot/handles. Run7c1aa413nowtrainingnewModalinputs. Do notrestartifitstops. Checkpointwatcher85072 persists stateevery30seconds,observer84431 refreshes600seconds,idlehelper84562 followscontroller84379. NoStage3.
+
+
+## Approval33: separate task views in the read-only dashboard
+
+DoorKey-8x8 andUnlockPickup noweachhave area curves (three seeds/task/candidate), best/mean lines onlyforcomplete ten-candidate task generations, randomcandidate points, completioncountsoutof780, tasktrainingcosts inclretainedretryhistory, failures/restarts andCPU mix. Registeredcombinedfitness unchanged. Taskcosts exclude sharedsetup/diagnostic/overhead; taskbilling andexactpreemptioncausesunavailable. Thecontroller andlockedfilesareuntouched; onlyseparateobserver replaced: PID90328,600secondinterval. Readstage2-dashboard-task-checks.json andstage2-dashboard-process.json. SameHTMLpath: stage2-progress/stage2-dashboard.html. NoStage3.

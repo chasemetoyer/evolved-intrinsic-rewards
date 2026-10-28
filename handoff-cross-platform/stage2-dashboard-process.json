@@ -1,14 +1,13 @@
 {
-  "pid": 46043,
-  "previous_pid": 81939,
-  "started_utc": "2026-10-28T19:51:36.844639+00:00",
+  "pid": 90328,
+  "started_utc": "2026-10-28T22:31:27.453845+00:00",
   "command": [
     "/Users/chasemetoyer/.local/share/openresearch/worktrees/64555583-12e3-4641-82a0-b8841b663e70/chat_d92e34bd-f6b9-4876-af6a-5cc9dc7ef56a/scripts/stage2_dashboard.py",
     "--watch",
     "--interval",
     "600"
   ],
-  "role": "Read-only progress observer, including reconciled inputs awaiting infrastructure retry",
-  "scientific_controller_untouched": true,
-  "interval_seconds": 600
+  "interval_seconds": 600,
+  "output": "/Users/chasemetoyer/.local/share/openresearch/files/evolved-intrinsic-rewards/stage2-progress/stage2-dashboard.html",
+  "role": "read-only observer; no controller or volume writes"
 }

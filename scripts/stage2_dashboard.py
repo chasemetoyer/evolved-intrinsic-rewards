@@ -131,21 +131,21 @@ class Reader:
         return row
 
 
-def aggregate_candidates(rows):
+def aggregate_candidates(rows, tasks=TASKS):
     groups = defaultdict(list)
     for row in rows:
-        if row['purpose'] in ('search_cma', 'search_random'):
+        if row['purpose'] in ('search_cma', 'search_random') and row['task'] in tasks:
             groups[row['purpose'], row['candidate'], row['group']].append(row)
     candidates, incomplete = [], 0
     for (purpose, candidate, group), observations in sorted(groups.items()):
         base = (1000 if purpose == 'search_cma' else 3000) + 3 * group
-        expected = {(task, base + k) for task in TASKS for k in range(3)}
+        expected = {(task, base + k) for task in tasks for k in range(3)}
         observed = {(row['task'], row['seed']) for row in observations}
-        if observed != expected or len(observations) != 6:
+        if observed != expected or len(observations) != 3 * len(tasks):
             incomplete += 1
             continue
         import numpy as np
-        ordered = sorted(observations, key=lambda row: (TASKS.index(row['task']), row['seed']))
+        ordered = sorted(observations, key=lambda row: (tasks.index(row['task']), row['seed']))
         candidates.append({'method': 'cma' if purpose == 'search_cma' else 'random', 'candidate': candidate,
                            'group': group, 'fitness': float(np.mean([row['area'] for row in ordered]))})
     generations = []
@@ -155,6 +155,39 @@ def aggregate_candidates(rows):
             generations.append({'generation': g + 1, 'best': max(values), 'mean': statistics.fmean(values), 'n': 10})
     return candidates, generations, incomplete
 
+
+
+def task_for_key(key):
+    match = re.search(r'-(DoorKey-8x8|UnlockPickup)-[0-9]+-seed[0-9]+$', key)
+    return match.group(1) if match else None
+
+
+def task_breakdown(ledger, records, physical):
+    """Descriptive task projections; never change registered equal-task fitness."""
+    result = {}
+    for task in TASKS:
+        calls = {k: c for k, c in ledger['calls'].items() if KEY.match(k) and task_for_key(k) == task}
+        rows = [r for r in records if r['task'] == task]
+        attempts = [r for r in physical if task_for_key(r['key']) == task]
+        candidates, generations, incomplete = aggregate_candidates(rows, (task,))
+        states = Counter(c['status'] for c in calls.values())
+        historical = [c for c in ledger.get('infrastructure_history', []) if task_for_key(c.get('logical_key', '')) == task]
+        guards = sum((Decimal(c['guard_charge_usd']) for c in list(calls.values()) + historical), Decimal(0))
+        measured = sum((Decimal(c['measured']['compute_cost_estimate_usd']) for c in calls.values() if c.get('measured')), Decimal(0))
+        by_key = Counter(r['key'] for r in attempts)
+        result[task] = {
+            'planned_runs': PLANNED // len(TASKS), 'completed_runs': states['complete'],
+            'validated_completed_runs': len(rows), 'running_runs': states['running'] + states['reserved'],
+            'retry_pending_runs': states['retry_pending'], 'uncertain_runs': states['uncertain'],
+            'not_submitted_runs': PLANNED // len(TASKS) - len(calls),
+            'candidates': candidates, 'generations': generations, 'incomplete_candidate_groups': incomplete,
+            'candidate_failures': sum(c.get('outcome') == 'candidate_failure' for c in calls.values()),
+            'infrastructure_failure_attempts': sum('infrastructure_failure.json' in r for r in attempts),
+            'observed_restarts': sum(max(0, n - 1) for n in by_key.values()),
+            'cpu_attempt_mix': dict(Counter(cpu_class(r.get('environment.json', {})) for r in attempts)),
+            'input_guard_usd': float(guards), 'measured_compute_estimate_usd': float(measured),
+        }
+    return result
 
 def collect(reader, registry, workers=4):
     ledger = reader.json('/budget-ledger.json')
@@ -205,7 +238,7 @@ def collect(reader, registry, workers=4):
             'uncertain_runs': sum(c['status'] == 'uncertain' for c in calls.values()),
             'retry_pending_runs': sum(c['status'] == 'retry_pending' for c in calls.values()),
             'not_submitted_runs': PLANNED - len(calls), 'candidates': candidates, 'generations': generations,
-            'incomplete_candidate_groups': incomplete,
+            'incomplete_candidate_groups': incomplete, 'per_task': task_breakdown(ledger, records, physical),
             'guard_usd': float(ledger['guard_total_usd']), 'cap_usd': float(ledger['limit_usd']),
             'measured_compute_estimate_usd': float(measured),
             'billed_complete_intervals_usd': (float(ledger['provider_reported_complete_intervals_cost_usd'])
@@ -218,6 +251,8 @@ def collect(reader, registry, workers=4):
             'read_only_sources': ['saved stage2-run-registry.json', 'Modal volume budget-ledger.json', 'Modal volume runs/**'],
             'limitations': ['Only complete six-run candidates and complete ten-candidate CMA generations are plotted.',
                            'Fitness is the registered mean success-curve area across two tasks and three seeds. No uncertainty interval is estimated.',
+                           'Per-task views use all three seeds for that task; generation lines require all ten task-specific candidates. They are descriptive and do not alter registered fitness.',
+                           'Task input guards include retained retry history but exclude shared setup, diagnostic allowances and overhead. Task billing and exact preemption causes are not available.',
                            'Additional attempts prove restarts, not their cause. Missing termination evidence cannot establish an exact preemption count.',
                            'Guard includes pre-lock work and live reservations. Compute and completed-hour billing are different estimates, not an invoice.',
                            'Registry and volume are asynchronous snapshots. Read failures or unvalidated completed inputs are disclosed.',
@@ -252,11 +287,41 @@ def render(data, output, interval):
          ('Infrastructure attempts', data['infrastructure_failure_attempts']), ('All restarts', data['observed_restarts']),
          ('Unclassified restarts', data['unclassified_restarts']), ('Confirmed preemptions', data['confirmed_preemptions'])])
     bars('cpu', 'CPU class mix', 'container attempts', sorted(data['cpu_attempt_mix'].items()) or [('No CPU metadata yet', 0)])
+    for task, detail in data.get('per_task', {}).items():
+        key = 'task_' + task.replace('-', '_')
+        series = []
+        for field, name, color in (('best', 'CMA best in generation', '#0072B2'), ('mean', 'CMA generation mean', '#E69F00')):
+            points = [{'step': g['generation'], 'area': g[field]} for g in detail['generations']]
+            if points:
+                series.append({'name': name, 'color': color, 'points': points})
+        points = [{'step': c['group'] + 1 + ((c['candidate'] % 10 + .5) / 10 - .5) * .7, 'area': c['fitness']}
+                  for c in detail['candidates'] if c['method'] == 'random']
+        if points:
+            series.append({'name': 'Random candidates (three seeds)', 'color': '#009E73', 'scatter': True, 'points': points})
+        if series:
+            # Series metric names must match the view key expected by the renderer.
+            for item in series:
+                for point in item['points']:
+                    point[key] = point.pop('area')
+            views.append({'key': key, 'label': task + ' · success-curve area', 'type': 'line',
+                          'unit': 'mean area over three seeds', 'xLabel': 'CMA generation / random-search batch', 'series': series})
+        bars(key + '_runs', task + ' · runs out of 780', 'logical runs',
+             [('Completed', detail['completed_runs']), ('In flight', detail['running_runs']),
+              ('Awaiting retry', detail['retry_pending_runs']), ('Uncertain', detail['uncertain_runs']),
+              ('Not submitted', detail['not_submitted_runs'])])
+        bars(key + '_cost', task + ' · training costs', 'USD (not additive; shared costs excluded)',
+             [('Input guards incl. retry history', detail['input_guard_usd']), ('Completed compute estimate', detail['measured_compute_estimate_usd'])])
+        bars(key + '_failures', task + ' · failures and restarts', 'observed count',
+             [('Candidate failures', detail['candidate_failures']), ('Infrastructure attempts', detail['infrastructure_failure_attempts']),
+              ('Restarts (cause may be unknown)', detail['observed_restarts'])])
+        bars(key + '_cpu', task + ' · CPU mix', 'container attempts',
+             sorted(detail['cpu_attempt_mix'].items()) or [('No CPU metadata yet', 0)])
     render_chart(output, title=TITLE, subtitle='Stage 2 search · read-only observer · choose a view · no inferential claims', metrics=views)
     doc = output.read_text()
     cards = [('Completed', f"{data['completed_runs']:,} / 1,560"), ('Guard / cap', f"${data['guard_usd']:.2f} / ${data['cap_usd']:g}"),
              ('Candidate failures', str(data['candidate_failures'])), ('Confirmed preemptions',
               'Not recorded' if data['confirmed_preemptions'] is None else str(data['confirmed_preemptions']))]
+    cards += [(task + ' completed', f"{detail['completed_runs']:,} / {detail['planned_runs']:,}") for task, detail in data.get('per_task', {}).items()]
     panel = '<section class="cards">' + ''.join(f'<div><small>{html.escape(k)}</small><strong>{html.escape(v)}</strong></div>' for k, v in cards) + '</section>'
     notes = '<section class="notes"><p>Updated ' + html.escape(data['observed_utc']) + f' · local refresh every {interval // 60} minutes.</p>'
     notes += '<p>Fitness: six complete task/seed runs per candidate; best/mean only after all ten candidates in a generation finish. Lines are not smoothed; random points share the axis with within-batch jitter.</p>'

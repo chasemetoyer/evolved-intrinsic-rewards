@@ -4,7 +4,7 @@
   "controller_host": "Mac arm64",
   "controller_pid": 84379,
   "idle_sleep_helper_pid": 84562,
-  "dashboard_observer_pid": 84431,
+  "dashboard_observer_pid": 90328,
   "hard_cap_usd": "50",
   "preflight": "PASS",
   "recovered_successes_included": 4,

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": [
+    "global six-run mean unchanged",
+    "task means over exactly three seeds",
+    "incomplete task generations excluded independently",
+    "task retry-cost history retained",
+    "task HTML renders",
+    "scientific registration authorization unchanged"
+  ],
+  "controller_changed": false,
+  "locked_files_changed": false,
+  "live_refresh_utc": "2026-10-28T22:32:09.803071+00:00",
+  "live_read_errors": 0,
+  "per_task_counts_reconcile": true,
+  "local_html_matches_artifact": true
+}
