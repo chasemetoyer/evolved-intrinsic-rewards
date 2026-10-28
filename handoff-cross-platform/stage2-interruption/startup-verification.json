@@ -1,0 +1,12 @@
+{
+  "run_id": "13b2db55-d617-48f4-8c3e-78093f0be19a",
+  "submitted_inputs_checked": 26,
+  "no_saved_completed_input_retrained": true,
+  "guard_usd": "11.6888857159623479733960",
+  "ledger_counts": {
+    "complete": 637,
+    "running": 28,
+    "retry_pending": 23
+  },
+  "retained_old_provider_call_records": 0
+}

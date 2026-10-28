@@ -180,3 +180,8 @@ User said Resume after the interruption audit and controller-restart approval re
 ## Replacement controller running after approval26
 
 Tracked run13b2db55-d617-48f4-8c3e-78093f0be19a replaces failed55d43a42, source739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d. Public amendment commit verified. Production reconciliation recovered7saved successes without retraining and marked23confirmed-terminated inputs for identical retries; allpriorchargesretained.445scientific completions now inledger, plus192pre-lock checks. Completion wake registered. ControllerPID43575; caffeinate idle-sleep inhibitorPID44276 exits withcontroller; keep lidopen andapponline. Dashboard observer81939 remains independent. Do not launch another controller. Reconcile latest ledger/logs, then checkedStage2report andSTOPbeforeStage3.
+
+
+### Recovery startup verified
+
+Run13b2db55 is submitting new training inputs after reconstructing445existing scientific completions. First26submitted keys were checked disjoint from all637saved completed ledger entries. Original23terminated random-search inputs remain queued behind the CMA critical path; their costs remain reserved and are retained again in infrastructure_history on actualretry. The readonly observer was separately replaced byPID46043 to show Awaiting retry as a distinct progress category (accounting still totals1560); controller43575 was untouched. Idle-sleep inhibitor44276 remains attached tocontroller. Latest process files supersede oldobserver81939 references.

@@ -203,6 +203,7 @@ def collect(reader, registry, workers=4):
             'planned_runs': PLANNED, 'completed_runs': len(done), 'validated_completed_runs': len(records),
             'running_runs': sum(c['status'] in ('running', 'reserved') for c in calls.values()),
             'uncertain_runs': sum(c['status'] == 'uncertain' for c in calls.values()),
+            'retry_pending_runs': sum(c['status'] == 'retry_pending' for c in calls.values()),
             'not_submitted_runs': PLANNED - len(calls), 'candidates': candidates, 'generations': generations,
             'incomplete_candidate_groups': incomplete,
             'guard_usd': float(ledger['guard_total_usd']), 'cap_usd': float(ledger['limit_usd']),
@@ -243,7 +244,8 @@ def render(data, output, interval):
                       'series': [{'name': label, 'points': [{'step': i, key: value, 'label': name}
                                   for i, (name, value) in enumerate(items) if value is not None]}]})
     bars('runs', 'Runs completed out of 1,560', 'logical runs', [('Completed', data['completed_runs']),
-         ('In flight', data['running_runs']), ('Uncertain', data['uncertain_runs']), ('Not submitted', data['not_submitted_runs'])])
+         ('In flight', data['running_runs']), ('Awaiting retry', data.get('retry_pending_runs', 0)),
+         ('Uncertain', data['uncertain_runs']), ('Not submitted', data['not_submitted_runs'])])
     bars('spend', 'Spend against $35 cap', 'USD (not additive)', [('Guard', data['guard_usd']),
          ('Compute estimate', data['measured_compute_estimate_usd']), ('Billed intervals', data['billed_complete_intervals_usd']), ('Cap', data['cap_usd'])])
     bars('failures', 'Failures and restarts', 'observed count', [('Candidate failures', data['candidate_failures']),
