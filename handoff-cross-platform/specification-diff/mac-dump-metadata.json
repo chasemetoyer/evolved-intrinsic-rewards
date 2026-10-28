@@ -1,0 +1,35 @@
+{
+  "canonical_sha256": "6984a4a2f4eedf4408a645b4986ea825c4a60e6153769374f0cd58b26ef3fa3a",
+  "cpu": {
+    "avx2": false,
+    "avx512_bf16": false,
+    "avx512_vnni": false,
+    "avx512bw": false,
+    "avx512dq": false,
+    "avx512f": false,
+    "avx512vl": false,
+    "cpu_family": null,
+    "fma": false,
+    "logical_processors": 0,
+    "model": null,
+    "stepping": null,
+    "vendor_id": null
+  },
+  "cpu_class": "other",
+  "machine": "arm64",
+  "note": "Pure generation of the specified first input. No controller/worker API called; no historical fitness consumed by the first ask.",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "process_cpu_seconds": 1.143591,
+  "python": "3.12.12",
+  "run_id": null,
+  "source_commit": null,
+  "target_key": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+  "training_submissions": 0,
+  "versions": {
+    "cma": "4.5.0",
+    "numpy": "2.5.4",
+    "scipy": "1.17.1"
+  },
+  "diagnostic_source_commit": "de75a8e49c6b06ca9e57c63dcfed48545f5079f5",
+  "execution_kind": "Local read-only structural check after diagnostic protocol commit"
+}

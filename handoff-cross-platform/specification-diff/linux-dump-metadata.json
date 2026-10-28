@@ -1,0 +1,33 @@
+{
+  "canonical_sha256": "f65304c4d5315a0ac775bb302457e86220ccf47f2b00b6f719a726f41212b639",
+  "cpu": {
+    "avx2": true,
+    "avx512_bf16": false,
+    "avx512_vnni": true,
+    "avx512bw": true,
+    "avx512dq": true,
+    "avx512f": true,
+    "avx512vl": true,
+    "cpu_family": 6,
+    "fma": true,
+    "logical_processors": 17,
+    "model": 85,
+    "stepping": "unknown",
+    "vendor_id": "GenuineIntel"
+  },
+  "cpu_class": "intel",
+  "machine": "x86_64",
+  "note": "Pure generation of the specified first input. No controller/worker API called; no historical fitness consumed by the first ask.",
+  "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+  "process_cpu_seconds": 9.17,
+  "python": "3.12.12",
+  "run_id": "fc91e753-e0e1-467a-af65-44566804fb09",
+  "source_commit": "de75a8e49c6b06ca9e57c63dcfed48545f5079f5",
+  "target_key": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+  "training_submissions": 0,
+  "versions": {
+    "cma": "4.5.0",
+    "numpy": "2.5.4",
+    "scipy": "1.17.1"
+  }
+}

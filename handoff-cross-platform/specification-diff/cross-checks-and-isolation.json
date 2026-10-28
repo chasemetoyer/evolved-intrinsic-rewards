@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "independent_math_ulp_checks": true,
+  "dump_package_versions_equal": {
+    "cma": "4.5.0",
+    "numpy": "2.5.4",
+    "scipy": "1.17.1"
+  },
+  "mac_dump_reproduces_recorded_hash": true,
+  "linux_dump_reproduces_original_failed_hash": true,
+  "main_registered_runtime_identity_unchanged": true,
+  "main_registration_authorization_passes": true,
+  "provider_ledger_unchanged": true,
+  "training_submissions": 0,
+  "fix_or_replay_rerun_or_search_restart": false,
+  "diagnostic_run_id": "fc91e753-e0e1-467a-af65-44566804fb09",
+  "diagnostic_duration_seconds": 22,
+  "diagnostic_setup_cost_allowance_usd": "0.10",
+  "actual_provider_billed_cost_usd": null,
+  "actual_provider_billed_cost_note": "Unknown/delayed; setup allowance is not an invoice."
+}

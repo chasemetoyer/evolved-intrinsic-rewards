@@ -1,0 +1,11 @@
+{
+  "run_id": "fc91e753-e0e1-467a-af65-44566804fb09",
+  "sandbox_id": "sb-01M627NQZEYDF9Y2WP3F83VZEG",
+  "experiment_id": "84304edf-b997-41c3-84b8-cfdfa69afd9d",
+  "source_commit": "de75a8e",
+  "phase": "single_input_readonly_dump",
+  "target": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+  "training_or_search_authorized": false,
+  "search_branch_modified": false,
+  "next_action": "Read stdout immediately and save full Linux spec; compare priorfailedhash and Mac fullspec, thenSTOP."
+}

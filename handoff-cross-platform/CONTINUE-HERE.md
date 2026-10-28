@@ -204,3 +204,8 @@ User explicitly waived33reviewthreshold andresumedtest; runtime35capalso removed
 ## STOP: exact Linux replay failed, no search restart
 
 Verification-only4e1c708d, Sandboxsb-01M626CZV8NAHC9RHBDJYK8DWN, sourced235a13 exited3 at FIRSTinputg00c000seed1000 hash.0matched/0training; earlier generation2progress claim corrected. Sharedledgerunchanged;492recoverable savedsciencecompletions remain. Readcloud-controller/linux-replay-failure-report.md. CPUIntel family6model85;32srun;0.10setupguard, billedcostunknown. Originalstdout cache unavailable butread-only stoppedSandboxstdout recovered2642bytes. DO NOT RESTART orrunanotherrepair withoutnewuserinstructions. Noactualcloudsearchcontroller orlidclosurecheck;Stage2unfinished;noStage3.
+
+
+## Approval31 read-only diagnosis complete — STOP
+
+Both full inputs reproduced their original canonical hashes (Mac6984..., Linuxf653...). Candidate vector differs at zero-based coordinates4,7,10,11 by1float64ULPeach. Decoded relief[0]/[3] differ1ULP andgrowth[3] differs4ULPs; copies inconfig.intrinsic also differ. Exactly10changedleaf fields,64identical. No path/version/platform-only input differences. Read specification-diff/specification-diff-report.md andbothfullJSONs/CSV. Linuxdiagnosticfc91e753, isolatedchild84304edf source de75a8e, ran22s withzeroPPO/search/controller/volume writes. Parentsearchruntime/registration/providerledger unchanged, independentlychecked. No metadatafix orreplayrerun; noMacrestartinferred. User said they willresumeMac; waitfor explicitnextinstruction. CurrentcloudentryrejectsMac; do notblindlylaunchit. NoStage3.

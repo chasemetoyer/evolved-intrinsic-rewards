@@ -1,0 +1,141 @@
+SPEC_DUMP_BEGIN
+{
+  "canonical_sha256": "6984a4a2f4eedf4408a645b4986ea825c4a60e6153769374f0cd58b26ef3fa3a",
+  "cpu": {
+    "avx2": false,
+    "avx512_bf16": false,
+    "avx512_vnni": false,
+    "avx512bw": false,
+    "avx512dq": false,
+    "avx512f": false,
+    "avx512vl": false,
+    "cpu_family": null,
+    "fma": false,
+    "logical_processors": 0,
+    "model": null,
+    "stepping": null,
+    "vendor_id": null
+  },
+  "cpu_class": "other",
+  "machine": "arm64",
+  "note": "Pure generation of the specified first input. No controller/worker API called; no historical fitness consumed by the first ask.",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "process_cpu_seconds": 1.143591,
+  "python": "3.12.12",
+  "run_id": null,
+  "source_commit": null,
+  "specification": {
+    "candidate": 0,
+    "config": {
+      "env": {
+        "early_goal_frac": 0.0,
+        "early_goal_steps": 0,
+        "eval_curve_episodes": 16,
+        "eval_episodes": 64,
+        "eval_every_updates": 0,
+        "eval_ids": [
+          "MiniGrid-DoorKey-8x8-v0"
+        ],
+        "id": "MiniGrid-DoorKey-8x8-v0",
+        "num_envs": 16
+      },
+      "intrinsic": {
+        "coef": 1.0,
+        "growth": [
+          0.0,
+          0.0,
+          0.0,
+          0.0022552192936547604
+        ],
+        "h0": 0.5,
+        "kind": "generic_homeostatic",
+        "relief": [
+          0.34923006114806593,
+          0.61160890068481,
+          0.5907020421278764,
+          0.31642174648727045
+        ],
+        "tamper": false,
+        "weights": [
+          0.8363639435271575,
+          -0.01067096160787373,
+          -0.39058723371328274,
+          -0.887115023192445
+        ]
+      },
+      "ppo": {
+        "anneal_lr": true,
+        "clip_coef": 0.2,
+        "ent_coef": 0.01,
+        "gae_lambda": 0.95,
+        "gamma": 0.99,
+        "learning_rate": 0.00025,
+        "max_grad_norm": 0.5,
+        "norm_adv": true,
+        "num_minibatches": 4,
+        "num_steps": 128,
+        "update_epochs": 4,
+        "vf_coef": 0.5
+      },
+      "run": {
+        "log_every_updates": 10,
+        "seeds": [
+          1000
+        ],
+        "total_timesteps": 2000000
+      }
+    },
+    "detector": "corrected",
+    "genome": {
+      "growth": [
+        0.0,
+        0.0,
+        0.0,
+        0.0022552192936547604
+      ],
+      "relief": [
+        0.34923006114806593,
+        0.61160890068481,
+        0.5907020421278764,
+        0.31642174648727045
+      ],
+      "weights": [
+        0.8363639435271575,
+        -0.01067096160787373,
+        -0.39058723371328274,
+        -0.887115023192445
+      ]
+    },
+    "group": 0,
+    "id": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+    "latent": [
+      0.9181819717635787,
+      0.49466451919606313,
+      0.30470638314335863,
+      0.056442488403777524,
+      0.34923006114806593,
+      0.61160890068481,
+      0.5907020421278764,
+      0.31642174648727045,
+      0.1682763789393787,
+      0.40642879316345176,
+      0.4831377996847192,
+      0.5529411535717416
+    ],
+    "method": "cma",
+    "purpose": "search_cma",
+    "replicate": 0,
+    "seed": 1000,
+    "source": "final-round5",
+    "task": "DoorKey-8x8",
+    "total_timesteps": 2000000
+  },
+  "target_key": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+  "training_submissions": 0,
+  "versions": {
+    "cma": "4.5.0",
+    "numpy": "2.5.4",
+    "scipy": "1.17.1"
+  }
+}
+SPEC_DUMP_END
