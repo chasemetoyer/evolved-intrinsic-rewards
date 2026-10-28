@@ -195,3 +195,8 @@ User said resume again and asked about surviving lidclosure/scientificintegrity.
 ## Approval28 migration blocked at explicit33USD review gate
 
 Runtime35USD cap removal is approved; one Modal migration/restart authorized after exactreplay,dryrun,cost checks. MacreplayPASS:528spec hashes,60CMA vectors inclcurrent10,492savedcompletions. NoLinuxverification orsearchrestart launched. Remaining1068inputs incl36intentionalterminated-input retries. Updated Sandbox3xprices and12hcontrollerreservation yield protectiveguardpeak33.74398USD (nominal32.98424), exceeding separate33prelaunchgate. Read cloud-controller/pre-launch-review.md. Ask whether33reviewgate is also waived; do not infer fromruntimecapremoval. Preserveall50terminatedcallcosts/CPUunknowns; finalStage2reportmustenumerateeveryattempt/retry. If eventualremotecontroller stops, DO NOT RESTART. Actuallidclosedcheckstillpending. NoStage3.
+
+
+## STOP: exact Linux replay failed, no search restart
+
+Verification-only4e1c708d, Sandboxsb-01M626CZV8NAHC9RHBDJYK8DWN, sourced235a13 exited3 at FIRSTinputg00c000seed1000 hash.0matched/0training; earlier generation2progress claim corrected. Sharedledgerunchanged;492recoverable savedsciencecompletions remain. Readcloud-controller/linux-replay-failure-report.md. CPUIntel family6model85;32srun;0.10setupguard, billedcostunknown. Originalstdout cache unavailable butread-only stoppedSandboxstdout recovered2642bytes. DO NOT RESTART orrunanotherrepair withoutnewuserinstructions. Noactualcloudsearchcontroller orlidclosurecheck;Stage2unfinished;noStage3.

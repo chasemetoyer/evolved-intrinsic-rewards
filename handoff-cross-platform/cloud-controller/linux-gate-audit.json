@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "linux_gate": "FAIL",
+  "shared_ledger_unchanged": true,
+  "provider_training_submissions": 0,
+  "search_restart_launched": false,
+  "follow_up_restarts_authorized": false,
+  "preflight_guard_allowance_usd": "0.10",
+  "actual_provider_cost_usd": null,
+  "limitation": "No ledger charge inserted because verification never acquired controller lock or changed scientific ledger; retain separate verification-run cost evidence for Stage2 report."
+}

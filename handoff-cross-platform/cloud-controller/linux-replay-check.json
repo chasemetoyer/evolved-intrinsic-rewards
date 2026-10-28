@@ -1,0 +1,54 @@
+{
+  "status": "FAIL",
+  "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
+  "machine": "x86_64",
+  "run_id": "4e1c708d-d0da-4898-8c9d-1b9d27f9f523",
+  "source_commit": "d235a13659692ca5a00ebd01c3b3de27226ecfb1",
+  "cpu": {
+    "vendor_id": "GenuineIntel",
+    "cpu_family": 6,
+    "model": 85,
+    "stepping": "unknown",
+    "logical_processors": 17,
+    "avx2": true,
+    "fma": true,
+    "avx512f": true,
+    "avx512bw": true,
+    "avx512dq": true,
+    "avx512vl": true,
+    "avx512_vnni": true,
+    "avx512_bf16": false
+  },
+  "cpu_class": "intel",
+  "wall_seconds": 1.6797953079999992,
+  "process_cpu_seconds": 9.25,
+  "peak_rss_bytes": 508002304,
+  "registered_input_keys": 528,
+  "matched_input_keys": 0,
+  "saved_completed_inputs": 0,
+  "candidate_vectors_rebuilt": 0,
+  "latest_recorded_generation_zero_based": null,
+  "mismatches": [
+    {
+      "id": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+      "reason": "Regenerated specification hash differs",
+      "expected": "f65304c4d5315a0ac775bb302457e86220ccf47f2b00b6f719a726f41212b639",
+      "recorded": "6984a4a2f4eedf4408a645b4986ea825c4a60e6153769374f0cd58b26ef3fa3a"
+    }
+  ],
+  "dry_run_saved_keys_resubmitted": [],
+  "dry_run_ready_keys": [],
+  "ledger_status_counts": {
+    "complete": 488,
+    "uncertain": 31,
+    "retry_pending": 9
+  },
+  "recorded_fitness_areas": {},
+  "rebuilt_latent_candidates": {},
+  "provider_submissions": 0,
+  "controller_or_ledger_mutated": false,
+  "replay_uses_frozen_recorded_fitness": true,
+  "note": "The current recorded ask panel is checked; future unasked generations have no recorded candidates to compare.",
+  "source_identity": "e47ab67df904733ce8ebbf59c5bb5e422e4a1603ad2474fa74a0964d8c657423",
+  "ledger_canonical_sha256": "4d813a81d5d9e74373f46ccce2041103b8a1462c7a47d6b0824e685bf4d61ede"
+}

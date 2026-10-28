@@ -1,0 +1,30 @@
+{
+  "run_id": "4e1c708d-d0da-4898-8c9d-1b9d27f9f523",
+  "source_commit": "d235a13659692ca5a00ebd01c3b3de27226ecfb1",
+  "kind": "verification_only_modal_sandbox",
+  "status": "failed_exact_replay_gate",
+  "training_submissions": 0,
+  "tracked_duration_seconds": 32,
+  "replay_body_wall_seconds": 1.6797953079999992,
+  "process_cpu_seconds": 9.25,
+  "peak_rss_bytes": 508002304,
+  "cpu": {
+    "vendor_id": "GenuineIntel",
+    "cpu_family": 6,
+    "model": 85,
+    "stepping": "unknown",
+    "logical_processors": 17,
+    "avx2": true,
+    "fma": true,
+    "avx512f": true,
+    "avx512bw": true,
+    "avx512dq": true,
+    "avx512vl": true,
+    "avx512_vnni": true,
+    "avx512_bf16": false
+  },
+  "cpu_class": "intel",
+  "setup_guard_allowance_usd": "0.10",
+  "actual_provider_invoice_usd": null,
+  "note": "Allowance is not billed spend. Preserve this external verification cost separately: the training ledger was not mutated."
+}

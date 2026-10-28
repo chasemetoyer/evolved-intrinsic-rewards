@@ -199,3 +199,8 @@ Runtime35USD cap removal is approved; one Modal migration/restart authorized aft
 ## Approval30: threshold waived; cloud verification prepared
 
 User explicitly waived33reviewthreshold andresumedtest; runtime35capalso removed. Combinedcloudamendment stage2-cloud-amendment-20261028.json preservesoriginal/priorruntimeversions.113fixturetestsPASS; configuredcredentialsnamespresent, no secretswritten. Entryphaseverify is a Modal Sandbox with no training/controller invocation. It rebuildsusing frozen recordedMacfitness (492runareas,57completecandidatefitnesses) and requires everyrecorded candidate/specification exact. IfFAIL, STOP/report; no automaticrepair or searchrestart. OnlyafterPASS may phasechange tosearch (samehashedruntime), one12hremotecontrollerrestart withvolumestate/uncappedcostaccounting. Actualuserlidclosurecheckstillpending.
+
+
+## STOP: exact Linux replay failed, no search restart
+
+Verification-only4e1c708d, Sandboxsb-01M626CZV8NAHC9RHBDJYK8DWN, sourced235a13 exited3 at FIRSTinputg00c000seed1000 hash.0matched/0training; earlier generation2progress claim corrected. Sharedledgerunchanged;492recoverable savedsciencecompletions remain. Readcloud-controller/linux-replay-failure-report.md. CPUIntel family6model85;32srun;0.10setupguard, billedcostunknown. Originalstdout cache unavailable butread-only stoppedSandboxstdout recovered2642bytes. DO NOT RESTART orrunanotherrepair withoutnewuserinstructions. Noactualcloudsearchcontroller orlidclosurecheck;Stage2unfinished;noStage3.
