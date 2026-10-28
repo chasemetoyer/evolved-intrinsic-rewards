@@ -1,0 +1,11 @@
+{
+  "run_id": "4e1c708d-d0da-4898-8c9d-1b9d27f9f523",
+  "sandbox_id": "sb-01M626CZV8NAHC9RHBDJYK8DWN",
+  "phase": "verification_only",
+  "source_commit": "d235a13659692ca5a00ebd01c3b3de27226ecfb1",
+  "timeout_seconds": 1800,
+  "training_inputs_authorized_in_this_run": 0,
+  "controller_restart": false,
+  "recorded_utc": "2026-10-28T21:25:29.533191+00:00",
+  "next_action": "Read exact Linux replay result; ifFAIL STOP/report withno training restart. IfPASS verifyreceipt/code/ledger andflipapprovedprofile tosearch forone12hremotecontroller."
+}
