@@ -136,3 +136,28 @@ NEXT GATE: implement and run the exact search-mode controller/worker-validator/
 plan branch using tiny budgets and seeds>=5000. Report only PASS/FAIL. Deliver
 the updated unlocked draft. The user then makes the repo public; only afterward
 lock, push, verify and launch. Never create a lock in advance of a PASS.
+
+
+## Registered Stage 2 search launched, 2026-10-28
+
+This supersedes the pre-lock next-action notes above. Exact search-path smoke
+7bed813b-0ebe-48f2-a725-88d8cf7d4010 is PASS. All mandatory runtime hashes match
+its tested commit ae53fdd. The repository was independently observed PUBLIC.
+The scientific protocol was locked at f75769211c5b05201234827325a9f2bf5a987d44,
+pushed and corroborated by the GitHub receipt in commit b94171f. No new runtime
+implementation was introduced by those commits.
+
+FULL SEARCH is now tracked run 55d43a42-6cbd-493c-b74d-202f5714f064, source
+b94171f2cfe10d4dc1476bcc1bafcda33d90ef59, on experiment85df77cf. All training
+is on Modal; its supervised local controller only orchestrates. Do not start
+a replacement controller or resubmit any recorded key. Follow the canonical
+stage2-runtime-state.json, stage2-run-registry.json and shared budget.json.
+The cap is35USD including pre-lock checks; the full plan has1560 training calls,
+32 concurrent inputs and3600-second deadlines. Stage3 cap10USD is separate and
+its execution still requires approval after the Stage2 report.
+
+On completion reconcile logs/ledger/output hashes, write checked Stage2 results,
+then STOP before Stage3. A failed or uncertain provider input must be reconciled
+through its recorded call ID before any retry action. Never alter frozen inputs
+or change scientific rules to improve the results. The model-independent source
+checkpoint and exact next action are updated automatically.

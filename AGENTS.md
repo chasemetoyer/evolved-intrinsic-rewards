@@ -30,3 +30,12 @@ Stage 2 update (2026-10-28): Stage 1 is complete and Stage 2 is in pre-lock
 review. The Stage 2 entries in `handoff-cross-platform/DECISIONS.md` and
 `approvals-log.jsonl` supersede the "Stage 1 only" rule above. No Stage 2 lock,
 lock push or search launch happens without the user's recorded approval.
+
+
+## Current stage supersedes the earlier Stage 1-only restriction
+
+User approval24 authorized Stage2. Stage1 is complete; the exact search path
+passed its smoke test, the user made the repository public, and the registration
+was locked, pushed and verified. Registered search run55d43a42 is now active
+under the35USD cap. Follow the canonical handoff; do not duplicate it. Stop
+after its checked Stage2 report for approval before Stage3.
