@@ -117,9 +117,27 @@ marked **OPEN** needs a user decision before the lock.
   Ties go to the higher search fitness, then the lower index.
 - **OPEN:** the number of finalists and of re-evaluation seeds.
 
-## CPU handling
+## CPU handling (from the pinned determinism pre-check, run ba62845c)
 
-*(Filled in from the pinned determinism result; see the review package.)*
+- **Result.** With `ATEN_CPU_CAPABILITY=avx2`, `MKL_CBWR=AVX2` and
+  `ONEDNN_MAX_CPU_ISA=AVX2`, seed 910 was **not** bit-identical across Zen 3, Zen 4
+  and Intel. The 64 replicates (Zen 3 46, Zen 4 5, Intel 13) produced two
+  fingerprints: every Zen 3 and Zen 4 replicate shared one, and every Intel
+  replicate shared the other.
+- **Probe.** The ATen tier read AVX2 and oneDNN was capped at AVX2 in every
+  container. MKL honored `CNR:AVX2` only on Intel. On AMD it reported `CNR:AUTO`;
+  Intel documents that only AUTO and COMPATIBLE are supported on non-Intel CPUs.
+- **Rule (specified by the user before the test).** Stage 2 records the CPU type
+  of every container and treats same-seed results as unpaired. Runs are unpinned:
+  pinning did not give full identity, and it ran 1.19× slower in this test.
+- **Consequences.**
+  - Candidates in a CMA-ES generation still share seeds, but their fitness
+    differences include CPU-dependent numerical variation.
+  - Final-evaluation tests are unpaired.
+  - The CPU class of every container is logged and reported per run.
+- **OPEN:** whether to test `MKL_CBWR=COMPATIBLE` (with the other two pins) before
+  the lock. It is Intel's documented cross-vendor reproducibility mode, which uses
+  a single SSE2-only MKL path; it might give full identity at some speed cost.
 
 ## Concurrency and compute
 

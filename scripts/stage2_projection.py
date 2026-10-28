@@ -11,8 +11,10 @@ import argparse
 import json
 import statistics
 from decimal import Decimal
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from stage1.budget import RATE, TERMINATION_ALLOWANCE_SECONDS
 from stage2.budget import LIMIT_USD, OVERHEAD_ALLOWANCE_USD
 from stage2.common import MAX_CONCURRENT_CALLS, SHARED
