@@ -54,7 +54,8 @@ class Stage2Ledger:
             })
             self.data["limit_usd"] = "35"
             self.save()
-        if self.data.get("stage") != 2 or self.data["limit_usd"] != str(LIMIT_USD):
+        if self.data.get("stage") != 2 or not (self.data["limit_usd"] == str(LIMIT_USD) or
+                (self.data.get("limit_usd") is None and self.data.get("cap_removal_approval") == 28)):
             raise BudgetStop("Ledger is not the Stage 2 ledger with the approved $35 cap")
 
     def guard_total(self) -> Decimal:
@@ -62,6 +63,7 @@ class Stage2Ledger:
         setup_count = len(self.data.get("setup_failures", [])) + int(self.data.get("setup_build_inflight", False))
         estimates += setup_count * SETUP_ATTEMPT_GUARD_USD
         estimates += sum((Decimal(c["guard_charge_usd"]) for c in self.data.get("infrastructure_history", [])), Decimal(0))
+        estimates += sum((Decimal(r["guard_charge_usd"]) for r in self.data.get("controller_sessions", {}).values()), Decimal(0))
         reported = Decimal(self.data.get("provider_reported_complete_intervals_cost_usd", "0"))
         return max(estimates, reported) + Decimal(self.data["overhead_allowance_usd"])
 
@@ -77,7 +79,7 @@ class Stage2Ledger:
         uncertain = [k for k, c in self.data["calls"].items() if c["status"] == "uncertain"]
         if uncertain:
             raise BudgetStop("Uncertain charges require provider-state reconciliation: " + ", ".join(uncertain))
-        if self.guard_total() >= LIMIT_USD:
+        if self.data.get("limit_usd") is not None and self.guard_total() >= LIMIT_USD:
             raise BudgetStop("Stage 2 spending guard reached $35")
 
     def setup_failed(self, reason: str) -> None:
@@ -89,7 +91,7 @@ class Stage2Ledger:
         self.assert_can_launch()
         if self.data.get("setup_build_inflight"):
             raise BudgetStop("Previous image-build state must be reconciled before another setup")
-        if self.guard_total() + SETUP_ATTEMPT_GUARD_USD > LIMIT_USD:
+        if self.data.get("limit_usd") is not None and self.guard_total() + SETUP_ATTEMPT_GUARD_USD > LIMIT_USD:
             raise BudgetStop("Setup reservation would cross the Stage 2 $35 guard")
         self.data["setup_build_inflight"] = True
         self.data["setup_attempt_guard_usd"] = str(SETUP_ATTEMPT_GUARD_USD)
@@ -107,9 +109,9 @@ class Stage2Ledger:
         if self.in_flight() >= self.max_concurrent:
             raise BudgetStop(f"All {self.max_concurrent} concurrent-call reservations are occupied")
         amount = estimate_cost(deadline_seconds + TERMINATION_ALLOWANCE_SECONDS)
-        if amount > MAX_CALL_RESERVATION_USD:
+        if self.data.get("limit_usd") is not None and amount > MAX_CALL_RESERVATION_USD:
             raise BudgetStop("Per-call reservation exceeds $1")
-        if self.guard_total() + amount > LIMIT_USD:
+        if self.data.get("limit_usd") is not None and self.guard_total() + amount > LIMIT_USD:
             raise BudgetStop("Next call would cross the Stage 2 $35 spending guard")
         started = time.time()
         record = {"status": "reserved", "reserved_utc": utc_now(), "spec_sha256": spec_sha256,

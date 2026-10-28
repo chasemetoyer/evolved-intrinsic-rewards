@@ -194,3 +194,8 @@ User said resume again and asked about surviving lidclosure/scientificintegrity.
 ## Approval28 migration blocked at explicit33USD review gate
 
 Runtime35USD cap removal is approved; one Modal migration/restart authorized after exactreplay,dryrun,cost checks. MacreplayPASS:528spec hashes,60CMA vectors inclcurrent10,492savedcompletions. NoLinuxverification orsearchrestart launched. Remaining1068inputs incl36intentionalterminated-input retries. Updated Sandbox3xprices and12hcontrollerreservation yield protectiveguardpeak33.74398USD (nominal32.98424), exceeding separate33prelaunchgate. Read cloud-controller/pre-launch-review.md. Ask whether33reviewgate is also waived; do not infer fromruntimecapremoval. Preserveall50terminatedcallcosts/CPUunknowns; finalStage2reportmustenumerateeveryattempt/retry. If eventualremotecontroller stops, DO NOT RESTART. Actuallidclosedcheckstillpending. NoStage3.
+
+
+## Approval30: threshold waived; cloud verification prepared
+
+User explicitly waived33reviewthreshold andresumedtest; runtime35capalso removed. Combinedcloudamendment stage2-cloud-amendment-20261028.json preservesoriginal/priorruntimeversions.113fixturetestsPASS; configuredcredentialsnamespresent, no secretswritten. Entryphaseverify is a Modal Sandbox with no training/controller invocation. It rebuildsusing frozen recordedMacfitness (492runareas,57completecandidatefitnesses) and requires everyrecorded candidate/specification exact. IfFAIL, STOP/report; no automaticrepair or searchrestart. OnlyafterPASS may phasechange tosearch (samehashedruntime), one12hremotecontrollerrestart withvolumestate/uncappedcostaccounting. Actualuserlidclosurecheckstillpending.

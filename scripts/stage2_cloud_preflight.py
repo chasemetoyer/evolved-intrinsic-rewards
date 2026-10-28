@@ -1,17 +1,19 @@
 """Read-only replay and submission audit: never imports or invokes a training backend."""
 from __future__ import annotations
-import collections, hashlib, json, os, platform, sys, time
+import collections, hashlib, json, os, platform, sys, time, resource
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import modal
 import numpy as np
-from stage2.search import SearchPlan, REGISTERED_DRAFT
-from stage2.common import canonical_sha
+from stage2.search import REGISTERED_DRAFT
+from stage2.cloud import ResumeSearchPlan as SearchPlan
+from stage2.common import canonical_sha,parse_cpuinfo,cpu_class
 from stage1.score import score_seed
 from stage2.transport import retry_io
 
 
 def run(out, volume=None, previous=None):
+    started=time.monotonic()
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
     volume=volume or modal.Volume.from_name('evolved-intrinsic-rewards-stage2',create_if_missing=False,version=2)
     def read(path):return retry_io(lambda:b''.join(volume.read_file(path)))
@@ -63,8 +65,13 @@ def run(out, volume=None, previous=None):
     assert not (saved&{r['id'] for r in ready})
     counts=collections.Counter(ledger['calls'][k]['status'] for k in existing)
     highest=max((g for g,c in candidates),default=None)
+    cpu=parse_cpuinfo(Path('/proc/cpuinfo').read_text() if Path('/proc/cpuinfo').exists() else None)
+    usage=resource.getrusage(resource.RUSAGE_SELF)
     result={'status':'FAIL' if mismatches else 'PASS','platform':platform.platform(),'machine':platform.machine(),
             'run_id':os.environ.get('ORX_RUN_ID'),'source_commit':os.environ.get('ORX_COMMIT'),
+            'cpu':cpu,'cpu_class':cpu_class(cpu),'wall_seconds':time.monotonic()-started,
+            'process_cpu_seconds':usage.ru_utime+usage.ru_stime,
+            'peak_rss_bytes':usage.ru_maxrss*(1024 if platform.system()=='Linux' else 1),
             'registered_input_keys':len(existing),'matched_input_keys':matched,
             'saved_completed_inputs':len(areas),'candidate_vectors_rebuilt':len(candidates),
             'latest_recorded_generation_zero_based':highest,'mismatches':mismatches,
@@ -72,6 +79,7 @@ def run(out, volume=None, previous=None):
             'dry_run_ready_keys':ready,'ledger_status_counts':dict(counts),
             'recorded_fitness_areas':areas,'rebuilt_latent_candidates':{f'{g}:{c}':z for (g,c),z in candidates.items()},
             'provider_submissions':0,'controller_or_ledger_mutated':False,
+            'replay_uses_frozen_recorded_fitness':True,
             'note':'The current recorded ask panel is checked; future unasked generations have no recorded candidates to compare.'}
     (out/'replay-check.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k not in ['recorded_fitness_areas','rebuilt_latent_candidates','dry_run_ready_keys']},indent=2),flush=True)

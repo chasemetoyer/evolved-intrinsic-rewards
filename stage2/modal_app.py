@@ -37,11 +37,13 @@ def excluded(path: Path) -> bool:
     if any(p in EXCLUDED_PARTS for p in path.parts) or path.name.startswith(".env"):
         return True
     relative = path.resolve().relative_to(ROOT).as_posix() if path.is_absolute() else path.as_posix()
-    files = {".python-version", "generic_reward.py", "pyproject.toml", "uv.lock"}
+    files = {".python-version", "generic_reward.py", "pyproject.toml", "uv.lock",
+             "handoff-cross-platform/cloud-controller/recorded-fitness.json"}
     directories = ("stage1/", "stage2/", "tests/", "scripts/", "preregistration/",
                    "handoff-cross-platform/code/final-round5/",
                    "handoff-cross-platform/code/a1b-run-commit-1533734/")
-    return not (relative in files or relative.startswith(directories)
+    return not (relative in files or any(f.startswith(relative.rstrip("/") + "/") for f in files)
+                or relative.startswith(directories)
                 or any(d.startswith(relative.rstrip("/") + "/") for d in directories))
 
 

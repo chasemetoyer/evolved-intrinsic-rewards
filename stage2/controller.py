@@ -40,7 +40,11 @@ def make_plan(mode: str):
     if mode == "search":
         from stage2.registration import configured_search
         from stage2.search import SearchPlan
-        return SearchPlan(configured_search())
+        cfg=configured_search()
+        if os.environ.get('STAGE2_CLOUD_CONTROLLER')=='1':
+            from stage2.cloud import ResumeSearchPlan
+            return ResumeSearchPlan(cfg)
+        return SearchPlan(cfg)
     raise SystemExit(f"Mode not available on this node: {mode}")
 
 
@@ -108,6 +112,13 @@ class Controller:
                 batch.put_file(self.ledger.path, "/budget-ledger.json")
         retry_io(upload)  # retry the same immutable local ledger bytes; never respawn a call
         self.publish()
+        if os.environ.get('STAGE2_CLOUD_CONTROLLER') == '1':
+            def upload_state():
+                with volume.batch_upload(force=True) as batch:
+                    for name in ('stage2-runtime-state.json','stage2-run-registry.json','stage2-container-cpu-log.jsonl'):
+                        path=SHARED/name
+                        if path.exists(): batch.put_file(path,'/controller/'+name)
+            retry_io(upload_state)
 
     def publish(self) -> None:
         if not SHARED.is_dir():
@@ -117,7 +128,7 @@ class Controller:
             "updated_utc": utc_now(), "tracked_run_id": os.environ.get("ORX_RUN_ID"),
             "source_commit": os.environ.get("ORX_COMMIT"), "mode": self.mode, "results_directory": str(self.results),
             "ledger_path": str(self.ledger.path), "guard_total_usd": str(self.ledger.guard_total()),
-            "limit_usd": str(LIMIT_USD), "peak_running_containers": self.peak_running,
+            "limit_usd": self.ledger.data.get("limit_usd"), "controller_host": "modal_sandbox", "peak_running_containers": self.peak_running,
             "running_calls": {k: {"function_call_id": v.get("function_call_id"), "status": v["status"]}
                               for k, v in calls.items() if v["status"] != "complete"},
             "resume_instruction": "Reconnect this controller's recorded Modal call IDs; never resubmit a recorded key."})
@@ -143,7 +154,7 @@ class Controller:
         measured = sum((Decimal(c["measured"]["compute_cost_estimate_usd"]) for c in calls
                         if c["status"] == "complete" and c.get("measured")), Decimal(0))
         budget["stages"]["stage2"] = {
-            "cap_usd": str(LIMIT_USD), "status": ("search in progress" if self.mode == "search" and self.is_registered_search else "pre-lock checks (no scientific search launched)"), "mode": self.mode,
+            "cap_usd": self.ledger.data.get("limit_usd"), "status": ("search in progress" if self.mode == "search" and self.is_registered_search else "pre-lock checks (no scientific search launched)"), "mode": self.mode,
             "guard_total_usd": str(self.ledger.guard_total()),
             "measured_completed_function_compute_usd": str(measured),
             "modal_billed_complete_intervals_usd": self.ledger.data.get("provider_reported_complete_intervals_cost_usd"),
@@ -267,6 +278,7 @@ def main() -> None:
     plan = make_plan(mode)
     results = ROOT / "results"
     results.mkdir(exist_ok=True)
+    SHARED.mkdir(parents=True,exist_ok=True)
     lock = modal.Dict.from_name(CONTROLLER_LOCK_NAME, create_if_missing=True)
     owner = os.environ["ORX_RUN_ID"]
     if not lock.put("owner", owner, skip_if_exists=True):
@@ -282,6 +294,8 @@ def main() -> None:
         ledger = Stage2Ledger(ledger_path)
         from stage2.recovery_v2 import reconcile_interrupted
         reconcile_interrupted(ledger, volume, results)
+        from stage2.cloud import apply_uncapped_accounting
+        apply_uncapped_accounting(ledger, owner, volume)
         ledger.assert_can_launch()
         billing_start = datetime.fromisoformat(ledger.data["created_utc"])
         controller = Controller(mode, results, ledger, billing_start)

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 from stage1.budget import atomic_json, utc_now  # noqa: F401  (re-exported)
@@ -15,7 +16,8 @@ VOLUME_NAME = "evolved-intrinsic-rewards-stage2"
 # hundreds of containers to distinct files (https://modal.com/docs/guide/volumes).
 VOLUME_VERSION = 2
 CONTROLLER_LOCK_NAME = VOLUME_NAME + "-controller"
-SHARED = Path("/Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform")
+SHARED = (ROOT / "controller-state" if os.environ.get("STAGE2_CLOUD_CONTROLLER") == "1"
+          else Path("/Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform"))
 
 # User-approved (2026-10-28). Modal's workspace-wide limit is 100 containers on
 # Starter and 5000 on Team (https://modal.com/pricing); max_containers on the
