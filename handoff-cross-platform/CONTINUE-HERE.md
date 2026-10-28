@@ -179,3 +179,8 @@ Tracked run13b2db55-d617-48f4-8c3e-78093f0be19a replaces failed55d43a42, source7
 ### Recovery startup verified
 
 Run13b2db55 is submitting new training inputs after reconstructing445existing scientific completions. First26submitted keys were checked disjoint from all637saved completed ledger entries. Original23terminated random-search inputs remain queued behind the CMA critical path; their costs remain reserved and are retained again in infrastructure_history on actualretry. The readonly observer was separately replaced byPID46043 to show Awaiting retry as a distinct progress category (accounting still totals1560); controller43575 was untouched. Idle-sleep inhibitor44276 remains attached tocontroller. Latest process files supersede oldobserver81939 references.
+
+
+## Second interruption: STOP pending approval
+
+Replacement13b2db55 failed in result polling with Modal ConnectionError Deadline exceeded. No third controller launched. Audit:488ledger-complete scientific runs,4more hash-verified saved successes,27new terminated inputs,9previous retry-pending inputs; guard12.58599/35;14historical retrycall charges preserved. Read stage2-interruption/second-interruption/second-interruption-report.md. Controller43575 andidlehelper44276 exited; observer46043 alive. Approval26 one restart was consumed. Two consecutive infrastructure stops require user approval beforeanother repairrun. Do not use the original amendment to silently reconcile this new outage. NoStage3.

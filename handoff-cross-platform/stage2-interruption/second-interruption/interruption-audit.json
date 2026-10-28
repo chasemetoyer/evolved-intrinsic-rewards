@@ -1,0 +1,1103 @@
+{
+  "observed_utc": "2026-10-28T20:24:24.251011+00:00",
+  "tracked_run_id": "13b2db55-d617-48f4-8c3e-78093f0be19a",
+  "cause": "Modal ConnectionError Deadline exceeded during FunctionCall.get polling; scheduler cleanup canceled outstanding calls",
+  "search_ledger_status_counts": {
+    "complete": 488,
+    "uncertain": 31,
+    "retry_pending": 9
+  },
+  "guard_usd": "12.5859942911438989529760",
+  "cap_usd": "35",
+  "billed_complete_intervals_usd": "7.10709246",
+  "measured_compute_usd": 7.014603730556924,
+  "unresolved_with_durable_completion": 4,
+  "provider_status_counts": {
+    "TERMINATED": 36,
+    "SUCCESS": 4
+  },
+  "unresolved": [
+    {
+      "id": "search_cma-g05-c057-DoorKey-8x8-2000000-seed1016",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6223KBRD359X2QPFXREPYW8",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6223KBYQEPWXZJ55G85ED9X",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c057-DoorKey-8x8-2000000-seed1016/attempts/46b9c807b26a443ea3f8c0361a253580/infrastructure_failure.json",
+        "runs/search_cma-g05-c057-DoorKey-8x8-2000000-seed1016/attempts/46b9c807b26a443ea3f8c0361a253580/attempt.json",
+        "runs/search_cma-g05-c057-DoorKey-8x8-2000000-seed1016/attempts/46b9c807b26a443ea3f8c0361a253580/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c057-DoorKey-8x8-2000000-seed1017",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6223NR3WB94XSKPB8YHG4A0",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6223NRADFK5DHMS2DDB395G",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c057-DoorKey-8x8-2000000-seed1017/attempts/84b4e22fe28f4ef8aa599375dd3b596a/usage.json",
+        "runs/search_cma-g05-c057-DoorKey-8x8-2000000-seed1017/attempts/84b4e22fe28f4ef8aa599375dd3b596a/attempt.json",
+        "runs/search_cma-g05-c057-DoorKey-8x8-2000000-seed1017/attempts/84b4e22fe28f4ef8aa599375dd3b596a/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c057-UnlockPickup-2000000-seed1015",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6223QQTNAJCD6Y8BMTPBAM1",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6223QR4XY808ATFFCZYYNGH",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1015/attempts/1c1d046a6d404e97bea09f5058eb919c/usage.json",
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1015/attempts/1c1d046a6d404e97bea09f5058eb919c/infrastructure_failure.json",
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1015/attempts/1c1d046a6d404e97bea09f5058eb919c/attempt.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c057-UnlockPickup-2000000-seed1016",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6223TGTK3M35TEVWY491EFY",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6223TH8AA2QC910HEPKQA82",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "0802c0941bd64ef198567b2d5d95dba8",
+        "attempts": [
+          {
+            "attempt": "0802c0941bd64ef198567b2d5d95dba8",
+            "metadata": {
+              "absolute_deadline": 1793221776.118434,
+              "attempt": "0802c0941bd64ef198567b2d5d95dba8",
+              "modal_function_call_id": "fc-01M6223TGTK3M35TEVWY491EFY",
+              "modal_input_id": "in-01M6223TH8AA2QC910HEPKQA82:1793218177612-0",
+              "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+              "spec_sha256": "0e5f4d9ffc10ec14fce35f6bbb6740fc6022432375a47b09447c94af815b9cc9",
+              "started_utc": "2026-10-28T20:09:45.016296+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01343192727520726",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 747.76,
+              "training_peak_rss_bytes": 810340352,
+              "wall_seconds": 765.788328119
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/agent.pt": "9693776a457de87ba980885dc92ef0b56a497b3e0f2acc737dcf0b8b51dc1e6d",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/attempt.json": "ec14a174644853462da60d019094dd43c2676333069fb3c6acce8436c91ad23e",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/config.toml": "9d5cbea4bdf33c675d7e7fbde00e94570d055e30892d5790222e36710a74edfd",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/environment.json": "396c8629b979d27bae7a79a5734adcf9bb09f57eff1ca827ef69ca62e492c28e",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/fingerprint.json": "a67bb4ed7eda8ca125521e682e220d6ed1af8264044d4de7235ec613a91bed2a",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/fingerprints.json": "660d098c3c89e6b5a5079db295f274336470960bdd63c64777e432758f44d601",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/isa_probe.json": "b097d2a871126a4f8c18b08acdfb8ae5adc86943a386eae8315c85bbc7eab8b5",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/metrics.jsonl": "b50cb2da5eaba9fb46110e4026ece6fbcf46504ac078cc9826b6e98df890925a",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/outcome.json": "3c388b196b9a02d99a94fe0e07ca50594014546d89dd2c5c45e96225bf06802c",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/process_usage.json": "1c89cf224da8fd39d150ea90d47c611caa1a82cf00533b0238ba6075de2278b1",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/provenance.json": "dc6e8ec93b157abe7627917381f99fc1b6f94852cf6d531543f1029fba78b454",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/spec.json": "3ca4ff7e3b2841f507ce71f825eb0280131ffa8071a9b95c5a4a1e752f7706c4",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/stdout.log": "52a9f5db1c8c1e6f2ab5c0588b9940dcf230d9e5aabdc635520cc4288a9d9a76",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/summary.json": "e683139dab05570455153fa32cacd36b75b1dfefe165967ac02925231ff560bd",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/usage.json": "8caac27a57b99578ed699a3c46ed91ddf0744c66b94b75f56804613db6661077"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "be30b00df42604344129a292c61858f5ec94e1300e418868124c58f3be75219c",
+          "metrics_without_sps_sha256": "d327e17a202c673dc98304a6d24b7b1d256aed0103bde9582953173632b644cf",
+          "summary_sha256": "0d81a2022f8492a0f1feb6368a96d358e8c829aadf78511f5abb04572d58b1d8"
+        },
+        "id": "search_cma-g05-c057-UnlockPickup-2000000-seed1016",
+        "outcome": "success",
+        "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+        "spec_sha256": "0e5f4d9ffc10ec14fce35f6bbb6740fc6022432375a47b09447c94af815b9cc9",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01343192727520726",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 747.76,
+          "training_peak_rss_bytes": 810340352,
+          "wall_seconds": 765.788328119
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/metrics.jsonl": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/outcome.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/process_usage.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/spec.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/summary.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/process_usage.json",
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/attempt.json",
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1016/attempts/0802c0941bd64ef198567b2d5d95dba8/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c057-UnlockPickup-2000000-seed1017",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6223W8DQ06AX9BKBAMJ4A0Z",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6223W8JAQSAN1VR5P64F3NM",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "04dc8fe8388a4081ae54ae08c91b7efc",
+        "attempts": [
+          {
+            "attempt": "04dc8fe8388a4081ae54ae08c91b7efc",
+            "metadata": {
+              "absolute_deadline": 1793221778.4313579,
+              "attempt": "04dc8fe8388a4081ae54ae08c91b7efc",
+              "modal_function_call_id": "fc-01M6223W8DQ06AX9BKBAMJ4A0Z",
+              "modal_input_id": "in-01M6223W8JAQSAN1VR5P64F3NM:1793218179368-0",
+              "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+              "spec_sha256": "9274e0681cd5554db377f4ff14e9e550a52fa098d1f5fcf0d32621275c217903",
+              "started_utc": "2026-10-28T20:09:45.236199+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.012524165061629078246",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 697.91,
+              "training_peak_rss_bytes": 811376640,
+              "wall_seconds": 714.0344961019999
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/agent.pt": "edd04c2a8d8a1a7fceab31817885fcfd761b8ccd8d66eb73d1b9d92643a3fd4b",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/attempt.json": "1810946be672e53f351c91240c744e74c96e7a838f4e8d0f057d4b3abe976211",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/config.toml": "eb790a504afe3c2e16483162a4bce0630f2a05cd8edf07a23e340dcc3ff0954a",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/environment.json": "396c8629b979d27bae7a79a5734adcf9bb09f57eff1ca827ef69ca62e492c28e",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/fingerprint.json": "053d042b4a4e134050e12aeecce486680098bd0852d97e76a6f3322f6a8abcb9",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/fingerprints.json": "3ff1a99a25477b0ac9fac9df53933b11c6711be81c68b69783da29599a6a377c",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/isa_probe.json": "cba4855ca25434cedf1bd939a518327eb7052b4b5261c25796720dd9bd4068a3",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/metrics.jsonl": "cf5a09f71473630faa506d1dc5ad8853e1d2b24fa21ad9dc13c09283a3254587",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/outcome.json": "336c1d3cef2f4ec032bfedefae1d9c0e55f09adfe2693a7aaf2d45cddc14e090",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/process_usage.json": "dae19d9b2721fdb045062f8bb0a083b52afc12aea36339815d9060d7e3c3de58",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/provenance.json": "de7f2687d23479f325bfd0fc1b7a515c2bd4ac5d32c2e4231204a2911b39770a",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/spec.json": "24f815b52f74d45f84c939239b45528d902361a777c3a4a3748db1020cdbe8f9",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/stdout.log": "5e90a47df58c11052faca6ea9661dbd339aa8569aac494fdbba57d01378dfc68",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/summary.json": "37e500c17d713e58030ff81f6822a5d52b4a286237e88b864e6971ce34b7bf1a",
+          "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/usage.json": "7525e85e16c0172812dac7b3a89b0f8b7a01e828b635ebe4ae116091fb03d084"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "78227d23c6acb7f83b207d31503a5af32dfbd7b9d9e5528733fc4275a80d2dd0",
+          "metrics_without_sps_sha256": "c4818679f19cee88c5a91f0724ad37a961af1f2655c338608cba5e4efdb568fe",
+          "summary_sha256": "de1ae05e9f748632f5c9c5e540497c18fd6040056f673133386f23b905244c03"
+        },
+        "id": "search_cma-g05-c057-UnlockPickup-2000000-seed1017",
+        "outcome": "success",
+        "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+        "spec_sha256": "9274e0681cd5554db377f4ff14e9e550a52fa098d1f5fcf0d32621275c217903",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.012524165061629078246",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 697.91,
+          "training_peak_rss_bytes": 811376640,
+          "wall_seconds": 714.0344961019999
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/metrics.jsonl": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/outcome.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/process_usage.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/spec.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/summary.json": true,
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/process_usage.json",
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/attempt.json",
+        "runs/search_cma-g05-c057-UnlockPickup-2000000-seed1017/attempts/04dc8fe8388a4081ae54ae08c91b7efc/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c058-DoorKey-8x8-2000000-seed1015",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6223XXA9AXZT8F8CGBBXJS1",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6223XXKXXTGK2VJ08Z7MZRP",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1015/attempts/1b2d83b7033c4d14882f5513945eb648/usage.json",
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1015/attempts/1b2d83b7033c4d14882f5513945eb648/attempt.json",
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1015/attempts/1b2d83b7033c4d14882f5513945eb648/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c058-DoorKey-8x8-2000000-seed1016",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62240NMWJK5XJJSMHJTWG2V",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62240NY7WEF724F72WP9W4S",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "14f1fc41455240788dd907a097ddf450",
+        "attempts": [
+          {
+            "attempt": "14f1fc41455240788dd907a097ddf450",
+            "metadata": {
+              "absolute_deadline": 1793221782.755522,
+              "attempt": "14f1fc41455240788dd907a097ddf450",
+              "modal_function_call_id": "fc-01M62240NMWJK5XJJSMHJTWG2V",
+              "modal_input_id": "in-01M62240NY7WEF724F72WP9W4S:1793218183895-0",
+              "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+              "spec_sha256": "ccf7ba225f3e627d3a2e171b95433a67c1b9764453ed18621e91569c6fe4dc7a",
+              "started_utc": "2026-10-28T20:09:51.409755+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.013391233309148058246",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 745.4699999999999,
+              "training_peak_rss_bytes": 811728896,
+              "wall_seconds": 763.4682616389999
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/agent.pt": "7872e436701679a84c402cb2a2420db1ab66a5c6f049ba5604e104b255c99630",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/attempt.json": "bc36359120a33efc931c4eb0b50c94354be24e4e3bebb36c9cd4eb257b5ec5b6",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/config.toml": "7e22d6e67a9ce06e2168080f732de711076933733a886b9884782ec71b041dd4",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/environment.json": "871287fc64adc2c4d63b6a3e7b413bbc72ef4b7eb08cb4c9af36c006f7f3ef59",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/fingerprint.json": "6b37ef47e5b5992f5cd7d74ba1e67059c3d8801b691a6f885121e48574d4d6f3",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/fingerprints.json": "d7e4c0a7c4a8b34bafb128acfa5ef6e0bd3a2bc52aa560b9250d871933e34a7e",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/isa_probe.json": "0f802db79dd19bb7624e2eef81886a5b0c93d607646243490bec15a87297f9c1",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/metrics.jsonl": "6a21aa2b729032d112114cf2161826909714610e9249f5bf7b34884a69b778aa",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/outcome.json": "72c4d0a6cbdf61279ba78d74f1a9327e434e67d8749ee63f12e56c31fb126331",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/process_usage.json": "d608464e6e9b2f96fb244b440b95d808a29523429a41dca9eaec48ce46cedf1d",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/provenance.json": "ebb1b62fc2e52b7415793be192a2e0290e48778b8f4906eb5f2100988c32ab7d",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/spec.json": "185cf9d1374acf884a30b2fd46997a14d3acc231422b46affa2b7c00477f1fa7",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/stdout.log": "74edebeecbd6fcf0408474e91624fcb1df26165782244aee172678d9a25db307",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/summary.json": "9fd796601b5cc8c8e6a2872fe584080ff0327f3af165c85d21723c4b4cd98dd4",
+          "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/usage.json": "31a533367a7c0013784b47e9afbfcf760f5878c4ea28919f9e1c38f91637186c"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "9347272a34999c5527c22b1bab5b258530ae5547c0d7485babf24329d770a641",
+          "metrics_without_sps_sha256": "8a650cc0ce98cbb74940dd3935689252a3b1f5245e6474c7602a50e9d6644c89",
+          "summary_sha256": "76cb0c6ead8cf55410b42369e05a43cbc9ade87bc3ea138e1c5e9ca955ec6682"
+        },
+        "id": "search_cma-g05-c058-DoorKey-8x8-2000000-seed1016",
+        "outcome": "success",
+        "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+        "spec_sha256": "ccf7ba225f3e627d3a2e171b95433a67c1b9764453ed18621e91569c6fe4dc7a",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.013391233309148058246",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 745.4699999999999,
+          "training_peak_rss_bytes": 811728896,
+          "wall_seconds": 763.4682616389999
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/metrics.jsonl": true,
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/outcome.json": true,
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/process_usage.json": true,
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/spec.json": true,
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/summary.json": true,
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/usage.json",
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/attempt.json",
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1016/attempts/14f1fc41455240788dd907a097ddf450/process_usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c058-DoorKey-8x8-2000000-seed1017",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62242Q28F925N1PYW99VQQB",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62242QCNCRP0CB8C53ZHN20",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1017/attempts/76941f65e8fa4a92840fad00e8bd8ed0/infrastructure_failure.json",
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1017/attempts/76941f65e8fa4a92840fad00e8bd8ed0/attempt.json",
+        "runs/search_cma-g05-c058-DoorKey-8x8-2000000-seed1017/attempts/76941f65e8fa4a92840fad00e8bd8ed0/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c058-UnlockPickup-2000000-seed1015",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622463BQ7R16YPFRADAK7HR",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622463JGJJJFMXKY0PJEPEW",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1015/attempts/0eb9bb60e1f04b71ac183a739f8ee157/infrastructure_failure.json",
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1015/attempts/0eb9bb60e1f04b71ac183a739f8ee157/usage.json",
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1015/attempts/0eb9bb60e1f04b71ac183a739f8ee157/attempt.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c058-UnlockPickup-2000000-seed1016",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62247Z51XWSFF52D10N69VG",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62247ZCGRJGHV1GHF42KR4C",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1016/attempts/cac656a6d719443e90878e0752090be4/usage.json",
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1016/attempts/cac656a6d719443e90878e0752090be4/infrastructure_failure.json",
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1016/attempts/cac656a6d719443e90878e0752090be4/attempt.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c058-UnlockPickup-2000000-seed1017",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6224AW7T203SKK0RFFMRV15",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6224AWDBYBT60QXCQ1R1PM3",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1017/attempts/4e7dfac29b084db2a1d29d2a37d48f3a/infrastructure_failure.json",
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1017/attempts/4e7dfac29b084db2a1d29d2a37d48f3a/attempt.json",
+        "runs/search_cma-g05-c058-UnlockPickup-2000000-seed1017/attempts/4e7dfac29b084db2a1d29d2a37d48f3a/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c059-DoorKey-8x8-2000000-seed1015",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6224CRSKWK0TNVD7XF0TD9V",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6224CS0NN2DA84CSKKMMCD6",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1015/attempts/85b17322f41f45b887c961d8edd200d6/infrastructure_failure.json",
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1015/attempts/85b17322f41f45b887c961d8edd200d6/attempt.json",
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1015/attempts/85b17322f41f45b887c961d8edd200d6/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c059-DoorKey-8x8-2000000-seed1016",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6225DJDJ0XY2HS3ZPC874QY",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6225DJM3EJRJ5YQSKWMEYPH",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1016/attempts/55caab39cf4047bc86bb6d80e39b935e/usage.json",
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1016/attempts/55caab39cf4047bc86bb6d80e39b935e/infrastructure_failure.json",
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1016/attempts/55caab39cf4047bc86bb6d80e39b935e/attempt.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c059-DoorKey-8x8-2000000-seed1017",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6225G8CY5VJJ6CYH0F4C4WS",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6225G8KZHVQWS716ACHXDY0",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1017/attempts/d17824b3b9144bfe93da6d98f3c8549d/infrastructure_failure.json",
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1017/attempts/d17824b3b9144bfe93da6d98f3c8549d/attempt.json",
+        "runs/search_cma-g05-c059-DoorKey-8x8-2000000-seed1017/attempts/d17824b3b9144bfe93da6d98f3c8549d/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c059-UnlockPickup-2000000-seed1015",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62263CTMAXR18W17P6CMAKP",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62263D2A9K434K6Q4J99AW1",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1015/attempts/fefa20dd08534b989bba86acd5637868/infrastructure_failure.json",
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1015/attempts/fefa20dd08534b989bba86acd5637868/attempt.json",
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1015/attempts/fefa20dd08534b989bba86acd5637868/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c059-UnlockPickup-2000000-seed1016",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62265MEGAR2QCFJGCVBA3G6",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62265MRRQGVKE19RQ95DRBN",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1016/attempts/ef2823ae05464a68a03cbdf45ed90131/infrastructure_failure.json",
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1016/attempts/ef2823ae05464a68a03cbdf45ed90131/usage.json",
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1016/attempts/ef2823ae05464a68a03cbdf45ed90131/attempt.json"
+      ]
+    },
+    {
+      "id": "search_cma-g05-c059-UnlockPickup-2000000-seed1017",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62267SM0BBQ4ZD7WRBT6CHW",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62267STWBZBJTPVBWP5FQ07",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "4c7854eabbc84346a16a5dbfaaa4e7e1",
+        "attempts": [
+          {
+            "attempt": "4c7854eabbc84346a16a5dbfaaa4e7e1",
+            "metadata": {
+              "absolute_deadline": 1793221855.6313221,
+              "attempt": "4c7854eabbc84346a16a5dbfaaa4e7e1",
+              "modal_function_call_id": "fc-01M62267SM0BBQ4ZD7WRBT6CHW",
+              "modal_input_id": "in-01M62267STWBZBJTPVBWP5FQ07:1793218256722-0",
+              "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+              "spec_sha256": "f2a62a2349261289f2854efb9cdebbee745dd82bd8af846b5a2717fde8699d9d",
+              "started_utc": "2026-10-28T20:11:04.515509+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01045779933442142",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 583.44,
+              "training_peak_rss_bytes": 815190016,
+              "wall_seconds": 596.225731723
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/agent.pt": "621a615b19118dbd11eddfb24e22d4ea53de49b3cf69f8f0aa16b706611b636f",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/attempt.json": "bace1c7827a3c10c0220cb94f81c8de6d71e4e69ba9d7a13dc3a94ba5a1cedb4",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/config.toml": "223cf61166c438afdd55bf7063f5e1660c872de920eaec70b66778d57ece8ce9",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/environment.json": "7a7e2a379a920d4a18153cfe9aa3f56ac53dc41edad64d03d344ec48f95024c2",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/fingerprint.json": "5c843442614957b1e1e37260787b44a49b41548f6e49646818b325cb22c601b0",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/fingerprints.json": "aa6a4e2954dc196e0df3734ff1367ccc1101e7c74a8b8765b3b2e0663c4a80a3",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/isa_probe.json": "a2f6be59a511f3d3daf1f6e5c61663b9ced2c8c9a4b02329a579b0f2a925fb4a",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/metrics.jsonl": "55dde1aaeba2cc4151fa7e3e4338221c33d5319a7ce666f151670d971f959394",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/outcome.json": "b5cea090b501930d3f270b317975da77f170c8952ffd13c548040f50991d8eb9",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/process_usage.json": "9527f69943f192cdb7697c92b88d21aeebf68dc8629bf4bea5be4f39d59fa581",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/provenance.json": "e79e3ba554475ffd6308c230237e7a2e0b1c442164738a5718134d1a77410acb",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/spec.json": "03c0436cb293be29be2b06f25e33bfaa7f98aef26e3ee0d30c53964787e426cb",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/stdout.log": "0243b58694ed174ff9b7e36097acb87bafb1383995e01c1621bfacc676e0c7fc",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/summary.json": "92a583f0086e5324b6df36244d6e24c67f208f6df8c786381b9fa7dcc88a0a51",
+          "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/usage.json": "de1b31fb10ca89f37fbf5670b29922c891adae1f2be806d88739aa542bb9825f"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "adacb88d4a3fcbcb6004e608a4d01751511bcfe2a95691b31bc4fa417b9216c8",
+          "metrics_without_sps_sha256": "5794411a8a09073d0ccf78d4cd571af5ce755f38f3fc7333ed2a219aa396feab",
+          "summary_sha256": "9c8a6e58d8862df2044e23c6036bafe6f20a4672a09b8fd0479e1b984b8a5296"
+        },
+        "id": "search_cma-g05-c059-UnlockPickup-2000000-seed1017",
+        "outcome": "success",
+        "source_commit": "739b3ad32becfb55c2fcd4ce699a1aeaaba7b42d",
+        "spec_sha256": "f2a62a2349261289f2854efb9cdebbee745dd82bd8af846b5a2717fde8699d9d",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01045779933442142",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 583.44,
+          "training_peak_rss_bytes": 815190016,
+          "wall_seconds": 596.225731723
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/metrics.jsonl": true,
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/outcome.json": true,
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/process_usage.json": true,
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/spec.json": true,
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/summary.json": true,
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/process_usage.json",
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/attempt.json",
+        "runs/search_cma-g05-c059-UnlockPickup-2000000-seed1017/attempts/4c7854eabbc84346a16a5dbfaaa4e7e1/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M62269QQFJH7172H4SNZYZ3N",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M62269QYAMSHBJGEQBVAQJX6",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/5403b179907640a49c62d824d60ea9c6/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/46f83746a5694fd4ac70c9881526eca1/usage.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/46f83746a5694fd4ac70c9881526eca1/infrastructure_failure.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/5403b179907640a49c62d824d60ea9c6/infrastructure_failure.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/46f83746a5694fd4ac70c9881526eca1/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/5403b179907640a49c62d824d60ea9c6/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6226C1BS9WBC3VBDZG9DS5R",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6226C1J0AJ70YVF6CHRKKCK",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a170049a3d05432187f23dc8cdfd52f2/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a28a14685e0a4d85878daad0239bc5bc/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a28a14685e0a4d85878daad0239bc5bc/usage.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a170049a3d05432187f23dc8cdfd52f2/infrastructure_failure.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a28a14685e0a4d85878daad0239bc5bc/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-UnlockPickup-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6226FFQ8PKRZH13SHFZ9V7F",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6226FFYJFDXTDH03JTM14N9",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/9c1e3818366240dea5b02712b00447c5/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/36e6753d3bc94150a5a814bd5c6059c0/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/36e6753d3bc94150a5a814bd5c6059c0/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/9c1e3818366240dea5b02712b00447c5/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/9c1e3818366240dea5b02712b00447c5/usage.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/36e6753d3bc94150a5a814bd5c6059c0/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-UnlockPickup-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M6226JCY7Z36V281XQ7RXMHG",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M6226JD42XF6HGJ13F5AFYEX",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/e552470ac263405585dacaf556d76891/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/e552470ac263405585dacaf556d76891/usage.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/e552470ac263405585dacaf556d76891/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/9da8c4d369a34f4e8667b45d8dcdcfcc/usage.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/9da8c4d369a34f4e8667b45d8dcdcfcc/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/9da8c4d369a34f4e8667b45d8dcdcfcc/attempt.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622ECC75236QP3D01FDW3SS",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622ECCD2EB4G24JB2TE61XK",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/d7c69a87c8de4be28ec9bc69968befc8/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/d7c69a87c8de4be28ec9bc69968befc8/usage.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/d7c69a87c8de4be28ec9bc69968befc8/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/a08e397532474d8eb3affdd7bdef92af/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/a08e397532474d8eb3affdd7bdef92af/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/a08e397532474d8eb3affdd7bdef92af/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622FYTVZNHHWZXXXC28PSDV",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622FYV4CMKFTXCYJ40HGKQ5",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/d0a83bc56f6d4d46b02a0106b3cf2e5f/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/d0a83bc56f6d4d46b02a0106b3cf2e5f/usage.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/8ce29d18a55f4c4687846caaf14b7269/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/8ce29d18a55f4c4687846caaf14b7269/usage.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/8ce29d18a55f4c4687846caaf14b7269/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/d0a83bc56f6d4d46b02a0106b3cf2e5f/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622JP94CCE7324S3CAGHD70",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622JP99XK96V4F7KWHGNMQD",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/fa10625aa7d94635a3e1e6bf4ea5d256/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/86bd52ae26914fd8b7f11dfb9b43d624/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/fa10625aa7d94635a3e1e6bf4ea5d256/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/86bd52ae26914fd8b7f11dfb9b43d624/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/fa10625aa7d94635a3e1e6bf4ea5d256/usage.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/86bd52ae26914fd8b7f11dfb9b43d624/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622RKFH286REHYKTYH46CZK",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622RKFRJQZD4JKBYCAWMNDV",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/77f75270365e4b29847e335eae24585d/usage.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/716445219063486b87a9cbf104c7a3af/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/716445219063486b87a9cbf104c7a3af/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/77f75270365e4b29847e335eae24585d/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/77f75270365e4b29847e335eae24585d/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/716445219063486b87a9cbf104c7a3af/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-UnlockPickup-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622RV6H9MK8YBWTFG7N8QA3",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622RV70VWZ268AV5Q0D531B",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/74b0844e38f448b987b7ddbdb7d18c4d/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/7ff562b453994b5fb878cd3cdd9bc4fc/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/74b0844e38f448b987b7ddbdb7d18c4d/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/74b0844e38f448b987b7ddbdb7d18c4d/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/7ff562b453994b5fb878cd3cdd9bc4fc/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/7ff562b453994b5fb878cd3cdd9bc4fc/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-UnlockPickup-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622S57GFWX7WZNAQSKMGQZS",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622S57SAY1YM4WBQDQZKTH1",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/927eef4ee938471eac4077325c777842/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/6e234423b7aa4ecebc223594e8d3c5c6/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/927eef4ee938471eac4077325c777842/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/927eef4ee938471eac4077325c777842/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/6e234423b7aa4ecebc223594e8d3c5c6/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/6e234423b7aa4ecebc223594e8d3c5c6/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622S920BEKNB0ZC2RDGMB1G",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622S92AT57FVB6X99R3CB5H",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/b4dad7e93f884245a7b9571c9e6f0eb0/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/babe5d82e1fa4204a83a89a70b07821d/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/babe5d82e1fa4204a83a89a70b07821d/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/b4dad7e93f884245a7b9571c9e6f0eb0/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/babe5d82e1fa4204a83a89a70b07821d/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/b4dad7e93f884245a7b9571c9e6f0eb0/attempt.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622SCRBCH0EC068ZEPC9Y5P",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622SCRQ39X7VFQCTZY6WD0F",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/db67cf55ac2f44b1bb085d5b8b2d98a7/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/973220520cc44b489dda7ff97c1455b2/infrastructure_failure.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/973220520cc44b489dda7ff97c1455b2/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/973220520cc44b489dda7ff97c1455b2/usage.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/db67cf55ac2f44b1bb085d5b8b2d98a7/infrastructure_failure.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/db67cf55ac2f44b1bb085d5b8b2d98a7/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622T1N55DZRGAA08XNGS8DM",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622T1ND3FE1QCF9RWD9JWBG",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/8c0cad57f6f0414f868ab10166f664b0/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/3a1cfbc005f44a98bdba734a5dc2bbcb/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/8c0cad57f6f0414f868ab10166f664b0/infrastructure_failure.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/3a1cfbc005f44a98bdba734a5dc2bbcb/infrastructure_failure.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/8c0cad57f6f0414f868ab10166f664b0/usage.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/3a1cfbc005f44a98bdba734a5dc2bbcb/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M622T6XXDBQS2M6MJYR2C4BW",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M622T6Y5EHMHAV4D4KNY0WEZ",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/747b2409a941459eaf8ecb0009e5c7dc/usage.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/747b2409a941459eaf8ecb0009e5c7dc/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/2990eec043d242cb8e8fd2aae722e396/usage.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/2990eec043d242cb8e8fd2aae722e396/infrastructure_failure.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/2990eec043d242cb8e8fd2aae722e396/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/747b2409a941459eaf8ecb0009e5c7dc/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-UnlockPickup-2000000-seed3006",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T524WT5RCN6G9N2HW0STH",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T5253JZZHXQATC7F9M7KY",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3006/attempts/6ebb51cf85844612a2fc8dfed091211d/attempt.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3006/attempts/6ebb51cf85844612a2fc8dfed091211d/usage.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3006/attempts/6ebb51cf85844612a2fc8dfed091211d/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-UnlockPickup-2000000-seed3007",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T551780BS8M553W1GGNEM",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T551GX26CGV5T67T32N4T",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3007/attempts/08b307e1ff3f435a95c49a48fbc2c218/attempt.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3007/attempts/08b307e1ff3f435a95c49a48fbc2c218/usage.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3007/attempts/08b307e1ff3f435a95c49a48fbc2c218/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-UnlockPickup-2000000-seed3008",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T5GA2AF9TEX2J3KM2MAGY",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T5GA9SN6H05C9DAWKRT62",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3008/attempts/1ae894efa5f94c29b03bdb73eac4807f/infrastructure_failure.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3008/attempts/1ae894efa5f94c29b03bdb73eac4807f/attempt.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3008/attempts/1ae894efa5f94c29b03bdb73eac4807f/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T6QD8V51XNJQC0076Z07N",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T6QDE6JDRVN0GXH1T0NA9",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3006/attempts/cc73d166893a4390bca9ee3e19c3a821/attempt.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3006/attempts/cc73d166893a4390bca9ee3e19c3a821/infrastructure_failure.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3006/attempts/cc73d166893a4390bca9ee3e19c3a821/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T7Q2H9X0DQCKZ6DP4B6YD",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T7Q2TRP26VKYX7NAT3QJ3",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3007/attempts/c2732a64602349099c24dbfc7c07acc5/infrastructure_failure.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3007/attempts/c2732a64602349099c24dbfc7c07acc5/attempt.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3007/attempts/c2732a64602349099c24dbfc7c07acc5/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T95E4ENYYBXJYVD8VERXV",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T95E9VA0NCY64VDJAT871",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3008/attempts/0752daf1dc5a47058d193c2e6e19b8c6/attempt.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3008/attempts/0752daf1dc5a47058d193c2e6e19b8c6/usage.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3008/attempts/0752daf1dc5a47058d193c2e6e19b8c6/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-UnlockPickup-2000000-seed3006",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61T9Z532636CEH5BAYN33NS",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T9Z59YSJX6QV5BX41QHX1",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3006/attempts/0742be9e695f4f31a3b729d5fa667c1a/infrastructure_failure.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3006/attempts/0742be9e695f4f31a3b729d5fa667c1a/attempt.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3006/attempts/0742be9e695f4f31a3b729d5fa667c1a/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-UnlockPickup-2000000-seed3007",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61TC218PWJVDNASG5ET591X",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61TC21H48TSR96JNZHJK5VS",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3007/attempts/9c460fa1072540c3931f97c5afa5dc16/usage.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3007/attempts/9c460fa1072540c3931f97c5afa5dc16/attempt.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3007/attempts/9c460fa1072540c3931f97c5afa5dc16/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-UnlockPickup-2000000-seed3008",
+      "ledger_status": "retry_pending",
+      "function_call_id": "fc-01M61TC3ZGSNMQ8CBH0TRCVP2E",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61TC3ZTYNASRWR0R2R5HV1R",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3008/attempts/73806c79060247968a83b7191bd8d0a8/attempt.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3008/attempts/73806c79060247968a83b7191bd8d0a8/infrastructure_failure.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3008/attempts/73806c79060247968a83b7191bd8d0a8/usage.json"
+      ]
+    }
+  ],
+  "changes_to_controller_or_volume": false
+}
