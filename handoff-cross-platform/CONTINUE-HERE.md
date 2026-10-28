@@ -214,3 +214,8 @@ Both full inputs reproduced their original canonical hashes (Mac6984..., Linuxf6
 ## Approval32: Mac restart launched, supersedes previous STOP
 
 Hard50USD cap restored/readback and publicly committed amendments. CurrentMac replay PASS:528specifications,60vectors,492savedscientificsuccesses incl4recoverables;36oldretryhandlesTERMINATED;zero completions rescheduled. One trackedMacrestart 7c1aa413-3b48-4533-a027-2858264eb0e3 source2b24daa; controllerPID84379; idlehelperPID84562; readonlyobserver84431. Completionwake registered. Startup reconciliation stillbeingverified. Do not launchanothercontroller; ifitstopsreportwithoutautomaticrestart. KeepMacpowered/lidopen/appopen/sleepdisabled. NoStage3. Read mac-resume/gate-report.md andcontroller-process.json. FinalStage2reportmustinclude1ULPcrossplatformlimitation,allinterruptions/retries/costs/CPUs; futurecontrolleroneplatformfromstart.
+
+
+### Approval32 startup verified
+
+All492savedscientificoutputs resynced andscored byproductioncontroller. First9newsubmittedinputs aredisjointfromall492savedcompletions. Hardcap50confirmed; readmac-resume/startup-verification.json forguardsnapshot/handles. Run7c1aa413nowtrainingnewModalinputs. Do notrestartifitstops. Checkpointwatcher85072 persists stateevery30seconds,observer84431 refreshes600seconds,idlehelper84562 followscontroller84379. NoStage3.

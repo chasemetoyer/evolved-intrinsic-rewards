@@ -1,18 +1,19 @@
 {
+  "verified_utc": "2026-10-28T22:22:02.142213+00:00",
   "run_id": "7c1aa413-3b48-4533-a027-2858264eb0e3",
+  "run_source_commit": "2b24daa20ef8755d5ac1c3771d3f77f76f0bb7e2",
   "hard_cap_usd": "50",
-  "guard_usd_at_snapshot": "12.7859942911438989529760",
-  "recovery": {
-    "amendment_sha256": "30de5e3030e40128eab94769a0deb8b7d59397bb748050d8bef1a89a7c52948f",
-    "recovered_saved_outputs": 4,
-    "terminated_inputs_for_identical_retry": 27,
-    "previous_charges_retained": true
+  "saved_outputs_resynced": 492,
+  "saved_successes_included": 4,
+  "first_submissions_checked": 9,
+  "submitted_saved_completion_overlap": [],
+  "guard_usd": "13.4279582911438989529760",
+  "ledger_status_counts": {
+    "complete": 684,
+    "running": 10,
+    "retry_pending": 26
   },
-  "ledger_completed": 684,
-  "retry_pending": 36,
-  "prior_costs_retained": true,
   "modal_app_id": "ap-zMPOI6oI5EJGLvyu1ylAZ5",
-  "saved_output_resync_in_progress": true,
-  "scientific_protocol_changes": false,
+  "status": "RUNNING_NEW_MODAL_INPUTS",
   "automatic_further_restart_authorized": false
 }
