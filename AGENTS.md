@@ -1,0 +1,23 @@
+# Shared research state
+
+Before doing work, read `handoff-cross-platform/CONTINUE-HERE.md` and the
+canonical Mac project copy of `handoff-cross-platform/session-state.json` named
+there. These files are the shared memory across chats and models. The latest
+user instructions take precedence over these notes.
+
+Use `scripts/checkpoint.py` to claim ownership when the user switches agents,
+and checkpoint at meaningful steps. Only one lead chat may own edits or launches
+at once; its explicitly assigned helpers may edit their assigned files.
+Readers and already-running compute can continue. Do not start a second
+controller or rerun completed inputs when taking over. Check the run registry,
+Modal call handles and budget ledger first. A source checkpoint is not proof
+that a result passed; inspect persisted logs and outputs.
+
+Stage 1 only. No evolution or random search. The user approved the paper audit
+and resumed Stage 1 with archived-detector and corrected-detector descriptive
+checks. Preserve all protected registration files and use timestamped amendments
+for later implementation repairs. Stop at the Stage 1 report or the $15 guard.
+
+Keep credentials out of checkpoint files, Git and chat. Usage snapshots may be
+incomplete: never claim account quota is known when it is not exposed. Save
+source and an exact next action before ending a turn or handing off.

@@ -1,0 +1,67 @@
+# Continue this project with another chat or model
+
+Paste this into a new chat for the **evolved-intrinsic-rewards** project:
+
+> Continue Stage 1 from the shared checkpoint. Read
+> `/Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform/CONTINUE-HERE.md`
+> and the adjacent `session-state.json`, `DECISIONS.md`, and `session-log.jsonl`.
+> Claim the agent lease before editing. Reconcile existing runs and spending
+> before launching anything. Use the recorded source checkpoint and next action.
+> Do not repeat completed work, run evolution/random search, change locked
+> registrations, or begin Stage 2. Stop at the Stage 1 report or the $15 guard.
+
+## Canonical shared state
+
+The canonical handoff lives in the ordinary Mac project directory, independent
+of a particular chat's worktree:
+
+`/Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform/`
+
+- `session-state.json`: latest source commit/branch/worktree, exact next action,
+  run-registry snapshot, completed outputs and budget ledger location.
+- `session-log.jsonl`: append-only agent checkpoints and decisions in time order.
+- `agent-owner.json`: single editor/controller owner. A newly authorized agent
+  takes ownership; the old agent must check ownership before further edits.
+- `source-checkpoint.tar.gz`: current source/config/tests, including work not
+  committed yet. It contains no environments, credentials or large datasets.
+- `usage-snapshot.json`: the latest available tool-reported usage; remaining
+  account quota is explicitly unknown unless exposed by the provider.
+- `DECISIONS.md`: user approvals, scientific constraints and rationale that must
+  survive switching agents.
+
+The same handoff files are mirrored into the current worktree. Git commits and
+the private GitHub branch preserve milestone versions; live state is refreshed
+automatically while compute is running and at manual checkpoints. The source
+archive records file hashes, so a new agent can verify an uncommitted snapshot.
+This restores the project's technical state, not another model's hidden thoughts
+or unavailable conversation context. Read timestamps and reconcile live compute.
+
+## Safe takeover
+
+1. Read `session-state.json` and `DECISIONS.md` before making assumptions.
+2. Inspect the recorded worktree and branch. Do not reset, clean, rebase or
+   overwrite it. The ordinary Mac project worktree owns `main`; the research
+   branch is owned by the recorded session worktree.
+3. From the recorded research worktree, claim ownership:
+
+   ```sh
+   uv run --locked python scripts/checkpoint.py --claim --owner NEW_CHAT_OR_MODEL --note 'User switched agents' --next-action 'Read and carry out the recorded next action'
+   ```
+
+4. If source files were lost, inspect the archive listing and hashes first;
+   recover into a new empty directory or isolated worktree. Do not blindly
+   extract over existing work. Never copy a `.venv` between worktrees.
+5. Read the run registry and persisted logs. A controller can outlive the chat;
+   reconnect to its existing inputs rather than submitting another copy. The
+   budget ledger retains all completed, pending and uncertain calls.
+6. Checkpoint after meaningful work with an exact next action. Before switching
+   away, record what passed, what remains untested, any active process/run IDs,
+   and the current spending evidence. Release ownership only when handing off.
+
+## Current scientific scope
+
+Stage 1 infrastructure and task calibration only. The full user task and later
+accepted detector changes are summarized in `DECISIONS.md` and the Stage 1
+protocol. The approved detector impact audit is in
+`paper-impact-audit/report/paper-impact-audit.md`. Its unknown event counts must
+remain unknown. The original Zenodo release is unchanged.

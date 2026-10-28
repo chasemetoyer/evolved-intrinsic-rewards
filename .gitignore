@@ -19,3 +19,9 @@ results/**/checkpoint*.pt
 *.egg-info/
 handoff-cross-platform/paper-impact-audit/release.zip
 handoff-cross-platform/paper-impact-audit/release/checkpoints/
+handoff-cross-platform/source-checkpoint.tar.gz
+handoff-cross-platform/session-state.json
+handoff-cross-platform/agent-owner.json
+handoff-cross-platform/runtime-state.json
+handoff-cross-platform/usage-snapshot.json
+handoff-cross-platform/session-log.jsonl

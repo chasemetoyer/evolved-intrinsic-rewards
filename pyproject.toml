@@ -2,12 +2,12 @@
 name = "evolved-intrinsic-rewards"
 version = "0.1.0"
 description = "Stage 1 infrastructure and task calibration for generic intrinsic rewards"
-requires-python = ">=3.11,<3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "gymnasium==1.4.0",
     "minigrid==3.2.0",
     "modal==1.6.3",
-    "numpy==2.4.6",
+    "numpy==2.5.4",
     "pytest==9.2.0",
     "scipy==1.17.1",
     "tomli-w==1.2.0",

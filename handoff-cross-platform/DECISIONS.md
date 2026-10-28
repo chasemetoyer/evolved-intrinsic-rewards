@@ -1,0 +1,68 @@
+# Shared decisions and authorizations
+
+## Goal and stopping boundary
+
+Complete Stage 1 of evolved-intrinsic-rewards: private repository, reused PPO,
+generic signed reward, unit verification, Modal packaging, determinism check,
+descriptive platform/detector checks, baseline task calibration, measured cost
+projections, and an unlocked Stage 2 outline. Stop after `stage1-report.md`, or
+at the $15 spending guard with incomplete results disclosed. No evolution or
+random search is authorized. Stop at stage boundaries for the user's approval.
+
+## Paper audit and approved changes
+
+The user requested and received the retrospective detector impact audit, then
+approved the paper correction drafts and explicitly resumed Stage 1. Original
+archive and manuscript were not edited. The audit and raw evidence are under
+`paper-impact-audit/` and durable project artifacts. Historical missed-event
+counts that cannot be recovered from retained traces remain unknown.
+
+The user approved three separate detector verification components: bit-identical
+reward arithmetic on recorded paper events; targeted corrected-detector bug
+tests; and both detectors on the same recorded trajectories, reporting every
+disagreement by type and count.
+
+The user then explicitly authorized:
+
+- Mac-versus-Modal check uses the **archived** detector and exact A1b snapshot.
+- Add five corrected-detector descriptive runs with the same satiation 1/160
+  DoorKey configuration, paper seeds 40–44, nominal 2M steps. Show solve counts
+  and curve areas next to archived Modal and Mac; no inferential tests or
+  comparative conclusions.
+- The new project uses corrected detection. Final-step events count; box
+  openings count; successful target pickups are excluded; attach after reset.
+  These four definitions must each be flagged as an open Stage 2 decision.
+- Preserve the agreed arithmetic-only reduction test using recorded paper events.
+
+## Fixed scientific conventions
+
+PPO and CNN are archived, with Table 10 settings and per-minibatch advantage
+normalization on everywhere. Generic dynamics use the paper's actual single
+clip after growth minus relief. Four needs start at .5; signed weights [-1,1],
+reliefs [0,1], growth zero or [1/640,1/20]. Tamper action 6 resets all needs;
+optional press cost is charged to extrinsic training reward only.
+
+Calibration uses seeds 900–904, task-only and episodic novelty coefficient
+1e-3, all seven named tasks and separate 1M/2M runs. Use the user's mechanical
+selection rule and report rejected tasks. Never tune a task to make it pass.
+Training curve area is the paper's arithmetic mean of logged success; solve is
+final-10%-of-log-rows success >=.9. Evaluation uses a per-environment quota.
+Future roles: evolution1000–1999, random3000–3999, final2000–2999. Historical
+40–44 are an explicit descriptive exception, not calibration/final seeds.
+
+## Infrastructure and evidence
+
+All scientific workers run on Modal, one Function input per configuration/task/
+seed. A local tracked controller only orchestrates and downloads results. Pinned
+Python3.12.12/NumPy2.5.4 follow the archived Mac log and dependency markers, as
+disclosed in the audit; the unqualified paper NumPy2.4.6 claim was incomplete.
+Record all installed versions, source commits, CPU, memory, time and cost.
+
+Hash-lock and commit/push Stage 1 registration before evidence. Keep locked
+registration files immutable. Implementation repairs require timestamped,
+committed/pushed amendments with replacement hashes. Scoring and interpretation
+are separate; all report numbers come from scripts and independent checks.
+
+The user requested model-independent continuity: keep this shared handoff and
+source checkpoint current, allow switching between agents, and record available
+usage information honestly. No provider-wide remaining quota is exposed so far.
