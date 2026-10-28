@@ -1,0 +1,23 @@
+{
+  "scope": "User approval31: one read-only full input dump; not a search or PPO run. No source/state repair.",
+  "locked_utc": "2026-10-28T21:45:53.272005+00:00",
+  "parent_failed_verification": "4e1c708d-d0da-4898-8c9d-1b9d27f9f523",
+  "target_key": "search_cma-g00-c000-DoorKey-8x8-2000000-seed1000",
+  "calculation_sha256": {
+    "stage2/search.py": "17d9d32adc4fa71af5f59a6ef3546f7b2ed2b98dfa73b9b612b3b1b37847c672",
+    "stage2/cloud.py": "2b2fc4b6e16b4fd0757aed40cf19005d9f846bdf13ec0243d1e5614fc40b5887",
+    "stage2/common.py": "b261a028e787426ba5db3347c2baa942c7e0edae5ec69130f29dba86f5c9e9cf",
+    "generic_reward.py": "bd6edc2249f5346f03720b94d9a54dce2328a5d5fba1c4f674bebc56b4855f69",
+    "handoff-cross-platform/code/final-round5/config.toml": "9f072fb2b79307ae663e30d099db205370f5aa3bd74cc2ce5b855035605b3419",
+    "handoff-cross-platform/cloud-controller/recorded-fitness.json": "f3e90f1b312ec99cc944f96ef7ccbe3267dc3fb3a54245a2be6f184e4168c368",
+    "pyproject.toml": "c6bb36a34b22130008d3e668cc146698ec4fa3a251b6b5c24f7f396eef77e2ad",
+    "uv.lock": "a7fda58643be55a32fcd0adbeeb6251eae2e2cb0bf79f725a7363d1bc8df4394",
+    ".python-version": "f01d748a75eb195e6fd73201279bfb23f09036ddd360eb3e9ff40ef042acbc8a",
+    "diagnostics/spec_dump.py": "f1d379477b63ab708ab75bc88b92368b76f57223a79cd67dbb969cc2d646ded0",
+    "scripts/run_stage1.sh": "6d58593e70c2ff0e22181269a792e7b453f39dfefe73621d2e3513a47ef42902"
+  },
+  "allowed_outputs": "stdout full specification and local handoff/artifact files only",
+  "scientific_input_changes": false,
+  "ledger_or_controller_writes": false,
+  "after_diagnosis": "STOP. Only propose minimal fix if differences non-scientific; numerical vector differences reported without repair."
+}
