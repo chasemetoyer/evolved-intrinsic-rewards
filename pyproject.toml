@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Stage 1 infrastructure and task calibration for generic intrinsic rewards"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "cma==4.5.0",
     "gymnasium==1.4.0",
     "minigrid==3.2.0",
     "modal==1.6.3",
