@@ -209,3 +209,8 @@ Verification-only4e1c708d, Sandboxsb-01M626CZV8NAHC9RHBDJYK8DWN, sourced235a13 e
 ## Approval31 read-only diagnosis complete — STOP
 
 Both full inputs reproduced their original canonical hashes (Mac6984..., Linuxf653...). Candidate vector differs at zero-based coordinates4,7,10,11 by1float64ULPeach. Decoded relief[0]/[3] differ1ULP andgrowth[3] differs4ULPs; copies inconfig.intrinsic also differ. Exactly10changedleaf fields,64identical. No path/version/platform-only input differences. Read specification-diff/specification-diff-report.md andbothfullJSONs/CSV. Linuxdiagnosticfc91e753, isolatedchild84304edf source de75a8e, ran22s withzeroPPO/search/controller/volume writes. Parentsearchruntime/registration/providerledger unchanged, independentlychecked. No metadatafix orreplayrerun; noMacrestartinferred. User said they willresumeMac; waitfor explicitnextinstruction. CurrentcloudentryrejectsMac; do notblindlylaunchit. NoStage3.
+
+
+## Approval32: Mac restart launched, supersedes previous STOP
+
+Hard50USD cap restored/readback and publicly committed amendments. CurrentMac replay PASS:528specifications,60vectors,492savedscientificsuccesses incl4recoverables;36oldretryhandlesTERMINATED;zero completions rescheduled. One trackedMacrestart 7c1aa413-3b48-4533-a027-2858264eb0e3 source2b24daa; controllerPID84379; idlehelperPID84562; readonlyobserver84431. Completionwake registered. Startup reconciliation stillbeingverified. Do not launchanothercontroller; ifitstopsreportwithoutautomaticrestart. KeepMacpowered/lidopen/appopen/sleepdisabled. NoStage3. Read mac-resume/gate-report.md andcontroller-process.json. FinalStage2reportmustinclude1ULPcrossplatformlimitation,allinterruptions/retries/costs/CPUs; futurecontrolleroneplatformfromstart.

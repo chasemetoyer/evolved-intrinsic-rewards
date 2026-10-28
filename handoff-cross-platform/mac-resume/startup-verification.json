@@ -1,0 +1,18 @@
+{
+  "run_id": "7c1aa413-3b48-4533-a027-2858264eb0e3",
+  "hard_cap_usd": "50",
+  "guard_usd_at_snapshot": "12.7859942911438989529760",
+  "recovery": {
+    "amendment_sha256": "30de5e3030e40128eab94769a0deb8b7d59397bb748050d8bef1a89a7c52948f",
+    "recovered_saved_outputs": 4,
+    "terminated_inputs_for_identical_retry": 27,
+    "previous_charges_retained": true
+  },
+  "ledger_completed": 684,
+  "retry_pending": 36,
+  "prior_costs_retained": true,
+  "modal_app_id": "ap-zMPOI6oI5EJGLvyu1ylAZ5",
+  "saved_output_resync_in_progress": true,
+  "scientific_protocol_changes": false,
+  "automatic_further_restart_authorized": false
+}

@@ -205,3 +205,8 @@ Verification-only4e1c708d, Sandboxsb-01M626CZV8NAHC9RHBDJYK8DWN, sourced235a13 e
 ## Approval31 read-only diagnosis complete — STOP
 
 Both full inputs reproduced their original canonical hashes (Mac6984..., Linuxf653...). Candidate vector differs at zero-based coordinates4,7,10,11 by1float64ULPeach. Decoded relief[0]/[3] differ1ULP andgrowth[3] differs4ULPs; copies inconfig.intrinsic also differ. Exactly10changedleaf fields,64identical. No path/version/platform-only input differences. Read specification-diff/specification-diff-report.md andbothfullJSONs/CSV. Linuxdiagnosticfc91e753, isolatedchild84304edf source de75a8e, ran22s withzeroPPO/search/controller/volume writes. Parentsearchruntime/registration/providerledger unchanged, independentlychecked. No metadatafix orreplayrerun; noMacrestartinferred. User said they willresumeMac; waitfor explicitnextinstruction. CurrentcloudentryrejectsMac; do notblindlylaunchit. NoStage3.
+
+
+### Approval32 Macresume andhard50USD guard
+
+User authorized budget-only hard50cap restoration andoneMacrestart after currentexactreplay/dedup including4recoverable successes. GatesPASS; run7c1aa413-3b48-4533-a027-2858264eb0e3 launched. Scientificprotocolunchanged. Allpriorcostsretained. No automaticrestart followingnewstop. Recordcrossplatform1ULPcontrollerreplaylimitation andoneplatformfromstart recommendation intheStage2report. Stage3stillrequiresapproval.

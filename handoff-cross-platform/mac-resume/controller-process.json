@@ -1,0 +1,17 @@
+{
+  "run_id": "7c1aa413-3b48-4533-a027-2858264eb0e3",
+  "source_commit": "2b24daa20ef8755d5ac1c3771d3f77f76f0bb7e2",
+  "controller_host": "Mac arm64",
+  "controller_pid": 84379,
+  "idle_sleep_helper_pid": 84562,
+  "dashboard_observer_pid": 84431,
+  "hard_cap_usd": "50",
+  "preflight": "PASS",
+  "recovered_successes_included": 4,
+  "completed_inputs_rescheduled": 0,
+  "completion_wake_registered": true,
+  "started_utc": "2026-10-28T22:17:46.036697+00:00",
+  "restart_policy": "One restart authorized32 consumed; on subsequent stop report without automaticrestart",
+  "stage3_authorized": false,
+  "checkpoint_watcher_pid": 85072
+}
