@@ -1,0 +1,7 @@
+{
+  "error": "ImageBuildError: Image build for im-l05pUtZrKBR79SHh6TH0yS failed.\nView the build logs:\n  modal image logs im-l05pUtZrKBR79SHh6TH0yS",
+  "guard_total_usd": "0.50",
+  "invoice_cost_usd": null,
+  "stage_2_started": false,
+  "utc": "2026-10-28T03:13:40.971484+00:00"
+}

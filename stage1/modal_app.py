@@ -62,7 +62,7 @@ def excluded(path: Path) -> bool:
 image = (
     modal.Image.from_registry(BASE_IMAGE)
     .uv_sync(uv_project_dir=str(ROOT), uv_version=UV_VERSION,
-             frozen=False, extra_options="--locked")
+             frozen=False, extra_options="--locked --verbose")
     .workdir("/workspace")
     .env({"OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1",
           "PYTHONUNBUFFERED": "1", "MODAL_IS_REMOTE": "1"})

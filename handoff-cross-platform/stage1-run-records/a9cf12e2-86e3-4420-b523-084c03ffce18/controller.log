@@ -1,0 +1,82 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Installed 72 packages in 549ms
+LOCK_VERIFIED commit=d85a7ea35c92a75ae6853fc8a48c4d2ba4868fb6 inputs=28
+✓ Initialized. View run at 
+https://modal.com/apps/chasemetoyer/main/ap-y8g4FGs0Fp42mfqO7K0CKc
+Building image im-e2sEJDCnLxzUHaFyvzclal
+
+=> Step 0: FROM python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+Getting image source signatures
+Copying blob sha256:dbeb2af0e7bd53c2dff6896f9bde583874dc48fbb85d8cda0e9040dec5424ca8
+Copying blob sha256:2e8ff2a71e9573673dd17ca594722bd27eed7eb917debc0fb74ff9eb5d522ad1
+Copying blob sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c
+Copying blob sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e
+Copying config sha256:9cb180cb36bd45dc786105b834d3cb5f3b1d69a6a63c79ca10fc64f108aa649a
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M607ZA50DCDC3GVD7BMVCPJB/registry-unpackUJDQIE
+Copied image in 440.69ms
+Saving image...
+Image saved, took 726.72ms
+
+Built image im-e2sEJDCnLxzUHaFyvzclal in 4.31s
+
+
+Building image im-l05pUtZrKBR79SHh6TH0yS
+
+=> Step 0: FROM base
+
+=> Step 1: COPY --from=ghcr.io/astral-sh/uv:0.9.7 /uv /.uv/uv
+Getting image source signatures
+Copying blob sha256:0624929136ddf5fd04e451a3acd491b48ca10c80a088c8e5140a36e50bd3dc72
+Copying blob sha256:104644e8b943f16643c00116485f169734e0d1e4e6bb5f7fbb594945eec261e7
+Copying config sha256:488fd431354f6820b8c64070ead9a62ecac9dcab4a3dc6914a397f479061306c
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M607ZF2EGS006KFPA16DDPCB/registry-unpackQrbTB1
+
+=> Step 2: COPY /.pyproject.toml /.uv/pyproject.toml
+
+=> Step 3: COPY /.uv.lock /.uv/uv.lock
+
+=> Step 4: RUN /.uv/uv sync --project=/.uv --no-install-workspace --compile-bytecode --locked
+Using CPython 3.12.12 interpreter at: /usr/local/bin/python3
+Creating virtual environment at: /.uv/.venv
+Resolved 76 packages in 409ms
+The lockfile at `uv.lock` needs to be updated, but `--locked` was provided. To update the lockfile, run `uv lock`.
+Terminating task due to error: failed to run builder command "/.uv/uv sync --project=/.uv --no-install-workspace --compile-bytecode --locked": container exit status: 1
+Runner failed with exit code: -1
+Stopping app - uncaught exception raised locally: ImageBuildError('Image build for im-l05pUtZrKBR79SHh6TH0yS failed.\nView the build logs:\n  modal image logs im-l05pUtZrKBR79SHh6TH0yS').
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/stage1/modal_app.py", line 459, in <module>
+    main()
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/stage1/modal_app.py", line 429, in main
+    with modal.enable_output(), app.run():
+                                ^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/.venv/lib/python3.12/site-packages/modal/app.py", line 497, in run
+    async with _run_app(
+               ^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/.venv/lib/python3.12/site-packages/modal/runner.py", line 457, in _run_app
+    await _create_all_objects(running_app, local_app_state, load_context)
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/.venv/lib/python3.12/site-packages/modal/runner.py", line 205, in _create_all_objects
+    await asyncio.gather(*[tc.create_task(_load(tag, obj)) for tag, obj in indexed_objects.items()])
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/.venv/lib/python3.12/site-packages/modal/runner.py", line 196, in _load
+    await resolver.load(obj, load_context, existing_object_id=existing_object_id)
+  File "/Users/chasemetoyer/.local/share/openresearch/local-runs/a9cf12e2-86e3-4420-b523-084c03ffce18/repo/.venv/lib/python3.12/site-packages/modal/_image.py", line 858, in _load
+    raise ImageBuildError(msg, image_id)
+modal.exception.ImageBuildError: Image build for im-l05pUtZrKBR79SHh6TH0yS failed.
+View the build logs:
+  modal image logs im-l05pUtZrKBR79SHh6TH0yS

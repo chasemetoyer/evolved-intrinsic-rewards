@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import hashlib
 import io
 import json
@@ -125,13 +126,19 @@ def main():
     args = p.parse_args()
     if (args.claim or args.release) and not args.owner:
         p.error('An owner name is required')
-    checkpoint(args)
+    guard = (SHARED / '.checkpoint-write.lock').open('a')
+    with guard:
+        fcntl.flock(guard, fcntl.LOCK_EX)
+        checkpoint(args)
+        fcntl.flock(guard, fcntl.LOCK_UN)
     if args.watch:
         args.claim = args.release = False
         args.note = args.next_action = None
         while True:
             time.sleep(max(10, args.interval))
-            checkpoint(args, automatic=True)
+            with (SHARED / '.checkpoint-write.lock').open('a') as guard:
+                fcntl.flock(guard, fcntl.LOCK_EX)
+                checkpoint(args, automatic=True)
 
 
 if __name__ == '__main__':

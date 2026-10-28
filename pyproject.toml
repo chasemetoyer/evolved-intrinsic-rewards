@@ -17,6 +17,11 @@ dependencies = [
 
 [tool.uv]
 package = false
+environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+required-environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
 
 # CPU-only torch on Linux: MiniGrid PPO is env-bound, and this keeps remote installs small.
 [tool.uv.sources]
