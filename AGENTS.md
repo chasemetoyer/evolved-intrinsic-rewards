@@ -25,3 +25,8 @@ source and an exact next action before ending a turn or handing off.
 Also read `handoff-cross-platform/SESSION-RULES.md` (start, during and end
 rules) and `handoff-cross-platform/approvals-log.jsonl` in the canonical Mac
 folder before acting.
+
+Stage 2 update (2026-10-28): Stage 1 is complete and Stage 2 is in pre-lock
+review. The Stage 2 entries in `handoff-cross-platform/DECISIONS.md` and
+`approvals-log.jsonl` supersede the "Stage 1 only" rule above. No Stage 2 lock,
+lock push or search launch happens without the user's recorded approval.

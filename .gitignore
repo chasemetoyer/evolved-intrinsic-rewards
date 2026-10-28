@@ -27,3 +27,5 @@ handoff-cross-platform/usage-snapshot.json
 handoff-cross-platform/session-log.jsonl
 handoff-cross-platform/run-registry.json
 handoff-cross-platform/budget.json
+handoff-cross-platform/stage2-runtime-state.json
+handoff-cross-platform/stage2-run-registry.json

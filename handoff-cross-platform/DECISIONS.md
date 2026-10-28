@@ -92,3 +92,24 @@ New open Stage 2 decision: test whether forcing `ATEN_CPU_CAPABILITY=avx2` and
 If it does, use those settings in Stage 2. If not, record the CPU type for
 every run and treat same-seed results as unpaired. The test is not run in
 Stage 1. Exact quotes are in `approvals-log.jsonl`.
+
+## Stage 2 decisions (2026-10-28; exact quotes in approvals-log.jsonl entries 19–23)
+
+- **Concurrency:** about 32 Modal calls in flight, after confirming the
+  account-wide limit. Modal documents 100 containers on Starter and 5,000 on Team;
+  the 50 shown in the dashboard is a per-function setting. Confirmed in practice:
+  32 containers ran at once.
+- **Fitness budget:** nominal 2M steps.
+- **Stage 2 spending cap:** $30, including the pre-lock checks.
+- **Event definitions:** all four Stage 1 corrected definitions are kept.
+- **Pinning test:** `ATEN_CPU_CAPABILITY=avx2`, `MKL_CBWR=AVX2` and
+  `ONEDNN_MAX_CPU_ISA=AVX2` on seed 910 across Zen 3, Zen 4 and Intel.
+  - Result: not bit-identical. The MKL pin was not applied on AMD; Zen 3 and Zen 4
+    were identical with each other.
+  - Rule: record the CPU type for every run, treat same-seed results as unpaired,
+    and run unpinned.
+- **Process:** review before lock.
+  - The pre-lock determinism test, secret scan and pass/fail smoke tests are done.
+  - The user makes the repository public before the lock.
+  - Do not lock, push the lock, or launch until the user approves the review
+    package.

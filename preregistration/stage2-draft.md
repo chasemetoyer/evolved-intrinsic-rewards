@@ -127,6 +127,9 @@ marked **OPEN** needs a user decision before the lock.
 - **Probe.** The ATen tier read AVX2 and oneDNN was capped at AVX2 in every
   container. MKL honored `CNR:AVX2` only on Intel. On AMD it reported `CNR:AUTO`;
   Intel documents that only AUTO and COMPATIBLE are supported on non-Intel CPUs.
+- **Protocol reading.** The MKL pin was not applied in the 51 AMD containers, so
+  the result reads "pins not applied there", not "pins insufficient". Whether all
+  three pins in effect would give identity is untested.
 - **Rule (specified by the user before the test).** Stage 2 records the CPU type
   of every container and treats same-seed results as unpaired. Runs are unpinned:
   pinning did not give full identity, and it ran 1.19× slower in this test.
