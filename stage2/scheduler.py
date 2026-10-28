@@ -38,9 +38,10 @@ class RunState:
 def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int) -> RunState:
     state = RunState()
     try:
-        for key, record in sorted(ledger.data["calls"].items()):
-            if not plan.owns(key):
-                continue
+        order = getattr(plan, "reconcile_sort_key", lambda key: key)
+        owned = sorted((k for k in ledger.data["calls"] if plan.owns(k)), key=order)
+        for key in owned:
+            record = ledger.data["calls"][key]
             spec = plan.spec_for_key(key)
             if record["spec_sha256"] != canonical_sha(spec):
                 raise BudgetStop("Existing run specification differs: " + key)

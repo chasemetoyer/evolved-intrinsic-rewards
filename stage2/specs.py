@@ -40,14 +40,25 @@ def pinned_determinism_spec(replicate: int) -> dict:
     return spec
 
 
+def committed_mode() -> str:
+    return json.loads((ROOT / "stage2/mode.json").read_text())["mode"]
+
+
 def validate(spec: dict) -> None:
-    """Raise unless the spec is exactly an allowed Stage 2 entry."""
+    """Raise unless the spec is exactly an allowed entry for the committed mode."""
     purpose = spec.get("purpose")
-    if purpose == PINNED_PURPOSE:
+    mode = committed_mode()
+    if purpose == PINNED_PURPOSE and mode == "pinned_determinism":
         replicate = spec.get("replicate")
         if not isinstance(replicate, int):
             raise ValueError("Pinned replicate must be an integer")
         if spec != pinned_determinism_spec(replicate):
             raise ValueError("Pinned determinism spec differs from Stage 1 seed 910 plus the approved pins")
         return
-    raise ValueError(f"Purpose not allowed on this Stage 2 node: {purpose!r}")
+    if mode == "smoke":
+        from stage2.search import SMOKE, validate_candidate
+        if purpose in SMOKE.purposes().values():
+            validate_candidate(spec, SMOKE)
+            return
+    # The registered search mode is added only by the approved Stage 2 lock commit.
+    raise ValueError(f"Purpose {purpose!r} not allowed in committed mode {mode!r}")

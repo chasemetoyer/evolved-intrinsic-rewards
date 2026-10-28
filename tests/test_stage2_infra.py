@@ -14,6 +14,13 @@ from stage2.determinism import MAX_PINNED_REPLICATES, WAVE_SIZE, PinnedDetermini
 from stage2.scheduler import Hooks, run_plan
 from stage2.specs import pinned_determinism_spec, stage1_determinism_spec, validate
 
+@pytest.fixture(autouse=True)
+def pinned_mode(monkeypatch):
+    """These checks exercise the pinned-determinism node's validator and plan."""
+    import stage2.specs
+    monkeypatch.setattr(stage2.specs, "committed_mode", lambda: "pinned_determinism")
+
+
 CPUS = {"zen3": ("AuthenticAMD", 25, 1), "zen4": ("AuthenticAMD", 25, 17),
         "intel": ("GenuineIntel", 6, 85), "other": ("AuthenticAMD", 23, 49)}
 

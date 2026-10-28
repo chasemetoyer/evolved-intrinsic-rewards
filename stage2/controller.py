@@ -24,7 +24,9 @@ from stage2.common import (
 from stage2.modal_app import app, train_one, volume
 from stage2.scheduler import Hooks, run_plan
 
-MODES = ("pinned_determinism",)
+# Pre-lock branch: only the smoke test may run. The registered "search" mode is
+# added solely by the user-approved Stage 2 lock commit.
+MODES = ("smoke",)
 HEARTBEAT_SECONDS = 30
 VOLUME_SWEEP_SECONDS = 600
 BILLING_MIN_INTERVAL_SECONDS = 120
@@ -32,9 +34,9 @@ CPU_LOG = SHARED / "stage2-container-cpu-log.jsonl"
 
 
 def make_plan(mode: str):
-    if mode == "pinned_determinism":
-        from stage2.determinism import PinnedDeterminismPlan
-        return PinnedDeterminismPlan()
+    if mode == "smoke":
+        from stage2.search import SMOKE, SearchPlan
+        return SearchPlan(SMOKE)
     raise SystemExit(f"Mode not available on this node: {mode}")
 
 
@@ -121,7 +123,7 @@ class Controller:
         measured = sum((Decimal(c["measured"]["compute_cost_estimate_usd"]) for c in calls
                         if c["status"] == "complete" and c.get("measured")), Decimal(0))
         budget["stages"]["stage2"] = {
-            "cap_usd": str(LIMIT_USD), "status": "pre-lock checks (no search launched)",
+            "cap_usd": str(LIMIT_USD), "status": "pre-lock checks (no search launched)", "mode": self.mode,
             "guard_total_usd": str(self.ledger.guard_total()),
             "measured_completed_function_compute_usd": str(measured),
             "modal_billed_complete_intervals_usd": self.ledger.data.get("provider_reported_complete_intervals_cost_usd"),
