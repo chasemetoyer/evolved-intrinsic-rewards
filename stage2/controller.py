@@ -128,7 +128,7 @@ class Controller:
             "updated_utc": utc_now(), "tracked_run_id": os.environ.get("ORX_RUN_ID"),
             "source_commit": os.environ.get("ORX_COMMIT"), "mode": self.mode, "results_directory": str(self.results),
             "ledger_path": str(self.ledger.path), "guard_total_usd": str(self.ledger.guard_total()),
-            "limit_usd": self.ledger.data.get("limit_usd"), "controller_host": "modal_sandbox", "peak_running_containers": self.peak_running,
+            "limit_usd": self.ledger.data.get("limit_usd"), "controller_host": "mac", "peak_running_containers": self.peak_running,
             "running_calls": {k: {"function_call_id": v.get("function_call_id"), "status": v["status"]}
                               for k, v in calls.items() if v["status"] != "complete"},
             "resume_instruction": "Reconnect this controller's recorded Modal call IDs; never resubmit a recorded key."})
@@ -292,10 +292,8 @@ def main() -> None:
         except (FileNotFoundError, modal.exception.NotFoundError):
             pass  # first Stage 2 run only; any other error must stop rather than reset spending history
         ledger = Stage2Ledger(ledger_path)
-        from stage2.recovery_v2 import reconcile_interrupted
-        reconcile_interrupted(ledger, volume, results)
-        from stage2.cloud import apply_uncapped_accounting
-        apply_uncapped_accounting(ledger, owner, volume)
+        from stage2.mac import reconcile_current
+        reconcile_current(ledger, volume, results)
         ledger.assert_can_launch()
         billing_start = datetime.fromisoformat(ledger.data["created_utc"])
         controller = Controller(mode, results, ledger, billing_start)
