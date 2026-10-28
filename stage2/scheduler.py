@@ -87,6 +87,8 @@ def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int
                     raise ValueError("Stored and re-synced outcomes differ: " + key)
                 record.update(outcome=outcome, failure=result.get("failure"))
                 plan.record(key, result, directory)
+            elif record["status"] == "retry_pending":
+                continue  # explicit, reconciled terminated-input recovery only
             elif record["status"] in {"reserved", "running"}:
                 if not record.get("function_call_id"):
                     ledger.uncertain(key, "Pending submission lacks a recoverable provider handle")
@@ -100,7 +102,8 @@ def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int
         while True:
             blocked = None
             queue = ([] if failure_guard["stopped"] else
-                     [s for s in plan.ready_specs(ledger) if s["id"] not in ledger.data["calls"]])
+                     [s for s in plan.ready_specs(ledger) if s["id"] not in ledger.data["calls"] or
+                      ledger.data["calls"][s["id"]]["status"] == "retry_pending"])
             while queue and len(state.active) < concurrency:
                 spec = queue.pop(0)
                 try:

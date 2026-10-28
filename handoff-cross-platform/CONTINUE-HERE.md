@@ -164,3 +164,8 @@ Separate dashboard process PID81939 refreshes every600seconds. Read
 It reads only saved registry and volume ledger/results; it does not write to
 Modal or the tracker. Keep it independent from running controller55d43a42.
 No locked files or controller code were changed.
+
+
+## Approved recovery (approval26)
+
+User said Resume after the interruption audit and controller-restart approval request. Follow stage2-interruption/approved-recovery.md and preregistration/stage2-recovery-amendment-20261028.json. Original locked registration is unchanged; four original runtime versions are preserved in preregistration/frozen-original-stage2/ and replacements are hash-authorized.93fixture tests pass. Resume445saved scientific inputs, retry23confirmed-terminated identical inputs with all old charges retained. One tracked replacement controller only; noStage3.

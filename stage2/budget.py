@@ -61,6 +61,7 @@ class Stage2Ledger:
         estimates = sum((Decimal(c["guard_charge_usd"]) for c in self.data["calls"].values()), Decimal(0))
         setup_count = len(self.data.get("setup_failures", [])) + int(self.data.get("setup_build_inflight", False))
         estimates += setup_count * SETUP_ATTEMPT_GUARD_USD
+        estimates += sum((Decimal(c["guard_charge_usd"]) for c in self.data.get("infrastructure_history", [])), Decimal(0))
         reported = Decimal(self.data.get("provider_reported_complete_intervals_cost_usd", "0"))
         return max(estimates, reported) + Decimal(self.data["overhead_allowance_usd"])
 
@@ -101,7 +102,7 @@ class Stage2Ledger:
 
     def reserve(self, key: str, spec_sha256: str, deadline_seconds: int) -> dict:
         self.assert_can_launch()
-        if key in self.data["calls"]:
+        if key in self.data["calls"] and self.data["calls"][key]["status"] != "retry_pending":
             raise BudgetStop("Call already exists in spending ledger: " + key)
         if self.in_flight() >= self.max_concurrent:
             raise BudgetStop(f"All {self.max_concurrent} concurrent-call reservations are occupied")
@@ -115,6 +116,15 @@ class Stage2Ledger:
                   "function_call_id": None, "reservation_usd": str(amount), "guard_charge_usd": str(amount),
                   "deadline_seconds": deadline_seconds, "invoice_cost_usd": None,
                   "submitted_unix_seconds": started, "absolute_deadline": started + deadline_seconds}
+        previous = self.data["calls"].get(key)
+        if previous is not None:
+            if (previous.get("provider_terminal_status") != "TERMINATED" or
+                previous.get("recovery_amendment") not in self.data.get("recovery_amendments", [])):
+                raise BudgetStop("Retry lacks an explicit terminal-state recovery authorization: " + key)
+            if previous["spec_sha256"] != spec_sha256:
+                raise BudgetStop("Recovery specification changed: " + key)
+            self.data.setdefault("infrastructure_history", []).append(dict(previous, logical_key=key))
+            record["recovery_of_call_id"] = previous["function_call_id"]
         self.data["calls"][key] = record
         self.save()
         return record

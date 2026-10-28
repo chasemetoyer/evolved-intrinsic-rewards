@@ -69,12 +69,15 @@ class ModalBackend:
 
 
 def download(remote: str, local: Path) -> None:
-    local.parent.mkdir(parents=True, exist_ok=True)
-    temporary = local.with_name(local.name + ".part")
-    with temporary.open("wb") as stream:
-        for chunk in volume.read_file(remote):
-            stream.write(chunk)
-    temporary.replace(local)
+    from stage2.recovery import retry_io
+    def attempt():
+        local.parent.mkdir(parents=True, exist_ok=True)
+        temporary = local.with_name(local.name + ".part")
+        with temporary.open("wb") as stream:
+            for chunk in volume.read_file(remote):
+                stream.write(chunk)
+        temporary.replace(local)
+    retry_io(attempt)
 
 
 class Controller:
@@ -146,7 +149,10 @@ class Controller:
             if path.is_absolute() or ".." in path.parts or path.parts[0] != "runs":
                 raise ValueError("Invalid remote output path")
             local = self.results.joinpath(*path.parts[1:])
-            download(remote_path, local)
+            if not local.exists() or sha256_file(local) != expected:
+                from stage2.recovery import reuse_previous_output
+                if not reuse_previous_output(remote_path, local, expected):
+                    download(remote_path, local)
             if sha256_file(local) != expected:
                 raise ValueError("Downloaded result hash mismatch: " + remote_path)
         atomic_json(self.results / result["id"] / "complete.json", result)
@@ -263,6 +269,8 @@ def main() -> None:
         except (FileNotFoundError, modal.exception.NotFoundError):
             pass  # first Stage 2 run only; any other error must stop rather than reset spending history
         ledger = Stage2Ledger(ledger_path)
+        from stage2.recovery import reconcile_interrupted
+        reconcile_interrupted(ledger, volume, results)
         ledger.assert_can_launch()
         billing_start = datetime.fromisoformat(ledger.data["created_utc"])
         controller = Controller(mode, results, ledger, billing_start)

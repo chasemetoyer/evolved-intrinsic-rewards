@@ -1,0 +1,13 @@
+# Approved Stage 2 recovery amendment
+
+User approval26 ("Resume", in response to the documented recovery/restart request) authorizes one tracked controller restart under the existing $35 Stage2 cap. Stage3 remains unauthorized.
+
+The original registration/lock/receipt and scientific settings remain unchanged. Four amended runtime paths are versioned in the timestamped amendment: controller, budget, scheduler, and registration validator. Their exact original bytes are retained under preregistration/frozen-original-stage2/. All41 originally registered input versions verify, including37 unchanged live paths and4 preserved runtime versions. The amendment verifies replacements, original versions and new helper hashes before accepting registered mode.
+
+Repairs: six bounded attempts for transport download errors; hash-verified reuse of existing local outputs; seven saved successful calls reconciled without retraining;23 audited TERMINATED calls with no completion marker eligible for identical-input retries. Every original provider handle and full reservation is retained. A retry receives its own3600-second deadline and new reservation; original canceled-attempt charges remain in infrastructure_history and contribute to the guard. No unrelated uncertain input can use this authorization. Current results cannot be silently overwritten or scored as zero on an infrastructure failure.
+
+Validation:93 local fixture-based tests PASS, including exact search/controller/validator path with fake provider, scheduler recovery without completed-input duplication, charge retention, cap enforcement, idempotent reconciliation, refusal of changed specs/ledger/output identity/active handles and arbitrary retry-pending states. Original frozen tests are unchanged; a new conftest supplies the intended module patch to a pre-lock test's imported alias after the data-only switch to registered mode. There was no training or scientific seed consumption in these fixtures.
+
+Live read-only preflight reconfirmed all30 handles and completion identities, on an isolated ledger copy:637 completed entries (445scientific+192pre-lock),23retry-pending; guard remains$9.89138651596235. The shared provider ledger was not changed by preflight. The old controller ownership lock is empty. Production reconciliation occurs inside the single replacement controller's lock.
+
+Keep the Mac awake, online and the application open: bounded download retries reduce transient failures but do not make a locally hosted controller independent of laptop sleep. The read-only observer remains separate. Completed inputs are never retrained. Stop after checked Stage2report beforeStage3.
