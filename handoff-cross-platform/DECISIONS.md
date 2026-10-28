@@ -161,3 +161,12 @@ then STOP before Stage3. A failed or uncertain provider input must be reconciled
 through its recorded call ID before any retry action. Never alter frozen inputs
 or change scientific rules to improve the results. The model-independent source
 checkpoint and exact next action are updated automatically.
+
+
+## Read-only progress observer (approval25)
+
+Separate dashboard process PID81939 refreshes every600seconds. Read
+`stage2-dashboard.md` and `stage2-dashboard-process.json` for paths and role.
+It reads only saved registry and volume ledger/results; it does not write to
+Modal or the tracker. Keep it independent from running controller55d43a42.
+No locked files or controller code were changed.
