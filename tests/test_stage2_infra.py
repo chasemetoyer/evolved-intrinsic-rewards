@@ -57,7 +57,7 @@ def test_pinned_spec_is_stage1_spec_plus_pins_only():
 
 def test_ledger_cap_concurrency_and_reservations(tmp_path):
     ledger = Stage2Ledger(tmp_path / "ledger.json", max_concurrent=32)
-    assert LIMIT_USD == Decimal("30")
+    assert LIMIT_USD == Decimal("35")
     first = ledger.reserve("k0", "sha", 1200)
     assert Decimal(first["reservation_usd"]) == Decimal("1260") * Decimal("0.00001754")
     for i in range(1, 32):
@@ -103,6 +103,7 @@ class FakeBackend:
             return None
         spec = self.calls[call.object_id][1]
         return {"id": spec["id"], "attempt": "a-" + spec["id"], "files": {},
+                "spec_sha256": canonical_sha(spec),
                 "fingerprints": {"metrics_without_sps_sha256": "m", "summary_sha256": "s",
                                  "checkpoint_tensors_sha256": "t"},
                 "usage": {"wall_seconds": 60.0, "compute_cost_estimate_usd": "0.001"}}

@@ -35,6 +35,40 @@ class RunState:
     submitted: list = field(default_factory=list)
 
 
+class CandidateFailureRateStop(BudgetStop):
+    """Latched failure-rate stop: submitted calls are drained, never replaced."""
+
+
+def result_outcome(result: dict) -> str:
+    outcome = result.get("outcome", "success")  # historical successful pre-check results
+    if outcome not in {"success", "candidate_failure"}:
+        raise ValueError("Unrecognized terminal training outcome: " + str(outcome))
+    if outcome == "candidate_failure" and (result.get("failure") or {}).get("classification") != "candidate_numerical":
+        raise ValueError("Candidate failure requires explicit numerical classification")
+    return outcome
+
+
+def verify_result_identity(result: dict, key: str, spec_hash: str) -> None:
+    if result.get("id") != key or result.get("spec_sha256") != spec_hash:
+        raise ValueError("Returned result identity/specification differs from the reserved input: " + key)
+
+
+def failure_rate_state(plan, ledger: Stage2Ledger) -> dict:
+    """Per-plan terminal logical runs; infrastructure retries are not observations."""
+    scope = getattr(getattr(plan, "cfg", None), "name", type(plan).__name__)
+    state = ledger.data.setdefault("failure_rate_guards", {}).setdefault(scope, {"stopped": False})
+    complete = [r for key, r in ledger.data["calls"].items() if plan.owns(key) and r["status"] == "complete"]
+    failures = sum(r.get("outcome", "success") == "candidate_failure" for r in complete)
+    state.update(completed_runs=len(complete), candidate_failures=failures,
+                 failure_fraction=failures / len(complete) if complete else 0.0,
+                 threshold=0.05, denominator="completed successful plus candidate-failed logical runs owned by this plan")
+    # Integer arithmetic makes exactly 5% inclusive. Once crossed, later drain
+    # successes cannot silently reopen submissions, including after a restart.
+    if failures * 20 > len(complete) and not state["stopped"]:
+        state.update(stopped=True, first_crossing_completed_runs=len(complete), first_crossing_candidate_failures=failures)
+    return state
+
+
 def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int) -> RunState:
     state = RunState()
     try:
@@ -47,6 +81,11 @@ def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int
                 raise BudgetStop("Existing run specification differs: " + key)
             if record["status"] == "complete":
                 result, directory = hooks.sync_existing(key)
+                verify_result_identity(result, key, record["spec_sha256"])
+                outcome = result_outcome(result)
+                if record.get("outcome", outcome) != outcome:
+                    raise ValueError("Stored and re-synced outcomes differ: " + key)
+                record.update(outcome=outcome, failure=result.get("failure"))
                 plan.record(key, result, directory)
             elif record["status"] in {"reserved", "running"}:
                 if not record.get("function_call_id"):
@@ -56,9 +95,12 @@ def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int
                 state.active[key] = backend.reattach(record["function_call_id"])
             else:
                 raise BudgetStop("Uncertain call requires provider billing reconciliation: " + key)
+        failure_guard = failure_rate_state(plan, ledger)
+        hooks.persist()
         while True:
             blocked = None
-            queue = [s for s in plan.ready_specs(ledger) if s["id"] not in ledger.data["calls"]]
+            queue = ([] if failure_guard["stopped"] else
+                     [s for s in plan.ready_specs(ledger) if s["id"] not in ledger.data["calls"]])
             while queue and len(state.active) < concurrency:
                 spec = queue.pop(0)
                 try:
@@ -79,6 +121,10 @@ def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int
                 hooks.persist()
                 hooks.submitted(spec, call)
             if not state.active:
+                if failure_guard["stopped"]:
+                    raise CandidateFailureRateStop(
+                        "Candidate numerical failure rate exceeded 5%; no replacement runs; submitted calls drained. "
+                        f"Observed {failure_guard['candidate_failures']}/{failure_guard['completed_runs']} terminal runs.")
                 if blocked is not None:
                     raise blocked
                 if plan.done(ledger):
@@ -94,8 +140,12 @@ def run_plan(plan, ledger: Stage2Ledger, backend, hooks: Hooks, concurrency: int
                     continue
                 # Charge submit-to-observed-result wall time, including queueing,
                 # startup and any automatic preemption restarts.
+                verify_result_identity(result, key, record["spec_sha256"])
+                outcome = result_outcome(result)
+                record.update(outcome=outcome, failure=result.get("failure"))
                 ledger.complete(key, hooks.now() - record["submitted_unix_seconds"], result["usage"])
                 del state.active[key]
+                failure_guard = failure_rate_state(plan, ledger)
                 hooks.persist()
                 directory = hooks.sync(result)
                 plan.record(key, result, directory)

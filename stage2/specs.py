@@ -60,5 +60,11 @@ def validate(spec: dict) -> None:
         if purpose in SMOKE.purposes().values():
             validate_candidate(spec, SMOKE)
             return
-    # The registered search mode is added only by the approved Stage 2 lock commit.
+    if mode == "search":
+        from stage2.registration import configured_search
+        from stage2.search import validate_candidate
+        cfg = configured_search()
+        if purpose in cfg.purposes().values():
+            validate_candidate(spec, cfg)
+            return
     raise ValueError(f"Purpose {purpose!r} not allowed in committed mode {mode!r}")

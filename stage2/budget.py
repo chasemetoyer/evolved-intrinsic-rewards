@@ -1,4 +1,4 @@
-"""Stage 2 spending guard: same conservative rules as Stage 1, user-approved $30 cap.
+"""Stage 2 spending guard: same conservative rules as Stage 1, user-approved $35 cap.
 
 One ledger is shared by every Stage 2 node (pre-lock checks, smoke tests and the
 search), so all of them count toward the same cap. Rates rechecked 2026-10-28 at
@@ -18,7 +18,7 @@ from stage1.budget import (
 )
 from stage2.common import MAX_CONCURRENT_CALLS
 
-LIMIT_USD = Decimal("30")
+LIMIT_USD = Decimal("35")
 OVERHEAD_ALLOWANCE_USD = Decimal("0.50")
 SETUP_ATTEMPT_GUARD_USD = Decimal("0.25")
 MAX_CALL_RESERVATION_USD = Decimal("1")
@@ -45,8 +45,17 @@ class Stage2Ledger:
                 "limitations": "Estimates include a protective overhead allowance. Provider accounting is "
                                "delayed; this is not a guaranteed invoice cap.",
             }
+        # Exact one-time increase explicitly approved by the user. Retain every
+        # prior charge/call and an append-only cap amendment; never reset a ledger.
+        if self.data.get("stage") == 2 and self.data.get("limit_usd") == "30":
+            self.data.setdefault("limit_amendments", []).append({
+                "utc": utc_now(), "previous_limit_usd": "30", "limit_usd": "35",
+                "authorization": "User approval: Stage-2 cap $35. Keep the 3,600 s deadline and 10 finalist seeds.",
+            })
+            self.data["limit_usd"] = "35"
+            self.save()
         if self.data.get("stage") != 2 or self.data["limit_usd"] != str(LIMIT_USD):
-            raise BudgetStop("Ledger is not the Stage 2 ledger with the approved $30 cap")
+            raise BudgetStop("Ledger is not the Stage 2 ledger with the approved $35 cap")
 
     def guard_total(self) -> Decimal:
         estimates = sum((Decimal(c["guard_charge_usd"]) for c in self.data["calls"].values()), Decimal(0))
@@ -68,7 +77,7 @@ class Stage2Ledger:
         if uncertain:
             raise BudgetStop("Uncertain charges require provider-state reconciliation: " + ", ".join(uncertain))
         if self.guard_total() >= LIMIT_USD:
-            raise BudgetStop("Stage 2 spending guard reached $30")
+            raise BudgetStop("Stage 2 spending guard reached $35")
 
     def setup_failed(self, reason: str) -> None:
         self.data["setup_build_inflight"] = False
@@ -80,7 +89,7 @@ class Stage2Ledger:
         if self.data.get("setup_build_inflight"):
             raise BudgetStop("Previous image-build state must be reconciled before another setup")
         if self.guard_total() + SETUP_ATTEMPT_GUARD_USD > LIMIT_USD:
-            raise BudgetStop("Setup reservation would cross the Stage 2 $30 guard")
+            raise BudgetStop("Setup reservation would cross the Stage 2 $35 guard")
         self.data["setup_build_inflight"] = True
         self.data["setup_attempt_guard_usd"] = str(SETUP_ATTEMPT_GUARD_USD)
         self.data["setup_guard_basis"] = "Protective reservation per failed or in-flight build, not invoice cost"
@@ -100,7 +109,7 @@ class Stage2Ledger:
         if amount > MAX_CALL_RESERVATION_USD:
             raise BudgetStop("Per-call reservation exceeds $1")
         if self.guard_total() + amount > LIMIT_USD:
-            raise BudgetStop("Next call would cross the Stage 2 $30 spending guard")
+            raise BudgetStop("Next call would cross the Stage 2 $35 spending guard")
         started = time.time()
         record = {"status": "reserved", "reserved_utc": utc_now(), "spec_sha256": spec_sha256,
                   "function_call_id": None, "reservation_usd": str(amount), "guard_charge_usd": str(amount),

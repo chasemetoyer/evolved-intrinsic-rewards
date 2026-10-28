@@ -44,7 +44,7 @@ def snapshot_sources():
     result = command('git', 'ls-files', '--cached', '--others', '--exclude-standard')
     keep = {'generic_reward.py', 'README.md', 'AGENTS.md', 'CLAUDE.md',
             'pyproject.toml', 'uv.lock', '.python-version', '.gitignore'}
-    prefixes = ('stage1/', 'scripts/', 'tests/', 'preregistration/')
+    prefixes = ('stage1/', 'stage2/', 'scripts/', 'tests/', 'preregistration/')
     paths = [p for p in result['stdout'].splitlines()
              if p in keep or p.startswith(prefixes)]
     paths = [p for p in paths if (ROOT / p).is_file()

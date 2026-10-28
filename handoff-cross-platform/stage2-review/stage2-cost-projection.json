@@ -1,0 +1,47 @@
+{
+  "cap_usd": 30.0,
+  "registered_draft": "search",
+  "search_runs": 1440,
+  "finalist_runs": 120,
+  "per_task_stage1_2M": {
+    "DoorKey-8x8": {
+      "runs": 10,
+      "mean_cost_usd": 0.013381940909450407,
+      "mean_wall_seconds": 762.9384783039001
+    },
+    "UnlockPickup": {
+      "runs": 10,
+      "mean_cost_usd": 0.012769100017733908,
+      "mean_wall_seconds": 727.9988607602
+    }
+  },
+  "unit_cost_usd": 0.013075520463592158,
+  "pinned_mean_wall_s": 85.186346641,
+  "unpinned_stage1_mean_wall_s": 71.778190764,
+  "pinned_runs": 64,
+  "unpinned_runs": 4,
+  "pinning_slowdown_131k": 1.1867998584846582,
+  "billed_to_measured_stage1": 1.03168430297038,
+  "guard_to_measured_stage1": 1.1461592966330432,
+  "stage2_guard_spent_before_search_usd": 0.40978458858604905,
+  "peak_in_flight_reservations_usd": 2.0542848,
+  "scenarios": {
+    "unpinned": {
+      "pinning_runtime_factor": 1.0,
+      "measured_compute_usd": 20.397811923203765,
+      "expected_billed_usd": 21.044102376111383,
+      "projected_guard_at_end_usd": 24.28892635533838,
+      "projected_guard_peak_usd": 26.34321115533838,
+      "wall_hours_at_32": 10.501138233246511
+    },
+    "pinned": {
+      "pinning_runtime_factor": 1.1867998584846582,
+      "measured_compute_usd": 24.2081203038549,
+      "expected_billed_usd": 24.975137721905647,
+      "projected_guard_at_end_usd": 28.656146728860474,
+      "projected_guard_peak_usd": 30.710431528860475,
+      "wall_hours_at_32": 12.386861926635401
+    }
+  },
+  "basis": "Stage 1 measured function-wall cost of baseline runs as a proxy for candidate runs; whole-call overhead and guard behavior scaled by Stage 1 ratios; +30 s startup per call for duration."
+}

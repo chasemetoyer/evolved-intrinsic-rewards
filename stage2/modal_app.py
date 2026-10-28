@@ -15,6 +15,7 @@ import subprocess
 import sys
 import time
 import uuid
+from decimal import Decimal
 from pathlib import Path, PurePosixPath
 
 import modal
@@ -28,6 +29,7 @@ from stage2.common import (
 BASE_IMAGE = "python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c"
 UV_VERSION = "0.9.7"
 EXCLUDED_PARTS = {".git", ".venv", ".agents", ".openresearch", ".orx", "__pycache__", ".pytest_cache", "results"}
+MAX_INFRASTRUCTURE_RETRIES = 3
 
 
 def excluded(path: Path) -> bool:
@@ -104,7 +106,9 @@ def deterministic_fingerprints(out: Path) -> dict:
 @app.function(image=image, volumes={"/outputs": volume},
               cpu=(CPU_LIMIT, CPU_LIMIT), memory=(RAM_LIMIT_GIB * 1024, RAM_LIMIT_GIB * 1024),
               timeout=FUNCTION_TIMEOUT_SECONDS, startup_timeout=STARTUP_TIMEOUT_SECONDS,
-              retries=0, max_containers=MAX_CONCURRENT_CALLS, min_containers=0, buffer_containers=0,
+              retries=modal.Retries(max_retries=MAX_INFRASTRUCTURE_RETRIES, initial_delay=1.0,
+                                    backoff_coefficient=2.0, max_delay=4.0),
+              max_containers=MAX_CONCURRENT_CALLS, min_containers=0, buffer_containers=0,
               scaledown_window=2, single_use_containers=True)
 def train_one(spec: dict, absolute_deadline: float, source_commit: str, tracked_run_id: str) -> dict:
     """One Stage 2 input. A provider preemption restarts only this input in a new attempt folder."""
@@ -137,15 +141,17 @@ def train_one(spec: dict, absolute_deadline: float, source_commit: str, tracked_
         "absolute_deadline": absolute_deadline})
     volume.commit()
     child_env = dict(os.environ, ORX_COMMIT=source_commit, ORX_RUN_ID=tracked_run_id, **(spec.get("isa_pins") or {}))
-    probe = subprocess.run([sys.executable, "-m", "stage2.isa_probe", "--out", str(out / "isa_probe.json")],
-                           cwd="/workspace", env=child_env, capture_output=True, text=True, timeout=600)
-    if probe.returncode:
-        atomic_json(out / "isa_probe_error.json", {"returncode": probe.returncode, "stderr": probe.stderr[-4000:]})
     print(json.dumps({"event": "training_start", "id": run_key, "attempt": attempt, "source_commit": source_commit,
                       "cpu": environment_record(spec)["cpu"]}), flush=True)
     command = [sys.executable, "-m", "stage2.run_training", "--spec", str(out / "spec.json"), "--out", str(out)]
     returncode = error = None
     try:
+        probe = subprocess.run([sys.executable, "-m", "stage2.isa_probe", "--out", str(out / "isa_probe.json")],
+                               cwd="/workspace", env=child_env, capture_output=True, text=True,
+                               timeout=max(1, min(600, absolute_deadline - time.time() - 15)))
+        if probe.returncode:
+            atomic_json(out / "isa_probe_error.json", {"returncode": probe.returncode, "stderr": probe.stderr[-4000:]})
+            raise RuntimeError("ISA metadata probe failed; infrastructure retry required")
         with (out / "stdout.log").open("w") as log:
             child = subprocess.Popen(command, cwd="/workspace", stdout=log, stderr=subprocess.STDOUT,
                                      env=child_env, start_new_session=True)
@@ -162,8 +168,15 @@ def train_one(spec: dict, absolute_deadline: float, source_commit: str, tracked_
                 raise TimeoutError("Training stopped at shared wall deadline")
         if returncode:
             raise RuntimeError(f"Training subprocess exited {returncode}")
+        from stage2.run_training import validated_outcome
+        inner_exit = json.loads((out / "process_usage.json").read_text())["exit_code"]
+        outcome = validated_outcome(out, spec, inner_exit)
     except BaseException as exc:
         error = f"{type(exc).__name__}: {exc}"
+        atomic_json(out / "infrastructure_failure.json", {
+            "classification": "infrastructure", "error": error,
+            "retry_policy": "At most 3 SDK retries of this same Modal input/call; never a replacement candidate.",
+            "absolute_deadline": absolute_deadline})
         raise
     finally:
         after_cpu = resource.getrusage(resource.RUSAGE_CHILDREN)
@@ -180,11 +193,33 @@ def train_one(spec: dict, absolute_deadline: float, source_commit: str, tracked_
                  "returncode": returncode, "error": error}
         atomic_json(out / "usage.json", usage)
         volume.commit()
-    fingerprints = deterministic_fingerprints(out)
+    fingerprints = (deterministic_fingerprints(out) if outcome["outcome"] == "success"
+                    else {"candidate_failure_sha256": canonical_sha(outcome)})
     atomic_json(out / "fingerprints.json", fingerprints)
+    # Preserve prior retry metadata and charges in the final logical result.
+    # Hard preemptions may have no usage file; report that unknown explicitly.
+    attempts = []
+    for prior in sorted((run_dir / "attempts").iterdir()):
+        metadata = json.loads((prior / "attempt.json").read_text()) if (prior / "attempt.json").exists() else {}
+        prior_usage = json.loads((prior / "usage.json").read_text()) if (prior / "usage.json").exists() else None
+        attempts.append({"attempt": prior.name, "metadata": metadata, "usage": prior_usage})
+    known_usage = [a["usage"] for a in attempts if a["usage"] is not None]
+    aggregate_usage = dict(usage,
+        wall_seconds=sum(a["wall_seconds"] for a in known_usage),
+        training_core_seconds=sum(a["training_core_seconds"] for a in known_usage),
+        training_peak_rss_bytes=max(a["training_peak_rss_bytes"] for a in known_usage),
+        compute_cost_estimate_usd=str(sum((Decimal(a["compute_cost_estimate_usd"]) for a in known_usage), Decimal(0))),
+        aggregate_attempt_usage=True, attempt_count=len(attempts), attempts_missing_usage=len(attempts)-len(known_usage),
+        cost_basis="Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.")
+    retained_files = set(p for p in out.rglob("*") if p.is_file())
+    for prior in (run_dir / "attempts").iterdir():
+        retained_files.update(p for p in prior.iterdir() if p.is_file() and p.name in {
+            "attempt.json", "usage.json", "environment.json", "process_usage.json", "outcome.json",
+            "infrastructure_failure.json", "isa_probe.json", "isa_probe_error.json", "stdout.log"})
     result = {"id": run_key, "spec_sha256": spec_hash, "source_commit": source_commit, "attempt": attempt,
-              "usage": usage, "fingerprints": fingerprints,
-              "files": {str(p.relative_to(Path("/outputs"))): sha256_file(p) for p in sorted(out.rglob("*")) if p.is_file()}}
+              "outcome": outcome["outcome"], "failure": outcome.get("failure"),
+              "usage": aggregate_usage, "attempts": attempts, "fingerprints": fingerprints,
+              "files": {str(p.relative_to(Path("/outputs"))): sha256_file(p) for p in sorted(retained_files)}}
     atomic_json(previous, result)
     volume.commit()
     print(json.dumps({"event": "training_complete", "id": run_key, "attempt": attempt,

@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import copy
 import json
+import math
 import re
 import tomllib
 import warnings
@@ -98,11 +99,19 @@ SMOKE = SearchConfig(name="smoke", population=6, generations=2, rs_candidates=12
                      cma_seed_base=5000, rs_seed_base=5100, finalist_seed_base_cma=5200, finalist_seed_base_rs=5300,
                      cma_rng_seed=5001, rs_rng_seed=5002, deadline_seconds=900)
 
-# DRAFT, NOT LOCKED: the proposal shown for approval. Not runnable before the lock.
+# Approved settings; full evidence collection remains gated by the later lock.
 REGISTERED_DRAFT = SearchConfig(name="search", population=10, generations=12, rs_candidates=120, seeds_per_task=3,
                                 budget_steps=2_000_000, finalists_per_method=3, finalist_seeds_per_task=10,
                                 cma_seed_base=1000, rs_seed_base=3000, finalist_seed_base_cma=1900,
                                 finalist_seed_base_rs=3900, cma_rng_seed=424242, rs_rng_seed=535353)
+
+# Exercises the search-mode controller and worker validator, with isolated keys,
+# tiny budgets and seeds outside every registered scientific role.
+SEARCH_PATH_SMOKE = SearchConfig(name="search_path_smoke", population=6, generations=2, rs_candidates=12,
+                                seeds_per_task=1, budget_steps=8192, finalists_per_method=3,
+                                finalist_seeds_per_task=2, cma_seed_base=5400, rs_seed_base=5500,
+                                finalist_seed_base_cma=5600, finalist_seed_base_rs=5700,
+                                cma_rng_seed=5401, rs_rng_seed=5402, deadline_seconds=900)
 
 
 @lru_cache(maxsize=1)
@@ -143,10 +152,17 @@ def validate_candidate(spec: dict, cfg: SearchConfig) -> None:
         raise ValueError("Purpose or task not allowed by this search configuration")
     if kind == "cma":
         allowed = cfg.cma_seeds(spec["group"]) if 0 <= spec["group"] < cfg.generations else []
+        if not spec["group"] * cfg.population <= spec["candidate"] < (spec["group"] + 1) * cfg.population:
+            raise ValueError("Candidate index outside its CMA generation")
     elif kind == "random":
         allowed = cfg.rs_seeds(spec["group"]) if 0 <= spec["group"] * cfg.population < cfg.rs_candidates else []
+        if not 0 <= spec["candidate"] < cfg.rs_candidates or spec["candidate"] // cfg.population != spec["group"]:
+            raise ValueError("Candidate index outside its random-search batch")
     else:
         allowed = cfg.finalist_seeds("cma" if kind == "finalist_cma" else "random")
+        limit = cfg.population * cfg.generations if kind == "finalist_cma" else cfg.rs_candidates
+        if spec["group"] != 0 or not 0 <= spec["candidate"] < limit:
+            raise ValueError("Invalid finalist index or group")
     if spec.get("seed") not in allowed:
         raise ValueError("Seed outside the configured panel for this purpose")
     if spec != candidate_spec(cfg, kind, spec["candidate"], spec["group"], spec["task"], spec["seed"], spec["latent"]):
@@ -201,6 +217,7 @@ class SearchPlan:
         self.cma = CMAReplay(cfg)
         self.rs = np.array([canonical_latent(z) for z in random_candidates(cfg)])
         self.areas: dict[str, float] = {}        # run key -> training curve area
+        self.failed_runs: set[str] = set()
         self.kinds = {v: k for k, v in cfg.purposes().items()}
         self._gen_specs: dict[int, list[dict]] = {}
         self._rs_cache: list[dict] | None = None
@@ -252,7 +269,23 @@ class SearchPlan:
 
     # -- results ---------------------------------------------------------------------------
     def record(self, key: str, result: dict, directory: Path) -> None:
-        self.areas[key] = float(score_seed(directory, self.cfg.budget_steps)["curve_area"])
+        from stage2.common import canonical_sha
+        expected = self.spec_for_key(key)
+        if result.get("id") != key or result.get("spec_sha256") != canonical_sha(expected):
+            raise ValueError("Result identity differs from its requested search specification")
+        if json.loads((directory / "spec.json").read_text()) != expected:
+            raise ValueError("Saved specification differs from the regenerated candidate")
+        outcome = result.get("outcome", "success")
+        if outcome == "candidate_failure":
+            self.areas[key] = 0.0
+            self.failed_runs.add(key)
+        elif outcome == "success":
+            score = score_seed(directory, self.cfg.budget_steps)
+            if score["seed"] != expected["seed"]:
+                raise ValueError("Learner summary seed differs from requested seed")
+            self.areas[key] = float(score["curve_area"])
+        else:
+            raise ValueError("Infrastructure/unknown outcomes cannot be scored as candidate failures")
 
     def _mean_area(self, specs) -> float:
         missing = [s["id"] for s in specs if s["id"] not in self.areas]
@@ -287,6 +320,33 @@ class SearchPlan:
         specs = self._finalist_specs(method)
         reeval = {c: self._mean_area([s for s in specs if s["candidate"] == c]) for c in self.finalists(method)}
         return sorted(reeval, key=lambda c: (-reeval[c], -search[c], c))[0]
+
+    def selection_record(self) -> dict:
+        """Same export path in rehearsal and full search; smoke values are not reported.
+
+        The frozen winner determines the later tamper prediction before any
+        tamper evidence exists. Stage 3 never switches this branch from results.
+        """
+        methods = {}
+        for method in ("cma", "random"):
+            fitness = self.search_fitness(method)
+            latent = self._latent(method)
+            specs = self._finalist_specs(method)
+            winner = self.winner(method)
+            genome = decode(latent[winner])
+            effective_weights = np.asarray(genome["weights"], dtype=np.float32).astype(float).tolist()
+            payoff = 0.25 * math.fsum(effective_weights)
+            methods[method] = {
+                "search_fitness": {str(c): value for c, value in fitness.items()},
+                "finalists": [{"candidate": c, "reevaluated_fitness": self._mean_area([s for s in specs if s["candidate"] == c])}
+                              for c in self.finalists(method)],
+                "winner": {"candidate": winner, "latent": latent[winner].tolist(), "genome": genome,
+                           "effective_weights_float32": effective_weights,
+                           "episode_start_tamper_payoff": payoff,
+                           "tamper_prediction": "collapse" if payoff > 0 else "noninferiority"},
+            }
+        return {"plan": self.cfg.name, "methods": methods,
+                "report_smoke_performance": False, "failed_runs": sorted(self.failed_runs)}
 
     # -- scheduling ------------------------------------------------------------------------
     def _complete(self, specs) -> bool:

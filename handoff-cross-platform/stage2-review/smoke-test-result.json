@@ -1,0 +1,26 @@
+{
+  "all_genomes_in_bounds": true,
+  "cma_candidates": 12,
+  "cma_generations_asked": 2,
+  "commit": "45f80a3",
+  "config": "smoke",
+  "controller_max_in_flight": "32 (all 32 submissions logged before the first completion)",
+  "equal_candidate_budget": true,
+  "finalists_per_method": {
+    "cma": 1,
+    "random": 1
+  },
+  "max_concurrent_calls": 32,
+  "note": "Pass/fail structure only, by the user's instruction; no fitness or performance values.",
+  "peak_running_containers": 16,
+  "random_candidates": 12,
+  "replay_reproduces_cma_candidates": true,
+  "run_id": "120ba00c-1706-47bd-92a7-3e2829bb35f7",
+  "runs_expected": 56,
+  "runs_recorded": 56,
+  "winner_selected": {
+    "cma": true,
+    "random": true
+  },
+  "zero_growth_atoms_present": true
+}

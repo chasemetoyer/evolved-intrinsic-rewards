@@ -107,3 +107,26 @@ Paste-in prompt for a new agent:
 > /Users/chasemetoyer/Desktop/evolved-intrinsic-rewards/handoff-cross-platform/.
 > Claim the lease only with my authorization. Do not lock, push a lock or launch
 > the Stage 2 search unless approvals-log.jsonl records my approval.
+
+
+## Approved update and takeover, 2026-10-28 (approval 24)
+
+The user asked Codex to continue from Claude. The Stage 2 research branch is now
+owned by chat_d92e34bd_codex in the worktree recorded by session-state.json;
+Claude's idle worktree was detached without changing files. No compute was active.
+The latest approval supersedes the older Stage 1-only and Stage 2 $30 notes:
+Stage 2 cap is $35 including pre-lock checks, Stage 3 cap is $10. Keep the
+3600-second deadline, 3 finalists per method and 10 re-evaluation seeds, coef 1,
+50% zero-growth encoding, initial mean .5/sigma .25, raw equal fitness weights.
+Run unpinned, record every CPU, compare unpaired; skip COMPATIBLE testing.
+Candidate numerical failures score zero; infrastructure retries preserve input
+identity; stop above 5% as defined in the updated unlocked draft.
+The primary Holm m=3 family is the one held-out task, with a .05 observed mean
+area difference required to call an effect meaningful. Tamper retrains with free
+presses only; freeze the winner and compute P0=.25 sum effective weights before
+any tamper run: P0>0 predicts collapse, otherwise noninferiority delta=.05.
+
+NEXT GATE: implement and run the exact search-mode controller/worker-validator/
+plan branch using tiny budgets and seeds>=5000. Report only PASS/FAIL. Deliver
+the updated unlocked draft. The user then makes the repo public; only afterward
+lock, push, verify and launch. Never create a lock in advance of a PASS.

@@ -125,6 +125,7 @@ class FakeBackend:
         self.active -= 1
         spec = self.calls[call.object_id][1]
         return {"id": spec["id"], "attempt": "a-" + spec["id"], "files": {}, "fingerprints": {},
+                "spec_sha256": canonical_sha(spec),
                 "usage": {"wall_seconds": 30.0, "compute_cost_estimate_usd": "0.0005"}}
 
     def cancel(self, call):
@@ -136,6 +137,7 @@ def hooks_for(tmp_path, backend, store):
         spec = backend.calls["fc-" + result["id"]][1]
         d = tmp_path / "results" / result["id"] / "attempts" / result["attempt"]
         d.mkdir(parents=True, exist_ok=True)
+        (d / "spec.json").write_text(json.dumps(spec))
         area = synthetic_area(spec["genome"], spec["task"], spec["seed"])
         (d / "metrics.jsonl").write_text(json.dumps({"global_step": 8192, "train/success": area}) + "\n")
         (d / "summary.json").write_text(json.dumps({"total_timesteps": 8192, "first_solved_step": None,
@@ -184,7 +186,8 @@ def test_interrupted_search_resumes_without_resubmission(tmp_path):
         if key in done_keys:
             backend.active -= 1
             ledger.complete(key, 30.0, {"wall_seconds": 30.0})
-            store[key] = {"id": key, "attempt": "a-" + key, "files": {}, "fingerprints": {}, "usage": {}}
+            store[key] = {"id": key, "attempt": "a-" + key, "files": {}, "fingerprints": {}, "usage": {},
+                          "spec_sha256": canonical_sha(spec)}
     del probe
     backend.active = 0
     resumed_spawns_before = len(backend.spawned)

@@ -1,4 +1,4 @@
-"""Stage 2 cost and duration projection against the user-approved $30 cap.
+"""Stage 2 cost and duration projection against the user-approved $35 cap.
 
 Inputs are measured, never assumed: Stage 1 per-run 2M costs on the two kept
 training tasks (stage1-numbers.json), Stage 1's billed/measured and guard/measured

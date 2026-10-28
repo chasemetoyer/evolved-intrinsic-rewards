@@ -24,9 +24,9 @@ from stage2.common import (
 from stage2.modal_app import app, train_one, volume
 from stage2.scheduler import Hooks, run_plan
 
-# Pre-lock branch: only the smoke test may run. The registered "search" mode is
-# added solely by the user-approved Stage 2 lock commit.
-MODES = ("smoke",)
+# Both profiles execute the search branch now; full search stays gated by the
+# public registration, while the approved rehearsal uses only tiny smoke data.
+MODES = ("smoke", "search")
 HEARTBEAT_SECONDS = 30
 VOLUME_SWEEP_SECONDS = 600
 BILLING_MIN_INTERVAL_SECONDS = 120
@@ -37,6 +37,10 @@ def make_plan(mode: str):
     if mode == "smoke":
         from stage2.search import SMOKE, SearchPlan
         return SearchPlan(SMOKE)
+    if mode == "search":
+        from stage2.registration import configured_search
+        from stage2.search import SearchPlan
+        return SearchPlan(configured_search())
     raise SystemExit(f"Mode not available on this node: {mode}")
 
 
@@ -76,6 +80,8 @@ def download(remote: str, local: Path) -> None:
 class Controller:
     def __init__(self, mode: str, results: Path, ledger: Stage2Ledger, billing_start: datetime):
         self.mode, self.results, self.ledger, self.billing_start = mode, results, ledger, billing_start
+        from stage2.registration import mode_record
+        self.is_registered_search = mode == "search" and mode_record().get("profile") == "registered"
         self.peak_running = 0
         self.last_heartbeat = self.last_sweep = self.last_billing = 0.0
         self.logged = set()
@@ -123,7 +129,7 @@ class Controller:
         measured = sum((Decimal(c["measured"]["compute_cost_estimate_usd"]) for c in calls
                         if c["status"] == "complete" and c.get("measured")), Decimal(0))
         budget["stages"]["stage2"] = {
-            "cap_usd": str(LIMIT_USD), "status": "pre-lock checks (no search launched)", "mode": self.mode,
+            "cap_usd": str(LIMIT_USD), "status": ("search in progress" if self.mode == "search" and self.is_registered_search else "pre-lock checks (no scientific search launched)"), "mode": self.mode,
             "guard_total_usd": str(self.ledger.guard_total()),
             "measured_completed_function_compute_usd": str(measured),
             "modal_billed_complete_intervals_usd": self.ledger.data.get("provider_reported_complete_intervals_cost_usd"),
@@ -282,6 +288,11 @@ def main() -> None:
                           heartbeat=controller.heartbeat)
             run_plan(plan, ledger, backend, hooks, MAX_CONCURRENT_CALLS)
             controller.sweep_volume()
+            if hasattr(plan, "selection_record"):
+                selection_path = results / f"{plan.cfg.name}-selection.json"
+                atomic_json(selection_path, plan.selection_record())
+                with volume.batch_upload(force=True) as batch:
+                    batch.put_file(selection_path, f"/plans/{plan.cfg.name}-selection.json")
         controller.billing(results / "billing-after.json", force=True)
         controller.persist()
         summary = plan.summary()
@@ -300,7 +311,8 @@ def main() -> None:
             if controller is not None:
                 controller.persist()
             atomic_json(results / "controller-stop.json", {"utc": utc_now(), "error": f"{type(exc).__name__}: {exc}",
-                        "guard_total_usd": str(ledger.guard_total()), "invoice_cost_usd": None, "search_started": False})
+                        "guard_total_usd": str(ledger.guard_total()), "invoice_cost_usd": None,
+                        "search_started": controller.is_registered_search if controller is not None else False})
         raise
     finally:
         lock.pop("owner")

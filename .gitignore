@@ -29,3 +29,5 @@ handoff-cross-platform/run-registry.json
 handoff-cross-platform/budget.json
 handoff-cross-platform/stage2-runtime-state.json
 handoff-cross-platform/stage2-run-registry.json
+
+results/stage2-prior-ledger-snapshot.json
