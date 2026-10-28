@@ -185,3 +185,8 @@ Tracked run13b2db55-d617-48f4-8c3e-78093f0be19a replaces failed55d43a42, source7
 ### Recovery startup verified
 
 Run13b2db55 is submitting new training inputs after reconstructing445existing scientific completions. First26submitted keys were checked disjoint from all637saved completed ledger entries. Original23terminated random-search inputs remain queued behind the CMA critical path; their costs remain reserved and are retained again in infrastructure_history on actualretry. The readonly observer was separately replaced byPID46043 to show Awaiting retry as a distinct progress category (accounting still totals1560); controller43575 was untouched. Idle-sleep inhibitor44276 remains attached tocontroller. Latest process files supersede oldobserver81939 references.
+
+
+## Approval27: second repair ready; no third controller yet
+
+User said resume again and asked about surviving lidclosure/scientificintegrity. Second amendment implements bounded polling/persistence retries on same handles and deadlines;106fixturechecksPASS. Live readonlypreflight492scientific savedcompletions+36pendingretries,14historicalchargesretained; guard12.58599/35. Read stage2-interruption/second-interruption/second-recovery-ready.md. Hosting preference pending: move controller toModal (needs exactreplay/costguard checks) or currentMac (muststayopen). Do not launch a duplicate or infer remote approval from elapsedtime. NoStage3.

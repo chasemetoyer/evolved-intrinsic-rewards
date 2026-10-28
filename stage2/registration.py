@@ -54,7 +54,7 @@ def authorize(record: dict, root: Path = ROOT) -> None:
         raise ValueError("Stage 2 lock differs from its receipt")
     if not REQUIRED_FROZEN_INPUTS <= set(lock.get("sha256", {})):
         raise ValueError("Stage 2 registration omits mandatory frozen inputs")
-    from stage2.recovery import authorized_hashes
+    from stage2.recovery_v2 import authorized_hashes
     effective_hashes = authorized_hashes(lock, root)
     for name, expected in effective_hashes.items():
         path = Path(name)

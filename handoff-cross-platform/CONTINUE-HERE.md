@@ -184,3 +184,8 @@ Run13b2db55 is submitting new training inputs after reconstructing445existing sc
 ## Second interruption: STOP pending approval
 
 Replacement13b2db55 failed in result polling with Modal ConnectionError Deadline exceeded. No third controller launched. Audit:488ledger-complete scientific runs,4more hash-verified saved successes,27new terminated inputs,9previous retry-pending inputs; guard12.58599/35;14historical retrycall charges preserved. Read stage2-interruption/second-interruption/second-interruption-report.md. Controller43575 andidlehelper44276 exited; observer46043 alive. Approval26 one restart was consumed. Two consecutive infrastructure stops require user approval beforeanother repairrun. Do not use the original amendment to silently reconcile this new outage. NoStage3.
+
+
+## Approval27: second repair ready; no third controller yet
+
+User said resume again and asked about surviving lidclosure/scientificintegrity. Second amendment implements bounded polling/persistence retries on same handles and deadlines;106fixturechecksPASS. Live readonlypreflight492scientific savedcompletions+36pendingretries,14historicalchargesretained; guard12.58599/35. Read stage2-interruption/second-interruption/second-recovery-ready.md. Hosting preference pending: move controller toModal (needs exactreplay/costguard checks) or currentMac (muststayopen). Do not launch a duplicate or infer remote approval from elapsedtime. NoStage3.

@@ -45,31 +45,39 @@ def make_plan(mode: str):
 
 
 class ModalBackend:
-    def __init__(self, commit: str, run_id: str):
+    def __init__(self, commit: str, run_id: str, ledger=None):
         self.commit, self.run_id = commit, run_id
+        self.deadlines = {r['function_call_id']: r['absolute_deadline']
+                          for r in (ledger.data['calls'].values() if ledger else [])
+                          if r.get('function_call_id')}
 
     @property
     def app_id(self) -> str:
         return app.app_id
 
     def spawn(self, spec: dict, absolute_deadline: float):
-        return train_one.spawn(spec, absolute_deadline, self.commit, self.run_id)
+        call = train_one.spawn(spec, absolute_deadline, self.commit, self.run_id)
+        self.deadlines[call.object_id] = absolute_deadline
+        return call
 
     def reattach(self, call_id: str):
         return modal.FunctionCall.from_id(call_id)
 
     def poll(self, call):
-        try:
-            return call.get(timeout=0)
-        except TimeoutError:
-            return None
+        from stage2.transport import retry_io
+        def attempt():
+            try:
+                return call.get(timeout=0)
+            except TimeoutError:
+                return None  # successful poll with no ready result
+        return retry_io(attempt, deadline=self.deadlines.get(call.object_id))
 
     def cancel(self, call) -> None:
         call.cancel(terminate_containers=True)
 
 
 def download(remote: str, local: Path) -> None:
-    from stage2.recovery import retry_io
+    from stage2.transport import retry_io
     def attempt():
         local.parent.mkdir(parents=True, exist_ok=True)
         temporary = local.with_name(local.name + ".part")
@@ -94,8 +102,11 @@ class Controller:
     # -- durable state -----------------------------------------------------------------
     def persist(self) -> None:
         self.ledger.save()
-        with volume.batch_upload(force=True) as batch:
-            batch.put_file(self.ledger.path, "/budget-ledger.json")
+        from stage2.transport import retry_io
+        def upload():
+            with volume.batch_upload(force=True) as batch:
+                batch.put_file(self.ledger.path, "/budget-ledger.json")
+        retry_io(upload)  # retry the same immutable local ledger bytes; never respawn a call
         self.publish()
 
     def publish(self) -> None:
@@ -150,7 +161,7 @@ class Controller:
                 raise ValueError("Invalid remote output path")
             local = self.results.joinpath(*path.parts[1:])
             if not local.exists() or sha256_file(local) != expected:
-                from stage2.recovery import reuse_previous_output
+                from stage2.recovery_v2 import reuse_previous_output
                 if not reuse_previous_output(remote_path, local, expected):
                     download(remote_path, local)
             if sha256_file(local) != expected:
@@ -269,7 +280,7 @@ def main() -> None:
         except (FileNotFoundError, modal.exception.NotFoundError):
             pass  # first Stage 2 run only; any other error must stop rather than reset spending history
         ledger = Stage2Ledger(ledger_path)
-        from stage2.recovery import reconcile_interrupted
+        from stage2.recovery_v2 import reconcile_interrupted
         reconcile_interrupted(ledger, volume, results)
         ledger.assert_can_launch()
         billing_start = datetime.fromisoformat(ledger.data["created_utc"])
@@ -284,7 +295,7 @@ def main() -> None:
             controller.persist()
             print(json.dumps({"event": "stage2_start", "mode": mode, "app_id": app.app_id,
                               "max_concurrent_calls": MAX_CONCURRENT_CALLS, "volume": VOLUME_NAME}), flush=True)
-            backend = ModalBackend(os.environ["ORX_COMMIT"], owner)
+            backend = ModalBackend(os.environ["ORX_COMMIT"], owner, ledger)
             hooks = Hooks(persist=controller.persist, sync=controller.sync, sync_existing=controller.sync_existing,
                           submitted=lambda spec, call: print(json.dumps({"event": "submitted", "id": spec["id"],
                                                              "function_call_id": call.object_id,
