@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "checks": 5212,
+  "failures": [],
+  "completed_training_records": 154,
+  "containers_checked": 156,
+  "scope": "Independent raw-output arithmetic, complete-cell selection, source hashes, descriptive Mac rows, validation XML, numerical determinism, container CPU identity from raw cpuinfo and determinism divergence location; no new policies executed."
+}

@@ -1,0 +1,12 @@
+{
+  "compute_cost_estimate_usd": "0.01225708604873086",
+  "container_cpu_stat": null,
+  "container_memory_peak_bytes": null,
+  "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+  "error": null,
+  "provider_invoice_cost_usd": null,
+  "returncode": 0,
+  "training_core_seconds": 678.33,
+  "training_peak_rss_bytes": 702914560,
+  "wall_seconds": 698.807642459
+}
