@@ -1,0 +1,8 @@
+{
+  "guard_total_usd": "1.1376651063049840921540",
+  "measured_compute_usd": "0.17864346874198113971936",
+  "modal_billed_complete_intervals_usd": "0.16886089",
+  "cap_usd": "35",
+  "invoice_cost_usd": null,
+  "limitations": "Guard is protective; compute is an estimate; billed intervals omit recent usage and are not an invoice."
+}

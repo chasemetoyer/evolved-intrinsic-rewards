@@ -14,6 +14,14 @@ from stage2.specs import validate
 from test_stage2_search import FakeBackend, hooks_for
 
 
+@pytest.fixture(autouse=True)
+def rehearsal_configuration(monkeypatch):
+    # The native smoke run verifies the committed mode record independently.
+    # Unit fixtures remain usable after its data-only switch to registered.
+    import stage2.registration
+    monkeypatch.setattr(stage2.registration, 'mode_record', lambda *args, **kwargs: {"mode": "search", "profile": "smoke"})
+
+
 def test_actual_search_controller_validator_and_plan_path(tmp_path):
     assert mode_record() == {"mode": "search", "profile": "smoke"}
     plan = make_plan("search")

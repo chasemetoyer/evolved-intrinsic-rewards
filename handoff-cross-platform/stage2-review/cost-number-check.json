@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": {
+    "stage2_run_count": true,
+    "stage2_compute": true,
+    "stage2_expected_bill": true,
+    "stage2_guard_end": true,
+    "stage2_guard_peak": true,
+    "stage3_compute": true,
+    "stage3_bill": true,
+    "stage3_guard_end": true,
+    "stage3_guard_peak": true,
+    "current_guard": true,
+    "current_compute": true
+  },
+  "scope": "Independent accounting and cost-projection arithmetic; no smoke performance reported."
+}

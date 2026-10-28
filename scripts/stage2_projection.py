@@ -70,6 +70,16 @@ def main() -> None:
                 "projected_guard_peak_usd": measured * guard_ratio + spent_guard + float(OVERHEAD_ALLOWANCE_USD) + peak_reservations,
                 "wall_hours_at_32": (search_runs + finalist_runs) * (unit_wall * factor + 30) / MAX_CONCURRENT_CALLS / 3600}
 
+    # Approved Stage 3 roster: E/R/T/N plus descriptive fixed satiation, every
+    # kept task, then two fresh retraining conditions for DoorKey tampering.
+    kept = [r['task'] for r in numbers['calibration']['selection'] if r['kept']]
+    stage3_units = {}
+    for task in kept:
+        costs = [s['cost_estimate_usd'] for c in numbers['calibration']['cells']
+                 if c['task'] == task and c['budget'] == 2_000_000 for s in c['seeds']]
+        stage3_units[task] = statistics.fmean(costs)
+    stage3_compute = 5 * 20 * sum(stage3_units.values()) + 2 * 20 * stage3_units['DoorKey-8x8']
+
     out = {"cap_usd": float(LIMIT_USD), "registered_draft": cfg.name, "search_runs": search_runs,
            "finalist_runs": finalist_runs, "per_task_stage1_2M": per_task, "unit_cost_usd": unit,
            "pinned_mean_wall_s": statistics.fmean(pinned), "unpinned_stage1_mean_wall_s": statistics.fmean(unpinned),
@@ -77,6 +87,13 @@ def main() -> None:
            "billed_to_measured_stage1": billed_ratio, "guard_to_measured_stage1": guard_ratio,
            "stage2_guard_spent_before_search_usd": spent_guard, "peak_in_flight_reservations_usd": peak_reservations,
            "scenarios": {"unpinned": scenario(1.0), "pinned": scenario(slowdown)},
+           "stage3": {"cap_usd": 10, "method_count": 5, "final_evaluation_runs": 5 * 20 * len(kept),
+                      "tamper_retraining_runs": 40, "per_task_measured_unit_cost_usd": stage3_units,
+                      "measured_compute_proxy_usd": stage3_compute,
+                      "expected_billed_proxy_usd": stage3_compute * billed_ratio,
+                      "projected_guard_at_end_usd": stage3_compute * guard_ratio + float(OVERHEAD_ALLOWANCE_USD),
+                      "projected_guard_peak_usd": stage3_compute * guard_ratio + float(OVERHEAD_ALLOWANCE_USD) + peak_reservations,
+                      "separate_execution_approval_required": True},
            "basis": "Stage 1 measured function-wall cost of baseline runs as a proxy for candidate runs; whole-call "
                     "overhead and guard behavior scaled by Stage 1 ratios; +30 s startup per call for duration."}
     a.out.write_text(json.dumps(out, indent=2) + "\n")

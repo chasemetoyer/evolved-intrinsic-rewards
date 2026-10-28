@@ -169,7 +169,7 @@ hash-locked, committed, pushed and verified before the search launch.
 - **Volume:** results go to a Modal Volumes v2 volume. v1 recommends at most five
   concurrent writers.
 - **Ledger:** one Stage 2 ledger with the $35 cap, including all pre-lock checks,
-  search calls, finalist re-evaluations, retries and failed work. Each call reserves its
+  search calls, finalist re-evaluations, retries and failed work. Each full-search call reserves its
   3,600-second deadline plus a 60-second termination allowance before it is
   submitted.
 
@@ -215,7 +215,7 @@ hash-locked, committed, pushed and verified before the search launch.
 - **Conditional prediction fixed before data:** freeze the selected E reward and
   its artifact hash before any tamper run. Compute and record
   $P_0=\sum_k w_k h_0^2=0.25\sum_k w_k$ from that frozen winner's effective
-  weights, with h0 = 0.5 and intrinsic coefficient 1.0. This is the defined
+  weights after the module's float32 conversion, with h0 = 0.5 and intrinsic coefficient 1.0; sum those effective weights with math.fsum before multiplying by 0.25. This is the defined
   episode-start tamper payoff, not an estimate from tamper trajectories. Record
   the full-precision value and selected branch before dispatch. Its sign fixes
   the branch; do not select a branch from observed task scores or press counts.

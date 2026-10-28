@@ -98,10 +98,13 @@ def checkpoint(args, *, automatic=False):
                  budget_ledger_path=str(ledger) if ledger else None,
                  budget_ledger=read(ledger) if ledger else None,
                  runtime_state=read(SHARED / 'runtime-state.json'),
+                 stage2_runtime_state=read(SHARED / 'stage2-runtime-state.json'),
+                 stage2_mode=read(ROOT / 'stage2/mode.json'),
+                 stage2_lock_present=(ROOT / 'preregistration/stage2-lock.json').exists(),
                  source_checkpoint=snapshot_sources(),
                  usage_snapshot=read(SHARED / 'usage-snapshot.json'),
                  automatic=automatic, watcher_pid=os.getpid() if automatic else previous.get('watcher_pid'),
-                 no_evolution_or_random_search=True,
+                 no_evolution_or_random_search=read(ROOT / 'stage2/mode.json').get('profile') != 'registered',
                  artifact_directory='/Users/chasemetoyer/.local/share/openresearch/files/evolved-intrinsic-rewards')
     atomic(SHARED / 'session-state.json', state)
     if not automatic:

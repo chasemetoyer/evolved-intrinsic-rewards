@@ -1,5 +1,5 @@
 {
-  "cap_usd": 30.0,
+  "cap_usd": 35.0,
   "registered_draft": "search",
   "search_runs": 1440,
   "finalist_runs": 120,
@@ -23,25 +23,41 @@
   "pinning_slowdown_131k": 1.1867998584846582,
   "billed_to_measured_stage1": 1.03168430297038,
   "guard_to_measured_stage1": 1.1461592966330432,
-  "stage2_guard_spent_before_search_usd": 0.40978458858604905,
+  "stage2_guard_spent_before_search_usd": 0.6376651063049841,
   "peak_in_flight_reservations_usd": 2.0542848,
   "scenarios": {
     "unpinned": {
       "pinning_runtime_factor": 1.0,
       "measured_compute_usd": 20.397811923203765,
       "expected_billed_usd": 21.044102376111383,
-      "projected_guard_at_end_usd": 24.28892635533838,
-      "projected_guard_peak_usd": 26.34321115533838,
+      "projected_guard_at_end_usd": 24.516806873057313,
+      "projected_guard_peak_usd": 26.571091673057314,
       "wall_hours_at_32": 10.501138233246511
     },
     "pinned": {
       "pinning_runtime_factor": 1.1867998584846582,
       "measured_compute_usd": 24.2081203038549,
       "expected_billed_usd": 24.975137721905647,
-      "projected_guard_at_end_usd": 28.656146728860474,
-      "projected_guard_peak_usd": 30.710431528860475,
+      "projected_guard_at_end_usd": 28.884027246579407,
+      "projected_guard_peak_usd": 30.93831204657941,
       "wall_hours_at_32": 12.386861926635401
     }
+  },
+  "stage3": {
+    "cap_usd": 10,
+    "method_count": 5,
+    "final_evaluation_runs": 300,
+    "tamper_retraining_runs": 40,
+    "per_task_measured_unit_cost_usd": {
+      "DoorKey-8x8": 0.013381940909450407,
+      "UnlockPickup": 0.012769100017733908,
+      "KeyCorridorS3R2": 0.013434217585154512
+    },
+    "measured_compute_proxy_usd": 4.493803487611899,
+    "expected_billed_proxy_usd": 4.636186518802744,
+    "projected_guard_at_end_usd": 5.65061464456837,
+    "projected_guard_peak_usd": 7.704899444568371,
+    "separate_execution_approval_required": true
   },
   "basis": "Stage 1 measured function-wall cost of baseline runs as a proxy for candidate runs; whole-call overhead and guard behavior scaled by Stage 1 ratios; +30 s startup per call for duration."
 }
