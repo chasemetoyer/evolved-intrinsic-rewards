@@ -1,0 +1,45 @@
+{
+  "prelaunch_review_threshold_usd": 33,
+  "runtime_cap_removal_approved": true,
+  "remaining_logical_training_inputs": 1068,
+  "completed_recoverable": 492,
+  "ordinary_completed_guard_unit_costs": {
+    "DoorKey-8x8": {
+      "n": 241,
+      "mean_guard_usd": "0.01573273032407169022976763485"
+    },
+    "UnlockPickup": {
+      "n": 240,
+      "mean_guard_usd": "0.01558650323640682298103333333"
+    }
+  },
+  "remaining_by_task": {
+    "DoorKey-8x8": 534,
+    "UnlockPickup": 534
+  },
+  "current_guard_including_prior_calls_usd": "12.5859942911438989529760",
+  "remaining_training_guard_forecast_usd": "16.72447072129552605456771701",
+  "max_worker_reservations_usd": "2.05428480",
+  "controller_sandbox_cpu_usd_per_core_second": "0.00003942",
+  "controller_sandbox_ram_usd_per_gib_second": "0.00000667",
+  "controller_forecast_resource_envelope": {
+    "physical_cores": 1,
+    "memory_gib": 2,
+    "not_yet_provisioned": true
+  },
+  "controller_expected_8h_usd": "1.51948800",
+  "controller_reserved_12h_usd": "2.27923200",
+  "verification_setup_allowance_usd": "0.10",
+  "expected_guard_at_end_usd": "30.92995301243942500754371701",
+  "nominal_guard_peak_usd": "32.98423781243942500754371701",
+  "conservative_guard_peak_usd": "33.74398181243942500754371701",
+  "launch_gate": "STOP",
+  "pricing_source": "https://modal.com/pricing",
+  "pricing_checked_date": "2026-10-28",
+  "retained_history_rows": 14,
+  "basis": "Current guard retained in full, including every prior completed charge, canceled-call reservation, history and0.50allowance. Add1068remaining training costs (including36authorized fresh retries), controller lifetime reservation, extra0.10setup and max32worker reservations using the same conservative additive peak convention as the earlier projection. No old canceled charge released. No monetary cap is imposed by this forecast.",
+  "limitations": [
+    "Projection, not invoice or guarantee. Actual controller provisioning/usage and full terminated-attempt CPU metadata still need validation.",
+    "No training launch permitted while protective peak exceeds33 without review, even though the runtime35cap was removed by user instruction."
+  ]
+}

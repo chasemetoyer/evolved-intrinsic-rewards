@@ -189,3 +189,8 @@ Replacement13b2db55 failed in result polling with Modal ConnectionError Deadline
 ## Approval27: second repair ready; no third controller yet
 
 User said resume again and asked about surviving lidclosure/scientificintegrity. Second amendment implements bounded polling/persistence retries on same handles and deadlines;106fixturechecksPASS. Live readonlypreflight492scientific savedcompletions+36pendingretries,14historicalchargesretained; guard12.58599/35. Read stage2-interruption/second-interruption/second-recovery-ready.md. Hosting preference pending: move controller toModal (needs exactreplay/costguard checks) or currentMac (muststayopen). Do not launch a duplicate or infer remote approval from elapsedtime. NoStage3.
+
+
+## Approval28 migration blocked at explicit33USD review gate
+
+Runtime35USD cap removal is approved; one Modal migration/restart authorized after exactreplay,dryrun,cost checks. MacreplayPASS:528spec hashes,60CMA vectors inclcurrent10,492savedcompletions. NoLinuxverification orsearchrestart launched. Remaining1068inputs incl36intentionalterminated-input retries. Updated Sandbox3xprices and12hcontrollerreservation yield protectiveguardpeak33.74398USD (nominal32.98424), exceeding separate33prelaunchgate. Read cloud-controller/pre-launch-review.md. Ask whether33reviewgate is also waived; do not infer fromruntimecapremoval. Preserveall50terminatedcallcosts/CPUunknowns; finalStage2reportmustenumerateeveryattempt/retry. If eventualremotecontroller stops, DO NOT RESTART. Actuallidclosedcheckstillpending. NoStage3.

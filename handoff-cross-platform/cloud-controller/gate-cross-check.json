@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "launch_allowed": false,
+  "cost_sum_independently_checked": true,
+  "dry_run_counts": {
+    "requires_terminal_reconciliation_before_retry": 27,
+    "previously_authorized_retry": 9,
+    "new": 552
+  },
+  "completed_inputs_rescheduled": 0,
+  "linux_replay_status": "NOT_RUN_COST_REVIEW_GATE",
+  "remote_training_launches": 0
+}
