@@ -1,0 +1,1120 @@
+{
+  "observed_utc": "2026-10-28T18:01:30.169387+00:00",
+  "tracked_run_id": "55d43a42-6cbd-493c-b74d-202f5714f064",
+  "cause": "ClientConnectorDNSError downloading saved result from clobber.modal-storage.com; scheduler cleanup canceled outstanding calls",
+  "search_ledger_status_counts": {
+    "complete": 438,
+    "uncertain": 30
+  },
+  "guard_usd": "9.8913865159623479733960",
+  "cap_usd": "35",
+  "billed_complete_intervals_usd": "4.99288965",
+  "measured_compute_usd": 6.314091220618973,
+  "unresolved_with_durable_completion": 7,
+  "provider_status_counts": {
+    "SUCCESS": 7,
+    "TERMINATED": 23
+  },
+  "unresolved": [
+    {
+      "id": "search_cma-g04-c049-DoorKey-8x8-2000000-seed1012",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SKQWJ24168FXN0Y41R9HZ",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SKQWTYXP0SY3ACT5KMTBX",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "c06ed70a322f4473842cb24c60615e81",
+        "attempts": [
+          {
+            "attempt": "c06ed70a322f4473842cb24c60615e81",
+            "metadata": {
+              "absolute_deadline": 1793212860.7145019,
+              "attempt": "c06ed70a322f4473842cb24c60615e81",
+              "modal_function_call_id": "fc-01M61SKQWJ24168FXN0Y41R9HZ",
+              "modal_input_id": "in-01M61SKQWTYXP0SY3ACT5KMTBX:1793209262018-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "61338244403e50b7314cb0514b5115b3a1e413d608aadc14e1502b5f2d4752e6",
+              "started_utc": "2026-10-28T17:41:09.445798+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01556309504121524",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 862.6999999999999,
+              "training_peak_rss_bytes": 810344448,
+              "wall_seconds": 887.291621506
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/agent.pt": "3878e3d1f4d12d10d2e04af7a08ae7c8d87ea5cec08d80d7e33bc8620a0407af",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/attempt.json": "105ce3f9e9c28401b312af953637e1d329757888a74c460915a8010aa761e230",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/config.toml": "f9c7073799782e41c3dc5d3631ef426e3e31fd45ad2a2176856e3cc2e148fbf2",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/environment.json": "414fb5045a0ad0c219f2c98acf987bc9792907f8a2de1b5f363fdd7416762e74",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/fingerprint.json": "15da7730b112073e17d118edf350bff5935877e0d288772eb8683209b06e19ac",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/fingerprints.json": "f6a658f681435b6584fd18ec605b02a0323a5a078d0cc3b6c0b22d52f2ae4d4a",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/isa_probe.json": "5762dc6f3bcdcfa34f67e584ca63d121cff92cd134869e50f89341f04b27b8d2",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/metrics.jsonl": "dfba6e185678003c1c47f9ad6bd8a6a2441e8ee9013a64c8060c19ce92d6092d",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/outcome.json": "d51f103c7875a147c32a2318e8a6183f5776adb9de429794a947798294981b68",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/process_usage.json": "27d1d48b994443f6e547d48e246449cba539e9424409ebb3284a86e39be2b46d",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/provenance.json": "81bf9821d3c1d19f7ca09528340eddff40ce0859e43c0adb514f3eddf22ebe76",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/spec.json": "109d990ae7a63b90f70bab90d4cb645f20b56f498438723e066434af99f1769b",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/stdout.log": "653aaf7db436d1c60919752cb697459df1586592870fcc315e90d9abc575e1d5",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/summary.json": "22e68833e3ecf1d8dca0694e6ac137853231baa0f80e4e7ddbca8f3664b8492b",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/usage.json": "827a8044a140f0fec90a2f9813588b5f07869ea2fb026b8659b13d09d6a81f67"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "bbf27646ce78460b8c5f29517dd8426a69006b0faf190a359d4808443740a79f",
+          "metrics_without_sps_sha256": "9fe0d28a4696781966a8827ccdd72d797d651d0b37defde6208b7ca0be4da70c",
+          "summary_sha256": "9e48fefe7e5739a164a2ce587f81e0a0c01115899c0cbde57d77ad1e4eae9aa9"
+        },
+        "id": "search_cma-g04-c049-DoorKey-8x8-2000000-seed1012",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "61338244403e50b7314cb0514b5115b3a1e413d608aadc14e1502b5f2d4752e6",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01556309504121524",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 862.6999999999999,
+          "training_peak_rss_bytes": 810344448,
+          "wall_seconds": 887.291621506
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/metrics.jsonl": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/outcome.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/process_usage.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/spec.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/summary.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/attempt.json",
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/usage.json",
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1012/attempts/c06ed70a322f4473842cb24c60615e81/process_usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g04-c049-DoorKey-8x8-2000000-seed1013",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SKX9RQJC04DFWAA6AZ4WZ",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SKX9YD94SWPENJM6T88EQ",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "b85eda8ebcf44fbd80ba1e78aeae48a3",
+        "attempts": [
+          {
+            "attempt": "b85eda8ebcf44fbd80ba1e78aeae48a3",
+            "metadata": {
+              "absolute_deadline": 1793212864.913835,
+              "attempt": "b85eda8ebcf44fbd80ba1e78aeae48a3",
+              "modal_function_call_id": "fc-01M61SKX9RQJC04DFWAA6AZ4WZ",
+              "modal_input_id": "in-01M61SKX9YD94SWPENJM6T88EQ:1793209267539-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "38c95675733b02dda0181186dd2ac22058df2a330977e676c93b2540c6dd2c83",
+              "started_utc": "2026-10-28T17:41:15.158770+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01483280449727822",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 824.46,
+              "training_peak_rss_bytes": 812216320,
+              "wall_seconds": 845.655900643
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/agent.pt": "45823bb96c038265567a8c459b9ab7831f84cbfd39ae74d74957ffc70a85d962",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/attempt.json": "418ae02d33dc31ef52c51d8462e7f118aea3a0ce8448fe32e983cb7e82b986f5",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/config.toml": "9b4809b9a6ac1957f97941e491b75f517be1f70a9ce8af4baa1a13261c1c9bd4",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/environment.json": "2d29d9c681e906bc41550d2afa451560d146475ab4a814a404960bd7943eac0d",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/fingerprint.json": "89278fef701b3c12b08255ce5e0af58e07ae1d74fcc6a685da79b3038c641890",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/fingerprints.json": "93a091107db4abc6d9eaef9d1bcdb5363016771763f755042f3d9a768025189d",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/isa_probe.json": "0151b55c8e2e94300445585a6f48a3e538436c491fef25b54908b67007f45d3d",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/metrics.jsonl": "bac0be9b3c12f90734a19d40ce036072979435fed337c1a65203dd651b17f078",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/outcome.json": "d185b1b7e890b7daac506a37827fad93af386de2d2477a6de1669e424a0f70e2",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/process_usage.json": "cc20a78bed7d109a74579c832475a10179fa20e8b999a357d151378dc22a6954",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/provenance.json": "3704c8817f6587f52bcaf4d0f0cd9dff40f14b8d66a132acbef2f473db221457",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/spec.json": "2c9f4030ab090f1ab3b0806b469bf00fc64597def5d6a555b5748970769d10de",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/stdout.log": "7e8d7cc1a643f7d3473f0cd9c8aa1bb4e7f86495596d4b2fa9e498aa47042b22",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/summary.json": "ec9a195ccef743271c5280cb844fa83c725d4378dec4bc0039926190efb2304f",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/usage.json": "bcce0af32e59a1884029337a5a51f2a147740d43c937fc183fe8e101c01e2292"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "82dcf6519f4edb3ce953e90ecdee2fd17341dd1b58c98a3e5dda092b31e202ec",
+          "metrics_without_sps_sha256": "7b24cf3aa19e3afedbf51af2f99e3319631dca6cbafc98f79b6df18d9c971573",
+          "summary_sha256": "f50ce62c8a6294c2507554a68ba2bac6e8b87a7076656b8467ebc2fc060a6d2a"
+        },
+        "id": "search_cma-g04-c049-DoorKey-8x8-2000000-seed1013",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "38c95675733b02dda0181186dd2ac22058df2a330977e676c93b2540c6dd2c83",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01483280449727822",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 824.46,
+          "training_peak_rss_bytes": 812216320,
+          "wall_seconds": 845.655900643
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/metrics.jsonl": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/outcome.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/process_usage.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/spec.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/summary.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/usage.json",
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/process_usage.json",
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1013/attempts/b85eda8ebcf44fbd80ba1e78aeae48a3/attempt.json"
+      ]
+    },
+    {
+      "id": "search_cma-g04-c049-DoorKey-8x8-2000000-seed1014",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SM0BKCG4YER8X670PN8VF",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SM0BVMH2KYVTZB17YM2C3",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "ca3cad5a85104c9f931453ea2844bc19",
+        "attempts": [
+          {
+            "attempt": "ca3cad5a85104c9f931453ea2844bc19",
+            "metadata": {
+              "absolute_deadline": 1793212869.650013,
+              "attempt": "ca3cad5a85104c9f931453ea2844bc19",
+              "modal_function_call_id": "fc-01M61SM0BKCG4YER8X670PN8VF",
+              "modal_input_id": "in-01M61SM0BVMH2KYVTZB17YM2C3:1793209270673-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "f708e368645ee0c68d847a829a81760aa74b4f189454ed019dd69f3e4dde17e9",
+              "started_utc": "2026-10-28T17:41:17.271119+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01480977080289378",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 822.92,
+              "training_peak_rss_bytes": 810082304,
+              "wall_seconds": 844.342691157
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/agent.pt": "f5fd18990de3695ed58d80488211d92bdfda245dccbbac81e9cf97e0cd778498",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/attempt.json": "c997c64ad6ccaeafad7b509dee584010d6168f0e010e74122f3bb484caae1500",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/config.toml": "18ea3eeece04fcc001652215a5d64421dfa14e43646e5237f10d4ba09514a210",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/environment.json": "32acfba22ad7722761439f5556ed410e070b32b82ba1565ee7929c26197dc498",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/fingerprint.json": "3d8057792f513ee3099986330c0e6212c960330216adc5050d0e4605d0e55aac",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/fingerprints.json": "784283d51057c36d9a9a00a66862bf3a6f3d216b5c5984c72635565ef2082b93",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/isa_probe.json": "66fea7723bea69a6b1d449c48b6239b3b48e08e60a8f13ff4a0d08ef8dce30ce",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/metrics.jsonl": "8afd9687947d6c48055e3d1878e40558648ce3acbb43023f35f2a3c78f1c91ca",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/outcome.json": "6e22b187badcdc27424a9bc9adfc201e184f735814eca2e4d60ad5aa2eb05e4b",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/process_usage.json": "21fc398505415315e5b6848dcb3077c07a37be8d675ad3fb7b70342b14d12fb3",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/provenance.json": "f1d54be10f85cdfd56eef588afc9980b9302aa409ac5f276025779b03f09806a",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/spec.json": "8038c65c3b937b7b5d5bff35572c8ce1126a3354553c57530561737155c1555b",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/stdout.log": "f8278580a2c1c5f7983854c4451d822dab67ac06a7209157a4e3d7b179f1fcbf",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/summary.json": "99054603e97ed6557bf58c1c7e34013ca79d1b84dd8a4bbd77182e77fa30ba88",
+          "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/usage.json": "794cb99026243e1f7c7a64739f242b458c09d628179e3e0ea2d39f6c3e56285e"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "2d188e74f5cfef6c289caca8ff856c8afc361609ac5aba434ab4968a1ad6dcff",
+          "metrics_without_sps_sha256": "0165ec11834ddd82938ab65cd39065f385f70f49558bba89b6fcbbf4fa43c23a",
+          "summary_sha256": "2db765972472bbd7eab63dcdd0e7769f0a64583b17adeb7d5b63736c835b5594"
+        },
+        "id": "search_cma-g04-c049-DoorKey-8x8-2000000-seed1014",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "f708e368645ee0c68d847a829a81760aa74b4f189454ed019dd69f3e4dde17e9",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01480977080289378",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 822.92,
+          "training_peak_rss_bytes": 810082304,
+          "wall_seconds": 844.342691157
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/metrics.jsonl": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/outcome.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/process_usage.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/spec.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/summary.json": true,
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/process_usage.json",
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/attempt.json",
+        "runs/search_cma-g04-c049-DoorKey-8x8-2000000-seed1014/attempts/ca3cad5a85104c9f931453ea2844bc19/usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g04-c049-UnlockPickup-2000000-seed1013",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SMG4GZ83T8G4AFKWPVQMZ",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SMG4VVJDEY9HEN9CPQNF0",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "52aa70087d4e4815a138a9a5757b69dd",
+        "attempts": [
+          {
+            "attempt": "52aa70087d4e4815a138a9a5757b69dd",
+            "metadata": {
+              "absolute_deadline": 1793212885.177254,
+              "attempt": "52aa70087d4e4815a138a9a5757b69dd",
+              "modal_function_call_id": "fc-01M61SMG4GZ83T8G4AFKWPVQMZ",
+              "modal_input_id": "in-01M61SMG4VVJDEY9HEN9CPQNF0:1793209286836-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "4142b3d940ab310b530dbc11133d5ebce92ad574f08d9bf6364d19214f28a48c",
+              "started_utc": "2026-10-28T17:41:34.609705+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01446536549908438",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 805.41,
+              "training_peak_rss_bytes": 812032000,
+              "wall_seconds": 824.707269047
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/agent.pt": "9e2658dc87c2082eb759e2322c0af142c269f5959d11645e176249fabe380133",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/attempt.json": "f24ea857ecfde698fa1a59079336c04765f280b435d1cfdfc8b418d911eac542",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/config.toml": "d44a7294b9a861be86c1b9edf1d07143d3b729b42274f6e3a67d0d04bf79885c",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/environment.json": "0592f957038d4889ac6b648459b98f91eac560ffdc3e0c67ac28d27103bc1dfe",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/fingerprint.json": "8500afffe10c59c93585a8f4f45dea6f131ef19f4c7db4bd736a8a952c2ea405",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/fingerprints.json": "11269e1025f570c43f6dfe0f51baca88993257eedd57fd996e6a95a46894fe57",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/isa_probe.json": "6e23eeef3b5fd4d85728a84109b6833033a812efdf8ac506b4cc7cc631923659",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/metrics.jsonl": "d39a95d1327ddd0ac9b97661c99a3d351062100ac6e5f4b13a09c867b237949f",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/outcome.json": "ff660870522ec25238162821c398360f87583cf4675046bcbe99cb4bb3ec3ed1",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/process_usage.json": "8c1717d8d9ec912a9c7d53af12ec4a9d65f7bddef8ca12fd438314498ae755f8",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/provenance.json": "7ecfac114da2a34e776f1efe4b4e1ba9c02c7d66847bab5a5b297c1cc1422c23",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/spec.json": "9c837e8272778fcda9c6a649cb09409593b29eb4560a4b743ce0038e45136bd2",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/stdout.log": "49db0c41938dfc0a9fc4a95bfe425c3650a79788206b05e18cf5c7f42ac332d5",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/summary.json": "35b487ee817067cf812cfce080efdcb2bd029fae3559053824c80eaf204e0cbb",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/usage.json": "e8d43650e573969c22ec8707857f46a2e1a728464ef81f4d34190b60e64654e3"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "172287ac40374559fb99a278368e036cf9a742d2991c84899889eb7b80899836",
+          "metrics_without_sps_sha256": "28d80055a1f2028329c4da075c28c80221e199a9f89cffd7cfeb9929ee4c5ee5",
+          "summary_sha256": "757c803ce29f05e7b0e5d117e50a60d446aec53d85592b58abbb8740bd32f1b7"
+        },
+        "id": "search_cma-g04-c049-UnlockPickup-2000000-seed1013",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "4142b3d940ab310b530dbc11133d5ebce92ad574f08d9bf6364d19214f28a48c",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01446536549908438",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 805.41,
+          "training_peak_rss_bytes": 812032000,
+          "wall_seconds": 824.707269047
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/metrics.jsonl": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/outcome.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/process_usage.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/spec.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/summary.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/usage.json",
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/attempt.json",
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1013/attempts/52aa70087d4e4815a138a9a5757b69dd/process_usage.json"
+      ]
+    },
+    {
+      "id": "search_cma-g04-c049-UnlockPickup-2000000-seed1014",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SMHWTXSHEYSP5DJ00RSZP",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SMHX08YDBW3Y30KSYN9EV",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "68421211a33f480f914f043da2873e02",
+        "attempts": [
+          {
+            "attempt": "68421211a33f480f914f043da2873e02",
+            "metadata": {
+              "absolute_deadline": 1793212887.691537,
+              "attempt": "68421211a33f480f914f043da2873e02",
+              "modal_function_call_id": "fc-01M61SMHWTXSHEYSP5DJ00RSZP",
+              "modal_input_id": "in-01M61SMHX08YDBW3Y30KSYN9EV:1793209288629-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "532342dd9a14e645b63d3d548a82edfcde047dad6c3c1af8d1fc1476e198504f",
+              "started_utc": "2026-10-28T17:41:35.969512+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.01550365352012222",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 862.4200000000001,
+              "training_peak_rss_bytes": 811266048,
+              "wall_seconds": 883.902709243
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/agent.pt": "dcd471cd275b4c64f005a05a8f4c9428f5606a4049fb4cd064090f5b28149f66",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/attempt.json": "4710e036fd4ad01bd6d8024f33424e731e3638e1294c637d6e949a5ba0ccd540",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/config.toml": "06ea486e23f234e97d1323cfb635f1c5febea7e29890dd6aecb1853c89e0be67",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/environment.json": "e9a7783d7bfc495ff66c5f304e46c73a6960d96648bd6b8d6a3bd5dcc4941bd7",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/fingerprint.json": "ada420978f5e3d6b32aa560e3275a271c077f5ac563c313f0708bd05e70ac259",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/fingerprints.json": "248e701bd9ce2a572f1c77f88dae51c41bcc168c6d7920d6bcdd0374727b2735",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/isa_probe.json": "9647c0719a8d8fd8f2d77ee899414fb252aeca0d6f1df53546a7141b9c34299c",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/metrics.jsonl": "2162416a2774c0b757544aa2ee31602c576d43c79061e97323385372d494cf29",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/outcome.json": "4e1556e9202b8d8fdb4885f3ca4b37dca45f03156b41859f5683a5e1762c4dab",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/process_usage.json": "f8e1e0c7be3fe4b5b2a0a02b929c2c77cfed9c37dc96050dfab0a5bbca531e82",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/provenance.json": "0883fae9b4d5aede758267ea8cb00731f058c2cb70c563f2164d8919145e045e",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/spec.json": "ea7c983bb7f2b754448aae2404d438f928cb90402c41d46c8956090ccedf0638",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/stdout.log": "471fe4d6e3cc04e4960457e3ddf42f844aa05f9ed9fdca1dd7b2c5f9af53a0fd",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/summary.json": "2a1f23067faaae642d2be4ec7c84a45ad233ed79afd7a03b552a4e46fdcee66a",
+          "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/usage.json": "dccb47323fc13ce84ecb37ae453ee710caf3512b21893957510cf5a5a5e39cb4"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "73ddf870d6afe3a4c4427a159ca8ca5cf257e56630a88334a1f59222911204c7",
+          "metrics_without_sps_sha256": "3caa11b231ded23016b2d0b106b512cfe8925dfc9c1178758e7bd9483ebde256",
+          "summary_sha256": "9538979dd3fa1ca80da4ce4d04482657b110ec4b80a78bf52137b3961265221e"
+        },
+        "id": "search_cma-g04-c049-UnlockPickup-2000000-seed1014",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "532342dd9a14e645b63d3d548a82edfcde047dad6c3c1af8d1fc1476e198504f",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.01550365352012222",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 862.4200000000001,
+          "training_peak_rss_bytes": 811266048,
+          "wall_seconds": 883.902709243
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/metrics.jsonl": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/outcome.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/process_usage.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/spec.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/summary.json": true,
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/attempt.json",
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/process_usage.json",
+        "runs/search_cma-g04-c049-UnlockPickup-2000000-seed1014/attempts/68421211a33f480f914f043da2873e02/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c023-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SP0F6K983E1268HNWGR5A",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SP0FE35K85KK6GK1BY9GH",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "66d6d5a2107344988b45345aacc0ad70",
+        "attempts": [
+          {
+            "attempt": "66d6d5a2107344988b45345aacc0ad70",
+            "metadata": {
+              "absolute_deadline": 1793212935.02371,
+              "attempt": "66d6d5a2107344988b45345aacc0ad70",
+              "modal_function_call_id": "fc-01M61SP0F6K983E1268HNWGR5A",
+              "modal_input_id": "in-01M61SP0FE35K85KK6GK1BY9GH:1793209336324-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "8d05b138e251750dfcb2c0ce872d8eb08743a308b8e27e725214cc8325418c83",
+              "started_utc": "2026-10-28T17:42:23.960610+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.015049298191991798246",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 836.14,
+              "training_peak_rss_bytes": 811532288,
+              "wall_seconds": 857.9987566699999
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/agent.pt": "b74372774ad0f31e206810dff4815c3df6c78c9e69b3f249a064f394098afaf1",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/attempt.json": "a795b53601a8c38ff4c3cd8073a13fc28f58609b63702a517a832d5b67afed4d",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/config.toml": "7dd81d0b7d1a89a86844076494047e6758d817a471fcc56981fd04b46ac45220",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/environment.json": "17a810a8dbbb155e5d1d7ac7cddf534f4b8949e1487885b6f24fe28fd887525a",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/fingerprint.json": "f2c90701659276606f77b94950e3cf07cc3d898d16c7f897242c7c8d4a9a3a63",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/fingerprints.json": "3b9b2a58922ba27ac098523d53772adf4a95a9cc684ef264ce8a0ff92f4f14e8",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/isa_probe.json": "e32b811adb780bddba1b70c805a902712e41d2961d09fa30d5f63d3e075e16cb",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/metrics.jsonl": "1a350849764a73b263674bccbaee889c92a28cb5fb670273097e2e517c42c4fe",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/outcome.json": "9a1bb2b72d6795fe2e8a9904cac5bf4a35da9cbe5f7aaa4ec2a850f830b28595",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/process_usage.json": "a46dc41c35277e64d8168e0c8b36c533208006bf0db97697c757bef42f6c0775",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/provenance.json": "75ad8df1fe58b8a6e3812ab64c9b3373eecea11682ab773e11b68bb6712eb810",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/spec.json": "4a2bc757fcf86196a956f855867c4eeca8f7eff6b31b636b508e4a0219bf6aac",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/stdout.log": "82d51a3205439a48ba3e3932586da77632374029ff5742c31f06dacbea26fb86",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/summary.json": "69b57226f23a6c4a6848e78d83b1da5fe598375de35872cdc5d1531e9c0aea08",
+          "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/usage.json": "baf3ec1d7ddf38bb89f47ee3e1f0848bef53679a720769ce9b4c9f3c4ca80d5e"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "e5755b35dc25569d166f9547b6ed958c26fa15e08f1bf2f02c5a05fa1f204285",
+          "metrics_without_sps_sha256": "3258f267faa2751cd9374d9c74956597407515ed297cd25b40bbddf56f91a038",
+          "summary_sha256": "6db165599262fa4bf8e6f6f0936a2838cee0e520cb75be91125a0a9823106278"
+        },
+        "id": "search_random-b02-c023-UnlockPickup-2000000-seed3008",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "8d05b138e251750dfcb2c0ce872d8eb08743a308b8e27e725214cc8325418c83",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.015049298191991798246",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 836.14,
+          "training_peak_rss_bytes": 811532288,
+          "wall_seconds": 857.9987566699999
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/metrics.jsonl": true,
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/outcome.json": true,
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/process_usage.json": true,
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/spec.json": true,
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/summary.json": true,
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/process_usage.json",
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/attempt.json",
+        "runs/search_random-b02-c023-UnlockPickup-2000000-seed3008/attempts/66d6d5a2107344988b45345aacc0ad70/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SP2ZA9DAGYW2FPX4510FN",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SP2ZJHFSRJ5MW7CEJP2JP",
+          "status": "SUCCESS",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": true,
+      "marker": {
+        "attempt": "ff1c08de255c4e5c96f065f2c90640f5",
+        "attempts": [
+          {
+            "attempt": "ff1c08de255c4e5c96f065f2c90640f5",
+            "metadata": {
+              "absolute_deadline": 1793212937.501646,
+              "attempt": "ff1c08de255c4e5c96f065f2c90640f5",
+              "modal_function_call_id": "fc-01M61SP2ZA9DAGYW2FPX4510FN",
+              "modal_input_id": "in-01M61SP2ZJHFSRJ5MW7CEJP2JP:1793209338888-0",
+              "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+              "spec_sha256": "7d5a4e3d83a1c661793e78bd01edb6e71bac8374033c531630330c85839035ae",
+              "started_utc": "2026-10-28T17:42:25.070727+00:00"
+            },
+            "usage": {
+              "compute_cost_estimate_usd": "0.013310387469023878246",
+              "container_cpu_stat": null,
+              "container_memory_peak_bytes": null,
+              "cost_basis": "Requested resource limits times measured function wall; excludes startup/teardown. Controller guard separately includes whole-call wall and allowance.",
+              "error": null,
+              "provider_invoice_cost_usd": null,
+              "returncode": 0,
+              "training_core_seconds": 740.9399999999999,
+              "training_peak_rss_bytes": 809295872,
+              "wall_seconds": 758.8590347219999
+            }
+          }
+        ],
+        "failure": null,
+        "files": {
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/agent.pt": "21ac9d9f08aa784bbbd89563a1e691302b40654eb2e22a72ae1b9649e57d223a",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/attempt.json": "3e49fce941cb8d31746b955ac01f205f36f273a18594e754d3124dd821eb4c27",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/config.toml": "ce0a2168ee7de5f9e353defa11918f03a01a5de69b4d9eab32324b823b5ce3b1",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/environment.json": "e870de480ffbc8cd0fb43bece825788e9e6c70ef76aa32e5a8ea0d10484da4d3",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/fingerprint.json": "55fb637a549dcd9ee9a5fd07884e609c646fb8eaea6d3b26aecf2ad47a19024c",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/fingerprints.json": "271f2d949e16d3edbc80846abb8880a262c51f4cb86e4b103235f17935128083",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/isa_probe.json": "9b3cf71455a2821978eb1ffe73301a7812ba3b5ab0e1c58770462e278781b93b",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/metrics.jsonl": "5541aa4372074cf4b3bcffa7c839dfaa22fbecf80db87303885bac86189a6686",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/outcome.json": "b704a05521230c4858096ab14233c46b959a8b138ecc085390164d226cde8240",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/process_usage.json": "169f5fb7110cc6281c07b2d99f6db4eb442d4f7c9b85cb6e515f879b65d2c4ab",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/provenance.json": "370602ce9d36c499ff748e5f7e0b6d1efaad9824a2a5ca95dc259b14e71d99fb",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/spec.json": "326e1e82b5759f6015a668506ed5d26b54ed45e21796cdfaf81d3f6755cedcba",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/stdout.log": "79988d65976833e157c73156b3b0c859edf577269a342695e957a913192a04b2",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/summary.json": "5813479d2720ded250f1a33b8fd4cbcd16fed8d034352ad19b268377ac80ebdd",
+          "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/usage.json": "6d2062b93c51b6f38f8ad5322b4b14009f3138c784e0b2b1796e609eaa62d22d"
+        },
+        "fingerprints": {
+          "checkpoint_tensors_sha256": "5fd7786c15a72e49cbd4701d23ceb83a9dc7134693dc815c0380916626eea9c7",
+          "metrics_without_sps_sha256": "da1b1f732570612bc387c9f4d5a7e313d7efec3a458cfd974ddc98336436f936",
+          "summary_sha256": "3dd9f324cdb6aef448149b55294bb47f26beea792d73b787b7a8f5aab26cbdca"
+        },
+        "id": "search_random-b02-c024-DoorKey-8x8-2000000-seed3006",
+        "outcome": "success",
+        "source_commit": "b94171f2cfe10d4dc1476bcc1bafcda33d90ef59",
+        "spec_sha256": "7d5a4e3d83a1c661793e78bd01edb6e71bac8374033c531630330c85839035ae",
+        "usage": {
+          "aggregate_attempt_usage": true,
+          "attempt_count": 1,
+          "attempts_missing_usage": 0,
+          "compute_cost_estimate_usd": "0.013310387469023878246",
+          "container_cpu_stat": null,
+          "container_memory_peak_bytes": null,
+          "cost_basis": "Sum of retained attempt estimates; missing preemption usage is unknown. Controller guard covers the whole call.",
+          "error": null,
+          "provider_invoice_cost_usd": null,
+          "returncode": 0,
+          "training_core_seconds": 740.9399999999999,
+          "training_peak_rss_bytes": 809295872,
+          "wall_seconds": 758.8590347219999
+        }
+      },
+      "identity_matches": true,
+      "output_hash_checks": {
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/metrics.jsonl": true,
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/outcome.json": true,
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/process_usage.json": true,
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/spec.json": true,
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/summary.json": true,
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/usage.json": true
+      },
+      "attempt_files": [
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/process_usage.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3006/attempts/ff1c08de255c4e5c96f065f2c90640f5/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SP5051JAYR5QZW186WW9M",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SP50CZRRCHFG0NAJX6TH2",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/5403b179907640a49c62d824d60ea9c6/usage.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/5403b179907640a49c62d824d60ea9c6/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3007/attempts/5403b179907640a49c62d824d60ea9c6/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SPZHVTYZF366MZSVQTKJW",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SPZJ3A1WYM51SPFPN8HV9",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a170049a3d05432187f23dc8cdfd52f2/attempt.json",
+        "runs/search_random-b02-c024-DoorKey-8x8-2000000-seed3008/attempts/a170049a3d05432187f23dc8cdfd52f2/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-UnlockPickup-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SQCPYCGMZ6PJYK9R8G7H3",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SQCQ6NP29HNP86CYR0A65",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/9c1e3818366240dea5b02712b00447c5/usage.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/9c1e3818366240dea5b02712b00447c5/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3006/attempts/9c1e3818366240dea5b02712b00447c5/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-UnlockPickup-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SS6VCJZ6K3NMWANH1TMAR",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SS6VJEQY2JFDMEVCFZMHW",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/9da8c4d369a34f4e8667b45d8dcdcfcc/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/9da8c4d369a34f4e8667b45d8dcdcfcc/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3007/attempts/9da8c4d369a34f4e8667b45d8dcdcfcc/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c024-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SS9FA2CFFRB8Y8AWP41XB",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SS9FGBQN3VNDVK96Q2NWT",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/a08e397532474d8eb3affdd7bdef92af/attempt.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/a08e397532474d8eb3affdd7bdef92af/infrastructure_failure.json",
+        "runs/search_random-b02-c024-UnlockPickup-2000000-seed3008/attempts/a08e397532474d8eb3affdd7bdef92af/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61STW44MAH6ER4RZE68PKFT",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61STW4BQ22S4FQA925EM2JN",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/8ce29d18a55f4c4687846caaf14b7269/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/8ce29d18a55f4c4687846caaf14b7269/usage.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3006/attempts/8ce29d18a55f4c4687846caaf14b7269/attempt.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SVKEM74QDBS8HT285WE87",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SVKEVE5NE84VT6FS10QHS",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/fa10625aa7d94635a3e1e6bf4ea5d256/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/fa10625aa7d94635a3e1e6bf4ea5d256/infrastructure_failure.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3007/attempts/fa10625aa7d94635a3e1e6bf4ea5d256/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SYHYW4AVJF631GBT17NVZ",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SYHZ29DY8D4BDGQFKXEDR",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/77f75270365e4b29847e335eae24585d/usage.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/77f75270365e4b29847e335eae24585d/attempt.json",
+        "runs/search_random-b02-c025-DoorKey-8x8-2000000-seed3008/attempts/77f75270365e4b29847e335eae24585d/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-UnlockPickup-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61SYKHVJYQNX3EX8GB1MYQM",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61SYKJ2QGPA26DW0RB3BQV2",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/74b0844e38f448b987b7ddbdb7d18c4d/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/74b0844e38f448b987b7ddbdb7d18c4d/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3006/attempts/74b0844e38f448b987b7ddbdb7d18c4d/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-UnlockPickup-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T00MMY3WMBQEVZ6RVBE6J",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T00MVJEXA319YMBW42KDA",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/927eef4ee938471eac4077325c777842/attempt.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/927eef4ee938471eac4077325c777842/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3007/attempts/927eef4ee938471eac4077325c777842/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c025-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T0SC15CD3KA9QWYRNM0SD",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T0SC9F9VJSHEMPW68S3KW",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/b4dad7e93f884245a7b9571c9e6f0eb0/usage.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/b4dad7e93f884245a7b9571c9e6f0eb0/infrastructure_failure.json",
+        "runs/search_random-b02-c025-UnlockPickup-2000000-seed3008/attempts/b4dad7e93f884245a7b9571c9e6f0eb0/attempt.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T3Z59F7VHK82XYKWZFP23",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T3Z5H76HZK01T9HRM2ESA",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/973220520cc44b489dda7ff97c1455b2/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/973220520cc44b489dda7ff97c1455b2/infrastructure_failure.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3006/attempts/973220520cc44b489dda7ff97c1455b2/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T41FC138YSR0ZTXHXETVS",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T41FNPK3KN6HR9WKQQ2AP",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/3a1cfbc005f44a98bdba734a5dc2bbcb/usage.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/3a1cfbc005f44a98bdba734a5dc2bbcb/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3007/attempts/3a1cfbc005f44a98bdba734a5dc2bbcb/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T4ZDB14QJMADVE5NSWYNX",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T4ZDJ95XVHJKA886CKBXS",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/747b2409a941459eaf8ecb0009e5c7dc/attempt.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/747b2409a941459eaf8ecb0009e5c7dc/usage.json",
+        "runs/search_random-b02-c026-DoorKey-8x8-2000000-seed3008/attempts/747b2409a941459eaf8ecb0009e5c7dc/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-UnlockPickup-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T524WT5RCN6G9N2HW0STH",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T5253JZZHXQATC7F9M7KY",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3006/attempts/6ebb51cf85844612a2fc8dfed091211d/attempt.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3006/attempts/6ebb51cf85844612a2fc8dfed091211d/infrastructure_failure.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3006/attempts/6ebb51cf85844612a2fc8dfed091211d/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-UnlockPickup-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T551780BS8M553W1GGNEM",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T551GX26CGV5T67T32N4T",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3007/attempts/08b307e1ff3f435a95c49a48fbc2c218/infrastructure_failure.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3007/attempts/08b307e1ff3f435a95c49a48fbc2c218/attempt.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3007/attempts/08b307e1ff3f435a95c49a48fbc2c218/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c026-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T5GA2AF9TEX2J3KM2MAGY",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T5GA9SN6H05C9DAWKRT62",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3008/attempts/1ae894efa5f94c29b03bdb73eac4807f/attempt.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3008/attempts/1ae894efa5f94c29b03bdb73eac4807f/infrastructure_failure.json",
+        "runs/search_random-b02-c026-UnlockPickup-2000000-seed3008/attempts/1ae894efa5f94c29b03bdb73eac4807f/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-DoorKey-8x8-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T6QD8V51XNJQC0076Z07N",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T6QDE6JDRVN0GXH1T0NA9",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3006/attempts/cc73d166893a4390bca9ee3e19c3a821/usage.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3006/attempts/cc73d166893a4390bca9ee3e19c3a821/infrastructure_failure.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3006/attempts/cc73d166893a4390bca9ee3e19c3a821/attempt.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-DoorKey-8x8-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T7Q2H9X0DQCKZ6DP4B6YD",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T7Q2TRP26VKYX7NAT3QJ3",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3007/attempts/c2732a64602349099c24dbfc7c07acc5/infrastructure_failure.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3007/attempts/c2732a64602349099c24dbfc7c07acc5/usage.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3007/attempts/c2732a64602349099c24dbfc7c07acc5/attempt.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-DoorKey-8x8-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T95E4ENYYBXJYVD8VERXV",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T95E9VA0NCY64VDJAT871",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3008/attempts/0752daf1dc5a47058d193c2e6e19b8c6/attempt.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3008/attempts/0752daf1dc5a47058d193c2e6e19b8c6/infrastructure_failure.json",
+        "runs/search_random-b02-c027-DoorKey-8x8-2000000-seed3008/attempts/0752daf1dc5a47058d193c2e6e19b8c6/usage.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-UnlockPickup-2000000-seed3006",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61T9Z532636CEH5BAYN33NS",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61T9Z59YSJX6QV5BX41QHX1",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3006/attempts/0742be9e695f4f31a3b729d5fa667c1a/attempt.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3006/attempts/0742be9e695f4f31a3b729d5fa667c1a/usage.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3006/attempts/0742be9e695f4f31a3b729d5fa667c1a/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-UnlockPickup-2000000-seed3007",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61TC218PWJVDNASG5ET591X",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61TC21H48TSR96JNZHJK5VS",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3007/attempts/9c460fa1072540c3931f97c5afa5dc16/attempt.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3007/attempts/9c460fa1072540c3931f97c5afa5dc16/usage.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3007/attempts/9c460fa1072540c3931f97c5afa5dc16/infrastructure_failure.json"
+      ]
+    },
+    {
+      "id": "search_random-b02-c027-UnlockPickup-2000000-seed3008",
+      "ledger_status": "uncertain",
+      "function_call_id": "fc-01M61TC3ZGSNMQ8CBH0TRCVP2E",
+      "provider_inputs": [
+        {
+          "input_id": "in-01M61TC3ZTYNASRWR0R2R5HV1R",
+          "status": "TERMINATED",
+          "task_id": ""
+        }
+      ],
+      "durable_completion": false,
+      "attempt_files": [
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3008/attempts/73806c79060247968a83b7191bd8d0a8/infrastructure_failure.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3008/attempts/73806c79060247968a83b7191bd8d0a8/attempt.json",
+        "runs/search_random-b02-c027-UnlockPickup-2000000-seed3008/attempts/73806c79060247968a83b7191bd8d0a8/usage.json"
+      ]
+    }
+  ],
+  "changes_to_controller_or_volume": false
+}
