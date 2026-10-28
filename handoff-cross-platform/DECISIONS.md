@@ -76,3 +76,19 @@ ask again solely because those two failures occurred. Retain their history and
 cost reservations. The scientific protocol and Stage 2 boundary remain fixed.
 The observed build issue was Modal's injected index mirror differing from the
 public PyPI index in uv.lock; an explicit build index has been prepared.
+
+## Additional approvals, 2026-10-28 (Claude session)
+
+The user moved the project from Astra to Claude and approved: claiming the
+lease without stopping controller run 177e7cf9 or its Modal app; logging the
+CPU type of every Modal container from the saved cpuinfo, including the
+preempted attempt on the volume, with no worker-code changes; CLAUDE.md on
+`main` and on the research branch; committing and pushing Astra's report-only
+amendment and a second report-only amendment (container CPU table and the
+determinism explanation).
+
+New open Stage 2 decision: test whether forcing `ATEN_CPU_CAPABILITY=avx2` and
+`MKL_CBWR=AVX2` makes seed 910 bit-identical across Zen 3 and Zen 4 containers.
+If it does, use those settings in Stage 2. If not, record the CPU type for
+every run and treat same-seed results as unpaired. The test is not run in
+Stage 1. Exact quotes are in `approvals-log.jsonl`.

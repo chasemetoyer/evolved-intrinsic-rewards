@@ -21,3 +21,7 @@ for later implementation repairs. Stop at the Stage 1 report or the $15 guard.
 Keep credentials out of checkpoint files, Git and chat. Usage snapshots may be
 incomplete: never claim account quota is known when it is not exposed. Save
 source and an exact next action before ending a turn or handing off.
+
+Also read `handoff-cross-platform/SESSION-RULES.md` (start, during and end
+rules) and `handoff-cross-platform/approvals-log.jsonl` in the canonical Mac
+folder before acting.

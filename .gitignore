@@ -25,3 +25,5 @@ handoff-cross-platform/agent-owner.json
 handoff-cross-platform/runtime-state.json
 handoff-cross-platform/usage-snapshot.json
 handoff-cross-platform/session-log.jsonl
+handoff-cross-platform/run-registry.json
+handoff-cross-platform/budget.json

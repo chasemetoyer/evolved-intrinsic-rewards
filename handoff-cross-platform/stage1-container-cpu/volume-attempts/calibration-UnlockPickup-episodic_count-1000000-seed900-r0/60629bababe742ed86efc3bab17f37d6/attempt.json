@@ -1,0 +1,9 @@
+{
+  "absolute_deadline": 1793168631.278234,
+  "attempt": "60629bababe742ed86efc3bab17f37d6",
+  "modal_function_call_id": "fc-01M60C06A4ZERN66TKA9R7WXPF",
+  "modal_input_id": "in-01M60C06AD6MHYDEK1CSG9RWMQ:1793161435493-0",
+  "source_commit": "196c5257b76a4415b9b39235b61475002340e93e",
+  "spec_sha256": "e2fd677f467596796e95654403de1d194edaf2786b083990ec48d70dd568ab8d",
+  "started_utc": "2026-10-28T04:24:05.989973+00:00"
+}
