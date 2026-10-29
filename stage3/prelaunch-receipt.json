@@ -1,0 +1,58 @@
+{
+  "schema": "stage3-prelaunch-receipt-v1",
+  "proofs": {
+    "source_inventory": {
+      "path": "preregistration/stage3-runtime-manifest.json",
+      "sha256": "6dfe779355d6448252cf5ef84b56eca34a004eb2bb0472391012a3c52284e13e"
+    },
+    "worker_inventory": {
+      "path": "stage3/proofs/worker-inventory.json",
+      "sha256": "39a17c411eea869ce594cb9a9ee9490596d702c3f73593414a3fbdccf79bb529"
+    },
+    "worker_smoke": {
+      "path": "stage3/proofs/worker-smoke.json",
+      "sha256": "2bdefb635ca152867bb4926539cd5363993b103b6a0cee771f9715bd307fe20c"
+    },
+    "controller_validation": {
+      "path": "stage3/proofs/controller-validation.json",
+      "sha256": "adfd210501ee15029bee29059e341925d334566d1dc4c8ef9046490726313ae3"
+    },
+    "mac_decode": {
+      "path": "stage3/proofs/mac-decode.json",
+      "sha256": "dd1986de32024c3163e1e9e4efe0a105f21ad131670ea0a71f0ad03836dbf544"
+    },
+    "linux_decode": {
+      "path": "stage3/proofs/linux-decode.json",
+      "sha256": "fc33de941ff9a96dbba8121d3812cbbf453302fee285d1c001322f30170ff82b"
+    },
+    "lid_closed": {
+      "path": "stage3/proofs/lid-closed-waiver.json",
+      "sha256": "e2b9dedd1a5bf6d8f570b54dbcb9f1f056110262695425b427a5b16151d5abc8"
+    },
+    "cost_projection": {
+      "path": "stage3/proofs/cost-projection.json",
+      "sha256": "8410de6ea76e839b7808f251777dacae89728a0661ab519f2089d99d270bca4d"
+    },
+    "visualize": {
+      "path": "stage3/proofs/visualize.json",
+      "sha256": "2ae193db76a2ef4899fc29027b45634bc6c4ed0880397307f7752fc1f3437ffa"
+    },
+    "amendment_commit": {
+      "path": "stage3/proofs/amendment-commit.json",
+      "sha256": "e30daea6f1b9d42aadcd56e38fd2f2db576120518c2c8f9a90ad18cc47260383"
+    },
+    "summary": {
+      "path": "stage3/prelaunch-summary.md",
+      "sha256": "1eb75a79552ab5301b09a06f2f2fb692c4521267c3e9c5c8c0061d48b5566721"
+    }
+  },
+  "summary_delivered_utc": "2026-10-29T15:19:49.756775+00:00",
+  "summary_items": [
+    "hash_verification",
+    "cost_and_cap",
+    "mac_linux_decode",
+    "lid_closed_smoke",
+    "amendment_commit",
+    "native_visualize"
+  ]
+}

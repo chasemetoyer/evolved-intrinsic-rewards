@@ -1,0 +1,161 @@
+{
+  "schema": "stage3-cost-audit-draft",
+  "status": "PROVISIONAL_RESOURCE_PROXY_NOT_LAUNCH_AUTHORIZATION",
+  "observed_utc": "2026-10-29T14:18:04.995871+00:00",
+  "no_compute_launched": true,
+  "stage3_cap_usd": "15",
+  "prelaunch_review_threshold_usd": "13",
+  "final_evaluation_inputs": 300,
+  "heldout_inputs": 100,
+  "tamper_inputs": 40,
+  "logical_inputs": 340,
+  "run_counts_by_task": {
+    "DoorKey-8x8": 140,
+    "UnlockPickup": 100,
+    "KeyCorridorS3R2": 100
+  },
+  "measured_units": {
+    "DoorKey-8x8": {
+      "stage1_samples": 10,
+      "stage1_compute_usd": "0.013381940909450407",
+      "stage1_function_wall_seconds": "762.9384783039001",
+      "stage2_samples": 780,
+      "measured_compute_proxy_usd": "0.014199619617360496",
+      "ordinary_guard_proxy_usd": "0.01557422333443679812047483871",
+      "ordinary_guard_sample_count": 775
+    },
+    "UnlockPickup": {
+      "stage1_samples": 10,
+      "stage1_compute_usd": "0.012769100017733908",
+      "stage1_function_wall_seconds": "727.9988607602",
+      "stage2_samples": 780,
+      "measured_compute_proxy_usd": "0.014254851553935535",
+      "ordinary_guard_proxy_usd": "0.01561169098567344114321188630",
+      "ordinary_guard_sample_count": 774
+    },
+    "KeyCorridorS3R2": {
+      "stage1_samples": 10,
+      "stage1_compute_usd": "0.013434217585154512",
+      "stage1_function_wall_seconds": "765.9189045127999",
+      "measured_compute_proxy_usd": "0.01499735902715822576736740923",
+      "ordinary_guard_proxy_usd": "0.01644918844376140382733608956",
+      "inference": "Stage1 heldout baseline runtime inflated by maximum Stage2/Stage1 task ratio, then maximum Stage2 guard/compute ratio; no Stage3 outcomes"
+    }
+  },
+  "heldout_runtime_inflation_factor": "1.116355227395681301113305418",
+  "heldout_guard_to_compute_factor": "1.096805671850230948548902798",
+  "measured_function_compute_proxy_usd": "4.913167804539845516736740923",
+  "ordinary_worker_guard_projection_usd": "5.386479209764636233921275005",
+  "max32_inflight_reservations_usd": "2.05428480",
+  "single3600s_plus60s_reservation_usd": "0.06419640",
+  "failure_cost_contingency_usd": "1.09133880",
+  "failure_contingency_calls_equivalent": 17,
+  "failure_contingency_policy": "Cost envelope only: not permission for17new call handles, not a new5%infrastructure failure threshold. Registered max3same-input/call retries and exhaustion-reconciliation stop unchanged. Existing successful units already include measured same-call restarts.",
+  "controller_projection_envelope": {
+    "physical_cores": 1,
+    "memory_gib": 2,
+    "runtime_reservation_hours": 12,
+    "reserved_usd": "2.27923200",
+    "maximum_limits_verified": false,
+    "critical_limitation": "Native --flavor cpu does not set explicit CPU or RAM maxima. 1core/2GiB is a forecast proxy, not an authoritative cap. Smoke must inspect actual limits/usage and projection must be refreshed."
+  },
+  "controller_expected_hours_with_one_hour_margin": "3.431529423094358488502837227",
+  "controller_expected_envelope_cost_usd": "0.6517709725048500738722748916",
+  "shared_overhead_allowance_usd": "0.50",
+  "precheck_and_smoke_allowance_usd": "0.50",
+  "scenarios": {
+    "1": {
+      "worker_runtime_multiplier": "1",
+      "projected_guard_peak_usd": "12.08372460976463623392127500",
+      "review_gate": "BELOW_THRESHOLD"
+    },
+    "1.1": {
+      "worker_runtime_multiplier": "1.1",
+      "projected_guard_peak_usd": "12.62237253074109985731340251",
+      "review_gate": "BELOW_THRESHOLD"
+    },
+    "1.2": {
+      "worker_runtime_multiplier": "1.2",
+      "projected_guard_peak_usd": "13.16102045171756348070553001",
+      "review_gate": "STOP_AND_TELL_USER"
+    },
+    "1.3": {
+      "worker_runtime_multiplier": "1.3",
+      "projected_guard_peak_usd": "13.69966837269402710409765751",
+      "review_gate": "STOP_AND_TELL_USER"
+    }
+  },
+  "native_cpu_resource_metadata": {
+    "source": "Read-only SandboxList(include_finished=True) for previous tracked native Modal --flavor cpu runs",
+    "sandboxes": [
+      "sb-01M626CZV8NAHC9RHBDJYK8DWN",
+      "sb-01M627NQZEYDF9Y2WP3F83VZEG"
+    ],
+    "memory_mb_requested": 128,
+    "milli_cpu_requested": 125,
+    "memory_mb_max": null,
+    "milli_cpu_max": null,
+    "ephemeral_disk_mb": 512,
+    "read_only_internal_api_warning": "SandboxList is accessed through SDK Client.stub, an unsupported internal read-only interface; metadata may change. No mutations performed."
+  },
+  "pricing": {
+    "source": "https://modal.com/pricing",
+    "checked_utc_date": "2026-10-29",
+    "function_cpu_usd_core_second": ".0000131",
+    "function_ram_usd_gib_second": ".00000222",
+    "sandbox_cpu_usd_core_second": ".00003942",
+    "sandbox_ram_usd_gib_second": ".00000667",
+    "sandbox_multiplier": 3
+  },
+  "limitations": [
+    "All projections are estimates, not invoices or guarantees of completion.",
+    "E/R held-out and tamper runtimes are not yet measured. No new task performance should be read for cost calibration.",
+    "Failure allowance is deliberately above observed Stage2 manual-retry frequency but does not cover every possible interruption. The15USD guard must block reservations before crossing.",
+    "Actual precheck/smoke ledger amounts replace the forecast allowance before full launch; do not double count shared0.50 overhead.",
+    "Exact native Sandbox maxima are unspecified; forecast remains provisional until controller resource accounting is resolved.",
+    "The20% runtime stress scenario is just below13; the30% stress scenario exceeds13 and requires stopping before launch."
+  ],
+  "tracking_server_reserved_usd": "0.189432000",
+  "tracking_server_envelope": {
+    "cores": ".25",
+    "memory_gib": ".5",
+    "maximum_resources_explicitly_configured": true,
+    "reserved_active_hours": 12,
+    "min_containers": 1
+  },
+  "planning_runtime_multiplier": "1.1",
+  "planning_guard_peak_usd": "12.53941473074109985731340251",
+  "projection_status": "READY_BELOW13_WITH_DISCLOSED_RESOURCE_PROXY",
+  "controller_resource_probe": {
+    "controller_cpu_seconds": 12.33,
+    "controller_peak_rss_bytes": 559734784,
+    "controller_wall_seconds": 28.86447262763977,
+    "cpu_max": null,
+    "decode": "PASS",
+    "endpoint_base_public": "https://chasemetoyer--evolved-intrinsic-rewards-stage3-monitor-m-122d67.us-east.modal.run",
+    "memory_max": null,
+    "run_id": "29324473-efa7-42d0-8d7d-cc7a2662dd3b",
+    "scientific_submissions": 0,
+    "status": "PASS",
+    "tracking_initialized": true
+  },
+  "hard_cap_usd": "15",
+  "projected_guard_peak_usd": "12.62237253074109985731340251",
+  "final_evaluation_runs": 300,
+  "held_out_runs": 100,
+  "tamper_runs": 40,
+  "max_in_flight": 32,
+  "includes_retries": true,
+  "includes_controller_container": true,
+  "includes_tracking_container": true,
+  "includes_tracking_expiry_guardian": true,
+  "includes_prelaunch_spend": true,
+  "includes_in_flight_reservations": true,
+  "in_flight_reservation_usd": "2.05428480",
+  "scientific_input_plan_sha256": "75831d36a058c8721ebe52e64aa967df1b8cdb846018b589a198471a56d7b7ee",
+  "provider_ledger_canonical_sha256": "4121354bbbf03ad155168a9fd102f1063dd59220b5f6ddd8d1949609906bc1b1",
+  "tracking_shutdown_guardian_usd": "0.08295780000",
+  "prelaunch_guard_usd": "0.8695241106163787840642",
+  "resource_limitation": "Native controller has no enforced CPU/RAM maxima;1core2GiB12h is a conservative forecast envelope, not an invoice guarantee. Preflight measured559734784RSS/12.33coresec over28.86s.",
+  "tracking_lifetime": "Warm cappedsingleton;12hlease andcappedpaidexpiryguardiandisablesdeployment. Freshfullservice/guardianallowances included forscientificlaunch; precheckallowanceincludes priorserviceusage."
+}
