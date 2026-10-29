@@ -72,15 +72,39 @@ def make_tracking_app(image):
     volume=modal.Volume.from_name(VOLUME_NAME,create_if_missing=True,version=2)
     app=modal.App(APP_NAME,tags={'project_id':PROJECT_ID,'stage':'3','role':'tracking'},include_source=False)
     @app.function(image=image,volumes={'/tracking':volume},secrets=[modal.Secret.from_dict(values)],serialized=True,
-                  cpu=(.25,.25),memory=(512,512),max_containers=1,min_containers=0,
+                  cpu=(.25,.25),memory=(512,512),max_containers=1,min_containers=1,
                   timeout=3600,scaledown_window=30)
     @modal.asgi_app()
     def tracking_server():
         return create_private_server(after_write=volume.commit.aio)
+    @app.function(image=image,volumes={'/tracking':volume},serialized=True,
+                  secrets=[modal.Secret.from_dict({k:os.environ[k] for k in ('MODAL_TOKEN_ID','MODAL_TOKEN_SECRET')})] if all(os.environ.get(k) for k in ('MODAL_TOKEN_ID','MODAL_TOKEN_SECRET')) else [],
+                  retries=modal.Retries(max_retries=3,initial_delay=1.,max_delay=4.),
+                  cpu=(.125,.125),memory=(128,128),timeout=43320,
+                  max_containers=5,min_containers=0,scaledown_window=2)
+    def expire_tracking(lease_id: str,expires_unix: float):
+        import time,json
+        from pathlib import Path
+        import modal
+        time.sleep(max(0,expires_unix-time.time()))
+        volume.reload()
+        lease=json.loads(Path('/tracking/service-lease.json').read_text())
+        from stage2.transport import retry_io
+        return stop_if_current_lease(lease_id,lease,lambda:retry_io(lambda:modal.App.lookup(APP_NAME).stop(),deadline=expires_unix+90))
     return app,tracking_server,volume
+
+
+def expiry_function(app):
+    return next(fn for name,fn in app.registered_functions.items() if name.endswith('expire_tracking'))
 
 
 def private_base_url(public_endpoint):
     token=os.environ.get('TRACKIO_ACCESS_PATH_TOKEN','')
     if len(token)<32:raise ValueError('Tracking access token missing')
     return public_endpoint.rstrip('/')+'/private/'+token
+
+
+def stop_if_current_lease(lease_id,lease,stop):
+    if lease['lease_id']!=lease_id:return {'status':'superseded','lease_id':lease_id}
+    stop()
+    return {'status':'stop_requested','lease_id':lease_id}

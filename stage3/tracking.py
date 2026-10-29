@@ -46,7 +46,7 @@ def snapshot_payload(records, ledger, expected=20):
 
     Record contract: method/task/seed, metrics=list[dict], area, solved, cpu_class.
     Incomplete or failed transport reads must never be passed as observations.
-    Missing telemetry stays missing, rather than being converted to zero.
+    Missing telemetry stays missing. Only omitted train/success is zero, matching the registered scorer.
     """
     records=list(records);seen=set();clean=[]
     for record in records:
@@ -88,7 +88,7 @@ def curve_series(records, quantity):
     for r in records:
         points=[]
         for m in r.get('metrics',[]):
-            value=next((m[k] for k in ALIASES[quantity] if k in m),None)
+            value=next((m[k] for k in ALIASES[quantity] if k in m),0. if quantity=='success' else None)
             if _finite(value):points.append((m['global_step'],float(value)))
         if points:
             method=r['method'];by_method[method].append(points)
@@ -159,7 +159,7 @@ def panel_html(payload):
         [('Conservative guard USD',payload['guard_usd']),('Hard cap USD',payload['cap_usd'])],
         'Guard is not an invoice. These values overlap; do not add them.')
     panels['progress/failures and restarts']=_bars('Failures and restarts',
-        [('Candidate failures',payload['candidate_failures']),('Infrastructure failures',payload['infrastructure_failures']),
+        [('Numerical training failures',payload['candidate_failures']),('Infrastructure failures',payload['infrastructure_failures']),
          ('Unresolved inputs (cause pending)',payload['unresolved_inputs'])]+
         ([('Observed restarts (cause may be unknown)',payload['observed_restarts'])] if payload['observed_restarts'] is not None else []),
         'An unavailable restart count is omitted; missing evidence is not zero.')
@@ -203,6 +203,39 @@ def quiet_tracking_output():
         logging.disable(previous)
 
 
+def remote_readback(remote, project, run, payload=None, step=None):
+    """Read one server snapshot; receipts contain only safe counts, never media URLs."""
+    summary=remote.predict(project=project,run=run,api_name='/get_run_summary')
+    required={f'{LABEL}/{name}' for name in panel_html(snapshot_payload([],{}))}
+    missing=sorted(required-set(summary.get('metrics',[])))
+    result={'ok':summary.get('num_logs',0)>0 and not missing,
+            'num_logs':summary.get('num_logs',0),'panel_count':len(required),
+            'missing_panels':missing,'last_step':summary.get('last_step')}
+    if payload is not None:
+        snapshot=remote.predict(project=project,run=run,step=step,api_name='/get_snapshot')
+        wanted={f'{LABEL}/progress/completed/{k}':v for k,v in payload['completed_by_cell'].items()}
+        wanted[f'{LABEL}/progress/completed_total']=sum(payload['completed_by_cell'].values())
+        checked={};mismatches=[]
+        for name,expected in wanted.items():
+            observed=snapshot.get(name,[])
+            value=observed[-1].get('value') if observed else None
+            checked[name]=value if _finite(value) else None
+            if not _finite(value) or value!=expected:mismatches.append(name)
+        missing_final=sorted(required-set(snapshot))
+        invalid_media=[]
+        for name in required-set(missing_final):
+            values=snapshot.get(name,[])
+            value=values[-1].get('value') if values else None
+            if not isinstance(value,dict) or value.get('_type')!='trackio.html' or value.get('caption')!=LABEL:
+                invalid_media.append(name)
+        result.update(completed_scalar_checks=checked,completed_scalar_mismatches=mismatches,
+                      final_snapshot_missing_panels=missing_final,final_snapshot_invalid_media=sorted(invalid_media),
+                      completed_total=sum(payload['completed_by_cell'].values()),
+                      verified_snapshot_step=step)
+        result['ok']=result['ok'] and not mismatches and not missing_final and not invalid_media
+    return result
+
+
 class TrackioSink:
     """Only for a separate observer process: any tracking error is data, never fatal."""
     def __init__(self, *, environ=None, client=None):
@@ -244,7 +277,8 @@ class TrackioSink:
         try:
             if self.run is None:self._init()
             metrics={f'{LABEL}/progress/completed/{k}':v for k,v in payload['completed_by_cell'].items()}
-            metrics.update({f'{LABEL}/budget/guard_usd':payload['guard_usd'],f'{LABEL}/budget/cap_usd':payload['cap_usd']})
+            metrics.update({f'{LABEL}/budget/guard_usd':payload['guard_usd'],f'{LABEL}/budget/cap_usd':payload['cap_usd'],
+                            f'{LABEL}/progress/completed_total':sum(payload['completed_by_cell'].values())})
             panels=panel_html(payload)
             metrics.update({f'{LABEL}/{name}':self.client.Html(doc,caption=LABEL) for name,doc in panels.items()})
             self.run.log(metrics,step=step)
@@ -253,20 +287,15 @@ class TrackioSink:
             # Never echo request URLs/credential-bearing exception text.
             return {'ok':False,'error_type':type(error).__name__,'step':step}
 
-    def verify_remote(self):
-        """Independent server readback; a queued log is never proof of delivery."""
+    def verify_remote(self, payload=None, step=None):
+        """Independent server readback, including exact completed counts when supplied."""
         with quiet_tracking_output():
             try:
                 from trackio.remote_client import RemoteClient
                 source=self.env.get('TRACKIO_SPACE_ID') or self.env.get('TRACKIO_SERVER_URL')
                 if not source:raise ValueError('Remote tracking is not configured')
                 remote=RemoteClient(source,hf_token=self.env.get('HF_TOKEN'),write_token=self.env.get('TRACKIO_WRITE_TOKEN'))
-                summary=remote.predict(project=self.env['TRACKIO_PROJECT'],run=self.env['ORX_RUN_ID'],api_name='/get_run_summary')
-                required={f'{LABEL}/{name}' for name in panel_html(snapshot_payload([],{}))}
-                present=set(summary.get('metrics',[]));missing=sorted(required-present)
-                return {'ok':summary.get('num_logs',0)>0 and not missing,
-                        'num_logs':summary.get('num_logs',0),'panel_count':len(required),
-                        'missing_panels':missing,'last_step':summary.get('last_step')}
+                return remote_readback(remote,self.env['TRACKIO_PROJECT'],self.env['ORX_RUN_ID'],payload,step)
             except Exception as error:return {'ok':False,'error_type':type(error).__name__}
 
     def finish(self):

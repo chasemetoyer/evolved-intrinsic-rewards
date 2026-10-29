@@ -118,3 +118,124 @@ def test_modal_server_factory_declares_serializable_singleton_without_launch(mon
     app,function,volume=make_tracking_app(modal.Image.debian_slim())
     assert app.name==APP_NAME and volume.name==VOLUME_NAME
     assert function is not None  # Definition construction catches unsupported local-function closures.
+
+
+def test_missing_success_is_zero_for_mean_but_other_telemetry_remains_missing():
+    a=record(seed=5000,success=.8);b=record(seed=5001,success=0)
+    b['metrics']=[{'global_step':2048}]
+    ss=curve_series(snapshot_payload([a,b],{})['records'],'success')
+    assert [s for s in ss if s['mean']][0]['points']==[(2048,.4)]
+    assert len([s for s in ss if not s['mean']])==2
+    assert curve_series([b],'presses_episode')==[]
+    assert curve_series([b],'entropy')==[]
+    assert 'train/success' not in b['metrics'][0]
+
+
+def test_numerical_failure_panel_covers_all_training_methods():
+    p=snapshot_payload([],{'candidate_failures':3})
+    panel=panel_html(p)['progress/failures and restarts']
+    assert 'Numerical training failures' in panel and 'Candidate failures' not in panel
+
+
+def test_remote_readback_checks_exact_final_cell_counts_and_all_panels():
+    from stage3.tracking import remote_readback
+    payload=snapshot_payload([record()],{})
+    panels={f'{LABEL}/{name}' for name in panel_html(payload)}
+    scalars={f'{LABEL}/progress/completed/{k}':v for k,v in payload['completed_by_cell'].items()}
+    scalars[f'{LABEL}/progress/completed_total']=1
+    class Remote:
+        def __init__(self,wrong=False):self.wrong=wrong
+        def predict(self,**kw):
+            if kw['api_name']=='/get_run_summary':return {'num_logs':1,'metrics':list(panels)+list(scalars),'last_step':42}
+            assert kw['api_name']=='/get_snapshot' and kw['step']==42
+            result={name:[{'value':{'_type':'trackio.html','caption':LABEL}}] for name in panels}
+            result.update({k:[{'value':v}] for k,v in scalars.items()})
+            if self.wrong:result[f'{LABEL}/progress/completed/E/DoorKey-8x8']=[{'value':0}]
+            return result
+    good=remote_readback(Remote(),'project','run',payload,42)
+    assert good['ok'] and good['completed_total']==1 and good['panel_count']==18
+    bad=remote_readback(Remote(True),'project','run',payload,42)
+    assert not bad['ok'] and bad['completed_scalar_mismatches']==[f'{LABEL}/progress/completed/E/DoorKey-8x8']
+
+
+def test_observer_counts_physical_failures_and_restarts_including_active_calls():
+    from types import SimpleNamespace
+    import json
+    from stage3.observer import collect
+    a='stage3_smoke-E-DoorKey-8x8-8192-seed5000';b='stage3_smoke-R-DoorKey-8x8-8192-seed5001'
+    ledger={'calls':{a:{'status':'running','attempt_count':1},b:{'status':'complete','attempt_count':1}}}
+    files={'/budget-ledger.json':json.dumps(ledger).encode()};entries=[]
+    env=json.dumps({'cpu':{'vendor_id':'AuthenticAMD','cpu_family':25,'model':1}}).encode()
+    for key,attempt,names in [(a,'a1',['attempt.json','environment.json','infrastructure_failure.json']),
+                              (a,'a2',['attempt.json','environment.json']),(a,'a3',['attempt.json']),
+                              (b,'b1',['attempt.json','environment.json','infrastructure_failure.json']),
+                              (b,'b2',['attempt.json','environment.json'])]:
+        for name in names:
+            path=f'/runs/{key}/attempts/{attempt}/{name}';entries.append(SimpleNamespace(path=path))
+            if name=='environment.json':files[path]=env
+    class Volume:
+        def read_file(self,path):return [files[path]]
+        def listdir(self,*args,**kwargs):return entries
+    cache={b:record(seed=5001,method='R')}
+    rows,observed,errors=collect(Volume(),'smoke',cache)
+    assert observed['infrastructure_failures']==2
+    assert observed['observed_restarts']==3 and observed['physical_attempts_observed']==5
+    assert observed['physical_cpu_mix']=={'zen3':4,'unknown':1}
+    assert json.loads(files['/budget-ledger.json'])==ledger and not errors
+
+
+def test_final_flush_receipt_is_safe_and_does_not_depend_on_training(monkeypatch):
+    from stage3 import observer
+    records=[record()];ledger={'calls':{},'limit_usd':'15','physical_attempts_observed':1,
+                              'physical_cpu_mix':{'zen3':1},'infrastructure_failures':0,'observed_restarts':0}
+    monkeypatch.setattr(observer,'collect',lambda *args:(records,ledger,[]))
+    class Sink:
+        def publish(self,payload,step):return {'ok':True,'queued':True}
+        def finish(self):return {'ok':True}
+        def verify_remote(self,payload,step):return {'ok':True,'completed_total':1,'panel_count':18}
+    receipt=observer.observe_once(None,Sink(),'smoke',2,finish=True,verify=True,step=42)
+    assert receipt['completed_records']==1 and receipt['status']=='FAIL'  # incomplete matrix cannot pass.
+    assert receipt['scientific_results_mutated'] is False and receipt['budget_ledger_mutated'] is False
+    class Fail(Sink):
+        def verify_remote(self,payload,step):return {'ok':False,'error_type':'TimeoutError'}
+    failed=observer.observe_once(None,Fail(),'smoke',2,finish=True,verify=True,step=42)
+    assert failed['status']=='FAIL' and failed['training_dependency'] is False
+
+
+def test_final_flush_complete34_counts_pass_and_only_writes_control_receipt(monkeypatch,tmp_path):
+    from stage3 import observer
+    records=[]
+    for method in ('E','R','T','N','S','tamper_on','tamper_off'):
+        tasks=('DoorKey-8x8',) if method.startswith('tamper_') else ('DoorKey-8x8','UnlockPickup','KeyCorridorS3R2')
+        for task in tasks:
+            records.extend(record(seed=seed,method=method,task=task) for seed in (5000,5001))
+    ledger={'calls':{},'limit_usd':'15','physical_attempts_observed':34,'physical_cpu_mix':{'zen3':34},'infrastructure_failures':0,'observed_restarts':0}
+    monkeypatch.setattr(observer,'collect',lambda *args:(records,ledger,[]))
+    order=[]
+    class Sink:
+        def publish(self,payload,step):order.append('publish');return {'ok':True}
+        def finish(self):order.append('finish');return {'ok':True}
+        def verify_remote(self,payload,step):
+            order.append('verify');assert sum(payload['completed_by_cell'].values())==34
+            return {'ok':True,'completed_total':34,'panel_count':18}
+    receipt=observer.observe_once(None,Sink(),'smoke',2,finish=True,verify=True,step=42)
+    assert receipt['status']=='PASS' and receipt['complete_snapshot'] and order==['publish','finish','verify']
+    writes=[]
+    class Batch:
+        def __enter__(self):return self
+        def __exit__(self,*args):pass
+        def put_file(self,local,remote):writes.append((local,remote))
+    class Volume:
+        def batch_upload(self,force):return Batch()
+    observer.save_flush_receipt(Volume(),receipt,tmp_path)
+    assert len(writes)==1 and writes[0][1]=='/controller/tracking-final-flush.json'
+    assert 'budget-ledger' not in str(writes) and receipt['budget_ledger_mutated'] is False
+
+
+def test_old_tracking_lease_cannot_stop_a_new_deployment():
+    from stage3.tracking_server import stop_if_current_lease
+    stops=[]
+    assert stop_if_current_lease('old',{'lease_id':'new'},lambda:stops.append(1))['status']=='superseded'
+    assert stops==[]
+    assert stop_if_current_lease('new',{'lease_id':'new'},lambda:stops.append(1))['status']=='stop_requested'
+    assert stops==[1]

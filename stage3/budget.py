@@ -13,7 +13,15 @@ class Ledger:
   self.data=json.loads(self.path.read_text()) if self.path.exists() else {'stage':3,'limit_usd':'15','calls':{},'controller_sessions':{},'overhead_usd':str(OVERHEAD),'tracking_server_reservation_usd':str(TRACKER_SERVER_12H),'created_utc':utc_now()}
   if self.data.get('stage')!=3 or self.data.get('limit_usd')!='15':raise BudgetStop('Stage3 hard cap must be15USD')
  def guard_total(self):
-  return sum((Decimal(r['guard_charge_usd']) for r in self.data['calls'].values()),Decimal(0))+sum((Decimal(r['guard_charge_usd']) for r in self.data['controller_sessions'].values()),Decimal(0))+Decimal(self.data['overhead_usd'])+Decimal(self.data['tracking_server_reservation_usd'])
+  estimate=sum((Decimal(r['guard_charge_usd']) for r in self.data['calls'].values()),Decimal(0))+sum((Decimal(r['guard_charge_usd']) for r in self.data['controller_sessions'].values()),Decimal(0))+Decimal(self.data['overhead_usd'])+Decimal(self.data['tracking_server_reservation_usd'])+sum((Decimal(r['guard_charge_usd']) for r in self.data.get('tracking_guardian_calls',{}).values()),Decimal(0))
+  overhead=Decimal(self.data['overhead_usd'])
+  base=estimate-overhead
+  # Retain any observed billing/model discrepancy. Future reservations must
+  # add to this correction rather than disappear beneath a max() floor.
+  correction=max(Decimal(self.data.get('billing_adjustment_usd','0')),
+                 Decimal(self.data.get('provider_billing_floor_usd','0'))-base)
+  self.data['billing_adjustment_usd']=str(correction)
+  return estimate+correction
  def save(self):
   self.data.update(updated_utc=utc_now(),guard_total_usd=str(self.guard_total()));atomic_json(self.path,self.data)
  def assert_can_launch(self,amount=Decimal(0)):

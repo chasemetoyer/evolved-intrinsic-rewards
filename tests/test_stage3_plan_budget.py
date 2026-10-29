@@ -31,3 +31,19 @@ def test_no_resubmit_and_hard_cap(tmp_path):
 def test_unknown_submission_blocks_launch(tmp_path):
  ledger=Ledger(tmp_path/'budget.json');ledger.reserve('key','sha',3600)
  with pytest.raises(BudgetStop):ledger.reserve('next','sha',3600)
+
+
+def test_provider_billed_floor_blocks_even_when_model_is_lower(tmp_path):
+    ledger=Ledger(tmp_path/'budget.json');ledger.data['provider_billing_floor_usd']='15'
+    with pytest.raises(BudgetStop):ledger.reserve('new-input','sha',3600)
+
+
+def test_reservations_accumulate_above_a_larger_billing_floor(tmp_path):
+    ledger=Ledger(tmp_path/'budget.json');ledger.data['provider_billing_floor_usd']='14'
+    count=0
+    for i in range(32):
+        try:ledger.reserve(str(i),'sha',3600)
+        except BudgetStop:break
+        ledger.associate(str(i),'fc-'+str(i),'app');count+=1
+    assert count==7
+    assert Decimal('14.9') < ledger.guard_total() <= Decimal('15')
