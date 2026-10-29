@@ -76,6 +76,7 @@ def make_tracking_app(image):
     @app.function(image=image,volumes={'/tracking':volume},secrets=[modal.Secret.from_dict(values)],serialized=True,
                   cpu=(.25,.25),memory=(512,512),max_containers=1,min_containers=1,
                   timeout=3600,scaledown_window=30)
+    @modal.concurrent(max_inputs=64)
     @modal.asgi_app()
     def tracking_server():
         return create_private_server(after_write=volume.commit.aio)
