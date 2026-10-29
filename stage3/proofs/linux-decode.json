@@ -129,8 +129,8 @@
   "encoding": "Use exact frozen decoded genome floats; no optimizer regeneration or rounding.",
   "machine": "x86_64",
   "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.36",
-  "run_id": "fb0a1acd-213c-4e90-89ef-0a9485b899b1",
-  "source_commit": "490cf8768d22c3e90f1e8188449dc8a2bfcb5bc1",
+  "run_id": "0dd2817c-9ff4-4a17-9471-3ff6cf8e2700",
+  "source_commit": "cd79ce5116cc39130001c0681e87539bb5d4a8b0",
   "winner_sha256": {
     "cma": "e3ec0a9f6b76cdc3a7c2c3da58ce8895b21b238c94db705ac4402d348d5e1fdc",
     "random": "f197a64443341b6776433bd34c5a114023152ff7698abd07180e664b374bb000"

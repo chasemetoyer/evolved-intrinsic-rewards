@@ -286,3 +286,36 @@ Read `stage3-prelaunch/readiness-state.json`, `pre-launch-summary.md`,
 `prelaunch-receipt.json`, `full-cost-projection.json`, `proofs/` and
 `stage3-report-draft.md`. The source supplement archive includes new Stage 3 files
 that the inherited checkpoint script does not collect.
+
+
+## Approval37 scientific Stage3 launch authorized (2026-10-29)
+
+The user gave the separate post-summary go-ahead and requested the random-only
+object-event grouped summaries beside pooled results. That appendix is complete:
+99 paired rows / 198 independently checked summaries, every group retained.
+No new registered tests or scientific changes.
+
+Tracking infrastructure repairs are timestamped and publicly committed: guardian
+app name44198cf, concurrent web slots cd79ce5. Original public scientific amendment
+provenance and pre-summary source/UI proofs are preserved. Only tracking/gate/test
+files differ; all training, scoring, seed and winner hashes remain unchanged.
+Validation1acee54b passed34replays/0newPPO but revealed UI/SSE backlog252 on1slot.
+Concurrencyvalidation7a52cac4 stopped beforetraining with JSONDecodeError during
+redeploy bootstrap; its controller proxy0.0062631469229698181276USD and all
+guardian charges are retained. One same-source infrastructure retry0dd2817c
+passed34replays/0newPPO, 18panels/34values and actual browser label/UI verification.
+No scientific inputs were produced by these validations.
+
+Real launch gate PASS with approval37, original lid waiver36 remains unverified,
+planning peak12.64104076879585220509480251USD (<13), hard guard15USD. Current
+guard1.2081002380547523477814 includes past setup and active tracking/guardian
+reservations; billed complete-hour data is separate/delayed. One physical tracking
+service has elapsed2x cost plus fresh12h/1h-margin funding; duplicate overlapping
+unused lease allocations were released, all paid guardians retained.
+
+Profile science is selected. Launch ONE tracked native Modal Linux controller
+with12h timeout from the upcoming metadata commit; keep the tested runtime
+inventory unchanged. Record its run/Sandbox IDs immediately. No Mac controller
+is required. If scientific controller stops, report before any restart.
+Read stage3-prelaunch/scientific-launch-gate.json and active-run.json before
+acting. Do not submit a second controller or repeat any recorded input.

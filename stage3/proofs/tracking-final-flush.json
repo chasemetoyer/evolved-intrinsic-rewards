@@ -40,7 +40,7 @@
     "panel_count": 18,
     "queued": true,
     "remote_verified": false,
-    "step": 1793286446109
+    "step": 1793289794884
   },
   "read_errors": [],
   "remote_verification": {
@@ -68,19 +68,19 @@
     "completed_total": 34,
     "final_snapshot_invalid_media": [],
     "final_snapshot_missing_panels": [],
-    "last_step": 1793286446109,
+    "last_step": 1793289794884,
     "missing_panels": [],
     "num_logs": 2,
     "ok": true,
     "panel_count": 18,
-    "verified_snapshot_step": 1793286446109
+    "verified_snapshot_step": 1793289794884
   },
-  "run_id": "fb0a1acd-213c-4e90-89ef-0a9485b899b1",
+  "run_id": "0dd2817c-9ff4-4a17-9471-3ff6cf8e2700",
   "schema": "stage3-tracking-observer-receipt",
   "scientific_results_mutated": false,
-  "source_commit": "490cf8768d22c3e90f1e8188449dc8a2bfcb5bc1",
+  "source_commit": "cd79ce5116cc39130001c0681e87539bb5d4a8b0",
   "status": "PASS",
-  "tracking_step": 1793286446109,
+  "tracking_step": 1793289794884,
   "training_dependency": false,
-  "updated_utc": "2026-10-29T15:07:55.646266+00:00"
+  "updated_utc": "2026-10-29T16:03:22.262937+00:00"
 }

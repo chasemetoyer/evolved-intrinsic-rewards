@@ -1,6 +1,6 @@
 {
   "project_id": "64555583-12e3-4641-82a0-b8841b663e70",
-  "run_id": "fb0a1acd-213c-4e90-89ef-0a9485b899b1",
+  "run_id": "0dd2817c-9ff4-4a17-9471-3ff6cf8e2700",
   "completed_runs": 34,
   "panel_names": [
     "in progress, not the stage-3 report/progress/completed by method and task",
@@ -27,9 +27,15 @@
   "browser_verified": true,
   "remote_delivery_verified": true,
   "browser_verified_utc": "2026-10-29T15:11:02.411757+00:00",
-  "verification_method": "Native apptrackingAPIadvertisesmatchingrun+dashboardtarget; realChromiumloadedthatexacttargetwithrunselected.HTTP200,labelpresent,0JSerrors;all18mediaand17cellcounts independentlyreadbackfromremote server.",
+  "verification_method": "Composite provenance: original native route/panel browser verification predates summary; same native route and current run were rechecked after infrastructure repair in Chromium (HTTP200,labelpresent,0JSerrors), plus18media/34completionvalues remote readback.",
   "physical_button_click_simulated": false,
-  "smoke_run_id": "fb0a1acd-213c-4e90-89ef-0a9485b899b1",
+  "smoke_run_id": "0dd2817c-9ff4-4a17-9471-3ff6cf8e2700",
   "original_worker_smoke_run_id": "f23220df-d501-4cde-8dbd-4c9d1bf8840e",
-  "remote_final_flush_sha256": "161c479002faefbcc7f5c52324d9a567f769be820ac092519db4d7b08760c7a7"
+  "remote_final_flush_sha256": "1ee329b9b8c573e85bc5563689144a0c0fd88137acac581c87750977d70611d8",
+  "browser_verified_utc_scope": "First verified native dashboard route/panel contract before the delivered summary; see preserved prior proof.",
+  "current_run_browser_verified_utc": "2026-10-29T16:05:05.343260+00:00",
+  "prior_native_route_verification": {
+    "path": "stage3/proofs/pre-summary-visualize.json",
+    "sha256": "2ae193db76a2ef4899fc29027b45634bc6c4ed0880397307f7752fc1f3437ffa"
+  }
 }

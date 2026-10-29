@@ -3,7 +3,7 @@
   "proofs": {
     "source_inventory": {
       "path": "preregistration/stage3-runtime-manifest.json",
-      "sha256": "6dfe779355d6448252cf5ef84b56eca34a004eb2bb0472391012a3c52284e13e"
+      "sha256": "3b9482892ebfd8e7b8c38b276038e9971c59da8b74f7c5d45acc7e8b8a796347"
     },
     "worker_inventory": {
       "path": "stage3/proofs/worker-inventory.json",
@@ -15,7 +15,7 @@
     },
     "controller_validation": {
       "path": "stage3/proofs/controller-validation.json",
-      "sha256": "adfd210501ee15029bee29059e341925d334566d1dc4c8ef9046490726313ae3"
+      "sha256": "b31d79f231489991bbc94d7ab8f19415bdc1cbac0ca65c8261fc8905a52da2a8"
     },
     "mac_decode": {
       "path": "stage3/proofs/mac-decode.json",
@@ -23,7 +23,7 @@
     },
     "linux_decode": {
       "path": "stage3/proofs/linux-decode.json",
-      "sha256": "fc33de941ff9a96dbba8121d3812cbbf453302fee285d1c001322f30170ff82b"
+      "sha256": "2b0db6a6cd8517b4dd93ca2cf1108fb9d3a54da1a816f22edd025221bef03e4b"
     },
     "lid_closed": {
       "path": "stage3/proofs/lid-closed-waiver.json",
@@ -31,15 +31,15 @@
     },
     "cost_projection": {
       "path": "stage3/proofs/cost-projection.json",
-      "sha256": "ef70c2f6fb4f4e64defb3a543d0153c8dc920dfa5740ac6d282b5d258a58694c"
+      "sha256": "59e236b807f5b17cd5406d78ec4271918d5a696799e3cf9c59076d002807849f"
     },
     "visualize": {
       "path": "stage3/proofs/visualize.json",
-      "sha256": "2ae193db76a2ef4899fc29027b45634bc6c4ed0880397307f7752fc1f3437ffa"
+      "sha256": "788d3fa595d00212bbbe061adf6970adab44c602ccf4cb18efd1569bfebf1832"
     },
     "amendment_commit": {
       "path": "stage3/proofs/amendment-commit.json",
-      "sha256": "e30daea6f1b9d42aadcd56e38fd2f2db576120518c2c8f9a90ad18cc47260383"
+      "sha256": "95594916fec28ff49f4d79133a4adb8b4adea23e1c22b78c9e1835c7831a1462"
     },
     "summary": {
       "path": "stage3/prelaunch-summary.md",
@@ -56,5 +56,6 @@
     "native_visualize"
   ],
   "summary_delivery_context": "Six-item pre-launch summary prepared and delivered in the current chat response; no scientific go-ahead recorded. A future approval must be separate and later than this timestamp.",
-  "post_summary_cost_refresh_utc": "2026-10-29T15:35:23.368003+00:00"
+  "post_summary_cost_refresh_utc": "2026-10-29T15:35:23.368003+00:00",
+  "post_summary_infrastructure_revalidated_utc": "2026-10-29T16:05:09.101109+00:00"
 }
