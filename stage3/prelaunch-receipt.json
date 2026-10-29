@@ -31,7 +31,7 @@
     },
     "cost_projection": {
       "path": "stage3/proofs/cost-projection.json",
-      "sha256": "e03ada241d8ceb7ee90130e0b428621e41a45040262ea183626521279ed8fc8f"
+      "sha256": "ef70c2f6fb4f4e64defb3a543d0153c8dc920dfa5740ac6d282b5d258a58694c"
     },
     "visualize": {
       "path": "stage3/proofs/visualize.json",
@@ -55,5 +55,6 @@
     "amendment_commit",
     "native_visualize"
   ],
-  "summary_delivery_context": "Six-item pre-launch summary prepared and delivered in the current chat response; no scientific go-ahead recorded. A future approval must be separate and later than this timestamp."
+  "summary_delivery_context": "Six-item pre-launch summary prepared and delivered in the current chat response; no scientific go-ahead recorded. A future approval must be separate and later than this timestamp.",
+  "post_summary_cost_refresh_utc": "2026-10-29T15:35:23.368003+00:00"
 }

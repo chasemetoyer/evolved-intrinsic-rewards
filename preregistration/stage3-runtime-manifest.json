@@ -1,11 +1,12 @@
 {
   "schema": "stage3-prelaunch-source-inventory",
-  "created_utc": "2026-10-29T15:06:12.978137+00:00",
+  "created_utc": "2026-10-29T15:46:18.345829+00:00",
   "status": "prelaunch_validation_only_not_scientific_launch_authorization",
   "approval_seqs": [
     34,
     35,
-    36
+    36,
+    37
   ],
   "registered_protocol_sha256": "57776c4a839a21f94982ff4e222dec3bbe557ed23bf6901d4a0a991a3d8869e2",
   "sha256": {
@@ -22,7 +23,7 @@
     "stage3/frozen/frozen-winner-cma.json": "e3ec0a9f6b76cdc3a7c2c3da58ce8895b21b238c94db705ac4402d348d5e1fdc",
     "stage3/frozen/frozen-winner-random.json": "f197a64443341b6776433bd34c5a114023152ff7698abd07180e664b374bb000",
     "stage3/frozen/winner-hashes.json": "1161d5501c2350632c5a7523b009b9d5dec4ed70b010cc43feceefb96e5cba5b",
-    "stage3/gates.py": "829774588803665b7c587001a090870977b2e686029dd5f4795c4adc236c826d",
+    "stage3/gates.py": "54d5c21b987b10e676cfca3b62be99f0616c8e5b46550e25e9bb335d94253026",
     "stage3/instrumentation.py": "264bd5b963726a6300d341f65d482042cca35bee510bd7ac86b185db09a249e6",
     "stage3/mac-decode.json": "d1bb87756a870e8b3382aa2cfdf132eec7e05bed9cde898194b450959268720e",
     "stage3/modal_app.py": "5c15574f36459a72df2dd0a9aafdb64ddc20c4f5cb29d268e9c0f7fad3776ad9",
@@ -67,7 +68,10 @@
     "stage3/run_training.py": "c72cf9c550253ecca1f991b3a68352a9af5a396295f654f9b640833ebffca962",
     "stage3/specs.py": "0d96bd4e4c58467d8c70d68420b8801d8509c0df44079402e40e8177baca289d",
     "stage3/tracking.py": "2803c74303e2a103e4004c9b0ef1fa20b5c209a12c670c2d4742e0480f530ae2",
-    "stage3/tracking_server.py": "3ada4f8b9e9d9e8ee4cc2f2652f14afe8afd1ddb887eacc136c14e57285797bf",
-    "stage3/tracking_setup.py": "c0fe0b6c6781acdc4a7ed7ca25d29d4f973e2395f879e7a9ecb855cc70c91099"
-  }
+    "stage3/tracking_server.py": "407406657bc10e90efeacefa7201dde586eaa716190ce161611f3e87b5ccc2eb",
+    "stage3/tracking_setup.py": "c0fe0b6c6781acdc4a7ed7ca25d29d4f973e2395f879e7a9ecb855cc70c91099",
+    "tests/test_stage3_tracking.py": "8dfa806f6487d980ae20c0b8faa53b4262a6a425d72ddf5812545be6bf298567",
+    "tests/test_stage3_gates.py": "54d771697127ef5b06611bf8213f71e5bea67974d482f760e083e06521b3025b"
+  },
+  "scope": "tested-infrastructure-source-inventory-with-scientific-launch-separately-approved"
 }

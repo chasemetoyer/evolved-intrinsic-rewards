@@ -1,0 +1,13 @@
+{
+  "schema": "stage3-explicit-launch-approval-v1",
+  "scientific_launch_authorized": true,
+  "approval_seq": 37,
+  "approval_log": {
+    "path": "handoff-cross-platform/approvals-log.jsonl",
+    "sha256": "f78f4538c25de67132765bbf53da2c392e5bb1a4f916f8a1a7eb3a6bacd76eb6"
+  },
+  "prelaunch_receipt_sha256": "c39c692eed67d93eac0f57be97a00d4b77b2a6973f058dee083eefb0847541c4",
+  "recorded_utc": "2026-10-29T15:35:23.492895+00:00",
+  "scope": "OneStage3Linuxcontroller; no scientificrule/seed/winnerchanges, noautomaticrestart.",
+  "pending_infrastructure_validation": true
+}

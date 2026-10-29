@@ -10,8 +10,10 @@ import asyncio
 import inspect
 import os
 
-APP_NAME='evolved-intrinsic-rewards-stage3-tracking'
-VOLUME_NAME=APP_NAME
+# This is the DEPLOYMENT name used by controller.deploy and guardian.lookup.
+APP_NAME='evolved-intrinsic-rewards-stage3-monitor'
+# Preserve the existing volume independently of the deployment name.
+VOLUME_NAME='evolved-intrinsic-rewards-stage3-tracking'
 PROJECT_ID='64555583-12e3-4641-82a0-b8841b663e70'
 
 

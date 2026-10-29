@@ -122,6 +122,43 @@ def test_all_science_gates_can_pass_without_any_training(complete_receipts):
     assert result['smoke_inputs_verified']==34 and result['native_panels_verified']==18
 
 
+@pytest.mark.parametrize('changed_file,allowed',[
+    ('stage3/tracking_server.py', True), ('stage3/specs.py', False),
+    ('stage3/budget.py', False), ('stage3/controller.py', False),
+])
+def test_later_repair_preserves_prior_approval_only_for_infrastructure(complete_receipts,changed_file,allowed):
+    root,receipt,ledger=complete_receipts
+    old_inventory=json.loads((root/receipt['proofs']['source_inventory']['path']).read_text())
+    prior_inventory=dump(root,'stage3/evidence/pre-summary-inventory.json',old_inventory)
+    amendment=json.loads((root/receipt['proofs']['amendment_commit']['path']).read_text())
+    prior_amendment=dump(root,'stage3/evidence/pre-summary-amendment.json',amendment)
+    (root/changed_file).write_text('later infrastructure or forbidden scientific change')
+    inventory=copy.deepcopy(old_inventory)
+    inventory['sha256'][changed_file]=h((root/changed_file).read_bytes())
+    receipt['proofs']['source_inventory']=dump(root,'preregistration/stage3-runtime-manifest.json',inventory)
+    amendment.update(verified_utc='2026-10-29T15:02:00+00:00',scope='post-summary-infrastructure-only',
+                     prior_amendment_commit=prior_amendment,prior_source_inventory=prior_inventory,
+                     implementation_inventory_sha256=receipt['proofs']['source_inventory']['sha256'])
+    receipt['proofs']['amendment_commit']=dump(root,receipt['proofs']['amendment_commit']['path'],amendment)
+    validation=json.loads((root/receipt['proofs']['controller_validation']['path']).read_text())
+    validation['implementation_inventory_sha256']=receipt['proofs']['source_inventory']['sha256']
+    replace_proof(root,receipt,'controller_validation',validation)
+    if allowed:
+        assert gates.require_science_gate(root=root,current_ledger=ledger)['status']=='PASS'
+    else:
+        with pytest.raises(gates.LaunchGateError,match='outside the infrastructure allowlist'):
+            gates.require_science_gate(root=root,current_ledger=ledger)
+
+
+def test_later_repair_requires_real_pre_summary_provenance(complete_receipts):
+    root,receipt,ledger=complete_receipts
+    amendment=json.loads((root/receipt['proofs']['amendment_commit']['path']).read_text())
+    amendment.update(verified_utc='2026-10-29T15:02:00+00:00',scope='post-summary-infrastructure-only')
+    replace_proof(root,receipt,'amendment_commit',amendment)
+    with pytest.raises(gates.LaunchGateError,match='Invalid proof reference'):
+        gates.require_science_gate(root=root,current_ledger=ledger)
+
+
 def test_boolean_only_launch_approval_cannot_bypass_proofs(complete_receipts):
     root,_,ledger=complete_receipts
     dump(root,gates.APPROVAL,{'explicit_user_goahead':True,'scientific_launch_authorized':True,
@@ -252,4 +289,59 @@ def test_projected_peak_cannot_hide_missing_inflight_reservations(complete_recei
     cost['in_flight_reservation_usd']='0'
     replace_proof(root,receipt,'cost_projection',cost)
     with pytest.raises(gates.LaunchGateError,match='in-flight reservations'):
+        gates.require_science_gate(root=root,current_ledger=ledger)
+
+
+def post_summary_infra_proof(root,receipt,*,changed='stage3/tracking_server.py'):
+    """Preserve genuine old public receipts, then bind a later narrow repair."""
+    old_inventory=json.loads((root/'preregistration/stage3-runtime-manifest.json').read_text())
+    old_amendment=json.loads((root/receipt['proofs']['amendment_commit']['path']).read_text())
+    prior_inventory=dump(root,'stage3/evidence/prior-public-inventory.json',old_inventory)
+    prior_amendment=dump(root,'stage3/evidence/prior-public-amendment.json',old_amendment)
+    (root/changed).write_text('new post-summary infrastructure fixture')
+    new_inventory=copy.deepcopy(old_inventory);new_inventory['sha256'][changed]=h((root/changed).read_bytes())
+    receipt['proofs']['source_inventory']=dump(root,'preregistration/stage3-runtime-manifest.json',new_inventory)
+    new_amendment=dict(old_amendment,commit='b'*40,github_ref_commit='b'*40,
+                       implementation_inventory_sha256=receipt['proofs']['source_inventory']['sha256'],
+                       verified_utc='2026-10-29T15:02:00+00:00',scope='post-summary-infrastructure-only',
+                       prior_source_inventory=prior_inventory,prior_amendment_commit=prior_amendment)
+    receipt['proofs']['amendment_commit']=dump(root,'stage3/evidence/amendment-commit.json',new_amendment)
+    controller=json.loads((root/receipt['proofs']['controller_validation']['path']).read_text())
+    controller['implementation_inventory_sha256']=receipt['proofs']['source_inventory']['sha256']
+    replace_proof(root,receipt,'controller_validation',controller)
+
+
+def test_post_summary_narrow_infrastructure_repair_keeps_prior_scientific_approval(complete_receipts):
+    root,receipt,ledger=complete_receipts
+    post_summary_infra_proof(root,receipt)
+    result=gates.require_science_gate(root=root,current_ledger=ledger)
+    assert result['status']=='PASS'
+    assert result['post_summary_infrastructure_changes']==['stage3/tracking_server.py']
+    assert result['approval_seq']==36  # The explicit original post-summary go-ahead.
+
+
+def test_post_summary_repair_without_preserved_public_provenance_blocks(complete_receipts):
+    root,receipt,ledger=complete_receipts
+    amendment=json.loads((root/receipt['proofs']['amendment_commit']['path']).read_text())
+    amendment.update(verified_utc='2026-10-29T15:02:00+00:00',scope='post-summary-infrastructure-only')
+    replace_proof(root,receipt,'amendment_commit',amendment)
+    with pytest.raises(gates.LaunchGateError,match='Invalid proof reference'):
+        gates.require_science_gate(root=root,current_ledger=ledger)
+
+
+@pytest.mark.parametrize('path',['stage3/specs.py','stage3/controller.py','stage3/budget.py','stage3/run_training.py'])
+def test_post_summary_repair_cannot_change_scientific_or_dispatch_code(complete_receipts,path):
+    root,receipt,ledger=complete_receipts
+    post_summary_infra_proof(root,receipt,changed=path)
+    with pytest.raises(gates.LaunchGateError,match='scientific, worker or dispatch'):
+        gates.require_science_gate(root=root,current_ledger=ledger)
+
+
+def test_post_summary_repair_cannot_rewrite_budget_or_descriptive_amendment(complete_receipts):
+    root,receipt,ledger=complete_receipts
+    post_summary_infra_proof(root,receipt,changed='preregistration/stage3-descriptive-amendment-20261029.md')
+    amendment=json.loads((root/receipt['proofs']['amendment_commit']['path']).read_text())
+    amendment['descriptive_amendment_sha256']=h((root/'preregistration/stage3-descriptive-amendment-20261029.md').read_bytes())
+    replace_proof(root,receipt,'amendment_commit',amendment)
+    with pytest.raises(gates.LaunchGateError,match='approved budget/descriptive'):
         gates.require_science_gate(root=root,current_ledger=ledger)

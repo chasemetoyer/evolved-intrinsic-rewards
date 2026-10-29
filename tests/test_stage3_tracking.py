@@ -239,3 +239,27 @@ def test_old_tracking_lease_cannot_stop_a_new_deployment():
     assert stops==[]
     assert stop_if_current_lease('new',{'lease_id':'new'},lambda:stops.append(1))['status']=='stop_requested'
     assert stops==[1]
+
+
+def test_tracking_guardian_targets_the_deployed_monitor_and_preserves_volume():
+    import ast
+    from pathlib import Path
+    from stage3 import tracking_server
+    root=Path(__file__).resolve().parents[1]
+    controller=ast.parse((root/'stage3/controller.py').read_text())
+    deployed=[keyword.value.value for call in ast.walk(controller)
+              if isinstance(call,ast.Call) and isinstance(call.func,ast.Attribute)
+              and call.func.attr=='deploy' for keyword in call.keywords
+              if keyword.arg=='name' and isinstance(keyword.value,ast.Constant)]
+    assert deployed==[tracking_server.APP_NAME]
+    assert tracking_server.APP_NAME=='evolved-intrinsic-rewards-stage3-monitor'
+    assert tracking_server.VOLUME_NAME=='evolved-intrinsic-rewards-stage3-tracking'
+    # Verify the real expiry function resolves that same deployment constant,
+    # not an unrelated app name that would leave the warm service running.
+    server=ast.parse(Path(tracking_server.__file__).read_text())
+    expiry=next(node for node in ast.walk(server) if isinstance(node,ast.FunctionDef)
+                and node.name=='expire_tracking')
+    lookups=[node for node in ast.walk(expiry) if isinstance(node,ast.Call)
+             and isinstance(node.func,ast.Attribute) and node.func.attr=='lookup']
+    assert len(lookups)==1
+    assert isinstance(lookups[0].args[0],ast.Name) and lookups[0].args[0].id=='APP_NAME'

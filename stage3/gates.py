@@ -113,6 +113,24 @@ def _read_ledger():
     volume = modal.Volume.from_name(VOLUME_NAME, create_if_missing=False, version=2)
     return json.loads(retry_io(lambda: b"".join(volume.read_file("/budget-ledger.json"))))
 
+POST_SUMMARY_INFRA_FILES = frozenset({
+    "stage3/tracking_server.py", "stage3/gates.py",
+    "tests/test_stage3_tracking.py", "tests/test_stage3_gates.py",
+})
+
+
+def _public_amendment_time(proof, inventory_sha):
+    commit = proof.get("commit", "")
+    _require(proof.get("status") == "PASS" and isinstance(commit, str)
+             and re.fullmatch(r"[0-9a-f]{40}", commit)
+             and proof.get("github_ref_commit") == commit
+             and proof.get("repository_visibility") == "PUBLIC",
+             "Budget/descriptive amendments have no verified public commit")
+    _require(proof.get("implementation_inventory_sha256") == inventory_sha,
+             "Public amendment receipt does not bind this tested implementation")
+    return _timestamp(proof.get("verified_utc"))
+
+
 
 def require_science_gate(*, root=ROOT, current_ledger=None):
     """Verify every user gate before a scientific reservation or worker spawn.
@@ -167,20 +185,40 @@ def require_science_gate(*, root=ROOT, current_ledger=None):
     _require(IMPLEMENTATION_FILES <= set(inventory.get("sha256", {})),
              "Source inventory omits required worker/controller/tracking implementation")
     amendment = proofs["amendment_commit"]
-    commit = amendment.get("commit", "")
-    _require(amendment.get("status") == "PASS" and isinstance(commit, str)
-             and re.fullmatch(r"[0-9a-f]{40}", commit)
-             and amendment.get("github_ref_commit") == commit
-             and amendment.get("repository_visibility") == "PUBLIC",
-             "Budget/descriptive amendments have no verified public commit")
-    _require(amendment.get("implementation_inventory_sha256") == refs["source_inventory"]["sha256"],
-             "Public amendment receipt does not bind this tested implementation")
-    for name, key in (("preregistration/stage3-budget15-amendment-20261029.json", "budget_amendment_sha256"),
-                      ("preregistration/stage3-descriptive-amendment-20261029.md", "descriptive_amendment_sha256")):
+    verified_time = _public_amendment_time(amendment, refs["source_inventory"]["sha256"])
+    amendment_files = (("preregistration/stage3-budget15-amendment-20261029.json", "budget_amendment_sha256"),
+                       ("preregistration/stage3-descriptive-amendment-20261029.md", "descriptive_amendment_sha256"))
+    for name, key in amendment_files:
         _require(amendment.get(key) == _sha(_file(root, name).read_bytes()),
                  "Published amendment hash differs from its approved file")
-    _require(_timestamp(amendment.get("verified_utc")) <= delivered,
-             "Pre-launch summary preceded amendment push verification")
+    post_summary_changes = []
+    if verified_time > delivered:
+        # A necessary tracking shutdown repair may be verified after the
+        # already-delivered summary and explicit go-ahead. Preserve that earlier
+        # public receipt and source inventory; never pretend the new commit was
+        # already reviewed, and never broaden this path to science or dispatch.
+        _require(amendment.get("scope") == "post-summary-infrastructure-only",
+                 "Post-summary amendment has no restricted infrastructure scope")
+        prior_ref = amendment.get("prior_amendment_commit")
+        prior_inventory_ref = amendment.get("prior_source_inventory")
+        prior = _ref(root, prior_ref)
+        prior_inventory = _ref(root, prior_inventory_ref)
+        prior_time = _public_amendment_time(prior, prior_inventory_ref["sha256"])
+        _require(prior_time <= delivered,
+                 "Prior public amendment was not verified before the delivered summary")
+        _require(IMPLEMENTATION_FILES <= set(prior_inventory.get("sha256", {})),
+                 "Prior tested source inventory is incomplete")
+        for name, key in amendment_files:
+            expected = _sha(_file(root, name).read_bytes())
+            _require(prior.get(key) == amendment.get(key) == expected
+                     and prior_inventory.get("sha256", {}).get(name) == inventory["sha256"].get(name) == expected,
+                     "Post-summary repair changed the approved budget/descriptive amendment")
+        old_hashes, new_hashes = prior_inventory["sha256"], inventory["sha256"]
+        changed = {name for name in set(old_hashes) | set(new_hashes)
+                   if old_hashes.get(name) != new_hashes.get(name)}
+        _require(changed <= POST_SUMMARY_INFRA_FILES,
+                 "Post-summary repair changed scientific, worker or dispatch implementation outside the infrastructure allowlist")
+        post_summary_changes = sorted(changed)
     original_inventory = proofs["worker_inventory"]
     for name in WORKER_FILES:
         _require(original_inventory.get("sha256", {}).get(name) == inventory["sha256"][name],
@@ -329,4 +367,4 @@ def require_science_gate(*, root=ROOT, current_ledger=None):
             "approval_seq": approval["approval_seq"], "worker_smoke_run_id": worker["run_id"],
             "controller_validation_run_id": controller["run_id"], "smoke_inputs_verified": 34,
             "native_panels_verified": len(required_panels), "lid_closed_status": lid_status, "hard_cap_usd": "15",
-            "projected_guard_peak_usd": str(peak), "provider_mutations": 0}
+            "projected_guard_peak_usd": str(peak), "post_summary_infrastructure_changes": post_summary_changes, "provider_mutations": 0}
