@@ -74,6 +74,7 @@ def snapshot_payload(records, ledger, expected=20):
             'candidate_failures':int(ledger.get('candidate_failures',sum(c.get('outcome')=='candidate_failure' or c.get('status')=='numerical_failure' for c in calls))),
             'infrastructure_failures':int(ledger.get('infrastructure_failures',len(ledger.get('infrastructure_history',[])))),
             'observed_restarts':ledger.get('observed_restarts'),
+            'unresolved_inputs':sum(c.get('status')=='uncertain' for c in calls),
             'cpu_mix':dict(Counter(r.get('cpu_class','unknown') for r in clean)),
             'cpu_mix_scope':'completed seed attempts; physical-attempt mix when supplied by observer',
             'physical_cpu_mix':ledger.get('physical_cpu_mix'),
@@ -158,7 +159,8 @@ def panel_html(payload):
         [('Conservative guard USD',payload['guard_usd']),('Hard cap USD',payload['cap_usd'])],
         'Guard is not an invoice. These values overlap; do not add them.')
     panels['progress/failures and restarts']=_bars('Failures and restarts',
-        [('Candidate failures',payload['candidate_failures']),('Infrastructure failures',payload['infrastructure_failures'])]+
+        [('Candidate failures',payload['candidate_failures']),('Infrastructure failures',payload['infrastructure_failures']),
+         ('Unresolved inputs (cause pending)',payload['unresolved_inputs'])]+
         ([('Observed restarts (cause may be unknown)',payload['observed_restarts'])] if payload['observed_restarts'] is not None else []),
         'An unavailable restart count is omitted; missing evidence is not zero.')
     for task in TASKS:

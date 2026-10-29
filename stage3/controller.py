@@ -1,6 +1,6 @@
 """Single Linux Stage3 controller; no local service or scientific launch implied."""
 from __future__ import annotations
-import json,os,platform,time,subprocess,sys,hashlib
+import json,os,platform,time,subprocess,sys,hashlib,resource
 from pathlib import Path
 import modal
 from stage3.common import *
@@ -64,7 +64,7 @@ def main():
   save_json('tracking-bootstrap-verification.json',verified)
   if not verified.get('ok'):raise RuntimeError('Tracking delivery not verified')
   if profile=='preflight':
-   save_json('preflight-result.json',{'status':'PASS','decode':'PASS','tracking_initialized':True,'run_id':run,'scientific_submissions':0,'endpoint_base_public':base})
+   save_json('preflight-result.json',{'status':'PASS','decode':'PASS','tracking_initialized':True,'run_id':run,'scientific_submissions':0,'endpoint_base_public':base,'controller_peak_rss_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,'controller_cpu_seconds':resource.getrusage(resource.RUSAGE_SELF).ru_utime+resource.getrusage(resource.RUSAGE_SELF).ru_stime,'controller_wall_seconds':time.time()-started,'cpu_max':Path('/sys/fs/cgroup/cpu.max').read_text() if Path('/sys/fs/cgroup/cpu.max').exists() else None,'memory_max':Path('/sys/fs/cgroup/memory.max').read_text() if Path('/sys/fs/cgroup/memory.max').exists() else None})
    return
   # Observer is a different process; SDK/logging delays and failures cannot block training.
   env=dict(os.environ)

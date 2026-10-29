@@ -33,6 +33,22 @@ def collect(volume,profile,cache=None):
    area=float(np.mean(success));solved=float(np.mean(success[-max(1,len(success)//10):]))>=.9
    record={'method':spec['method'],'task':spec['task'],'seed':spec['seed'],'metrics':metrics,'area':area,'solved':solved,'cpu_class':cpu_class(env['cpu'])};records.append(record);cache[key]=record
   except Exception as e:errors.append({'id':key,'error_type':type(e).__name__})
+ from collections import Counter
+ physical={}
+ for entry in volume.listdir('/runs',recursive=True):
+  parts=Path(entry.path.lstrip('/')).parts
+  if parts and parts[0]!='runs':parts=('runs',)+parts
+  if len(parts)==5 and parts[1].startswith('stage3_'+profile+'-') and parts[2]=='attempts':
+   physical.setdefault('/'.join(parts[:4]),set()).add(parts[4])
+ mix=Counter()
+ for directory,names in physical.items():
+  cachekey=('cpu',directory)
+  try:
+   if cachekey not in cache and 'environment.json' in names:
+    cache[cachekey]=cpu_class(json.loads(raw('/'+directory+'/environment.json'))['cpu'])
+   mix[cache.get(cachekey,'unknown')]+=1
+  except Exception:mix['unknown']+=1
+ ledger['physical_cpu_mix']=dict(mix)
  ledger['candidate_failures']=sum(r['status']=='numerical_failure' for r in ledger['calls'].values())
  ledger['observed_restarts']=sum(max(0,r.get('attempt_count',1)-1) for r in ledger['calls'].values())
  return records,ledger,errors
