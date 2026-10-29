@@ -210,3 +210,56 @@ Both full inputs reproduced their original canonical hashes (Mac6984..., Linuxf6
 ### Approval32 Macresume andhard50USD guard
 
 User authorized budget-only hard50cap restoration andoneMacrestart after currentexactreplay/dedup including4recoverable successes. GatesPASS; run7c1aa413-3b48-4533-a027-2858264eb0e3 launched. Scientificprotocolunchanged. Allpriorcostsretained. No automaticrestart followingnewstop. Recordcrossplatform1ULPcontrollerreplaylimitation andoneplatformfromstart recommendation intheStage2report. Stage3stillrequiresapproval.
+
+
+## Stage2 COMPLETE: checked report delivered; STOP before Stage3
+
+Run7c1aa413 completed successfully. All1560scientific inputs complete; full Mac exact replay1560/1560,23980savedfilehashesverified, independent areas/rankings/winner selectionPASS. CMAwinner113 reevaluatedarea0.5955044960638896; randomwinner57 area0.6320471339457672. The selectedCMAreward didnotbeat selectedrandom onthisselectionpanel. Noheldout/tamperresults; noStage3.
+
+Read `stage2-report/stage2-report.md`, `number-check.json`, `report-artifact-lock.json` andthefrozenwinnerJSONs inthiscanonicalhandoff. Full data/scripts, ledger/billing, provider-calls.csv, physical-attempts.csv andinterruptions-and-controller-history.csv areincluded. Counts:1802providercalls,1850physicalattempts;50terminatedpriorcallsand50manualidentical-inputretries;48additionalsame-callattempts across47calls. Exactpreemptioncause unknown.4attemptslackusage; allphysicalattemptshaveCPUidentifiers. Finalguard29.4071174134047460803680/50USD; completedfunctionestimate22.37313098235288574597246; knownterminatedestimate0.4217815741575615182460; billedcompletedhours22.07398897notfinalinvoice. Idempotenttransportretrycounts/marginalcostwerenot separatelyinstrumented; limitationexplicit.
+
+BothrewardexporthashesfrozenbeforeanyStage3data. Eepisode-starttamperpayoff0.6396352350711823>0 fixesregisteredcollapseprediction; notanobservedtamperoutcome. Stage3requiresuserapprovalandfreshcompletecostprojectionwithitsseparate10USDcap. Thecontroller andidle-sleephelper haveexited; providerownerlockreleased. Observer90328 andcheckpointwatcher85072remainread-only helpers; nocomputecontrolleractive. The researchsourcebranchisfrozen; thereport/artifactcopiesliveoutsidethecommittedsource. NeverlaunchanothersearchorStage3withoutuserinstructions.
+
+
+## Stage 3 preparation complete — wait for post-summary go-ahead (2026-10-29)
+
+This is the current state and supersedes the earlier Stage 3 preflight notes.
+Approvals 34/35 authorized preparation and Stage 2-only exploratory summaries.
+Approval 36 waived the actual lid-closed witness: **WAIVED_UNVERIFIED**. The user
+confirmed that the laptop was open during the original smoke. Never label it passed.
+
+- E remains CMA candidate 113 and R random candidate 57. Both frozen hashes verified.
+- All 120 Mac/Linux E/R training configuration hashes match. Controller and any resume
+  run on Modal Linux from the start; no Mac orchestration dependency.
+- Tiny worker smoke `f23220df-d501-4cde-8dbd-4c9d1bf8840e` passed all 34 inputs.
+  Final Linux controller validation `fb0a1acd-213c-4e90-89ef-0a9485b899b1` replayed
+  all 34, submitted zero PPO calls, and verified the complete native dashboard snapshot.
+- Tested implementation: `490cf8768d22c3e90f1e8188449dc8a2bfcb5bc1`; 76 fixture tests pass.
+  Inherited locked sources are unchanged. Metadata/proof commits are later.
+- Native Visualize route plus a real browser and independent server readback verified
+  all 18 labeled panels and all 34 completion values. No standalone HTML fallback.
+- Planning guard peak is $12.62237, below the $13 review gate; hard reservation guard $15.
+  Includes all 340 inputs, 32 full in-flight reservations, failure contingency, 12-hour
+  controller, tracking service, paid shutdown guardian and prechecks. A 20% runtime
+  slowdown stress case exceeds $13. Native controller CPU/RAM maxima are unset;
+  its 1-core/2-GiB cost envelope is a forecast proxy, not an invoice guarantee.
+- Stage 2-only exploratory appendix covers all 240 candidates and every feature;
+  no p-values or confirmatory claims. Registered tests, seeds and winners are unchanged.
+
+No scientific Stage 3 controller has launched, and `stage3/launch-approval.json`
+is deliberately absent. The real launch gate rejects execution. **WAIT for a separate
+explicit user go-ahead after the six-item summary.** Then reconcile the current
+provider ledger/handles and tracking lease before launch; refresh cost/proof/approval
+bindings, stop for review if the projected peak exceeds $13, and submit only one
+Linux controller through the configured tracked run command. Do not rerun completed inputs.
+
+The warm private tracking service and paid expiry guardian remain active remotely
+until their bounded 12-hour lease expires. Their handle/expiry is recorded in
+`stage3-prelaunch/tracking-lease.json`; no credentials or private URLs are in this handoff.
+Stage 2 read-only observer PID 90328 and checkpoint watcher PID 85072 are local helpers,
+not Stage 3 controllers. Account quota is not exposed and remains unknown.
+
+Read `stage3-prelaunch/readiness-state.json`, `pre-launch-summary.md`,
+`prelaunch-receipt.json`, `full-cost-projection.json`, `proofs/` and
+`stage3-report-draft.md`. The source supplement archive includes new Stage 3 files
+that the inherited checkpoint script does not collect.

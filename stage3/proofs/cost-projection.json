@@ -1,8 +1,7 @@
 {
-  "schema": "stage3-cost-audit-draft",
-  "status": "PROVISIONAL_RESOURCE_PROXY_NOT_LAUNCH_AUTHORIZATION",
+  "schema": "stage3-cost-projection-v1",
+  "status": "READY_BELOW13_WITH_DISCLOSED_RESOURCE_PROXY",
   "observed_utc": "2026-10-29T14:18:04.995871+00:00",
-  "no_compute_launched": true,
   "stage3_cap_usd": "15",
   "prelaunch_review_threshold_usd": "13",
   "final_evaluation_inputs": 300,
@@ -57,7 +56,7 @@
     "runtime_reservation_hours": 12,
     "reserved_usd": "2.27923200",
     "maximum_limits_verified": false,
-    "critical_limitation": "Native --flavor cpu does not set explicit CPU or RAM maxima. 1core/2GiB is a forecast proxy, not an authoritative cap. Smoke must inspect actual limits/usage and projection must be refreshed."
+    "critical_limitation": "Native CPU/RAM maxima remain unset after read-only preflight; 1core/2GiB12h is a forecast proxy, not an authoritative provider invoice cap. Measured probe was559734784peakRSS and12.33coresec over28.86s."
   },
   "controller_expected_hours_with_one_hour_margin": "3.431529423094358488502837227",
   "controller_expected_envelope_cost_usd": "0.6517709725048500738722748916",
@@ -111,9 +110,9 @@
     "All projections are estimates, not invoices or guarantees of completion.",
     "E/R held-out and tamper runtimes are not yet measured. No new task performance should be read for cost calibration.",
     "Failure allowance is deliberately above observed Stage2 manual-retry frequency but does not cover every possible interruption. The15USD guard must block reservations before crossing.",
-    "Actual precheck/smoke ledger amounts replace the forecast allowance before full launch; do not double count shared0.50 overhead.",
-    "Exact native Sandbox maxima are unspecified; forecast remains provisional until controller resource accounting is resolved.",
-    "The20% runtime stress scenario is just below13; the30% stress scenario exceeds13 and requires stopping before launch."
+    "The20% runtime stress peak is13.16102045171756348070553001USD, above13; revised projection above13requires stopping for review before scientificlaunch.",
+    "Currentprecheckguard0.8695241106163787840642includes0.50overhead,0.189432service and0.0829578guardian; residualprecheckspend is below the additional0.50precheckallowance. Freshfullservice/guardianallowancesareincludedatlaunch.",
+    "Native CPU/RAM maxima remain unspecified; forecast proxy and delayed completed-hour billing floor are distinct from a final invoice."
   ],
   "tracking_server_reserved_usd": "0.189432000",
   "tracking_server_envelope": {
@@ -124,7 +123,7 @@
     "min_containers": 1
   },
   "planning_runtime_multiplier": "1.1",
-  "planning_guard_peak_usd": "12.53941473074109985731340251",
+  "planning_guard_peak_usd": "12.62237253074109985731340251",
   "projection_status": "READY_BELOW13_WITH_DISCLOSED_RESOURCE_PROXY",
   "controller_resource_probe": {
     "controller_cpu_seconds": 12.33,
@@ -157,5 +156,7 @@
   "tracking_shutdown_guardian_usd": "0.08295780000",
   "prelaunch_guard_usd": "0.8695241106163787840642",
   "resource_limitation": "Native controller has no enforced CPU/RAM maxima;1core2GiB12h is a conservative forecast envelope, not an invoice guarantee. Preflight measured559734784RSS/12.33coresec over28.86s.",
-  "tracking_lifetime": "Warm cappedsingleton;12hlease andcappedpaidexpiryguardiandisablesdeployment. Freshfullservice/guardianallowances included forscientificlaunch; precheckallowanceincludes priorserviceusage."
+  "tracking_lifetime": "Warm cappedsingleton;12hlease andcappedpaidexpiryguardiandisablesdeployment. Freshfullservice/guardianallowances included forscientificlaunch; precheckallowanceincludes priorserviceusage.",
+  "updated_utc": "2026-10-29T15:27:55.833008+00:00",
+  "no_scientific_stage3_compute_launched": true
 }
