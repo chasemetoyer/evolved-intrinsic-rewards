@@ -31,3 +31,13 @@ handoff-cross-platform/stage2-runtime-state.json
 handoff-cross-platform/stage2-run-registry.json
 
 results/stage2-prior-ledger-snapshot.json
+
+# paper 2 build products
+paper.aux
+paper.bbl
+paper.blg
+paper.fdb_latexmk
+paper.fls
+paper.log
+paper.out
+paper2/**/__pycache__/
