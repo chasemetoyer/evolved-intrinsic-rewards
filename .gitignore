@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+# LaTeX build products (paper/paper.pdf is committed)
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+# local agent and tool state, never part of the artifact
+.claude/
+.openresearch/
+.orx/
+.agents/
+handoff-cross-platform/
+.DS_Store
+.env
+.env.*
+.modal.toml
